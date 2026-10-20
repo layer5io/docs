@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.87
+  version: v1.3.88
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -30635,14 +30635,23 @@ paths:
 
         Desktop registration uses this shared operation, but kind `desktop` is implemented by Cloud: a server that does
         not support it rejects a `desktop` body with `400`. The heartbeat and deregistration routes are Cloud-only. A
-        client desktop app install registers itself on sign-in with kind `desktop`, type `platform`, sub_type
-        `management`, status `connected`, and `metadata` matching `DesktopConnectionMetadata`. Servers implementing this
-        contract must take the organization from the `X-Current-Orgid` header, refuse a `desktop` registration without
-        it with `400`, and refuse a caller who is not a live member of that organization with `403`. They must
-        deduplicate on (organization, owner, `metadata.machineId`): registering the same machine again updates that
-        connection and returns `200`, while a new connection returns `201`. A `desktop` body whose metadata lacks
-        `machineId` is refused with `400`. The kind names the connection type, never the product that runs on the
-        machine.
+        client desktop app install registers itself on every connect to Cloud, sign-in included, with kind `desktop`,
+        type `platform`, sub_type `management`, status `connected`, and `metadata` matching `DesktopConnectionMetadata`.
+        Servers implementing this contract must take the organization from the `X-Current-Orgid` header, refuse a
+        `desktop` registration without it with `400`, and refuse a caller who is not a live member of that organization
+        with `403`. They must deduplicate on (organization, owner, `metadata.machineId`): registering the same machine
+        again updates that connection and returns `200`, while a new connection returns `201`. A `desktop` body whose
+        metadata lacks `machineId` is refused with `400`. The kind names the connection type, never the product that
+        runs on the machine.
+
+
+        A `desktop` registration whose `metadata.clientName` and `metadata.appVersion` fall below the server's minimum
+        version for that client is refused with `426` and a `ClientUpgradeRequiredError` body; the connection, when it
+        exists, is set to `maintenance`. Servers must link the API token that authenticated the registration to the
+        connection (`metadata.tokenId`, server-written) and revoke that token when the connection is deregistered or
+        deleted. When a later registration of the same connection authenticates with a different token, the server
+        revokes the token previously linked to it. Registrations beyond the organization's device limit are accepted;
+        the organization is flagged through the capabilities document's `session.deviceUsage` instead.
       parameters:
         - name: X-Current-Orgid
           in: header
@@ -33122,6 +33131,71 @@ paths:
                     description: MeshKit's suggested remediations for the error.
                     items:
                       type: string
+        '426':
+          description: >
+            The client's version is below the provider's minimum for that client. The client must update before it can
+            register or keep a connection alive; the body names the minimum and where to get an update.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >
+                  Body of a 426 answer: a MeshKit error sentence plus the client's compatibility, so the client can show
+                  the minimum and where to update.
+                additionalProperties: false
+                required:
+                  - error
+                  - compatibility
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: MeshKit error code allocated by the emitting service; not a stable part of this contract.
+                  compatibility:
+                    type: object
+                    description: >
+                      Whether a client application's version meets the provider's minimum for that client. A client
+                      whose `compatible` is false must update before it registers or keeps a connection alive; the
+                      provider answers those calls with 426. A client the provider has no minimum for is compatible and
+                      has no `minimumVersion`.
+                    additionalProperties: false
+                    required:
+                      - clientName
+                      - clientVersion
+                      - compatible
+                    properties:
+                      clientName:
+                        type: string
+                        description: >
+                          Identifier of a client application, for example the product name of a desktop app, lowercase.
+                          It is a value chosen by the client; the provider keys its minimum client versions by it.
+                        minLength: 1
+                        maxLength: 64
+                        pattern: ^[a-z0-9][a-z0-9-]*$
+                      clientVersion:
+                        type: string
+                        description: >-
+                          The client's version as it reported it, as `MAJOR.MINOR.PATCH` with an optional leading `v`,
+                          for example `v1.25.0`. Versions are ordered by their numeric parts, so `v1.9.0` is older than
+                          `v1.25.0`.
+                        maxLength: 64
+                      minimumVersion:
+                        type: string
+                        description: >-
+                          Oldest client version the provider accepts for this client. Absent when the provider sets no
+                          minimum.
+                        maxLength: 64
+                      compatible:
+                        type: boolean
+                        description: True when `clientVersion` is at or above `minimumVersion`, or when there is no minimum.
+                      upgradeUrl:
+                        type: string
+                        description: Where the client can get an update, when the provider knows one.
+                        maxLength: 2048
         '500':
           description: Internal server error
           content:
@@ -35672,7 +35746,7 @@ paths:
         - Connection_API_Connections
       operationId: deleteConnection
       summary: Delete a connection
-      description: Delete a specific connection
+      description: Delete a specific connection. Deleting a connection that has a `metadata.tokenId` revokes that token.
       parameters:
         - name: connectionId
           in: path
@@ -35752,7 +35826,8 @@ paths:
       description: >
         Delete the caller's `desktop` connection whose `metadata.machineId` matches, as a desktop app install does on
         sign-out or uninstall. Servers implementing this contract must scope the deletion to the caller: a connection
-        registered by another user is not found.
+        registered by another user is not found. Servers must revoke the API token linked to each deleted connection
+        (`metadata.tokenId`).
       parameters:
         - name: machineId
           in: path
@@ -35798,7 +35873,11 @@ paths:
         Mark the caller's connection as alive. Servers implementing this contract must set `metadata.lastSeenAt` to the
         current time and, when the connection is `disconnected`, set its status back to `connected`. Servers must report
         a connection whose `metadata.lastSeenAt` is older than 3 minutes as `disconnected` until its next heartbeat. The
-        request has no body, so a heartbeat cannot change anything else about the connection.
+        request has no body, so a heartbeat cannot change anything else about the connection. When the connection's
+        `metadata.clientName` and `metadata.appVersion`, as stored by the latest registration (which every connect makes
+        before its first heartbeat), fall below the server's minimum version for that client, servers must answer `426`
+        with a `ClientUpgradeRequiredError` body and set the connection to `maintenance` instead of recording the
+        heartbeat.
       parameters:
         - name: connectionId
           in: path
@@ -36788,6 +36867,71 @@ paths:
             text/plain:
               schema:
                 type: string
+        '426':
+          description: >
+            The client's version is below the provider's minimum for that client. The client must update before it can
+            register or keep a connection alive; the body names the minimum and where to get an update.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >
+                  Body of a 426 answer: a MeshKit error sentence plus the client's compatibility, so the client can show
+                  the minimum and where to update.
+                additionalProperties: false
+                required:
+                  - error
+                  - compatibility
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: MeshKit error code allocated by the emitting service; not a stable part of this contract.
+                  compatibility:
+                    type: object
+                    description: >
+                      Whether a client application's version meets the provider's minimum for that client. A client
+                      whose `compatible` is false must update before it registers or keeps a connection alive; the
+                      provider answers those calls with 426. A client the provider has no minimum for is compatible and
+                      has no `minimumVersion`.
+                    additionalProperties: false
+                    required:
+                      - clientName
+                      - clientVersion
+                      - compatible
+                    properties:
+                      clientName:
+                        type: string
+                        description: >
+                          Identifier of a client application, for example the product name of a desktop app, lowercase.
+                          It is a value chosen by the client; the provider keys its minimum client versions by it.
+                        minLength: 1
+                        maxLength: 64
+                        pattern: ^[a-z0-9][a-z0-9-]*$
+                      clientVersion:
+                        type: string
+                        description: >-
+                          The client's version as it reported it, as `MAJOR.MINOR.PATCH` with an optional leading `v`,
+                          for example `v1.25.0`. Versions are ordered by their numeric parts, so `v1.9.0` is older than
+                          `v1.25.0`.
+                        maxLength: 64
+                      minimumVersion:
+                        type: string
+                        description: >-
+                          Oldest client version the provider accepts for this client. Absent when the provider sets no
+                          minimum.
+                        maxLength: 64
+                      compatible:
+                        type: boolean
+                        description: True when `clientVersion` is at or above `minimumVersion`, or when there is no minimum.
+                      upgradeUrl:
+                        type: string
+                        description: Where the client can get an update, when the provider knows one.
+                        maxLength: 2048
         '500':
           description: Internal server error
           content:
@@ -65426,7 +65570,12 @@ paths:
         the caller's roles, and with a valid token plus `X-Current-Orgid` it
         also carries `membership`. An invalid or absent token is not an error;
         the document is returned without `membership`. A malformed
-        `X-Current-Orgid` is a client error and returns 400.
+        `X-Current-Orgid` is a client error and returns 400. With `client`,
+        the document carries `compatibility` for that client at `{version}`;
+        an outdated client still receives 200 with `compatible` false. With a
+        valid token the document carries `session`; for a live member of the
+        `X-Current-Orgid` organization it includes that organization's plan,
+        entitlements and device usage.
       parameters:
         - name: version
           in: path
@@ -65448,6 +65597,20 @@ paths:
             x-go-type: uuid.UUID
             x-go-type-import:
               path: github.com/gofrs/uuid
+        - name: client
+          in: query
+          description: >
+            Identifier of the requesting client application, for example the product name of a desktop app. When
+            present, the document carries `compatibility` for this client at the `{version}` path parameter.
+          required: false
+          schema:
+            type: string
+            description: >
+              Identifier of a client application, for example the product name of a desktop app, lowercase. It is a
+              value chosen by the client; the provider keys its minimum client versions by it.
+            minLength: 1
+            maxLength: 64
+            pattern: ^[a-z0-9][a-z0-9-]*$
         - name: os
           in: query
           description: Operating system of the client, used to select packages.
@@ -65466,8 +65629,11 @@ paths:
                   The remote provider's capabilities document. Existing fields describe the
                   provider and its extensions; `contractVersion` and `membership` let a
                   native client gate on the provider's contract and on its organization
-                  membership after authenticating. New fields arrive only with a new
-                  `contractVersion`.
+                  membership after authenticating; `compatibility` tells a client that
+                  named itself whether its version is still accepted, and `session`
+                  describes the authenticated caller's roles, plan and entitlements. New
+                  fields arrive only with a new `contractVersion` (1.1 added
+                  `compatibility` and `session`).
                 type: object
                 additionalProperties: false
                 required:
@@ -65535,6 +65701,429 @@ paths:
                       bound:
                         type: boolean
                         description: True when the caller is a live member of the organization.
+                  compatibility:
+                    type: object
+                    description: >
+                      Whether a client application's version meets the provider's minimum for that client. A client
+                      whose `compatible` is false must update before it registers or keeps a connection alive; the
+                      provider answers those calls with 426. A client the provider has no minimum for is compatible and
+                      has no `minimumVersion`.
+                    additionalProperties: false
+                    required:
+                      - clientName
+                      - clientVersion
+                      - compatible
+                    properties:
+                      clientName:
+                        type: string
+                        description: >
+                          Identifier of a client application, for example the product name of a desktop app, lowercase.
+                          It is a value chosen by the client; the provider keys its minimum client versions by it.
+                        minLength: 1
+                        maxLength: 64
+                        pattern: ^[a-z0-9][a-z0-9-]*$
+                      clientVersion:
+                        type: string
+                        description: >-
+                          The client's version as it reported it, as `MAJOR.MINOR.PATCH` with an optional leading `v`,
+                          for example `v1.25.0`. Versions are ordered by their numeric parts, so `v1.9.0` is older than
+                          `v1.25.0`.
+                        maxLength: 64
+                      minimumVersion:
+                        type: string
+                        description: >-
+                          Oldest client version the provider accepts for this client. Absent when the provider sets no
+                          minimum.
+                        maxLength: 64
+                      compatible:
+                        type: boolean
+                        description: True when `clientVersion` is at or above `minimumVersion`, or when there is no minimum.
+                      upgradeUrl:
+                        type: string
+                        description: Where the client can get an update, when the provider knows one.
+                        maxLength: 2048
+                  session:
+                    type: object
+                    description: >
+                      The authenticated caller's session as the provider sees it: who the caller is, the caller's roles,
+                      and, for the organization named by `X-Current-Orgid` when the caller is a live member of it, that
+                      organization's roles, plan, entitlements and device usage. Present only on an authenticated
+                      request.
+                    additionalProperties: false
+                    required:
+                      - userId
+                      - providerRoles
+                    properties:
+                      userId:
+                        type: string
+                        format: uuid
+                        description: >-
+                          A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                          definition is used across different schemas.
+                        x-go-type: uuid.UUID
+                        x-go-type-import:
+                          path: github.com/gofrs/uuid
+                      providerRoles:
+                        type: array
+                        description: The caller's provider-wide role names.
+                        items:
+                          type: string
+                          maxLength: 255
+                      organizationRoles:
+                        type: array
+                        description: The caller's role names in the organization.
+                        items:
+                          type: string
+                          maxLength: 255
+                      plan:
+                        description: The plan of the organization's active subscription, when it has one.
+                        x-go-type: planv1beta3.Plan
+                        x-go-type-import:
+                          path: github.com/meshery/schemas/models/v1beta3/plan
+                          name: planv1beta3
+                        type: object
+                        additionalProperties: false
+                        required:
+                          - id
+                          - name
+                          - cadence
+                          - unit
+                          - pricePerUnit
+                          - minimumUnits
+                          - currency
+                        properties:
+                          id:
+                            type: string
+                            format: uuid
+                            description: >-
+                              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID
+                              core definition is used across different schemas.
+                            x-go-type: uuid.UUID
+                            x-go-type-import:
+                              path: github.com/gofrs/uuid
+                            x-oapi-codegen-extra-tags:
+                              db: id
+                              json: id
+                              csv: id
+                          name:
+                            description: Display name of the plan.
+                            x-go-type: PlanName
+                            x-oapi-codegen-extra-tags:
+                              db: name
+                              json: name
+                              csv: name
+                            type: string
+                            x-enum-casing-exempt: true
+                            enum:
+                              - Free
+                              - Team Designer
+                              - Team Operator
+                              - Enterprise
+                          cadence:
+                            description: Billing cadence for the plan (monthly, annually, or none).
+                            x-go-type: PlanCadence
+                            x-oapi-codegen-extra-tags:
+                              db: cadence
+                              json: cadence
+                              csv: cadence
+                            type: string
+                            enum:
+                              - none
+                              - monthly
+                              - annually
+                          unit:
+                            description: Unit of consumption this plan charges against (e.g. user).
+                            x-go-type: PlanUnit
+                            x-oapi-codegen-extra-tags:
+                              db: unit
+                              json: unit
+                              csv: unit
+                            type: string
+                            enum:
+                              - user
+                              - free
+                          minimumUnits:
+                            type: integer
+                            description: Minimum number of units required for the plan.
+                            x-oapi-codegen-extra-tags:
+                              db: minimum_units
+                              json: minimumUnits
+                              csv: minimum_units
+                            minimum: 0
+                          pricePerUnit:
+                            type: number
+                            description: Price per unit of the plan.
+                            x-oapi-codegen-extra-tags:
+                              db: price_per_unit
+                              json: pricePerUnit
+                              csv: price_per_unit
+                            minimum: 0
+                          currency:
+                            description: Currency in which the plan is priced.
+                            x-go-type: Currency
+                            x-oapi-codegen-extra-tags:
+                              db: currency
+                              json: currency
+                              csv: currency
+                            type: string
+                            enum:
+                              - usd
+                      entitlements:
+                        type: array
+                        description: The features the organization's active subscriptions entitle it to.
+                        items:
+                          x-go-type: featurev1beta1.Feature
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/v1beta1/feature
+                            name: featurev1beta1
+                          type: object
+                          additionalProperties: false
+                          description: >-
+                            A feature is a quantified entitlement granted to an organization through its subscription
+                            plan, such as the number of components allowed in a design.
+                          required:
+                            - id
+                            - plan_id
+                            - name
+                            - quantity
+                            - created_at
+                            - updated_at
+                          properties:
+                            id:
+                              description: Unique identifier for the feature.
+                              x-go-name: ID
+                              x-oapi-codegen-extra-tags:
+                                db: id
+                                csv: id
+                              x-order: 1
+                              type: string
+                              format: uuid
+                              x-go-type: uuid.UUID
+                              x-go-type-import:
+                                path: github.com/gofrs/uuid
+                            plan_id:
+                              description: Identifier of the plan granting this feature.
+                              x-go-name: PlanId
+                              x-oapi-codegen-extra-tags:
+                                db: plan_id
+                                csv: plan_id
+                              x-order: 2
+                              type: string
+                              format: uuid
+                              x-go-type: uuid.UUID
+                              x-go-type-import:
+                                path: github.com/gofrs/uuid
+                            plan:
+                              description: >-
+                                The plan granting this feature. Populated only when the association is explicitly
+                                loaded.
+                              x-go-type: planv1beta3.Plan
+                              x-go-type-import:
+                                path: github.com/meshery/schemas/models/v1beta3/plan
+                                name: planv1beta3
+                              x-oapi-codegen-extra-tags:
+                                belongs_to: plans
+                                fk_id: PlanId
+                                json: plan,omitempty
+                              x-order: 3
+                              type: object
+                              additionalProperties: false
+                              required:
+                                - id
+                                - name
+                                - cadence
+                                - unit
+                                - pricePerUnit
+                                - minimumUnits
+                                - currency
+                              properties:
+                                id:
+                                  type: string
+                                  format: uuid
+                                  description: >-
+                                    A Universally Unique Identifier used to uniquely identify entities in Meshery. The
+                                    UUID core definition is used across different schemas.
+                                  x-go-type: uuid.UUID
+                                  x-go-type-import:
+                                    path: github.com/gofrs/uuid
+                                  x-oapi-codegen-extra-tags:
+                                    db: id
+                                    json: id
+                                    csv: id
+                                name:
+                                  description: Display name of the plan.
+                                  x-go-type: PlanName
+                                  x-oapi-codegen-extra-tags:
+                                    db: name
+                                    json: name
+                                    csv: name
+                                  type: string
+                                  x-enum-casing-exempt: true
+                                  enum:
+                                    - Free
+                                    - Team Designer
+                                    - Team Operator
+                                    - Enterprise
+                                cadence:
+                                  description: Billing cadence for the plan (monthly, annually, or none).
+                                  x-go-type: PlanCadence
+                                  x-oapi-codegen-extra-tags:
+                                    db: cadence
+                                    json: cadence
+                                    csv: cadence
+                                  type: string
+                                  enum:
+                                    - none
+                                    - monthly
+                                    - annually
+                                unit:
+                                  description: Unit of consumption this plan charges against (e.g. user).
+                                  x-go-type: PlanUnit
+                                  x-oapi-codegen-extra-tags:
+                                    db: unit
+                                    json: unit
+                                    csv: unit
+                                  type: string
+                                  enum:
+                                    - user
+                                    - free
+                                minimumUnits:
+                                  type: integer
+                                  description: Minimum number of units required for the plan.
+                                  x-oapi-codegen-extra-tags:
+                                    db: minimum_units
+                                    json: minimumUnits
+                                    csv: minimum_units
+                                  minimum: 0
+                                pricePerUnit:
+                                  type: number
+                                  description: Price per unit of the plan.
+                                  x-oapi-codegen-extra-tags:
+                                    db: price_per_unit
+                                    json: pricePerUnit
+                                    csv: price_per_unit
+                                  minimum: 0
+                                currency:
+                                  description: Currency in which the plan is priced.
+                                  x-go-type: Currency
+                                  x-oapi-codegen-extra-tags:
+                                    db: currency
+                                    json: currency
+                                    csv: currency
+                                  type: string
+                                  enum:
+                                    - usd
+                            name:
+                              description: Name of the entitled feature.
+                              x-go-type: FeatureName
+                              x-oapi-codegen-extra-tags:
+                                db: name
+                                csv: name
+                              x-order: 4
+                              type: string
+                              x-enum-casing-exempt: true
+                              enum:
+                                - ComponentsInDesign
+                                - RelationshipsInDesign
+                                - DesignsInWorkspace
+                                - WorkspacesInOrganization
+                                - ImageSizeInDesign
+                                - SizePerDesign
+                                - BlowhornProfiles
+                                - BlowhornBrowserAutomation
+                                - BlowhornScheduler
+                                - BlowhornDevicesPerSeat
+                                - BlowhornPlatformLinkedIn
+                                - BlowhornPlatformX
+                                - BlowhornPlatformReddit
+                                - BlowhornPlatformHackerNews
+                                - BlowhornPlatformSlack
+                                - BlowhornPlatformBluesky
+                                - BlowhornPlatformGitHub
+                                - BlowhornPlatformBlog
+                              x-enumDescriptions:
+                                ComponentsInDesign: Maximum number of components in a single design; 999999999999 is unlimited.
+                                RelationshipsInDesign: Maximum number of relationships in a single design; 999999999999 is unlimited.
+                                DesignsInWorkspace: Maximum number of designs in a single workspace; 999999999999 is unlimited.
+                                WorkspacesInOrganization: Maximum number of workspaces in an organization; 999999999999 is unlimited.
+                                ImageSizeInDesign: Maximum size, in bytes, of an image embedded in a design; 999999999999 is unlimited.
+                                SizePerDesign: Maximum size of a single design; 999999999999 is unlimited.
+                                BlowhornProfiles: >-
+                                  Maximum number of Blowhorn posting profiles the organization may hold; 999999999999 is
+                                  unlimited.
+                                BlowhornBrowserAutomation: >-
+                                  Blowhorn may publish through browser automation; granted when quantity is greater than
+                                  0.
+                                BlowhornScheduler: Blowhorn may run scheduled publishes; granted when quantity is greater than 0.
+                                BlowhornDevicesPerSeat: >-
+                                  Maximum number of devices one Blowhorn seat may publish from; 999999999999 is
+                                  unlimited.
+                                BlowhornPlatformLinkedIn: Blowhorn may publish to LinkedIn; granted when quantity is greater than 0.
+                                BlowhornPlatformX: Blowhorn may publish to X; granted when quantity is greater than 0.
+                                BlowhornPlatformReddit: Blowhorn may publish to Reddit; granted when quantity is greater than 0.
+                                BlowhornPlatformHackerNews: Blowhorn may publish to Hacker News; granted when quantity is greater than 0.
+                                BlowhornPlatformSlack: Blowhorn may publish to Slack; granted when quantity is greater than 0.
+                                BlowhornPlatformBluesky: Blowhorn may publish to Bluesky; granted when quantity is greater than 0.
+                                BlowhornPlatformGitHub: Blowhorn may publish to GitHub; granted when quantity is greater than 0.
+                                BlowhornPlatformBlog: Blowhorn may publish to a blog; granted when quantity is greater than 0.
+                            quantity:
+                              type: number
+                              format: double
+                              description: >-
+                                Quantity of the feature granted by the plan. For a cap-style feature this is the
+                                maximum, and the sentinel value 999999999999 denotes unlimited. For a capability-style
+                                feature any value greater than 0 grants the capability.
+                              minimum: 0
+                              x-oapi-codegen-extra-tags:
+                                db: quantity
+                                csv: quantity
+                              x-order: 5
+                            created_at:
+                              x-order: 6
+                              description: Timestamp when the resource was created.
+                              x-go-type: time.Time
+                              type: string
+                              format: date-time
+                              x-go-name: CreatedAt
+                              x-oapi-codegen-extra-tags:
+                                db: created_at
+                                yaml: created_at
+                              x-go-type-skip-optional-pointer: true
+                            updated_at:
+                              x-order: 7
+                              description: Timestamp when the resource was updated.
+                              x-go-type: time.Time
+                              type: string
+                              format: date-time
+                              x-go-name: UpdatedAt
+                              x-oapi-codegen-extra-tags:
+                                db: updated_at
+                                yaml: updated_at
+                              x-go-type-skip-optional-pointer: true
+                      deviceUsage:
+                        type: object
+                        description: >
+                          Registered devices (live `desktop` connections) in the organization against the organization's
+                          device limit. Registrations over the limit are accepted; `overLimit` flags the organization
+                          instead.
+                        additionalProperties: false
+                        required:
+                          - registered
+                          - overLimit
+                        properties:
+                          registered:
+                            type: integer
+                            minimum: 0
+                            description: Live `desktop` connections registered in the organization.
+                          limit:
+                            type: integer
+                            minimum: 0
+                            description: >-
+                              Devices the organization's subscriptions allow. Absent when unlimited or when no
+                              subscription sets a device limit.
+                          overLimit:
+                            type: boolean
+                            description: True when `limit` is present and `registered` exceeds it.
                   extensions:
                     type: object
                     description: Extension points; shape owned by the provider.
@@ -65546,9 +66135,11 @@ paths:
                     x-go-type-skip-optional-pointer: true
                   capabilities:
                     type: array
-                    description: >-
+                    description: >
                       Features the provider serves and their endpoints. Clients read paths from here instead of
-                      hard-coding them.
+                      hard-coding them. A provider serving desktop connections lists `register-connection`,
+                      `connection-heartbeat` and `deregister-desktop-connection`; an endpoint may hold `{connectionId}`
+                      or `{machineId}` placeholders.
                     items:
                       type: object
                       description: One feature the provider serves and the endpoint that serves it.
@@ -73844,7 +74435,9 @@ paths:
       description: >-
         Browser-facing step of the native client sign-in flow (RFC 8252 loopback redirect with RFC 7636 PKCE). Requires
         the session cookie of a signed-in user, never URL credentials. Validates the request and renders a consent page
-        that asks the user to allow the named local client to act on their behalf. Nothing is issued by this call.
+        that asks the user to allow the named local client to act on their behalf. Nothing is issued by this call. When
+        the request names the client application (`client`) and its version (`clientVersion`) and that version is below
+        the provider's minimum for that client, an update page is rendered with status 426 instead of the consent page.
       parameters:
         - name: clientName
           in: query
@@ -73855,6 +74448,27 @@ paths:
           schema:
             type: string
             pattern: ^[A-Za-z0-9][A-Za-z0-9 ._-]{0,62}$
+        - name: client
+          in: query
+          description: >-
+            Identifier of the client application, as in the capabilities `client` parameter. Selects the minimum version
+            checked against `clientVersion`.
+          required: false
+          schema:
+            type: string
+            description: >
+              Identifier of a client application, for example the product name of a desktop app, lowercase. It is a
+              value chosen by the client; the provider keys its minimum client versions by it.
+            minLength: 1
+            maxLength: 64
+            pattern: ^[a-z0-9][a-z0-9-]*$
+        - name: clientVersion
+          in: query
+          description: Version of the client application, for example `v1.25.0`.
+          required: false
+          schema:
+            type: string
+            maxLength: 64
         - name: port
           in: query
           description: Port on 127.0.0.1 where the native client listens for the callback.
@@ -73903,6 +74517,12 @@ paths:
           description: Expired JWT token used or insufficient privilege
           content:
             text/plain:
+              schema:
+                type: string
+        '426':
+          description: Update page; the client's version is below the provider's minimum for that client.
+          content:
+            text/html:
               schema:
                 type: string
     post:
