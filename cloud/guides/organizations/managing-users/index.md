@@ -1702,7 +1702,7 @@ Deleting an account removes a person from Layer5 Cloud entirely, in every organi
 
 
 
-Account deletion is refused when the account holds credentials designated to an organization that has no other owner or Organization Admin to receive them; promote another administrator or release the credentials first. A person deletes their own account from [account settings](/cloud/guides/account/managing-your-account/).
+When the account owns organizations or teams, each passes to its longest-standing Organization Admin (Team Admin for a team), or else its longest-standing member, and one with nobody else in it is deleted. See [Organizations and teams you own](/cloud/guides/account/managing-your-account/#organizations-and-teams-you-own). Account deletion is refused, rarely, when the account holds credentials designated to an organization it does not own that has no live owner or Organization Admin to receive them; promote another administrator or release the credentials first. A person deletes their own account from [account settings](/cloud/guides/account/managing-your-account/).
 
 ## Billing and seats
 

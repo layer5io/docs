@@ -111,24 +111,26 @@ A person deletes their own account from their profile. Only a Provider Admin del
 
 | Item | After deletion |
 | --- | --- |
-| Organization memberships and organization roles | Removed in every organization |
-| Team memberships and team roles | Removed in every team |
+| Organization memberships and organization roles | Ended in every organization. Each membership is kept as an ended record, so organization history shows when access ended. |
+| Team memberships and team roles | Ended in every team, kept as ended records |
+| Provider-wide roles | Removed |
 | Sign-in identity, password, and linked GitHub and Google sign-in | Removed |
 | The account record | Marked deleted and set to `inactive`. Its public profile is no longer served. |
-| Sessions and API tokens | Stop working. The person is signed out. |
-| Credentials designated to an organization | Handed to the organization's successor: its owner, or else its longest-standing Organization Admin |
-| Organizations the person owns | Remain. Deletion neither deletes nor transfers them. |
+| Sessions and API tokens | Stop working. Every API token is revoked. The person is signed out. |
+| The account's email address | Released, so it can be used to sign up again |
+| Organizations and teams the person owns | Handed on: each passes to its longest-standing Organization Admin (Team Admin for a team), or else its longest-standing member. One with nobody else in it is deleted, unless the organization is the parent of another live organization. |
+| Credentials designated to an organization | Handed to the organization's owner, or else its longest-standing Organization Admin. For an organization the person owned, that is its new owner. |
 | Designs and other resources the person authored | Remain |
 | Content published to the catalog | Remains public |
 | Audit events | Remain, including an entry for the deletion |
 
 ### When deletion is refused
 
-Layer5 Cloud refuses to delete an account that holds a credential designated to an organization with no other owner or Organization Admin to receive it, because the credential would be orphaned. The refusal names the organization and changes nothing. The same rule applies when a Provider Admin deletes someone else's account. To proceed, promote another member of that organization to Organization Admin, or release the credentials, then retry. See [Delete your account](/cloud/guides/account/managing-your-account/#delete-your-account) and [When deletion is refused](/cloud/guides/account/managing-your-account/#when-deletion-is-refused).
+Because owned organizations are handed on first, a refusal is now rare. Layer5 Cloud refuses to delete an account that holds a credential designated to an organization it does not own, when that organization has no live owner or Organization Admin to receive it, because the credential would be orphaned. The refusal names the organization and changes nothing. The same rule applies when a Provider Admin deletes someone else's account. To proceed, promote another member of that organization to Organization Admin, or release the credentials, then retry. See [Delete your account](/cloud/guides/account/managing-your-account/#delete-your-account) and [When deletion is refused](/cloud/guides/account/managing-your-account/#when-deletion-is-refused).
 
 ### Registering again with the same email address
 
-Registering again with the email address of a deleted account creates a new, separate account. The new account does not regain the deleted account's organization or team memberships, roles, linked sign-in providers, or access to its resources. An administrator must add the new account to each organization and assign its roles again.
+Deleting an account releases its email address. Registering again with it, by email and password or with GitHub or Google, on Layer5 Cloud or on an organization's custom domain, creates a new, separate account with a new account ID. The new account inherits nothing from the deleted one: no profile, preferences, organization or team memberships, roles, ownership, linked sign-in providers, or access to its resources. It gets its own personal organization, or, on a custom domain whose organization offers an open invitation, the placement that invitation gives any new account. An account is identified by its account ID, not by its email address, so the deleted account stays deleted and its audit records keep naming it. To regain access to an organization, ask one of its administrators to add the new account and assign its roles again.
 
 ## Users and plans
 

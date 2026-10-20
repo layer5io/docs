@@ -9039,29 +9039,47 @@ A provider account can be linked to one Layer5 Cloud account only. Linking depen
 
 Deletion is permanent. Layer5 Cloud asks you to confirm, and then does not offer recovery.
 
-What deletion does:
+What deletion does, in one step that either completes or changes nothing:
 
-1. Hands any credential you hold on behalf of an organization to that organization's successor, so the organization keeps working. The successor is the organization's owner, or else its longest-standing Organization Admin.
-2. Marks your account as deleted and removes your memberships in every organization and team, which removes your roles with them.
-3. Records the deletion in the audit trail.
-4. Removes your sign-in identity, including linked GitHub and Google sign-in, and signs you out.
+1. Hands on every organization and team you own (see [Organizations and teams you own](#organizations-and-teams-you-own)).
+2. Hands any credential you hold on behalf of an organization to that organization's owner, or else its longest-standing Organization Admin, so the organization keeps working. For an organization you owned, that is its new owner.
+3. Marks your account as deleted and ends your memberships in every organization and team, which removes your roles with them, along with any provider-wide role. Each membership is kept as an ended record, so organization history shows when your access ended.
+4. Revokes every API token you created, so none of them works afterwards.
+5. Releases your email address, so it can be used to sign up again.
+6. Records the deletion, and each organization or team handed on or deleted, in the audit trail.
+7. Removes your sign-in identity, including linked GitHub and Google sign-in, and signs you out.
 
 What deletion leaves behind:
 
 - Published content, such as items you published to the catalog, stays public.
-- Organizations you own continue to exist. Deleting your account does not delete or transfer them.
 - The audit trail keeps its entries.
 
-Re-registering with the same email address does not restore the old account or re-link a provider.
+### Organizations and teams you own
+
+Each organization you own passes to someone who still belongs to it:
+
+1. Its longest-standing Organization Admin, if it has one.
+2. Otherwise its longest-standing member.
+3. Otherwise, when nobody else belongs to it, the organization is deleted.
+
+"Longest-standing" means the membership that was created first. Members whose own accounts are deleted, and guest (anonymous) accounts, are never chosen. The new owner keeps the roles they already had; ownership does not change anyone's roles.
+
+Teams you own follow the same rule, with Team Admin in place of Organization Admin.
+
+An organization that is the parent of another live organization is never deleted this way, because child organizations are never deleted or moved along with their parent. If such an organization has nobody else in it, it keeps you as its owner and the audit trail records why. Your account is still deleted.
 
 ### When deletion is refused
 
-Layer5 Cloud refuses the deletion, and changes nothing, when you are the only owner or Organization Admin of an organization that holds credentials designated to it. The message begins "Refusing to delete your account" and names the organization. Without a successor, those credentials would be orphaned.
+Because organizations you own are handed on first, a refusal is rare. Layer5 Cloud refuses the deletion, and changes nothing, when you hold credentials designated to an organization you do not own and that organization has no live owner or Organization Admin to receive them. The message begins "Refusing to delete your account" and names the organization. Without a successor, those credentials would be orphaned.
 
 Resolve it, then retry:
 
-- Promote another member of that organization to Organization Admin. An organization's ownership cannot be transferred, so a second Organization Admin is the way to give it a successor.
+- Ask that organization's members to promote someone to Organization Admin.
 - Or release the credentials from the organization, or delete them.
+
+### Signing up again
+
+Signing up again with the same email address, by email and password or with GitHub or Google, on Layer5 Cloud or on an organization's custom domain, creates a new, empty account with a new account ID and its own personal organization (or the placement an organization's open invitation gives any new account). It inherits nothing from the deleted one: no profile, preferences, memberships, roles, or ownership, and no linked sign-in providers. An account is identified by its account ID, not by its email address, so the deleted account cannot be restored this way. To regain access to an organization, ask one of its administrators to invite you again.
 
 ## See also
 
@@ -10909,7 +10927,7 @@ Deleting an account removes a person from Layer5 Cloud entirely, in every organi
 The Users page shows the delete action to holders of Delete User, but a request issued from a single organization's page reports success without deleting anything. Deletion takes effect only when a Provider Admin runs it with the all-organizations scope. Use removal to end someone's access to your organization.
 {{< /alert >}}
 
-Account deletion is refused when the account holds credentials designated to an organization that has no other owner or Organization Admin to receive them; promote another administrator or release the credentials first. A person deletes their own account from [account settings]({{< ref "cloud/guides/account/managing-your-account.md" >}}).
+When the account owns organizations or teams, each passes to its longest-standing Organization Admin (Team Admin for a team), or else its longest-standing member, and one with nobody else in it is deleted. See [Organizations and teams you own]({{< ref "cloud/guides/account/managing-your-account.md#organizations-and-teams-you-own" >}}). Account deletion is refused, rarely, when the account holds credentials designated to an organization it does not own that has no live owner or Organization Admin to receive them; promote another administrator or release the credentials first. A person deletes their own account from [account settings]({{< ref "cloud/guides/account/managing-your-account.md" >}}).
 
 ## Billing and seats
 
