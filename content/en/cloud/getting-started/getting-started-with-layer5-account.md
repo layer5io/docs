@@ -13,14 +13,14 @@ Sign up at <https://cloud.layer5.io/signup>. The registration page offers these 
 
 | Method | What happens next |
 |---|---|
-| Email and password | Layer5 Cloud sends a verification email. You verify your address before you can sign in with your password. |
-| GitHub | You authorize with GitHub and are signed in straight after registration. No verification email is sent. |
-| Google | You authorize with Google and are signed in straight after registration. No verification email is sent. |
+| Email and password | You fill in one form. Layer5 Cloud signs you in right away and sends a verification email. Opening its link verifies your address and takes you back to where you started. |
+| GitHub | You authorize with GitHub and are signed in straight after registration. Layer5 Cloud treats the email address GitHub reports as verified, so no verification email is sent. |
+| Google | You authorize with Google and are signed in straight after registration. Layer5 Cloud treats the email address Google reports as verified, so no verification email is sent. |
 | Your organization's identity provider | An organization that brings its own identity provider credentials, including a generic OIDC provider, shows that provider on its own sign-up page. |
 
 ### What the email sign-up form checks
 
-The email sign-up form asks for your first name, last name, email address, and password. Layer5 Cloud validates each field and keeps what you typed when it shows an error, so you only correct the field at fault.
+The email sign-up form is a single screen that asks for your first name, last name, email address, and password. Layer5 Cloud validates each field and keeps what you typed when it shows an error, so you only correct the field at fault.
 
 | Field | Rule |
 |---|---|
@@ -36,16 +36,18 @@ The sign-up form stays valid for 24 hours. If you leave it open longer, it resta
 
 ## 2. Verify your email address
 
-After an email sign-up, Layer5 Cloud sends a verification email that contains both a verification link and a verification code. Either one completes verification. Both stay valid for 720 hours (30 days). Until you verify your address, Layer5 Cloud refuses password sign-in.
+After an email sign-up, Layer5 Cloud signs you in and sends a verification email that contains both a verification link and a verification code. Either one completes verification. Both stay valid for 720 hours (30 days). You cannot use your account, or sign in again with your password, until you verify your address.
 
-Your browser lands on a **Check your email** page that names the address the verification email went to. You can wait on this page:
+Opening the link verifies your address at once. You do not need to type the code or press a button. Layer5 Cloud then takes you back to the page you started signing up from, or to your dashboard if you opened the sign-up page directly. If the link has expired or was already used, the verification page says so and lets you request a new email.
+
+Your browser lands on a **Check your email** page that says you are signed in and names the address the verification email went to. You can wait on this page:
 
 - **Resend email** sends a new verification email without leaving the page. Once it is sent, the page also offers a form where you type the code from the new email instead of opening its link.
-- **Use a different email** returns you to the sign-up form with your name kept and the email address cleared. Use it if you mistyped your address. An account cannot change its email address before that address is verified, so signing up again with the correct address is the fix.
+- **Sign out and use a different email** signs you out so you can sign up again with the correct address. Use it if you mistyped your address. An account cannot change its email address before that address is verified, so signing up again with the correct address is the fix.
 
 The page remembers your address only in the browser tab you signed up in. If you open **Check your email** in a different tab, or your browser blocks site storage, the page shows generic text instead of your address. **Resend email** then opens the verification page, which asks for your address before it sends a new email.
 
-If your organization uses a custom domain, the verification link stays on your organization's domain.
+If your organization uses a custom domain, the verification link, the page it opens, and the return afterward all stay on your organization's domain, with your organization's name and logo.
 
 If your link has expired, request a new verification email and use the latest link.
 

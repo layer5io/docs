@@ -1,223 +1,241 @@
 ---
-title: User Invitations
+title: Invite Users
 description: >
- Learn how to create custom, secure, and flexible invitations for new members.
-weight: 3
+  Bring people into an organization with invitation links or a direct invite, control who can accept and what they receive, and revoke access.
+weight: 40
 diataxis: how-to
+categories: [identity]
 tags: [users]
 aliases:
   - /cloud/concepts/identity-and-security/users/user-invitations/
   - /cloud/identity/users/user-invitations/
-
 ---
 
-The [invitation system](https://cloud.layer5.io/identity/invitations) gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.
+An invitation is a link that lets people join one organization, with the roles and teams you choose, under limits you set: who may accept, how many may accept, when it stops working, and what accepting does. The same mechanism powers your organization's open sign-up. This guide covers creating and managing invitations, what happens when someone accepts, and the separate direct invite for a single new person.
 
-You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.
+Layer5 Cloud has two ways to bring a person in:
 
-{{< alert type="info" title="Required permission" >}}
-Managing invitations requires the **Manage Invitations** permission within your organization. Contact your organization administrator if you need access.
-{{< /alert >}}
+| | Invitation | Direct invite |
+| --- | --- | --- |
+| Where | Invitations page | Users page, Invite New User |
+| Target | Anyone with the link, a list of addresses, or a whole email domain | One new email address |
+| Membership begins | When the person accepts | Immediately, before they act |
+| Limits | Quota, expiry, address allowlist, enable and disable | None |
+| Existing account | Can accept | Refused. Use [Add an existing user]({{< ref "cloud/guides/organizations/managing-users/index.md#add-an-existing-user" >}}). |
+| Permission | Manage Invitations | Invite User to Organization |
 
-### Default organization state
+## Permissions
 
-By default, organizations are **closed**: there is no open registration. A user cannot join your organization simply by navigating to a URL - they must either click a valid invitation link or register through a page associated with an organization that has a [default invitation](#invitation-properties-explained) configured.
+**Needs:** the **Manage Invitations** permission in the organization. Provider Admin, Organization Admin, and Academy Admin hold it by default.
 
-When no default invitation is set, new users who arrive at your organization's registration page are registered as platform users but are **not** automatically added to your organization. They will have no organization membership and no roles until an administrator adds them or they accept an invitation link.
+Creating, editing, and deleting an invitation, and changing which invitation is the open sign-up invitation, all require the permission. The same permission covers choosing the roles and teams an invitation grants, so anyone who can write an invitation, Academy Admins included, can specify its roles. A write without the permission is refused with HTTP 403.
 
-{{< alert type="info" title="Two ways to designate the open signup invitation" >}}
-An organization's open signup invitation can be set in two places: the invitation picker in **Edit Organization**, or the `isDefault` setting on the invitation itself.
+Invitations are not tier-limited.
 
-The **Edit Organization** selection takes precedence. The `isDefault` marker is used when no selection has been made there, or when the invitation that selection points at no longer exists.
-{{< /alert >}}
+## Default organization state
+
+Organizations are **closed** by default. A person cannot join by visiting a URL; they must open a valid invitation link or sign in through your organization's address when it has an [open sign-up invitation](#the-open-sign-up-invitation).
+
+When no open sign-up invitation exists, people who register at your organization's page become platform users with no membership and no roles in your organization until an administrator adds them or they accept an invitation.
 
 {{< alert type="info" title="Roles are not assigned automatically" >}}
-When a user joins an organization via invitation, they receive only the roles explicitly listed on that invitation. If the invitation has no roles configured, the user joins with no role. Use the `roles` field on each invitation to ensure new members receive the correct initial permissions.
+A person who joins through an invitation receives only the roles and teams listed on it. An invitation with no roles adds the person with no role.
 {{< /alert >}}
 
-### Key capabilities
+## Decide what the invitation allows
 
-The invitation system provides three main areas of control to help you manage access effectively.
+Choose the audience first, because it decides which fields you set.
 
-#### Create custom invitations for any audience
-Tailor each invitation to your specific needs with three flexible modes:
-- **Precise invitation**: Target a single user by specifying their full email address.
-- **Domain-wide invitation**: Onboard an entire organization at once by allowing any email from a specific domain (e.g., `@layer5.io`).
-- **Public invitation**: Leave the email field blank to create an open link for public events (e.g., Academy Challenge invitations).
+- **Precise invitation:** list one or more full email addresses. Only those addresses can accept.
+- **Domain-wide invitation:** list a domain pattern such as `@layer5.io`. Any address ending in that domain can accept.
+- **Public invitation:** leave the address list empty. Anyone signed in with the link can accept. Use it for events and community programs.
 
-{{< alert type="warning" title="Use domain wildcards carefully" >}}
-Patterns like `@company.com` allow anyone with that domain. Verify ownership and pair with roles and teams that grant only necessary access.
+{{< alert type="warning" title="Use domain wildcards and public links carefully" >}}
+A pattern such as `@company.com` admits anyone with that domain, and a public link can be forwarded without limit. Verify domain ownership, grant only the access the audience needs, and set an expiry and a quota on public links.
 {{< /alert >}}
 
-#### Control the invitation lifecycle
-Manage access with settings that put you in control:
-- **Expiration date**: Set a specific date and time after which the invitation link can no longer be used to join. This prevents new signups but does not affect members who have already accepted the invitation.
-- **Usage quota**: Limit the number of times an invitation can be used. The invitations table shows current acceptance count alongside the limit (e.g., `2 / 5`).
+Address matching is exact and case-sensitive. `User@Example.com` does not match an entry written `user@example.com`. List the address in the form people sign in with.
 
-{{< alert type="info" title="Blank means unlimited" >}}
-If `expiresAt` is not set, the invitation never expires. If `quota` is not set, the invitation has unlimited uses.
-{{< /alert >}}
+### Invitation properties explained
 
-#### Manage invitations dynamically
-Instantly revoke access by switching an invitation's status between **enabled** and **disabled** at any time. A disabled invitation can be re-enabled later without recreating it.
+| Property | Description |
+| :--- | :--- |
+| `emails` | Exact addresses (`user@example.com`) and domain patterns (`@example.com`). If empty, any address can accept. |
+| `roles` | Roles assigned on acceptance. If empty, the person joins with no role. Each role must be an existing organization role. Provider-wide roles, such as Provider Admin, cannot be granted by an invitation, and an invitation listing one, or a role that does not exist, is refused when it is created or edited. |
+| `teams` | Teams the person joins on acceptance. If empty, the person joins no team. Each team must be an existing team of your organization; an invitation listing any other team is refused when it is created or edited. |
+| `quota` | Maximum number of people who can accept. Not set, or 0, means unlimited. |
+| `expiresAt` | Date and time after which the link stops accepting new people. Not set means it never expires. Does not affect people who already accepted. |
+| `status` | `enabled` can be accepted. `disabled` cannot, and can be re-enabled later. |
+| `name` | Human-readable name. Required in the form, up to 255 characters. |
+| `description` | Internal note about the invitation's purpose, up to 5000 characters. |
+| `acceptanceOutcome` | What accepting does. `direct_membership` (the default) makes the person a member of the inviting organization. `child_organization` creates a new organization for the person beneath it. See [Choosing what accepting an invitation does](#choosing-what-accepting-an-invitation-does). A `child_organization` invitation requires the **Create Organization** permission in the inviting organization. |
+| `isDefault` | Marks this invitation as the organization's open sign-up invitation. Only one invitation per organization can hold the mark; setting it on one clears it from the others. An edit that omits this property leaves it unchanged. |
 
-### How to create an invitation
+`emails`, `roles`, and `teams` can each be left empty or omitted.
 
-To create a new invitation, navigate to the [Invitations page](https://cloud.layer5.io/identity/invitations) from the main menu. Click the **Create New Invitation** button to open the creation dialog.
+## Create an invitation
+
+**Needs:** Manage Invitations.
+
+Create the invitation from the Invitations page, setting the audience, roles, teams, quota, expiry, status, name, and description. Enabled is the default status.
 
 <img src="./images/create-invitation.png" alt="Create Invitation Dialog" style="width:30%; height:auto;" />
 
-{{< alert type="info" title="Email notifications" >}}
-After an invitation is created, a notification email is sent only to addresses listed in the `emails` field that are exact email addresses. Domain-wide patterns (e.g., `@layer5.io`) and public invitations (empty `emails` field) do not trigger individual notification emails - share the invitation link directly in those cases.
-{{< /alert >}}
+### Who receives an email
+
+Creation sends one email to each **exact address** in the list. Domain patterns and public invitations send nothing, so share their link yourself.
+
+- The email is sent at creation only. Editing an invitation does not send it again, and there is no resend. To notify someone again, send them the link.
+- A failed send does not fail the creation. Sending stops at the first failure, so addresses after it are not emailed. Check that each person received it.
+- The subject reads `<Inviter name> has invited you to <Organization name> Organization`. The body names the organization and the teams you pre-assigned, and carries an **Accept Invitation** button. It does not list roles.
+- The sender is your organization's mail configuration when set, else the deployment default. See [Bring Your Own Mail Server]({{< ref "cloud/guides/organizations/org-management/bring-your-own-mail-server.md" >}}).
 
 <img src="./images/invitation-email.png" alt="Invitation Email" style="width:50%; height:auto;" />
 
+## Share, track, and revoke
 
-#### Invitation properties explained
-
-| Property | Description |
-| :--- |  :--- |
-| `emails` | List of email addresses or domain patterns allowed to use the invitation. Exact addresses (e.g., `user@example.com`) and domain patterns (e.g., `@example.com`) are both supported. If empty, the invitation is public. |
-| `roles` | List of roles automatically assigned to new members upon accepting the invitation. If empty, the user joins with no role. |
-| `teams` | List of teams new members are automatically added to upon accepting the invitation. |
-| `quota` | Number that limits how many users can accept the invitation. If not set, there is no usage limit. |
-| `expiresAt` | Date after which the invitation link can no longer be used. Does not affect existing members. If not set, the invitation never expires. |
-| `status` | Invitation status: `enabled` = active and usable; `disabled` = inactive (can be re-enabled later). |
-| `name` | A human-readable name used to identify the invitation. |
-| `description` | Additional information about the invitation's purpose, for internal reference. |
-| `acceptanceOutcome` | What accepting the invitation does. `direct_membership` (the default) makes the user a member of the inviting organization. `child_organization` instead creates a new organization for the user beneath the inviting organization. See [Choosing what accepting does](#choosing-what-accepting-an-invitation-does). Creating or editing a `child_organization` invitation requires the **Create Organization** permission in the inviting organization. |
-| `isDefault` | When enabled, marks this invitation as the organization's open signup invitation. Users who register through your organization's registration page are automatically enrolled through this invitation, receiving the pre-configured roles and teams. Without a default invitation, the registration page does not automatically add users to the organization. Only one invitation can be designated as the default at a time - designating a new one clears the previous. Turning this setting on **or off** requires the **Manage Invitations** permission; editing any other property of an invitation does not, and leaves the setting as it was. |
-
-### Managing existing invitations
-
-All existing invitations are displayed in a table showing key details for each invitation: its name and description, a copyable acceptance link, the owner, expiration date, quota usage, assigned roles and teams, and current status.
+The Invitations page lists every invitation with its name, description, copyable link, owner, expiry, quota use, roles, teams, and status.
 
 ![Invitations Overview Table](./images/overview.png)
 
-You can filter the list using the filter control at the top right of the table. Available filters are:
-- **Status** - show only enabled or disabled invitations
-- **Roles** - show invitations that grant a specific role
-- **Teams** - show invitations that add members to a specific team
+Filter by status, role, or team. The Quota column shows people accepted against the limit, such as `2 / 5`, or `2 / Unlimited`. To see the people who joined, open the [Users page]({{< ref "cloud/guides/organizations/managing-users/index.md" >}}).
 
-From the table you can perform the following management actions on each invitation:
+| To | Do this | Effect |
+| --- | --- | --- |
+| Stop new acceptances temporarily | Set status to disabled | The link stops working for new people at once. Re-enable it later. |
+| Stop new acceptances for good | Delete the invitation | The link fails. The delete has no confirmation step. |
+| Change who can accept or what they receive | Edit the invitation | Applies to future acceptances only. |
+| Remove someone who already accepted | [Remove the person]({{< ref "cloud/guides/organizations/managing-users/index.md#remove-a-user-from-an-organization" >}}) | Disabling or deleting an invitation never removes people who accepted. |
 
-* **Copy Link**: Click the copy icon next to the invitation URL to copy it for sharing.
-* **Edit Invitation**: Click the pencil icon to open the edit dialog and modify any invitation properties.
-* **Delete Invitation**: Click the trash icon to permanently remove the invitation. This action cannot be undone.
+If another administrator deletes an invitation while your edit dialog is open, saving reports that the invitation was not found. Reload the table to see the current list. An expiry date stops new people only; it does not remove anyone.
 
-If another administrator deletes an invitation while your edit dialog is open, saving reports that the invitation was not found rather than reporting success. Close the dialog and reload the invitations table to see the current list. Whenever an edit cannot be saved, the dialog reports the specific reason it was refused.
+## What happens when someone accepts
 
-### Tracking who has accepted an invitation
+The link is `<your Layer5 Cloud address>/invitations/<id>/accept`. Anyone holding it can try to accept, and eligibility is decided at that moment.
 
-The **Quota** column in the invitations table always shows the number of users who have accepted an invitation alongside the configured limit - for example, `2 / 5` if a quota is set, or `2 / Unlimited` if no quota is configured. This lets you monitor uptake at a glance.
+1. **Invitation exists.** A deleted invitation cannot be accepted.
+2. **Status is enabled.**
+3. **Not expired.**
+4. **Quota available.** A person who already accepted is also refused once the quota is full.
+5. **Address allowed.** The signed-in person's email matches an entry, or the list is empty.
+6. **Account verified.** For a direct membership invitation, an account whose email address is not yet verified is not placed. The invitation applies at the person's first verified sign-in.
 
-To see the individual users who are now members of the organization, navigate to the [User Management]({{< ref "cloud/guides/organizations/managing-users/index.md" >}}) page. Members who joined via invitation appear there alongside their assigned roles.
+The first failing check stops the acceptance and nothing is written. The person sees `The invitation cannot be applied to this user` with one of these reasons:
 
-### What happens when a user accepts an invitation
+| Reason shown | Cause |
+| --- | --- |
+| `invitation no longer exists` | Deleted. |
+| `invitation is not enabled` | Disabled. |
+| `invitation has expired` | Past its expiry. |
+| `invitation has reached its quota` | Quota full. |
+| `email is not on the invitation's allowlist` | Address does not match. |
+| `account email address is not verified yet` | Verify the email, then sign in again. |
 
-When a user clicks an acceptance link and is logged in, the system performs the following steps in order. Steps 3 to 5 describe a `direct_membership` invitation, the default; a `child_organization` invitation replaces them, as described after the list.
+A `child_organization` invitation is not held for email verification; see below.
 
-1. **Validates the invitation** - confirms it exists, is `enabled`, has not passed its expiration date, and has not exceeded its quota.
-2. **Checks email eligibility** - verifies the user's email matches the invitation's `emails` list. An empty list allows any email (public invitation).
-3. **Adds the user to the organization** - the user immediately becomes a member of the organization that owns the invitation.
-4. **Assigns roles** - all roles configured on the invitation are assigned to the user in that organization. If no roles are configured, the user joins with no role.
-5. **Adds the user to teams** - the user is added to all teams configured on the invitation.
+When the person is eligible, in order:
 
-For a `direct_membership` invitation, role and team assignment failures are non-blocking: the user is still added to the organization even if an individual role or team assignment fails.
+1. They are added to the organization, once.
+2. Each listed role they lack is assigned.
+3. Each listed team they are not in is joined.
+4. They are recorded as accepted, which counts against the quota.
 
-For a `child_organization` invitation, the user is not added to the inviting organization. Instead, a child organization is created for them with the invitation's roles and teams applied inside it, as described in [Choosing what accepting an invitation does](#choosing-what-accepting-an-invitation-does). That acceptance is all or nothing: if any part of it fails, including a single role or team, nothing is created and the acceptance is not counted against the quota.
+Assignments are additive. An existing member keeps what they have, gains any listed roles and teams they lack, and loses nothing.
+
+Role and team failures do not block membership. If a role or team step fails, the person is already in the organization, but the page shows an **Error Accepting Invitation** message with the probable cause and remediation, and offers **Retry** and **Go to dashboard**. Retrying is safe: it does not duplicate the membership or the acceptance. A stored team that has left the organization is skipped and recorded on the acceptance event, and the acceptance still succeeds.
+
+Each acceptance writes one event, `<email> accepted invitation "<name>"`. Creating, editing, and deleting invitations write no dedicated event.
+
+### Accepting by situation
+
+- **New person, no account:** opening the link while signed out saves the invitation in a 30-minute cookie and sends the person to registration for your organization. After sign-up and sign-in, the invitation is accepted, the organization is selected, and the person lands on the dashboard. If the cookie lapses, they reopen the link.
+- **Existing account, not a member:** the same flow, but the person signs in instead of registering. The signed-out redirect goes to the registration page, so they navigate to sign-in from there. The cookie survives.
+- **Existing member:** no duplicate membership. Missing listed roles and teams are added. The acceptance still counts against the quota, and a full quota refuses them even though they are already a member.
+- **A revoked or invalid link:** the accept page loads and shows the refusal reason, rather than a not-found page.
 
 ### Choosing what accepting an invitation does
 
-Every invitation has an `acceptanceOutcome` that decides where the accepting user ends up.
-
-In the **Create New Invitation** and **Edit Invitation** dialogs, choose it under **When accepted**. **Direct membership** is selected by default. **Child organization** appears only if you have the **Create Organization** permission in the current organization. If you lack that permission and edit an invitation that already uses Child organization, the option is shown selected but cannot be changed.
+Every invitation has an `acceptanceOutcome` that decides where the accepting person ends up. In the create and edit dialogs it is the **When accepted** choice. **Direct membership** is the default. **Child organization** appears only if you have the **Create Organization** permission in the current organization. If you lack it and edit an invitation that already uses Child organization, the choice is shown selected but cannot be changed.
 
 <img src="./images/acceptance-outcome.png" alt="When accepted picker in the Create New Invitation dialog" style="width:50%; height:auto;" />
 
 | `acceptanceOutcome` | Result of accepting |
 | :--- | :--- |
-| `direct_membership` (default) | The user joins the inviting organization with the invitation's roles and teams, as described above. |
-| `child_organization` | A new organization named **My Organization** is created as a child of the inviting organization. The user is its owner and Organization Admin, it gets the standard **My Team** and **My Workspace**, the invitation's roles are granted in it, and teams with the same names and descriptions as the invitation's teams are created in it with the user as a member. The user does not become a member of the inviting organization, and the inviting organization's own teams are unchanged. |
+| `direct_membership` (default) | The person joins the inviting organization with the invitation's roles and teams. Role and team failures do not undo the membership. |
+| `child_organization` | A new organization named **My Organization** is created as a child of the inviting organization. The person is its owner and Organization Admin, it gets the standard **My Team** and **My Workspace**, the invitation's roles are granted in it, and teams with the same names and descriptions as the invitation's teams are created in it with the person as a member. The person does not become a member of the inviting organization, and the inviting organization's own teams are unchanged. The acceptance is all or nothing: if any part fails, nothing is created and the quota is not used. |
 
-A few things hold for both outcomes:
+For both outcomes:
 
-- Every team listed on an invitation must belong to the inviting organization. An invitation that lists another organization's team is refused when it is created, edited, or accepted.
-- Accepting is counted once per person. Accepting the same invitation again does not create a second child organization or use more of the quota.
-- When someone creates a new account through your organization's open signup invitation, they do not also receive a separate personal organization; the invitation decides where they land. If the invitation turns out not to apply (for example, its quota is used up), a personal organization is created for them as usual.
+- Every team on an invitation must belong to the inviting organization. An invitation listing another organization's team is refused when it is created or edited.
+- Acceptance counts once per person. Accepting again creates no second child organization and uses no more quota.
+- A person who creates a new account through your open sign-up invitation does not also receive a separate personal organization; the invitation decides where they land. If the invitation turns out not to apply, such as when its quota is used up, a personal organization is created as usual.
 
-### How the open signup invitation is applied at sign-in
+#### Branding of a child organization
 
-The open signup invitation is not limited to first-time registration. It is applied whenever someone signs in through your organization's own address, such as its custom domain, on every sign-in method that address offers, including email and password as well as social sign-in. Someone who already has a Layer5 Cloud account and has never been a member of your organization becomes a member on that sign-in, with the roles and teams the invitation configures. When the open signup invitation is a `child_organization` invitation, that person instead receives their own child organization beneath yours, as described in [Choosing what accepting an invitation does](#choosing-what-accepting-an-invitation-does).
+A child organization created through a `child_organization` invitation starts with your organization's branding by default. The invitation's `childOrganizationBranding`, shown in the invitation dialogs as **Child organization branding**, can change that. It is ignored for `direct_membership`.
 
-It is applied only to people who are not already members, which has two consequences worth knowing:
+| `childOrganizationBranding` | The child organization starts with |
+| :--- | :--- |
+| `parent` (default) | A copy of your organization's branding: theme (logos and colors), sign-in page branding, links (including social profiles), and the sign-in page carousel setting. |
+| `provider` | A copy of the platform provider's branding. |
+| `none` | No branding of its own. |
 
-- **Roles and teams are never re-applied to an existing member.** If you remove a role or a team from someone who joined this way, signing in again does not restore it.
-- **Each person is counted once.** Repeated sign-ins by the same person do not increase the invitation's acceptance count or add them to the organization a second time.
+The copy is taken once, when the child organization is created. Later changes to your branding are not carried over, and changes the child organization's admins make do not affect yours. Organizations created directly, not through an invitation, are unaffected.
 
-{{< alert type="warning" title="When open signup adds nobody" >}}
-A person can sign in successfully and still not join your organization. The open signup invitation is applied only when all of the following hold:
+#### Email verification
+
+Someone who signs up with email and password through your open signup invitation must verify their email address before a `direct_membership` invitation adds them to your organization. Until then they are not a member, and they cannot sign in. They join on their first sign-in after verifying. A `child_organization` invitation does not wait: the new account's own child organization is created at sign-up, because it gives the person nothing of yours beyond a place beneath you. Either way the account becomes active once the address is verified.
+
+## The open sign-up invitation
+
+The open sign-up invitation is the one that admits people who sign in through your organization's own address, such as a custom domain. You designate it in either of two places:
+
+- The **Open Org Invitation** selection when you edit the organization. Writing it needs Organization Admin in the organization or in its parent.
+- The `isDefault` property on the invitation. Setting or clearing it needs Manage Invitations.
+
+The edit-organization selection wins when it names an invitation that exists in the same organization. A selection that points at a deleted invitation, or at another organization's invitation, is ignored and the `isDefault` invitation is used. Releasing the mark on the invitation that the selection names, or deleting that invitation, clears the selection. With neither a selection nor a mark, nobody joins.
+
+### How it is applied at sign-in
+
+It is applied whenever someone signs in through your organization's address, on every sign-in method the address offers, including email and password and social sign-in. A person who has an account and has never been a member becomes one on that sign-in, with the roles and teams the invitation grants. When it is a `child_organization` invitation, the person instead receives their own child organization.
+
+It applies only to people who are not already members:
+
+- **Roles and teams are never re-applied.** If you remove a role or team from someone who joined this way, signing in again does not restore it.
+- **Each person counts once.** Repeated sign-ins do not raise the acceptance count.
+
+{{< alert type="warning" title="When open sign-up adds nobody" >}}
+A person can sign in successfully and still not join. The open sign-up invitation applies only when all of these hold:
 
 - Its status is `enabled`.
-- Its expiration date has not passed.
-- Its quota has not been reached.
-- The person's email address matches its `emails` list. An empty list matches everyone.
+- Its expiry has not passed.
+- Its quota is not reached.
+- The person's email matches its `emails` list, or the list is empty.
+- For a direct membership invitation, the person's email address is verified.
 
-When one of them does not hold, someone who is not already a member signs in as a platform user with no membership and no roles in your organization, and no error is shown to them. Existing members are unaffected: they keep the membership, roles, and teams they already have. Check these four properties first when people who sign in at your organization's address are not appearing under [User Management]({{< ref "cloud/guides/organizations/managing-users/index.md" >}}).
+When one fails, a non-member signs in as a platform user with no membership and no roles in your organization, and sees no error. Existing members are unaffected. Check these properties first when people who sign in at your address are missing from the [Users page]({{< ref "cloud/guides/organizations/managing-users/index.md" >}}).
 {{< /alert >}}
 
-### Use cases and examples
+## Invite one person directly
 
-The invitation system offers flexible configurations to fit a variety of use cases.
+**Needs:** Invite User to Organization.
 
-{{< alert type="info" title="How invitation links handle unauthenticated users" >}}
-When a user who is not logged in clicks an invitation link, the system saves the invitation ID in a short-lived 30-minute cookie and redirects them to the organization's registration page. After a successful login or signup, the system reads the cookie and automatically completes the invitation acceptance with the outcome the invitation's `acceptanceOutcome` selects: membership in the organization with the configured roles and teams, or a new child organization.
-{{< /alert >}}
+Use the direct invite to bring in one person who has no account. You supply an email address, optional first and last name, and optionally the organization roles and teams the person should have.
 
-#### Scenario 1: Inviting a single team member
+Unlike an invitation, the direct invite acts before the person does anything:
 
-- **Goal**: Provide a new employee with a secure, single-use invitation that grants the correct initial permissions.
-- **Configuration**:
-  - Email: Set to the new member's specific email address.
-  - Roles: Assign their specific role (e.g., `Developer`).
-  - Teams: Add them directly to their project team (e.g., `Frontend-Team`).
-  - Quota: Set to `1` to ensure the link is only used once.
+- Layer5 Cloud creates a Pending account, adds it to the organization and the listed teams, and sends an email with a sign-up link already filled in with the name, email, and organization.
+- The email is always sent. There is no quota, expiry, or acceptance step, and no invitation record to disable.
+- Roles are applied right after the email is sent, under the rules in [Change a member's roles]({{< ref "cloud/guides/organizations/managing-users/index.md#change-a-members-roles" >}}). A role you may not grant is skipped with an `unauthorized to assign` message.
+- If the address already has an account, the invite is refused with `User with email '<email>' already exists`. Add that person as an existing user instead.
 
-#### Scenario 2: Opening registration for an entire organization
+## Examples
 
-- **Goal**: Allow all employees from your company to join using their corporate email without individual invitations.
-- **Configuration**:
-  - Email: Use a domain pattern to cover all employees (e.g., `@yourcompany.com`).
-  - Roles: Assign a default role for all new members.
+| Goal | Audience | Grants | Limits |
+| --- | --- | --- | --- |
+| Onboard one new employee | Their exact address | Their role and project team | Quota 1 |
+| Open registration to a company | `@yourcompany.com` | A default role | Optional expiry |
+| Run a community challenge | Empty (public) | A temporary role such as Academy Learner | Expiry at close of registration, quota at the participant cap |
+| Give a partner temporary access | `@partner.com` | One shared project team only | Expiry at project end |
 
-#### Scenario 3: Launching a community challenge
-
-- **Goal**: Create a public signup link for a limited-time community event with a maximum number of participants.
-- **Configuration**:
-  - Email: Leave blank for public access.
-  - Name: Give it a clear name like "Layer5 Challenge 2025".
-  - Expiration date: Set to the date and time the challenge registration closes.
-  - Quota: Set to the maximum number of participants (e.g., `100`).
-  - Roles: Assign a temporary role like `Learner`.
-
-{{< alert type="info" title="Managing learner costs" >}}
-The available seats for learners are determined by your organization's subscription plan. Please be mindful of your subscription to manage costs effectively.
-{{< /alert >}}
-
-#### Scenario 4: Granting temporary partner access
-
-- **Goal**: Give an external partner secure access to specific resources only for the duration of a project.
-- **Configuration**:
-  - Email: Use the partner's domain (e.g., `@partner.com`).
-  - Teams: Add them only to a shared project team (e.g., `Project-X-Shared`).
-  - Expiration date: Set to the project's end date to prevent new signups after the project concludes.
-  - Description: Add a note for internal reference, such as "Temporary access for Project X contractors".
-
-{{< alert type="warning" title="Expiration does not remove existing members" >}}
-Setting an expiration date prevents new users from using the invitation link after that date. It does not automatically remove partners who have already joined. When the project ends, manually remove those users from the organization or team.
-{{< /alert >}}
-
-{{< alert type="warning" title="Public invitations" >}}
-Public links can be forwarded broadly. Always set an expiration date and a quota to limit unintended signups.
-{{< /alert >}}
+For learner programs, the seats available depend on your subscription plan. See [how the billable user count works]({{< ref "cloud/guides/account/managing-subscriptions.md#how-the-billable-user-count-works" >}}). Expiry stops new signups only. When a project ends, [remove the people]({{< ref "cloud/guides/organizations/managing-users/index.md#remove-a-user-from-an-organization" >}}) who joined through it.

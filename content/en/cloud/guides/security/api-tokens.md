@@ -13,7 +13,7 @@ An API token lets a script, a CI job, or a Meshery client act as your user accou
 
 ## Before you start
 
-- You need the **Create Token** permission to create a token in the interface. Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.
+- You need the **Create Token** permission to create a token in the interface. User, Team Admin, Workspace Admin, Organization Admin and Provider Admin hold it by default. A user without it sees the create control disabled.
 - You need **View Tokens** to open the Tokens tab. Every default user role holds it.
 - Decide which consumer gets this token. Create one token per consumer so you can revoke one without breaking the others.
 
@@ -53,6 +53,19 @@ The token authenticates you, not an organization. It reaches every organization 
 What the token can do equals what you can do in that organization. If your role changes, the token's reach changes on the next request.
 
 For GitHub Actions, store the token as a repository secret. See [Use GitHub Actions]({{< ref "cloud/guides/integrations/github-actions/_index.md" >}}).
+
+## List your tokens over the API
+
+A script can list the tokens your account holds, for example to find old ones before rotating:
+
+```bash
+curl -H "Authorization: Bearer <token>" \
+  "https://cloud.layer5.io/api/identity/tokens?purpose=ci-snapshots"
+```
+
+The answer lists each token's ID, name, purpose, and creation date, never its value. `purpose` keeps only tokens created with exactly that purpose, matched case-sensitively. Leave it out to list every token. `search` matches part of a name or purpose. The list holds API tokens unless you send `isOauth=true`, which lists sign-in sessions instead.
+
+Desktop clients that sign in through Layer5 Cloud create their token with the client's name as its purpose, so the same filter lists the tokens a client created for itself.
 
 ## Rotate a token
 

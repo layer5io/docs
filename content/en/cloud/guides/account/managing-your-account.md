@@ -101,9 +101,18 @@ Teams you own follow the same rule, with Team Admin in place of Organization Adm
 
 An organization that is the parent of another live organization is never deleted this way, because child organizations are never deleted or moved along with their parent. If such an organization has nobody else in it, it keeps you as its owner and the audit trail records why. Your account is still deleted.
 
+### When deletion is refused
+
+Because organizations you own are handed on first, a refusal is rare. Layer5 Cloud refuses the deletion, and changes nothing, when you hold credentials designated to an organization you do not own and that organization has no live owner or Organization Admin to receive them. The message begins "Refusing to delete your account" and names the organization. Without a successor, those credentials would be orphaned.
+
+Resolve it, then retry:
+
+- Ask that organization's members to promote someone to Organization Admin.
+- Or release the credentials from the organization, or delete them.
+
 ### Signing up again
 
-Signing up again with the same email address creates a new, empty account with its own personal organization. It inherits nothing from the deleted one: no profile, preferences, memberships, roles, or ownership, and no linked sign-in providers. An account is identified by its account ID, not by its email address, so the deleted account cannot be restored this way. To regain access to an organization, ask one of its administrators to invite you again.
+Signing up again with the same email address, by email and password or with GitHub or Google, on Layer5 Cloud or on an organization's custom domain, creates a new, empty account with a new account ID and its own personal organization (or the placement an organization's open invitation gives any new account). It inherits nothing from the deleted one: no profile, preferences, memberships, roles, or ownership, and no linked sign-in providers. An account is identified by its account ID, not by its email address, so the deleted account cannot be restored this way. To regain access to an organization, ask one of its administrators to invite you again.
 
 ## See also
 
