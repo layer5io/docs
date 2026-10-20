@@ -358,3 +358,7 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 This is the final element on the page and there should be no margin below this.
 ``` -->
 
+## Current behavior
+
+Undeploy needs Undeploy Design. It is disabled on an empty design. Selecting no context targets all connected clusters. The dialog title is `Undeploy design "<name>"`. You can dry-run an undeploy first. kanvas.new does not undeploy. If every component fails an undeploy dry run, the objects are not on the cluster.
+

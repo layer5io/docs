@@ -78,3 +78,7 @@ To resolve this, ensure that all necessary dependencies, such as CRDs, are deplo
 
 ![Missing Dependencies Error](images/dry-running-designs/missing-resource.png)
 
+## Current behavior
+
+A dry run checks the design against the target cluster and applies nothing. The same Validate Design permission gates it. It is disabled on an empty design. On kanvas.new it opens a self-hosted-feature prompt. The dialog title is `Dryrun design "<name>"`. Dry-run errors attach to components the same way schema errors do. `meshery-server-1096` means no selected context resolved to a connected cluster. You can dry-run an undeploy. If every component fails an undeploy dry run, the objects are not on the cluster.
+

@@ -64,3 +64,7 @@ The Log Streamer utilizes a robust architecture where the **Meshery Operator** s
 
 ![log-stream-sequence-diagram](images/log-stream-sequence-diagram.svg)
 
+## Current behavior
+
+The action is **Initiate Log Session**, offered on Pod and Container resources only. A pod opens one combined tab. Each line is prefixed with `[<pod>:<container>]`. Each container starts with its last 1,000 lines, with RFC 3339 timestamps. The browser keeps the last 10,000 lines per tab. Search highlights matches and does not hide other lines. There is no Clear, Copy-all, or Download control. The trash icon stops the stream. Closing the panel only hides it. The Kanvas interface does not check a permission before it streams logs.
+

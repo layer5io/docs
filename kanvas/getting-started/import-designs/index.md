@@ -200,7 +200,7 @@ Kanvas supports a diverse set of infrastructure types and packaging formats. The
 <li><strong>Supported Packaging Formats:</strong>
 <ul>
 <li><strong>Chart Archive (<code>.tgz</code>, <code>.tar</code>, or <code>.tar.gz</code>):</strong> The standard gzipped tarball format for distributing Helm charts.</li>
-<li><strong>OCI Artifact:</strong> A modern packaging standard. When exported as a file for upload, this can be imported via an <code>oci://</code> URI from a container registry.</li>
+<li><strong>OCI image archive:</strong> A <code>.tar</code>, <code>.tgz</code>, <code>.tar.gz</code>, or <code>.zip</code> whose layers contain a Meshery design file. Only the first design in the archive is taken. An archive with no design file fails. An <code>oci://</code> reference, a Helm repository URL, a git clone URL, a directory, and pasted text are not import sources. An uncompressed <code>.tar</code> Helm chart is reported as needing gzip. Values overrides are not an import option. Individual chart files such as <code>Chart.yaml</code> cannot be imported.</li>
 </ul>
 </li>
 </ul>
@@ -210,7 +210,7 @@ Kanvas supports a diverse set of infrastructure types and packaging formats. The
         id="tabs-03-02" role="tabpanel" aria-labelled-by="tabs-03-02-tab" tabindex="3">
         <p>This import method provides a convenient bridge for developers looking to migrate their applications from a local Docker-based environment to Kubernetes. Kanvas will parse your <code>docker-compose.yaml</code> file and automatically translate your services into their equivalent Kubernetes resources.</p>
 <ul>
-<li><strong>Supported Packaging Formats:</strong> A standard <code>.yaml</code> or <code>.yml</code> file. For best compatibility, ensure your Compose file includes a <code>version</code> key (e.g., <code>version: '3.8'</code>) at the top level.</li>
+<li><strong>Supported Packaging Formats:</strong> A standard <code>.yaml</code> or <code>.yml</code> file. Compose services are converted to Kubernetes resources, so the design contains Kubernetes components. A <code>version</code> key is not required.</li>
 </ul>
 
     </div>
@@ -241,13 +241,13 @@ Each supported file will be imported as a separate, new design. For example, if 
 <details>
   <summary>What happens if I select multiple files in the File Upload dialog?</summary>
   
-The "File Upload" dialog is designed to process one file or package at a time. If you select multiple files in your operating system's file browser, only the last file in the selection will be processed for import. To import from multiple files, please import them individually.
+The "File Upload" dialog processes one file at a time. Dropping several files on the canvas imports each as a separate design.
 </details>
 
 <details>
   <summary>After importing a file, can I download my original, unaltered file?</summary>
   
-No. When a file is imported, it is converted into a native Design. The original source file is not stored and cannot be downloaded later. The export function will generate a new file based on the **current** state of your design.
+A File Upload or URL Import does not keep the original file, so exporting later produces a new file from the current design. A GitHub import is different: each file becomes a private design named after the file. The design records the repository and file path it came from, and the imported file itself is stored with the design. GitHub imports read each file from the repository's default branch. The stored file is not offered for download, so exporting still produces a new file from the current design. Re-importing, refreshing, and viewing that source are covered in [Connect GitHub](/cloud/getting-started/github-integration/). Invalid files in a GitHub selection are reported per path and do not stop valid files from importing.
 > For more details, see the [Exporting Designs](/kanvas/designer/export-designs/) guide.
 
 </details>
@@ -283,8 +283,12 @@ What you do not get on either route is the persistent, repository-wide connectio
 <details>
   <summary>Is there a file size limit for imported designs?</summary>
   
-There is no strict limit on the file size itself (e.g., in MB). However, there are limits on the number of **components** a design can contain, which is determined by your current subscription plan. Free accounts are limited to 100 components.
+The import dialog has no client-side size limit on a local file. A URL import is limited to a 16 MiB body, 5 redirects, 10 seconds to connect, and 30 seconds for the request. Only http and https are allowed, checked again on every redirect. Destinations that resolve to loopback, private, or link-local addresses are refused.
 
-If you attempt to import a design that contains more components than your plan allows, the import will fail with a message stating that the component limit has been exceeded.
+The components-per-design plan limit applies to URL imports and to every save: Personal 100, Team Designer 200, Team Operator 100, Enterprise 300. GitHub imports are not checked at import time. They are checked the first time the design is saved. Every failed import shows the same message, `Failed to import design "<name>"`. Nothing is saved when the server rejects the file. A failed merge shows `Failed to merge design: <reason>`.
+
+Images and `.txt` files dropped on the canvas become canvas objects, not designs, and files over 500 KB are rejected whatever your plan. Archive types RAR and 7Z pass the drop check but fail at import. Other file types are ignored without a message.
+
+The imported design is owned by you, placed in your selected workspace, public, at version 0.0.1, and records its detected source type. GitHub imports are the exception and are private. The import dialog takes a name of 1 to 255 characters, default "Untitled Design". Names are not required to be unique. If you leave the name empty, Kanvas uses the name inside the file, and drops use the file name. Import is hidden in Operator mode.
 > Learn more about [plans](https://layer5.io/pricing).
 </details>

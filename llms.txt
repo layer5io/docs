@@ -8,83 +8,118 @@
 - [Layer5 Helm Repository](/charts/index.md): Layer5 Helm Repository contains a collection of charts, including Layer5 Cloud, which can be deployed in any Kubernetes cluster on-premises or in Cloud using Helm.
 
 ## Kanvas Documentation
-- [Kanvas Documentation](/kanvas/index.md): Kanvas is a visual, collaborative tool for designing, validating, deploying, and operating Kubernetes and cloud infrastructure.
+- [Kanvas Documentation](/kanvas/index.md): Kanvas delivers a collaborative experience for engineers similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling.
 
-- [Collaborative Editing](/kanvas/tutorials/collaborative-editing/index.md): Work on one Kanvas design with a teammate in real time, from saving and sharing it to resolving a review thread.
-- [Add and Configure Components](/kanvas/guides/designing/configuring-components/index.md): Find and place components on the canvas, edit their configuration with the form Kanvas builds from the component definition, and lock, duplicate, copy, and paste them.
-- [Create Your First Design](/kanvas/getting-started/starting-scratch/index.md): Build a small web application design from an empty canvas, connect its components through relationships, and save it, while learning how Kanvas models and stores designs.
-- [Designs and Components](/kanvas/concepts/designs/index.md): What a Kanvas design is, how it is saved, versioned, and shared, what components are, and how a design maps to the resources it deploys.
-- [Explore Pods](/kanvas/tutorials/kubernetes/kubernetes-pods/index.md): Design, deploy, expose, and inspect a standalone NGINX Pod to learn how a Kanvas component becomes a running Kubernetes object.
-- [Feature Availability by Plan](/kanvas/reference/feature-availability/index.md): Which Kanvas capabilities each Layer5 plan includes, and the role, provider, and hosting conditions that also decide whether a capability is available to you.
-- [Import and Merge Designs](/kanvas/guides/designs/import-designs/index.md): Bring Kubernetes manifests, Helm charts, Docker Compose files, Kustomize projects, and Meshery designs into Kanvas, and merge one design into another.
-- [Open an Interactive Terminal](/kanvas/guides/operating/interactive-terminal/index.md): Open shell sessions into the containers of a running pod from the Operator canvas, and know what the terminal can and cannot do.
-- [Share a Design](/kanvas/guides/collaborating/sharing-designs/index.md): Give specific people access to a design, set its visibility, share a link, and revoke access. Covers who can share, what a grant allows, and what fails.
-- [Validate a Design](/kanvas/guides/deploying/validating-designs/index.md): Check every component's configuration against its schema before you deploy, read the results, and fix what they flag.
-- [Visualize Pull Requests with Kanvas Snapshot](/kanvas/guides/snapshots/kanvas-snapshot/index.md): Post a rendered snapshot of your infrastructure files as a comment on every GitHub pull request, using the Layer5 GitHub App or your own workflow.
-- [Create Relationships](/kanvas/guides/designing/creating-relationships/index.md): Connect components with edges, nest them in parents, and remove or hide relationships. Covers which relationships you draw and which Kanvas forms for you.
-- [Share a Design Across Organizations](/kanvas/tutorials/stellar-saas-platform/index.md): Grant a reviewer in another organization access to a private design, run the review in comments, and revoke access when the review ends.
-- [Deploy and Observe Your First Design](/kanvas/getting-started/design-to-deployment/index.md): Validate and dry-run your first design, deploy it to a Kubernetes cluster, find its running resources in Operator mode, and undeploy it.
-- [Dry-run a Design](/kanvas/guides/deploying/dry-running-a-design/index.md): Preview what a deployment would do by having each target cluster's Kubernetes API check your design without applying it.
-- [Explore Deployments](/kanvas/tutorials/kubernetes/kubernetes-deployments/index.md): Build a replicated NGINX Deployment in Kanvas, scale it, roll it to a new image, and watch the ReplicaSets and Pods it manages in Operator.
-- [Permissions by Role](/kanvas/reference/permissions/index.md): Which Kanvas actions are checked against a permission, which default role grants each permission, what anonymous users can do, and which actions are limited by mode and ownership instead.
-- [Relationships](/kanvas/concepts/relationships/index.md): What relationships are, the kinds Kanvas draws and evaluates, how each one forms, and how relationships keep component configuration consistent.
-- [Review a Design with Comments](/kanvas/guides/collaborating/reviewing-designs/index.md): Leave threaded comments on a design, mention collaborators, resolve and reopen threads, and control who gets emailed.
-- [Save Designs](/kanvas/guides/designs/saving-designs/index.md): How Kanvas saves a design automatically, what the save indicator reports, how to save a copy, and what happens when a save fails.
-- [Snapshot a Helm Chart](/kanvas/guides/snapshots/helm-kanvas-snapshot/index.md): Generate a rendered image of a Helm chart from the command line with the Kanvas Snapshot Helm plugin, and receive it by URL or email.
-- [Stream Container Logs](/kanvas/guides/operating/log-streaming/index.md): Live-tail the logs of a pod or container from the Operator canvas, search the stream, and know its limits.
-- [Build a GCP Data Pipeline Design](/kanvas/tutorials/data-pipeline-gcp/index.md): Model a Google Cloud data pipeline as a Kanvas design, organize it by architectural layer, validate it, and share it for review.
-- [Canvas Objects](/kanvas/reference/canvas-objects/index.md): Reference for every object on the Designer canvas - components, shapes, sections, textboxes, images and edges - covering how each is added, what you can do to it, its style options, defaults and limits.
-- [Clone a Design](/kanvas/guides/designs/cloning-a-design/index.md): Copy a public or published design into your own workspace to use as a template, and learn what carries over.
-- [Deploy a Design](/kanvas/guides/deploying/deploying-designs/index.md): Apply a design to one or more Kubernetes clusters, and understand targets, ordering, dependencies, results, and failure behavior.
-- [Explore Services](/kanvas/tutorials/kubernetes/kubernetes-services/index.md): Expose a Deployment and two Pods with ClusterIP, NodePort, and LoadBalancer Services in Kanvas and see what each Service type gives you in a live cluster.
-- [Policy Evaluation](/kanvas/concepts/relationship-evaluation/index.md): How Kanvas evaluates the relationships in a design continuously, which engine runs the evaluation, what triggers it, and why results can change after you stop editing.
-- [Run a Performance Test](/kanvas/guides/operating/performance-testing/index.md): Generate load against a Service or Ingress from the Operator canvas using a performance profile, and read the results.
-- [Whiteboard on the Canvas](/kanvas/guides/designing/whiteboarding/index.md): Sketch freehand, draw annotation lines, and add shapes, text, sections, images, and comments alongside real components.
-- [Use ConfigMaps and Secrets](/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/index.md): Inject configuration from a ConfigMap and a credential from a Secret into a MySQL Pod, as environment variables and as mounted files, and verify each binding in the running container.
-- [Deploy AWS EC2 Instances](/kanvas/tutorials/deploy-aws-ec2-instances-with-meshery/index.md): Deploy an AWS EC2 controller, a VPC network, and EC2 instances from three catalog designs to learn how Kubernetes custom resources manage real AWS infrastructure.
-- [Designer](/kanvas/concepts/designer/index.md): How Designer mode turns a shared design document into an editable canvas, what it gates by mode and by permission, and how changes save and sync.
-- [Export Designs](/kanvas/guides/designs/export-designs/index.md): Export a design as a design file, an OCI image, a Kubernetes manifest, a Helm chart, or an embeddable script, and know what each format keeps.
-- [Pin Models to the Dock](/kanvas/guides/designing/pin-model-to-dock/index.md): Keep the models you use most one step away in the dock, and remove them when you no longer need them.
-- [Tool Modes](/kanvas/reference/tool-modes/index.md): Reference for the Designer tool modes - Select, Pan, Pencil and Pen - covering how to enter and leave each, what the mouse does in each, and how wheel and zoom controls behave.
-- [Undeploy a Design](/kanvas/guides/deploying/undeploying-designs/index.md): Remove the resources a design describes from your clusters, and understand exactly what is and is not deleted.
-- [Canvas Actions](/kanvas/reference/canvas-actions/index.md): Reference for the Designer canvas menu - undo and redo, paste, select all, reset, screenshot, options, shortcuts and the Help Center - with the mode in which each action is available.
-- [Schedule Work with CronJobs](/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/index.md): Design a CronJob, deploy it, watch the Jobs and Pods it creates on schedule, change the schedule and redeploy, and clean up.
-- [Deploy Azure Resources](/kanvas/tutorials/deploy-azure-resources-with-meshery/index.md): Install Azure Service Operator in your own cluster from a catalog design, then design and deploy an Azure resource group and storage account in Kanvas.
-- [Embed Designs](/kanvas/guides/designs/embedding-designs/index.md): Show a design on a web page, blog, or documentation site with an exported JavaScript snapshot, including WordPress, React, and Hugo.
-- [Operator](/kanvas/concepts/operator/index.md): How Operator mode shows your clusters, where its data comes from, what it filters and caps, and how terminal and log sessions reach your containers.
-- [Work with Tags](/kanvas/guides/designing/tagsets/index.md): Add labels and annotations to components and see components that share labels grouped into TagSets on the canvas.
-- [Collaboration Model](/kanvas/concepts/collaboration/index.md): How live co-editing, design access, and comments work together in Kanvas, and what each layer does and does not control.
-- [Layout and Layers](/kanvas/reference/layout-and-layers/index.md): Reference for the six automatic layouts and the Layers panel - what each layout produces, when Kanvas lays a design out on its own, and what each layer toggle hides.
-- [Deploy a PHP Guestbook with Redis](/kanvas/tutorials/kubernetes/deploy-php-redis/index.md): Combine six Kubernetes manifests into one Kanvas design, deploy a three-tier guestbook, and learn how Services wire tiers together by label and by name.
-- [Publish Designs](/kanvas/guides/designs/publishing-designs/index.md): Publish a design to the Layer5 Cloud catalog, understand request and approval states, unpublish it, and ship it to Artifact Hub yourself.
-- [Component Badges](/kanvas/reference/component-badges/index.md): Reference for every badge Kanvas draws on a component - what it means, where it sits, when it appears, what a click does and how to hide it - in Designer and Operator modes.
-- [Delete a Design](/kanvas/guides/designs/deleting-a-design/index.md): Permanently delete a design you own, and understand what deletion does and does not affect.
-- [Render Modes](/kanvas/concepts/render-modes/index.md): How render modes trade visual detail for canvas speed, how Adaptive mode moves between them, and how render mode interacts with size gates, Layers, Designer, and Operator.
-- [Deploy WordPress and MySQL with Persistent Volumes](/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/index.md): Build a stateful two-tier application in Kanvas with a Secret and PersistentVolumes, deploy it, and learn what persists, where, and what Undeploy leaves behind.
-- [Deploy Cassandra with a StatefulSet](/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/index.md): Deploy a three-node Apache Cassandra ring from Kanvas and learn how a StatefulSet and a headless Service give each replica a stable name, a stable volume, and an ordered start.
-- [How Kanvas Works with Meshery and Layer5 Cloud](/kanvas/concepts/architecture/index.md): How Kanvas runs inside Meshery, where designs are stored, what talks to your clusters, and what differs between kanvas.new and self-hosted Meshery.
-- [Keyboard Shortcuts](/kanvas/reference/keyboard-shortcuts/index.md): Complete list of Kanvas keyboard shortcuts for Windows, Linux and macOS, with the mode each one works in.
-- [Kubernetes Request Flow](/kanvas/concepts/kubernetes-request-flow/index.md): How a request travels from a client through Ingress or a Service to a Pod and its containers, why labels and selectors hold the path together, how the path maps to a Kanvas design, and how to debug it layer by layer.
-- [Operator Views](/kanvas/reference/views/index.md): What an Operator view stores, how views are saved, shared, opened, exported, and deleted, and who can do what.
-- [Troubleshoot Kanvas](/kanvas/guides/troubleshooting/index.md): Find the symptom you see, learn what causes it, and apply the fix. Covers loading failures, missing cluster data, and failed deployments.
-- [Resource Details](/kanvas/reference/resource-details/index.md): The fields, actions, and capacity gauges the Details panel shows for each Kubernetes resource kind in Operator mode, and what it does not show.
-- [Supported Import and Export Formats](/kanvas/reference/supported-formats/index.md): Every file format Kanvas accepts on import and produces on export, with detection rules, limits, and what each format keeps.
-- [URL Parameters](/kanvas/reference/url-parameters/index.md): Every query parameter Kanvas reads from its address - which design or view to open, how to draw it, and which viewport to restore - with accepted values, defaults and how parameters combine.
-- [Auto-pan on Drag](/kanvas/reference/autopan/index.md): Reference for the Auto-pan on Drag setting - what triggers it, its default, where it is stored, the design size at which Kanvas turns it off for each render mode, and how it recovers.
-- [Performance Limits](/kanvas/reference/performance/index.md): Reference for what each render mode draws, the design sizes and zoom levels at which Kanvas gates features, how Adaptive mode decides to change modes, the enforced limits on a design, and what to adjust when a design feels slow.
-- [Help and Support](/kanvas/reference/help-and-support/index.md): What the Kanvas Help Center offers, which support channel each plan includes, and the two preconditions the support form requires - a remote provider and a signed-in identity.
+- [Performance Limits and Tuning](/kanvas/advanced/performance/index.md): Learn about the performance limits of Kanvas and how to tune your environment for optimal performance.
+
+- [Understanding Design Components](/kanvas/designer/understanding-design-component/index.md): A complete reference for all components available in the Kanvas designer.
+- [Design Render Quality](/kanvas/advanced/url-parameters/index.md): Control the level of detail in Kanvas design rendering using advanced URL query parameters.
+
+- [Starting from scratch](/kanvas/getting-started/starting-scratch/index.md): Welcome to Kanvas, your comprehensive tool for creating and managing cloud native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
+
+- [Understanding Edge Styles](/kanvas/designer/understanding-edges/index.md): Learn how to use and customize edge styles in Kanvas to create clear and meaningful designs.
+
+- [Validating Designs](/kanvas/tasks/designs/validating-designs/index.md): Prior to deploying a design, you can validate the configuration that it contains in accordance with the target platform.
+
+- [Whiteboarding](/kanvas/tasks/whiteboarding/index.md): Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
+
+- [Auto-pan on Drag](/kanvas/advanced/autopan/index.md): Kanvas automatically pans the viewport while you drag a component past the canvas edge. Learn when it helps, how to toggle it, and the performance gates that decide when it stays active.
+
+- [Dry Running a Design](/kanvas/tasks/designs/dry-running-a-design/index.md): A dry run simulates the deployment of your design in the selected target environment without making any actual changes.
+
+- [Exploring Kubernetes Services with Meshery](/kanvas/tutorials/kubernetes/kubernetes-services/index.md): Explore Kubernetes Services using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
+- [Importing a Design](/kanvas/getting-started/import-designs/index.md): Learn how to import designs from various sources and formats, including Kubernetes manifests, Helm charts, Docker Compose files, and more.
+
+- [Interpreting Component Badges](/kanvas/designer/interpreting-component-badges/index.md): Learn to interpret component badges, the small visual indicators that provide at-a-glance information about a component's status in both Designer and Operator modes.
+- [Undeploying Designs](/kanvas/tasks/designs/undeploying-designs/index.md): Undeploy a design in order to rollback a deployment from one or more Kubernetes clusters.
+
+- [Understanding Tool Modes](/kanvas/designer/understanding-tool-modes/index.md): Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Learn how to interact with components and the canvas in each mode.
+
+- [Whiteboarding](/kanvas/designer/whiteboarding/index.md): Whiteboarding and Freestyle Drawing inside Kanvas
+- [Creating Relationships](/kanvas/getting-started/creating-relationships/index.md): Relationships identify and facilitate genealogy between Components.
+
+- [Deploying Designs](/kanvas/tasks/designs/deploying-designs/index.md): Each Meshery design is deployable to one or more Kubernetes clusters.
+
+- [Publishing to Catalog](/kanvas/tutorials/publishing-to-catalog/index.md): Publish a Kanvas design to the Catalog from Details, understand visibility versus publish, and know what happens during review and approval.
+
+- [Render Modes](/kanvas/advanced/render-modes/index.md): Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
+
+- [Reviewing Designs](/kanvas/designer/comments/index.md): Learn how to leverage comments in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
+
+- [Understanding  Relationships](/kanvas/concepts/relationships/index.md): Kanvas uses relationships to map how interconnected components interact.
+
+- [Working with Components](/kanvas/getting-started/working-with-components/index.md): Meshery Components are reusable, interactive elements that can be used to build your designs. Learn how to work with components.
+
+- [Cloning a Design](/kanvas/tasks/designs/cloning-a-design/index.md): Treat designs as templates by cloning an existing design to modify and build upon.
+
+- [Collaborative Editing](/kanvas/tutorials/collaborative-editing/index.md): Share a Kanvas design, set Private or Public visibility, invite collaborators, leave review comments, and understand what to expect from live collaboration.
+
+- [Instance Details](/kanvas/operator/resource-details/index.md): Learn about Instance Details in Operator mode
+
+- [Sharing Designs](/kanvas/designer/sharing/index.md): Share designs with other users and use access controls to manage design permissions and visibility.
+
+- [Views in Operator](/kanvas/operator/views/index.md): Learn about Views in Operator mode 
+
+- [Building a GCP Data Pipeline Design](/kanvas/tutorials/data-pipeline-gcp/index.md): Walk through creating the data-pipeline-gcp design in Kanvas, connecting GCP services in orbital-production.
+
+- [Deleting a Design](/kanvas/tasks/designs/deleting-a-design/index.md): Permanently delete a design you own, and understand how deleting differs from unpublishing a design or removing it from a workspace.
+
+- [Embedding Designs](/kanvas/designer/embedding-designs/index.md): How to embed your designs for sharing on your sites.
+
+- [Performance Testing in Operator](/kanvas/operator/performance-testing/index.md): Measure the behavior of a running service from the Operator canvas, using saved performance profiles.
+
+- [Working with Tags](/kanvas/designer/tagsets/index.md): Share design with other users and use control access to manage design access permissions and visibility.
+
+- [Cross-Org Design Access: stellar-saas-platform](/kanvas/tutorials/stellar-saas-platform/index.md): Learn how Stellar Dynamics accesses and collaborates on a shared design with Orbital Labs using cross-org permissions in Kanvas.
+
+- [Working with Canvas Objects](/kanvas/designer/canvas-objects/index.md): Add, copy, clone, lock, delete, style, reset and resize the shapes, sections, textboxes and components on your Kanvas Designer canvas.
+
+- [Exporting Designs](/kanvas/designer/export-designs/index.md): How to export your designs for backup, sharing or offline use.
+
+- [Publishing Designs](/kanvas/designer/publishing-designs/index.md): Learn to publish, manage, and work with designs in Meshery with clear state transitions, role-based permissions, and common workflow FAQs.
+- [Pinning Models to the Dock](/kanvas/designer/pin-model-to-dock/index.md): Learn how to pin and remove models from the dock in the Kanvas Designer for quick access.
+- [Policy Engine](/kanvas/designer/relationship-evaluation/index.md): Choose how Kanvas evaluates relationships in your designs, understand the relationship indicator states, and diagnose failing or unexpected relationship results.
+
+- [Canvas Actions](/kanvas/designer/canvas-actions/index.md): The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
+
+- [Layout and Layers](/kanvas/designer/layout-and-layers/index.md): Arrange the components in a design automatically, and choose which entities the canvas draws.
+
+- [Merging and Loading Designs](/kanvas/designer/merging-designs/index.md): Drag one design onto another to combine them, or open it in place of what is on the canvas.
+
+- [Saving Designs](/kanvas/designer/saving-designs/index.md): How Kanvas persists your work, what the save indicator is telling you, and how to save a copy.
+
+- [Configuring Components](/kanvas/designer/configuring-components/index.md): Edit a component's configuration on the canvas, using the form Kanvas builds for it and its inline help.
+
+- [Help and Support](/kanvas/reference/help-and-support/index.md): How Kanvas submits support requests, and the two preconditions - a remote provider and a signed-in identity - that Help and Support requires.
+
 - [v1.0.72-1](/kanvas/reference/releases/v1.0.72-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 fix(comments): gate comment and mention actions on permission keys @leecalcote (#4396) …
 - [v1.0.71-1](/kanvas/reference/releases/v1.0.71-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 chore(videos): add capture script and staging inputs for Layout and Layers film …
 - [v1.0.70-1](/kanvas/reference/releases/v1.0.70-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 [Kanvas] Add opt-in Cytoscape WebGL rendering and measure it against Canvas 2D @hortison …
 - [v1.0.69-1](/kanvas/reference/releases/v1.0.69-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 No changes 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release …
 - [v1.0.68-3](/kanvas/reference/releases/v1.0.68-3/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 fix(kanvas): restore the persist-anonymous-user provider capability @ritzorama (#4359) …
-- [Configuring Components](/kanvas/designer/configuring-components/index.md)
-- [Deploy a Design](/kanvas/tasks/designs/deploying-designs/index.md)
-- [Layout and Layers](/kanvas/designer/layout-and-layers/index.md)
-- [Understanding Tool Modes](/kanvas/designer/understanding-tool-modes/index.md)
-- [Validate a Design](/kanvas/tasks/designs/validating-designs/index.md)
-- [Whiteboarding](/kanvas/designer/whiteboarding/index.md)
-- [Working with Canvas Objects](/kanvas/designer/canvas-objects/index.md)
+- [Deploy AWS EC2 Instances with Meshery](/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/index.md): Learn how to deploy and manage AWS EC2 instances through Kubernetes with Meshery, utilizing AWS Controllers for Kubernetes (ACK) to enhance cloud resource management
+- [Deploy Azure resources with Meshery](/kanvas/tutorials/azure/deploy-azure-resources-with-meshery/index.md): Learn how to deploy and manage Azure resources through Kubernetes with Meshery, utilizing ASO operator to enhance cloud resource management
+- [Deploy Azure Storage Account with Meshery](/kanvas/tutorials/azure/deploy-azure-storage-account-with-meshery/index.md): Learn how to deploy and manage Azure Storage account through Kubernetes with Meshery, utilizing ASO operator to enhance cloud resource management
+- [Deploying Apache Cassandra with a StatefulSet in Meshery Playground](/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/index.md): Deploy Apache Cassandra with a StatefulSet using Meshery Playground in an interactive live cluster environment.
+- [Deploying PHP Guestbook application with Redis in Meshery](/kanvas/tutorials/kubernetes/deploy-php-redis/index.md): In this tutorial, we will deploy guest book built with PHP and Redis in Kubernetes. We will make use of Meshery Playground in an interactive live cluster environment.
+- [Deploying WordPress and MySQL with Persistent Volumes with Meshery](/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/index.md): Deploy a WordPress site and a MySQL database with Persistent Volumes using Meshery Playground in an interactive live cluster environment.
+- [Embedding a Meshery Design in a WordPress Post](/kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/index.md): Learn how to Embed a Meshery Design in a WordPress Post
+- [Exploring Kubernetes CronJobs](/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/index.md): In this tutorial, we will explore how to use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for managing Kubernetes CronJobs.
+- [Exploring Kubernetes Deployments with Meshery](/kanvas/tutorials/kubernetes/kubernetes-deployments/index.md): Explore a Kubernetes Deployment using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
+- [Exploring Kubernetes Pods with Meshery](/kanvas/tutorials/kubernetes/kubernetes-pods/index.md): Explore Kubernetes Pods using Meshery in an interactive live cluster environment, through a series of hands-on exercises.
+- [Helm Kanvas Snapshot](/kanvas/concepts/helm-kanvas-snapshot/index.md): Helm CLI plugin to visually render a snapshot of your Helm charts.
+- [Interactive Terminal](/kanvas/operator/interactive-terminal/index.md): Learn about Interactive Terminal in Operator mode 
+
+- [Kanvas GitHub Snapshot](/kanvas/concepts/kanvas-snapshot/index.md): Capture a screenshot of your infrastructure as a comment in your GitHub pull request.
+- [Keyboard Shortcuts](/kanvas/reference/keyboard-shortcuts/index.md): Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
+
+- [Kubernetes Request Flow – A Visual Guide](/kanvas/tutorials/kubernetes/kubernetes-request-flow/index.md): A visual walkthrough of how user requests flow through Kubernetes components using Kanvas.
+
+- [Log Streaming](/kanvas/operator/log-streaming/index.md): Learn about Log Streaming in Operator mode
+
+- [Publishing Meshery Designs to Artifact Hub](/kanvas/tutorials/artifacthub/publish-to-artifacthub/index.md): Step by step example for how to export Meshery Designs and publish them to an Artifact Hub repository.
+- [Troubleshooting Kanvas](/kanvas/reference/troubleshooting/index.md): Learn to Troubleshoot the Kanvas
+- [Understanding Kubernetes ConfigMaps and Secrets with Meshery](/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/index.md): In this tutorial, we will explore how to effectively use Kubernetes ConfigMaps and Secrets for managing configuration data and sensitive information. Leveraging Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to understand the practical aspects of working with ConfigMaps and Secrets in Kubernetes.
 
 ## From Whiteboard to Workload
 - [From Whiteboard to Workload](/videos/index.md): Give your brain a break from YAML. Watch Layer5 tools in-action.
@@ -113,104 +148,88 @@
 - [Whiteboarding in Kanvas](/videos/features/kanvas/whiteboarding-in-kanvas/index.md): One late-night alert, worked from page to postmortem on a single live design: sketch the blast radius, style the flow, put the evidence in context, and fix the configuration where the team can see it.
 
 
-## Layer5 Cloud Documentation
-- [Layer5 Cloud Documentation](/cloud/index.md): What Layer5 Cloud does for Kanvas and Meshery, what it leaves to Meshery Server, and where to start.
+## Cloud Documentation
+- [Cloud Documentation](/cloud/index.md): Layer5 Cloud provides a powerful platform for managing and deploying your cloud infrastructure with flexibility and ease.
 
-- [Learner Guide](/cloud/academy/using-the-academy/index.md): Walk through the Layer5 Academy as a learner: find content, enroll, work through a learning path, pass its assessments, and earn a badge or certificate.
 
-- [Account Consolidation](/cloud/concepts/identity-and-security/users/account-consolidation/index.md): Account consolidation merges duplicate Layer5 Cloud accounts that belong to one person into a single canonical account. It is an operator-run command, not a customer-facing feature.
+- [Customizing Webhooks](/cloud/guides/self-hosted/customizing-webhooks/index.md): Layer5 Cloud uses webhooks to automate approval flows and email notifications. This guide will help you customize and add your own custom webhooks.
+- [Managing Workspaces](/cloud/guides/workspaces/managing-workspaces/index.md): Learn how to create, edit, delete, and configure your Workspaces.
+- [Meshery Server Registration](/cloud/concepts/meshery-server-registration/index.md): How a Meshery Server registers itself with Layer5 Cloud as its Remote Provider, what data is recorded, and how re-registration is handled.
 
-- [Create and Use an API Token](/cloud/guides/security/api-tokens/index.md): Create an API token, hand it to a script or CI job, rotate it without downtime, and revoke it.
+- [Metrics](/cloud/concepts/catalog/metrics/index.md): Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs.
+
+- [Setting up Layer5 Account](/cloud/getting-started/getting-started-with-layer5-account/index.md): With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
+- [Sharing a Workspace](/cloud/guides/tutorials/sharing-a-workspace/index.md): Learn how to control access to workspaces and their resources.
+
+- [Support](/cloud/getting-started/support/index.md): If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don't hesitate to reach out to us.
+- [Creating a Design from Meshery Catalog Templates](/cloud/getting-started/creating-a-design-from-template/index.md): With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog.
+- [Customizing Layer5 Cloud Deployment with Helm](/cloud/guides/self-hosted/deployment/helm-chart-values/index.md): Layer5's Helm charts support a number of configuration options. Please refer to following table of configuration options.
+- [Default Organization Roles](/cloud/concepts/identity-and-security/roles/organization-roles/index.md): Organization-scoped roles include Organization Administrator. There is no Organization Billing Manager role.
+
+- [Default Workspace Roles](/cloud/concepts/identity-and-security/roles/workspace-roles/index.md): Workspace Administrator and Workspace Manager are organization-scoped roles.
+
+- [Extending the Academy](/cloud/academy/creating-content/extending-the-academy/index.md): A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.
+
+- [Integrating GitHub with Meshery](/cloud/getting-started/github-integration/index.md): Discover how to seamlessly connect your GitHub repository with Meshery, enabling easy import and management of your configuration files.
+- [Leaderboard](/cloud/concepts/catalog/leaderboard/index.md): The Leaderboard is a visual representation of Designs, ranked based on key Metrics such as Opens, Downloads, Deployments, Clones, and Shares.
+
+- [Learner Guide](/cloud/academy/using-the-academy/index.md): Learn how to navigate the Layer5 Academy platform, understand its features, and maximize your learning experience.
+
+- [Managing Environments](/cloud/guides/workspaces/managing-environments/index.md): Learn how to view, create, and edit Environments, and how to assign Connections to an Environment or remove them from it.
+- [Navigating Organizations](/cloud/guides/organizations/org-management/navigating-organizations/index.md): Learn how to navigate between different organizations in Layer5 Cloud and understand the order of precedence for organization settings.
+
+- [Networking](/cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md): Prepare and configure network services for your Layer5 Cloud deployment.
+- [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/index.md): The named ways an organization can be configured in Layer5 Cloud: Hosted, Branded, and White-Label, and how to choose between them based on your domain, identity provider, and sign-in needs.
+
+- [Promoting a Design from Staging to Prod](/cloud/guides/tutorials/promoting-a-design/index.md): Learn how to move a design from a staging workspace to a production workspace and deploy it to a production environment.
 
 - [Bring Your Own Mail Server](/cloud/guides/organizations/org-management/bring-your-own-mail-server/index.md): Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
 
-- [Connect GitHub](/cloud/guides/integrations/github-integration/index.md): Connect the Layer5 GitHub App to Layer5 Cloud, import infrastructure files from your repositories as designs, and manage or remove the connection.
-
-- [Create a Learning Path](/cloud/academy/creating-content/creating-your-learning-path/index.md): Set up your Academy content repository, structure and describe a learning path, preview it, and publish it. The repository, front matter, and publishing steps also apply to challenges and certifications.
-
-- [Create Your Layer5 Account](/cloud/getting-started/getting-started-with-layer5-account/index.md): Create and verify a Layer5 Cloud account, sign in for the first time, and learn what Layer5 Cloud sets up for you.
-- [Feature Availability by Plan](/cloud/reference/feature-availability/index.md): Which Layer5 Cloud capabilities each Layer5 plan includes, the limits each plan records, and the role and deployment conditions that also decide whether a capability is available to you.
-- [Helm Chart Values](/cloud/guides/self-hosted/deployment/helm-chart-values/index.md): Reference for the layer5-cloud Helm chart: every value you set, its default, what it controls, and whether it lands in a ConfigMap or a Secret.
-
-- [How Layer5 Cloud Works with Meshery and Kanvas](/cloud/concepts/architecture/index.md): How Layer5 Cloud acts as the remote provider for Meshery Server and Kanvas, what it supplies to a connected server, how sign-in is handed off, and what it stores.
-- [Identity Services](/cloud/guides/self-hosted/planning/identity-services/index.md): Plan the identity services of a self-hosted deployment: Kratos accounts, Hydra tokens, the default Google and GitHub sign-in, and where organizations bring their own.
-- [Manage Workspaces](/cloud/guides/workspaces/managing-workspaces/index.md): Create, edit, and delete workspaces; give teams access; attach environments; place designs and views; and review workspace activity.
-
-- [Manage Your Account](/cloud/guides/account/managing-your-account/index.md): Edit your profile, change your password, link GitHub or Google sign-in, and delete your account, with what each change does and what it leaves behind.
-
-- [Promote a Design from Staging to Production](/cloud/tutorials/promoting-a-design/index.md): Build staging and production workspaces, promote a design between them, deploy it to a production environment, and confirm who did what.
-
-- [Build a Challenge](/cloud/academy/creating-content/building-challenges/index.md): A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
-
 - [Child Organizations](/cloud/guides/organizations/org-management/child-organizations/index.md): Create organizations inside an organization, see who can view and administer them, and understand what a parent administrator can and cannot do in a child.
 
-- [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/index.md): Choose how an organization is reached and who authenticates its users, then set up a custom domain. Covers the Hosted, Branded, and White-Label scenarios.
+- [Creating Content for the Academy](/cloud/academy/creating-content/creating-your-learning-path/index.md): A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
 
-- [Manage Environments](/cloud/guides/workspaces/managing-environments/index.md): Create environments, assign and remove connections, edit and delete environments, and know which environments you cannot change.
+- [Default Team Roles](/cloud/concepts/identity-and-security/roles/team-roles/index.md): Team Admin is the only team-scoped role. There is no Team Manager role.
 
-- [Meshery Server Registration](/cloud/concepts/meshery-server-registration/index.md): How a Meshery Server registers itself with Layer5 Cloud, how Cloud recognizes the same server on every later registration, and what each failure means.
-- [Networking](/cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md): The network paths a self-hosted Layer5 Cloud deployment needs, including how real-time co-editing connects browsers and what the signaling endpoint can see.
-- [Set Notification Preferences](/cloud/guides/account/notification-preferences/index.md): Choose which Layer5 Cloud events send you email, and know which preferences are live today.
+- [Default User Role](/cloud/concepts/identity-and-security/roles/user-role/index.md): By default, members of an Organization are provided a User role.
 
-- [Provider Initialization](/cloud/guides/self-hosted/deployment/provider-initialization/index.md): Reference for INIT_CONFIG, the setting that creates the provider organization and the first Provider Admin when a self-hosted deployment starts: format, fields, behavior, and failure modes.
+- [Exploring the Catalog](/cloud/concepts/catalog/exploring-the-catalog/index.md): Discover how to browse, find, and interact with designs in the Catalog.
+- [Identity Services](/cloud/guides/self-hosted/planning/identity-services/index.md): Understand identity services prerequisites and how to integrate your existing identity with OIDC.
+- [User Invitations](/cloud/concepts/identity-and-security/users/user-invitations/index.md): Learn how to create custom, secure, and flexible invitations for new members.
 
-- [Roles and Permissions](/cloud/reference/default-permissions/index.md): Which permissions each default Layer5 Cloud role holds, who assigns each role, and which default keychains group the permissions.
-- [Review and Sign Out Sessions](/cloud/guides/security/sessions/index.md): See every active sign-in on your account and end the ones you do not recognize or no longer use.
+- [Default Academy Roles](/cloud/concepts/identity-and-security/roles/academy-roles/index.md): By default, Academy has two roles available: Academy Administrator and Learner.
 
-- [Set Up Your Organization](/cloud/getting-started/setting-up-your-organization/index.md): Invite a teammate, create a team and a workspace, and move a design into that workspace to learn how organizations, teams, and workspaces control access.
-- [Security Reference](/cloud/reference/security/index.md): Security permission keys and who holds them, session and token lifetimes, cookies, visibility rules, and the endpoints behind keys, keychains, tokens, and sessions.
+- [Integrating Assessments in the Academy](/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Learn how to spice up the Academy with interactive assessments that keep learners engaged.
 
-- [Build a Certification](/cloud/academy/creating-content/building-certifications/index.md): A step-by-step guide to building a professional certification in the Academy.
+- [Kanvas Snapshots](/cloud/guides/tutorials/gitops-snapshots/index.md): Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
 
-- [Build a Custom Keychain](/cloud/guides/security/custom-keychains/index.md): Group keys into a keychain, change its keys, and delete it. A role must include the keychain before it grants anything.
+- [Monitoring](/cloud/guides/self-hosted/planning/monitoring/index.md): Plan monitoring for Layer5 Cloud self-hosted deployments: metrics, logs, tracing, dashboards, and alerts.
+- [Recognizing User and Contributor Milestones](/cloud/guides/tutorials/assigning-user-badges/index.md): Showcasing user and contributor achievements
 
-- [Customize Webhooks](/cloud/guides/self-hosted/customizing-webhooks/index.md): Send support requests, signup decisions, and Kanvas entitlement events from your self-hosted Layer5 Cloud to your own systems: the three webhooks, when each fires, the payloads, and how failures behave.
+- [User Management](/cloud/concepts/identity-and-security/users/user-management/index.md): Learn how to create, add, invite, and manage users within Layer5 Cloud.
 
-- [Instructor Console](/cloud/academy/instructor-console-guide/index.md): Every view, metric, and action in the Academy Instructor Console: who can open it, how each number is calculated, and what instructors can manage.
+- [Academy Instructor Console Guide](/cloud/academy/creating-content/instructor-console-guide/index.md): A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
 
-- [Manage Users](/cloud/guides/organizations/managing-users/index.md): Add, create, edit, and remove the people in an organization, change their roles, and understand what each action revokes and what it bills.
+- [Building Certifications](/cloud/academy/creating-content/building-certifications/index.md): A step-by-step guide to building a professional certification in the Academy.
 
-- [Monitoring](/cloud/guides/self-hosted/planning/monitoring/index.md): What a self-hosted Layer5 Cloud deployment exposes for monitoring: health endpoints, logs and error codes, startup signals, and OpenTelemetry traces.
-- [Start from a Catalog Design](/cloud/getting-started/creating-a-design-from-template/index.md): Browse the public catalog, try a design in the Meshery Playground, and clone it into your own workspace as a private copy.
-- [Manage Subscriptions and Billing](/cloud/guides/account/managing-subscriptions/index.md): See your organization's subscriptions, start or upgrade a paid plan, cancel at the end of a billing period, and understand how the billable user count and proration work.
+- [Building Challenges](/cloud/academy/creating-content/building-challenges/index.md): A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
 
-- [Support](/cloud/reference/support/index.md): The support channels for Layer5 Cloud, what each Layer5 plan includes, and what the in-product support form sends.
-- [Workspace and Environment Reference](/cloud/reference/workspaces-and-environments/index.md): Defaults, limits, scope, permissions by operation, responses, and deletion effects for workspaces and environments.
+- [Default User Permissions](/cloud/concepts/identity-and-security/users/default-permissions/index.md): Where to find the default permissions each role holds, including the User role.
 
-- [Add Assessments](/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Add quizzes, tests, and exams to Academy content. Covers the file format, question types, scoring, attempt and time limits, and how a passing result completes a course, learning path, challenge, or certification.
+- [Keychains](/cloud/concepts/identity-and-security/keychains/index.md): Keychains are a collection of keys
+- [Platform Development Guide](/cloud/academy/platform-development/index.md): An advanced guide to the Layer5 Academy architecture, multi-repository workflow, and development best practices for contributors.
 
-- [Find and Use Catalog Designs](/cloud/guides/exploring-the-catalog/index.md): Search the catalog, read a design's details, open it in the Playground, clone it into your workspace, and manage the catalog entries you own.
+- [Account Consolidation](/cloud/concepts/identity-and-security/users/account-consolidation/index.md): Layer5 Cloud resolves email/password, GitHub sign-in, and Google sign-in to a single account per verified email address.
 
-- [Invite Users](/cloud/guides/organizations/inviting-users/index.md): Bring people into an organization with invitation links or a direct invite, control who can accept and what they receive, and revoke access.
+- [Keys](/cloud/concepts/identity-and-security/keys/index.md): Keys are the atomic unit of access control
+- [Using Academy Content Template Creator](/cloud/academy/creating-content/using-content-template-creator/index.md): The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your …
+- [Workspaces](/cloud/concepts/spaces/workspaces/index.md): Understand the core concepts of Workspaces.
 
-- [Platform Development](/cloud/academy/platform-development/index.md): Preview Academy content locally, develop the Academy theme against real content, and run an end-to-end build before you publish. Includes how the Academy repositories fit together.
+- [Sessions](/cloud/concepts/identity-and-security/sessions/index.md): User sessions are created each time a user successfully authenticates.
 
-- [Workspaces](/cloud/concepts/workspaces/index.md): A workspace groups teams, environments, designs, and views inside one organization, and decides which connections a team can reach.
+- [Tokens](/cloud/concepts/identity-and-security/tokens/index.md): API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
 
-- [Environments](/cloud/concepts/environments/index.md): An environment is a named group of connections that forms a deploy target and the unit through which workspaces expose connections to teams.
-
-- [Keys](/cloud/concepts/identity-and-security/keys/index.md): How keys work as the unit of permission in Layer5 Cloud: how a key reaches a user, where it takes effect, who can change it, and how to trace a missing permission.
-
-- [Manage Teams](/cloud/guides/organizations/managing-teams/index.md): Create a team, add and remove members, assign Team Admins, attach a team to a workspace, and delete a team.
-
-- [Troubleshoot Email Delivery](/cloud/guides/self-hosted/operating/smtp/index.md): Diagnose why a self-hosted Layer5 Cloud is not sending mail: the shared mail server's requirements, what the server checks at startup, how to test delivery, how mail is routed, and what each error code means.
-
-- [Use the Content Template Creator](/cloud/academy/creating-content/using-content-template-creator/index.md): Register Academy content with the Content Template Creator, copy the front matter and identifiers it generates into your repository, and control who can enroll through the content's invitation.
-
-- [Assign and Manage Roles](/cloud/guides/organizations/managing-roles/index.md): Assign organization, team, and provider roles to people, remove them, and create or edit custom roles. Covers who can do each, what the server enforces, and how to confirm a change took effect.
-
-- [Extend the Academy](/cloud/academy/creating-content/extending-the-academy/index.md): Go beyond plain Markdown in your Academy content with inline HTML and CSS, organization-specific Hugo shortcodes, embedded Kanvas designs, and branded award emails.
-
-- [Keychains](/cloud/concepts/identity-and-security/keychains/index.md): How keychains group keys into reusable bundles for roles in Layer5 Cloud, who owns and can change a keychain, and what a change to a keychain affects.
-
-- [Review Access Requests](/cloud/guides/organizations/access-requests/index.md): Review, approve, and deny signup requests for product access, and learn what an approval or a denial changes.
-
-- [Sessions](/cloud/concepts/identity-and-security/sessions/index.md): How long a Layer5 Cloud sign-in lasts, what ends it, how the browser stores it, and how sessions differ from API tokens.
-
-- [Recognize Members with Badges](/cloud/guides/organizations/assigning-user-badges/index.md): Create recognitions for your organization, award them to members, and let members share them from their public profile.
-
-- [Tokens](/cloud/concepts/identity-and-security/tokens/index.md): An API token is a long-lived credential that authenticates scripts, pipelines and Meshery clients to Layer5 Cloud as your user account. It never expires and ends only when you delete it.
-
+- [Notification Preferences](/cloud/concepts/identity-and-security/users/notification-preferences/index.md): Manage your notifications on Layer5 Cloud
 - [v1.0.304](/cloud/reference/releases/v1.0.304/index.md):  feat(server): add profile environment purpose @leecalcote (#6272) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for …
 - [v1.0.303](/cloud/reference/releases/v1.0.303/index.md):  feat(handlers): accept publishing-destination connection kinds with https url @leecalcote (#6271) 👨🏽‍💻 Contributors 🔗 …
 - [v1.0.302](/cloud/reference/releases/v1.0.302/index.md):  feat(handlers): serve org-scoped content pieces API @leecalcote (#6261) 👨🏽‍💻 Contributors 🔗 Thank you to our …
@@ -1089,6 +1108,11 @@ bump schemas @aabidsofi19 (#2739) Contributors 🔗 Thank you to our contributor
 Captain/views filters @captain-Akshay (#2736) upgrade schemas to v0.7.26 @MUzairS15 (#2735) …
 - [API Reference](/cloud/reference/api-reference/rest/index.md): Complete reference of all Layer5 Cloud REST API endpoints
 
+- [Default Permissions](/cloud/reference/default-permissions/index.md): List of default permissions granted to the Organizations, Teams and Users roles.
+
+- [Email / SMTP Troubleshooting](/cloud/guides/self-hosted/operating/smtp/index.md): This guide explains how to diagnose email sending issues in Layer5 Cloud deployments using the enhanced debug logging and testing features.
+
+- [Environments](/cloud/concepts/spaces/environments/index.md): Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into resource groups.
 
 ## Contributing
 - [Contributing](/contributing/index.md): Contributing guides on documentation and video gallery

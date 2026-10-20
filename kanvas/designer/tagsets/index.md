@@ -5,7 +5,7 @@
 
 
 
-You can group components using tags. Tags are key-value pairs that help you organize and categorize components within your design. Tags can be used to visually group components. You can also use tags to filter components and view only those that match the tag criteria.
+You can group components using tags. Tags are key-value pairs that help you organize and categorize components within your design. Tags can be used to visually group components. Designer has no filter that shows only components with a given tag. Operator mode filters live resources by namespace, kind, model, label, and free-text search. Palette search matches model and component names, not labels.
 
 
 
@@ -49,7 +49,7 @@ Designs support two different types of tags: Labels and Annotations. Labels are 
   <h4 class="alert-heading" style="color: #EBC017;">Performance Consideration</h4>
   
       <p>Tags are indexed and searchable. However, the performance of design operations may degrade as the number of tags increases. To ensure an optimal user experience, we recommend using tags judiciously and limiting the number of tags used in a design.</p>
-<p>Upon loading a design exceeds that exceeds 10 tags within a single design, Kanvas will automatically disable grouping by tags. You can manually enable grouping by tags by clicking the &ldquo;Group Components&rdquo; button in the Designer dock.</p>
+<p>TagSets draw only in Full render mode, and only while at most 30 are drawn. Past 30, Kanvas skips the rest and shows &ldquo;Skipped rendering of N matchlabels relationships due to limit of 30&rdquo;. Grouping does not turn itself off at 10 tags, and there is no Group Components control that re-enables it after that limit. The TagSets layer must also be visible.</p>
 
   
 </div>

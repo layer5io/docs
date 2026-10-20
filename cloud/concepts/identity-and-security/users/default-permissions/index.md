@@ -1,43 +1,20 @@
 # Default User Permissions
 
 
-> Complete list of default permissions granted to all users.
+> Where to find the default permissions each role holds, including the User role.
 
 
 
-| Permissions                                                     | User        |
-|-----------------------------------------------------------------|-------------|
-| View All Users                                                  | ✅         |
-| View user Profile                                               | ✅         |
-| View user Designs                                               | ✅         |
-| View user Badges                                                | ✅         |
-| View user Activity                                              | ✅         |
-| View Keys                                                       | ✅         |
-| View Catalog                                                    | ✅         |
-| Invite Users                                                    | ✅         |
-| Update User Profile                                             | ❌         |
-| Delete a user account                                           | ❌         |
-| Create a new user                                               | ❌         |
-| Leave a Team                                                    | ❌         |
-| View Roles                                                      | ❌         |
-| Assign roles to team members                                    | ❌         |
-| Assign keys and keychains to the team members                   | ❌         |
-{.td-initial}
+The permissions a user holds are the keys from every role they hold in the selected organization. The full matrix of default roles and permissions is [Default Permissions](/cloud/reference/default-permissions/).
 
+Read that matrix for the User role. These points are easy to get wrong from older summaries:
 
+- The User role holds View Catalog and View Designs. It also holds Leave Team.
+- The User role holds the view keys for tokens, sessions, keys, and keychains, plus Create Token and Download Token. See [Tokens](/cloud/concepts/identity-and-security/tokens/).
+- The User role does not hold Invite User to Team, Invite User to Organization, or Assign Roles to Team members.
+- The User role does not hold the keys that create, edit, or delete keychains and roles. Those require Provider Admin. See [Keychains](/cloud/concepts/identity-and-security/keychains/).
 
-
-
-
-
-<div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
-  <h4 class="alert-heading" style="color: #EBC017;">*Organization Owner</h4>
-  
-      <em>Permissions marked with * apply only if you are the owner of the organization.</em>
-  
-</div>
-
-
+A check mark with an asterisk on the matrix means the role holds the permission only on resources the user owns.
 
 
 
@@ -48,7 +25,7 @@
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Customizable Permissions</h4>
   
-      Default permissions can be easily customized by simply creating your own <a href="/cloud/concepts/identity-and-security/keychains/">keychains</a> and <a href="/cloud/concepts/identity-and-security/roles/">roles</a>.
+      Only a Provider Admin can create or change <a href="/cloud/concepts/identity-and-security/keychains/">keychains</a> and <a href="/cloud/concepts/identity-and-security/roles/">roles</a>. On hosted Layer5 Cloud, Layer5 operates the Provider Admin role, so an organization cannot build a custom permission set itself. On a self-hosted deployment, the operator&rsquo;s Provider Admins can.
   
 </div>
 

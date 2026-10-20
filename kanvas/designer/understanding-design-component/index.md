@@ -200,3 +200,21 @@ A single semantic component will be visually represented differently depending o
 </div>
 
 
+
+## Limits and deployed identity
+
+Kanvas saves a new design only when it has at least one component, or a name that is not empty and not "Untitled Design". You cannot create a design while the organization scope is set to all organizations.
+
+| Plan | Components per design |
+| --- | --- |
+| Personal | 100 |
+| Team Designer | 200 |
+| Team Operator | 100 |
+| Enterprise | 300 |
+
+When a design exceeds the limit, the save or import is rejected with HTTP 403. The server message is "Design exeeds maximum limit of N components supported by your current plan" (the misspelling ships). The canvas shows "Unable to save. Retrying...". If the organization is not entitled to add components, the save fails with HTTP 500 and "Org is not entitled to adding components to a design".
+
+Image and text files dropped on the canvas are limited to 500 KB on every plan. The rejection says "Your current plan allows files up to 500 KB".
+
+Every resource Kanvas deploys carries the label `design.meshery.io/id` and the annotations `design.meshery.io/version` and `component.meshery.io/id`. A new design starts public. Unpublishing sets visibility back to private. Other members need View Designs to read private designs that are not shared with them.
+

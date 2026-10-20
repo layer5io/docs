@@ -38,19 +38,19 @@
 </ul>
 <p><strong>Who can assign this role?</strong></p>
 <ul>
-<li>Organization Administrators, Workspace Administrators and Team Administrators</li>
+<li>An Organization Admin of that organization, a holder of Assign User Roles there, or a Provider Admin. Workspace Admin and Team Admin do not assign organization roles. Team scope accepts only Team Admin.</li>
 </ul>
 <p><strong>When this role first assigned?</strong></p>
 <ul>
-<li>Automatically assigned to members on joining an Organization.</li>
+<li>When an authorized administrator assigns it, or when an invitation lists it. Joining an organization does not assign User automatically. A person added with no role is a member who holds no role.</li>
 </ul>
 <p><strong>How many instances of these roles?</strong></p>
 <ul>
-<li>Min: 1, Max: many</li>
+<li>Any number, on every plan</li>
 </ul>
 <p><strong>Who can remove assignment of this role?</strong></p>
 <ul>
-<li>Organization Administrators, Workspace Administrators and Team Administrators</li>
+<li>The same people who can assign it. Removing the role does not end the membership.</li>
 </ul>
 <p><strong>What permissions does this role have?</strong></p>
 <ul>

@@ -34,23 +34,27 @@ An organization can also have child organizations. Your active organization is a
 
 ## Order of Precedence for Organization Settings
 
-Layer5 Cloud uses the following order of precedence to determine your active organization context:
+Layer5 Cloud resolves the organization for each request from these sources, in this order, and the first source that applies wins. The numbered headings below keep their original names. The order that actually applies is domain, then the `X-Current-Orgid` header, then the saved preference, then the browser session. Layer5 Cloud reads no organization from the query string.
 
 ### 1. Domain (Session Organization)
 
-When you access Layer5 Cloud through a specific domain configured for an organization, that domain setting takes the highest priority in establishing your organization context.
+When you access Layer5 Cloud through a specific domain configured for an organization, that domain wins over every other source, including a selection you make in the switcher. The host is matched exactly, with the protocol and port removed. A sign-in page on that domain shows that organization's branding, uses its identity provider, and applies its open invitation. Resolving by domain does not check membership. Every guarded action still checks the permissions you hold in that organization.
+
+The deployment's own base host, IP addresses, and the provider's reserved domains are never treated as custom domains. A domain belongs to at most one organization, including deleted organizations. Lookups are cached for five minutes.
 
 ### 2. User Session (Session Organization)
 
-Your user session stores the organization you have actively selected. When you switch organizations using the organization switcher in the UI, this selection is stored in your session and used for subsequent requests.
+The browser session stores the organization you last selected in the switcher. That value is the fourth source, after the domain, the `X-Current-Orgid` header, and the saved preference. It applies only when it names an organization you are a live member of. Otherwise the request runs with no organization scope. Holders of View All Organizations can name any organization.
+
+Switching organizations also stores a preference, which is a separate, earlier source than the session cookie.
 
 ### 3. Query String (Managed Organizations)
 
-Organization context can be specified via URL query parameters. This is useful for direct links to resources within a specific organization.
+Layer5 Cloud does not read an organization from the query string or from any other URL parameter. A link cannot select an organization that way. Use the domain, the `X-Current-Orgid` header, the saved preference, or the session.
 
 ### 4. API Parameter (Managed Organizations)
 
-When making API calls, the organization context can be explicitly specified as an API parameter, giving programmatic control over which organization's resources are accessed.
+API clients name the organization with the `X-Current-Orgid` header. That header is the second source, after the domain and ahead of the saved preference and the browser session. The value must name an organization you are a live member of, unless you hold View All Organizations, in which case you can name any organization or `all`. The request format is in the [API reference](/cloud/reference/api-reference/).
 
 ## Switching Organizations
 
@@ -70,7 +74,7 @@ To navigate between organizations in Layer5 Cloud:
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Access Requirements</h4>
   
-      You can only switch to organizations where you have active membership. If you need access to an additional organization, contact an Organization Administrator or use an invitation link.
+      You can only switch to organizations where you have active membership. Members who hold View All Organizations, a Provider Admin by default, can also select All Organizations. If you need access to an additional organization, contact an Organization Administrator or use an invitation link. A parent administrator who is not a member of a child can edit that child&rsquo;s settings from the parent but cannot switch into the child.
   
 </div>
 
@@ -105,7 +109,7 @@ All new resources you create are automatically associated with your currently se
 <div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
   <h4 class="alert-heading" style="color: #EBC017;">Verify Your Organization Before Creating Resources</h4>
   
-      Before creating important resources, always verify that you have the correct organization selected. Moving resources between organizations after creation may not always be possible or may require administrative assistance.
+      Before creating important resources, verify that you have the correct organization selected. New resources are created in the selected organization and do not follow you when you switch.
   
 </div>
 
@@ -117,7 +121,7 @@ Your roles and permissions are organization-scoped. This means:
 
 - The same user may have different roles in different organizations.
 - Administrative capabilities in one organization do not automatically grant administrative access in another.
-- Team memberships and their associated permissions are specific to each organization.
+- Team memberships and their associated permissions follow the selected organization. A role held in a team applies across every organization that team is mapped into.
 
 For more details about roles and permissions, see the [Roles documentation](/cloud/concepts/identity-and-security/roles/).
 

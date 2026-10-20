@@ -15,12 +15,14 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 
 Kanvas can run relationship evaluation using one of two interchangeable engines:
 
-- **Server-side** — the policy engine running inside your Meshery server. It
-  is always available and is the default.
-- **Client-side** — the same policy engine, compiled to WebAssembly and
+- **Server-side** -- the policy engine running inside your Meshery server. It
+  is always available.
+- **Client-side** -- the same policy engine, compiled to WebAssembly and
   run inside a background worker in your browser. Because it runs locally, there
-  are no round-trips to the server, so evaluation is typically faster. It is
-  available only when your Meshery server provides the WebAssembly artifact.
+  are no round-trips to the server, so evaluation is typically faster. A WASM
+  evaluation times out after 10 seconds.
+
+The default preference is **Automatic**, not the server. At load, Kanvas tries to start the WASM engine and waits up to 30 seconds for it to report ready. If it starts, WASM is used. If not, the Meshery server is used. Kanvas waits until changes stop for about one second, then evaluates. Another change during evaluation restarts the cycle. Evaluation runs after a configuration value or display name changes, a relationship is added or removed, a component is added, removed, duplicated, or merged, or a design loads or an import or merge completes.
 
 Both engines produce the same relationship results. The choice affects
 performance, and where toil (evaluation) is done, not correctness.
@@ -55,7 +57,7 @@ The engine is controlled by the **Relationship Evaluation Engine** preference.
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Automatic** (recommended) | Runs a one-time health check at the start of the session. If the client-side (WASM) engine passes a self-test, it is used for the rest of the session; otherwise the Meshery server is used. |
 | **Meshery server**          | Always uses the Meshery server's policy engine.                                                                                                                                              |
-| **Client-side (WASM)**      | Uses the in-browser WebAssembly engine.                                                                                                                                                      |
+| **Client-side (WASM)**      | Always uses WASM. There is no fallback. If the engine fails to start, evaluations fail silently and relationships stop updating. Switch to Automatic or Meshery server and reload. Automatic checks only that the engine initializes. It does not fall back to the server later if WASM fails after a successful start. |
 
 The engine is selected **once per session**. Changing the preference takes full
 effect on the next session (for example, after reloading Kanvas).
@@ -87,29 +89,15 @@ The relationship indicator tells you the state of the most recent evaluation:
   remove, or reconfigure components.
 - **Evaluated** — evaluation completed successfully and the relationships shown
   on the canvas are up to date.
-- **Error** — the most recent evaluation failed. This is a distinct state from
-  "no relationships evaluated yet". When evaluation fails:
-  - The last successful relationship results stay on screen so your design
-    remains readable.
-  - A one-time, non-blocking notification appears to let you know.
-  - You can continue editing and saving the design without interruption.
-
-If the client-side (WASM) engine was active and faults during the session, it
-automatically self-heals: Kanvas falls back to the Meshery server engine for the
-remainder of the session, without requiring any action from you.
+There is no error state on the indicator. A failed evaluation clears the last-evaluation details, so the tooltip returns to "No relationships evaluated yet", and the failure is logged to the browser console only. Tooltips you will see: "Evaluating relationships..." while running, "Relationships evaluated" with the elapsed time when done, and "No relationships evaluated yet" when nothing has been evaluated. When Kanvas skips applying a result it shows "Skipping evaluation application". A successful evaluation shows no message. WASM does not fall back to the server on its own after a fault.
 
 ### What the one-time notifications mean
 
-When evaluation first fails, or when Kanvas falls back from the client-side
-engine to the server engine, a single non-blocking notification is shown. It is
-informational — it does not require a response, and it will not repeat for every
-subsequent evaluation in that session. Its purpose is to let you know that
-relationship results may be stale or that the active engine changed.
+A failed evaluation does not raise an error state or a fallback notification. The failure is logged to the browser console only. If relationships stop updating, switch the engine to Meshery server and reload.
 
 ## Diagnosing Failing or Unexpected Relationship Results
 
-If relationships are missing, look wrong, or the indicator shows an error, use
-the **Relationship Evaluation Diagnostics** view to investigate.
+If relationships are missing or look wrong, turn on Enable Debugger in the Options dialog (it is off by default) and open the Evaluation Engine tab. Status reads Initialized, Not Initialized, or Not Available, plus the engine type WASM or SERVER. The tab refreshes every second. If WASM is not initialized, set the engine to Meshery server, reload, and compare.
 
 ### Step 1 — Enable the debugger preference
 
@@ -123,15 +111,9 @@ The Diagnostics view is exposed under the Designer **debugger** preference.
 
 The Diagnostics view reports the current state of relationship evaluation:
 
-- **Active engine and why** — which engine is in use (Meshery server or
-  client-side WASM) and the reason it was selected (for example, the result of
-  the Automatic health check, an explicit preference, or a runtime fallback).
-- **Contract / version** — the evaluation contract and engine version, used to
-  confirm the client and server are compatible.
-- **Last error** — the most recent evaluation error, if any.
-- **Fallback count** — how many times Kanvas has fallen back from the
-  client-side engine to the server engine this session.
-- **Latency** — how long recent evaluations took.
+- **Status** -- Initialized, Not Initialized, or Not Available.
+- **Engine type** -- WASM or SERVER, plus any initialization error. The tab refreshes every second.
+- There is no fallback counter. A runtime fault does not switch engines by itself.
 
 ### Step 3 — Force the server engine if client results look wrong
 
@@ -151,8 +133,7 @@ below).
 Evaluation re-runs automatically whenever you change the design — for example,
 by adding, removing, or reconfiguring a component, or by toggling a relationship
 kind on or off from the **Relationships** section of the Designer. Making any such
-change re-triggers evaluation with the active engine. If the indicator was in
-the error state, a successful re-evaluation clears it.
+change re-triggers evaluation with the active engine. There is no error state for a successful re-evaluation to clear.
 
 ### Step 5 — When and how to file a bug
 
@@ -161,12 +142,8 @@ steps above — especially if the **Meshery server** engine also produces
 incorrect or failing results — file a bug. Include the following from the
 Relationship Evaluation Diagnostics view so the issue can be reproduced:
 
-- The **active engine** and the reason it was selected.
-- The **contract / version** shown in the Diagnostics view.
-- The **last error** text.
-- The **fallback count**, if relevant.
-- A description of the expected relationships versus what Kanvas showed, and the
-  design (or a minimal reproduction) if you can share it.
+- The engine type, WASM or SERVER, and any initialization error.
+- The relationships you expected versus what Kanvas showed, and the design or a minimal version of it.
 
 
 

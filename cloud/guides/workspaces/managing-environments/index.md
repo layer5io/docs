@@ -1,15 +1,12 @@
-# Manage Environments
+# Managing Environments
 
 
-> Create environments, assign and remove connections, edit and delete environments, and know which environments you cannot change.
+> Learn how to view, create, and edit Environments, and how to assign Connections to an Environment or remove them from it.
 
 
+This guide walks you through the practical steps of managing your Environments. Here you will learn how to see the Environments in your organization, create and edit them, review the Connections that belong to an Environment, and assign or remove those Connections.
 
-An environment groups connections into a deploy target and is the means by which a workspace exposes those connections to its teams. This guide covers every task on an environment. For the model behind it, read the [Environments concept](/cloud/concepts/environments/).
-
-Each task names the permission it needs. Layer5 Cloud checks the permission in the organization that owns the environment.
-
-
+If you are new to the concept of Environments, start with the [Environments Overview](/cloud/concepts/spaces/environments/) to understand what an Environment is and how it relates to Connections, Credentials, and Workspaces.
 
 
 
@@ -17,1865 +14,274 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
 
 
 
-
-
-
-
-
-
-<div class="feature-tiers">
-<table class="feature-tiers-table keys-matrix">
-  <caption>Environment permissions</caption>
-  <thead>
-    <tr>
-      <th scope="col">Permission</th>
-      <th scope="col">What it allows</th>
-      <th scope="col">User</th><th scope="col">Team Admin</th><th scope="col">Workspace Admin</th><th scope="col">Org Admin</th><th scope="col">Provider Admin</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">View Environment</th>
-      <td>See all environments within an workspace.</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Create Environment</th>
-      <td>Create a new environment</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Edit Environment</th>
-      <td>Edit environment and it connection membership</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Delete Environment</th>
-      <td>Dissolve environment and all connection memberships. Leave associated resources intact.</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Assign connections to environment</th>
-      <td>Add new connections to environments</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Remove connections from environment</th>
-      <td>Remove connections from environment, </td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not granted</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">View Connections</th>
-      <td>View all connections within an environment</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  </tbody>
-</table>
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">A Note on Permissions</h4>
+  
+      Every action described in this guide is governed by roles and permissions. Buttons and icons for actions you are not authorized to perform are disabled rather than hidden, and the Environments page itself is only reachable with the <strong>View Environment</strong> key. For a breakdown of what your assigned role allows, see <a href="/cloud/reference/default-permissions/">Default Permissions</a>.
+  
 </div>
 
 
-The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions because of the plan.
 
-## Find environments {#view-environments}
+## View Environments
 
-**Needs:** View Environment to see the Environments page. The API lists environments for any signed-in member of the organization.
+The [Environments page](https://cloud.layer5.io/spaces/environments) - **Environment** in the Spaces navigation, alongside Overview, Workspaces and Integrations - lists every Environment in the organization you currently have selected. Switching organizations with the organization context switcher in the top navigation bar changes the list.
 
-Every member of an organization can list every environment in it, whether or not the environment is attached to a workspace they belong to. A list request names one organization; View All Organizations widens it to every organization. You can search by name or description, order by creation or update time, and page through results.
+Environments are presented as cards, ten to a page, with pagination beneath the grid. Each card shows:
 
-Environments that Layer5 Cloud provisions for itself appear in the list too. See [Environments you cannot change](#environments-you-cannot-change).
+- the Environment's **name**
+- its **description**, or *No description* when none has been set
+- an **Assigned Connections** tile carrying the number of Connections currently in the Environment
 
-## Create an environment
+Flip a card over to reveal its management actions - the **pencil** (edit) and **trash can** (delete) icons - along with the **Created At** and **Updated At** timestamps.
 
-**Needs:** Create Environment in the organization that will own the environment.
+If the organization has no Environments yet, the page shows a **No environments available** empty state instead of the grid.
 
-An environment takes a name, a description, and an organization. The organization is required; without it the request fails with `organizationId is required`. The environment stays in that organization for its whole life.
+![The Environments page, showing an environment card with its name, its "No description" placeholder and the Assigned Connections tile, above the pagination control](images/environments-grid.png)
 
-- The Environments page requires a name and an organization. The API does not check that the name is non-empty or unique.
-- Name and description are each limited to 255 characters.
-- A new environment is empty and attached to no workspace. It is an ordinary environment, which means you can edit and delete it and manage its connections.
+### Finding an Environment
 
-## Edit an environment
+Click the **magnifier** in the toolbar to expand the search box, then filter the list by name. Searching resets you to the first page of results, so a match on a later page is still found.
 
-**Needs:** Edit Environment.
 
-An update replaces both the name and the description with the values you send. A field you leave out becomes empty, so send both every time. Editing never changes the organization and never changes the connections.
+## View the Connections in an Environment
 
-## Assign connections to an environment
+The **Assigned Connections** tile on an Environment card is both a count and a control. Clicking it opens the *&lt;Environment name&gt;* **Resources** dialog, which shows two lists side by side:
 
-**Needs:** Assign connections to environment.
+- **Available Connections (n)** on the left - Connections in the organization that are *not* in this Environment.
+- **Assigned Connections (n)** on the right - the Connections that belong to this Environment.
 
-Assigning a connection places it in the environment, whether the connection is managed or discovered. One connection can be in any number of environments, and an environment can hold any number of connections.
+The heading of each list carries its total, so the dialog answers "what is in this Environment, and what could be?" in one place. Both lists load twenty-five Connections at a time and fetch the next page as you scroll.
 
-Assigning a connection also makes its credentials reachable. Who can use it follows the [access rules for connections](/cloud/concepts/environments/#access-to-connections-and-credentials): the owner, members of teams assigned to a workspace that holds the environment, and holders of View All Organizations.
 
-Layer5 Cloud answers an assignment this way:
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Connections, Credentials, and Access</h4>
+  
+      Assigning a Connection to an Environment implicitly makes its Credentials available too. Who can then use them is governed by the Workspaces the Environment is linked to - see <a href="/cloud/concepts/spaces/environments/#access-control-for-connections-and-credentials">Access Control for Connections and Credentials</a>.
+  
+</div>
+
+
+
+
+## See the Environments in a Workspace
+
+The Environments page lists every Environment in the organization. To see only the Environments that a particular Workspace can draw on, open the [Workspaces page](https://cloud.layer5.io/spaces/workspaces) and use that Workspace's **Environments** tile - the same control you use to link and unlink them.
+
+See [Link Environments to a Workspace](/cloud/guides/workspaces/managing-workspaces/#link-environments-to-a-workspace) for the full procedure.
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Many-to-Many Relationship</h4>
+  
+      An Environment can be linked to more than one Workspace, and a Workspace can have more than one Environment. An Environment that appears in no Workspace is still perfectly valid - it simply is not shared with any team yet.
+  
+</div>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Managed Environments Cannot Be Linked to a Workspace</h4>
+  
+      <p>Linking an Environment that Layer5 Cloud provisioned for your organization - the Environment behind your own identity providers, for instance - to a Workspace is refused. Linking one grants every member of that Workspace&rsquo;s teams read access to the Environment&rsquo;s Connections and the Credentials behind them, and your organization&rsquo;s identity-provider credentials are not shared that way.</p>
+<p>Unlinking is not refused. If such an Environment was linked to a Workspace before this restriction existed, you can still remove it from that Workspace.</p>
+
+  
+</div>
+
+
+
+## Create an Environment
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Permissions Required</h4>
+  
+      Creating an Environment requires the <strong>Create Environment</strong> key. Without it the <strong>Create</strong> button is disabled.
+  
+</div>
+
+
+
+1. On the [Environments page](https://cloud.layer5.io/spaces/environments), click **Create**.
+2. In the **Create Environment** dialog, confirm the **Organization** that will own the Environment. The select is pre-filled with the organization you currently have in context and lists every organization you are a member of, so change it here if the Environment belongs elsewhere. The field is required and is fixed once the Environment exists, so choose carefully.
+3. Enter a **Name** (required) and an optional **Description**.
+4. Click **Save**.
+
+The new Environment appears in the grid with no Connections assigned. Assigning them is a separate step - see [Assign Connections to an Environment](#assign-connections-to-an-environment).
+
+## Edit an Environment
+
+You can change an Environment's name and description at any time. An update replaces both the name and the description with the values you send. A field you leave out becomes empty, so send both every time. Names and descriptions are each limited to 255 characters, and names do not have to be unique. Editing never changes the organization and never changes the connections.
+
+1. Flip the Environment's card to its back face.
+2. Click the **pencil** icon.
+3. Amend the **Name** and **Description** in the **Edit Environment** dialog.
+4. Click **Update**.
+
+The owning **Organization** is fixed at creation and is therefore not offered for editing.
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Editing Connection Membership</h4>
+  
+      The Edit dialog covers the Environment&rsquo;s own details only. Its Connection membership is edited from the <strong>Assigned Connections</strong> tile on the card, described next.
+  
+</div>
+
+
+
+## Assign Connections to an Environment
+
+1. Click the **Assigned Connections** tile on the Environment's card to open the **Resources** dialog.
+2. Select one or more Connections in the **Available Connections** list on the left.
+3. Move them across with the arrow buttons between the two lists:
+    - **>** moves the selected Connections to **Assigned Connections**.
+    - **>>** moves every available Connection across at once.
+4. Click **Save**.
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Why Move All is Sometimes Unavailable</h4>
+  
+      The <strong>&raquo;</strong> and <strong>&laquo;</strong> buttons act on the whole list, so they stay disabled until every page of that list has been loaded. Scroll to the bottom of the list to load the rest, or move your selection across with <strong>&gt;</strong> and <strong>&lt;</strong> instead.
+  
+</div>
+
+
+
+**Save** stays disabled until you have actually changed something, and one **Save** commits every addition and removal you made in the dialog together.
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Some Environments Are Managed for You</h4>
+  
+      <p>A few Environments are provisioned for your organization by Layer5 Cloud rather than created by someone in it, and they hold organization-level configuration Layer5 Cloud itself relies on - the Environment behind your organization&rsquo;s own identity providers is one. Their Connections are managed from the <a href="/cloud/guides/organizations/org-management/#configuring-identity-providers-bring-your-own-credentials">Identity Providers tab</a> of Edit Organization, so assigning or removing Connections here is refused.</p>
+<p>You can still open such an Environment, see what belongs to it, and change its name and description. Only Connection membership, deletion, and linking it to a Workspace are declined.</p>
+
+  
+</div>
+
+
+
+## Remove Connections from an Environment
+
+Removal is the same dialog in the other direction:
+
+1. Click the **Assigned Connections** tile on the Environment's card.
+2. Select one or more Connections in the **Assigned Connections** list on the right.
+3. Move them back with **<** (selected) or **<<** (all).
+4. Click **Save**.
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Removal Does Not Delete the Connection</h4>
+  
+      Taking a Connection out of an Environment only ends its membership of that Environment. The Connection itself, and any Credentials it uses, continue to exist and remain assigned to any other Environments they belong to. See <a href="https://docs.meshery.io/concepts/logical/connections">lifecycle of connections</a> in the Meshery documentation for what does delete a Connection.
+  
+</div>
+
+
+
+## Delete an Environment
+
+You can delete a single Environment or several at once.
+
+- **A single Environment:** flip its card and click the **trash can** icon, then confirm in the **Delete Environment?** prompt. Deletion is irreversible.
+- **Several Environments:** tick the bulk-select checkbox on the back face of each card you want to remove. A bar appears above the grid reporting how many are selected; click its delete icon and confirm.
+
+
+
+
+
+
+
+
+<div class="alert alert-danger" role="alert">
+<h4 class="alert-heading">What Happens When an Environment is Deleted?</h4>
+
+    Deleting an Environment does <strong>not</strong> delete the Connections inside it. Connections that also belong to other Environments continue to belong to those Environments. The Environment is detached from any Workspaces it was linked to, and the resources it made available to those Workspaces stop being available through it.
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Managed Environments Cannot Be Deleted Here</h4>
+  
+      <p>Deleting an Environment your organization did not create - one Layer5 Cloud provisioned to hold organization-level configuration, such as the Environment behind your own identity providers - is refused, whether you delete it singly or as part of a bulk selection. Use <strong>Delete All Identity Providers</strong> on the <a href="/cloud/guides/organizations/org-management/#configuring-identity-providers-bring-your-own-credentials">Identity Providers tab</a> instead, and the Environment is taken away with the configuration it holds.</p>
+<p>This is why deletion is refused rather than the Environment simply being hidden: an Environment that still holds live configuration should not disappear from a grid where you can see everything else you own.</p>
+
+  
+</div>
+
+
+
+While an Environment is bulk-selected its card cannot be flipped and its individual edit and delete icons are suppressed, so the bulk toolbar is the only way to act on it. Clear the selection to get the per-card actions back.
+
+## Behavior the server enforces
+
+The Environments page requires a name and an organization. The API does not check that the name is non-empty or unique. Creating an environment without an organization fails with `organizationId is required`. A new environment is empty and attached to no workspace.
 
 | Condition | Result |
 | --- | --- |
-| The environment exists and is ordinary | The connection is assigned |
+| Assign a connection to an ordinary environment | The connection is assigned. One connection can be in any number of environments. |
 | No live environment has that identifier | HTTP 404, `no environment with the requested id` |
-| The environment is provisioned by the platform | HTTP 403, `this connection cannot be assigned to this environment` |
+| Assign or detach a connection on a platform-provisioned environment | HTTP 403, `this connection cannot be assigned to this environment` or `this connection cannot be detached from this environment` |
+| Remove a connection that was never assigned | HTTP 404, `no such connection assignment` |
+| Delete a platform-provisioned environment | HTTP 403, `this environment is provisioned by the platform and cannot be deleted here` |
+| Any other delete failure | HTTP 400, `unable to delete environment` |
 
-Layer5 Cloud checks the permission in the environment's organization. It does not compare the connection's organization with the environment's, and it does not check who owns the connection.
+Who can use an assigned connection follows [Access Control for Connections and Credentials](/cloud/concepts/spaces/environments/#access-control-for-connections-and-credentials): the owner, members of teams assigned to a workspace that holds the environment, and holders of View All Organizations. Access through a workspace is read-only.
 
-## View the connections in an environment
+The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions because of the plan. The keys are View Environment, Create Environment, Edit Environment, Delete Environment, Assign connections to environment, Remove connections from environment, and View Connections. See [Default Permissions](/cloud/reference/default-permissions/).
 
-**Needs:** View Environment.
-
-The connection list of an environment defaults to the connections assigned to it. Switch the filter to see the connections not yet in it, which is the pick list for an assignment. You can search, order by creation time, update time, or name, and page through results.
-
-## Remove connections from an environment
-
-**Needs:** Remove connections from environment.
-
-Removing a connection takes it out of this environment only. The connection and its credential remain, and so does its membership in any other environment. Team members who reached the connection only through this environment lose that access.
-
-| Condition | Result |
-| --- | --- |
-| The connection is in the environment | It is removed |
-| The connection was never assigned | HTTP 404, `no such connection assignment` |
-| The environment is provisioned by the platform | HTTP 403, `this connection cannot be detached from this environment` |
-
-## See the environments in a workspace {#see-the-environments-in-a-workspace}
-
-The environments attached to a workspace default to the list of its environments. Switch the filter to list the organization's environments not yet attached, which is the pick list for an attachment. Attaching and detaching are workspace tasks. See [Attach an environment to a workspace](/cloud/guides/workspaces/managing-workspaces/#link-environments-to-a-workspace).
-
-## Delete an environment
-
-**Needs:** Delete Environment.
-
-Deleting an environment ends every connection assignment and every workspace attachment it holds. It deletes no connection, credential, or workspace. Connections that also belong to other environments stay in those. Team members lose the access the environment gave them through workspaces.
-
-| Condition | Result |
-| --- | --- |
-| The environment is ordinary and live | It is deleted |
-| No live environment has that identifier | HTTP 404, `no environment with the requested id` |
-| The environment is provisioned by the platform | HTTP 403, `this environment is provisioned by the platform and cannot be deleted here` |
-| Any other failure | HTTP 400, `unable to delete environment` |
-
-## Environments you cannot change
-
-Layer5 Cloud provisions some environments itself to hold organization configuration, such as the mail server or sign-in providers. They show in the environment list like any other. The controls on this page refuse them:
-
-- You cannot delete one.
-- You cannot assign connections to one or remove connections from one.
-- You cannot attach one to a workspace.
-
-An existing attachment of one to a workspace can still be removed. Manage the configuration they hold through the organization guides: [Bring Your Own Mail Server](/cloud/guides/organizations/org-management/bring-your-own-mail-server/) and [Organization Configuration Scenarios](/cloud/guides/organizations/configuration-scenarios/).
+Every member of an organization can list every environment in it. A list request names one organization. View All Organizations widens it to every organization.
 

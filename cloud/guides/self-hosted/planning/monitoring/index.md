@@ -1,52 +1,58 @@
 # Monitoring
 
 
-> What a self-hosted Layer5 Cloud deployment exposes for monitoring: health endpoints, logs and error codes, startup signals, and OpenTelemetry traces.
+> Plan monitoring for Layer5 Cloud self-hosted deployments: metrics, logs, tracing, dashboards, and alerts.
 
 
-Layer5 Cloud gives you four signals: two health endpoints, structured logs with stable error codes, a set of startup messages that tell you whether the deployment is fully working, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint, so build service-level indicators from ingress and Kubernetes metrics plus the signals below.
+Layer5 Cloud gives you health endpoints, structured logs with stable error codes, startup messages, and optional OpenTelemetry traces. It does not expose a Prometheus metrics endpoint. Build service-level indicators from your ingress and Kubernetes metrics plus the signals below.
 
-## Health endpoints
+## Objectives
 
-| Endpoint | Answers | Meaning |
-| --- | --- | --- |
-| `GET /healthz` | `200` with the text `Cloud is live` | The process is running. The chart uses it for the liveness probe. |
-| `GET /readyz` | `200` when ready, `503` before | The server finished startup and is serving. The chart uses it for the readiness and startup probes. |
+- Know whether the process is running (`/healthz`) and whether startup finished (`/readyz`)
+- Alert on stable error codes, not on message text
+- Turn tracing on only when you have a collector
+- Keep startup logs secret, because provider initialization logs the initial administrator password
 
-Both endpoints are unauthenticated. The startup probe allows 20 failed checks at 10-second intervals, so a slow start gets about 200 seconds before Kubernetes restarts the pod. Database migrations run before the server reports ready, so an upgrade that carries a large migration can approach that limit.
+## Metrics
 
-Kratos and Hydra expose their own health endpoints through their subcharts. The chart configures Hydra liveness on `/health/alive` and readiness on `/health/ready`.
+The server does not publish application metrics. Use the ingress and the cluster:
+
+- Ingress: HTTP status and latency by route, including `/kratos`, `/hydra`, and WebSocket upgrades on `/collaboration`
+- Kubernetes: pod restarts, the readiness of `deploy/meshery-cloud`, and the Kratos and Hydra pods
+- PostgreSQL: connection count, storage, and replication, from the database's own metrics
+
+There is no cache, worker queue, or HPA signal inside Layer5 Cloud unless you turn on the chart's autoscaler yourself.
 
 ## Logs
 
-The server writes logs in syslog format. The chart sets the level to `4` (info). Set `env.loglevel` to `5` for debug and `6` for trace; use debug only while diagnosing, because it records more detail about requests and mail.
+The server writes logs in syslog format. The chart default level is `4` (info). Set `env.loglevel` to `5` for debug and `6` for trace, and return it to `4` when you finish. Logs are not JSON.
 
-Errors carry a stable code of the form `meshery_cloud-NNNN`. Alert on the codes, not on message text. The codes that matter operationally:
+Errors carry a stable code of the form `meshery_cloud-NNNN`.
 
-| Code | Level | Meaning | Reference |
-| --- | --- | --- | --- |
-| `meshery_cloud-3301` | Error, then the process exits | The shared mail relay fails a startup screen. | [Troubleshoot Email Delivery](/cloud/guides/self-hosted/operating/smtp/) |
-| `meshery_cloud-3302` | Error | The mail relay is unreachable. No mail leaves until it clears. | Same |
-| `meshery_cloud-3304` | Error | The mail relay's certificate does not verify. | Same |
-| `meshery_cloud-3300` | Critical | An organization's own mail relay refused a message and fallback is off, so the message was dropped. | Same |
-| `meshery_cloud-3303` | Critical | An organization's mail relay accepted a message and never confirmed it. | Same |
+| Code | Level | Meaning |
+| --- | --- | --- |
+| `meshery_cloud-3301` | Error, then the process exits | The shared mail relay fails a startup screen. |
+| `meshery_cloud-3302` | Error | The mail relay is unreachable. |
+| `meshery_cloud-3304` | Error | The mail relay's certificate does not verify. |
+| `meshery_cloud-3300` | Critical | An organization's own mail relay refused a message and fallback is off. |
+| `meshery_cloud-3303` | Critical | An organization's mail relay accepted a message and never confirmed it. |
 
-Failures that the server survives are logged and, where a person acted, recorded as events that Provider Admins can read: an entitlement webhook that did not return `200` or `202`, and a signup decision whose webhook failed. A failed support-request webhook is logged and returned to the person who sent the request, but not recorded as an event.
+See [Email / SMTP Troubleshooting](/cloud/guides/self-hosted/operating/smtp/).
 
 ### Startup messages worth alerting on
 
-The server exits when a database connection fails or a migration fails. It logs and keeps running for these, so a green pod does not prove they succeeded:
+The server exits when a database connection fails or a migration fails. It logs and keeps running for these, so a ready pod does not prove they succeeded:
 
 | Message | What it means |
 | --- | --- |
-| `Failed to initialize Provider Admin And Provider Organization` | `INIT_CONFIG` was invalid or a step failed. The deployment runs without a provider administrator. |
-| `IdP seed` warnings | The default Google or GitHub sign-in credentials were not stored. Sign-in on custom domains that use the defaults fails. |
-| A credential encryption key error | `env.cloudCredentialEncryptionKey` is missing or malformed. Stored credentials cannot be read or written. |
+| `Failed to initialize Provider Admin And Provider Organization` | `INIT_CONFIG` was invalid or a step failed. |
+| `IdP seed` warnings | The default Google or GitHub sign-in credentials were not stored. |
+| A credential encryption key error | `env.cloudCredentialEncryptionKey` is missing or malformed. |
 | `Failed to initialize OpenTelemetry tracing` | The tracing configuration was rejected. The server runs without traces. |
 
-## Traces
+## Tracing
 
-Set `env.otelConfig` to send OpenTelemetry traces to an OTLP gRPC collector:
+Set `env.otelConfig` to send OpenTelemetry traces to an OTLP gRPC collector. Leave it empty to turn tracing off.
 
 ```yaml
 env:
@@ -66,19 +72,36 @@ env:
 | `service_version` | No | Version reported with each trace. |
 | `environment` | No | Deployment environment reported with each trace. |
 
-Each request produces one trace with a span for the whole HTTP request, a span for each middleware that ran (domain resolution, authentication, authorization), and a span for the handler. Leave `otelConfig` empty to turn tracing off.
+Each request produces one trace with a span for the whole HTTP request, a span for each middleware that ran, and a span for the handler.
 
-## What to monitor
+## Dashboards
 
-| Concern | Signal |
-| --- | --- |
-| The server is up | `/healthz`, pod restarts |
-| The server is serving | `/readyz`, ingress `5xx` rate and latency by route |
-| Sign-in works | Ingress `5xx` on `/kratos` and `/hydra`, Kratos and Hydra pod health |
-| Mail flows | Error codes `3301` to `3304`, and a periodic send through the [email test endpoint](/cloud/guides/self-hosted/operating/smtp/#send-a-test-email) |
-| Webhooks deliver | Recorded webhook failure events |
-| The database is healthy | PostgreSQL connection count, storage, and replication, from your database's own metrics |
-| Co-editing works | Ingress WebSocket connection counts on `/collaboration` |
+Build dashboards from ingress and Kubernetes data, plus the log codes above. Useful views:
 
-Restrict access to logs: they carry user email addresses, and at debug level they include request detail. Provider initialization also logs the configuration it reads, including the initial administrator password, so treat startup logs as secret and remove `env.initConfig` after the first successful start.
+- `/healthz` and `/readyz` success, and pod restarts
+- Ingress 5xx rate and latency by route
+- Kratos and Hydra pod health
+- PostgreSQL storage and connections
+- WebSocket connection counts on `/collaboration`
+
+## Alerts
+
+Alert on the mail error codes `3301`, `3302`, `3304`, `3300`, and `3303`, on `/readyz` staying non-200, and on migration failures that exit the process. Layer5 Cloud does not send alerts to Slack, PagerDuty, or Datadog. Route alerts from your own log and ingress tooling.
+
+## Sizing and Retention
+
+Database migrations run before the server reports ready. The startup probe allows 20 failed checks at 10-second intervals, so a slow start gets about 200 seconds before Kubernetes restarts the pod. An upgrade with a large migration can approach that limit.
+
+## Security and Compliance
+
+Restrict access to logs. They carry user email addresses, and at debug level they include request detail. Provider initialization logs the configuration it reads, including the initial administrator password. Remove `env.initConfig` after the first successful start. See [Provider initialization](/cloud/guides/self-hosted/deployment/#provider-initialization).
+
+## Reference Architecture (example)
+
+| Endpoint | Answers | Meaning |
+| --- | --- | --- |
+| `GET /healthz` | `200` with the text `Cloud is live` | The process is running. The chart uses it for the liveness probe. |
+| `GET /readyz` | `200` when ready, `503` before | Startup finished. The chart uses it for the readiness and startup probes. |
+
+Both endpoints are unauthenticated. Kratos and Hydra expose their own health endpoints. The chart configures Hydra liveness on `/health/alive` and readiness on `/health/ready`.
 

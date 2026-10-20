@@ -21,13 +21,13 @@ You can switch modes through the **render-mode switcher** in the Options panel (
 
 **Cost:** highest. Every pan, zoom, or layout update touches every overlay and badge in the visible area. Designed to look best, not go fastest.
 
-**Default:** this is the default mode when you open a design unless adaptive mode has downshifted you — see below.
+**Default:** every session starts in Full unless the URL sets another mode. Adaptive mode is off until you turn it on.
 
 ### Medium
 
 **Use when:** day-to-day editing, adding or arranging components, when you want enough detail to orient yourself but not every live overlay running.
 
-**What renders:** component SVG backgrounds, node shapes, edge styling, expand/collapse badges (essential for navigating compound nodes), error badges, and core interactions. **Suppressed:** decorative badges (compound node, label, external link, managed-by-Meshery, terminal session), TagSets, mount animations, gradient fills, validation / inventory badges, and feasibility indicators. You keep the visual identity of each component but stop paying the per-frame cost of re-positioning dozens of badges.
+**What renders:** component images, relationship styling, and expand/collapse badges so you can still navigate compound components. **Suppressed:** gradient fills, TagSets, animations, and most badges, including validation and dry-run error badges, compound-component badges, label badges, external-link badges, and the Operator managed-by-Meshery and terminal-session badges.
 
 **Cost:** moderate. Fan-out on pan/zoom is roughly half of Full because the badge and overlay layers don't react to every viewport change.
 
@@ -43,7 +43,7 @@ You can switch modes through the **render-mode switcher** in the Options panel (
 
 **Use when:** embedding a design, sharing a read-only snapshot, presenting a design to an audience, or viewing a design where nobody should be able to accidentally edit.
 
-**What renders:** the same minimal set as Wireframe — outlines, shapes, relationships — but with **every interactive affordance disabled**. All nodes are locked (cannot be moved or resized), all event handlers are removed (no click, hover, grab, drag, resize, or double-click responses), and no keyboard shortcuts that would mutate the design are active. The canvas is visible and pannable but not editable.
+**What renders:** as sparsely as Wireframe, but relationship styling (color, curves, arrow style) stays on edges. Components are locked and take no pointer input: nothing can be grabbed, dragged, selected, resized, or double-clicked. The canvas is visible and pannable but not editable. `render=view-only` is a display choice for the session, not an access control.
 
 **Cost:** lowest. Same paint budget as Wireframe plus the interaction layer is disabled entirely.
 
@@ -95,7 +95,7 @@ You can also set the render mode via URL query parameter. Append the `render` pa
 - `render=full` — Full rendering with all details
 - `render=medium` — Style-only rendering without badges and TagSets
 - `render=wireframe` — Outline-only rendering
-- `render=viewOnly` — Non-interactive wireframe snapshot
+- `render=view-only` -- Non-interactive view. The hyphen is required.
 
 For example: `https://kanvas.new/extension/meshmap?render=wireframe&mode=design&design=xxxx`
 
@@ -110,14 +110,14 @@ Threshold table:
 | Feature                      | Full                     | Medium                   | Wireframe                | View-Only                | Notes                                                                                           |
 | ---------------------------- | -----------------------: | -----------------------: | -----------------------: | -----------------------: | ----------------------------------------------------------------------------------------------- |
 | **Auto-pan on Drag**         |                      100 |                      500 |                    1,000 |                    1,000 | See [Auto-pan on Drag](/kanvas/advanced/autopan/).                                              |
-| **Layout animation**         |                      100 |                       —¹ |                       —¹ |                       —¹ | Animated layouts only run in Full mode with ≤100 edges.                                         |
-| **TagSet visual grouping**   |                    20²  |                      20²  |                      20²  |                      20²  | TagSets display auto-disables past 20 tags; re-enable via **Group Components** in the dock.    |
+| **Layout animation**         | 50 components, 50 relationships, and 100 edges | not animated | not animated | not animated | Animated layouts run only in Full, and only under all three caps. Otherwise the layout applies instantly. |
+| **TagSet visual grouping**   | 30 drawn, Full only | not drawn | not drawn | not drawn | Past 30, Kanvas skips the rest and warns "Skipped rendering of N matchlabels relationships due to limit of 30". |
 | **Feasibility evaluation**   |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       | Gated on zoom, not size — hidden when you zoom out past the detail threshold.                   |
 | **Component style editing**  |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       |      zoom-gated³       | Same: revealed only at detailed zoom levels.                                                    |
 
 ¹ *Layout animation is a Full-mode-only feature by design. Kanvas falls back to instant (unanimated) layouts in other modes, so the per-mode threshold doesn't apply.*
-² *TagSet threshold is tag count, not node count. See [Working with Tags](/kanvas/guides/designing/tagsets/).*
-³ *Zoom-gated features activate when your zoom level is above `MIN_ZOOM_FOR_DETAILED_RENDERING`. Zooming out suppresses them regardless of render mode.*
+TagSets are the only relationship type with a rendering limit. See [Working with Tags](/kanvas/designer/tagsets/).
+Zoom-gated features turn on above 0.5 divided by the display pixel ratio (0.5 on a standard display, 0.25 when the pixel ratio is 2), in every render mode.
 
 ### How size gates interact with render modes
 
@@ -162,8 +162,8 @@ Both are tracked as **p95** across a rolling window of the last 20 samples, so a
 
 Two thresholds on each metric govern the decision:
 
-- **Downshift** — p95 render latency above about 150 ms, or p95 interaction latency above about 80 ms, means the current mode is too expensive. Adaptive moves to the next lower mode after a short 3-second cooldown.
-- **Upshift** — p95 render latency below about 60 ms **and** p95 interaction latency below about 30 ms, sustained across 10 consecutive good samples, means there is headroom to paint more detail. Adaptive moves to the next higher mode (capped by your ceiling) after a longer delay.
+- **Downshift.** When the 95th percentile of the last 20 frame times exceeds 80 ms, Kanvas drops one step and ignores samples for 3 seconds. The signal is how long the canvas takes to produce the next frame after a pan or zoom. Kanvas does not use a separate 150 ms render threshold.
+- **Upshift.** When that percentile stays under 30 ms for 10 consecutive samples, more than 5 seconds after the last change, and the next mode is not above the ceiling. Recovery is at most one step until the next slowdown.
 
 The downshift is fast because a laggy canvas is an immediate problem; the upshift is deliberately slow because you don't want to bounce back into Full the moment things calm down, only to downshift again three seconds later.
 
@@ -238,7 +238,7 @@ Each suggestion is shown at most once per minute to avoid notification fatigue.
 | Lay out a 500+ component design efficiently                | Switch to **Wireframe** for the layout pass, then bump back to Medium or Full for the detail pass.                  |
 | Share a read-only view                                     | Pick **View-Only** and share the design URL.                                                                        |
 | Recover autopan that stopped working                       | Either switch to a lower-fidelity render mode or delete/hide components to drop below the per-mode size threshold.  |
-| Make a snapshot with all badges and TagSets forced visible | Use `?render=full` in the URL — see [Design Render Quality](/kanvas/advanced/url-parameters/).                     |
+| Make a snapshot with badges and TagSets visible | Turn Adaptive off and stay in Full. Full is already the default, so `render=full` is not required. See [Design Render Quality](/kanvas/advanced/url-parameters/). |
 
 ## Best practices
 

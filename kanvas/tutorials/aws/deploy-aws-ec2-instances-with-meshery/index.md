@@ -16,7 +16,7 @@ In this guide, you’ll explore how to deploy AWS resources, including setup and
 
 1. [Self Hosted Meshery Installation](https://docs.meshery.io/installation).
 1. **AWS Account**: An active AWS account is required for accessing AWS resources.
-1. **Kubernetes Cluster**: A running Kubernetes cluster, such as Minikube or EKS.
+1. **Kubernetes Cluster**: A running Kubernetes cluster you control, such as Minikube or EKS. Do not run this tutorial on Meshery Playground or hosted kanvas.new. The designs store real AWS keys, and Playground is a cluster shared with other users. Hosted kanvas.new has no Deploy action.
 
 ### Table of Contents
 
@@ -63,7 +63,7 @@ For this guide, the `in-cluster deployment` method is used.  Follow this [setup 
 
 In this section, you will set up the EC2 controller and configure it to connect to your AWS account. This process involves creating a Kubernetes secret that contains your AWS access keys and configuring the controller pod to consume this secret. While these configurations are already included in our designs, the steps will be demonstrated for clarity.
 
-1. **Clone the EC2 Controller Design**: Start by [cloning the EC2 controller design](https://meshery.io/catalog/deployment/ec2-controller-design-8f7e1431-3885-4ebf-9ef7-d2ec64bd4eb5.html) from the catalog. To do this, click on **Clone** on the catalog page. Once cloned, open the design in the playground, and you will see it displayed on the Kanvas.
+1. **Clone the EC2 Controller Design**: Start by [cloning the EC2 controller design](https://meshery.io/catalog/deployment/ec2-controller-design-8f7e1431-3885-4ebf-9ef7-d2ec64bd4eb5.html) from the catalog. To do this, click on **Clone** on the catalog page. Once cloned, open the design in your self-hosted Meshery, not in Meshery Playground, and you will see it displayed on the Kanvas.
 
     ![EC2 Controller Chart](images/aws-controllers/controller-chart.png)
 
@@ -131,7 +131,7 @@ This step involves deploying all the necessary resources to create the VPC and o
 
 1. Start by [cloning the design](https://cloud.meshery.io/catalog/content/catalog/vpc-workflow-design-50cac19e-209c-4acf-b91c-4784281db033) from the catalog.
 
-2. Once cloned, open the design in the playground, and you will see it displayed on the Kanvas.
+2. Once cloned, open the design in your self-hosted Meshery, not in Meshery Playground, and you will see it displayed on the Kanvas.
 
 3. You can adjust CIDR blocks, region, and other parameters as needed through the configuration tab. This design is configured to be deployed in the `us-east-1` region.
 
@@ -145,7 +145,7 @@ With the VPC and networking resources set up, deploy the EC2 instances within th
 
 1. [Clone the EC2 instances design](https://cloud.meshery.io/catalog/content/catalog/ec2-instances-design-a344f109-2d92-41da-8644-3bc285c3ca9e) from the catalog.
 
-2. Open the design on the Playground and deploy the instances.
+2. Open the design in your self-hosted Meshery, not on Meshery Playground, and deploy the instances.
 
 3. Navigate to the AWS Management Console to confirm the instances' successful deployment.
 

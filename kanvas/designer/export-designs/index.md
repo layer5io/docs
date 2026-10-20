@@ -166,3 +166,8 @@ If you need a version you can come back to, export a copy at the point you care 
   
 After export, your browser will either prompt you to choose a save location or automatically download the file to your default downloads folder.
 </details>
+
+## What each export keeps
+
+Design file YAML downloads as `<design name>.yml` and re-imports losslessly, including layout, annotations, and metadata. The OCI image export is an archive you push with a registry tool. Kubernetes manifest and Helm chart exports keep resources only, not layout. The embeddable JavaScript module is a static canvas snapshot and is not re-imported as a design. In Operator mode, a view downloads as `<view name>.json`. Docker Compose export, SVG export, export of an earlier version, and per-format export options are not available. The catalog's light and dark snapshot images are produced after publishing and are not a user export.
+

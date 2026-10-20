@@ -4,7 +4,7 @@
 > Share designs with other users and use access controls to manage design permissions and visibility.
 
 
-In Kanvas, you can share your designs with other members of your organization and teams, and you can control access permissions. This page describes the different access types for designs and how to effectively use them.
+In Kanvas, you can share a design with specific people and set its visibility. A grant is for one person and has no access level: there is no view-only or comment-only option. A person who can open a private design through a grant can edit it, comment on it, clone it, and download it, and can change its visibility between private and public.
 
 
 
@@ -57,7 +57,7 @@ Designs have visibility statuses that defines who can access your designs. These
 
 - **Private:** Designs with visibility status private define only you, the creator, and the user or team that have access based on granted access permission can view and edit the design. Other users cannot access it unless you explicitly share it with them.[^1]
 
-- **Public:**  Making a design "Public" makes it accessible to anyone on the internet who has the link or discovers it through public channels. By default, users accessing a Public design are granted permissions to view, comment on, and edit the design. 
+- **Public:**  Making a design "Public" makes it accessible to anyone with the link or the design id, including anonymous visitors. Any signed-in user can edit a public design. A newly saved design is public, whatever visibility the client requests. Make a design private before you put sensitive architecture in it. A design cannot change visibility while it is published. 
 
 
 
@@ -94,7 +94,9 @@ There are two primary ways to open the "Share" modal for a design:
 
 ![Ways to open Share modal](images/model-where.gif)
 
-Once the "Share" modal is open, type the names or email addresses of the users or teams you want to invite as Collaborators. From the "Share" modal, you can also typically change the overall visibility status of the design (e.g., switching between Private and Public).
+Once the "Share" modal is open, search for the person and add them. The search covers every user on Layer5 Cloud your role may search, not only your organization. It returns ten matches at a time and nothing for an empty search. The people picker uses the View All Users permission. Without it the search is rejected and the dialog does not find anyone. The dialog finds individual users only. From the "Share" modal, you can also change the overall visibility status of the design (switching between Private and Public).
+
+Share is hidden while the design is empty or published, and while it is still loading. Kanvas checks the Share Design permission before it offers Share. Under the local provider, sharing returns HTTP 501 Not Implemented.
 
 ![Share Modal](images/share-model.png)
 
@@ -137,10 +139,9 @@ When you share a design, or when a design is shared with you, what you can do wi
         -   View the design details.
         -   Modify configurations, add or remove components, and essentially edit the design's content.
         -   Deploy the design.
-    -   However, Collaborators have certain limitations and **cannot**:
-        -   Delete the design.
-        -   Re-share the design with other users or teams.
-        -   Change the design's overall visibility (e.g., from Private to Public).
+    -   A collaborator **cannot** delete the design. Only the owner, or a provider administrator, can delete it. Ownership never transfers.
+    -   Sharing the design onward, and revoking access, depend on the collaborator's own Share Design permission, not on the grant. Most default organization admin roles include Share Design, so expect a collaborator to be able to share the design onward unless your organization has changed its roles.
+    -   Layer5 Cloud does not restrict visibility changes to the owner. A person with a grant can switch the design between private and public.
 
 **How You Get Collaborator Access:**
 
@@ -167,10 +168,9 @@ As the Owner of a design, you can manage who has access to it at any time using 
 
 
 <div class="alert alert-primary" role="alert">
-  <h4 class="alert-heading">Implications of adding a Design to a Workspace</h4>
+  <h4 class="alert-heading">Workspaces and teams do not open a private design</h4>
   
-      When you add design to a workspace, it signifies that all teams associated with that workspace will be allowed to access your designs even if it is private. Review your workspace&rsquo;s team assignments in order to verify which users will be granted access.
-Learn more about <a href="/cloud/concepts/spaces/workspaces/">auditing and assigning Workspace access</a>.
+      Adding a design to a workspace, and assigning teams to that workspace, does not open a private design to those teams. Layer5 Cloud checks the owner, provider administrators, and the design&rsquo;s own grants. The Share dialog finds individual users only. Layer5 Cloud accepts a grant for a team through its API, but no access check honors it, so team members gain nothing from it. To give several people access, grant each person. Organization membership alone does not open a private design.
   
 </div>
 
@@ -205,7 +205,7 @@ You can easily share a direct link to your design:
 
 ## Sharing with Multiple Users via Teams
 
-You can efficiently share your designs with many users at once by sharing with **Teams**. When you share a design with a team, all members of that team become Collaborators on the design, gaining the standard Collaborator permissions.
+You cannot give a whole team access with one grant. The Share dialog finds individual users only, and a team grant is not honored by the access check. Grant each member.
 
 There are two primary ways to share designs with teams:
 

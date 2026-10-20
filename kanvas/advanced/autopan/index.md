@@ -7,7 +7,7 @@
 
 **Auto-pan on Drag** (autopan, for short) is the behavior where Kanvas scrolls the canvas for you when you drag a component close to — or past — the visible edge. Instead of having to stop, let go, scroll the canvas, grab the component again, and continue, you keep dragging and the canvas glides along with you.
 
-Autopan is the difference between **"move this component to another part of the design"** being one continuous gesture vs. four separate ones. It is on by default in the Designer, and you can turn it off any time in the **Options** panel.
+Autopan is the difference between **"move this component to another part of the design"** being one continuous gesture vs. four separate ones. It is off by default. You turn it on as a personal setting in the **Options** panel. The setting is stored in your Kanvas preferences on the server and follows you across browsers. It is not stored in the design and is not shared with collaborators.
 
 ## Why Auto-pan Matters
 
@@ -21,7 +21,7 @@ Kanvas designs often grow past the size of your viewport. A microservices topolo
 6. Drag it to the next edge.
 7. Repeat until you reach the destination.
 
-With autopan enabled, the same action is a single uninterrupted drag. Kanvas detects that the component is leaving the viewport and scrolls the camera in the direction you are dragging, so you never run out of canvas. The further past the edge you push, the faster the canvas pans.
+With autopan enabled, the same action is a single uninterrupted drag. Kanvas starts scrolling when the dragged component comes within 50 pixels of the edge of the visible canvas. Pan speed is fixed and is not configurable. Auto-pan acts on component drags in Designer. It does not speed up the further past the edge you push. While it is on, panning during a drag can leave the component lower than you intended, which is why it ships off. Undo with Ctrl or Cmd+Z restores the previous position.
 
 Autopan is most valuable when:
 
@@ -40,8 +40,8 @@ Kanvas is aware of both cases. The first is harmless — autopan simply never ac
 
 Open the **Options** panel (the gear icon in the Designer toolbar) and look under **Canvas Settings** for **Auto-pan on Drag**.
 
-- **On (default)** — autopan activates when you drag past the viewport edge, subject to the per-render-mode size gate.
-- **Off** — autopan never activates. You pan manually.
+- **On** -- autopan activates within 50 pixels of the viewport edge, subject to the per-render-mode size gate. This is not the default.
+- **Off (default)** -- autopan never activates. You pan manually.
 
 The toggle takes effect immediately. You do not need to refresh the page or re-open the design. If autopan was already running when you flipped the switch, it detaches its drag listeners on the spot; if it was off and you turn it on, it re-attaches them. The switch is per-user (stored as a user preference in your Kanvas profile), so the setting follows you across devices.
 
@@ -128,4 +128,6 @@ If autopan is disabled on a design where you would like it to be active, you hav
 1. **Switch to a lower-fidelity render mode.** Wireframe and View-Only raise the threshold to 1,000 nodes. See the [Render Modes](/kanvas/advanced/render-modes/) page for what each mode costs and what it hides.
 2. **Reduce the live listener count.** The [Layers Panel](/kanvas/advanced/performance/) lets you disable layers of visual information (badges, tags, feasibility indicators) that contribute to the pan fan-out. Turning off a layer effectively moves the threshold upward because there are fewer listeners to amplify each pan.
 3. **Break the design into smaller designs.** If you are consistently bumping the threshold in your preferred render mode, the design might be past the scale Kanvas targets for interactive editing. Splitting it into referenced sub-designs keeps each one within the sweet spot.
+
+The Options dialog describes auto-pan as disabled outside Full render mode. Kanvas does not behave that way: Medium, Wireframe, and View-only allow it within the limits in the table above. Nothing on the canvas shows that size turned auto-pan off. Hiding layers in the Layers panel takes those components and relationships off the canvas, which lowers the counts compared with the limit.
 

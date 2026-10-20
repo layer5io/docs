@@ -71,7 +71,7 @@
     </div>
 <div class="card-body">
     <p class="card-text">
-        <p>Learner = A <a href="/cloud/concepts/identity-and-security/roles/user-role/">User</a> who has registered for academy content.
+        <p>Academy Learner is an organization role. It is separate from the <a href="/cloud/concepts/identity-and-security/roles/user-role/">User</a> role. Holding it grants access to Academy content and registration.
 <img src="images/learner.svg" link="images/learner.svg"  width="100%" alt="Learner Roles" /></p>
 </p>
       </div>
@@ -92,9 +92,9 @@
 
 
 <div class="alert alert-info" role="alert">
-  <h4 class="alert-heading">Managing Learner Costs</h4>
+  <h4 class="alert-heading">Learners and billing</h4>
   
-      While the maximum number of instances is unlimited, the available seats for Learners is determined by your organization&rsquo;s subscription plan. Please be mindful of your subscription to manage costs effectively.
+      There is no seat cap that blocks someone from receiving Academy Learner. A member whose only role is Academy Learner is excluded from the organization&rsquo;s billable user count. The count still never falls below the plan&rsquo;s minimum, and it does not stop anyone from joining.
   
 </div>
 
@@ -119,20 +119,19 @@
 </ul>
 <p><strong>Who can assign this role?</strong></p>
 <ul>
-<li>Organization Administrators or Academy Administrators</li>
+<li>An Organization Admin of that organization, a holder of Assign User Roles there, or a Provider Admin. Academy Admin does not assign organization roles by virtue of that role.</li>
 </ul>
 <p><strong>When this role first assigned?</strong></p>
 <ul>
-<li>Automatically to users who join through a special learner invite link</li>
-<li>Manually by an Organization Administrator or Academy Administrator</li>
+<li>When an authorized administrator assigns it, or when an invitation lists Academy Learner. There is no automatic learner role and no separate learner invite link. An invitation is an organization invitation that can name this role.</li>
 </ul>
 <p><strong>How many instances of these roles?</strong></p>
 <ul>
-<li>Min: 0, Max: many</li>
+<li>Any number. The role is available on every plan.</li>
 </ul>
 <p><strong>Who can remove assignment of this role?</strong></p>
 <ul>
-<li>Organization Administrators or Academy Administrators</li>
+<li>The same people who can assign it. Removing the role does not end the membership.</li>
 </ul>
 <p><strong>What permissions does this role have?</strong></p>
 <ul>

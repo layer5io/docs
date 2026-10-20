@@ -23,7 +23,7 @@ Before you begin, ensure you have the following:
    Installed and authenticated (`az login`) in your local shell.
 5. **cert-manager**
    Installed in your Kubernetes cluster (required by Azure Service Operator).
-6. **Meshery Catalog Extension**: The Meshery Catalog extension enabled within your Meshery environment to access pre-configured cloud-native design patterns.
+6. **Meshery Catalog**: Access to the Meshery Catalog so you can clone the operator design. There is no separate Catalog extension to enable. Do not run this tutorial on Meshery Playground. It stores real Azure credentials in a Secret, and Playground is a shared cluster. Hosted kanvas.new has no Deploy action.
 
 
 ### Table of Contents

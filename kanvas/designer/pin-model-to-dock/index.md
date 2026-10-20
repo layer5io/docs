@@ -85,3 +85,7 @@ You can remove a model from the dock in two ways:
 
 
 
+## Using a pinned model
+
+Select a pinned model to open a picker with its components. Click a component to add it near the center of the canvas, or drag it to a specific spot. The picker has its own search box and a version selector with an "All Versions" choice. A pinned model whose lookup returns nothing is not drawn.
+

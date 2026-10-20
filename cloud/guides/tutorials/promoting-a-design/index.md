@@ -1,44 +1,53 @@
 # Promoting a Design from Staging to Prod
 
 
-> Learn how to move a design from a staging workspace to a production workspace, with environment assignment and access approval.
+> Learn how to move a design from a staging workspace to a production workspace and deploy it to a production environment.
 
 
 
-This guide walks through how Five promotes the `prod-deployment-v2` design from the `orbital-staging` workspace to `orbital-production`, with Zara Osei (Infrastructure Team Admin) approving the environment assignment.
+This guide walks through how Five promotes the `prod-deployment-v2` design from the `orbital-staging` workspace to `orbital-production`, then deploys it to the `prod-aws` environment.
+
+Promotion is a move. A design lives in at most one workspace, so assigning it to production removes it from staging. There is no approval step and no copy.
+
+See [Meet Five and the Cast]() for the full Orbital Labs narrative reference.
 
 ## Overview
 
-At Orbital Labs, workspaces mirror the deployment pipeline:
+At Orbital Labs, workspaces mirror the deployment pipeline. A workspace decides where a design lives and which teams can read which connections. An environment is the deploy target. A team assignment gives read-only access to connections. It does not give access to designs.
 
 | Workspace | Environment | Teams with Access |
 |---|---|---|
 | `orbital-staging` | `staging-aws` (EKS + S3 + ElastiCache), `staging-azure` (AKS + Azure Blob + Azure Service Bus) | Infrastructure + Development |
 | `orbital-production` | `prod-aws` (EKS + RDS + S3 + CloudFront + SQS), `prod-gcp` (GKE + Cloud SQL + Cloud Storage + Pub/Sub) | Infrastructure only |
 
-Five has finished validating `prod-deployment-v2` in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution — the core of Orbital Labs' AWS production platform.
+Five has finished validating `prod-deployment-v2` in staging. The design deploys an EKS cluster, an RDS PostgreSQL database, an S3 bucket, and a CloudFront distribution, the core of Orbital Labs' AWS production platform.
+
+Every member of the organization can already see both workspaces. Visibility is organization-wide. What a workspace grants comes from the teams and environments assigned to it.
 
 ## Prerequisites
 
-- You have a design ready in a staging workspace that has been tested and reviewed.
-- You have access to the target production workspace (Infrastructure team membership at Orbital Labs).
+- You have a design ready in a staging workspace that has been tested.
+- You hold **Assign Designs to Workspaces** in the production workspace's organization. That is the only permission Layer5 Cloud checks for the move. You do not also need access to the workspace the design leaves.
 - The production workspace has at least one environment assigned with the target cloud connections.
+- To deploy, you run a Meshery Server that holds the cluster connection. The hosted kanvas.new site does not deploy designs.
 
 ## Steps
 
-### Step 1 — Open the design in staging
+### Step 1: Open the design in staging
 
 1. Navigate to [Layer5 Cloud](https://cloud.layer5.io) and open the `orbital-staging` workspace.
-2. Find `prod-deployment-v2` in the **Designs** tab.
-3. Open the design and confirm it is in the expected state — all components connected, no validation errors.
+2. Find `prod-deployment-v2` in the designs assigned to that workspace.
+3. Open the design and confirm it is in the expected state, with components connected and no validation errors.
 
-### Step 2 — Transfer the design to the production workspace
+The staging team cannot open a private design just because the team is assigned to the workspace. Five can open it because Five owns it.
 
-Designs belong to exactly one workspace at a time. To promote the design, transfer it.
+### Step 2: Transfer the design to the production workspace
 
-1. From the design's menu (⋮), click **Move to Workspace**.
-2. Select `orbital-production` from the workspace list.
-3. Confirm the transfer.
+Designs belong to at most one workspace at a time. To promote the design, move it.
+
+1. On the `orbital-production` workspace, open **Designs/Views**.
+2. Select `prod-deployment-v2` from the designs you own that are not already in that workspace.
+3. Move it into `orbital-production` and save.
 
 
 
@@ -49,54 +58,33 @@ Designs belong to exactly one workspace at a time. To promote the design, transf
 <div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
   <h4 class="alert-heading" style="color: #3772ff;">Info</h4>
   
-      Only users with access to <strong>both</strong> the source and destination workspace can transfer a design. Five is a member of the Infrastructure team, which has access to both <code>orbital-staging</code> and <code>orbital-production</code>.
+      Layer5 Cloud checks Assign Designs to Workspaces in the destination organization&rsquo;s workspace. Anyone who holds it can promote, so grant it only to the people who should decide what reaches production. The design disappears from <code>orbital-staging</code> because the move is not a copy.
   
 </div>
 
 
 
-### Step 3 — Select the target environment
+### Step 3: Select the target environment
 
-With `prod-deployment-v2` now in `orbital-production`, assign the environment where it will deploy.
+With `prod-deployment-v2` now in `orbital-production`, deploy it from Kanvas.
 
-1. Open the design in `orbital-production`.
-2. Click **Deploy** and select the target environment — in this case, `prod-aws`.
+1. Open the design in Kanvas.
+2. Click **Deploy** and select the target environment, in this case `prod-aws`.
 3. Review the connection list: EKS cluster, RDS (PostgreSQL), S3, CloudFront, SQS.
 
-### Step 4 — Zara approves (if required)
+The deploy action offers environments from the organization's whole list at the moment you deploy. It does not limit the list to the design's workspace, so select `prod-aws` yourself. See [Deploying Designs](/kanvas/tasks/designs/deploying-designs/).
 
-If your organization requires Team Admin approval before production deployments, Zara receives a review request.
+The workspace decided where the design lives. The environment you choose decides where it runs.
 
-1. Zara opens the pending deployment request in her notifications.
-2. She reviews the design diff and the target environment.
-3. She clicks **Approve** — the deployment proceeds to `prod-aws`.
+### Step 4: Verify the deployment
 
-
-
-
-
-
-
-<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
-  <h4 class="alert-heading" style="color: #3772ff;">Why does Zara need to approve?</h4>
-  
-      The Infrastructure team&rsquo;s keychain grants <code>orbital-production</code> workspace access and <code>prod-aws</code> environment deployment rights only to members who have been explicitly granted those keys. Zara, as Team Admin, holds the approval authority for production environment assignments. See <a href="/cloud/concepts/identity-and-security/keychains/">Keychains</a> for how this is configured.
-  
-</div>
-
-
-
-### Step 5 — Verify the deployment
-
-After approval:
-
-1. Navigate to the **Deployments** tab in `orbital-production`.
-2. Confirm that `prod-deployment-v2` shows a **Deployed** status against `prod-aws`.
-3. Verify the connected resources (EKS, RDS, S3, CloudFront, SQS) show healthy connection status.
+1. Open the `orbital-production` workspace's recent activity.
+2. Confirm the log lists the design assignment, with the email address of the person who moved it. Reading the log requires the View Workspace permission.
+3. In Kanvas, confirm the deploy to `prod-aws` completed for the connections you selected.
 
 ## What's Next
 
-- To give the Development team visibility into the production design (read-only), Five can share the design individually with Rex and Jordan. See [Sharing a Workspace](/cloud/guides/tutorials/sharing-a-workspace/).
-- To set up a parallel deployment to `prod-gcp`, Five repeats Steps 3–5 selecting `prod-gcp` as the environment.
-- To roll back, Five transfers `prod-deployment-v2` back to `orbital-staging` and deploys the previous version from there.
+- The production team can read the production connections but still cannot open a private design. To give Rex or Jordan access, share the design with each of them. See [Sharing a Workspace](/cloud/guides/tutorials/sharing-a-workspace/).
+- To deploy the same design to `prod-gcp`, repeat the deploy and select `prod-gcp`. Do not copy the design.
+- To roll back, assign `prod-deployment-v2` to `orbital-staging` again. It leaves production the same way it left staging.
 

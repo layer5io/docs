@@ -78,3 +78,7 @@ Saved profiles, historical results and comparisons between runs live in Meshery'
 * **[Instance Details](/kanvas/operator/resource-details/):** Inspect the live state of the resource you are testing.
 * **[Performance Limits and Tuning](/kanvas/advanced/performance/):** Understand the limits of Kanvas itself when working with large designs.
 
+## Current behavior
+
+The action is **Initiate Performance Test**, offered on Service and Ingress only. The panel is 400 px wide and only one panel exists. Opening it generates no load. Seeded values are 10 concurrent requests, 20 queries per second, 30s duration, and load generator `fortio`. The profile name is `<Kind> - <component name>`. The form needs View performance profiles to appear, and Run Test needs Run test. The Kanvas interface does not check a permission before it opens the panel. Layer5 Cloud defines Perform performance test in Operator and Select performance profile in Operator, held by default only by Organization Admin and Provider Admin. Meshery Server generates the load, not the browser. A ClusterIP address is reachable from inside the cluster only.
+

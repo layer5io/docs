@@ -1,113 +1,186 @@
-# Schedule Work with CronJobs
+# Exploring Kubernetes CronJobs
 
 
-> Design a CronJob, deploy it, watch the Jobs and Pods it creates on schedule, change the schedule and redeploy, and clean up.
+> In this tutorial, we will explore how to use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for managing Kubernetes CronJobs.
 
 
-In this tutorial you design a CronJob that runs a small container every minute, deploy it, and watch Kubernetes turn the schedule into Jobs and the Jobs into Pods. Then you change the schedule in place and clean up. Scheduled work such as backups, report generation, and cache warming runs this way, and understanding the CronJob to Job to Pod chain is what lets you answer the two questions that matter in production: did it run, and where is its output.
+Introduction:
+In this tutorial, we will explore Kubernetes CronJobs, a resource that allows you to run jobs periodically at specified intervals. We will use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for working with CronJobs in Kubernetes.
 
-## What you will learn
+Prerequisites:
+- Basic understanding of Kubernetes concepts.
+- Meshery Playground access. If you don't have an account, you can sign up at [Meshery Playground](https://play.meshery.io).
 
-- How a CronJob creates a Job for each scheduled time, and how each Job creates a Pod that runs to completion.
-- Why a Job's Pod must use `restartPolicy` `OnFailure` or `Never`.
-- How the history limits decide how many finished Jobs stay in the cluster, and what `concurrencyPolicy` and `suspend` control.
-- Why the objects a controller creates are not part of your design, and how to find them in Operator anyway.
+Lab Scenario: Scheduled Backups using CronJobs
 
-## Before you begin
+Objective:
+Learn how to use Kubernetes CronJobs to schedule and automate periodic backups of a sample application.
 
-- A Kanvas environment with a Kubernetes cluster connected to Meshery. Use [Meshery Playground](https://play.meshery.io), a shared live cluster, or a self-hosted Meshery with a connected cluster. Hosted kanvas.new has no cluster actions: Validate, Deploy, and Undeploy there open a self-hosted feature prompt.
-- Familiarity with Pods and the Kanvas Designer. If this is your first Kanvas tutorial, complete the [Kubernetes Pods tutorial](/kanvas/tutorials/kubernetes/kubernetes-pods/) first.
-- A short unique suffix for names and labels, such as your initials plus a number (`jd42`). Playground is shared with other users; replace `<suffix>` everywhere with yours.
-- About 15 minutes, most of it waiting for scheduled runs.
+### Steps:
 
-## The scenario
+#### 1. **Accessing Meshery Playground:**
+   - Log in to the [Meshery Playground](https://play.meshery.io) using your credentials.
+   - Once logged in, navigate to the Meshery Playground dashboard.
 
-You build one component. Kubernetes builds the rest:
+#### 2. **Deploying an Application:**
+   - Deploy a simple application that needs periodic backups. You can use a web application or any other application of your choice.
 
-```text
-CronJob  hello-<suffix>          schedule "*/1 * * * *"     (in your design)
-   |  at each scheduled minute, the CronJob controller creates
-   v
-Job      hello-<suffix>-<n>                                 (not in your design)
-   |  the Job controller creates
-   v
-Pod      hello-<suffix>-<n>-<random>   runs busybox, prints the date, exits
-```
 
-## Design the CronJob
+# Deploying a web application
 
-1. Start a new design and name it, for example `cronjobs-<suffix>`. Kanvas saves the design automatically a few seconds after each change; see [Save Designs](/kanvas/guides/designs/saving-designs/) for how saving and versions work.
-2. Add a **CronJob** component from the Kubernetes model. Set its name to `hello-<suffix>` and, on the **Labels** tab, add the label `owner` with your suffix as the value.
-3. Set the schedule to `*/1 * * * *`, which means every minute.
-4. Under the job template, set the Job's metadata label `owner: <suffix>`, and set the same label on the Pod template's metadata. Labels on the CronJob itself are not copied to the Jobs and Pods it creates; the template labels are.
-5. In the Pod template spec, set the restart policy to `OnFailure` and add one container:
-    - Name: `hello`
-    - Image: `busybox:1.36`
-    - Command: `/bin/sh`, `-c`, `date; echo Hello from the Kubernetes cluster`
+To deploy a web application on Meshery, follow these steps:
 
-**What just happened.** A CronJob is a Job factory. Its `schedule` uses standard cron syntax (minute, hour, day of month, month, day of week) and is evaluated in the time zone of the cluster's controller manager unless you set `timeZone`, such as `Europe/Berlin`. Its `jobTemplate` is a complete Job spec, and the Job's `template` is a complete Pod spec. A Job runs its Pod to completion, so the Pod's restart policy must be `OnFailure` (retry in the same Pod) or `Never` (create a new Pod on failure); the Pod default, `Always`, is rejected.
 
-**Check your work.** The CronJob is on the canvas with no warning badge. If a yellow triangle badge appears, select it to jump to the field that does not match the schema.
+1. Navigate to the Configuration menu in Meshery.
+2. Select "Designs" from the menu.
+3. Click on the "Import Design" button.
+[![Configuration menu](images/configuration-menu-design-import.png)](images/configuration-menu-design-import.png)
+4. Fill in the required details for your application or design, including the Design File Name, Design Type, and choose your preferred upload method:
+   - For File Upload, click "Browse" to locate and select the design file.
+   - For URL Import, paste the link to the design.
+5. Click the "Import" button to initiate the upload process.
+[![Click import button](images/click-import.png)](images/click-import.png)
+6. Upon successful import, a pop-up message will confirm the completion, and it will also indicate that your design has been automatically saved in Meshery.
+[![Design is auto-saved](images/design-auto-save.png)](images/design-auto-save.png)
+7. Locate your design and click the deploy button to initiate the deployment process.
+[![Located App](images/app-deploy.png)](images/app-deploy.png)
+8. Once the popup window opens, wait for the dry run to complete, and then click the deploy button.
+[![Dry Run](images/click-deploy.png)](images/click-deploy.png)
+9. Upon successful deployment, a confirmation pop-up will appear, indicating that your app has been successfully deployed.
+[![Deployment Success](images/deploy-success.png)](images/deploy-success.png)
 
-## Validate, dry run, and deploy
+<!-- 
 
-1. Run **Validate** from the **Actions** menu. It checks the component against its schema in your browser and does not contact the cluster. Its findings are advisory.
-2. Run **Dry Run**. The cluster's API server checks the CronJob with its full validation without persisting it.
-3. Run **Deploy**, select the environment that holds your cluster connection, and deploy.
+Convey to user that Kanvas Designs are auto-saved. 
 
-**What just happened.** The dry run is the first check that applies Kubernetes rules beyond the schema, such as the allowed restart policies and the cron syntax. Deploy creates the CronJob and labels it with the design's id. Nothing runs yet: the CronJob controller creates the first Job at the next scheduled minute.
+-->
 
-**Check your work.** The deploy summary lists `Deployed CronJob "hello-<suffix>"`. If the dry run reports an error on the restart policy, set it to `OnFailure`. An error on the schedule means the cron expression is malformed. Select a dry-run error to open the configurator at that field.
 
-## Observe the Jobs and Pods
+#### 3. **Creating a CronJob for Backups:**
 
-1. Wait two or three minutes, then switch to Operator. With the design loaded, Operator opens a view scoped to the design, and that view shows only the CronJob: Kanvas puts the design's id label on the objects it applies, and the Jobs and Pods are created by Kubernetes, not by Kanvas.
-2. To see the whole chain, filter the view by the label `owner=<suffix>`, or search for `hello-<suffix>`, and include the kinds CronJob, Job, and Pod. Search matches part of a resource name, and Job and Pod names start with the CronJob's name.
-3. Select one of the Pods. Its status chip reads `Succeeded`: the container printed its message and exited with code 0.
-4. Read the output of a run. Open a log session on one of the Pods (**Initiate Log Session**), or with `kubectl` access run `kubectl logs job/<job-name>`. The output is the date followed by `Hello from the Kubernetes cluster`.
+- Create a CronJob that runs a backup script at a specified interval to back up the application data.
 
-Operator shows a snapshot of the cluster, fetched when you open a view, change a filter, or change the selected cluster. To see Jobs created since the last fetch, change a filter or reopen the view.
+<!--
 
-**What just happened.** Every minute the CronJob controller created a Job named after the CronJob and the scheduled time, and the Job controller created a Pod for it. Wait five minutes and fetch again: no more than three completed Jobs remain. The CronJob keeps `successfulJobsHistoryLimit` (default 3) successful Jobs and `failedJobsHistoryLimit` (default 1) failed Jobs, and deletes older ones together with their Pods. Keep these limits low on a busy schedule: finished Jobs and Pods stay in the cluster and count toward any object-count quota in the namespace.
+Show user how to do this using Kanvas Designer to drag and drop components and configure them.
 
-Three more fields shape a CronJob's behavior:
+-->
 
-| Field | Default | Effect |
-|---|---|---|
-| `concurrencyPolicy` | `Allow` | What happens when a run is due while the previous one is still running: `Allow` starts another, `Forbid` skips the new run, `Replace` stops the old run and starts the new one. |
-| `suspend` | `false` | `true` stops new runs without deleting the CronJob. Runs already started finish. |
-| `startingDeadlineSeconds` | none | How late a missed run may still start. A run that misses its deadline is skipped and counted as missed. |
+1. Open the Kanvas tab located in the left panel.
+2. Upon opening Kanvas, ensure that you are on the Design tab, which can be found at the top center of the canvas.
+3. Navigate to the Design option located in the top menu of the left panel. Using the search bar, type in the name of your app, which in this instance is the Minecraft App.
+4. Once your app appears in the list, click on it to upload the design file onto the canvas.
+[![Navigate Kanvas](images/navigate-kanvas.png)](images/navigate-kanvas.png)
+5. Locate the control panel at the bottom of the canvas and choose the Kubernetes option.
+6. Using the search bar, enter "Cron Job" and click on the corresponding icon to display it on the canvas.
+[![Select CronJob item](images/select-cronjob.png)](images/select-cronjob.png)
+7. Once the cronjob component appears on the canvas, click on it to open the toolbar and begin configuration.
+[![CronJob Toolbar](images/toolbar-cronjob.png)](images/toolbar-cronjob.png)
+8. Fill out the details for the CronJob i.e Name field: "backup-cronjob". Under **Spec**, enter the specifications, i.e schedule: "0 * * * *" to run every hour.
+[![CronJob Toolbar](images/tool-bar.png)](images/tool-bar.png)
+9. Locate the **Save As** icon in the top right, once the pop up modal opens, give your design a name, then click save.
+[![Save CronJob](images/save.png)](images/save.png)
 
-**Check your work.** If no Jobs appear after several minutes, check the schedule and confirm the CronJob is not suspended. A Pod in `Error` or a Job that keeps retrying means the container failed: read its logs. A Pod stuck in `Pending` means the cluster could not schedule it or pull the image.
+10. Thereafter click on the **Action** drop down menu also located in the top right and click on the **Deploy** option.
+[![Deploy CronJob](images/deploy.png)](images/deploy.png)
+11. In the pop-up window, review and correct any errors as necessary. Then, click the deploy button.
+[![Deploy CronJob](images/deploy-app.png)](images/deploy-app.png)
+12. You'll receive a confirmation message indicating that your app has been successfully deployed.
 
-## Change the schedule and redeploy
+#### 4. **Verifying CronJob Execution:**
+   - Monitor the execution of the CronJob and verify that backups are created at the specified intervals.
 
-1. Return to Designer and change the schedule to `*/2 * * * *`, every second minute.
-2. Set `successfulJobsHistoryLimit` to `1`.
-3. Deploy again.
+To view the resources created for the CronJob, we will utilize the Visualize tab of the Kanvas. A view will be created with necessary filters to display the relevant resources.
 
-**What just happened.** Deploy replaces an existing object in place, so the CronJob keeps its name and history and the controller uses the new schedule from the next run. After a few minutes Operator shows a new Job every two minutes and only one completed Job at a time. To pause the CronJob instead of changing its schedule, set `suspend` to `true` and deploy.
+   1. Ensure that you are on the Visualize tab, located at the top center of the canvas.
+   2. Give the view a name.
+   3. Click on the filter icon.
+   4. Choose appropriate filters; for this lab, select the kind item that was set earlier during the CronJob creation, i.e., 'CronJob'.
+   5. Click the filter icon again to close. This action should display a filtered view with only your resources, similar to the screenshot below:
+   [![Vizualize CronJob](images/view.png)](images/view.png)
 
-Changes to the job template apply only to Jobs created after the redeploy. Jobs and Pods that already exist keep the spec they were created with.
 
-**Check your work.** In Operator, the CronJob's newest Jobs are two minutes apart, and older successful Jobs disappear after the next run.
+<!-- 
 
-## Clean up
+Show user how to use Views and filters in Kanvas Visualizer.
 
-Run **Undeploy** from the **Actions** menu in Designer. Undeploy deletes each component in the design by kind and name, which here is only the CronJob `hello-<suffix>`. The Jobs and Pods are not in the design. They are owned by the CronJob, and Kubernetes garbage collection removes owned objects after their owner is deleted. Fetch the Operator view again to confirm they are gone. If any remain, delete them with `kubectl delete jobs -l owner=<suffix>`.
+-->
 
-Undeploy deletes any CronJob with the same name in that namespace, whoever created it, which is another reason to use unique names on a shared cluster. The design itself stays saved; delete it if you no longer need it.
 
-## What you learned
+#### 5. **Scaling and Updating CronJobs:**
+   - Explore how to scale the CronJob or update its schedule by modifying the CronJob configuration.
 
-- A CronJob creates a Job at each scheduled time, and each Job creates a Pod that runs to completion with restart policy `OnFailure` or `Never`.
-- The history limits decide how many finished Jobs stay in the cluster; `concurrencyPolicy`, `suspend`, and `startingDeadlineSeconds` decide which runs start.
-- Your design contains only the CronJob. Objects that controllers create carry the template labels, not the design's id, so you find them in Operator by label or name.
-- Deploying a changed design replaces the CronJob in place; the new schedule and template apply to future runs.
+   1. Return to the  Designer tab
+   2. Select the CronJob Design:
+        Choose the design that contains the CronJob you want to scale from the list of existing designs.
+   3. Locate the CronJob Component:
+        Within the design canvas, identify the representation of the CronJob you wish to scale. It should be labeled as "CronJob" or have a specific icon associated with CronJobs.
+        [![Vizualize CronJob](images/design-cronjob.png)](images/design-cronjob.png)
+   4.  Select the CronJob Component:
+        Click on the CronJob component to open the toolbar..
+   5. Continue to configure your cronjob with your preffered specifications that match your desired scaling options.
+   6. Adjust the Number of Replicas or Parallelism:
+        Within the toolbar, locate the field related to the number of replicas or parallelism for the CronJob. Adjust this value to scale the CronJob up or down according to your requirements.
+        [![Vizualize CronJob](images/scale.png)](images/scale.png)
 
-## Next steps
+   7.  Save Changes:
+        After verifying the adjustments, save the changes made to the CronJob settings within the Kanvas Designer interface to ensure they are retained for future reference.
+        [![Save CronJob](images/save.png)](images/save.png)
+<!-- 
 
-- [Deploying WordPress and MySQL with Persistent Volumes](/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/) - keep data across Pod restarts with PersistentVolumeClaims.
-- [Deploy a Design](/kanvas/guides/deploying/deploying-designs/) - the full Validate, Dry Run, Deploy, and Undeploy reference for everyday use.
-- [Operator](/kanvas/concepts/operator/) - how Operator discovers cluster resources and what its views show.
+Show user how to use Designs and components in Kanvas Designer.
+
+-->
+
+Use Meshery Playground to visualize the changes and observe the impact on the scheduled backups.
+
+#### 6. **Clean-Up:**
+   - Delete the CronJob and application resources after completing the lab.
+
+1. Identify the CronJob Component:
+    Within the design canvas, find the representation of the CronJob you wish to delete. It should be labeled as "CronJob" or have a specific icon associated with CronJobs.
+2. Select the CronJob Component:
+    Click on the CronJob component to open the tooltip. This action will enable access to the delete icon. Click to delete the CronJob.
+    [![Save CronJob](images/delete.png)](images/delete.png)
+3. Save Changes:
+    After deleting the CronJob, save the changes made within the Kanvas Designer interface to reflect the cleanup.
+    [![Save CronJob](images/save-app.png)](images/save-app.png)
+<!-- 
+
+Show user how to use Designs and components in Kanvas Designer.
+
+-->
+
+
+
+#### 7. **Saving and Sharing**
+  Share your scenario with other Meshery users or the community for collaborative learning.
+
+  
+1. Save Your Scenario:
+   - Click the save option in Kanvas Designer and give your scenario a descriptive name.
+
+2. Make Design Public:
+   - Toggle the visibility of your design to "Public" to allow others to view it.
+
+3. Share Your Design:
+   - Copy the shareable link or invite collaborators directly from Kanvas Designer.
+
+4. Invite Friends to Collaborate:
+   - Share the link with friends or collaborators to enable collaboration on your design.
+
+5. Confirm who has access:
+   - A share has no viewing, editing, or commenting level. There is no view-and-comment option. Anyone you add can edit the design, so share only with people who should be able to change it.
+
+6. Save Changes:
+   - Visibility changes are saved with the design. There is no separate permission level to save.
+
+<!-- 
+
+Show user how to make Design public and share with other users in Kanvas Designer.
+
+-->
+
+### Conclusion
+Congratulations! You've successfully completed the lab on exploring Kubernetes CronJobs using Meshery Playground. This hands-on experience has provided valuable insights into scheduling and automating tasks in Kubernetes using CronJobs. Explore more scenarios in the Meshery Playground to enhance your skills in cloud-native technologies.
 

@@ -446,3 +446,9 @@ Highlight the most critical feedback first. This ensures that the designer focus
 If someone resolves a comment while you're still typing in it, the comment will immediately close for both of you. You'll see a message letting you know that the thread was resolved.
  -->
 
+## Mentions and mail
+
+Type `@` and the start of a name. The picker searches every user on the platform, not only people with access to the design, and shows up to seven matches. A bare `@` shows none. The search needs the View All Users permission. If it fails, Kanvas shows an error instead of "no users". Mentioning someone does not give them access.
+
+A first comment that mentions nobody sends no email, including to the design owner. Muting a thread stops mention and participant emails to you. The owner's email ignores the owner's own mute, and Kanvas skips it when the commenter has muted the thread. Comments are part of the design: they sync live, save with the design, and travel with clones and exports. Anyone who can edit the design can comment on it.
+

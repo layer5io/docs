@@ -90,3 +90,7 @@ While using the interactive terminal, understand that you can only open one sess
 
 ![interactive-terminal-sequence-diagram](images/interactive-terminal-sequence-diagram.svg)
 
+## Current behavior
+
+The action is **Initiate Terminal Session**, offered on Pod and Container resources only. A pod opens one session per container in its `containers` list. Init and ephemeral containers are not included. The image must contain `/bin/sh`. Scrollback is 10,000 lines. Closing the panel hides it and leaves sessions running. The trash icon ends that tab. Leaving Operator mode closes the panel. Esc closes the terminal while it has focus. The Kanvas interface does not check a permission before it opens a session. There is no keyboard shortcut for opening it.
+

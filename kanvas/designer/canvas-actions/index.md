@@ -30,7 +30,7 @@ Reset Design removes everything currently on the canvas. Kanvas asks you to conf
 
 The capture is of the canvas rather than of your browser window: panels, the dock and the toolbar are not included, and the image is rendered from the design itself rather than screen-grabbed, so it is not limited to the part of the design currently scrolled into view.
 
-This is the quickest way to put a design into a pull request, an incident write-up or a slide. When you need the design as data rather than as a picture - to hand to another tool, or to re-import later - use [Exporting Designs](/kanvas/guides/designs/export-designs/) instead.
+This is the quickest way to put a design into a pull request, an incident write-up or a slide. When you need the design as data rather than as a picture - to hand to another tool, or to re-import later - use [Exporting Designs](/kanvas/designer/export-designs/) instead.
 
 ## Options
 

@@ -201,3 +201,15 @@ After testing you can [create a v1 tag](https://github.com/actions/toolkit/blob/
 1. Given changes done in `kanvas.yml` in Kanvas Snapshot, updating the workflows is required.
 2. Given changes done other than in `kanvas.yml` in Kanvas Snapshot, the update in the `.github/worflows` is not a hard requirement, but doesnt hurt.
 
+## Current action inputs
+
+The action input for the Layer5 Cloud token is `mesheryToken`, not `providerToken`. Pin `layer5labs/kanvas-snapshot` to a release tag. `v0.2.44` was current when this behavior was documented. `prNumber` defaults to `0`, and with `0` no comment is posted. `skipComment` defaults to `false`. `designID` overrides `filePath` and `application_url`. A directory `filePath` merges the `.yaml` and `.yml` files directly inside it and does not read subfolders. The action outputs `resource_url`. When no image URL comes back, it does not post a comment.
+
+The `email` input does not deliver mail today. The action sends its request in a shape the Layer5 Cloud endpoint rejects, and the workflow continues without a failure.
+
+The Connect wizard commits `.github/workflows/kanvas.yml` with the message `Install Kanvas workflow` and replaces that file if it already exists. The committed workflow's `application_type` is always `Kubernetes Manifest`. If the file is Docker Compose or a Helm chart, edit `application_type` in the workflow. The secret name is `MESHERY_TOKEN`. Cloud never writes the secret for you. The wizard generates a new token each time the secrets stage opens and cannot show an earlier one again.
+
+Per-repository results include `Workflow added`, `Workflow already exists, try deleting it first at ./.github/workflows/kanvas.yml`, `unable to install workflow in <repository>` (timeout after 30 seconds), and `repository must be in "owner/name" form`.
+
+Uninstalling the App from one account removes only that installation from your GitHub connection. See [GitHub integration](/cloud/getting-started/github-integration/). GitHub Enterprise Server, GitLab, and Bitbucket are not supported. A snapshot never touches your cluster.
+

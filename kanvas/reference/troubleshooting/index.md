@@ -66,3 +66,19 @@ GraphQL queries fetch header data and view data for the Operator canvas. Checks 
 - **MODE STATE:** Operator and Designer: Active, Interactable.
 - **CAUSED WHEN:** Meshery and Kanvas version mismatches.
 - **REMEDIATION:** Pull/build the latest Kanvas, update Mesheryctl and Meshery.
+
+## Messages you will see
+
+Kanvas has no version-mismatch screen. If features are missing after an upgrade, update Meshery, `mesheryctl`, and Kanvas together. The Help Center footer shows the installed Kanvas version.
+
+| Symptom | Cause | Fix |
+| --- | --- | --- |
+| `Uh-oh! Something went wrong..` | The Kanvas bundle failed to download, or the bundle has no default component. | Reload. If you build Kanvas yourself, rebuild it and confirm the provider serves the new bundle. |
+| Dry run, deploy, or undeploy fails with `meshery-server-1096` | No selected context resolved to a connected cluster. | Connect a cluster and select an environment that contains it. |
+| `meshery-server-1073` | The connection is not assigned to the environment, or it cannot reach the cluster. | Assign the connection, or upload a new kubeconfig. |
+| `meshery-server-1095` | The kubeconfig is invalid. | Upload a new kubeconfig. |
+| Step 2 shows `No environments found` | The organization has no environment. | Create one and assign a connection. This needs Create Environment and Edit Environment. |
+| A prompt titled `SELF-HOSTED FEATURE` | You are on kanvas.new. | Use a Meshery you run. |
+| `No data available for the current view` | The view's filters or the search hide every object. | Change the filters or the search. |
+| `No container found to create <type> session` | A terminal or log session needs a container and the object has none. | Pick an object that runs a container. |
+
