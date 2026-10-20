@@ -7,6 +7,8 @@ categories: [operator]
 tags: [operator]
 aliases:
   - /meshmap/operator
+  - /kanvas/concepts/operator/
+  - /kanvas/guides/operating/
 ---
 
 Discover and examine your Kubernetes clusters and cloud native infrastructure using Operator mode.
@@ -27,7 +29,7 @@ Use filters to select the Kubernetes resources you want to view. Apply one or mo
 
 ## Search and Select Specific Resources
 
-Using the search bar, you can search for specific resources and select them. The selected resources are highlighted in the Operator canvas. Details of the selected resources are displayed in the right panel.
+The `search` filter keeps resource names that contain the text. Search narrows what is drawn and does not select anything. Selecting a resource opens the Details panel. A new, empty view shows Nodes and Namespaces across the clusters you select. A design's view is named `<design>-View` and filters on the `design.meshery.io/id` label. Every filter change refetches the snapshot and autosaves the open view. Operator draws a snapshot each time you load a view, change a filter, or change clusters.
 
 ## Connecting with Kubernetes Pods
 

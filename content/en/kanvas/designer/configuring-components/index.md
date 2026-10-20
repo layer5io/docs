@@ -5,6 +5,8 @@ description: >
   Edit a component's configuration on the canvas, using the form Kanvas builds for it and its inline help.
 categories: [designer]
 tags: [designs]
+aliases:
+  - /kanvas/guides/designing/configuring-components/
 ---
 
 A component is the fundamental building block of a design - it represents one piece of the infrastructure under management, and its configuration is what will actually be applied when the design is deployed. The component configurator is where that configuration is edited.
@@ -56,3 +58,7 @@ There is no Apply button. Edits are written into the design shortly after you st
 
 * **[Understanding Design Components]({{< ref "kanvas/designer/understanding-design-component/index.md" >}}):** What the components on the palette represent.
 * **[Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}):** Every mouse interaction available on the canvas, including the ones that open this panel.
+
+## Palette search
+
+Typing in the palette search box queries the Meshery registry after you pause for one second. Results appear in two groups, Models and Components. An empty result reads "Sorry, no matching records found". Search matches model and component names only. It does not match labels.

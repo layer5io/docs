@@ -7,6 +7,7 @@ categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/designer/embedding-designs
+  - /kanvas/guides/designs/embedding-designs/
 ---
 
 Design Embedding enables you to export a design in a format that can be seamlessly integrated into websites, blogs, or platforms supporting HTML, CSS, and JavaScript. This embedded version provides an interactive representation of the design, making it easier to share with infrastructure stakeholders.

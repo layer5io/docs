@@ -40,3 +40,20 @@ Every support request carries the requester's name and email so the team can rep
 Each request carries a **Type of Inquiry** - one of **Support**, **Community**, **Account**, or **Commercial** - which the support intake uses to route your request. **Support** is selected by default. These are the same categories used by the Layer5 Cloud Help and Support form, so a request raised from Kanvas is triaged exactly like one raised from Layer5 Cloud.
 
 If a submission fails, your subject, description, and type of inquiry are preserved so you can retry without retyping them.
+
+## Help Center
+
+The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from **Get Help** in the troubleshooting panel.
+
+| Entry | What it gives you |
+| --- | --- |
+| Documentation | These docs, in a new tab. |
+| Video Tutorials | The Layer5 video library, in a new tab. |
+| Quick Tips | An in-app tour of placing and configuring components, connecting and grouping them, loading and combining designs, sharing, validating, deploying and undeploying, and collaborating. In Operator mode it covers filtering, health and details, quick operations, performance tests, the terminal, and log streaming. |
+| Academy | Learning paths in Layer5 Cloud, in a new tab. |
+| Discussion Forum | [discuss.layer5.io](https://discuss.layer5.io). |
+| Slack | [slack.layer5.io](https://slack.layer5.io). |
+| Keyboard Shortcuts | A side panel for Designer and Operator. The full list is in [Keyboard Shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}}). |
+| Support | Opens the support form. |
+
+The Help Center footer shows the installed Kanvas version and links to that version's release notes. Every plan includes community support. Standard and Premium support add direct contact with the Layer5 team. The channels are listed in [Layer5 Cloud support]({{< ref "cloud/getting-started/support.md" >}}).

@@ -7,6 +7,9 @@ categories: [designer]
 tags: [designer]
 aliases:
   - /meshmap/designer/
+  - /kanvas/concepts/designer/
+  - /kanvas/guides/designing/
+  - /kanvas/guides/designs/
 ---
 
 Kanvas Designer is the visual canvas where you create, edit, and collaborate on cloud-native infrastructure designs. Using a drag-and-drop palette of components — from managed Kubernetes clusters and serverless functions to databases and object storage — you can model entire environments, annotate connections, and share living diagrams with your team, all without leaving your browser.

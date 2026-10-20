@@ -6,6 +6,7 @@ categories: [designer]
 tags: [designs, publishing]
 aliases:
   - /meshmap/designer/publish-designs
+  - /kanvas/guides/designs/publishing-designs/
 ---
 
 Publishing a design makes it visible to all Meshery Cloud users and anonymous visitors. This guide explains the publishing workflow, state management, permissions, and operational constraints.

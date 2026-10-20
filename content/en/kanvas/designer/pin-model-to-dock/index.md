@@ -4,6 +4,8 @@ description: Learn how to pin and remove models from the dock in the Kanvas Desi
 weight: 10
 categories: [designer]
 tags: [dock, pin, models]
+aliases:
+  - /kanvas/guides/designing/pin-model-to-dock/
 ---
 
 The Kanvas Designer dock allows you to keep your most-used models and tools within easy reach. You can pin any model to the dock for quick access, and unpin it just as easily.
@@ -64,3 +66,7 @@ You can remove a model from the dock in two ways:
 {{< alert type="info" title="Good to Know" >}}
 You can pin as many models as your workflow needs and swap them out anytime as your project evolves.
 {{< /alert >}}
+
+## Using a pinned model
+
+Select a pinned model to open a picker with its components. Click a component to add it near the center of the canvas, or drag it to a specific spot. The picker has its own search box and a version selector with an "All Versions" choice. A pinned model whose lookup returns nothing is not drawn.

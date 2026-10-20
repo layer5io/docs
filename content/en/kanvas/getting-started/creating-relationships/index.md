@@ -8,6 +8,7 @@ tags: [designs]
 draft: false
 aliases:
   - /meshmap/getting-started/creating-relationships
+  - /kanvas/guides/designing/creating-relationships/
 ---
 
 ## Benefits of Using Relationships

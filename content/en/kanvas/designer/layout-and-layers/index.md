@@ -5,6 +5,8 @@ description: >
   Arrange the components in a design automatically, and choose which entities the canvas draws.
 categories: [designer]
 tags: [designs]
+aliases:
+  - /kanvas/reference/layout-and-layers/
 ---
 
 Two controls decide how a design reads on screen. **Layout** arranges the components - where they sit relative to one another. **Layers** decide which of them are drawn at all.

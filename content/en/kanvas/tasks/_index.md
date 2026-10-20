@@ -5,6 +5,7 @@ weight: 6
 visible: false
 aliases:
   - /meshmap/tasks
+  - /kanvas/guides/
 ---
 
 Cookbook-style guides for common Kanvas workflows — from whiteboarding on the canvas to the full design lifecycle.

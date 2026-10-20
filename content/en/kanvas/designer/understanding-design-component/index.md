@@ -4,6 +4,8 @@ description: A complete reference for all components available in the Kanvas des
 weight: 1
 categories: [designer]
 tags: [designs]
+aliases:
+  - /kanvas/concepts/designs/
 ---
 
 When you're designing and visualizing in [Kanvas](https://kanvas.new/), you'll encounter a rich library of components. This guide will help you understand what these components mean and how they behave in your designs.
@@ -132,3 +134,20 @@ A single semantic component will be visually represented differently depending o
 {{< alert title="Learn More About Interpreting Designs" type="info">}}
 To learn how to interpret and understand designs in practice, including how components work together in a design, visit our comprehensive guide in the <a href="https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=interpreting-meshery-designs">Layer5 Academy</a>.
 {{< /alert >}}
+
+## Limits and deployed identity
+
+Kanvas saves a new design only when it has at least one component, or a name that is not empty and not "Untitled Design". You cannot create a design while the organization scope is set to all organizations.
+
+| Plan | Components per design |
+| --- | --- |
+| Personal | 100 |
+| Team Designer | 200 |
+| Team Operator | 100 |
+| Enterprise | 300 |
+
+When a design exceeds the limit, the save or import is rejected with HTTP 403. The server message is "Design exeeds maximum limit of N components supported by your current plan" (the misspelling ships). The canvas shows "Unable to save. Retrying...". If the organization is not entitled to add components, the save fails with HTTP 500 and "Org is not entitled to adding components to a design".
+
+Image and text files dropped on the canvas are limited to 500 KB on every plan. The rejection says "Your current plan allows files up to 500 KB".
+
+Every resource Kanvas deploys carries the label `design.meshery.io/id` and the annotations `design.meshery.io/version` and `component.meshery.io/id`. A new design starts public. Unpublishing sets visibility back to private. Other members need View Designs to read private designs that are not shared with them.

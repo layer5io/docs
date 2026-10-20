@@ -6,6 +6,7 @@ weight: 3
 categories: [designer]
 tags: [designs, dock]
 aliases:
+  - /kanvas/reference/tool-modes/
 ---
 
 <!-- set of custom keyboard button classes -->

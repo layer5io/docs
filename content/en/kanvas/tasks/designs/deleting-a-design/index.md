@@ -5,6 +5,8 @@ description: >
 weight: 6
 categories: [designer]
 tags: [designs]
+aliases:
+  - /kanvas/guides/designs/deleting-a-design/
 ---
 
 Deleting a design removes it permanently. There is no trash, no recycle bin, and no undo: the design record is destroyed, and every workspace it was assigned to loses it at the same time. Before you delete, check that what you actually want is not one of the two softer actions described under [Related actions that are not deletion](#related-actions-that-are-not-deletion).

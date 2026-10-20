@@ -7,6 +7,7 @@ categories: [designer]
 tags: [designs, export]
 aliases:
   - /meshmap/designer/export-designs
+  - /kanvas/guides/designs/export-designs/
 # Should this page ever be relocated, please create a redirect link from the old location to the new location or backlinks like the one below will break.
 # https://github.com/layer5labs/meshery-extensions/tree/master/kanvas/src/components/designer/drawer/ComponentDrawerTabContent/exportModal.js
 #
@@ -177,3 +178,7 @@ If you need a version you can come back to, export a copy at the point you care 
   
 After export, your browser will either prompt you to choose a save location or automatically download the file to your default downloads folder.
 </details>
+
+## What each export keeps
+
+Design file YAML downloads as `<design name>.yml` and re-imports losslessly, including layout, annotations, and metadata. The OCI image export is an archive you push with a registry tool. Kubernetes manifest and Helm chart exports keep resources only, not layout. The embeddable JavaScript module is a static canvas snapshot and is not re-imported as a design. In Operator mode, a view downloads as `<view name>.json`. Docker Compose export, SVG export, export of an earlier version, and per-format export options are not available. The catalog's light and dark snapshot images are produced after publishing and are not a user export.
