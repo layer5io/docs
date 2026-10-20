@@ -291,6 +291,14 @@ The fastest way to a working design is to start from one someone has already pub
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Designs</th>
       <td>View all public and published designs of other team members and private of signed-in user</td>
@@ -311,6 +319,14 @@ The fastest way to a working design is to start from one someone has already pub
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

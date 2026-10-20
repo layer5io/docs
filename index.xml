@@ -545,6 +545,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;View Environment&lt;/th&gt;
  &lt;td&gt;See all environments within an workspace.&lt;/td&gt;
@@ -565,6 +573,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1035,6 +1051,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Edit Environment&lt;/th&gt;
  &lt;td&gt;Edit environment and it connection membership&lt;/td&gt;
@@ -1275,6 +1299,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Delete Environment&lt;/th&gt;
  &lt;td&gt;Dissolve environment and all connection memberships. Leave associated resources intact.&lt;/td&gt;
@@ -1295,6 +1327,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1765,6 +1805,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Remove connections from environment&lt;/th&gt;
  &lt;td&gt;Remove connections from environment, &lt;/td&gt;
@@ -1785,6 +1833,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -3309,6 +3365,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;View Designs&lt;/th&gt;
  &lt;td&gt;View all public and published designs of other team members and private of signed-in user&lt;/td&gt;
@@ -3329,6 +3393,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -3989,6 +4061,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Create Team&lt;/th&gt;
  &lt;td&gt;Establish new team for organizing groups of users and resource access.&lt;/td&gt;
@@ -4009,6 +4089,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -4475,6 +4563,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Delete Team&lt;/th&gt;
  &lt;td&gt;Dissolve a team and all user memberships. Leave associated resources intact.&lt;/td&gt;
@@ -4707,6 +4803,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;View All Teams&lt;/th&gt;
  &lt;td&gt;See all teams within an organization. See all members of all teams.&lt;/td&gt;
@@ -4727,6 +4831,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -5197,6 +5309,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Remove User from Team&lt;/th&gt;
  &lt;td&gt;Discontinue user membership of a team and team resources.&lt;/td&gt;
@@ -5427,6 +5547,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Leave Team&lt;/th&gt;
  &lt;td&gt;Leave a team&lt;/td&gt;
@@ -5447,6 +5575,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -6207,7 +6343,16 @@
  Help Center
  &lt;a href="#help-center" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.301</title><link>/cloud/reference/releases/v1.0.301/</link><pubDate>Tue, 20 Oct 2026 01:47:13 +0000</pubDate><guid>/cloud/reference/releases/v1.0.301/</guid><description>&lt;ul&gt;
+&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.302</title><link>/cloud/reference/releases/v1.0.302/</link><pubDate>Tue, 20 Oct 2026 05:45:45 +0000</pubDate><guid>/cloud/reference/releases/v1.0.302/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(handlers): serve org-scoped content pieces API @leecalcote (#6261)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.301</title><link>/cloud/reference/releases/v1.0.301/</link><pubDate>Tue, 20 Oct 2026 01:47:13 +0000</pubDate><guid>/cloud/reference/releases/v1.0.301/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(deploy): point Kanvas production sign-in at cloud.kanvas.new @leecalcote (#6270)&lt;/li&gt;
 &lt;/ul&gt;
 

@@ -339,6 +339,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Create new design</th>
       <td>Create new Meshery design</td>
@@ -359,6 +367,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -839,6 +855,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit design</th>
       <td>Edit a design</td>
@@ -1079,6 +1103,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Details of design</th>
       <td>Set design information or details of a design</td>
@@ -1099,6 +1131,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1571,6 +1611,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Download a design</th>
       <td>Download a Meshery design in OCI or YAML format</td>
@@ -1799,6 +1847,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Validate Design</th>
       <td>Validate a design</td>
@@ -1819,6 +1875,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2285,6 +2349,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Deploy Design</th>
       <td>Deploy a design</td>
@@ -2305,6 +2377,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2763,6 +2843,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Publish Design</th>
       <td>Publish a design</td>
@@ -2783,6 +2871,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3217,6 +3313,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
   </tbody>
 </table>
 </div>
@@ -3247,6 +3351,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     </tr>
   </thead>
   <tbody>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3742,6 +3854,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Clone Design</th>
       <td>Clone any published design to customise it according to your use cases</td>
@@ -3762,6 +3882,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -4238,6 +4366,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Approve Catalog Request</th>
       <td>Approve catalog publication requests</td>
@@ -4258,6 +4394,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -4700,6 +4844,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
   </tbody>
 </table>
 </div>
@@ -4805,6 +4957,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Team</th>
       <td>See only teams to which you are a member. See all other members within those teams.</td>
@@ -4825,6 +4985,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -5293,6 +5461,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View All Teams</th>
       <td>See all teams within an organization. See all members of all teams.</td>
@@ -5313,6 +5489,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -5789,6 +5973,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit Team</th>
       <td>Edit a team and add new members to it. </td>
@@ -6029,6 +6221,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete Team</th>
       <td>Dissolve a team and all user memberships. Leave associated resources intact.</td>
@@ -6049,6 +6249,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -6507,6 +6715,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Invite User to Team</th>
       <td>Send a request for a user to join a team.</td>
@@ -6527,6 +6743,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -7003,6 +7227,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign Roles to Team members</th>
       <td>Assign roles to users in a team</td>
@@ -7023,6 +7255,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -7489,6 +7729,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Open Team Invite</th>
       <td>This governs the team&#39;s invitation permissions, determining whether the team is allowed to extend invitations to new individuals to join through open invite link.</td>
@@ -7509,6 +7757,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -8020,6 +8276,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Org</th>
       <td>See only organizations to which you are a member. See all other members within your membership teams.</td>
@@ -8040,6 +8304,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -8508,6 +8780,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View All Organizations</th>
       <td>See all organizations within a Cloud deployment. See all organizations, teams, and users.</td>
@@ -8734,6 +9014,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Create Organization</th>
       <td>Establish new organization for organizing teams, users, and resource access.</td>
@@ -8754,6 +9042,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -9222,6 +9518,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Add User to Organization</th>
       <td>Directly create a new user account within an organization.</td>
@@ -9242,6 +9546,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -9710,6 +10022,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove User from Organization</th>
       <td>Discontinue user access to organization, teams and resources; cease billing accrual.</td>
@@ -9730,6 +10050,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -10206,6 +10534,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign Roles to Organization members</th>
       <td>Assign roles to users in an organization</td>
@@ -10226,6 +10562,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -10823,6 +11167,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign User Roles</th>
       <td></td>
@@ -11062,6 +11414,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Workspace</th>
       <td>See all workspaces within an organization</td>
@@ -11082,6 +11442,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -11550,6 +11918,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit Workspace</th>
       <td>Edit workspace and it&#39;s team and environment membership</td>
@@ -11790,6 +12166,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete Workspace</th>
       <td>Dissolve workspace and all team and environment memberships. Leave associated resources intact</td>
@@ -11810,6 +12194,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -12282,6 +12674,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove team from workspace</th>
       <td>Remove team from workspace</td>
@@ -12302,6 +12702,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -12770,6 +13178,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove environment from workspace</th>
       <td>Remove environment from workspace</td>
@@ -12790,6 +13206,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -13258,6 +13682,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove Designs from Workspaces</th>
       <td>Remove designs from workspaces</td>
@@ -13499,6 +13931,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Environment</th>
       <td>See all environments within an workspace.</td>
@@ -13519,6 +13959,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -13989,6 +14437,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit Environment</th>
       <td>Edit environment and it connection membership</td>
@@ -14009,6 +14465,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -14475,6 +14939,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign connections to environment</th>
       <td>Add new connections to environments</td>
@@ -14495,6 +14967,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -14980,6 +15460,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Connections</th>
       <td>View all connections within an environment</td>
@@ -15174,6 +15662,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Add cluster</th>
       <td>Add Kubernetes cluster</td>
@@ -15194,6 +15690,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -15666,6 +16170,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete a connection</th>
       <td>Delete a connection</td>
@@ -15686,6 +16198,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -16263,6 +16783,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Views</th>
       <td>See all views within a workspace</td>
@@ -16283,6 +16811,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -16753,6 +17289,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Unassign Views from Workspace</th>
       <td>Remove views from workspace </td>
@@ -16962,6 +17506,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View performance profiles</th>
       <td>View all performance profiles</td>
@@ -16982,6 +17534,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -17436,6 +17996,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Add performace profile</th>
       <td>Add a new performace profile</td>
@@ -17456,6 +18024,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -17926,6 +18502,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit performance test</th>
       <td>Edit performance test</td>
@@ -17946,6 +18530,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -18425,6 +19017,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Settings</th>
       <td>View settings in Meshery</td>
@@ -18445,6 +19045,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -18917,6 +19525,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Registry</th>
       <td>Explore entities within capabilities registry </td>
@@ -18937,6 +19553,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -19395,6 +20019,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Connect adapter</th>
       <td>Configure and connect to Meshery adapters</td>
@@ -19573,6 +20205,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Extensions</th>
       <td>View all extensions on the extension page</td>
@@ -19593,6 +20233,14 @@ The columns show the roles that hold permissions in the list. "Org Admin" is the
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

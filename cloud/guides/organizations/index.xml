@@ -112,6 +112,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Create Team&lt;/th&gt;
  &lt;td&gt;Establish new team for organizing groups of users and resource access.&lt;/td&gt;
@@ -132,6 +140,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -598,6 +614,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Delete Team&lt;/th&gt;
  &lt;td&gt;Dissolve a team and all user memberships. Leave associated resources intact.&lt;/td&gt;
@@ -830,6 +854,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;View All Teams&lt;/th&gt;
  &lt;td&gt;See all teams within an organization. See all members of all teams.&lt;/td&gt;
@@ -850,6 +882,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1320,6 +1360,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Remove User from Team&lt;/th&gt;
  &lt;td&gt;Discontinue user membership of a team and team resources.&lt;/td&gt;
@@ -1550,6 +1598,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Leave Team&lt;/th&gt;
  &lt;td&gt;Leave a team&lt;/td&gt;
@@ -1570,6 +1626,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  

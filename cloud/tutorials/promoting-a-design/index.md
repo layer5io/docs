@@ -237,6 +237,14 @@ Each step needs a specific permission. The table shows which built-in roles hold
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Create Workspace</th>
       <td>Create new workspace</td>
@@ -257,6 +265,14 @@ Each step needs a specific permission. The table shows which built-in roles hold
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -703,6 +719,14 @@ Each step needs a specific permission. The table shows which built-in roles hold
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Create Environment</th>
       <td>Create a new environment</td>
@@ -723,6 +747,14 @@ Each step needs a specific permission. The table shows which built-in roles hold
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1211,6 +1243,14 @@ Each step needs a specific permission. The table shows which built-in roles hold
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign environment to workspace</th>
       <td>Add new environment to workspace</td>
@@ -1231,6 +1271,14 @@ Each step needs a specific permission. The table shows which built-in roles hold
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

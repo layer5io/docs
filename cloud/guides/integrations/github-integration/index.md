@@ -362,6 +362,14 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Connections</th>
       <td>View all connections within an environment</td>
@@ -486,6 +494,22 @@ Deleting the connection removes it from Layer5 Cloud. It does **not** uninstall 
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

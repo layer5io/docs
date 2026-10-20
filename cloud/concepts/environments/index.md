@@ -260,6 +260,14 @@ Every environment action is checked in the organization that owns the environmen
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Environment</th>
       <td>See all environments within an workspace.</td>
@@ -280,6 +288,14 @@ Every environment action is checked in the organization that owns the environmen
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -750,6 +766,14 @@ Every environment action is checked in the organization that owns the environmen
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit Environment</th>
       <td>Edit environment and it connection membership</td>
@@ -770,6 +794,14 @@ Every environment action is checked in the organization that owns the environmen
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1236,6 +1268,14 @@ Every environment action is checked in the organization that owns the environmen
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign connections to environment</th>
       <td>Add new connections to environments</td>
@@ -1256,6 +1296,14 @@ Every environment action is checked in the organization that owns the environmen
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1738,6 +1786,14 @@ Every environment action is checked in the organization that owns the environmen
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign environment to workspace</th>
       <td>Add new environment to workspace</td>
@@ -1758,6 +1814,14 @@ Every environment action is checked in the organization that owns the environmen
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

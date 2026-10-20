@@ -425,6 +425,14 @@ Browsing the catalog requires no permission and no account. Publishing, reviewin
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Approve Catalog Request</th>
       <td>Approve catalog publication requests</td>
@@ -445,6 +453,14 @@ Browsing the catalog requires no permission and no account. Publishing, reviewin
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -917,6 +933,14 @@ Browsing the catalog requires no permission and no account. Publishing, reviewin
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Publish Design</th>
       <td>Publish a design</td>
@@ -937,6 +961,14 @@ Browsing the catalog requires no permission and no account. Publishing, reviewin
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1381,6 +1413,14 @@ Browsing the catalog requires no permission and no account. Publishing, reviewin
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Clone Design</th>
       <td>Clone any published design to customise it according to your use cases</td>
@@ -1625,6 +1665,14 @@ Browsing the catalog requires no permission and no account. Publishing, reviewin
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Designs</th>
       <td>View all public and published designs of other team members and private of signed-in user</td>
@@ -1645,6 +1693,14 @@ Browsing the catalog requires no permission and no account. Publishing, reviewin
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

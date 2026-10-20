@@ -142,6 +142,14 @@ Each step in this tutorial needs a specific permission. The table shows which bu
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Invite User to Organization</th>
       <td>Send a request for a user to join an organization.</td>
@@ -162,6 +170,14 @@ Each step in this tutorial needs a specific permission. The table shows which bu
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -602,6 +618,14 @@ Each step in this tutorial needs a specific permission. The table shows which bu
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Add User to Team</th>
       <td>Directly create a new user account within a team.</td>
@@ -622,6 +646,14 @@ Each step in this tutorial needs a specific permission. The table shows which bu
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1198,6 +1230,14 @@ Each step in this tutorial needs a specific permission. The table shows which bu
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign team to workspace</th>
       <td>Add new team to workspace</td>
@@ -1218,6 +1258,14 @@ Each step in this tutorial needs a specific permission. The table shows which bu
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

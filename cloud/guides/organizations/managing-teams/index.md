@@ -117,6 +117,14 @@ This guide covers the administrator tasks for teams. For what a team is and how 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Create Team</th>
       <td>Establish new team for organizing groups of users and resource access.</td>
@@ -137,6 +145,14 @@ This guide covers the administrator tasks for teams. For what a team is and how 
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -603,6 +619,14 @@ This guide covers the administrator tasks for teams. For what a team is and how 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete Team</th>
       <td>Dissolve a team and all user memberships. Leave associated resources intact.</td>
@@ -835,6 +859,14 @@ This guide covers the administrator tasks for teams. For what a team is and how 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View All Teams</th>
       <td>See all teams within an organization. See all members of all teams.</td>
@@ -855,6 +887,14 @@ This guide covers the administrator tasks for teams. For what a team is and how 
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1325,6 +1365,14 @@ This guide covers the administrator tasks for teams. For what a team is and how 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove User from Team</th>
       <td>Discontinue user membership of a team and team resources.</td>
@@ -1555,6 +1603,14 @@ This guide covers the administrator tasks for teams. For what a team is and how 
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Leave Team</th>
       <td>Leave a team</td>
@@ -1575,6 +1631,14 @@ This guide covers the administrator tasks for teams. For what a team is and how 
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

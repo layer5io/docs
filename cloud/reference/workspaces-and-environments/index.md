@@ -266,6 +266,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Workspace</th>
       <td>See all workspaces within an organization</td>
@@ -286,6 +294,14 @@ Default holders by role:
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -754,6 +770,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit Workspace</th>
       <td>Edit workspace and it&#39;s team and environment membership</td>
@@ -994,6 +1018,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete Workspace</th>
       <td>Dissolve workspace and all team and environment memberships. Leave associated resources intact</td>
@@ -1014,6 +1046,14 @@ Default holders by role:
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1486,6 +1526,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove team from workspace</th>
       <td>Remove team from workspace</td>
@@ -1506,6 +1554,14 @@ Default holders by role:
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1974,6 +2030,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove environment from workspace</th>
       <td>Remove environment from workspace</td>
@@ -1994,6 +2058,14 @@ Default holders by role:
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2462,6 +2534,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove Designs from Workspaces</th>
       <td>Remove designs from workspaces</td>
@@ -2672,6 +2752,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Environment</th>
       <td>See all environments within an workspace.</td>
@@ -2692,6 +2780,14 @@ Default holders by role:
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3162,6 +3258,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit Environment</th>
       <td>Edit environment and it connection membership</td>
@@ -3402,6 +3506,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete Environment</th>
       <td>Dissolve environment and all connection memberships. Leave associated resources intact.</td>
@@ -3422,6 +3534,14 @@ Default holders by role:
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3892,6 +4012,14 @@ Default holders by role:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove connections from environment</th>
       <td>Remove connections from environment, </td>
@@ -3912,6 +4040,14 @@ Default holders by role:
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

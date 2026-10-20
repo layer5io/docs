@@ -194,6 +194,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;View Environment&lt;/th&gt;
  &lt;td&gt;See all environments within an workspace.&lt;/td&gt;
@@ -214,6 +222,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -684,6 +700,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Edit Environment&lt;/th&gt;
  &lt;td&gt;Edit environment and it connection membership&lt;/td&gt;
@@ -924,6 +948,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Delete Environment&lt;/th&gt;
  &lt;td&gt;Dissolve environment and all connection memberships. Leave associated resources intact.&lt;/td&gt;
@@ -944,6 +976,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  
@@ -1414,6 +1454,14 @@
  
  
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;tr&gt;
  &lt;th scope="row"&gt;Remove connections from environment&lt;/th&gt;
  &lt;td&gt;Remove connections from environment, &lt;/td&gt;
@@ -1434,6 +1482,14 @@
  &lt;td class="tier-cell"&gt;&lt;span aria-hidden="true"&gt;&amp;#10003;&lt;/span&gt;&lt;span class="sr-only"&gt;Allowed&lt;/span&gt;&lt;/td&gt;
  
  &lt;/tr&gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
  
  
  

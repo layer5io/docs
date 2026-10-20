@@ -217,6 +217,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Workspace</th>
       <td>See all workspaces within an organization</td>
@@ -237,6 +245,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -705,6 +721,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit Workspace</th>
       <td>Edit workspace and it&#39;s team and environment membership</td>
@@ -945,6 +969,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete Workspace</th>
       <td>Dissolve workspace and all team and environment memberships. Leave associated resources intact</td>
@@ -965,6 +997,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1437,6 +1477,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove team from workspace</th>
       <td>Remove team from workspace</td>
@@ -1457,6 +1505,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1925,6 +1981,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove environment from workspace</th>
       <td>Remove environment from workspace</td>
@@ -2169,6 +2233,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign Designs to Workspaces</th>
       <td>Assign designs to workspaces</td>
@@ -2189,6 +2261,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2665,6 +2745,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign Views to Workspace</th>
       <td>Add new views to workspace</td>
@@ -2685,6 +2773,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

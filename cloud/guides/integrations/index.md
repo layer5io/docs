@@ -222,6 +222,14 @@ The Integrations tab appears for roles that hold the View Connections permission
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Connections</th>
       <td>View all connections within an environment</td>
@@ -424,6 +432,14 @@ The Integrations tab appears for roles that hold the View Connections permission
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete a connection</th>
       <td>Delete a connection</td>
@@ -444,6 +460,14 @@ The Integrations tab appears for roles that hold the View Connections permission
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

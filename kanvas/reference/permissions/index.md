@@ -339,6 +339,14 @@ The tables below show which default roles grant each design and view permission.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Deploy Design</th>
       <td>Deploy a design</td>
@@ -359,6 +367,14 @@ The tables below show which default roles grant each design and view permission.
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -795,6 +811,14 @@ The tables below show which default roles grant each design and view permission.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Share Design</th>
       <td>Share design with anyone within your organization, and make your design easily accessible to all relevant team members.</td>
@@ -815,6 +839,14 @@ The tables below show which default roles grant each design and view permission.
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1303,6 +1335,14 @@ The tables below show which default roles grant each design and view permission.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Unpublish Design</th>
       <td>Unpublish a design</td>
@@ -1523,6 +1563,14 @@ The tables below show which default roles grant each design and view permission.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Clone Design</th>
       <td>Clone any published design to customise it according to your use cases</td>
@@ -1543,6 +1591,14 @@ The tables below show which default roles grant each design and view permission.
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2195,6 +2251,22 @@ The tables below show which default roles grant each design and view permission.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign Designs to Workspaces</th>
       <td>Assign designs to workspaces</td>
@@ -2215,6 +2287,14 @@ The tables below show which default roles grant each design and view permission.
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -2718,6 +2798,14 @@ The tables below show which default roles grant each design and view permission.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Views</th>
       <td>See all views within a workspace</td>
@@ -2738,6 +2826,14 @@ The tables below show which default roles grant each design and view permission.
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -3208,6 +3304,14 @@ The tables below show which default roles grant each design and view permission.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Unassign Views from Workspace</th>
       <td>Remove views from workspace </td>
@@ -3356,6 +3460,14 @@ The tables below show which default roles grant each design and view permission.
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Add cluster</th>
       <td>Add Kubernetes cluster</td>
@@ -3376,6 +3488,14 @@ The tables below show which default roles grant each design and view permission.
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

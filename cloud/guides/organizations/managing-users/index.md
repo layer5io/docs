@@ -139,6 +139,14 @@ Each action needs a permission in your current organization. The server also che
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Add User to Organization</th>
       <td>Directly create a new user account within an organization.</td>
@@ -159,6 +167,14 @@ Each action needs a permission in your current organization. The server also che
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -627,6 +643,14 @@ Each action needs a permission in your current organization. The server also che
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove User from Organization</th>
       <td>Discontinue user access to organization, teams and resources; cease billing accrual.</td>
@@ -647,6 +671,14 @@ Each action needs a permission in your current organization. The server also che
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1123,6 +1155,14 @@ Each action needs a permission in your current organization. The server also che
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Assign Roles to Organization members</th>
       <td>Assign roles to users in an organization</td>
@@ -1143,6 +1183,14 @@ Each action needs a permission in your current organization. The server also che
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     

@@ -203,6 +203,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">View Environment</th>
       <td>See all environments within an workspace.</td>
@@ -223,6 +231,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -693,6 +709,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Edit Environment</th>
       <td>Edit environment and it connection membership</td>
@@ -933,6 +957,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Delete Environment</th>
       <td>Dissolve environment and all connection memberships. Leave associated resources intact.</td>
@@ -953,6 +985,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -1423,6 +1463,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
     <tr>
       <th scope="row">Remove connections from environment</th>
       <td>Remove connections from environment, </td>
@@ -1443,6 +1491,14 @@ Each task names the permission it needs. Layer5 Cloud checks the permission in t
       <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Allowed</span></td>
       
     </tr>
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     
