@@ -17,10 +17,7 @@ Meet Five, Maya, Zara, Marcus, Dr. Aiko, and the full cast at [Meet Five and the
 
 {{< cardpane >}}
 {{% card header="Collaborative Editing" %}}
-[Collaborative Editing]({{< ref "kanvas/tutorials/collaborative-editing.md" >}}) - save and share a design, edit it live with a teammate, and run a review in a comment thread.
-{{% /card %}}
-{{% card header="Cross-Organization Access" %}}
-[Share a Design Across Organizations]({{< ref "kanvas/tutorials/stellar-saas-platform.md" >}}) - give a reviewer in another organization access to a private design, review in comments, and revoke access.
+[Collaborative Editing]({{< ref "kanvas/tutorials/collaborative-editing.md" >}}) — share a design, set Private or Public visibility, invite collaborators, and review with comments.
 {{% /card %}}
 {{% /cardpane %}}
 

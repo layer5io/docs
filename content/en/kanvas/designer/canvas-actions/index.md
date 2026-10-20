@@ -15,7 +15,7 @@ The menu adapts to the mode you are in. Commenting and pasting, for example, are
 
 | Action | Shortcut | Behavior |
 | --- | --- | --- |
-| Add Comment | <kbd>M</kbd> | Drops a comment at the point you right-clicked. Designer mode only. See [Review a Design with Comments]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md" >}}). |
+| Add Comment | <kbd>M</kbd> | Drops a comment at the point you right-clicked. Designer mode only. See [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}). |
 | Undo | <kbd>Cmd/Ctrl</kbd> + <kbd>Z</kbd> | Reverses the last change. |
 | Redo | <kbd>Cmd/Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Z</kbd> | Re-applies the last undone change. |
 | Paste | <kbd>Cmd/Ctrl</kbd> + <kbd>V</kbd> | Pastes the clipboard contents at the cursor position. Designer mode only. |

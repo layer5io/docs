@@ -272,4 +272,4 @@ corresponding control simply does not appear on the canvas.
 - [Understanding Tool Modes]({{< ref "kanvas/designer/understanding-tool-modes/index.md" >}}) - selection, pan and connector modes.
 - [Keyboard Shortcuts]({{< ref "kanvas/reference/keyboard-shortcuts.md" >}}) - the full shortcut reference.
 - [Working with Components]({{< ref "kanvas/guides/designing/configuring-components/index.md" >}}) - configuring the components you place.
-- [Review a Design with Comments]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md" >}}) - comments, which are annotations with their own lifecycle.
+- [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}) - comments, which are annotations with their own lifecycle.

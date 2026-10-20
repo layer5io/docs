@@ -78,7 +78,7 @@ Pan and box selection are off while you draw with the Pen or Pencil.
 - **Text boxes.** Double-click to edit text inline. Text options include color, weight (regular, medium, semi bold, bold, black), underline or strikethrough, alignment, and font size.
 - **Sections.** A section groups the objects dropped inside it, and they move with it.
 - **Images.** Images up to 512,000 bytes are embedded in the design. Larger files are rejected.
-- **Comments.** A comment opens a discussion thread on the canvas. Resolved threads disappear from the canvas until reopened. See [Review a Design with Comments]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md" >}}).
+- **Comments.** A comment opens a discussion thread on the canvas. Resolved threads disappear from the canvas until reopened. See [Reviewing Designs]({{< ref "kanvas/designer/comments/index.md" >}}).
 
 ![Shapes customization on the canvas](images/shapes_introduction.gif)
 

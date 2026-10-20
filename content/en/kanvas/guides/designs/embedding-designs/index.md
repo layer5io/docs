@@ -156,4 +156,4 @@ A live example, rendered from a design exported from Kanvas:
 ## Related
 
 - [Export Designs]({{< ref "kanvas/guides/designs/export-designs/index.md" >}}) covers the other formats.
-- [Share Designs]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}}) covers live access to a design for specific people.
+- [Share Designs]({{< ref "kanvas/designer/sharing/index.md" >}}) covers live access to a design for specific people.
