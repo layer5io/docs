@@ -6343,7 +6343,27 @@
  Help Center
  &lt;a href="#help-center" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
-&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.304</title><link>/cloud/reference/releases/v1.0.304/</link><pubDate>Tue, 20 Oct 2026 08:02:18 +0000</pubDate><guid>/cloud/reference/releases/v1.0.304/</guid><description>&lt;ul&gt;
+&lt;p&gt;The Help Center is a dialog with eight entries. Open it from the canvas context menu or from the help control in the whiteboard dock. It also opens from the &lt;strong&gt;Get Help&lt;/strong&gt; action in the &lt;a href="/kanvas/guides/troubleshooting/"&gt;troubleshooting&lt;/a&gt; panel.&lt;/p&gt;</description></item><item><title>v1.0.72-1</title><link>/kanvas/reference/releases/v1.0.72-1/</link><pubDate>Tue, 20 Oct 2026 22:11:00 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.72-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(comments): gate comment and mention actions on permission keys @leecalcote (#4396)&lt;/li&gt;
+&lt;li&gt;[Deploy] Point kanvas.new at the cloud.kanvas.new provider @leecalcote (#4395)&lt;/li&gt;
+&lt;li&gt;[Chore]: Update to Sistent v0.24.2 @l5io (#4394)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@fitzergerald, @l5io and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.304</title><link>/cloud/reference/releases/v1.0.304/</link><pubDate>Tue, 20 Oct 2026 08:02:18 +0000</pubDate><guid>/cloud/reference/releases/v1.0.304/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(server): add profile environment purpose @leecalcote (#6272)&lt;/li&gt;
 &lt;/ul&gt;
 
