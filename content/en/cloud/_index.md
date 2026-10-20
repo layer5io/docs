@@ -53,7 +53,7 @@ is a visual designer and operator for Kubernetes and multi-cloud infrastructure.
 | Section | Go here to |
 |---|---|
 | [Getting Started]({{< ref "cloud/getting-started/_index.md" >}}) | Create an account and learn what Layer5 Cloud sets up for you at first sign-in. |
-| [Tutorials]({{< ref "cloud/tutorials/_index.md" >}}) | Work through end-to-end examples that build a working mental model. |
+| [Tutorials]({{< ref "cloud/guides/tutorials/_index.md" >}}) | Work through end-to-end examples that build a working mental model. |
 | [How-to Guides]({{< ref "cloud/guides/_index.md" >}}) | Complete a specific task: manage organizations and workspaces, connect integrations, or self-host. |
 | [Concepts]({{< ref "cloud/concepts/_index.md" >}}) | Understand organizations, teams, workspaces, roles, the catalog, and how they relate. |
 | [Reference]({{< ref "cloud/reference/_index.md" >}}) | Look up default permissions by role and the API. |

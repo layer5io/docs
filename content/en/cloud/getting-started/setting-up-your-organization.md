@@ -84,6 +84,6 @@ Your organization is set up when all of the following are true:
 
 - [Organizations]({{< ref "cloud/concepts/identity-and-security/organizations/_index.md" >}}): organizations as the unit of tenancy.
 - [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}): how teams group users.
-- [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}): what a workspace holds and how it is shared.
+- [Workspaces]({{< ref "cloud/concepts/spaces/workspaces.md" >}}): what a workspace holds and how it is shared.
 - [Organization management]({{< ref "cloud/guides/organizations/org-management/_index.md" >}}): editing your organization and managing invitations.
 - [Managing workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}): editing, deleting, and organizing workspaces.

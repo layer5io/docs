@@ -64,7 +64,7 @@ If any of your organizations has no workspace, Cloud creates My Workspace in it 
 ## Explore each concept
 
 - [Identity and Security]({{< ref "cloud/concepts/identity-and-security/_index.md" >}}) explains organizations, teams, users, roles, keychains, keys, sessions, and tokens.
-- [Workspaces]({{< ref "cloud/concepts/workspaces.md" >}}) explains the collaboration boundary for teams, environments, and designs, and [Environments]({{< ref "cloud/concepts/environments.md" >}}) explains how connections are grouped into deploy targets.
+- [Spaces]({{< ref "cloud/concepts/spaces/_index.md" >}}) explains workspaces and environments.
 - [Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}) explains how designs are published, discovered, and cloned.
 - [Meshery Server Registration]({{< ref "cloud/concepts/meshery-server-registration.md" >}}) explains how a Meshery Server registers with Cloud and how Cloud recognizes it on every later connection.
 

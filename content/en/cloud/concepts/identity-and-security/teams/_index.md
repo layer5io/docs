@@ -39,7 +39,7 @@ The owner cannot leave the team, even to hand it to someone else. Because owners
 
 A member's permissions in an organization are the union of the roles they hold in the organization and in every team mapped into it. A role held in a team therefore applies across the organization in which the team lives, not only inside the team. Grant the Team Admin role deliberately: it carries team, user-viewing, and security management permissions organization-wide. See [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) and the [Roles and Permissions reference]({{< ref "cloud/reference/default-permissions.md" >}}).
 
-A team also receives access to resources through [workspaces]({{< ref "cloud/guides/workspaces/_index.md" >}}): assigning a team to a workspace gives its members read-only access to the connections in the workspace's environments. It does not open private designs to the team. Teams are not assigned to environments directly.
+A team also receives access to resources through [workspaces]({{< ref "cloud/guides/workspaces/_index.md" >}}): assigning a team to a workspace gives its members that workspace and its environments, connections, and designs. Teams are not assigned to environments directly.
 
 ## Who sees which teams
 
