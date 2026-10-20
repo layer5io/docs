@@ -1,25 +1,19 @@
 ---
-title: Self-Hosted Deployments
-linkTitle: Self-Hosted
-description: >
-  Run Layer5 Cloud on your own Kubernetes cluster so identity, designs, and organization data stay inside your network. Find what you deploy, what you operate, and where to start.
-weight: 60
-diataxis: how-to
+title: Self-Hosted
+weight: 6
 categories: [self-hosted]
-tags: [self-hosted, helm, deployment]
+description: >
+  Keep your Kanvas designs internal to your workplace. Get remote support from Layer5 when you need it.
 aliases:
   - /cloud/self-hosted/
+
 ---
 
-A self-hosted deployment runs the same Layer5 Cloud that Layer5 operates, on infrastructure you control. Your users sign in against your identity services, your organizations and designs live in your database, and Meshery Servers in your network connect to your deployment as their [remote provider](https://docs.meshery.io/extensibility/providers). Your data stays in your database.
+## On-premises Deployment of Layer5 Cloud
 
-Self-hosting is part of the Enterprise plan.
+A self-hosted deployment runs the same Layer5 Cloud that Layer5 operates, on infrastructure you control. Your users sign in against your identity services, your organizations and designs live in your database, and Meshery Servers in your network connect to your deployment as their [remote provider](https://docs.meshery.io/extensibility/providers).
 
-{{< feature-tiers functions="Self-hosted Deployment|Managed Service Provider|Cloud as an IDP" >}}
-
-## What you deploy
-
-One Helm chart, `layer5-cloud`, installs the identity-aware application and its two identity services. You supply the database, the ingress, and the TLS certificate.
+One Helm chart, `layer5-cloud`, installs the application and its two identity services. You supply the database, the ingress, and the TLS certificate.
 
 | Component | Provided by | What it does |
 | --- | --- | --- |
@@ -31,24 +25,24 @@ One Helm chart, `layer5-cloud`, installs the identity-aware application and its 
 | SMTP relay | You | Sends invitations, notifications, and identity mail (verification and recovery). |
 | Webhook receivers | You | Optional endpoints that receive support requests, signup decisions, and Kanvas entitlement events. |
 
-Meshery Server is deployed separately and is not part of this chart. See [Meshery Server registration]({{< ref "cloud/concepts/meshery-server-registration.md" >}}) for how a Meshery Server attaches to a provider.
-
-## What changes when you host it
+Meshery Server is deployed separately and is not part of this chart. See [Meshery Server registration]({{< ref "cloud/concepts/meshery-server-registration.md" >}}).
 
 | Area | On your deployment |
 | --- | --- |
-| Provider administration | Your operators hold the Provider Admin role. They create the first organization, assign custom roles, and approve signup requests. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}). |
+| Provider administration | Your operators hold the Provider Admin role. They create the first organization, assign custom roles, and approve signup requests. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}). |
 | Default sign-in providers | You register the Google and GitHub OAuth applications that every organization without its own credentials uses. See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md" >}}). |
-| Mail | The shared relay is yours. Organizations can still register their own. See [Troubleshoot Email Delivery]({{< ref "cloud/guides/self-hosted/operating/smtp.md" >}}). |
-| Branding and domains | Organizations apply their own theme and domain; you set the provider-level defaults. See [White-label Layer5 Cloud]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}}). |
+| Mail | The shared relay is yours. Organizations can still register their own. See [Email / SMTP Troubleshooting]({{< ref "cloud/guides/self-hosted/operating/smtp.md" >}}). |
+| Branding and domains | Organizations apply their own theme and domain; you set the provider-level defaults. See [White-labeling]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}}). |
 | Upgrades | You choose when to upgrade. The server applies database migrations at startup. |
-| Billing | Plan entitlements are not enforced by the deployment beyond the component limit. See [Feature Availability]({{< ref "cloud/reference/feature-availability.md" >}}). |
+| GitHub | You register your own GitHub App. See [Self-hosted GitHub App requirements]({{< ref "cloud/getting-started/github-integration/index.md#self-hosted-github-app-requirements" >}}). |
 
-## Plan, deploy, operate
+## Considerations of Self-Hosted Deployments
 
-1. **[Plan a deployment]({{< ref "cloud/guides/self-hosted/planning/_index.md" >}}).** Decide on the database, hostname, identity providers, mail relay, provider administrator, and network paths.
-2. **[Deploy Layer5 Cloud]({{< ref "cloud/guides/self-hosted/deployment/_index.md" >}}).** Install with Helm, create the Hydra client, and confirm the deployment is ready.
-3. **Configure.** Set [chart values]({{< ref "cloud/guides/self-hosted/deployment/helm-chart-values.md" >}}), [provider initialization]({{< ref "cloud/guides/self-hosted/deployment/provider-initialization.md" >}}), and [webhooks]({{< ref "cloud/guides/self-hosted/customizing-webhooks.md" >}}).
+1. **[Planning]({{< ref "cloud/guides/self-hosted/planning/_index.md" >}}).** Decide on the database, hostname, identity providers, mail relay, provider administrator, and network paths.
+2. **[Deploying Layer5 Cloud]({{< ref "cloud/guides/self-hosted/deployment/_index.md" >}}).** Install with Helm, create the Hydra client, and confirm the deployment is ready.
+3. **Configure.** Set [chart values]({{< ref "cloud/guides/self-hosted/deployment/helm-chart-values.md" >}}), [provider initialization]({{< ref "cloud/guides/self-hosted/deployment/_index.md#provider-initialization" >}}), and [webhooks]({{< ref "cloud/guides/self-hosted/customizing-webhooks.md" >}}).
 4. **Operate.** Watch [health and logs]({{< ref "cloud/guides/self-hosted/planning/monitoring.md" >}}) and diagnose [mail delivery]({{< ref "cloud/guides/self-hosted/operating/smtp.md" >}}).
 
-Real-time co-editing has one network dependency outside your cluster: browsers must reach public STUN and TURN hosts to connect to each other. See [Networking]({{< ref "cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md" >}}) before you deploy into a restricted network.
+Real-time co-editing has one network dependency outside your cluster: browsers must reach public STUN and TURN hosts to connect to each other. See [Networking]({{< ref "cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md" >}}) before you deploy into a restricted network. A self-hosted provider is its own signaling host. Users connected to your deployment never signal through Layer5's hosted service.
+
+For help with a deployment, see [Support]({{< ref "cloud/getting-started/support.md" >}}).

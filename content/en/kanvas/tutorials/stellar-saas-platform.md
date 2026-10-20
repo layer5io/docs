@@ -1,99 +1,103 @@
 ---
-title: "Share a Design Across Organizations"
-linkTitle: "Cross-Organization Design Access"
-description: "Grant a reviewer in another organization access to a private design, run the review in comments, and revoke access when the review ends."
-weight: 20
-diataxis: tutorial
+title: "Cross-Org Design Access: stellar-saas-platform"
+description: >
+  Learn how Stellar Dynamics accesses and collaborates on a shared design with Orbital Labs using cross-org permissions in Kanvas.
+weight: 7
 categories: [designer, tutorials]
-tags: [sharing, collaboration, organizations, review]
 ---
 
-In this tutorial, an Organization Admin at one company asks an engineer at another company to review a private design. By the end, you will have given someone outside your organization access to one design, held a review in a comment thread, and removed that access. Along the way, you will learn what a grant gives someone, where Kanvas checks permissions, and why the review itself has to happen in comments.
+Stellar Dynamics is Orbital Labs' biggest enterprise client — and its most exacting one. Marcus Webb, Org Admin for Stellar Dynamics, needs to build `stellar-saas-platform` in Kanvas: a full Azure-native SaaS architecture that his engineering team will own and operate, but that Orbital Labs' Infrastructure Team needs to review for architectural alignment. The twist is that Marcus and Five work for different organizations. This tutorial demonstrates how Kanvas cross-organization design access makes that collaboration possible without collapsing the permission boundary between the two orgs.
 
-The cast is the same one used across these docs. Marcus Webb is the Organization Admin at Stellar Dynamics. Five is a Platform Engineer at Orbital Labs, a separate organization.
+## Architecture overview
 
-## Before you begin
+The `stellar-saas-platform` design models Stellar Dynamics' production SaaS stack. It spans five Azure services:
 
-- Marcus holds the **Share Design permission** in Stellar Dynamics. Kanvas checks it in the organization that owns the design's workspace, so a grant from another organization does not count.
-- Marcus holds the **View All Users** permission. The people picker in the Share dialog depends on it.
-- Five holds **View All Users** as well, so he can @mention Marcus in a comment.
-- Both accounts exist on the same Layer5 Cloud.
-- The design is saved and private. A design gets a link only after its first save gives it an id. Kanvas hides Share for empty designs and for published designs.
+| Component | Role |
+|-----------|------|
+| AKS (Azure Kubernetes Service) | Compute backbone — application workloads |
+| Azure SQL | Relational data layer |
+| Azure API Management | API gateway — external and internal traffic |
+| Azure AD | Identity and access management |
+| Event Hub | Event streaming and async messaging |
 
-## The scenario
+Marcus owns the design in the `stellar-main` workspace under the Stellar Dynamics org. The `stellar-enterprise` environment holds active connections for AKS, Azure SQL, Azure API Management, and Azure AD — making it the natural binding target.
 
-Marcus owns a saved design called `stellar-saas-platform`. It models Stellar Dynamics' Azure SaaS stack: an AKS cluster, Azure SQL, API Management, Azure AD, Event Hub, and the connections between them. Before his team runs it in production, he wants Five to review the architecture.
+## Tutorial
 
-## Step 1: Marcus grants Five access
+### Step 1: Marcus opens Kanvas as Stellar Dynamics Org Admin
 
-Marcus opens the Share dialog on `stellar-saas-platform` and searches for Five by name. The search covers every user Marcus's role lets him search, not just members of Stellar Dynamics, so Five appears even though he belongs to Orbital Labs. Marcus adds Five, and Five now appears in the list of people with access.
+Marcus logs into Layer5 Cloud using his Stellar Dynamics credentials. His account carries the Org Admin role for Stellar Dynamics, which gives him full design and workspace management permissions within that org.
 
-Here is the model to remember. **A private design opens for its owner, for provider administrators, and for each person who holds a grant on it.** A grant links one person to one design. It has no access level and never checks organizations. Kanvas does not compare Five's organization with the design's, and you do not need any provider-level trust setting.
+He navigates to **Kanvas → Designer** and confirms that the workspace selector shows `stellar-main` — the workspace designated for Stellar Dynamics' primary architecture work.
 
-An invitation email goes out only when the share request asks for one, so Marcus copies the design link and sends it to Five himself.
+### Step 2: Create the stellar-saas-platform design
 
-**Result:** Five holds a grant on `stellar-saas-platform`.
+Marcus selects **New Design** from the Designer toolbar. He names the design `stellar-saas-platform` and, because `stellar-main` is already selected as his active workspace, the design is created there automatically.
 
-## Step 2: Five opens the design
+He adds a short description — "Azure SaaS platform: AKS, SQL, APIM, AAD, Event Hub" — so the design is identifiable in the workspace list without opening it.
 
-Five follows the link while signed in to his Orbital Labs account. The design loads with every component and connection Marcus drew. It also appears in Five's list of designs shared with him.
+### Step 3: Add Azure components and draw connections
 
-Five gets this one design and nothing else. The grant does not make him a member of Stellar Dynamics. Other private designs in the same workspace remain closed to him, because each private design checks its own grants. Assigning a team to the workspace would not open them either.
+Marcus opens the **Component Library** and filters by provider: `Azure`. He places five components on the canvas:
 
-**Result:** Five sees the design Marcus sees.
+- **AKS Cluster** — named `saas-aks`; the compute layer running all application microservices
+- **Azure SQL** — named `saas-sql`; relational persistence for the SaaS data model
+- **Azure API Management** — named `saas-apim`; the API gateway handling all inbound traffic from external clients
+- **Azure AD** — named `saas-aad`; identity provider and RBAC authority for both the platform and its tenants
+- **Event Hub** — named `saas-events`; the event streaming backbone for async workloads and audit logging
 
-## Step 3: Five comments and mentions Marcus
+With all five components on the canvas, Marcus draws the connection edges:
 
-Five places a comment next to API Management and writes:
+1. **saas-apim → saas-aks** — API Management routes validated requests to AKS workloads
+2. **saas-aks → saas-sql** — application microservices read and write to Azure SQL
+3. **saas-aks → saas-events** — microservices publish domain events to Event Hub
+4. **saas-aad → saas-apim** — API Management delegates authentication to Azure AD (OAuth 2.0 / OIDC)
+5. **saas-aad → saas-aks** — workload identity is managed through Azure AD for pod-level auth
 
-> @Marcus Webb You're missing a WAF in front of API Management.
+He annotates the **saas-aad → saas-apim** edge with `oauth2/oidc` to make the authentication protocol explicit for reviewers.
 
-Typing `@` followed by part of a name brings up matching users. Choosing one stores a real mention, not plain text.
+### Step 4: Leave the design unbound
 
-The comment is a component in the design, so it saves and travels with the design. If Marcus has the design open, the comment shows up on his canvas right away. Because Five mentioned him, Marcus also gets an email with the design's name, a snapshot, and the thread, unless he has turned off comment emails in his account preferences.
+Kanvas does not store an environment on a design, and the canvas does not overlay connection status or a live cluster version. `stellar-enterprise` stays a deploy-time choice: the Deploy stepper asks which environments to target. This tutorial does not deploy.
 
-**Result:** An open thread on the design names Marcus.
+### Step 5: Cross-org sharing with Orbital Labs
 
-## Step 4: Marcus responds, edits, and resolves
+This is the step that makes the tutorial interesting. Marcus wants Five — a Platform Engineer at Orbital Labs — to review the design. But Five is not a member of Stellar Dynamics; he belongs to a completely separate organization.
 
-Marcus replies in the thread. Five wrote an earlier message in it, so Five receives an email about the reply. Marcus then adds an Azure Application Gateway in front of API Management and connects the two. Kanvas autosaves the change.
+Cross-org sharing is possible here because both Stellar Dynamics and Orbital Labs are managed under **Constellation Cloud**, a shared MSP provider. Dr. Aiko Sato, Constellation Cloud's Provider Admin, has already configured cross-org access permissions that allow design sharing across the two orgs. Without that provider-level configuration, the Share dialog would not surface users from the other organization at all.
 
-Marcus resolves the thread. The comment leaves the canvas but stays in the comments panel under the Resolved filter. Resolving sends no email. If anyone posts again in the thread, it reopens.
+Marcus opens the **Share** panel on `stellar-saas-platform`. He types Five's name in the user search field. Because Dr. Aiko Sato has established the cross-org trust relationship, Five appears as a valid share target even though he belongs to Orbital Labs. A share has no permission level. Five can edit the design and leave comments.
 
-**Result:** The fix is in the design, and the thread records why it was made.
+Marcus clicks **Share**. Five receives an in-app notification in his Orbital Labs account.
 
-## What this means for review
+{{< alert type="info" title="Cross-Org Access" >}}
+Cross-organization design sharing requires that both organizations exist under a shared Provider (Constellation Cloud in this scenario). The Provider Admin (Dr. Aiko Sato) must have configured cross-org permissions before sharing can occur. See [Roles and Keychains]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}) for the permission model.
+{{< /alert >}}
 
-Kanvas has no view-only or comment-only grant. A grantee can do anything an editor can do. Five can open the design, save edits, comment, clone it, download it, and switch it between private and public. He can only re-share it if his role gives him the Share Design permission in Stellar Dynamics' organization. Five cannot delete the design, and he cannot take over ownership.
+### Step 6: Five reviews the design from Orbital Labs
 
-The rules of the review therefore live in the comment thread, not in the permission system. Marcus has two tools for keeping it that way:
+Five opens the shared design notification from his Orbital Labs account. The `stellar-saas-platform` design loads in Kanvas. He can inspect all five Azure components, explore their configuration panels, and view the connection annotations. The canvas is not read-only: a share does not disable drag, connect, or delete.
 
-- **Remove the grant when the review ends.** Access lasts exactly as long as the grant does.
-- **Offer a clone.** If Five wants to experiment, a clone gives him an independent copy, and the original stays untouched.
+After a few minutes of review, Five leaves a comment pinned to the **saas-apim** component:
 
-For live co-editing during a review, see [Collaborative Editing]({{< ref "kanvas/tutorials/collaborative-editing.md" >}}).
+> "You're missing a WAF in front of API Management — Zara is going to notice."
 
-## Step 5: Marcus revokes access
+He also adds a general design comment noting that the Event Hub retention period should be explicitly configured if the audit logging use case requires replay beyond the default 24-hour window.
 
-Once the review is done, Marcus removes Five from the list of people with access in the Share dialog. When Five opens the link again, Kanvas refuses it, and the design leaves his shared list.
+Marcus receives a notification that Five has left comments and opens the comment thread.
 
-Five's comments stay in the design. Comments are part of the design, so removing a person does not remove what they wrote. A clone is a separate design, so revoking access to the original does not affect any clone Five made.
+### Step 7: Marcus acts on the review
 
-**Result:** Only Marcus and provider administrators can open `stellar-saas-platform`.
+Marcus reads Five's comments. The WAF observation is valid — Stellar Dynamics' security baseline requires a Web Application Firewall in front of any public API endpoint. He adds an **Azure Application Gateway** component (with WAF tier selected in the configuration panel) to the canvas:
 
-## Access at a glance
+- He names it `saas-waf-gateway`
+- He draws an edge from **saas-waf-gateway → saas-apim**, replacing the implicit external-client entry point with an explicit WAF-gated path
+- He annotates the new edge with `waf-v2` to indicate the WAF policy tier
 
-This table applies to a private design. Provider administrators can open and delete any private design.
+Marcus resolves Five's WAF comment and replies: "Added Application Gateway (WAF v2) in front of APIM. Retention on Event Hub is set to 7 days in the environment config — will surface that in the design next pass."
 
-| Person | Open the private design | Edit it | Comment | Re-share | Delete |
-|---|---|---|---|---|---|
-| Marcus (owner) | Yes | Yes | Yes | Yes, with the Share Design permission | Yes |
-| Five (grantee) | Yes | Yes | Yes | Only with the Share Design permission in the design's organization | No |
-| Someone with no grant | No | No | No | No | No |
+The `stellar-saas-platform` design now reflects the correct architecture, the review loop is documented in the comment history, and the cross-org collaboration happened entirely within Kanvas — no design files exported, no screenshots emailed.
 
-## Next steps
-
-- [Share a Design]({{< ref "kanvas/guides/collaborating/sharing-designs/index.md" >}}) covers granting, revoking, and changing visibility.
-- [Review a Design with Comments]({{< ref "kanvas/guides/collaborating/reviewing-designs/index.md" >}}) covers comment threads, mentions, filters, and notifications.
-- [Collaboration Model]({{< ref "kanvas/concepts/collaboration/index.md" >}}) explains how sharing, comments, and live editing fit together.
-- [Permissions by Role]({{< ref "kanvas/reference/permissions.md" >}}) lists every permission that controls these actions.
+{{< alert type="info" >}}
+Meet Marcus, Five, Dr. Aiko, and the rest of the cast at [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).
+{{< /alert >}}
