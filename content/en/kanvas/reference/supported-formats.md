@@ -48,7 +48,7 @@ If nothing matches, the import fails and lists why each format was rejected. The
 | Embeddable JavaScript module | Canvas snapshot | No | Static snapshot for web pages. See [Embed Designs]({{< ref "kanvas/guides/designs/embedding-designs/index.md" >}}). |
 | View as JSON | Not applicable | No | Operator mode only. Downloads as `<view name>.json`. |
 
-The canvas screenshot (a PNG picture, not a design file) is a separate action. See [Canvas Actions]({{< ref "kanvas/designer/canvas-actions/index.md" >}}). Not available: Docker Compose export, SVG image export, export of an earlier version, and per-format export options. The catalog's light and dark snapshot images are produced by an automated workflow after publishing and are not user exports.
+Not available: Docker Compose export, canvas image export (PNG or SVG), export of an earlier version, and per-format export options. The catalog's light and dark snapshot images are produced by an automated workflow after publishing and are not user exports.
 
 ## Format by operation
 
