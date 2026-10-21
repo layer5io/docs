@@ -6649,6 +6649,22 @@ The Help Center footer shows the installed Kanvas version and links to that vers
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.72-4"
+url: /kanvas/reference/releases/v1.0.72-4/index.md
+date: "2026-10-21"
+--------------------------------------------------------------------------------
+
+## What's New
+## 🔤 General
+* No changes
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.72-3"
 url: /kanvas/reference/releases/v1.0.72-3/index.md
 date: "2026-10-21"
@@ -6728,22 +6744,6 @@ date: "2026-10-11"
 
 Thank you to our contributors for making this release possible:
 @CodeAhmedJamil, @hamza-mohd, @hortison, @jamieplu, @l5io, @leecalcote, @marblom007, @pontusringblom, @ritzorama, @sarajkrishnasingh, @simihablo and @yi-nuo426
-
-
---------------------------------------------------------------------------------
-title: "v1.0.70-1"
-url: /kanvas/reference/releases/v1.0.70-1/index.md
-date: "2026-09-14"
---------------------------------------------------------------------------------
-
-## What's New
-## 🔤 General
-- [Kanvas] Add opt-in Cytoscape WebGL rendering and measure it against Canvas 2D @hortison (#4361)
-
-## 👨🏽‍💻 Contributors
-
-Thank you to our contributors for making this release possible:
-@hortison, @l5io and @leecalcote
 
 
 --------------------------------------------------------------------------------
