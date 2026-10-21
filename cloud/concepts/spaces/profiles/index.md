@@ -26,6 +26,8 @@ A profile is visible to:
 - the Organization Admins of its organization, and
 - members of any team assigned to a workspace the profile is assigned to.
 
+The owner always sees their own profile, whether or not it is in a workspace and even without the **View Profiles** permission. Organization Admins and workspace members also need **View Profiles**. Provider Admins do not see profiles automatically. Seeing a profile does not give you access to its linked connections, which keep their own access rules.
+
 A profile that is in no workspace is visible only to its owner and the organization's admins. What you can change is never wider than what you can see: a profile you cannot see answers 404, the same as one that does not exist.
 
 ## Owner and succession
@@ -34,15 +36,11 @@ The owner can always edit their own profile and its connection links. Deleting a
 
 When the owner's account is deleted, the profile passes to the earliest Organization Admin of its organization, or else to its earliest member, the same rule the organization follows for designs. A profile is never deleted because its owner's account was.
 
-## Profiles and environments
-
-Profiles were previously modeled as environments with the `profile` purpose. Those environments still work, and when profiles shipped, each existing one was copied into a profile with the same id, together with its workspace assignments and connection links. New profiles should be created as profiles.
-
 ## Permissions
 
 | Permission | Allows |
 | --- | --- |
-| View Profiles | Listing and reading the profiles you can see, and their connections |
+| View Profiles | Listing and reading the profiles you can see, and their connections. Owners read their own profiles without it. |
 | Create Profile | Creating a profile in an organization |
 | Edit Profile | Editing any visible profile, transferring its ownership, and linking or unlinking connections |
 | Delete Profile | Deleting a profile |

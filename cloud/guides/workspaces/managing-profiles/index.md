@@ -23,9 +23,9 @@ This guide shows how to manage [profiles](/cloud/concepts/spaces/profiles/) thro
 
 ## List profiles
 
-`GET /profiles` (View Profiles) lists the profiles you can see in your current organization. Pass `orgId` to choose another organization you belong to, `userId` to find the profile that represents a user, and `search`, `order` (`name`, `createdAt` or `updatedAt`), `page` and `pagesize` to page through the results.
+`GET /profiles` (View Profiles) lists the profiles you can see in your current organization. Without View Profiles, it lists only the profiles you own. Pass `orgId` to choose another organization you belong to, `userId` to find the profile that represents a user, and `search`, `order` (`name`, `createdAt` or `updatedAt`), `page` and `pagesize` to page through the results.
 
-`GET /profiles/{profileId}` (View Profiles) returns one profile you can see, including one you own that is in no workspace.
+`GET /profiles/{profileId}` (View Profiles, or the owner) returns one profile you can see. The owner can always read their own profile, even when it is in no workspace.
 
 ## Create a profile
 
@@ -51,14 +51,14 @@ This guide shows how to manage [profiles](/cloud/concepts/spaces/profiles/) thro
 
 ## Link connections
 
-- `GET /profiles/{profileId}/connections` (View Profiles) lists the linked connections.
+- `GET /profiles/{profileId}/connections` (View Profiles, or the owner) lists the linked connections.
 - `POST /profiles/{profileId}/connections/{connectionId}` (Edit Profile, or the owner) links a connection you can access in the profile's organization. Linking twice is harmless.
 - `DELETE /profiles/{profileId}/connections/{connectionId}` (Edit Profile, or the owner) removes the link and leaves the connection in place.
 
 ## Share a profile through a workspace
 
 - `POST /workspaces/{workspaceId}/profiles/{profileId}` (Assign profile to workspace) assigns a profile you can see to a workspace in the same organization. A workspace in another organization answers 400.
-- `GET /workspaces/{workspaceId}/profiles` (View Profiles) lists the workspace's profiles. Add `filter={"assigned":false}` to list the profiles you could still assign.
+- `GET /workspaces/{workspaceId}/profiles` (View Profiles) lists the workspace's profiles. Without View Profiles, it lists only the ones you own. Add `filter={"assigned":false}` to list the profiles you could still assign.
 - `DELETE /workspaces/{workspaceId}/profiles/{profileId}` (Remove profile from workspace) removes the assignment.
 
 Members of every team assigned to the workspace can then see the profile.

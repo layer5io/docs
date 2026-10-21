@@ -13481,9 +13481,9 @@ Each action needs the permission named beside it. A profile you cannot see, one 
 
 ## List profiles
 
-`GET /profiles` (View Profiles) lists the profiles you can see in your current organization. Pass `orgId` to choose another organization you belong to, `userId` to find the profile that represents a user, and `search`, `order` (`name`, `createdAt` or `updatedAt`), `page` and `pagesize` to page through the results.
+`GET /profiles` (View Profiles) lists the profiles you can see in your current organization. Without View Profiles, it lists only the profiles you own. Pass `orgId` to choose another organization you belong to, `userId` to find the profile that represents a user, and `search`, `order` (`name`, `createdAt` or `updatedAt`), `page` and `pagesize` to page through the results.
 
-`GET /profiles/{profileId}` (View Profiles) returns one profile you can see, including one you own that is in no workspace.
+`GET /profiles/{profileId}` (View Profiles, or the owner) returns one profile you can see. The owner can always read their own profile, even when it is in no workspace.
 
 ## Create a profile
 
@@ -13509,14 +13509,14 @@ Each action needs the permission named beside it. A profile you cannot see, one 
 
 ## Link connections
 
-- `GET /profiles/{profileId}/connections` (View Profiles) lists the linked connections.
+- `GET /profiles/{profileId}/connections` (View Profiles, or the owner) lists the linked connections.
 - `POST /profiles/{profileId}/connections/{connectionId}` (Edit Profile, or the owner) links a connection you can access in the profile's organization. Linking twice is harmless.
 - `DELETE /profiles/{profileId}/connections/{connectionId}` (Edit Profile, or the owner) removes the link and leaves the connection in place.
 
 ## Share a profile through a workspace
 
 - `POST /workspaces/{workspaceId}/profiles/{profileId}` (Assign profile to workspace) assigns a profile you can see to a workspace in the same organization. A workspace in another organization answers 400.
-- `GET /workspaces/{workspaceId}/profiles` (View Profiles) lists the workspace's profiles. Add `filter={"assigned":false}` to list the profiles you could still assign.
+- `GET /workspaces/{workspaceId}/profiles` (View Profiles) lists the workspace's profiles. Without View Profiles, it lists only the ones you own. Add `filter={"assigned":false}` to list the profiles you could still assign.
 - `DELETE /workspaces/{workspaceId}/profiles/{profileId}` (Remove profile from workspace) removes the assignment.
 
 Members of every team assigned to the workspace can then see the profile.
@@ -34596,7 +34596,7 @@ The profile permissions are not yet rows in the permission list. They are held b
 | Create Profile, Edit Profile, Delete Profile | Workspace Admin, Organization Admin |
 | Assign profile to workspace, Remove profile from workspace | Workspace Admin, Academy Admin, Organization Admin |
 
-Provider Admin holds all six. The owner of a profile can edit it and its connection links without Edit Profile. People using Kanvas without signing in hold none of them. See [Profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}).
+Provider Admin holds all six. The owner of a profile can read it without View Profiles, and can edit it and its connection links without Edit Profile. People using Kanvas without signing in hold none of them. See [Profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}).
 
 ## What the matrix does not show
 
@@ -35300,6 +35300,8 @@ A profile is visible to:
 - the Organization Admins of its organization, and
 - members of any team assigned to a workspace the profile is assigned to.
 
+The owner always sees their own profile, whether or not it is in a workspace and even without the **View Profiles** permission. Organization Admins and workspace members also need **View Profiles**. Provider Admins do not see profiles automatically. Seeing a profile does not give you access to its linked connections, which keep their own access rules.
+
 A profile that is in no workspace is visible only to its owner and the organization's admins. What you can change is never wider than what you can see: a profile you cannot see answers 404, the same as one that does not exist.
 
 ## Owner and succession
@@ -35308,15 +35310,11 @@ The owner can always edit their own profile and its connection links. Deleting a
 
 When the owner's account is deleted, the profile passes to the earliest Organization Admin of its organization, or else to its earliest member, the same rule the organization follows for designs. A profile is never deleted because its owner's account was.
 
-## Profiles and environments
-
-Profiles were previously modeled as environments with the `profile` purpose. Those environments still work, and when profiles shipped, each existing one was copied into a profile with the same id, together with its workspace assignments and connection links. New profiles should be created as profiles.
-
 ## Permissions
 
 | Permission | Allows |
 | --- | --- |
-| View Profiles | Listing and reading the profiles you can see, and their connections |
+| View Profiles | Listing and reading the profiles you can see, and their connections. Owners read their own profiles without it. |
 | Create Profile | Creating a profile in an organization |
 | Edit Profile | Editing any visible profile, transferring its ownership, and linking or unlinking connections |
 | Delete Profile | Deleting a profile |
