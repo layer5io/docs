@@ -6649,6 +6649,22 @@ The Help Center footer shows the installed Kanvas version and links to that vers
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.72-2"
+url: /kanvas/reference/releases/v1.0.72-2/index.md
+date: "2026-10-21"
+--------------------------------------------------------------------------------
+
+## What's New
+## 🔤 General
+- fix(graphql): build the plugin with the Meshery server's Go toolchain and tags @leecalcote (#4397)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.72-1"
 url: /kanvas/reference/releases/v1.0.72-1/index.md
 date: "2026-10-20"
@@ -6728,24 +6744,6 @@ date: "2026-09-03"
 
 Thank you to our contributors for making this release possible:
 @l5io
-
-
---------------------------------------------------------------------------------
-title: "v1.0.68-3"
-url: /kanvas/reference/releases/v1.0.68-3/index.md
-date: "2026-09-02"
---------------------------------------------------------------------------------
-
-## What's New
-## 🔤 General
-- fix(kanvas): restore the persist-anonymous-user provider capability @ritzorama (#4359)
-- fix(ui): route people-pickers to the searchable user projection @ritzorama (#4360)
-- fix(ui): repair four editor XState actor defects and cover all 14 with specs @willcalcote (#4356)
-
-## 👨🏽‍💻 Contributors
-
-Thank you to our contributors for making this release possible:
-@l5io, @leecalcote, @pontusringblom, @ritzorama, @sarajkrishnasingh, @willcalcote and @yi-nuo426
 
 
 --------------------------------------------------------------------------------
