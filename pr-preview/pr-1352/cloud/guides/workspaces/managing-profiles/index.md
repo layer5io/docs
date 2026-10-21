@@ -25,7 +25,7 @@ This guide shows how to manage [profiles](/pr-preview/pr-1352/cloud/concepts/spa
 
 `GET /profiles` (View Profiles) lists the profiles you can see in your current organization. Pass `orgId` to choose another organization you belong to, `userId` to find the profile that represents a user, and `search`, `order` (`name`, `createdAt` or `updatedAt`), `page` and `pagesize` to page through the results.
 
-`GET /profiles/{profileId}` returns one profile.
+`GET /profiles/{profileId}` (View Profiles) returns one profile you can see, including one you own that is in no workspace.
 
 ## Create a profile
 
@@ -53,7 +53,7 @@ This guide shows how to manage [profiles](/pr-preview/pr-1352/cloud/concepts/spa
 
 - `GET /profiles/{profileId}/connections` (View Profiles) lists the linked connections.
 - `POST /profiles/{profileId}/connections/{connectionId}` (Edit Profile, or the owner) links a connection you can access in the profile's organization. Linking twice is harmless.
-- `DELETE /profiles/{profileId}/connections/{connectionId}` removes the link and leaves the connection in place.
+- `DELETE /profiles/{profileId}/connections/{connectionId}` (Edit Profile, or the owner) removes the link and leaves the connection in place.
 
 ## Share a profile through a workspace
 
