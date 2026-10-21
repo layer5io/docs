@@ -95,7 +95,7 @@ The profile permissions are not yet rows in the permission list. They are held b
 | Create Profile, Edit Profile, Delete Profile | Workspace Admin, Organization Admin |
 | Assign profile to workspace, Remove profile from workspace | Workspace Admin, Academy Admin, Organization Admin |
 
-Provider Admin holds all six. The owner of a profile can edit it and its connection links without Edit Profile. People using Kanvas without signing in hold none of them. See [Profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}).
+Provider Admin holds all six. The owner of a profile can read it without View Profiles, and can edit it and its connection links without Edit Profile. People using Kanvas without signing in hold none of them. See [Profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}).
 
 ## What the matrix does not show
 
