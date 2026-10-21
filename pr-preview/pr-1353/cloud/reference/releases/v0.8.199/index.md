@@ -1,0 +1,19 @@
+# v0.8.199
+
+date: 2025-04-18
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.174 @l5io (#3402)
+- Workspace update - 2 @amitamrutiya (#3401)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Workspaces on Layer5 Documentation</title><link>/pr-preview/pr-1353/tags/workspaces/</link><description>Recent content in Workspaces on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1353/tags/workspaces/index.xml" rel="self" type="application/rss+xml"/><item><title>Sharing a Workspace</title><link>/pr-preview/pr-1353/cloud/guides/tutorials/sharing-a-workspace/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1353/cloud/guides/tutorials/sharing-a-workspace/</guid><description>&lt;h2 id="share-designs-from-workspaces" class="heading-link"&gt;
+ Share designs from Workspaces
+ &lt;a href="#share-designs-from-workspaces" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Five has been working in the &lt;code&gt;orbital-dev&lt;/code&gt; workspace, a development sandbox with a local Kubernetes environment (kind) and LocalStack for AWS service emulation. Rex Park needs to open the &lt;code&gt;microservices-baseline&lt;/code&gt; design.&lt;/p&gt;
+&lt;p&gt;Assigning the Development team to &lt;code&gt;orbital-dev&lt;/code&gt; does not do that. Team assignment grants read-only access to the connections in the workspace&amp;rsquo;s environments. It does not open designs. Every member of the organization can already see the workspace.&lt;/p&gt;</description></item><item><title>Default Workspace Roles</title><link>/pr-preview/pr-1353/cloud/concepts/identity-and-security/roles/workspace-roles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1353/cloud/concepts/identity-and-security/roles/workspace-roles/</guid><description>&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;img src="../images/workspace-roles.svg" link="../images/workspace-roles.svg" width="100%" alt="Workspace Roles" /&gt;
+&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class="td-card-group card-group p-0 mb-4"&gt;
+
+&lt;div class="td-card card border me-4"&gt;
+&lt;div class="card-header"&gt;
+ 
+&lt;h2 id="workspace-administrator" class="heading-link"&gt;
+ Workspace Administrator
+ &lt;a href="#workspace-administrator" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+ &lt;/div&gt;
+&lt;div class="card-body"&gt;
+ &lt;p class="card-text"&gt;
+ &lt;p&gt;&lt;strong&gt;What is the purpose of this role?&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Managing workspaces, environments, teams, and lifecycle actions, and reviewing catalog requests, in each organization where the user holds the role. It is not limited to a single workspace, and there is no Workspace Owner role that assigns it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Who can assign this role?&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>Promoting a Design from Staging to Prod</title><link>/pr-preview/pr-1353/cloud/guides/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1353/cloud/guides/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This guide walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, then deploys it to the &lt;code&gt;prod-aws&lt;/code&gt; environment.&lt;/p&gt;
+&lt;p&gt;Promotion is a move. A design lives in at most one workspace, so assigning it to production removes it from staging. There is no approval step and no copy.&lt;/p&gt;
+&lt;p&gt;See &lt;a href="/pr-preview/pr-1353/cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt; for the full Orbital Labs narrative reference.&lt;/p&gt;
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline. A workspace decides where a design lives and which teams can read which connections. An environment is the deploy target. A team assignment gives read-only access to connections. It does not give access to designs.&lt;/p&gt;</description></item></channel></rss>
