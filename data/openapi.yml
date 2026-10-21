@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.95
+  version: v1.3.96
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -30486,7 +30486,7 @@ paths:
                           description: >
                             Organization the connection is registered in, taken from the `X-Current-Orgid` header on
                             registration. Servers implementing this contract use it, with the owner and
-                            `metadata.machineId`, as the deduplication key for `desktop` connections. Lets an
+                            `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
                             organization list and count its connections (for example its registered desktop installs)
                             without going through each owner. Absent on connections that predate it.
                           x-oapi-codegen-extra-tags:
@@ -30792,10 +30792,11 @@ paths:
         type `platform`, sub_type `management`, status `connected`, and `metadata` matching `DesktopConnectionMetadata`.
         Servers implementing this contract must take the organization from the `X-Current-Orgid` header, refuse a
         `desktop` registration without it with `400`, and refuse a caller who is not a live member of that organization
-        with `403`. They must deduplicate on (organization, owner, `metadata.machineId`): registering the same machine
-        again updates that connection and returns `200`, while a new connection returns `201`. A `desktop` body whose
-        metadata lacks `machineId` is refused with `400`. The kind names the connection type, never the product that
-        runs on the machine.
+        with `403`. They must deduplicate on (organization, owner, `metadata.installationId`): registering the same
+        install again updates that connection and returns `200`, while a new connection returns `201`. A `desktop` body
+        whose metadata lacks `installationId` is refused with `400`. Installs on one computer share
+        `metadata.computerId`, so a server can group them by computer. The kind names the connection type, never the
+        product that runs on the machine.
 
 
         A `desktop` registration whose `metadata.clientName` and `metadata.appVersion` fall below the server's minimum
@@ -32009,10 +32010,10 @@ paths:
                   organizationId:
                     description: >
                       Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and `metadata.machineId`,
-                      as the deduplication key for `desktop` connections. Lets an organization list and count its
-                      connections (for example its registered desktop installs) without going through each owner. Absent
-                      on connections that predate it.
+                      registration. Servers implementing this contract use it, with the owner and
+                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
+                      organization list and count its connections (for example its registered desktop installs) without
+                      going through each owner. Absent on connections that predate it.
                     x-oapi-codegen-extra-tags:
                       db: organization_id
                       json: organizationId,omitempty
@@ -32973,10 +32974,10 @@ paths:
                   organizationId:
                     description: >
                       Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and `metadata.machineId`,
-                      as the deduplication key for `desktop` connections. Lets an organization list and count its
-                      connections (for example its registered desktop installs) without going through each owner. Absent
-                      on connections that predate it.
+                      registration. Servers implementing this contract use it, with the owner and
+                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
+                      organization list and count its connections (for example its registered desktop installs) without
+                      going through each owner. Absent on connections that predate it.
                     x-oapi-codegen-extra-tags:
                       db: organization_id
                       json: organizationId,omitempty
@@ -34089,10 +34090,10 @@ paths:
                   organizationId:
                     description: >
                       Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and `metadata.machineId`,
-                      as the deduplication key for `desktop` connections. Lets an organization list and count its
-                      connections (for example its registered desktop installs) without going through each owner. Absent
-                      on connections that predate it.
+                      registration. Servers implementing this contract use it, with the owner and
+                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
+                      organization list and count its connections (for example its registered desktop installs) without
+                      going through each owner. Absent on connections that predate it.
                     x-oapi-codegen-extra-tags:
                       db: organization_id
                       json: organizationId,omitempty
@@ -35566,10 +35567,10 @@ paths:
                   organizationId:
                     description: >
                       Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and `metadata.machineId`,
-                      as the deduplication key for `desktop` connections. Lets an organization list and count its
-                      connections (for example its registered desktop installs) without going through each owner. Absent
-                      on connections that predate it.
+                      registration. Servers implementing this contract use it, with the owner and
+                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
+                      organization list and count its connections (for example its registered desktop installs) without
+                      going through each owner. Absent on connections that predate it.
                     x-oapi-codegen-extra-tags:
                       db: organization_id
                       json: organizationId,omitempty
@@ -35952,7 +35953,7 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/integrations/connections/desktop/{machineId}:
+  /api/integrations/connections/desktop/{installationId}:
     delete:
       x-internal:
         - cloud
@@ -35961,20 +35962,20 @@ paths:
       operationId: deregisterDesktopConnection
       summary: Deregister a desktop app install
       description: >
-        Delete the caller's `desktop` connection whose `metadata.machineId` matches, as a desktop app install does on
-        sign-out or uninstall. Servers implementing this contract must scope the deletion to the caller: a connection
+        Delete the caller's `desktop` connection whose `metadata.installationId` matches, as a desktop app install does
+        on sign-out or uninstall. Servers implementing this contract must scope the deletion to the caller: a connection
         registered by another user is not found. Servers must revoke the API token linked to each deleted connection
         (`metadata.tokenId`).
       parameters:
-        - name: machineId
+        - name: installationId
           in: path
-          description: Stable per-install machine identifier from `metadata.machineId`.
+          description: Installation identifier from `metadata.installationId`.
           required: true
           schema:
             type: string
             description: >-
-              Stable identifier of a desktop app install, generated once per install. It is the machine part of the
-              deduplication key and the `machineId` path parameter.
+              Stable identifier of a desktop app install, generated once per install. It is the install part of the
+              deduplication key and the `installationId` path parameter.
             minLength: 1
             maxLength: 255
       responses:
@@ -36747,10 +36748,10 @@ paths:
                   organizationId:
                     description: >
                       Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and `metadata.machineId`,
-                      as the deduplication key for `desktop` connections. Lets an organization list and count its
-                      connections (for example its registered desktop installs) without going through each owner. Absent
-                      on connections that predate it.
+                      registration. Servers implementing this contract use it, with the owner and
+                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
+                      organization list and count its connections (for example its registered desktop installs) without
+                      going through each owner. Absent on connections that predate it.
                     x-oapi-codegen-extra-tags:
                       db: organization_id
                       json: organizationId,omitempty
@@ -69032,7 +69033,7 @@ paths:
                       Features the provider serves and their endpoints. Clients read paths from here instead of
                       hard-coding them. A provider serving desktop connections lists `register-connection`,
                       `connection-heartbeat` and `deregister-desktop-connection`; an endpoint may hold `{connectionId}`
-                      or `{machineId}` placeholders.
+                      or `{installationId}` placeholders.
                     items:
                       type: object
                       description: One feature the provider serves and the endpoint that serves it.
