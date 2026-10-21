@@ -85,6 +85,18 @@ Layer5 Cloud ships 30 default keychains. Each groups the permissions for one are
 
 Layer5 Cloud also ships keychains for workspaces, environments, the catalog, lifecycle actions, extensions, settings, performance, views, collaboration, infrastructure, curation, the Academy, and the two Kanvas action sets (Designer Actions and Operator Actions). For keychain behavior, see [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}).
 
+## Profile permissions
+
+The profile permissions are not yet rows in the permission list. They are held by default as follows:
+
+| Permission | Held by |
+| --- | --- |
+| View Profiles | User, Team Admin, Workspace Admin, Organization Admin |
+| Create Profile, Edit Profile, Delete Profile | Workspace Admin, Organization Admin |
+| Assign profile to workspace, Remove profile from workspace | Workspace Admin, Academy Admin, Organization Admin |
+
+Provider Admin holds all six. The owner of a profile can edit it and its connection links without Edit Profile. People using Kanvas without signing in hold none of them. See [Profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}).
+
 ## What the matrix does not show
 
 - **Security keys.** Token, session, key, and keychain keys are not all rows in this spreadsheet. See [security permission keys]({{< ref "cloud/reference/_index.md#permission-keys" >}}).
