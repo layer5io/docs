@@ -54,6 +54,12 @@ Like a shared drive (or shared collection of files), Workspaces are your Google 
 
 
 
+### Profiles
+
+- A profile represents a person or persona in the organization and groups the connections it publishes through.
+- Assigning a profile to a workspace makes it visible to the members of the workspace's teams.
+- The same profile can be assigned to multiple workspaces. See [Profiles](/cloud/concepts/spaces/profiles/).
+
 ### Designs
 
 - A design or view belongs to at most one workspace. Assigning it to a workspace is a move, not a copy: Layer5 Cloud removes every earlier workspace assignment, then adds the new one.

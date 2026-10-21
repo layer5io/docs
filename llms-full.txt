@@ -13468,6 +13468,61 @@ The seed never blocks startup. When it fails, sign-in on custom domains that rel
 
 
 --------------------------------------------------------------------------------
+title: "Managing Profiles"
+url: /cloud/guides/workspaces/managing-profiles/index.md
+description: Learn how to create, edit, and delete profiles, link connections to them, and share them by assigning them to workspaces.
+--------------------------------------------------------------------------------
+
+This guide shows how to manage [profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}) through the Layer5 Cloud API. Profiles have no page in the Layer5 Cloud UI yet. For the base URL and authentication, see the [Cloud API]({{< ref "cloud/reference/api-reference/_index.md" >}}). All paths below sit under `/api`.
+
+{{< alert type="info" title="A Note on Permissions" >}}
+Each action needs the permission named beside it. A profile you cannot see, one that was deleted, and one that belongs to another organization all answer the same 404. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md#profile-permissions" >}}).
+{{< /alert >}}
+
+## List profiles
+
+`GET /profiles` (View Profiles) lists the profiles you can see in your current organization. Pass `orgId` to choose another organization you belong to, `userId` to find the profile that represents a user, and `search`, `order` (`name`, `createdAt` or `updatedAt`), `page` and `pagesize` to page through the results.
+
+`GET /profiles/{profileId}` (View Profiles) returns one profile you can see, including one you own that is in no workspace.
+
+## Create a profile
+
+`POST /profiles` (Create Profile) with a JSON body:
+
+```json
+{
+  "organizationId": "<organization id>",
+  "name": "Release announcements",
+  "description": "The accounts we announce releases through"
+}
+```
+
+`organizationId` and `name` are required. You become the owner unless you send `owner`. `owner` and `userId`, when sent, must each be a signed-in member of the organization, or the request answers 400. A new profile is in no workspace, so only you and the organization's admins can see it until you assign it.
+
+## Edit or transfer a profile
+
+`PUT /profiles/{profileId}` (Edit Profile, or the owner) replaces `name` and `description`. `metadata`, `owner` and `userId` change only when you send them. Sending a new `owner` transfers the profile. The organization cannot change.
+
+## Delete a profile
+
+`DELETE /profiles/{profileId}` (Delete Profile) deletes the profile and removes it from every workspace. The connections it linked to are not changed.
+
+## Link connections
+
+- `GET /profiles/{profileId}/connections` (View Profiles) lists the linked connections.
+- `POST /profiles/{profileId}/connections/{connectionId}` (Edit Profile, or the owner) links a connection you can access in the profile's organization. Linking twice is harmless.
+- `DELETE /profiles/{profileId}/connections/{connectionId}` (Edit Profile, or the owner) removes the link and leaves the connection in place.
+
+## Share a profile through a workspace
+
+- `POST /workspaces/{workspaceId}/profiles/{profileId}` (Assign profile to workspace) assigns a profile you can see to a workspace in the same organization. A workspace in another organization answers 400.
+- `GET /workspaces/{workspaceId}/profiles` (View Profiles) lists the workspace's profiles. Add `filter={"assigned":false}` to list the profiles you could still assign.
+- `DELETE /workspaces/{workspaceId}/profiles/{profileId}` (Remove profile from workspace) removes the assignment.
+
+Members of every team assigned to the workspace can then see the profile.
+
+
+--------------------------------------------------------------------------------
 title: "User Invitations"
 url: /cloud/concepts/identity-and-security/users/user-invitations/index.md
 description: Learn how to create custom, secure, and flexible invitations for new members.
@@ -16450,6 +16505,12 @@ Like a shared drive (or shared collection of files), Workspaces are your Google 
 {{< alert type="info" title="Assigning Environments to Workspaces" >}}
 Assign any number of Environments to one or more Workspaces. See [Environments]({{< ref "cloud/concepts/spaces/environments.md" >}}) section for more information.
 {{< /alert >}}
+
+### Profiles
+
+- A profile represents a person or persona in the organization and groups the connections it publishes through.
+- Assigning a profile to a workspace makes it visible to the members of the workspace's teams.
+- The same profile can be assigned to multiple workspaces. See [Profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}).
 
 ### Designs
 
@@ -34525,6 +34586,18 @@ Layer5 Cloud ships 30 default keychains. Each groups the permissions for one are
 
 Layer5 Cloud also ships keychains for workspaces, environments, the catalog, lifecycle actions, extensions, settings, performance, views, collaboration, infrastructure, curation, the Academy, and the two Kanvas action sets (Designer Actions and Operator Actions). For keychain behavior, see [Keychains]({{< ref "cloud/concepts/identity-and-security/keychains.md" >}}).
 
+## Profile permissions
+
+The profile permissions are not yet rows in the permission list. They are held by default as follows:
+
+| Permission | Held by |
+| --- | --- |
+| View Profiles | User, Team Admin, Workspace Admin, Organization Admin |
+| Create Profile, Edit Profile, Delete Profile | Workspace Admin, Organization Admin |
+| Assign profile to workspace, Remove profile from workspace | Workspace Admin, Academy Admin, Organization Admin |
+
+Provider Admin holds all six. The owner of a profile can edit it and its connection links without Edit Profile. People using Kanvas without signing in hold none of them. See [Profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}).
+
 ## What the matrix does not show
 
 - **Security keys.** Token, session, key, and keychain keys are not all rows in this spreadsheet. See [security permission keys]({{< ref "cloud/reference/_index.md#permission-keys" >}}).
@@ -35197,6 +35270,62 @@ Every environment you create is an ordinary environment.
 Every environment action is checked in the organization that owns the environment. The keys are View Environment, Create Environment, Edit Environment, Delete Environment, Assign connections to environment, Remove connections from environment, Assign environment to workspace, and Remove environment from workspace. Default holders are in [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 
 The feature matrix lists environments under the Enterprise plan. Layer5 Cloud does not refuse environment actions by plan: creating, editing, deleting, and assigning environments are governed only by the permissions above.
+
+
+--------------------------------------------------------------------------------
+title: "Profiles"
+url: /cloud/concepts/spaces/profiles/index.md
+description: A profile is a named record that represents one person or persona in an organization, groups the connections it publishes through, and is shared through workspaces.
+--------------------------------------------------------------------------------
+
+A profile is a named record that belongs to one organization. It represents a person or a persona, such as the platform accounts someone publishes through, and it groups existing connections under that identity. Profiles are shared with people by assigning them to workspaces.
+
+A profile is not your user account profile, and it is not a Meshery performance profile.
+
+## What a profile holds
+
+- a **name** (required, up to 255 characters, not unique) and an optional **description** (up to 1000 characters)
+- an **owner**, who must be a signed-in member of the profile's organization
+- optionally, the **user** the profile represents
+- free-form **metadata**
+- links to **connections**. A profile links to connections that already exist; it never copies them. Removing a link leaves the connection untouched.
+
+A profile can be assigned to any number of workspaces in its own organization. Its organization is fixed for the life of the profile.
+
+## Who can see a profile
+
+A profile is visible to:
+
+- its owner,
+- the Organization Admins of its organization, and
+- members of any team assigned to a workspace the profile is assigned to.
+
+A profile that is in no workspace is visible only to its owner and the organization's admins. What you can change is never wider than what you can see: a profile you cannot see answers 404, the same as one that does not exist.
+
+## Owner and succession
+
+The owner can always edit their own profile and its connection links. Deleting a profile still needs the **Delete Profile** permission. Changing the owner transfers the profile.
+
+When the owner's account is deleted, the profile passes to the earliest Organization Admin of its organization, or else to its earliest member, the same rule the organization follows for designs. A profile is never deleted because its owner's account was.
+
+## Profiles and environments
+
+Profiles were previously modeled as environments with the `profile` purpose. Those environments still work, and when profiles shipped, each existing one was copied into a profile with the same id, together with its workspace assignments and connection links. New profiles should be created as profiles.
+
+## Permissions
+
+| Permission | Allows |
+| --- | --- |
+| View Profiles | Listing and reading the profiles you can see, and their connections |
+| Create Profile | Creating a profile in an organization |
+| Edit Profile | Editing any visible profile, transferring its ownership, and linking or unlinking connections |
+| Delete Profile | Deleting a profile |
+| Assign profile to workspace | Assigning a visible profile to a workspace |
+| Remove profile from workspace | Removing a profile from a workspace |
+
+Every organization member holds **View Profiles**. Workspace Admins, Organization Admins and Provider Admins hold the rest, and Academy Admins can also assign profiles to workspaces and remove them. People using Kanvas without signing in hold none of them, and every profile change refuses a guest session. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md#profile-permissions" >}}).
+
+To create and share profiles, see [Managing Profiles]({{< ref "cloud/guides/workspaces/managing-profiles/index.md" >}}).
 
 
 --------------------------------------------------------------------------------
