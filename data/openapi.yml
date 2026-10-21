@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.90
+  version: v1.3.91
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -68,8 +68,8 @@ tags:
     description: Operations related to Blowhorn profiles.
   - name: Claim_claims
     description: Operations related to claims on resources.
-  - name: ContentPiece_contentPieces
-    description: Operations related to content pieces.
+  - name: ContentItem_contentItems
+    description: Operations related to content items.
   - name: Design_designs
     description: Operations related to designs and infrastructure patterns
   - name: Design_github
@@ -38834,16 +38834,16 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/content/pieces:
+  /api/content-items:
     get:
       x-internal:
         - cloud
       tags:
-        - ContentPiece_contentPieces
-      summary: List content pieces
-      operationId: listContentPieces
+        - ContentItem_contentItems
+      summary: List content items
+      operationId: listContentItems
       description: |
-        Returns a paginated list of the live content pieces in the
+        Returns a paginated list of the live content items in the
         organization of the authenticated session, ordered by `rowNumber`
         unless `order` names another column (`rowNumber`, `createdAt`,
         `updatedAt`). `search` matches the profile or the content values,
@@ -38888,12 +38888,12 @@ paths:
             type: string
       responses:
         '200':
-          description: Content piece page
+          description: Content item page
           content:
             application/json:
               schema:
                 type: object
-                description: Paginated collection of content pieces.
+                description: Paginated collection of content items.
                 properties:
                   page:
                     type: integer
@@ -38907,15 +38907,15 @@ paths:
                     type: integer
                     description: Total number of items available.
                     minimum: 0
-                  contentPieces:
+                  contentItems:
                     type: array
                     items:
-                      x-go-type: ContentPiece
+                      x-go-type: ContentItem
                       $schema: http://json-schema.org/draft-07/schema#
-                      title: Content Piece Schema
+                      title: Content Item Schema
                       description: |
-                        Server-returned content piece as persisted by meshery-cloud.
-                        Content pieces carry a row number and a server-computed fingerprint over
+                        Server-returned content item as persisted by the owning service.
+                        Content items carry a row number and a server-computed fingerprint over
                         their canonical values; updates are conditional on the fingerprint the
                         writer read, so stale writes are refused rather than silently applied.
                       type: object
@@ -38930,7 +38930,7 @@ paths:
                         - updatedAt
                       properties:
                         id:
-                          description: Server-generated content piece ID.
+                          description: Server-generated content item ID.
                           x-oapi-codegen-extra-tags:
                             db: id
                           x-order: 1
@@ -38960,7 +38960,7 @@ paths:
                           x-order: 3
                         rowNumber:
                           type: integer
-                          description: Row number of the content piece, unique across the live content pieces of the organization.
+                          description: Row number of the content item, unique across the live content items of the organization.
                           minimum: 0
                           x-oapi-codegen-extra-tags:
                             db: row_number
@@ -38987,7 +38987,7 @@ paths:
                             db: data
                           x-order: 6
                         createdAt:
-                          description: Timestamp of content piece creation.
+                          description: Timestamp of content item creation.
                           x-oapi-codegen-extra-tags:
                             db: created_at
                           x-order: 7
@@ -38995,7 +38995,7 @@ paths:
                           format: date-time
                           x-go-type-skip-optional-pointer: true
                         updatedAt:
-                          description: Timestamp of last content piece modification.
+                          description: Timestamp of last content item modification.
                           x-oapi-codegen-extra-tags:
                             db: updated_at
                           x-order: 8
@@ -39005,7 +39005,7 @@ paths:
                         deletedAt:
                           type: string
                           format: date-time
-                          description: Timestamp when the content piece was soft-deleted.
+                          description: Timestamp when the content item was soft-deleted.
                           nullable: true
                           x-go-type: core.NullTime
                           x-go-type-import:
@@ -39015,7 +39015,7 @@ paths:
                             db: deleted_at
                             json: deletedAt,omitempty
                           x-order: 9
-                    description: Content pieces included on this page of results.
+                    description: Content items included on this page of results.
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -39044,24 +39044,24 @@ paths:
       x-internal:
         - cloud
       tags:
-        - ContentPiece_contentPieces
-      summary: Insert a content piece
-      operationId: insertContentPiece
+        - ContentItem_contentItems
+      summary: Insert a content item
+      operationId: insertContentItem
       description: |
-        Inserts a new content piece. Insert-only: any supplied
+        Inserts a new content item. Insert-only: any supplied
         `id` and `expectedFingerprint` are ignored; existing rows change
-        only through the conditional `updateContentPiece`. The
+        only through the conditional `updateContentItem`. The
         `fingerprint` is server-computed. Row numbers are unique across
-        the live content pieces of the organization, whatever their
+        the live content items of the organization, whatever their
         `profile`. When `rowNumber` is omitted the server assigns the next
         row number of the organization (one more than the highest row
         number the organization has used, counting soft-deleted content
-        pieces so a deleted piece's number is not handed out again by
+        items so a deleted item's number is not handed out again by
         assignment), atomically with the insert, so
         concurrent inserts never receive the same number. An organization
-        that has never had a content piece is assigned row number 1 first
+        that has never had a content item is assigned row number 1 first
         (an explicit `rowNumber` of 0 is still accepted). A supplied
-        `rowNumber` that another live content piece of the organization
+        `rowNumber` that another live content item of the organization
         already holds refuses the insert with a 409.
       requestBody:
         required: true
@@ -39070,7 +39070,7 @@ paths:
             schema:
               type: object
               description: |
-                Payload for inserting or updating a content piece.
+                Payload for inserting or updating a content item.
                 Contains only client-settable fields; the owning
                 `organizationId` (derived from the authenticated session), the
                 server-computed `fingerprint` and the server-generated
@@ -39079,7 +39079,7 @@ paths:
                 - profile
               properties:
                 id:
-                  description: Existing content piece ID for updates; ignored on insert.
+                  description: Existing content item ID for updates; ignored on insert.
                   x-oapi-codegen-extra-tags:
                     json: id,omitempty
                   type: string
@@ -39095,8 +39095,8 @@ paths:
                 rowNumber:
                   type: integer
                   description: |
-                    Row number of the content piece, unique across the live content
-                    pieces of the organization. Optional: omitted on insert, the
+                    Row number of the content item, unique across the live content
+                    items of the organization. Optional: omitted on insert, the
                     server assigns the next row number of the organization; omitted
                     on update, the stored row number is kept.
                   minimum: 0
@@ -39118,15 +39118,15 @@ paths:
                   maxLength: 255
       responses:
         '201':
-          description: Content piece created
+          description: Content item created
           content:
             application/json:
               schema:
                 $schema: http://json-schema.org/draft-07/schema#
-                title: Content Piece Schema
+                title: Content Item Schema
                 description: |
-                  Server-returned content piece as persisted by meshery-cloud.
-                  Content pieces carry a row number and a server-computed fingerprint over
+                  Server-returned content item as persisted by the owning service.
+                  Content items carry a row number and a server-computed fingerprint over
                   their canonical values; updates are conditional on the fingerprint the
                   writer read, so stale writes are refused rather than silently applied.
                 type: object
@@ -39141,7 +39141,7 @@ paths:
                   - updatedAt
                 properties:
                   id:
-                    description: Server-generated content piece ID.
+                    description: Server-generated content item ID.
                     x-oapi-codegen-extra-tags:
                       db: id
                     x-order: 1
@@ -39171,7 +39171,7 @@ paths:
                     x-order: 3
                   rowNumber:
                     type: integer
-                    description: Row number of the content piece, unique across the live content pieces of the organization.
+                    description: Row number of the content item, unique across the live content items of the organization.
                     minimum: 0
                     x-oapi-codegen-extra-tags:
                       db: row_number
@@ -39198,7 +39198,7 @@ paths:
                       db: data
                     x-order: 6
                   createdAt:
-                    description: Timestamp of content piece creation.
+                    description: Timestamp of content item creation.
                     x-oapi-codegen-extra-tags:
                       db: created_at
                     x-order: 7
@@ -39206,7 +39206,7 @@ paths:
                     format: date-time
                     x-go-type-skip-optional-pointer: true
                   updatedAt:
-                    description: Timestamp of last content piece modification.
+                    description: Timestamp of last content item modification.
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                     x-order: 8
@@ -39216,7 +39216,7 @@ paths:
                   deletedAt:
                     type: string
                     format: date-time
-                    description: Timestamp when the content piece was soft-deleted.
+                    description: Timestamp when the content item was soft-deleted.
                     nullable: true
                     x-go-type: core.NullTime
                     x-go-type-import:
@@ -39253,7 +39253,7 @@ paths:
         '409':
           description: >-
             Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint, or
-            another live content piece of the organization already holds the same rowNumber
+            another live content item of the organization already holds the same rowNumber
           content:
             text/plain:
               schema:
@@ -39264,18 +39264,18 @@ paths:
             text/plain:
               schema:
                 type: string
-  /api/content/pieces/{contentPieceId}:
+  /api/content-items/{contentItemId}:
     get:
       x-internal:
         - cloud
       tags:
-        - ContentPiece_contentPieces
-      summary: Get a content piece by ID
-      operationId: getContentPiece
+        - ContentItem_contentItems
+      summary: Get a content item by ID
+      operationId: getContentItem
       parameters:
-        - name: contentPieceId
+        - name: contentItemId
           in: path
-          description: Content piece ID
+          description: Content item ID
           required: true
           schema:
             type: string
@@ -39288,15 +39288,15 @@ paths:
               path: github.com/gofrs/uuid
       responses:
         '200':
-          description: Content piece response
+          description: Content item response
           content:
             application/json:
               schema:
                 $schema: http://json-schema.org/draft-07/schema#
-                title: Content Piece Schema
+                title: Content Item Schema
                 description: |
-                  Server-returned content piece as persisted by meshery-cloud.
-                  Content pieces carry a row number and a server-computed fingerprint over
+                  Server-returned content item as persisted by the owning service.
+                  Content items carry a row number and a server-computed fingerprint over
                   their canonical values; updates are conditional on the fingerprint the
                   writer read, so stale writes are refused rather than silently applied.
                 type: object
@@ -39311,7 +39311,7 @@ paths:
                   - updatedAt
                 properties:
                   id:
-                    description: Server-generated content piece ID.
+                    description: Server-generated content item ID.
                     x-oapi-codegen-extra-tags:
                       db: id
                     x-order: 1
@@ -39341,7 +39341,7 @@ paths:
                     x-order: 3
                   rowNumber:
                     type: integer
-                    description: Row number of the content piece, unique across the live content pieces of the organization.
+                    description: Row number of the content item, unique across the live content items of the organization.
                     minimum: 0
                     x-oapi-codegen-extra-tags:
                       db: row_number
@@ -39368,7 +39368,7 @@ paths:
                       db: data
                     x-order: 6
                   createdAt:
-                    description: Timestamp of content piece creation.
+                    description: Timestamp of content item creation.
                     x-oapi-codegen-extra-tags:
                       db: created_at
                     x-order: 7
@@ -39376,7 +39376,7 @@ paths:
                     format: date-time
                     x-go-type-skip-optional-pointer: true
                   updatedAt:
-                    description: Timestamp of last content piece modification.
+                    description: Timestamp of last content item modification.
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                     x-order: 8
@@ -39386,7 +39386,7 @@ paths:
                   deletedAt:
                     type: string
                     format: date-time
-                    description: Timestamp when the content piece was soft-deleted.
+                    description: Timestamp when the content item was soft-deleted.
                     nullable: true
                     x-go-type: core.NullTime
                     x-go-type-import:
@@ -39430,19 +39430,19 @@ paths:
       x-internal:
         - cloud
       tags:
-        - ContentPiece_contentPieces
-      summary: Update a content piece
-      operationId: updateContentPiece
+        - ContentItem_contentItems
+      summary: Update a content item
+      operationId: updateContentItem
       description: |
-        Conditionally updates the content piece. When
+        Conditionally updates the content item. When
         `expectedFingerprint` is supplied and stale, the update is
-        refused with a 409, as is an update that would move the piece
-        onto a `rowNumber` another live content piece of the organization
+        refused with a 409, as is an update that would move the item
+        onto a `rowNumber` another live content item of the organization
         holds. An omitted `rowNumber` keeps the stored one.
       parameters:
-        - name: contentPieceId
+        - name: contentItemId
           in: path
-          description: Content piece ID
+          description: Content item ID
           required: true
           schema:
             type: string
@@ -39460,7 +39460,7 @@ paths:
             schema:
               type: object
               description: |
-                Payload for inserting or updating a content piece.
+                Payload for inserting or updating a content item.
                 Contains only client-settable fields; the owning
                 `organizationId` (derived from the authenticated session), the
                 server-computed `fingerprint` and the server-generated
@@ -39469,7 +39469,7 @@ paths:
                 - profile
               properties:
                 id:
-                  description: Existing content piece ID for updates; ignored on insert.
+                  description: Existing content item ID for updates; ignored on insert.
                   x-oapi-codegen-extra-tags:
                     json: id,omitempty
                   type: string
@@ -39485,8 +39485,8 @@ paths:
                 rowNumber:
                   type: integer
                   description: |
-                    Row number of the content piece, unique across the live content
-                    pieces of the organization. Optional: omitted on insert, the
+                    Row number of the content item, unique across the live content
+                    items of the organization. Optional: omitted on insert, the
                     server assigns the next row number of the organization; omitted
                     on update, the stored row number is kept.
                   minimum: 0
@@ -39508,15 +39508,15 @@ paths:
                   maxLength: 255
       responses:
         '200':
-          description: Content piece updated
+          description: Content item updated
           content:
             application/json:
               schema:
                 $schema: http://json-schema.org/draft-07/schema#
-                title: Content Piece Schema
+                title: Content Item Schema
                 description: |
-                  Server-returned content piece as persisted by meshery-cloud.
-                  Content pieces carry a row number and a server-computed fingerprint over
+                  Server-returned content item as persisted by the owning service.
+                  Content items carry a row number and a server-computed fingerprint over
                   their canonical values; updates are conditional on the fingerprint the
                   writer read, so stale writes are refused rather than silently applied.
                 type: object
@@ -39531,7 +39531,7 @@ paths:
                   - updatedAt
                 properties:
                   id:
-                    description: Server-generated content piece ID.
+                    description: Server-generated content item ID.
                     x-oapi-codegen-extra-tags:
                       db: id
                     x-order: 1
@@ -39561,7 +39561,7 @@ paths:
                     x-order: 3
                   rowNumber:
                     type: integer
-                    description: Row number of the content piece, unique across the live content pieces of the organization.
+                    description: Row number of the content item, unique across the live content items of the organization.
                     minimum: 0
                     x-oapi-codegen-extra-tags:
                       db: row_number
@@ -39588,7 +39588,7 @@ paths:
                       db: data
                     x-order: 6
                   createdAt:
-                    description: Timestamp of content piece creation.
+                    description: Timestamp of content item creation.
                     x-oapi-codegen-extra-tags:
                       db: created_at
                     x-order: 7
@@ -39596,7 +39596,7 @@ paths:
                     format: date-time
                     x-go-type-skip-optional-pointer: true
                   updatedAt:
-                    description: Timestamp of last content piece modification.
+                    description: Timestamp of last content item modification.
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                     x-order: 8
@@ -39606,7 +39606,7 @@ paths:
                   deletedAt:
                     type: string
                     format: date-time
-                    description: Timestamp when the content piece was soft-deleted.
+                    description: Timestamp when the content item was soft-deleted.
                     nullable: true
                     x-go-type: core.NullTime
                     x-go-type-import:
@@ -39643,7 +39643,7 @@ paths:
         '409':
           description: >-
             Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint, or
-            another live content piece of the organization already holds the same rowNumber
+            another live content item of the organization already holds the same rowNumber
           content:
             text/plain:
               schema:
@@ -39658,18 +39658,18 @@ paths:
       x-internal:
         - cloud
       tags:
-        - ContentPiece_contentPieces
-      summary: Delete a content piece
-      operationId: deleteContentPiece
+        - ContentItem_contentItems
+      summary: Delete a content item
+      operationId: deleteContentItem
       description: |
-        Soft-deletes the content piece. When `expectedFingerprint` is
+        Soft-deletes the content item. When `expectedFingerprint` is
         supplied, the delete applies only when the stored fingerprint
         still matches and is refused with a 409 otherwise; without it the
         delete is unconditional.
       parameters:
-        - name: contentPieceId
+        - name: contentItemId
           in: path
-          description: Content piece ID
+          description: Content item ID
           required: true
           schema:
             type: string
@@ -39691,7 +39691,7 @@ paths:
             maxLength: 255
       responses:
         '204':
-          description: Content piece deleted
+          description: Content item deleted
         '400':
           description: Invalid request body or request param
           content:
@@ -39719,7 +39719,7 @@ paths:
         '409':
           description: >-
             Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint, or
-            another live content piece of the organization already holds the same rowNumber
+            another live content item of the organization already holds the same rowNumber
           content:
             text/plain:
               schema:
@@ -65888,8 +65888,10 @@ paths:
                   Connections. It is not the user account profile (`/api/identity/users/profile`) and not a performance
                   profile (`/api/performance/profiles`), and it is neither an environment nor a workspace. Like
                   environments, a profile is assigned to any number of workspaces, and workspace assignment is how
-                  access to it is granted: a profile is readable by members of the workspaces it is assigned to and by
-                  organization admins.
+                  access to it is shared: a profile is readable by its owner (whether or not it is assigned to any
+                  workspace), by organization admins, and by members of the workspaces it is assigned to. Provider
+                  admins do not see profiles automatically, and seeing a profile does not grant access to its linked
+                  connections.
                 additionalProperties: false
                 type: object
                 example:
@@ -66081,9 +66083,10 @@ paths:
       operationId: getProfiles
       summary: Get all profiles
       description: >-
-        Gets the live profiles the caller can see: those assigned to a workspace the caller is a member of, those the
-        caller owns, and, for organization admins, every profile of the organization. `search` matches the name or
-        description case-insensitively.
+        Gets the live profiles the caller can see: those the caller owns (including profiles assigned to no workspace),
+        those assigned to a workspace the caller is a member of, and, for organization admins, every profile of the
+        organization. Provider admins are not granted visibility automatically. `search` matches the name or description
+        case-insensitively.
       parameters:
         - name: search
           in: query
@@ -66172,8 +66175,10 @@ paths:
                         Connections. It is not the user account profile (`/api/identity/users/profile`) and not a
                         performance profile (`/api/performance/profiles`), and it is neither an environment nor a
                         workspace. Like environments, a profile is assigned to any number of workspaces, and workspace
-                        assignment is how access to it is granted: a profile is readable by members of the workspaces it
-                        is assigned to and by organization admins.
+                        assignment is how access to it is shared: a profile is readable by its owner (whether or not it
+                        is assigned to any workspace), by organization admins, and by members of the workspaces it is
+                        assigned to. Provider admins do not see profiles automatically, and seeing a profile does not
+                        grant access to its linked connections.
                       additionalProperties: false
                       type: object
                       example:
@@ -66362,6 +66367,11 @@ paths:
         - Profile_profiles
       operationId: getProfileById
       summary: Get profile by ID
+      description: >-
+        Gets a profile visible to the caller: its owner (whether or not the profile is assigned to any workspace), an
+        organization admin, or a member of a workspace it is assigned to. Provider admins are not granted visibility
+        automatically. A profile the caller cannot see returns 404. Seeing the profile does not grant access to its
+        linked connections.
       parameters:
         - name: profileId
           in: path
@@ -66391,8 +66401,10 @@ paths:
                   Connections. It is not the user account profile (`/api/identity/users/profile`) and not a performance
                   profile (`/api/performance/profiles`), and it is neither an environment nor a workspace. Like
                   environments, a profile is assigned to any number of workspaces, and workspace assignment is how
-                  access to it is granted: a profile is readable by members of the workspaces it is assigned to and by
-                  organization admins.
+                  access to it is shared: a profile is readable by its owner (whether or not it is assigned to any
+                  workspace), by organization admins, and by members of the workspaces it is assigned to. Provider
+                  admins do not see profiles automatically, and seeing a profile does not grant access to its linked
+                  connections.
                 additionalProperties: false
                 type: object
                 example:
@@ -66692,8 +66704,10 @@ paths:
                   Connections. It is not the user account profile (`/api/identity/users/profile`) and not a performance
                   profile (`/api/performance/profiles`), and it is neither an environment nor a workspace. Like
                   environments, a profile is assigned to any number of workspaces, and workspace assignment is how
-                  access to it is granted: a profile is readable by members of the workspaces it is assigned to and by
-                  organization admins.
+                  access to it is shared: a profile is readable by its owner (whether or not it is assigned to any
+                  workspace), by organization admins, and by members of the workspaces it is assigned to. Provider
+                  admins do not see profiles automatically, and seeing a profile does not grant access to its linked
+                  connections.
                 additionalProperties: false
                 type: object
                 example:
@@ -66948,7 +66962,9 @@ paths:
         - Profile_profiles
       operationId: getProfileConnections
       summary: Get profile connections
-      description: Gets the connections linked to the profile. Requires View Profiles and visibility of the profile.
+      description: >-
+        Gets the connections linked to the profile. Requires View Profiles and visibility of the profile. Visibility of
+        the profile alone does not grant access to the linked connections, which follow their own access rules.
       parameters:
         - name: profileId
           in: path
@@ -84755,7 +84771,7 @@ paths:
       summary: Get profiles assigned to a workspace
       description: >-
         Gets profiles assigned to or available for a workspace depending on the filter. A profile can be assigned to
-        many workspaces; members of each one can read it.
+        many workspaces; members of each one can read it, as can its owner and organization admins.
       parameters:
         - name: workspaceId
           in: path
@@ -84849,8 +84865,10 @@ paths:
                         Connections. It is not the user account profile (`/api/identity/users/profile`) and not a
                         performance profile (`/api/performance/profiles`), and it is neither an environment nor a
                         workspace. Like environments, a profile is assigned to any number of workspaces, and workspace
-                        assignment is how access to it is granted: a profile is readable by members of the workspaces it
-                        is assigned to and by organization admins.
+                        assignment is how access to it is shared: a profile is readable by its owner (whether or not it
+                        is assigned to any workspace), by organization admins, and by members of the workspaces it is
+                        assigned to. Provider admins do not see profiles automatically, and seeing a profile does not
+                        grant access to its linked connections.
                       additionalProperties: false
                       type: object
                       example:
@@ -85046,8 +85064,9 @@ paths:
       operationId: assignProfileToWorkspace
       summary: Assign a profile to a workspace
       description: >-
-        Assigns a profile to a workspace, granting the workspace's members read access to it. The profile and the
-        workspace must belong to the same organization, and a profile can be assigned to many workspaces.
+        Assigns a profile to a workspace, granting the workspace's members read access to it (not to its linked
+        connections). The profile and the workspace must belong to the same organization, and a profile can be assigned
+        to many workspaces.
       parameters:
         - name: workspaceId
           in: path
