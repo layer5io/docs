@@ -12,7 +12,7 @@ Organizations contain any number of teams. A team has any number of members, and
 
 The following teams illustrate how organizations use teams to segment access and responsibilities. Follow the full story at [Meet Five and the Cast]().
 
-<img src='images/team-of-fives.svg' alt="Team of Fives" style="width:120px; float:right; margin-left:1.5rem; margin-bottom:1rem;" />
+<img src='images/team-of-fives.svg' alt="Illustration of seven team members depicting teamwork and distributing responsibilites" style="width:120px; float:right; margin-left:1.5rem; margin-bottom:1rem; background:#fff;" />
 
 <div class="td-card-group card-group p-0 mb-4">
 <div class="td-card card border me-4">

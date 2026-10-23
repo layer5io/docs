@@ -39,6 +39,12 @@ Tokens never expire. Layer5 Cloud offers no expiry setting, and a token remains 
 - **Role changes apply at once.** When an administrator grants or removes a role, the next request made with your token reflects the change.
 - **Removing the user ends the token.** If your account is disabled or deleted, Layer5 Cloud refuses every request that presents your tokens.
 
+## Privilege Scoping
+
+API tokens in Layer5 are **identity-scoped**. This means they inherently carry the exact same privileges, roles, and permissions as your user account within the organization and environment selected by the request context.
+
+Users can have different roles and permissions in different organizations, meaning a token does not grant one uniform privilege set across every organization. However, Layer5 does not currently support fine-grained, token-specific privilege scopes (for example, generating a strictly "read-only" token if you have "read-write" permissions).
+
 ## Creating tokens
 
 You can create a token for your user account at any time. Tokens never expire, but can be revoked. Every token has a name, which is required. The Tokens tab also asks for a purpose. Both are labels. They appear in your token list and help you recognize each token later, and they have no effect on what the token can do. Name the consumer (for example, `ci-snapshots`) and state what it does in the purpose.
