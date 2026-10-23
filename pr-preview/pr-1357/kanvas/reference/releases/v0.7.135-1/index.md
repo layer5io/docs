@@ -1,0 +1,19 @@
+# v0.7.135-1
+
+date: 2024-11-05
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Hierarchical relationship optimization @aabidsofi19 (#3108)
+- Optimize GetParent Lookup @aabidsofi19 (#3109)
+- fix: hierarchical relationship not getting recreated after the node is moved out once @aabidsofi19 (#3107)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+

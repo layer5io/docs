@@ -1,0 +1,16 @@
+# v0.8.440
+
+date: 2025-09-10
+
+
+
+## 💻 Server
+
+- fix workspace id not being updated @aabidsofi19 (#4127)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

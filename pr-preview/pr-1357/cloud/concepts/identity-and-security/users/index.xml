@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Users on Layer5 Documentation</title><link>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/</link><description>Recent content in Users on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/index.xml" rel="self" type="application/rss+xml"/><item><title>User Invitations</title><link>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/user-invitations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/user-invitations/</guid><description>&lt;p&gt;The &lt;a href="https://cloud.layer5.io/identity/invitations"&gt;invitation system&lt;/a&gt; gives you precise control over how members join your organization, allowing you to streamline onboarding and enhance security.&lt;/p&gt;
+&lt;p&gt;You can create highly customized invitations for any scenario, from onboarding specific individuals to launching large-scale community challenges. Each invitation can be configured with expiration dates, usage quotas, and pre-assigned roles, ensuring new members get the right access from the moment they join.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Required permission&lt;/h4&gt;
+ 
+ From Layer5 Cloud v1.0.293, creating, editing, and deleting invitations requires the &lt;strong&gt;Manage Invitations&lt;/strong&gt; permission within your organization. That one permission also covers choosing the roles and teams an invitation grants, so anyone who can write an invitation, Academy Admins included, can specify its roles. Contact your organization administrator if you need access.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h3 id="default-organization-state" class="heading-link"&gt;
+ Default organization state
+ &lt;a href="#default-organization-state" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;By default, organizations are &lt;strong&gt;closed&lt;/strong&gt;: there is no open registration. A user cannot join your organization simply by navigating to a URL. They must either open a valid invitation link or sign in through a page associated with an organization that has a &lt;a href="/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/user-invitations/#invitation-properties-explained"&gt;default invitation&lt;/a&gt; configured.&lt;/p&gt;</description></item><item><title>User Management</title><link>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/user-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/user-management/</guid><description>&lt;p&gt;The Users page lists an organization&amp;rsquo;s members and carries the actions that put people into the organization, change what they can do, and take them out. To bring people in by invitation link, use &lt;a href="/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/user-invitations/"&gt;User Invitations&lt;/a&gt;. For what an account is, read &lt;a href="/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/"&gt;Users&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;
+
+
+
+
+&lt;div class="md__image"&gt;
+ &lt;picture&gt;
+ &lt;source srcset="/pr-preview/pr-1357/contentimg/cloud/concepts/identity-and-security/users/user-management/images/org_invite_hu_8dc70b7353643a06.webp" type="image/webp" width="2260" height="982"&gt;
+ &lt;img src="images/org_invite.png" onclick="openModal(this)" alt="User Management options"
+ width="2260" height="982"
+ class="md-image-responsive" /&gt;
+ &lt;/picture&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;Each action needs a permission in the current organization. The server also checks your role for some actions, so holding the permission through another role is not always enough.&lt;/p&gt;</description></item><item><title>Default User Permissions</title><link>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/default-permissions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/default-permissions/</guid><description>&lt;p&gt;The permissions a user holds are the keys from every role they hold in the selected organization. The full matrix of default roles and permissions is &lt;a href="/pr-preview/pr-1357/cloud/reference/default-permissions/"&gt;Default Permissions&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Read that matrix for the User role. These points are easy to get wrong from older summaries:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The User role holds View Catalog and View Designs. It also holds Leave Team.&lt;/li&gt;
+&lt;li&gt;The User role holds the view keys for tokens, sessions, keys, and keychains, plus Create Token and Download Token. See &lt;a href="/pr-preview/pr-1357/cloud/concepts/identity-and-security/tokens/"&gt;Tokens&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The User role does not hold Invite User to Team, Invite User to Organization, or Assign Roles to Team members.&lt;/li&gt;
+&lt;li&gt;The User role does not hold the keys that create, edit, or delete keychains and roles. Those require Provider Admin. See &lt;a href="/pr-preview/pr-1357/cloud/concepts/identity-and-security/keychains/"&gt;Keychains&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A check mark with an asterisk on the matrix means the role holds the permission only on resources the user owns.&lt;/p&gt;</description></item><item><title>Account Consolidation</title><link>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/account-consolidation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/account-consolidation/</guid><description>&lt;p&gt;Account consolidation merges every duplicate Layer5 Cloud account that belongs to one person into a single canonical account. The canonical account takes ownership of the duplicates&amp;rsquo; designs, connections, memberships, roles, and other data, keeps their email addresses so old sign-ins still land in the right place, and retires the duplicates.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Operator-only&lt;/h4&gt;
+ 
+ Consolidation is a command-line tool, &lt;code&gt;consolidate-users&lt;/code&gt;, that a deployment operator runs with direct database access. It is not an API, not a UI feature, and not automatic. Customers of the Layer5-hosted service cannot trigger it and have no control over it. Operators of a self-hosted Layer5 Cloud run it themselves.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="what-changed" class="heading-link"&gt;
+ What changed
+ &lt;a href="#what-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The identity provider behind Layer5 Cloud could create a separate account for each sign-in method one person used. A person who registered with a password and later signed in with GitHub or Google could end up with two or three accounts, even when they shared the same email address. Designs, organizations, and workspaces created under one sign-in method appeared to disappear when the person signed in with another.&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1357/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
+&lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item></channel></rss>

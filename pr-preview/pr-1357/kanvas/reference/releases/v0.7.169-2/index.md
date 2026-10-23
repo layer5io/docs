@@ -1,0 +1,25 @@
+# v0.7.169-2
+
+date: 2024-12-16
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Clean visualizer dead code and fix old routing crash @aabidsofi19 (#3240)
+
+## 🐛 Bug Fixes
+
+- fix: change it to zero in case it got increment later @jerensl (#3232)
+
+## 🧰 Maintenance
+
+- fix: change it to zero in case it got increment later @jerensl (#3232)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @jerensl, @l5io and @leecalcote
+

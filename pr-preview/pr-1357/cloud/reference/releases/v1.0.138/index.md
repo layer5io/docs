@@ -1,0 +1,16 @@
+# v1.0.138
+
+date: 2026-06-18
+
+
+
+- test(dao): replace SQLite test harness with Postgres-only tests @leecalcote (#5497)
+- fix(ui): use theme token for checkbox contrast in welcome modal footer @leecalcote (#5495)
+- Treat cloud.meshery.io as a standard custom-domain org; keep custom-domain sign-in on its own domain @leecalcote (#5496)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @meshery-ci and @ritzorama
+
+
