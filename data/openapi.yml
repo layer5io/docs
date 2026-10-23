@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.97
+  version: v1.3.98
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -62936,10 +62936,11 @@ paths:
                       description: >
                         Server-returned ledger entry. An organization keeps any number of named ledgers, each an
                         idempotent set keyed by entryKey: recording an existing key never creates a second entry and
-                        returns the stored entry unchanged, and claim-if-absent gives a key to exactly one claiming
-                        connection, so two workers never both act on it. Any organization member may read and delete
+                        never changes that entry, and claim-if-absent gives a key to exactly one claiming connection, so
+                        two workers never both act on it. Change a stored value with updateLedgerEntry, which replaces
+                        the value wholesale and advances updatedAt. Any organization member may read, update and delete
                         entries; a claim names the connection that holds it, which must be the caller's own live
-                        connection in the organization.
+                        connection in the organization. An update does not check who holds a claim.
                       type: object
                       additionalProperties: false
                       required:
@@ -63037,7 +63038,7 @@ paths:
                           format: date-time
                           x-go-type-skip-optional-pointer: true
                         updatedAt:
-                          description: Timestamp of last ledger entry modification.
+                          description: Timestamp of last ledger entry modification; advances on every update.
                           x-oapi-codegen-extra-tags:
                             db: updated_at
                           x-order: 9
@@ -63077,9 +63078,9 @@ paths:
       summary: Record a ledger entry
       operationId: recordLedgerEntry
       description: >
-        Records `entryKey` in the ledger. A new key creates the entry and returns `201`. An existing key never creates a
-        second entry and is not changed: the stored entry is returned unchanged with `200`, and the supplied `value` is
-        ignored. Recording never changes `claimedByConnectionId` or `claimedAt`.
+        Records `entryKey` in the ledger. A new key creates the entry and returns `201`. Recording never changes an
+        existing entry: the stored entry is returned unchanged with `200`, and the supplied `value` is ignored. Change a
+        stored value with updateLedgerEntry. Recording never changes `claimedByConnectionId` or `claimedAt`.
       parameters:
         - name: ledger
           in: path
@@ -63126,10 +63127,12 @@ paths:
                 title: Ledger Entry Schema
                 description: >
                   Server-returned ledger entry. An organization keeps any number of named ledgers, each an idempotent
-                  set keyed by entryKey: recording an existing key never creates a second entry and returns the stored
-                  entry unchanged, and claim-if-absent gives a key to exactly one claiming connection, so two workers
-                  never both act on it. Any organization member may read and delete entries; a claim names the
-                  connection that holds it, which must be the caller's own live connection in the organization.
+                  set keyed by entryKey: recording an existing key never creates a second entry and never changes that
+                  entry, and claim-if-absent gives a key to exactly one claiming connection, so two workers never both
+                  act on it. Change a stored value with updateLedgerEntry, which replaces the value wholesale and
+                  advances updatedAt. Any organization member may read, update and delete entries; a claim names the
+                  connection that holds it, which must be the caller's own live connection in the organization. An
+                  update does not check who holds a claim.
                 type: object
                 additionalProperties: false
                 required:
@@ -63226,7 +63229,7 @@ paths:
                     format: date-time
                     x-go-type-skip-optional-pointer: true
                   updatedAt:
-                    description: Timestamp of last ledger entry modification.
+                    description: Timestamp of last ledger entry modification; advances on every update.
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                     x-order: 9
@@ -63242,10 +63245,12 @@ paths:
                 title: Ledger Entry Schema
                 description: >
                   Server-returned ledger entry. An organization keeps any number of named ledgers, each an idempotent
-                  set keyed by entryKey: recording an existing key never creates a second entry and returns the stored
-                  entry unchanged, and claim-if-absent gives a key to exactly one claiming connection, so two workers
-                  never both act on it. Any organization member may read and delete entries; a claim names the
-                  connection that holds it, which must be the caller's own live connection in the organization.
+                  set keyed by entryKey: recording an existing key never creates a second entry and never changes that
+                  entry, and claim-if-absent gives a key to exactly one claiming connection, so two workers never both
+                  act on it. Change a stored value with updateLedgerEntry, which replaces the value wholesale and
+                  advances updatedAt. Any organization member may read, update and delete entries; a claim names the
+                  connection that holds it, which must be the caller's own live connection in the organization. An
+                  update does not check who holds a claim.
                 type: object
                 additionalProperties: false
                 required:
@@ -63342,7 +63347,7 @@ paths:
                     format: date-time
                     x-go-type-skip-optional-pointer: true
                   updatedAt:
-                    description: Timestamp of last ledger entry modification.
+                    description: Timestamp of last ledger entry modification; advances on every update.
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                     x-order: 9
@@ -63438,10 +63443,12 @@ paths:
                 title: Ledger Entry Schema
                 description: >
                   Server-returned ledger entry. An organization keeps any number of named ledgers, each an idempotent
-                  set keyed by entryKey: recording an existing key never creates a second entry and returns the stored
-                  entry unchanged, and claim-if-absent gives a key to exactly one claiming connection, so two workers
-                  never both act on it. Any organization member may read and delete entries; a claim names the
-                  connection that holds it, which must be the caller's own live connection in the organization.
+                  set keyed by entryKey: recording an existing key never creates a second entry and never changes that
+                  entry, and claim-if-absent gives a key to exactly one claiming connection, so two workers never both
+                  act on it. Change a stored value with updateLedgerEntry, which replaces the value wholesale and
+                  advances updatedAt. Any organization member may read, update and delete entries; a claim names the
+                  connection that holds it, which must be the caller's own live connection in the organization. An
+                  update does not check who holds a claim.
                 type: object
                 additionalProperties: false
                 required:
@@ -63538,7 +63545,7 @@ paths:
                     format: date-time
                     x-go-type-skip-optional-pointer: true
                   updatedAt:
-                    description: Timestamp of last ledger entry modification.
+                    description: Timestamp of last ledger entry modification; advances on every update.
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                     x-order: 9
@@ -63554,10 +63561,12 @@ paths:
                 title: Ledger Entry Schema
                 description: >
                   Server-returned ledger entry. An organization keeps any number of named ledgers, each an idempotent
-                  set keyed by entryKey: recording an existing key never creates a second entry and returns the stored
-                  entry unchanged, and claim-if-absent gives a key to exactly one claiming connection, so two workers
-                  never both act on it. Any organization member may read and delete entries; a claim names the
-                  connection that holds it, which must be the caller's own live connection in the organization.
+                  set keyed by entryKey: recording an existing key never creates a second entry and never changes that
+                  entry, and claim-if-absent gives a key to exactly one claiming connection, so two workers never both
+                  act on it. Change a stored value with updateLedgerEntry, which replaces the value wholesale and
+                  advances updatedAt. Any organization member may read, update and delete entries; a claim names the
+                  connection that holds it, which must be the caller's own live connection in the organization. An
+                  update does not check who holds a claim.
                 type: object
                 additionalProperties: false
                 required:
@@ -63654,7 +63663,7 @@ paths:
                     format: date-time
                     x-go-type-skip-optional-pointer: true
                   updatedAt:
-                    description: Timestamp of last ledger entry modification.
+                    description: Timestamp of last ledger entry modification; advances on every update.
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                     x-order: 9
@@ -63732,10 +63741,12 @@ paths:
                 title: Ledger Entry Schema
                 description: >
                   Server-returned ledger entry. An organization keeps any number of named ledgers, each an idempotent
-                  set keyed by entryKey: recording an existing key never creates a second entry and returns the stored
-                  entry unchanged, and claim-if-absent gives a key to exactly one claiming connection, so two workers
-                  never both act on it. Any organization member may read and delete entries; a claim names the
-                  connection that holds it, which must be the caller's own live connection in the organization.
+                  set keyed by entryKey: recording an existing key never creates a second entry and never changes that
+                  entry, and claim-if-absent gives a key to exactly one claiming connection, so two workers never both
+                  act on it. Change a stored value with updateLedgerEntry, which replaces the value wholesale and
+                  advances updatedAt. Any organization member may read, update and delete entries; a claim names the
+                  connection that holds it, which must be the caller's own live connection in the organization. An
+                  update does not check who holds a claim.
                 type: object
                 additionalProperties: false
                 required:
@@ -63832,7 +63843,7 @@ paths:
                     format: date-time
                     x-go-type-skip-optional-pointer: true
                   updatedAt:
-                    description: Timestamp of last ledger entry modification.
+                    description: Timestamp of last ledger entry modification; advances on every update.
                     x-oapi-codegen-extra-tags:
                       db: updated_at
                     x-order: 9
@@ -63847,6 +63858,238 @@ paths:
                 type: string
         '404':
           description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+    put:
+      x-internal:
+        - cloud
+      tags:
+        - Ledger_ledgers
+      summary: Update a ledger entry
+      operationId: updateLedgerEntry
+      description: >
+        Replaces the stored `value` wholesale (not a merge) and advances `updatedAt` (strictly increasing, so it works
+        as a version token). Never changes `entryKey`, `claimedByConnectionId`, `claimedAt`, `createdAt` or `id`. Does
+        not create entries: a key that is not in the ledger is `404` (use POST entries or claims to create). Does not
+        check who holds a claim (same as delete). Any member of the session organization may update. `expectedValue`,
+        when present, applies the update only if the stored value equals it (JSON equality; key order and whitespace do
+        not matter). `expectedUpdatedAt`, when present, applies the update only if the stored entry's `updatedAt` equals
+        it exactly; clients echo the `updatedAt` they last read. Both preconditions may be sent; then both must hold.
+        With neither, the update is unconditional. A precondition that does not match returns `412` and changes nothing.
+        A bad ledger name, key, or body (for example a missing `value` or a non-object value) is `400`.
+      parameters:
+        - name: ledger
+          in: path
+          description: Name of the ledger, for example `processed-profiles`.
+          required: true
+          schema:
+            type: string
+            pattern: ^[a-z0-9][a-z0-9._-]*$
+            minLength: 1
+            maxLength: 255
+        - name: entryKey
+          in: path
+          description: Key within the ledger. URL-encode keys that contain reserved characters such as `/`.
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 1024
+            not:
+              enum:
+                - .
+                - ..
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              description: >
+                Payload for replacing a ledger entry's value. The ledger and entryKey come from the path. Claim fields,
+                id and timestamps are server-owned and are not accepted here.
+              required:
+                - value
+              properties:
+                value:
+                  type: object
+                  description: The new entry value, stored as a JSON object. Replaces the stored value wholesale.
+                  x-go-type: core.Map
+                  x-go-type-import:
+                    path: github.com/meshery/schemas/models/core
+                    name: core
+                  x-go-type-skip-optional-pointer: true
+                expectedValue:
+                  type: object
+                  description: >
+                    Optional precondition. When present, including as an empty object, the update applies only if the
+                    stored value equals this object (JSON equality; key order and whitespace do not matter). Omit the
+                    property to skip this check. Absence is distinct from an empty object.
+                  x-go-type: core.Map
+                  x-go-type-import:
+                    path: github.com/meshery/schemas/models/core
+                    name: core
+                  x-go-type-skip-optional-pointer: true
+                expectedUpdatedAt:
+                  type: string
+                  format: date-time
+                  description: >
+                    Optional precondition. When present, the update applies only if the stored entry's updatedAt equals
+                    this instant exactly. Clients echo the updatedAt they last read. Omit the property to skip this
+                    check.
+                  x-go-type: core.NullTime
+                  x-go-type-import:
+                    path: github.com/meshery/schemas/models/core
+                    name: core
+      responses:
+        '200':
+          description: The updated ledger entry
+          content:
+            application/json:
+              schema:
+                $schema: http://json-schema.org/draft-07/schema#
+                title: Ledger Entry Schema
+                description: >
+                  Server-returned ledger entry. An organization keeps any number of named ledgers, each an idempotent
+                  set keyed by entryKey: recording an existing key never creates a second entry and never changes that
+                  entry, and claim-if-absent gives a key to exactly one claiming connection, so two workers never both
+                  act on it. Change a stored value with updateLedgerEntry, which replaces the value wholesale and
+                  advances updatedAt. Any organization member may read, update and delete entries; a claim names the
+                  connection that holds it, which must be the caller's own live connection in the organization. An
+                  update does not check who holds a claim.
+                type: object
+                additionalProperties: false
+                required:
+                  - id
+                  - organizationId
+                  - ledger
+                  - entryKey
+                  - createdAt
+                  - updatedAt
+                properties:
+                  id:
+                    description: Server-generated ledger entry ID.
+                    x-order: 1
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  organizationId:
+                    description: Owning organization ID. Derived from the authenticated session, never client-settable.
+                    x-go-name: OrganizationID
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                    x-order: 2
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  ledger:
+                    type: string
+                    description: Name of the ledger (the idempotent set) the entry belongs to.
+                    minLength: 1
+                    maxLength: 255
+                    x-oapi-codegen-extra-tags:
+                      db: ledger
+                    x-order: 3
+                  entryKey:
+                    type: string
+                    description: Key within the ledger. Unique per (organization, ledger).
+                    minLength: 1
+                    maxLength: 1024
+                    x-go-name: EntryKey
+                    x-oapi-codegen-extra-tags:
+                      db: entry_key
+                    x-order: 4
+                  value:
+                    type: object
+                    description: Entry value, stored as a JSON blob.
+                    x-go-type: core.Map
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: value
+                    x-order: 5
+                  claimedByConnectionId:
+                    description: >
+                      ID of the connection that holds the entry, if any. Set only by claim-if-absent and never changed
+                      afterwards. References a connection (`connections.id`); a claim held by a connection that is later
+                      deleted is released, so the key may be claimed again. Omitted when the entry is unclaimed.
+                    x-go-name: ClaimedByConnectionID
+                    x-oapi-codegen-extra-tags:
+                      db: claimed_by_connection_id
+                      json: claimedByConnectionId,omitempty
+                    x-order: 6
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  claimedAt:
+                    type: string
+                    format: date-time
+                    description: >-
+                      Time the current or most recent claim was taken. Set only by claim-if-absent; null when the entry
+                      was never claimed. An entry whose claimedByConnectionId is omitted is unclaimed whatever this
+                      holds.
+                    nullable: true
+                    x-go-type: core.NullTime
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
+                    x-oapi-codegen-extra-tags:
+                      db: claimed_at
+                    x-order: 7
+                  createdAt:
+                    description: Timestamp of ledger entry creation.
+                    x-oapi-codegen-extra-tags:
+                      db: created_at
+                    x-order: 8
+                    type: string
+                    format: date-time
+                    x-go-type-skip-optional-pointer: true
+                  updatedAt:
+                    description: Timestamp of last ledger entry modification; advances on every update.
+                    x-oapi-codegen-extra-tags:
+                      db: updated_at
+                    x-order: 9
+                    type: string
+                    format: date-time
+                    x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '412':
+          description: >-
+            Precondition Failed - expectedValue or expectedUpdatedAt does not match the stored entry, so nothing was
+            changed
           content:
             text/plain:
               schema:
@@ -77408,20 +77651,21 @@ paths:
         - cloud
       tags:
         - token_tokens
-      summary: Show native client sign-in consent
+      summary: Authorize native client sign-in
       operationId: getNativeClientAuthorization
       description: >-
         Browser-facing step of the native client sign-in flow (RFC 8252 loopback redirect with RFC 7636 PKCE). Requires
-        the session cookie of a signed-in user, never URL credentials. Validates the request and renders a consent page
-        that asks the user to allow the named local client to act on their behalf. Nothing is issued by this call. When
-        the request names the client application (`client`) and its version (`clientVersion`) and that version is below
-        the provider's minimum for that client, an update page is rendered with status 426 instead of the consent page.
+        the session cookie of a signed-in user and the Create Token permission. Validates the request. When the request
+        names the client application (`client`) and its version (`clientVersion`) and that version is below the provider
+        minimum, it renders the update page with status 426 and issues nothing. Otherwise it stores a single-use
+        authorization code that expires after 60 seconds, bound to the user, the client name and the PKCE code
+        challenge, and redirects the browser to http://127.0.0.1:{port}/callback with code and state query parameters.
+        Only the 127.0.0.1 loopback IP literal is ever used; no token or cookie is placed in the redirect; no consent
+        page is shown.
       parameters:
         - name: clientName
           in: query
-          description: >-
-            Display name of the native client asking to sign in. Shown on the consent page and used as the name and
-            purpose of the minted token.
+          description: Display name of the native client asking to sign in. Used as the name and purpose of the minted token.
           required: true
           schema:
             type: string
@@ -77479,86 +77723,6 @@ paths:
             minLength: 8
             maxLength: 512
       responses:
-        '200':
-          description: Consent page
-          content:
-            text/html:
-              schema:
-                type: string
-        '400':
-          description: Invalid request body or request param
-          content:
-            text/plain:
-              schema:
-                type: string
-        '401':
-          description: Expired JWT token used or insufficient privilege
-          content:
-            text/plain:
-              schema:
-                type: string
-        '426':
-          description: Update page; the client's version is below the provider's minimum for that client.
-          content:
-            text/html:
-              schema:
-                type: string
-    post:
-      x-internal:
-        - cloud
-      tags:
-        - token_tokens
-      summary: Approve native client sign-in
-      operationId: approveNativeClientAuthorization
-      description: >-
-        Submitted by the consent page with the same parameters as the GET, as a same-origin form post. Stores a
-        single-use authorization code that expires after 60 seconds, bound to the user, the client name and the PKCE
-        code challenge, then redirects the browser to http://127.0.0.1:{port}/callback with code and state query
-        parameters. Only the 127.0.0.1 loopback IP literal is ever used as the redirect host; no token or cookie is
-        placed in the redirect.
-      requestBody:
-        required: true
-        content:
-          application/x-www-form-urlencoded:
-            schema:
-              type: object
-              description: Consent form fields for approving a native client sign-in.
-              required:
-                - clientName
-                - port
-                - codeChallenge
-                - codeChallengeMethod
-                - state
-              properties:
-                clientName:
-                  type: string
-                  description: Display name of the native client.
-                  pattern: ^[A-Za-z0-9][A-Za-z0-9 ._-]{0,62}$
-                  x-order: 1
-                port:
-                  type: integer
-                  description: Port on 127.0.0.1 for the callback.
-                  minimum: 1024
-                  maximum: 65535
-                  x-order: 2
-                codeChallenge:
-                  type: string
-                  description: PKCE S256 code challenge.
-                  pattern: ^[A-Za-z0-9_-]{43}$
-                  x-order: 3
-                codeChallengeMethod:
-                  type: string
-                  description: PKCE challenge method.
-                  enum:
-                    - S256
-                  x-order: 4
-                state:
-                  type: string
-                  description: Opaque client state returned on the callback.
-                  minLength: 8
-                  maxLength: 512
-                  x-order: 5
-      responses:
         '302':
           description: >-
             Redirect to the loopback callback carrying code and state. The callback's query parameters are described by
@@ -77585,6 +77749,12 @@ paths:
           description: Forbidden
           content:
             text/plain:
+              schema:
+                type: string
+        '426':
+          description: Update page; the client's version is below the provider's minimum for that client.
+          content:
+            text/html:
               schema:
                 type: string
         '500':
