@@ -1,0 +1,21 @@
+# v0.8.57-2
+
+date: 2025-04-14
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix tooltip crashing on maximizing @aabidsofi19 (#3543)
+
+## 🐛 Bug Fixes
+
+- fix tooltip crashing on maximizing @aabidsofi19 (#3543)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

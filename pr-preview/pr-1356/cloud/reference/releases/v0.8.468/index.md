@@ -1,0 +1,25 @@
+# v0.8.468
+
+date: 2025-09-25
+
+
+
+## 📚 Academy
+
+- Layer5 v0.7.1 content update @l5io (#4205)
+- Layer5 v0.7.0 content update @l5io (#4204)
+
+## 🖥 Cloud UI
+
+- [Chore]: Update to Sistent v0.15.9 @l5io (#4201)
+
+## 💻 Server
+
+- Refactor away from logrus and fmt to MeshKit @leecalcote (#4193)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @l5io and @leecalcote
+
+
