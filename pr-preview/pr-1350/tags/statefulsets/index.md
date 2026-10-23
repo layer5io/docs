@@ -1,4 +1,0 @@
-# Statefulsets
-
-
-<no value>

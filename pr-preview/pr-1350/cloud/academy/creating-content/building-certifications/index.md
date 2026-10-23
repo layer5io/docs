@@ -1,4 +1,4 @@
-# Build a Certification
+# Building Certifications
 
 
 > A step-by-step guide to building a professional certification in the Academy.
@@ -9,9 +9,18 @@ In [Layer5 Academy](https://cloud.layer5.io/academy/), a **Certification** is a 
 
 The successful completion of a Certification results in an official, shareable **Certificate of Completion** and a valuable badge, signifying a verified level of proficiency.
 
-## When to use a certification
+![example image](./images/index-page.png)
 
-Choose a certification when the goal is to test, not teach. It assumes prior knowledge. Compare the content types in [Create Academy Content](/pr-preview/pr-1350/cloud/academy/creating-content/#choose-a-content-type).
+### When to Use a Certification
+
+To understand its unique role, here is a comparison with other content types in the Academy. Use this table to decide if a Certification is the right format for your content.
+
+| Feature | Learning Path | Challenge | Certification |
+| :--- | :--- | :--- | :--- |
+| Primary Goal | To teach and guide through a comprehensive curriculum. | To solve a specific, hands-on problem in a competitive scenario. | To validate and prove existing knowledge through formal examination. |
+| Structure | Hierarchical (Path → Courses → Modules). | Typically a single, scenario-based task. | Flat; a collection of one or more exams. |
+| Main Content | Lessons, informational pages, labs, and progressive assessments. | A set of instructions for a practical task and a validation mechanism. | A series of exams, potentially with a brief study guide. |
+| Outcome | Acquired knowledge and skills. | A score, rank status. | An optional, paid official certificate and a verifiable badge.|
 
 
 
@@ -32,9 +41,50 @@ Choose a certification when the goal is to test, not teach. It assumes prior kno
 
 Building a new certification involves setting up the correct directory structure and defining its properties through Markdown frontmatter.
 
-### Get your identifiers
+### Find Your Organization ID and Certification ID {#find-your-organization-uuid-and-certification-id}
 
-Register the certification in the Instructor Console and choose **Certification** as the content type. The console generates the certification `id` and a ready-to-paste front matter block. Use your organization's ID in the directory path. See [Create Academy Content](/pr-preview/pr-1350/cloud/academy/creating-content/#register-content-in-the-console).
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #EBC017;" role="alert">
+  <h4 class="alert-heading" style="color: #EBC017;">Important: Replace the Placeholder IDs</h4>
+  
+      Throughout this guide, you&rsquo;ll see references to <code>&lt;your-organization-uuid&gt;</code> and <code>&lt;your-certification-uuid&gt;</code> placeholders. Make sure to replace all of these with your actual IDs from the <a href="https://cloud.layer5.io/academy/instructors-console">Instructor Console</a> when you build your certification.
+  
+</div>
+
+
+
+Each certification is tied to a specific organization and secured by a unique identifier. Layer5 Cloud generates these IDs for you, and they are what keep your content visible only under your own organization.
+
+You'll need two IDs:
+- **Certification ID**: A unique identifier for your specific certification that gets added to the front matter of your certification's index file
+- **Organization ID**: Your organization's own ID, used in directory paths
+
+
+
+
+
+
+
+<div class="alert alert-custom" style="border-color: #3772ff;" role="alert">
+  <h4 class="alert-heading" style="color: #3772ff;">Generating Your IDs from the Instructor Console</h4>
+  
+      <p>The easiest way to get the correct IDs is by using the content creation tool.</p>
+<ul>
+<li>Navigate to the <a href="https://cloud.layer5.io/academy/instructors-console">Instructor Console</a> in Layer5 Cloud.</li>
+<li>Use the &ldquo;Create New Content&rdquo; tool and fill in the information for your new content</li>
+<li>The final step generates all the necessary materials to get started: the front matter, repository setup instructions, and your unique IDs.</li>
+</ul>
+<p><a href="https://cloud.layer5.io/academy/instructors-console">Learn more</a> about the Academy Console.</p>
+
+  
+</div>
+
+
 
 ### 1. Set Up the Directory Structure
 
@@ -84,7 +134,7 @@ badge:
 
 #### Frontmatter Fields Reference
 
-> In this table, fields marked with ✅  are required, while those marked with a hyphen are optional.
+> In this table, fields marked with ✅  are required, while those marked with – are optional.
 
 | Field | Required | Description |
 | :--- | :--- | :--- |
@@ -123,9 +173,9 @@ A certification is primarily composed of exams. However, you can also include st
 
 
 
-### 4. Manage question pools and test attempts
+### 4. Managing Question Pools and Test Attempts
 
-A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank**, the collection of all possible questions available for that test. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
+A **test** can include more questions than those presented to users in a single attempt, effectively turning it into a **test bank** — collection of all possible questions available for that test. When users retry the test, a new set of questions is drawn from the test bank for each attempt.
 
 This behavior is controlled by the `numberOfQuestions` property in the front matter.
 
@@ -155,681 +205,23 @@ These configurations are defined per test and may differ across exams within the
 
 
 
-## Learner outcomes
+## Learner Outcomes: Badges and Certificates
 
-| Outcome | When it is awarded | Details |
-| --- | --- | --- |
-| Badge | The learner passes the certification's final test. | Named by the content's badge setting. A badge setting that points at a badge that no longer exists awards nothing, and the failure is logged. |
-| Certificate of Completion | The same moment, when the certification defines a certificate. | Free learning and exams; certificate issuance is an optional paid feature. Each certificate gets its own ID, the recipient's name, the organization, and the issue date. It is served at a public certificate page, and the learner receives an email. A failed email does not undo the certificate. |
-| Registration status | Becomes Completed. | Visible to instructors in the console. |
+Successfully completing a certification provides learners with valuable, verifiable credentials.
 
-Certificates do not carry an expiry date. Attempt limits and time limits come from each exam's settings, covered in [Add Assessments](/pr-preview/pr-1350/cloud/academy/creating-content/integrating-assessments-in-the-academy/). You do not handle certificate payment; the platform does.
+### Badges
 
+The badge is awarded when the learner passes the certification's final test, not when they finish every practice exam. A badge setting that points at a badge that no longer exists awards nothing, and the failure is logged. The badge is a verifiable credential learners can share on professional profiles.
 
+See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
 
+![example badge image](./images/badge.png)
 
+### Official Certificates
 
+When the certification defines a certificate, it is issued at the same moment the final test is passed. The registration status becomes Completed.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="feature-tiers">
-
-<table class="feature-tiers-table">
-  <caption>Academy</caption>
-  <thead>
-    <tr>
-      <th scope="col">Capability</th>
-      <th scope="col">What it does</th>
-      <th scope="col">Free</th>
-      <th scope="col">Team Designer</th>
-      <th scope="col">Team Operator</th>
-      <th scope="col">Enterprise</th>
-    </tr>
-  </thead>
-  <tbody>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Academy Theoretical Learning</th>
-      <td>A comprehensive learning management system for creators and instructors on how to build, manage, and extend educational content like learning paths, challenges, and certifications.</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    <tr>
-      <th scope="row">Academy Practical Learning</th>
-      <td>An inclusive, collaborative, hands-on learning environment for students.</td>
-      
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">-</span><span class="sr-only">Not included</span></td>
-      
-      <td class="tier-cell"><span aria-hidden="true">&#10003;</span><span class="sr-only">Included</span></td>
-      
-    </tr>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-  </tbody>
-</table>
-
-</div>
+While the learning materials and exams are free, issuance of the official certificate is an optional paid feature. You do not handle payment. Each certificate gets its own ID, the recipient's first and last name, the organization, and the issue date. It is served at a public certificate page, and the learner receives an email. A failed email does not undo the certificate. Certificates do not carry an expiry date.
 
 
 ## Frequently Asked Questions
@@ -862,5 +254,11 @@ You need to add a specific field, `isOptional: true`, to the front matter of the
   <summary>Can I control the order of multiple exams within a certification?</summary>
   
 Yes, you can. Each exam file's front matter has a `weight` field. Lower numbers result in an earlier display order. If you don't set a `weight`, the exams will be sorted alphabetically by file title by default.
+</details>
+
+<details>
+  <summary>As a content creator, do I need to handle the certificate payment process?</summary>
+  
+No, you don't. The payment and certificate issuance process is handled by the Layer5 platform. You only need to focus on creating high-quality assessment content.
 </details>
 

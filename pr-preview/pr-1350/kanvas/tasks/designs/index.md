@@ -1,4 +1,7 @@
-# Validate and Deploy
+# Deploying Designs
+
+> Each design is deployable to one or more Kubernetes clusters.
 
 
-<no value>
+
+

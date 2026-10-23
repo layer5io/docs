@@ -1,154 +1,152 @@
-# Use ConfigMaps and Secrets
+# Understanding Kubernetes ConfigMaps and Secrets with Meshery
 
 
-> Inject configuration from a ConfigMap and a credential from a Secret into a MySQL Pod, as environment variables and as mounted files, and verify each binding in the running container.
+> In this tutorial, we will explore how to effectively use Kubernetes ConfigMaps and Secrets for managing configuration data and sensitive information. Leveraging Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to understand the practical aspects of working with ConfigMaps and Secrets in Kubernetes.
 
 
-In this tutorial you design a MySQL Pod that takes its database name from a ConfigMap and its root password from a Secret, deploy it to a cluster, and prove from inside the container that each value arrived. Separating configuration and credentials from the container image is how one image runs unchanged in every environment, and knowing exactly how Kubernetes delivers those values tells you why a changed setting sometimes reaches a running container and sometimes does not.
+## Introduction
 
-## What you will learn
+In this tutorial, we will work with Kubernetes ConfigMaps and Secrets. _ConfigMaps_ are used to manage configuration data, while _Secrets_ are used for sensitive information such as passwords. Using Meshery Playground, an interactive live cluster environment, we'll perform hands-on exercises to gain practical knowledge into working with these Kubernetes objects.
 
-- How a ConfigMap and a Secret store key-value data, and why a Secret's values are base64-encoded rather than encrypted.
-- The two ways a Pod consumes them: environment variables resolved once at container start, and mounted volumes that the kubelet keeps up to date.
-- That a Pod refers to a ConfigMap or Secret by name and key, and that nothing checks the reference until the container starts.
-- How Kanvas validates, dry-runs, and deploys a design, and what Operator shows for Secret data.
+> **_NOTE:_** If this is your fist time working with Meshery Playground start with the [Kubernetes Pods with Meshery](/pr-preview/pr-1350/kanvas/tutorials/kubernetes/kubernetes-pods/).
 
-## Before you begin
+## Prerequisites
 
-- A Kanvas environment with a Kubernetes cluster connected to Meshery. Use [Meshery Playground](https://play.meshery.io), a shared live cluster, or a self-hosted Meshery with a connected cluster. Hosted kanvas.new has no cluster actions: Validate, Deploy, and Undeploy there open a self-hosted feature prompt.
-- Familiarity with Pods and the Kanvas Designer. If this is your first Kanvas tutorial, complete the [Kubernetes Pods tutorial](/pr-preview/pr-1350/kanvas/tutorials/kubernetes/kubernetes-pods/) first.
-- A short unique suffix for your object names and labels, such as your initials plus a number (`jd42`). Playground is shared with other users, so this tutorial writes names as `mysql-<suffix>`; replace `<suffix>` everywhere with yours.
+- Basic understanding of containerization and Kubernetes concepts.
+- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
 
-## The scenario
+## Lab Scenario
 
-You build three components and connect them by name references in the Pod spec:
+ - Start with an existing design of a simple MySQL pod. 
+ - Add a _ConfigMap_ to set the database name to be created on MySQL pod deployment.
+ - Use a _Secret_ to set the MySQL root password.
 
-```text
-ConfigMap  mysql-config-<suffix>   data: database = tutorialdb
-Secret     mysql-secret-<suffix>   data: root-password = <base64 of strongpassword>
-    |                                   |
-    |  env MYSQL_DATABASE               |  env MYSQL_ROOT_PASSWORD
-    |  volume at /etc/app-config        |  volume at /etc/db-secret
-    v                                   v
-Pod        mysql-<suffix>   container mysql (image mysql:8.0)
-```
+## Objective
 
-The official MySQL image reads `MYSQL_ROOT_PASSWORD` to set the root password and `MYSQL_DATABASE` to create a database on first start, so a working login and a database named `tutorialdb` prove that both environment bindings work. The mounted files prove the volume bindings.
+Learn how to create and manage _Kubernetes ConfigMaps and Secrets_ within the context of a microservices architecture.
 
-## Create the ConfigMap
+## Steps
 
-1. Start a new design and name it, for example `configmaps-secrets-<suffix>`. Kanvas saves the design automatically a few seconds after each change; there is no Save button.
-2. Add a **ConfigMap** component from the Kubernetes model. Its configurator opens beside it.
-3. Set the name to `mysql-config-<suffix>`. Leave the namespace as `default`.
-4. Under **Data**, add one entry with key `database` and value `tutorialdb`.
-5. On the configurator's **Labels** tab, add the label `owner` with your suffix as the value. You use this label to find your objects in Operator.
+### Access Meshery Playground
 
-**What just happened.** A ConfigMap is a plain key-value object for non-sensitive configuration. It holds strings (or binary data under `binaryData`) up to 1 MiB in total, and it does nothing on its own: a Pod has to ask for its keys. Kanvas renders the configurator from the ConfigMap's schema and checks your change against that schema in the background.
+- Log in to the [Meshery Playground](http://playground.meshery.io/) using your credentials. On successful login, you should be at the dashboard. Press the **X** on the _Where do you want to start?_ popup to close it (if required).
+- Click **Kanvas** in the navigation menu to navigate to _Kanvas_.
 
-**Check your work.** The ConfigMap sits on the canvas with no warning badge. A yellow triangle badge means a schema warning; select it to jump to the field.
+> **_NOTE:_** Kanvas is still in beta.
 
-## Create the Secret
+### Clone the starter design
 
-1. Encode the password. In any terminal, run:
+For this tutorial we will start with an existing design and later add _ConfigMap_ and _Secret_ components to it. The design is a simple MySQL pod.
 
-    ```shell
-    echo -n 'strongpassword' | base64
-    ```
+Select the **Catalog** tab and search for the word _'tutorial'_ (1). Click on the **[Tutorial] Simple MySQL Pod** (2) design and when prompted click **Clone** (3).
 
-    The output is `c3Ryb25ncGFzc3dvcmQ=`. The `-n` matters: without it, `echo` adds a newline that becomes part of the password.
+![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-17_20-01.png)
 
-2. Add a **Secret** component. Set the name to `mysql-secret-<suffix>` and the type to `Opaque`.
-3. Under **Data**, add one entry with key `root-password` and value `c3Ryb25ncGFzc3dvcmQ=`.
-4. On the **Labels** tab, add the same `owner` label.
+Label the pod with a unique key-value pair for easier filtering later. For example, _user:johndoe_. Use the same key-value pair fot labelling all the other resources. The tutorial uses _environment:tutorial_, do not use the same.
 
-**What just happened.** A Secret has the same key-value shape as a ConfigMap, and values under `data` must be base64-encoded. **Base64 is an encoding, not encryption.** Anyone who can read the Secret object can recover the value with `echo c3Ryb25ncGFzc3dvcmQ= | base64 -d`. What protects a Secret in a cluster is RBAC on who may read Secrets, encryption at rest configured on the API server, and the kubelet keeping Secret volumes in memory instead of on disk. If you prefer not to encode values yourself, the `stringData` field accepts plain text and the API server encodes it for you.
 
-The value is also stored in your design. Kanvas creates new designs with public visibility, so anyone who can open the design can read and decode the value. Use throwaway values like the one in this tutorial, and never put a production credential in a design.
+### Create and configure a ConfigMap
 
-**Check your work.** Decode the value you typed to confirm it round-trips to `strongpassword`. A value that is not valid base64 passes Validate but fails when the cluster checks the Secret in the next phase.
+Click Kubernetes from the dock and select Config Map from the list. This will put the ConfigMap component on the canvas.  
 
-## Build the Pod
+![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_18-03.png)
 
-1. Add a **Pod** component. Set the name to `mysql-<suffix>` and add the `owner` label on the **Labels** tab.
-2. Add one container with name `mysql`, image `mysql:8.0`, and a container port of `3306`.
-3. Add an environment variable named `MYSQL_ROOT_PASSWORD`. Leave its value empty and set **Value From** to a **Secret Key Ref** with name `mysql-secret-<suffix>` and key `root-password`.
-4. Add a second environment variable named `MYSQL_DATABASE`, with **Value From** set to a **Config Map Key Ref** with name `mysql-config-<suffix>` and key `database`. Use the ConfigMap reference here, not a Secret reference: each reference type looks only in its own kind of object.
-5. In the Pod spec, add two volumes:
-    - `app-config`, of type **Config Map**, with name `mysql-config-<suffix>`.
-    - `db-secret`, of type **Secret**, with secret name `mysql-secret-<suffix>`.
-6. On the `mysql` container, add two volume mounts:
-    - `app-config` at mount path `/etc/app-config`, read-only.
-    - `db-secret` at mount path `/etc/db-secret`, read-only.
+Click the _ConfigMap_ component to load the configuration window.
 
-**What just happened.** The Pod now consumes the same data in two ways:
+ 1. Change the **Name** if required. (Using a unique name helps with easier identification later)
+ 2. Click **+** next to Data and set the ConfigMap data as a key value pair. In this example, the _Key_ is **CREATEDB** and the _Value_ is **myDB**.
 
-| Delivery | What the container sees | When a changed value reaches the container |
-|---|---|---|
-| Environment variable (`valueFrom`) | `MYSQL_DATABASE=tutorialdb`, `MYSQL_ROOT_PASSWORD=strongpassword` | Only when the container restarts. The kubelet resolves the values once, at start. |
-| Volume | One file per key: `/etc/app-config/database`, `/etc/db-secret/root-password` | Eventually, without a restart. The kubelet refreshes mounted files periodically (not for `subPath` mounts). |
+    ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_00-13.png)
 
-Both deliver decoded values: the container never sees base64. Each binding is a reference by object name and key. Kanvas Validate checks each component against its own schema only, and a server-side dry run of a Pod does not look up the objects it references, so a misspelled name or key surfaces only when the container tries to start.
+ 3. Click on the **label**.
+ 4. Set a label for easier filtering later during Visualization.
 
-**Check your work.** The design holds three components and no warning badges. The Pod's container shows two environment variables and two volume mounts.
+    ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_00-18.png)
 
-## Validate, dry run, and deploy
+ 5. Click outside the window to close it. 
 
-1. Run **Validate** from the **Actions** menu. Validate runs in your browser against each component's schema and does not contact the cluster. Its findings are advisory; they never block a deploy.
-2. Run **Dry Run**. Kanvas sends each component to the cluster's API server as a server-side dry run, which applies the cluster's real validation without persisting anything.
-3. Run **Deploy**. Select the environment that holds your cluster connection, review the dry-run result, and deploy.
+Make a note of the ConfigMap component _name_ and _key_ for use later.
 
-**What just happened.** Deploy creates each object, or replaces it in place if it already exists, and labels it with the design's id. Components with no declared dependency on each other are applied in parallel, so the Pod can reach the cluster before its ConfigMap and Secret do. In that case the Pod briefly reports `CreateContainerConfigError` and then starts on its own once the kubelet retries.
 
-**Check your work.** The summary at the end of the deploy lists `Deployed ConfigMap "mysql-config-<suffix>"`, `Deployed Secret "mysql-secret-<suffix>"`, and `Deployed Pod "mysql-<suffix>"`. A `Failed to deploy` row carries an error card with the cluster's reason. A dry-run error names the component and field, for example an invalid label value or a Secret value that is not base64; select the error to open the configurator at that field.
+### Create and configure a Secret
 
-## Verify the bindings
+ Before you proceed, choose a password and convert it into base64 format. Use an online tool to do so. For this example the password is **strongpassword** and the base64 of it is **c3Ryb25ncGFzc3dvcmQ=**
 
-1. Switch to Operator. Opening Operator with the design loaded shows a view scoped to this design, which lists the objects carrying the design's id label: your ConfigMap, Secret, and Pod. Operator draws a snapshot, so if the Pod is still starting, change a filter or reopen the view to fetch fresh state.
-2. Select the Pod. Its status chip reads `Running` once MySQL has started, which takes up to a minute. The container details list its environment variables and its volume mounts marked `(RO)`. For variables set from a reference, Operator shows the reference, not the value.
-3. Select the Secret. Operator shows its type, `Opaque`, and does not display its data values.
-4. Start a terminal session on the Pod (**Initiate Terminal Session**). Kanvas opens a `/bin/sh` shell in the container. The terminal sends one line at a time when you press Enter, so run commands one per line:
+Click Kubernetes from the dock and select Secret from the list. This will put the Secret component on the canvas.  
 
-    ```shell
-    printenv MYSQL_DATABASE
-    cat /etc/app-config/database
-    cat /etc/db-secret/root-password
-    mysql -uroot -p"$MYSQL_ROOT_PASSWORD" -e "SHOW DATABASES;"
-    ```
+![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_18-19.png)
 
-    With `kubectl` access to the cluster, `kubectl exec mysql-<suffix> -- printenv MYSQL_DATABASE` and the equivalent commands give the same answers.
+Click on the _Secret_ component to load the configuration window.
 
-**What just happened.** The first two commands print `tutorialdb`: the ConfigMap reached the container as a variable and as a file. The third prints `strongpassword`, decoded, which shows that anyone who can exec into a Pod can read its mounted Secrets. The last command logs in with the password from the Secret and lists `tutorialdb` among the databases, which MySQL created from the ConfigMap value on first start.
+ 1. Set a _name_.
+ 2. Set _Type_ as **Opaque**.
+ 3. Click **+** next to _Data_ and add the secret as a key value pair. For this tutorial, the _Key_ is **SUPERSECRETPASSWORD** and the _Value_ is **c3Ryb25ncGFzc3dvcmQ=**.
 
-**Check your work.** If the Pod reports `CreateContainerConfigError` and stays there, a referenced name or key does not match: compare the Pod's references with the ConfigMap and Secret names and keys. If `mysql` answers `Access denied`, the stored password differs from what you expect, most often because the base64 value was encoded with a trailing newline.
+    ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_18-25.png)
 
-Operator's **Download** action saves the complete object as JSON, and for a Secret that includes its `data`. Treat downloaded Secret files as sensitive.
+ 4. Click **Labels**.
+ 5. Set the same label as used earlier in the ConfigMap.
+ 6. Click outside the window to close it.
 
-## Change a value
+    ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_18-26.png)
 
-1. Return to Designer and change the ConfigMap's `database` value to `otherdb`.
-2. Deploy again. Deploy replaces the ConfigMap in place.
-3. After a minute or two, run the first two commands from the previous phase again.
+### Configure the Pod to use the ConfigMap and Secret
 
-**What just happened.** `cat /etc/app-config/database` now prints `otherdb`, because the kubelet refreshed the mounted file. `printenv MYSQL_DATABASE` still prints `tutorialdb`, because environment variables are fixed when the container starts. MySQL also keeps its existing databases: `MYSQL_DATABASE` applies only to the first initialization. This difference is the main reason to mount configuration that must change at runtime as files.
+Click on the _Pod_ component to load its configuration window. We will set the Secret first and then the ConfigMap. 
 
-Most fields of a running Pod, including its environment variables, cannot be changed in place. When you change the Pod itself, Deploy reports success but the running Pod keeps its old spec. To apply a Pod change, Undeploy and deploy again, or manage the Pod through a Deployment, which replaces Pods when its template changes.
+ 1. Scroll down to _Container_ and expand _Containers-0_.
 
-## Clean up
+    ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_00-42.png)
 
-Run **Undeploy** from the **Actions** menu in Designer. Undeploy deletes each component in the design from the cluster by kind and name: the Pod, the ConfigMap, and the Secret. It removes nothing that the design does not contain, and it deletes any object of the same kind and name in that namespace, whoever created it, which is another reason for unique names on a shared cluster.
+ 2. Scroll down to _Env_. An existing environment variable for the MySQL root password is already set. We will modify this to retrieve the password from the Secret.
+ 3. Expand _Env-0_ and delete the contents of _Value_.
+ 4. Expand _Value From_, expand _Secret Key Ref_ and set the _Key_ to the name of the key in the Secret and the _Name_ to the name of the Secret which in this example is **SUPERSECRETPASSWORD** and **mysql-secret-eb**.
 
-Because the design stores the Secret value, delete the design too if you no longer need it.
+    ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_00-56.png)
 
-## What you learned
+ 5. Next, click **+** next to Env to add a second environment variable. 
 
-- A ConfigMap holds configuration and a Secret holds credentials, both as key-value data. Secret values are base64-encoded, which hides nothing; access control and encryption at rest protect them.
-- A Pod consumes either one through environment variables, fixed at container start, or through mounted files, which update without a restart.
-- References are by name and key and are checked only when the container starts, so a typo shows up as `CreateContainerConfigError`, not as a validation error.
-- Kanvas Validate checks schemas in the browser, Dry Run checks against the cluster without persisting, and Deploy creates or replaces each object. Operator shows a Secret's type but not its values.
+    ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_00-57.png)
 
-## Next steps
+ 6. Expand _Env-1_ and set _Name_ to **MYSQL_DATABASE**.
+ 7. Expand _Value From_, expand _Secret Key Ref_ and set the _Key_ to the name of the key in the ConfigMap and the _Name_ to the name of the ConfigMap which in this example is **CREATEDB** and **mysql-config-map-by**.
 
-- [Schedule Work with CronJobs](/pr-preview/pr-1350/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/) - run a container on a schedule and watch the Jobs and Pods it creates.
-- [Deploy a Design](/pr-preview/pr-1350/kanvas/guides/deploying/deploying-designs/) - the full Validate, Dry Run, Deploy, and Undeploy reference for everyday use.
-- [Operator](/pr-preview/pr-1350/kanvas/concepts/operator/) - how Operator discovers cluster resources and what its views show.
+    ![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_01-00.png)
+
+
+### Validate and Deploy the Design
+
+Click **Actions** and then Select **Validate** to ensure there are no errors. Then, select the **Deploy** tab on the same window and click **Deploy**.
+
+### Verify the Secret and the ConfigMap
+
+Move to the Visualize tab.
+
+Filter to show the resources pod, configmap and secret and use the lables set earlier to display only your resources. In this example, that is _environment:tutorials_.
+
+![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_01-19.png)
+
+Select the Pod (1) and then choose Actions (2) to the right. Click Open Interactive Terminal (3) to open the terminal to the container.
+
+![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_01-25.png)
+
+Run the following command in the terminal to verify that you are able to use the MySQL root password set as secret to login to MySQL. When prompted enter the root password (in plain text), i.e. _strongpassword_ for this tutorial.
+
+`mysql -uroot -p` 
+
+![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_01-27.png)
+
+Run the following MySQL command to verify that the database set as a ConfigMap was indeed created.
+
+`show databases;`
+
+![Configure the ConfigMap](images/kubernetes-configmaps-secrets/2024-04-16_01-29.png)
+
+### Deleting the resources
+
+To delete the resources, use the **Undeploy** option from the _Design_ view.
+
+
+## Conclusion
+Congratulations! You've successfully completed a tutorial on Kubernetes ConfigMaps and Secrets using the Meshery Playground. This hands-on experience should have equipped you with practical knowledge on managing configuration data and sensitive information in Kubernetes. Continue exploring more such scenarios in the Meshery Playground to enhance your skills.
 

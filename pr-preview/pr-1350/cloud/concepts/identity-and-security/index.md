@@ -1,37 +1,43 @@
 # Identity and Security
 
-> How organizations, teams, users, roles, keychains, keys, sessions, and tokens fit together in Layer5 Cloud, where the security boundaries sit, and which page answers each question.
+> Organizations, teams, users, roles, keychains, keys, sessions, and tokens.
 
 
 
-Identity and security in Layer5 Cloud answer two questions for every request: who is acting, and what that person may do in the organization the request runs in. The answer is never decided by one thing. Organization membership, the roles a person holds in that organization, and resources shared with them directly each contribute, and the same person can hold different access in each organization they belong to. This page gives you that mental model and the boundaries it creates. To go straight to a task or a lookup, use [Choose the right page](#choose-the-right-page).
+Organizations are the basic unit of multi-tenancy inside of Layer5 Cloud. The identity structure is flexible: an organization has any number of teams, a team has any number of members, and a user can belong to any number of teams and organizations.
 
-## The building blocks
+Identity and security answer two questions for every request: who is acting, and what that person may do in the organization the request runs in. Organization membership, the roles a person holds in that organization, and resources shared with them directly each contribute. The same person can hold different access in each organization they belong to.
 
-The organization is the unit of multi-tenancy. Everything else either lives inside an organization or is evaluated in the context of one. The structure is flexible: an organization has any number of teams, a team has any number of members, and a user can belong to any number of teams and organizations.
+## Identity
+
+The organization is the unit of multi-tenancy. Teams and workspaces belong to one organization. Users hold roles in it. Roles, keychains, and keys are defined once for the whole deployment, while resources, billing, and access control are isolated per organization.
+
+Layer5 Cloud does not limit how many organizations a person may belong to, and it does not block organization actions by plan.
+
+Outside of grouping users together, teams offer controlled access to workspaces and to workspace resources such as environments and managed and unmanaged connections. Teams do not nest.
+
+Each user account represents an individual collaborator. The account exists beyond the bounds of organizations and belongs to the person, not to any organization. Anyone who uses Layer5 Cloud signs in to a user account. Every action is attributed to that account, regardless of which teams or organizations it belongs to. An account can own resources such as workspaces, designs, connections, and tokens. Layer5 Cloud allows one active account per email address. A person can sign in with a password, GitHub, or Google. See [Users](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/) and [Account Consolidation](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/account-consolidation/).
+
+Joining or leaving an organization changes membership only. The account, and everything it owns outside that organization, stay.
+
+## Organizational Units
+
+Layer5 Cloud uses these units to isolate resources and manage users:
 
 | Unit | What it is | Who administers it |
 |---|---|---|
-| Provider organization | The single top-level organization that operates a Layer5 Cloud deployment. It owns the deployment's default identity providers, which tenant organizations use unless they bring their own. | Provider Admins |
-| Tenant organization | Every other organization: the boundary for resources, billing, and access control. Each is configured as Hosted, Branded, or White-Label. | Its owner, who created it, and its Organization Admins |
+| Provider organization | The single top-level organization that operates a deployment. It owns the deployment's default identity providers, which tenant organizations use unless they bring their own. It is never a child, and its child list is always empty. | Provider Admins |
+| Tenant organization | Every other organization. It is the boundary for resources, billing, and access control. Each is configured as Hosted, Branded, or White-Label. | Its owner, who created it, and its Organization Admins |
 | Child organization | A tenant organization created inside another tenant organization. Nesting has no depth limit. | Its own Organization Admins, plus the Organization Admin or owner of its direct parent |
 | Team | A named group of organization members that receives roles and workspace access together. Teams do not nest. | The team's owner and Team Admins manage membership. Organization Admins create and delete teams. |
 | Workspace | A group of shared resources, such as environments, connections, and designs, inside one organization. Teams are assigned to workspaces. | Organization Admins, Workspace Admins, and Workspace Managers |
-| User | An individual's account. It exists independently of any organization. | The person who owns it. Organization Admins edit the profiles of their members; only a Provider Admin deletes an account. |
+| User | An individual's account. It exists independently of any organization. | The person who owns it. Organization Admins edit the profiles of their members. Only a Provider Admin deletes another person's account. A person can delete their own account. |
 
-Read [Organizations](/pr-preview/pr-1350/cloud/concepts/identity-and-security/organizations/), [Teams](/pr-preview/pr-1350/cloud/concepts/identity-and-security/teams/), and [Workspaces](/pr-preview/pr-1350/cloud/concepts/workspaces/) for the full behavior of each unit.
+Read [Organizations](/pr-preview/pr-1350/cloud/concepts/identity-and-security/organizations/), [Teams](/pr-preview/pr-1350/cloud/concepts/identity-and-security/teams/), and [Workspaces](/pr-preview/pr-1350/cloud/concepts/spaces/workspaces/).
 
-## Users and accounts
+## Role and Access Control
 
-Everyone who uses Layer5 Cloud signs in to a user account. The account is the person's identity on the platform, and it belongs to the person, not to any organization. Every action, such as creating a design or reviewing a deployment request, is attributed to the account that performed it, regardless of which teams or organizations that account belongs to. An account can own resources of its own, including workspaces, designs, connections, and tokens.
-
-Layer5 Cloud allows one active account per email address, and a person can sign in to it with a password, GitHub, or Google. See [Users](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/) and [Account Consolidation](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/account-consolidation/).
-
-Membership and account are separate. Joining or leaving an organization changes membership only; the account and everything it owns outside that organization are unaffected.
-
-## Roles and where they apply
-
-A role is what you assign to a person. Roles are defined once for the whole deployment, but every assignment is scoped: a person holds a role in a particular organization or a particular team. Roles fall into three scopes by who assigns them.
+Access is granted through roles. A role is what you assign to a person. Roles are defined once for the whole deployment, but every assignment is scoped: a person holds a role in a particular organization or a particular team.
 
 | Scope | Roles | Assigned by |
 |---|---|---|
@@ -40,7 +46,11 @@ A role is what you assign to a person. Roles are defined once for the whole depl
 | Team | Team Admin | Team Admins, within their team |
 | None | Anonymous User | Applied automatically to people who use Kanvas without signing in. It cannot be assigned. |
 
+There is no Organization Billing Manager role and no Team Manager role.
+
 Provider Admin passes every permission check, so a Provider Admin can assign any role in any scope. A role held in a team applies across every organization the team is mapped into, not only inside the team. [Roles](/pr-preview/pr-1350/cloud/concepts/identity-and-security/roles/) explains what each role is for, and [Roles and Permissions](/pr-preview/pr-1350/cloud/reference/default-permissions/) lists the keys each one holds.
+
+Creating or changing a role, and adding or removing a keychain on a role, are Provider Admin actions. On hosted Layer5 Cloud an organization cannot create a custom role itself. Self-hosted operators can. A change to a role or keychain applies to every holder of that role, in every organization.
 
 ## How Identity, Access, and Authorization Fit Together
 
@@ -66,51 +76,36 @@ Because identity and authorization are layered, the question "where is the bound
 
 Organizations that share an identity provider, which is typical for the canonical host and for custom subdomains that use the shared provider, sit inside the same authentication boundary. An organization that brings its own identity provider is a distinct authentication boundary, whatever its host is named. See [Identity Services](/pr-preview/pr-1350/cloud/guides/self-hosted/planning/identity-services/) and [Social sign-in on a custom domain](/pr-preview/pr-1350/cloud/guides/self-hosted/white-labeling/#social-sign-in-on-a-custom-domain) for how this plays out on each host type.
 
-## Keys, Keychains, Sessions, and Tokens
+## Key Management and Tokens
 
-Four building blocks carry authorization and authentication.
+Four building blocks carry authorization and authentication. Sessions and tokens carry no permissions of their own. Layer5 Cloud evaluates the user's roles on every request, so a role change takes effect on the next request.
 
-| Building block | What it is | Behavior to know |
-|---|---|---|
-| [Keys](/pr-preview/pr-1350/cloud/concepts/identity-and-security/keys/) | The atomic permission. A key allows one action, such as Create Team. | Every permission check tests a key in the organization of the request. Keys are deployment-wide, and only a Provider Admin changes them. |
-| [Keychains](/pr-preview/pr-1350/cloud/concepts/identity-and-security/keychains/) | A named bundle of keys. Roles include keychains. | A keychain grants nothing on its own. A change to a keychain applies to every holder of every role that includes it, in every organization. |
-| [Sessions](/pr-preview/pr-1350/cloud/concepts/identity-and-security/sessions/) | The credential issued at each sign-in, one per browser, device, or Meshery Server. | A browser session lasts 24 hours by default, and activity does not extend it. It ends on expiry, on Logout from the Sessions tab, or on signing out. |
-| [API tokens](/pr-preview/pr-1350/cloud/concepts/identity-and-security/tokens/) | A credential for scripts, CI/CD pipelines, and Meshery clients. | A token acts as your user account in every organization you belong to, with no scopes. It never expires and stays valid until you delete it. |
+### Keychains
 
-Sessions and tokens carry no permissions of their own. Layer5 Cloud evaluates the user's roles on every request, so role changes take effect on the next request. The [Security Reference](/pr-preview/pr-1350/cloud/reference/security/) lists security keys, lifetimes, and endpoints in one place.
+A keychain is a named bundle of keys. Roles include keychains. A keychain grants nothing on its own. A change to a keychain applies to every holder of every role that includes it, in every organization. Only a Provider Admin changes keychains or which keychains a role includes.
 
-## Choose the right page
+### Keys
 
-| Question | Page | Type |
-|---|---|---|
-| How do I get from sign-up to a working organization? | [Getting Started](/pr-preview/pr-1350/cloud/getting-started/) and [Set Up Your Organization](/pr-preview/pr-1350/cloud/getting-started/setting-up-your-organization/) | Tutorial |
-| What is an organization, who owns it, and how does a request find its organization? | [Organizations](/pr-preview/pr-1350/cloud/concepts/identity-and-security/organizations/) | Explanation |
-| How do teams grant roles and workspace access? | [Teams](/pr-preview/pr-1350/cloud/concepts/identity-and-security/teams/) | Explanation |
-| What is a user account, and what happens when it is deleted? | [Users](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/) | Explanation |
-| Why do my password and social sign-ins reach the same account? | [Account Consolidation](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/account-consolidation/) | Explanation |
-| What is each role for, and who can assign it? | [Roles](/pr-preview/pr-1350/cloud/concepts/identity-and-security/roles/) | Explanation |
-| How do permissions reach a user, and how do I trace a missing one? | [Keys](/pr-preview/pr-1350/cloud/concepts/identity-and-security/keys/) | Explanation |
-| What does a keychain change, and who can change it? | [Keychains](/pr-preview/pr-1350/cloud/concepts/identity-and-security/keychains/) | Explanation |
-| How long does a sign-in last, and what ends it? | [Sessions](/pr-preview/pr-1350/cloud/concepts/identity-and-security/sessions/) | Explanation |
-| How does an API token behave, and how risky is it? | [Tokens](/pr-preview/pr-1350/cloud/concepts/identity-and-security/tokens/) | Explanation |
-| How do I add, create, edit, or remove people in an organization? | [Manage Users](/pr-preview/pr-1350/cloud/guides/organizations/managing-users/) | How-to |
-| How do I bring new people in by invitation? | [Invite Users](/pr-preview/pr-1350/cloud/guides/organizations/inviting-users/) | How-to |
-| How do I approve or deny product access requests? | [Review Access Requests](/pr-preview/pr-1350/cloud/guides/organizations/access-requests/) | How-to |
-| How do I create teams and manage their members? | [Manage Teams](/pr-preview/pr-1350/cloud/guides/organizations/managing-teams/) | How-to |
-| How do I give someone a role or take one away? | [Assign and Manage Roles](/pr-preview/pr-1350/cloud/guides/organizations/managing-roles/) | How-to |
-| How do I create, edit, brand, switch, or delete an organization? | [Manage an Organization](/pr-preview/pr-1350/cloud/guides/organizations/org-management/) | How-to |
-| Which configuration fits my domain and identity provider? | [Organization Configuration Scenarios](/pr-preview/pr-1350/cloud/guides/organizations/configuration-scenarios/) | How-to |
-| How do I create or revoke a token, sign out a session, or build a keychain? | [Security guides](/pr-preview/pr-1350/cloud/guides/security/) | How-to |
-| Which keys does each default role hold? | [Roles and Permissions](/pr-preview/pr-1350/cloud/reference/default-permissions/) | Reference |
-| What are the security keys, lifetimes, cookies, and endpoints? | [Security Reference](/pr-preview/pr-1350/cloud/reference/security/) | Reference |
+A key is the atomic permission. A key allows one action, such as Create Team. Every permission check tests a key in the organization of the request. Keys are deployment-wide, and only a Provider Admin changes them. A role's name grants nothing by itself. Only its keys do.
+
+### Tokens
+
+Two credentials carry a signed-in user:
+
+* **Sessions.** The credential issued at each sign-in, one per browser, device, or Meshery Server. A browser session lasts 24 hours by default, and activity does not extend it. It ends on expiry, on Logout from the Sessions tab, or on signing out.
+* **API tokens.** A credential for scripts, CI/CD pipelines, and Meshery clients. A token acts as your user account in every organization you belong to, with no scopes. It never expires and stays valid until you delete it. A token cannot be limited to one organization or to read-only access. To give automation narrower authority, issue the token from an account whose roles are narrower.
+
+### Need more detail?
+
+See [Roles and Permissions](/pr-preview/pr-1350/cloud/reference/default-permissions/) for the keys held by each default role.
 
 ## Common questions
 
 **Why does one person have different capabilities in two organizations?**
-Roles are assigned per organization, and every check tests the keys the person holds in the organization of the request. Holding Organization Admin in one organization grants nothing in another. See [Roles](/pr-preview/pr-1350/cloud/concepts/identity-and-security/roles/).
+Roles are assigned per organization, and every check tests the keys the person holds in the organization of the request. Holding Organization Admin in one organization grants nothing in another.
 
 **Why is an action refused even though the person holds the role I expected?**
-A role's name grants nothing by itself; only its keys do. Either none of the person's roles holds the key the action requires, or the request ran in a different organization than intended. See [Why checks test keys, not role names](/pr-preview/pr-1350/cloud/concepts/identity-and-security/roles/#why-checks-test-keys-not-role-names) and [Tracing a missing permission](/pr-preview/pr-1350/cloud/concepts/identity-and-security/keys/#tracing-a-missing-permission).
+A role's name grants nothing by itself. Either none of the person's roles holds the key the action requires, or the request ran in a different organization than intended.
 
 **Does a role held in a team apply only inside that team?**
 No. A role held in a team applies across every organization the team is mapped into. See [Teams](/pr-preview/pr-1350/cloud/concepts/identity-and-security/teams/#how-a-team-grants-access).
@@ -119,18 +114,8 @@ No. A role held in a team applies across every organization the team is mapped i
 Yes, when the design is shared with them through a resource-access mapping. The mapping covers that design only and does not make them a member. See [Cross-organization access](/pr-preview/pr-1350/cloud/concepts/identity-and-security/organizations/#cross-organization-access).
 
 **What does removing someone from an organization end?**
-Their membership in the organization, their organization roles, and their membership and roles in that organization's teams. Their account, their memberships in other organizations, and the resources they created remain. See [What removal ends](/pr-preview/pr-1350/cloud/guides/organizations/managing-users/#what-removal-ends).
+Their membership in the organization, their organization roles, and their membership and roles in that organization's teams. Their account, their memberships in other organizations, and the resources they created remain. See [User Management](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/user-management/#what-removal-ends).
 
 **How do I delete someone's account entirely?**
-Account deletion is separate from removal and is a Provider Admin capability. A person can also delete their own account. See [Delete an account](/pr-preview/pr-1350/cloud/guides/organizations/managing-users/#delete-an-account) and [Users](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/).
-
-**Can I limit an API token to one organization or to read-only access?**
-No. A token acts with your full authority in every organization you belong to. To give automation narrower authority, issue the token from an account whose roles are narrower. See [What a token can do](/pr-preview/pr-1350/cloud/concepts/identity-and-security/tokens/#what-a-token-can-do).
-
-**Can my organization create its own custom role on hosted Layer5 Cloud?**
-No. Creating or changing a role is a Provider Admin action, and Layer5 operates that role on hosted Layer5 Cloud. Self-hosted operators can create custom roles. See [Custom roles](/pr-preview/pr-1350/cloud/concepts/identity-and-security/roles/#custom-roles).
-
-## Need more detail?
-
-See [Roles and Permissions](/pr-preview/pr-1350/cloud/reference/default-permissions/) for the complete matrix of keys held by each default role.
+Account deletion is separate from removal. A person deletes their own account. Only a Provider Admin deletes another person's account. See [Users](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/#account-deletion) and [Delete an account](/pr-preview/pr-1350/cloud/concepts/identity-and-security/users/user-management/#delete-an-account).
 
