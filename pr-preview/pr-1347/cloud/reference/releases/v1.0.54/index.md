@@ -1,0 +1,14 @@
+# v1.0.54
+
+date: 2026-05-04
+
+
+
+- fix(connections): tolerate camelCase server metadata + backfill @leecalcote (#5195)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @miacycle
+
+

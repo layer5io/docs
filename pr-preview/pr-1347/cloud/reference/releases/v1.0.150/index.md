@@ -1,0 +1,15 @@
+# v1.0.150
+
+date: 2026-06-23
+
+
+
+- fix(academy): replace dead \Try Again\ with a Report Issue feedback flow @leecalcote (#5566)
+- fix(auth): apply open-org invitation for returning users on custom domains @leecalcote (#5544)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+

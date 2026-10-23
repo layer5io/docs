@@ -1,0 +1,20 @@
+# v0.8.147
+
+date: 2025-02-14
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- add permission for the workspace page @amitamrutiya (#3188)
+- Use Dashboard widgets component from sistent @amitamrutiya (#3186)
+- [Chore]: Bump Sistent v0.14.153 @l5io (#3179)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and MUzairS15
+
+
