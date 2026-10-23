@@ -233,7 +233,8 @@ The check is syntactic. Layer5 Cloud does not resolve the name when you save. Po
 How the domain is used:
 
 - The host of each request, with the protocol and port removed, is compared exactly to organization domains. `cloud.acme.com` and `www.cloud.acme.com` are different hosts.
-- A request that arrives on an organization's domain runs in that organization, ahead of the request header, the saved preference, and the browser session. See [Navigating Organizations](/cloud/guides/organizations/org-management/navigating-organizations/).
+- A request that arrives on an organization's domain runs in that organization or in the requester's own organization beneath it, and its branding always comes from the domain's organization. A saved preference or browser session that names an organization outside the domain organization's tree is ignored on that domain. See [On a custom domain](/cloud/guides/organizations/org-management/#on-a-custom-domain).
+- **Sign-up on the domain.** Each person who signs up on an organization's domain gets their own organization beneath the domain's organization, unless they are a non-member who signs in on the domain through the organization's open invitation, in which case they join through that invitation instead. The new organization comes with a team, a workspace, and the domain organization's branding, and the person is its administrator. Accounts that signed up on a domain before this behavior existed receive one automatically. Members of the domain's organization do not.
 - The deployment's own address, IP addresses, and reserved hosts are never treated as custom domains.
 - Lookups, including misses, are cached for five minutes. Creating, updating, or deleting an organization clears the affected entry on the server that handled the change.
 - Emptying the field removes the assignment.

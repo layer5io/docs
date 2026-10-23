@@ -38,7 +38,7 @@ Layer5 Cloud resolves the organization for each request from these sources, in t
 
 ### 1. Domain (Session Organization)
 
-When you access Layer5 Cloud through a specific domain configured for an organization, that domain wins over every other source, including a selection you make in the switcher. The host is matched exactly, with the protocol and port removed. A sign-in page on that domain shows that organization's branding, uses its identity provider, and applies its open invitation. Resolving by domain does not check membership. Every guarded action still checks the permissions you hold in that organization.
+When you access Layer5 Cloud through a specific domain configured for an organization, the domain's organization supplies the branding, and you work in that organization or in one of the organizations beneath it. A selection you make in the switcher applies on that domain only when it names an organization in that tree that you belong to; a selection outside the tree is ignored there. The host is matched exactly, with the protocol and port removed. A sign-in page on that domain shows that organization's branding, uses its identity provider, and applies its open invitation. Resolving by domain does not check membership. Every guarded action still checks the permissions you hold in that organization. The full resolution order on a custom domain, including the exception for an explicit `X-Current-Orgid` header, is in [On a custom domain](/cloud/guides/organizations/org-management/#on-a-custom-domain).
 
 The deployment's own base host, IP addresses, and the provider's reserved domains are never treated as custom domains. A domain belongs to at most one organization, including deleted organizations. Lookups are cached for five minutes.
 
