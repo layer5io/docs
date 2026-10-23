@@ -171,6 +171,17 @@ Branding applies to the signed-in experience and, on an organization with its ow
 - **Links.** Terms of Service and Privacy Policy accept an `http` or `https` URL, a `mailto:` or `tel:` link, or a root-relative path. Support entries accept the same forms plus plain text without a colon. LinkedIn, X, and YouTube accept an absolute `http` or `https` URL. Layer5 Cloud silently drops a value it considers unsafe, including `javascript:` and `data:` links, instead of rejecting the update. Clearing every link restores the defaults.
 - **Feature carousel.** Whether sign-in pages show the feature carousel. On by default.
 
+#### On your own domain, nothing falls back to the provider
+
+On an organization with its own domain, a branding field you leave empty is hidden. It is never filled with the provider's value. People who sign up or sign in on your domain see only what you set:
+
+- **Pages.** The page title, description, social card, and favicon carry your organization's name, description, and logos, or nothing. The error page lists only your support entries, and leaves out the contact sentence when you have none. Provider content, such as the playground, videos, help center, and badges widgets on the dashboard, is not shown.
+- **Email.** The header shows your logo, or your organization's name when you have not uploaded one. The footer carries only your links. Every link in the message (verification, recovery, invitation, account, and design links) points at your domain.
+- **Sender.** Mail is sent under your organization's name. The sending address stays the shared mail server's until you [bring your own mail server](bring-your-own-mail-server/); sending from your domain needs your own server, and SPF and DMARC pass only when the required DNS records and sender authentication are configured correctly.
+- **Child organizations.** A child organization, such as the one a `child_organization` invitation creates, starts with the branding the invitation selects — the inviting organization's (the default), the provider's, or none — copied at creation; later changes to the source organization's branding do not update it. Separately, when mail is sent for a child organization that has no domain of its own, the nearest ancestor organization that has a domain supplies the name and links the message carries and the host its links point at, along with its theme when the child has not set one of its own. A child organization that set its own theme keeps it.
+
+Fill in every branding field you want people to see: theme colors, all four logos, Terms of Service and Privacy Policy, support entries, and social profiles. A field you leave empty does not appear.
+
 ## Domain
 
 Only a Provider Admin can set a domain to a new value. Any other caller receives a 403 error that says a domain requires a Provider Admin. Clearing the field removes the assignment and is open to the organization's administrators. Keeping the stored value is also open to those administrators.
