@@ -173,7 +173,11 @@ def main():
     except OSError as e:
         print(f"Error: cannot create output directory: {e}", file=sys.stderr)
         sys.exit(1)
-    output_file.write_text('\n'.join(out_lines), encoding='utf-8')
+    try:
+        output_file.write_text('\n'.join(out_lines), encoding='utf-8')
+    except OSError as e:
+        print(f"Error: cannot write output file '{output_file_display}': {e}", file=sys.stderr)
+        sys.exit(1)
     total_lines = sum(1 for _ in output_file.read_text().split('\n'))
     print(f"Done: {total_lines} lines, {file_count} documents written to {output_file_display}")
 
