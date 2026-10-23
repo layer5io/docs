@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.99
+  version: v1.3.100
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -7371,6 +7371,26 @@ paths:
                               type: string
                               format: date-time
                               x-go-type-skip-optional-pointer: true
+                            organizationId:
+                              description: >
+                                The organization the connection belongs to. The server sets it from the session
+                                organization. A client-supplied value is ignored. Optional on this superseded shape,
+                                which live model responses still embed as `registrant` (`additionalProperties: false`,
+                                so the field has to be declared for the server to return it). v1beta3 Connection
+                                requires it. Not marked readOnly: this connection is inlined into `POST
+                                /api/registry/relationships/evaluate` through a component model's registrant, and
+                                readOnly there drops the design field from the generated RTK client.
+                              x-go-name: OrganizationID
+                              x-oapi-codegen-extra-tags:
+                                db: organization_id
+                                json: organizationId,omitempty
+                                yaml: organizationId
+                              x-order: 15
+                              type: string
+                              format: uuid
+                              x-go-type: uuid.UUID
+                              x-go-type-import:
+                                path: github.com/gofrs/uuid
                             environments:
                               type: array
                               description: Associated environments for this connection
@@ -18065,7 +18085,9 @@ paths:
           application/json:
             schema:
               type: object
-              description: Payload for creating or updating a connection
+              description: >
+                Payload for creating or updating a connection. `organizationId` is not a client field. The server
+                assigns it from the session organization.
               properties:
                 id:
                   type: string
@@ -30559,6 +30581,7 @@ paths:
                         - subType
                         - kind
                         - status
+                        - organizationId
                       properties:
                         id:
                           description: Connection ID
@@ -31279,15 +31302,18 @@ paths:
                           x-go-type-skip-optional-pointer: true
                         organizationId:
                           description: >
-                            Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                            registration. Servers implementing this contract use it, with the owner and
-                            `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
-                            organization list and count its connections (for example its registered desktop installs)
-                            without going through each owner. Absent on connections that predate it.
+                            The organization the connection belongs to. The server sets it from the session organization
+                            (`X-Current-Orgid`, or the caller's selected organization when that header is absent) when
+                            the connection is registered, and keeps it on later updates. Never accepted from clients on
+                            connection write payloads. Not marked readOnly: `RegistrantData` inlines this entity into
+                            registry registration requests, and readOnly there drops the connection field from the
+                            generated RTK client. A value sent on that inlined connection is ignored. With the owner and
+                            `metadata.installationId`, it is the deduplication key for `desktop` connections.
+                          x-go-name: OrganizationID
+                          x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: organization_id
-                            json: organizationId,omitempty
-                          x-go-type-skip-optional-pointer: false
+                            json: organizationId
                           x-order: 19
                           type: string
                           format: uuid
@@ -31581,6 +31607,10 @@ paths:
         it is refused with a `409` MeshKit error that names the reserved GitHub App connection identity.
 
 
+        Every connection belongs to exactly one organization. The server assigns `organizationId` from the session
+        (`X-Current-Orgid`, then the caller's selected organization) and does not accept it in the body.
+
+
         Desktop registration uses this shared operation, but kind `desktop` is implemented by Cloud: a server that does
         not support it rejects a `desktop` body with `400`. The heartbeat and deregistration routes are Cloud-only. A
         client desktop app install registers itself on every connect to Cloud, sign-in included, with kind `desktop`,
@@ -31605,8 +31635,10 @@ paths:
         - name: X-Current-Orgid
           in: header
           required: false
-          description: |
-            Organization the connection is registered in. Required for kind `desktop`; ignored for other kinds.
+          description: >
+            Session organization. The server assigns `Connection.organizationId` from this header when it is present,
+            and from the caller's selected organization when it is absent. Kind `desktop` requires the header: a desktop
+            registration without it is refused with 400.
           schema:
             type: string
             format: uuid
@@ -31616,7 +31648,9 @@ paths:
           application/json:
             schema:
               type: object
-              description: Payload for creating or updating a connection
+              description: >
+                Payload for creating or updating a connection. `organizationId` is not a client field. The server
+                assigns it from the session organization.
               properties:
                 id:
                   type: string
@@ -32102,6 +32136,7 @@ paths:
                   - subType
                   - kind
                   - status
+                  - organizationId
                 properties:
                   id:
                     description: Connection ID
@@ -32804,15 +32839,18 @@ paths:
                     x-go-type-skip-optional-pointer: true
                   organizationId:
                     description: >
-                      Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and
-                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
-                      organization list and count its connections (for example its registered desktop installs) without
-                      going through each owner. Absent on connections that predate it.
+                      The organization the connection belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization when that header is absent) when the
+                      connection is registered, and keeps it on later updates. Never accepted from clients on connection
+                      write payloads. Not marked readOnly: `RegistrantData` inlines this entity into registry
+                      registration requests, and readOnly there drops the connection field from the generated RTK
+                      client. A value sent on that inlined connection is ignored. With the owner and
+                      `metadata.installationId`, it is the deduplication key for `desktop` connections.
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: organization_id
-                      json: organizationId,omitempty
-                    x-go-type-skip-optional-pointer: false
+                      json: organizationId
                     x-order: 19
                     type: string
                     format: uuid
@@ -33066,6 +33104,7 @@ paths:
                   - subType
                   - kind
                   - status
+                  - organizationId
                 properties:
                   id:
                     description: Connection ID
@@ -33768,15 +33807,18 @@ paths:
                     x-go-type-skip-optional-pointer: true
                   organizationId:
                     description: >
-                      Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and
-                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
-                      organization list and count its connections (for example its registered desktop installs) without
-                      going through each owner. Absent on connections that predate it.
+                      The organization the connection belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization when that header is absent) when the
+                      connection is registered, and keeps it on later updates. Never accepted from clients on connection
+                      write payloads. Not marked readOnly: `RegistrantData` inlines this entity into registry
+                      registration requests, and readOnly there drops the connection field from the generated RTK
+                      client. A value sent on that inlined connection is ignored. With the owner and
+                      `metadata.installationId`, it is the deduplication key for `desktop` connections.
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: organization_id
-                      json: organizationId,omitempty
-                    x-go-type-skip-optional-pointer: false
+                      json: organizationId
                     x-order: 19
                     type: string
                     format: uuid
@@ -34182,6 +34224,7 @@ paths:
                   - subType
                   - kind
                   - status
+                  - organizationId
                 properties:
                   id:
                     description: Connection ID
@@ -34884,15 +34927,18 @@ paths:
                     x-go-type-skip-optional-pointer: true
                   organizationId:
                     description: >
-                      Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and
-                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
-                      organization list and count its connections (for example its registered desktop installs) without
-                      going through each owner. Absent on connections that predate it.
+                      The organization the connection belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization when that header is absent) when the
+                      connection is registered, and keeps it on later updates. Never accepted from clients on connection
+                      write payloads. Not marked readOnly: `RegistrantData` inlines this entity into registry
+                      registration requests, and readOnly there drops the connection field from the generated RTK
+                      client. A value sent on that inlined connection is ignored. With the owner and
+                      `metadata.installationId`, it is the deduplication key for `desktop` connections.
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: organization_id
-                      json: organizationId,omitempty
-                    x-go-type-skip-optional-pointer: false
+                      json: organizationId
                     x-order: 19
                     type: string
                     format: uuid
@@ -35158,7 +35204,7 @@ paths:
         On the GitHub App connection itself, the server-written metadata keys `installations`, `installationId` and
         `installationsVerifiedAt` are carried forward from the stored row: a client edit can neither set nor erase them
         (other metadata keys are written as sent). Their shape is `GithubConnectionMetadata` in the v1beta3 `github`
-        construct.
+        construct. `organizationId` is not in the body. The server keeps the organization assigned at registration.
       parameters:
         - name: connectionId
           in: path
@@ -35173,7 +35219,9 @@ paths:
           application/json:
             schema:
               type: object
-              description: Payload for creating or updating a connection
+              description: >
+                Payload for creating or updating a connection. `organizationId` is not a client field. The server
+                assigns it from the session organization.
               properties:
                 id:
                   type: string
@@ -35659,6 +35707,7 @@ paths:
                   - subType
                   - kind
                   - status
+                  - organizationId
                 properties:
                   id:
                     description: Connection ID
@@ -36361,15 +36410,18 @@ paths:
                     x-go-type-skip-optional-pointer: true
                   organizationId:
                     description: >
-                      Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and
-                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
-                      organization list and count its connections (for example its registered desktop installs) without
-                      going through each owner. Absent on connections that predate it.
+                      The organization the connection belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization when that header is absent) when the
+                      connection is registered, and keeps it on later updates. Never accepted from clients on connection
+                      write payloads. Not marked readOnly: `RegistrantData` inlines this entity into registry
+                      registration requests, and readOnly there drops the connection field from the generated RTK
+                      client. A value sent on that inlined connection is ignored. With the owner and
+                      `metadata.installationId`, it is the deduplication key for `desktop` connections.
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: organization_id
-                      json: organizationId,omitempty
-                    x-go-type-skip-optional-pointer: false
+                      json: organizationId
                     x-order: 19
                     type: string
                     format: uuid
@@ -36758,10 +36810,10 @@ paths:
       summary: List the organization's desktop connections
       description: >
         Returns every live `desktop` connection in the session organization, whoever registered it, as a summary: `id`,
-        `name`, `kind`, `owner`, `status` and `lastSeenAt` only. Any live member of the organization may read it, so
-        members can see which computers share its work; a guest session cannot. Servers must never include the
-        connection's credential, metadata (beyond `lastSeenAt`), URL or description here: the full connection stays
-        readable only by its owner through `getConnections`. `status` follows the heartbeat rule of
+        `name`, `kind`, `owner`, `status`, `organizationId` and `lastSeenAt` only. Any live member of the organization
+        may read it, so members can see which computers share its work; a guest session cannot. Servers must never
+        include the connection's credential, metadata (beyond `lastSeenAt`), URL or description here: the full
+        connection stays readable only by its owner through `getConnections`. `status` follows the heartbeat rule of
         `recordConnectionHeartbeat` (a desktop connection silent for 3 minutes reads `disconnected`). A caller who is
         not a live member of the session organization receives `404`.
       parameters:
@@ -36824,6 +36876,7 @@ paths:
                         - name
                         - kind
                         - status
+                        - organizationId
                       properties:
                         id:
                           type: string
@@ -36874,6 +36927,21 @@ paths:
                             path: github.com/meshery/schemas/models/core
                             name: core
                           x-order: 6
+                        organizationId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          readOnly: true
+                          x-go-name: OrganizationID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            json: organizationId
+                          x-order: 7
                     x-order: 1
                   totalCount:
                     type: integer
@@ -37006,6 +37074,7 @@ paths:
                   - subType
                   - kind
                   - status
+                  - organizationId
                 properties:
                   id:
                     description: Connection ID
@@ -37708,15 +37777,18 @@ paths:
                     x-go-type-skip-optional-pointer: true
                   organizationId:
                     description: >
-                      Organization the connection is registered in, taken from the `X-Current-Orgid` header on
-                      registration. Servers implementing this contract use it, with the owner and
-                      `metadata.installationId`, as the deduplication key for `desktop` connections. Lets an
-                      organization list and count its connections (for example its registered desktop installs) without
-                      going through each owner. Absent on connections that predate it.
+                      The organization the connection belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization when that header is absent) when the
+                      connection is registered, and keeps it on later updates. Never accepted from clients on connection
+                      write payloads. Not marked readOnly: `RegistrantData` inlines this entity into registry
+                      registration requests, and readOnly there drops the connection field from the generated RTK
+                      client. A value sent on that inlined connection is ignored. With the owner and
+                      `metadata.installationId`, it is the deduplication key for `desktop` connections.
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: organization_id
-                      json: organizationId,omitempty
-                    x-go-type-skip-optional-pointer: false
+                      json: organizationId
                     x-order: 19
                     type: string
                     format: uuid
@@ -40967,7 +41039,12 @@ paths:
                     items:
                       x-go-type: MesheryPattern
                       type: object
-                      description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                      description: >
+                        Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId`
+                        is required and read-only: the server assigns it from the session organization and clients never
+                        send it.
+                      required:
+                        - organizationId
                       properties:
                         id:
                           description: Server-generated design ID.
@@ -41087,6 +41164,23 @@ paths:
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                           x-go-type-skip-optional-pointer: true
+                        organizationId:
+                          description: >
+                            The organization the design belongs to. The server sets it from the session organization
+                            (`X-Current-Orgid`, or the caller's selected organization) on create, including import.
+                            Never accepted from clients. A workspace this design is assigned to must belong to this same
+                            organization.
+                          readOnly: true
+                          x-go-name: OrganizationID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: organization_id
+                            json: organizationId
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
                         user:
                           description: >
                             Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -41862,7 +41956,9 @@ paths:
         - Design_designs
       summary: Save design
       operationId: upsertPattern
-      description: Creates or updates an infrastructure design.
+      description: >
+        Creates or updates an infrastructure design. The server assigns `organizationId` from the session organization;
+        clients do not send it. On update the organization stays the one assigned at create.
       requestBody:
         required: true
         content:
@@ -42053,7 +42149,11 @@ paths:
             application/json:
               schema:
                 type: object
-                description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                description: >
+                  Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId` is
+                  required and read-only: the server assigns it from the session organization and clients never send it.
+                required:
+                  - organizationId
                 properties:
                   id:
                     description: Server-generated design ID.
@@ -42170,6 +42270,23 @@ paths:
                     x-go-type-import:
                       path: github.com/gofrs/uuid
                     x-go-type-skip-optional-pointer: true
+                  organizationId:
+                    description: >
+                      The organization the design belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization) on create, including import. Never
+                      accepted from clients. A workspace this design is assigned to must belong to this same
+                      organization.
+                    readOnly: true
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                      json: organizationId
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   user:
                     description: >
                       Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -43028,7 +43145,11 @@ paths:
             application/json:
               schema:
                 type: object
-                description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                description: >
+                  Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId` is
+                  required and read-only: the server assigns it from the session organization and clients never send it.
+                required:
+                  - organizationId
                 properties:
                   id:
                     description: Server-generated design ID.
@@ -43145,6 +43266,23 @@ paths:
                     x-go-type-import:
                       path: github.com/gofrs/uuid
                     x-go-type-skip-optional-pointer: true
+                  organizationId:
+                    description: >
+                      The organization the design belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization) on create, including import. Never
+                      accepted from clients. A workspace this design is assigned to must belong to this same
+                      organization.
+                    readOnly: true
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                      json: organizationId
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   user:
                     description: >
                       Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -43982,7 +44120,11 @@ paths:
             application/json:
               schema:
                 type: object
-                description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                description: >
+                  Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId` is
+                  required and read-only: the server assigns it from the session organization and clients never send it.
+                required:
+                  - organizationId
                 properties:
                   id:
                     description: Server-generated design ID.
@@ -44099,6 +44241,23 @@ paths:
                     x-go-type-import:
                       path: github.com/gofrs/uuid
                     x-go-type-skip-optional-pointer: true
+                  organizationId:
+                    description: >
+                      The organization the design belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization) on create, including import. Never
+                      accepted from clients. A workspace this design is assigned to must belong to this same
+                      organization.
+                    readOnly: true
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                      json: organizationId
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   user:
                     description: >
                       Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -45034,7 +45193,11 @@ paths:
             application/json:
               schema:
                 type: object
-                description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                description: >
+                  Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId` is
+                  required and read-only: the server assigns it from the session organization and clients never send it.
+                required:
+                  - organizationId
                 properties:
                   id:
                     description: Server-generated design ID.
@@ -45151,6 +45314,23 @@ paths:
                     x-go-type-import:
                       path: github.com/gofrs/uuid
                     x-go-type-skip-optional-pointer: true
+                  organizationId:
+                    description: >
+                      The organization the design belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization) on create, including import. Never
+                      accepted from clients. A workspace this design is assigned to must belong to this same
+                      organization.
+                    readOnly: true
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                      json: organizationId
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   user:
                     description: >
                       Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -46106,7 +46286,11 @@ paths:
             application/json:
               schema:
                 type: object
-                description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                description: >
+                  Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId` is
+                  required and read-only: the server assigns it from the session organization and clients never send it.
+                required:
+                  - organizationId
                 properties:
                   id:
                     description: Server-generated design ID.
@@ -46223,6 +46407,23 @@ paths:
                     x-go-type-import:
                       path: github.com/gofrs/uuid
                     x-go-type-skip-optional-pointer: true
+                  organizationId:
+                    description: >
+                      The organization the design belongs to. The server sets it from the session organization
+                      (`X-Current-Orgid`, or the caller's selected organization) on create, including import. Never
+                      accepted from clients. A workspace this design is assigned to must belong to this same
+                      organization.
+                    readOnly: true
+                    x-go-name: OrganizationID
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                      json: organizationId
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   user:
                     description: >
                       Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -47179,7 +47380,12 @@ paths:
                 minItems: 1
                 items:
                   type: object
-                  description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                  description: >
+                    Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId` is
+                    required and read-only: the server assigns it from the session organization and clients never send
+                    it.
+                  required:
+                    - organizationId
                   properties:
                     id:
                       description: Server-generated design ID.
@@ -47296,6 +47502,23 @@ paths:
                       x-go-type-import:
                         path: github.com/gofrs/uuid
                       x-go-type-skip-optional-pointer: true
+                    organizationId:
+                      description: >
+                        The organization the design belongs to. The server sets it from the session organization
+                        (`X-Current-Orgid`, or the caller's selected organization) on create, including import. Never
+                        accepted from clients. A workspace this design is assigned to must belong to this same
+                        organization.
+                      readOnly: true
+                      x-go-name: OrganizationID
+                      x-go-type-skip-optional-pointer: true
+                      x-oapi-codegen-extra-tags:
+                        db: organization_id
+                        json: organizationId
+                      type: string
+                      format: uuid
+                      x-go-type: uuid.UUID
+                      x-go-type-import:
+                        path: github.com/gofrs/uuid
                     user:
                       description: >
                         Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -48130,7 +48353,12 @@ paths:
                     items:
                       x-go-type: MesheryPattern
                       type: object
-                      description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                      description: >
+                        Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId`
+                        is required and read-only: the server assigns it from the session organization and clients never
+                        send it.
+                      required:
+                        - organizationId
                       properties:
                         id:
                           description: Server-generated design ID.
@@ -48250,6 +48478,23 @@ paths:
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                           x-go-type-skip-optional-pointer: true
+                        organizationId:
+                          description: >
+                            The organization the design belongs to. The server sets it from the session organization
+                            (`X-Current-Orgid`, or the caller's selected organization) on create, including import.
+                            Never accepted from clients. A workspace this design is assigned to must belong to this same
+                            organization.
+                          readOnly: true
+                          x-go-name: OrganizationID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: organization_id
+                            json: organizationId
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
                         user:
                           description: >
                             Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -49147,7 +49392,12 @@ paths:
                       omitted.
                     items:
                       type: object
-                      description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                      description: >
+                        Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId`
+                        is required and read-only: the server assigns it from the session organization and clients never
+                        send it.
+                      required:
+                        - organizationId
                       properties:
                         id:
                           description: Server-generated design ID.
@@ -49267,6 +49517,23 @@ paths:
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                           x-go-type-skip-optional-pointer: true
+                        organizationId:
+                          description: >
+                            The organization the design belongs to. The server sets it from the session organization
+                            (`X-Current-Orgid`, or the caller's selected organization) on create, including import.
+                            Never accepted from clients. A workspace this design is assigned to must belong to this same
+                            organization.
+                          readOnly: true
+                          x-go-name: OrganizationID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: organization_id
+                            json: organizationId
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
                         user:
                           description: >
                             Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -50667,7 +50934,12 @@ paths:
                     type: array
                     items:
                       type: object
-                      description: Server-returned design (pattern) resource as persisted by meshery-cloud.
+                      description: >
+                        Server-returned design (pattern) resource as persisted in `meshery_patterns`. `organizationId`
+                        is required and read-only: the server assigns it from the session organization and clients never
+                        send it.
+                      required:
+                        - organizationId
                       properties:
                         id:
                           description: Server-generated design ID.
@@ -50787,6 +51059,23 @@ paths:
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                           x-go-type-skip-optional-pointer: true
+                        organizationId:
+                          description: >
+                            The organization the design belongs to. The server sets it from the session organization
+                            (`X-Current-Orgid`, or the caller's selected organization) on create, including import.
+                            Never accepted from clients. A workspace this design is assigned to must belong to this same
+                            organization.
+                          readOnly: true
+                          x-go-name: OrganizationID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: organization_id
+                            json: organizationId
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
                         user:
                           description: >
                             Owning user record, joined inline by the catalog list/get handlers when shaping responses.
@@ -68672,6 +68961,7 @@ paths:
                         - subType
                         - kind
                         - status
+                        - organizationId
                       properties:
                         id:
                           type: string
@@ -69405,10 +69695,11 @@ paths:
                           x-go-type: uuid.UUID
                           x-go-type-import:
                             path: github.com/gofrs/uuid
+                          x-go-name: OrganizationID
+                          x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: organization_id
-                            json: organizationId,omitempty
-                          x-go-type-skip-optional-pointer: false
+                            json: organizationId
                           x-order: 19
                         environments:
                           type: array
@@ -80654,6 +80945,23 @@ paths:
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                           x-go-type-skip-optional-pointer: true
+                        organizationId:
+                          description: >
+                            The organization the design belongs to. The server sets it from the session organization.
+                            Never accepted from clients. Optional on this superseded shape, which workspace design lists
+                            still return. v1beta3 MesheryPattern requires it. A client value on the deprecated design
+                            write is ignored. A workspace this design is assigned to must belong to this same
+                            organization.
+                          readOnly: true
+                          x-go-name: OrganizationID
+                          x-oapi-codegen-extra-tags:
+                            db: organization_id
+                            json: organizationId,omitempty
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
                         location:
                           type: object
                           additionalProperties:
@@ -81164,6 +81472,21 @@ paths:
                                                 type: string
                                                 format: date-time
                                                 x-go-type-skip-optional-pointer: true
+                                              organizationId:
+                                                type: string
+                                                format: uuid
+                                                description: >-
+                                                  A Universally Unique Identifier used to uniquely identify entities in
+                                                  Meshery. The UUID core definition is used across different schemas.
+                                                x-go-type: uuid.UUID
+                                                x-go-type-import:
+                                                  path: github.com/gofrs/uuid
+                                                x-go-name: OrganizationID
+                                                x-oapi-codegen-extra-tags:
+                                                  db: organization_id
+                                                  json: organizationId,omitempty
+                                                  yaml: organizationId
+                                                x-order: 15
                                               environments:
                                                 type: array
                                                 description: Associated environments for this connection
