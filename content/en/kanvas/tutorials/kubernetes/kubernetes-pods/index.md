@@ -1,154 +1,164 @@
 ---
-title: Explore Pods
-description: Design, deploy, expose, and inspect a standalone NGINX Pod to learn how a Kanvas component becomes a running Kubernetes object.
-weight: 10
-diataxis: tutorial
+title: Exploring Kubernetes Pods with Meshery
 model: kubernetes
 params:
     kind: pods
 categories: [tutorials]
-tags: [kubernetes, pods, services, operator]
+description: Explore Kubernetes Pods using Meshery in an interactive live cluster environment, through a series of hands-on exercises.
 aliases:
 - /kanvas/tutorials/kubernetes-pods
 ---
 
-In this tutorial you build a single NGINX Pod in Kanvas, deploy it to a live cluster, expose it with a NodePort Service, and inspect the running Pod in Operator: its details, a shell inside its container, and its log stream. A Pod is the smallest unit Kubernetes schedules, and every workload controller you meet later (Deployments, StatefulSets, CronJobs) exists to create and replace Pods. Working with a bare Pod first shows you exactly what those controllers automate.
+### Introduction
 
-The Pod in this tutorial is standalone: no controller watches it, so if it fails or is deleted, nothing recreates it. That trade-off suits learning and does not suit production.
+In this tutorial, we'll learn the fundamentals of Pods, the smallest deployable units in the Kubernetes ecosystem. Using Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to gain practical experience in deploying, managing, and understanding some of the concepts related to Pods.
 
-## What you will learn
+> **_NOTE:_** This tutorial demonstrates stand alone pods, i.e. pods not managed through deployments.
 
-- A Pod wraps one or more containers that share a network address and are scheduled together onto one node.
-- A Kanvas component is a Kubernetes object in design form: its configuration is the object's manifest, and Deploy turns it into a live object.
-- Labels identify objects, and a Service's selector uses labels to find the Pods it sends traffic to.
-- Deploying a design again updates the cluster in place instead of creating duplicates.
-- Operator shows what actually runs in the cluster, which is the ground truth when it differs from the design.
+### Prerequisites
 
-## Before you begin
+- Basic understanding of containerization and Kubernetes concepts.
+- Access to the _Meshery Playground_. If you don't have an account, sign up at [Meshery Playground](https://play.meshery.io/).
 
-- **A cluster-backed environment.** Use Meshery Playground (https://play.meshery.io), a shared live cluster, or a self-hosted Meshery with a connected Kubernetes cluster. Hosted kanvas.new has no cluster actions; Validate, Deploy, and Undeploy there open a prompt to self-host instead.
-- **An environment that holds your cluster's connection.** Deploy targets Meshery environments and the Kubernetes connections assigned to them. See [Environments](https://docs.meshery.io/concepts/logical/environments).
-- **Operator mode for the inspection phases.** Operator reads the cluster through Meshery Operator and MeshSync, which must run in the cluster. Where Operator mode is turned off, its switch is disabled; the deploy summary still confirms each object.
-- **A unique prefix.** Playground is shared with other users. Pick a short prefix, such as your handle, and use it in every name and label. This tutorial uses `alex`.
+### Lab Scenario
 
-You need basic familiarity with containers and Kubernetes manifests. You do not need to write YAML.
+Deploy and explore an NGINX pod in a Kubernetes cluster. Additionally, expose the pod through a service.
 
-## The scenario
+### Objective
 
-You build two objects in one design:
+Learn how to create, manage, and explore _Kubernetes Pods and Services_ within the context of a microservices architecture.
 
-```text
-Service  alex-nginx-np   type NodePort, port 80, selector app=alex-nginx
-    |
-    |  Network relationship (traffic flows from the Service to the Pod)
-    v
-Pod      alex-nginx      label app=alex-nginx
-    +-- container nginx  image nginx:latest, port 80
-```
+### Steps
 
-You deploy the Pod first, inspect it, then add the Service and deploy again.
+#### Access Meshery Playground
 
-## Build the Pod
+- Log in to the [Meshery Playground](https://play.meshery.io) using your credentials. On successful login, you should be at the dashboard. Press the **X** on the _Where do you want to start?_ popup to close it (if required).
+- Click **Explore** in the Cloud Native Playground tile to navigate to _Kanvas_.
 
-1. Create a new design and name it `alex-pods`. Kanvas saves the design automatically as soon as it has a name or a component; there is no Save button.
-2. Add a **Pod** component. The Kubernetes icon in the dock lists every Kubernetes kind, and the component palette search finds it too. The component's configurator opens as soon as the Pod lands on the canvas.
-3. Set the Pod's name to `alex-nginx` and leave the namespace as `default`.
-4. Add one entry to the Pod's containers: name `nginx`, image `nginx:latest`, and a container port of `80`. Containers is a list, so each entry opens in its own form.
-5. In the configurator's **Labels** tab, add the label `app` with the value `alex-nginx`.
+> **_NOTE:_** Kanvas is still in beta.
 
-**What just happened.** The configurator form is generated from the Pod's schema in the Meshery registry, so its fields are the Kubernetes API fields. Required fields carry a red asterisk. Each edit is written to the design after a short pause; Kanvas then checks the changed component against its schema and marks problems beside the field. Those marks are warnings and never block you. The component you built is equivalent to this manifest:
+#### Create a simple stand-alone Pod
 
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: alex-nginx
-  namespace: default
-  labels:
-    app: alex-nginx
-spec:
-  containers:
-    - name: nginx
-      image: nginx:latest
-      ports:
-        - containerPort: 80
-```
+1. In the Kanvas screen, rename the design from _Untitled Design_ to a name of choice. This helps in identifying the design later easily.
+2. Click **Components** tab.
+3. Search for **Pod** in the list of components.
+    ![](images/kubernetes-pods/2024-02-22_18-20.png)
+4. Scroll down, _select and drag_ the **Pod** component from the search results to the design canvas on the right.
+    ![](images/kubernetes-pods/2024-02-22_18-32.png)
+5. You should now have a pod in the design canvas for further configuration. It has a default name assigned to it.
+    Click the pod component to load the configuration modal.
+6. Rename the pod, if necessary.
+    ![](images/kubernetes-pods/2024-02-22_18-35.png)
 
-**Check your work.** The Pod sits on the canvas without a warning badge. If a badge with an error count appears on the component, select it to see each error; it leads to the field that needs attention.
+#### Add a container to the Pod
 
-## Check the design before deploying
+The pod at this stage does not have a container, so we will add one. This is similar to defining the containers in the _spec:_ section of a YAML file. For this hands-on we will make some basic and necessary configurations only.
 
-1. Run **Validate** from the design's **Actions** menu.
-2. Run **Dry Run** from the same menu.
+7. Scroll down within the Pod configuration modal to the Containers section. Click **+** to add a container.
+    ![](images/kubernetes-pods/2024-02-23_11-54.png)
+8. Expand **Containers-0**.
+    ![](images/kubernetes-pods/2024-02-23_11-54_1.png)
+9. Next, fill out some of the required container specifications. Start by entering the container image, we will use _nginx:latest_ for this exercise.
+10. Give the container a name.
+    ![](images/kubernetes-pods/2024-02-23_11-57.png)
+11. Additionally, we will also give it a label. This will server many advantages later in this exercise. To do so, click the label icon on the modal.
+12. Click **+** next to _Labels_.
+13. Set any label of choice. Preferably, give a unique label since the playground is a shared environment.
+    ![](images/kubernetes-pods/2024-02-25_18-18.png)
+14. Click outside to close the modal.
 
-**What just happened.** Validate runs in your browser. It checks each component against its schema and never contacts the cluster, so it cannot catch cluster-side problems such as a missing namespace or a name already in use. Its errors are advisory. Dry Run sends each object to the cluster's API server as a server-side dry run: the API server applies its full validation and admission checks and persists nothing. Dry Run from the Actions menu targets the clusters selected in Meshery's context selector.
+#### Validating and Deploying the Pod
 
-**Check your work.** Validate reports `No validation errors.` and Dry Run reports `No deployment errors.` A Pod without any container fails the dry run with a `Field Value Required` error on the containers field; add the container and run it again.
+The next step in this process is to validate the design, after which we can deploy it.
 
-## Deploy and verify
+To do this, click **Validate** on the top.
+![](images/kubernetes-pods/2024-02-23_19-52.png)
 
-1. Run **Deploy** from the **Actions** menu. The Deploy workflow has five steps: validation, choosing deployment targets, a dry run, a final review, and a summary.
-2. Select the environment that holds your cluster's connection. Selecting an environment targets every Kubernetes connection assigned to it.
-3. Continue past the dry run once it reports no errors, then confirm the deployment.
+This should show a pop-up with details such as the number of components, annotations and errors (if any).
+![](images/kubernetes-pods/2024-02-23_19-54.png)
 
-**What just happened.** Meshery Server turned each component into a Kubernetes object and sent it to every selected cluster. For each object it creates the object, or replaces it in place if an object of that kind and name already exists. It labels every object it applies with `design.meshery.io/id=<design id>` and records the design version and component id as annotations. That label is how Operator finds the objects that came from this design.
+Ensure there are no errors before deploying. To deploy, click the **Deploy** (1) tab in the pop-up modal and then click **Deploy** (2) again.
+![](images/kubernetes-pods/2024-02-23_19-56.png)
 
-**Check your work.** The summary lists `Deployed Pod "alex-nginx"`, and a notification reads `Deployment completed for design 'alex-pods'.` Read the per-object rows, not only the notification: the notification reads "completed" even when individual objects failed, and failures appear only as `Failed to deploy` rows with an error card. If the summary spinner never finishes, the request failed before it reached the cluster, most often because your session expired; reload Kanvas, sign in, and deploy again.
+You should see a few alerts on the bottom right about the deployment.
 
-## Inspect the Pod in Operator
+#### Visualizing the Pod
 
-1. Switch to **Operator**, either with the mode switch or with **Open In Operator** on the deploy summary. With the design open, Operator shows a view scoped to this design: only objects that carry this design's id label.
-2. Select the `alex-nginx` Pod to open its details panel, and switch the panel from **Summary** to **Details** to see every field.
+To view the resources deployed we will use the **Visualize** section of the _Kanvas_. A view is created with necessary filters to show the relevant resources.
 
-**What just happened.** Operator draws the objects that MeshSync reports from the cluster, not the objects in your design. For a Pod, the details panel shows its phase as a status chip, the Pod IP, the host IP of its node, its QoS class, restart count, and each container's image, ports, start time, and image pull policy. The QoS class is `BestEffort` because the container sets no resource requests or limits. The view is a snapshot: Operator loads it when you open a view, change a filter, or change the selected cluster, and it does not update on its own. To see later changes, change a filter or switch back to Operator.
+1.  Click **Visualize** to begin.
+2.  Give the view a name (rename).
+3.  Click the filter icon.
+4.  Choose appropriate filters, for this hands-on choose the label that was set earlier during the pod creation. This helps in showing limited resources in the view.
+    ![](images/kubernetes-pods/2024-02-25_18-22.png)
 
-**Check your work.** The status chip reads `Running`. A `Pending` Pod is not scheduled yet or is still pulling its image; load a fresh snapshot after a few seconds. If it stays `Pending`, the container status shows why, for example an image pull failure caused by a mistyped image name. If the canvas reads `No data available for the current view`, the snapshot found no objects with this design's label: MeshSync has not reported the Pod yet, or the deploy failed. If it reads `No Kubernetes context selected`, select your cluster in Meshery's context selector.
+Click the filter icon again to close. This should show a filtered view with only your resources something similar to the screenshot below:
+![](images/kubernetes-pods/2024-02-25_18-25.png)
 
-## Open a shell and stream logs
+#### Pod state and information
 
-1. Start a terminal on the Pod with **Initiate Terminal Session**, which is in the Pod's right-click menu and in the details panel header. A terminal panel opens with one tab per container in the Pod.
-2. Run `hostname`. It prints `alex-nginx`, because a Pod's name is the hostname of its containers.
-3. Run `cat /usr/share/nginx/html/index.html` to read the page NGINX serves.
-4. Start a log stream on the same Pod with **Initiate Log Session**. A log tab opens in the same panel.
+Select the **Details** tab and select the pod from the view to view details about the pod.
+The details tab shows the following:
 
-**What just happened.** Kanvas asks MeshSync, inside the cluster, to open `/bin/sh` in the container through the Kubernetes exec API, the same mechanism `kubectl exec` uses. The shell runs with MeshSync's cluster permissions. The terminal sends each line when you press Enter and `Ctrl+C` sends an interrupt, so line-based commands work and full-screen programs such as `vim`, `top`, and `less` do not. Images without `/bin/sh`, such as distroless images, cannot open a shell.
+- Pod state, a green check means **running**.
+- The namespace where the pod is running.
+- Image details of the container in the pod like image tag and name.
+- It also shows the number of restarts and uptime.
 
-The log tab shows the last 1,000 lines from every container in the Pod and then follows new output. Each line starts with `[alex-nginx:nginx]` and a Kubernetes timestamp; stdout and stderr are combined. NGINX's container entrypoint writes its startup messages here. Closing the panel hides it without ending the sessions; the trash icon on a tab ends that session.
+![](images/kubernetes-pods/2024-02-25_17-38.png)
 
-**Check your work.** The shell prints the Pod name and the HTML page. If the terminal tab stays blank, the session did not start, and Kanvas does not display the reason. The usual causes are a container without `/bin/sh`, a Pod that is not `Running`, or MeshSync not connected. When a Pod is deleted, its log stream stops without a notice.
+#### Connecting to the Pods / containers
 
-## Expose the Pod with a NodePort Service
+Meshery Playground provides terminal capabilities to connect to the container(s) and stream logs. The following steps demonstrate this.
 
-1. Switch back to **Designer** and add a **Service** component named `alex-nginx-np`.
-2. Set the Service type to `NodePort` and add one port with port `80` and target port `80`. Leave the node port empty so Kubernetes assigns a free one from the node port range (30000 to 32767 by default). On a shared cluster, a fixed node port that someone else holds fails the dry run.
-3. Set the Service's selector to `app: alex-nginx`, the same label the Pod carries.
-4. Draw a **Network** relationship from the Service to the Pod. Edge handles appear when you hover a component; choose the network option and drag to the Pod. Compatible targets show a green outline while you drag, and releasing anywhere else creates nothing.
-5. Run **Deploy** again with the same environment.
+1.  Select the **Pod** (or container). If you have multiple containers in a pod, select a container.
+2.  Select the **Actions** tab to the right.
+3.  Click **Open Interactive Terminal**.
+    ![](images/kubernetes-pods/2024-02-28_11-05.png)
+    This displays the terminal on the screen.
+    ![](images/kubernetes-pods/2024-02-28_11-10.png)
+4.  To view streaming logs, click **Stream Container Logs** to the right and an additional logs view is added to the terminal window.
+    ![](images/kubernetes-pods/2024-02-28_11-11.png)
 
-**What just happened.** Kubernetes routes Service traffic by the selector alone: every `Running` Pod whose labels match the selector becomes a backend of the Service. The Network relationship records the same connection in the design so that readers of the diagram see where traffic flows, and its edge shows the port values it reads from both components. Kanvas evaluates relationships after every change, and a relationship's registry definition can copy designated fields from one component to the other. The selector you set is what Kubernetes acts on, so confirm it in the Service's configurator after you draw the edge.
+#### Exposing a Pod with a Service
 
-Deploying the same design again creates objects that are missing and replaces objects that already exist. The Service is created; the Pod is submitted unchanged and keeps running. Kubernetes treats almost every field of a running Pod as immutable, so changing a Pod beyond its container image means deleting it and creating it again, one of the reasons real workloads use Deployments.
+> **_NOTE:_** As of this writing, Meshery Playground supports only NodePort at the moment.
 
-**Check your work.** The summary lists `Deployed Service "alex-nginx-np"`. Switch to Operator and select the Service. Its details show the service type `NodePort`, a cluster IP, the selector `app=alex-nginx`, and, under its connections, the ports including the node port Kubernetes assigned. The Service is reachable at `http://<node IP>:<node port>` from any machine that can reach the node; the Pod's host IP is one such node address. In Playground, node IPs are often not reachable from your browser. The assigned node port still confirms that Kubernetes exposed the Pod.
+1.  Go back to the _Design_ view.
+2.  From **Components** search for _service_ and the drag the service component to the design canvas.
+3.  Click the _service_ component to load the configuration modal.
+    ![](images/kubernetes-pods/2024-02-28_11-33.png)
+4.  Rename it if required.
+5.  Change _Type_ to **NodePort** for this tutorial.
+    ![](images/kubernetes-pods/2024-02-28_11-35.png)
+6.  Click **+** to add a Port.
+7.  Expand the **Ports-0** service port to make changes.
+    ![](images/kubernetes-pods/2024-02-28_11-37.png)
+8.  For this tutorial we set the **Target Port** value to 80.
+9.  We also set the **Port** value to 80.
+    ![](images/kubernetes-pods/2024-02-28_11-45.png)
+10. Click **+** next to Selector and add the key value pair **app:9870**. This is the same pair that is used as label in the Pod.
+    ![](images/kubernetes-pods/2024-02-28_11-48.png)
+11. Finally label this service too, with the same key value pair. This also helps in filtering resources specific to us in the Visualize screen.
+    ![](images/kubernetes-pods/2024-02-28_11-53.png)
+12. Move your mouse over the service component until you see the green dots on all four sides. Move your mouse over one of the green dots to reveal an arrow, then click the arrow. Select **Network** option, and then move your mouse to the pod to create the _relationship_. It should look similar to the screenshot below:
+    ![](images/kubernetes-pods/2024-02-29_20-37.png)
+13. Validate the design. Click **Validate** from the top menu to do so.
 
-## Clean up
+#### Updating the deployment
 
-Run **Undeploy** from the **Actions** menu and select the same environment. The Undeploy workflow has the same five steps as Deploy, and its dry run checks the deletions.
+In order to apply the updated design (which contains a service now), we must undeploy and deploy the design.
 
-Undeploy deletes each component's object by kind, name, and namespace: here, the Pod and the Service. It matches by name, not by the design label, so an object with the same kind, name, and namespace that someone else created is deleted too. That is another reason to use unique names on a shared cluster. Namespaces are removed only when the design contains a Namespace component. If an object is already gone, the dry-run step reports it as not found; select the bypass option to continue, because the real undeploy ignores missing objects.
+- Select **Undeploy** and click **Undeploy** again.
+- To deploy the updated components, select **Deploy** and click **Deploy**.
 
-The design itself stays in your account. Delete it from the design's file menu if you no longer need it. Deleting a design never removes objects from a cluster, so undeploy first.
+#### Deleting and Recreating Pods
 
-## What you learned
+To delete the resources such as Pods, use the **Undeploy** option from the _Design_ view.
 
-- A Pod is one or more containers that share a hostname and network address. A standalone Pod has no controller, so nothing replaces it.
-- Each Kanvas component maps to one Kubernetes object, and its configurator edits that object's manifest.
-- Validate checks schemas in the browser; Dry Run asks the cluster's API server; Deploy creates or replaces each object and labels it with the design id.
-- A Service finds its Pods by label selector. The Network relationship documents the connection in the design.
-- Operator shows a snapshot of what runs in the cluster, and it is where you open a shell and stream logs.
+To recreate, use the **Deploy** option.
 
-## Next steps
+### Conclusion
 
-- Continue with [Explore Deployments]({{< ref "kanvas/tutorials/kubernetes/kubernetes-deployments/index.md" >}}) to let a controller manage your Pods.
-- Read [Deploying designs]({{< ref "kanvas/guides/deploying/deploying-designs/index.md" >}}) for every option in the Deploy workflow.
-- Read [Operator]({{< ref "kanvas/concepts/operator/index.md" >}}) to understand how Operator sees a cluster, and [Interactive terminal]({{< ref "kanvas/guides/operating/interactive-terminal/index.md" >}}) and [Log streaming]({{< ref "kanvas/guides/operating/log-streaming/index.md" >}}) for the full session behavior.
+Congratulations! You've successfully completed the lab on exploring Kubernetes Pods using Meshery Playground. This hands-on experience should have provided valuable insights into the deployment, management, and interaction with Pods in a Kubernetes environment. Continue exploring more scenarios in the Meshery Playground to enhance your skills.
+

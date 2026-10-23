@@ -2,8 +2,7 @@
 title: Bring Your Own Mail Server
 description: >
     Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
-weight: 10
-diataxis: how-to
+weight: 3
 categories: [identity]
 tags: [orgs, email, white-labeling]
 ---
@@ -15,7 +14,7 @@ The **Email** tab of Edit Organization changes that. Your Organization registers
 This guide walks an Organization Administrator through configuring it, proving the domain, testing the connection, and reading the delivery health it reports afterwards. It then gives a worked example for each provider the tab offers a preset for: [Google Workspace](#google-workspace), [Microsoft 365](#microsoft-365), [Amazon SES](#amazon-ses), [SendGrid](#sendgrid), [Postmark](#postmark), and [any other provider](#any-other-provider).
 
 {{< alert title="Who can configure this" type="info" >}}
-Organization Administrators and Owners can configure, test, turn on, turn off, and remove their Organization's mail server. The same gate applies to the [Identity Providers tab]({{< ref "cloud/guides/organizations/org-management/_index.md#configuring-identity-providers-bring-your-own-credentials" >}}).
+Organization Administrators and Owners can configure, test, turn on, turn off, and remove their Organization's mail server. The same gate applies to the [Identity Providers tab](/cloud/guides/organizations/org-management/#configuring-identity-providers-bring-your-own-credentials).
 {{< /alert >}}
 
 ## What You Will Need
@@ -117,7 +116,7 @@ The **Test connection** control in the **Delivery health** panel runs the connec
 Understand exactly what the test does. It opens a connection to your server, negotiates the encryption mode you chose, greets the server, presents your username and password, and hangs up. It proves that the server accepts the connection and the credentials, and nothing more. **It sends no message.** There is no recipient to choose, because none is used. On success the tab reports "The mail server accepted the connection. No test message was sent."
 
 {{< alert title="What a passing test does not prove" type="warning" >}}
-Because the test hangs up before naming a sender or a recipient, it cannot detect a server that accepts your credentials but refuses to send as your from address. Google's Gmail SMTP server is the common case: in practice it accepts the login and then sends from the signed-in account's address instead. A passing test followed by mail arriving from the wrong address is that situation, and the fix is on the provider's side. See [Google Workspace](#google-workspace).
+Because the test hangs up before naming a sender or a recipient, it cannot detect a server that accepts your credentials but refuses to send as your from address. Google's Gmail SMTP server is the common case: in practice it accepts the login and then sends from the signed-in account's address instead. A passing test followed by mail arriving from the wrong address is that situation, and the fix is on the provider's side. See [Google Workspace](/cloud/guides/organizations/org-management/bring-your-own-mail-server/#google-workspace).
 {{< /alert >}}
 
 A passing test is a prerequisite for turning the server on, and it stamps **Last success** in the **Delivery health** panel. A failing test names the stage that refused the connection; use [Troubleshooting](#troubleshooting) to act on it.

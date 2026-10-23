@@ -1,38 +1,21 @@
 ---
-title: Start from a Catalog Design
-description: Browse the public catalog, try a design in the Meshery Playground, and clone it into your own workspace as a private copy.
-weight: 30
-diataxis: tutorial
+title: Creating a Design from Meshery Catalog Templates
+description: With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog. 
+weight: 2
 aliases:
   - /cloud/getting-started/creating-a-design-from-templete.md/
 ---
 
-The fastest way to a working design is to start from one someone has already published. The [catalog](https://cloud.layer5.io/catalog) is a public collection of designs for cloud native infrastructure. In this tutorial you browse it, try a design without changing anything, and then clone it. You finish with your own private copy in your workspace and a clear picture of what a clone is and what it is not.
+The [catalog](https://cloud.layer5.io/catalog) is a public collection of designs for cloud native infrastructure. Browsing it needs no account. Cloning does. This page walks through finding a design, trying it without changing anything, and cloning it into your workspace as a private copy.
 
-## Before you begin
+##  Cloning a design from a template in the Meshery Catalog
 
-- Browsing the catalog needs no account. Cloning does: if you do not have one, follow [Create Your Layer5 Account]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md" >}}).
-- Cloning needs the Clone Design permission. The table shows which built-in roles hold it:
+Cloning needs the Clone Design permission. These built-in roles hold it, and they also hold View Designs: the User role, Team Admin, Workspace Admin, Organization Admin, and Provider Admin. If your role lacks Clone Design, the clone action is shown disabled.
 
-{{< keys-matrix caption="Catalog permissions" functions="Clone Design|View Designs" >}}
-
-## 1. Browse the catalog
-
-Open the [catalog](https://cloud.layer5.io/catalog) and search by technology or type. Sort by **Most Cloned** or **Most Downloaded** to see what other people rely on most. Each design card shows a summary, and opening a design shows its full details. You can also download a design to work with it outside Layer5 Cloud.
-
-## 2. Try a design in the Playground
-
-Before you commit to a copy, open the design in the Playground. **Open in Playground** opens the design in a new browser tab in Kanvas on the [Meshery Playground](https://playground.meshery.io/), loaded straight from the catalog. Nothing is cloned and nothing lands in your workspace, so this is the safe way to explore a design.
-
-## 3. Choose where the copy will go
-
-A clone lands in the workspace you have selected, in the organization you have selected. Pick both before you clone, for example **My Workspace** in **My Organization**.
-
-You must have one specific organization selected. Cloning in the all-organizations scope is refused.
-
-## 4. Clone the design
-
-Clone the design from its catalog entry. If your role lacks the Clone Design permission, the clone action is shown disabled.
+1. Open the [catalog](https://cloud.layer5.io/catalog). You can do this before you have an account. To clone, sign in to [Layer5 Cloud](https://cloud.layer5.io) first. If you do not have an account, follow [Setting up a Layer5 account]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md" >}}).
+2. Search by technology or type. Sort by **Most Cloned** or **Most Downloaded** to see what other people rely on most. Each design card shows a summary. Opening a design shows its full details. You can also download a design to work with it outside Layer5 Cloud.
+3. Pick the organization and the workspace the copy should land in, for example **My Workspace** in **My Organization**. A clone lands in the workspace you have selected, in the organization you have selected. You must have one specific organization selected. Cloning in the all-organizations scope is refused.
+4. Clone the design from its catalog entry.
 
 Layer5 Cloud then creates your copy:
 
@@ -46,7 +29,13 @@ Layer5 Cloud then creates your copy:
 
 Cloning also counts toward the original: Layer5 Cloud records a clone event on the original design, which feeds the catalog's **Most Cloned** sort and the catalog leaderboard. If this is the first design you own, your profile earns the first-design badge.
 
-### When cloning is refused
+You can also publish your own design to the catalog.
+
+## Open a design in the Playground
+
+Before you commit to a copy, open the design in the Playground. **Open in Playground** opens the design in a new browser tab in Kanvas on the [Meshery Playground](https://playground.meshery.io/), loaded straight from the catalog. Nothing is cloned and nothing lands in your workspace.
+
+## When cloning is refused
 
 | Situation | Result |
 |---|---|
@@ -57,14 +46,8 @@ Cloning also counts toward the original: Layer5 Cloud records a clone event on t
 
 ## What a clone is
 
-A clone is a separate, private design that you own. It starts from the original's content and lives in your workspace, where you work on it like any other design you own. Opening a design in the Playground, by contrast, creates nothing in your account: it is a preview.
-
-## Check your result
+A clone is a separate, private design that you own. It starts from the original's content and lives in your workspace, where you work on it like any other design you own. Opening a design in the Playground creates nothing in your account.
 
 Your copy is ready when a design named after the original with " (Copy)" appended appears in the workspace you selected, owned by you and private.
 
-## Next steps
-
-- [Kanvas]({{< ref "kanvas/_index.md" >}}): design and edit infrastructure visually.
-- [Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}): how the catalog works.
-- [Set Up Your Organization]({{< ref "cloud/getting-started/setting-up-your-organization.md" >}}): move your copy into a workspace your team shares.
+To move that copy into a workspace your team shares, follow [Set up your organization]({{< ref "cloud/getting-started/_index.md#set-up-your-organization" >}}). To edit it, open [Kanvas]({{< ref "kanvas/_index.md" >}}). How the catalog publishes and lists designs is covered in [Catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}).

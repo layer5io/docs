@@ -106,6 +106,24 @@ description = "Product Documentation"
   taxonomy = ["HTML", "RSS", "md"]
   term = ["HTML", "RSS", "md"]
 
+  [outputFormats.llms]
+    baseName       = "llms"
+    mediaType      = "text/plain"
+    isPlainText    = true
+    notAlternative = true
+
+  [outputFormats.llmsfull]
+    baseName       = "llms-full"
+    mediaType      = "text/plain"
+    isPlainText    = true
+    notAlternative = true
+
+  [outputFormats.md]
+    baseName       = "index"
+    mediaType      = "text/markdown"
+    isPlainText    = true
+    notAlternative = true
+
 [sitemap]
   changefreq = "daily"
   priority = 0.5
@@ -365,9 +383,6 @@ enable = false
     source = "charts"
     target = "static/charts"
 
-  [[module.imports]]
-    path = "github.com/gethugothemes/hugo-modules/llms-txt"
-
 [params.llms]
   generate_llms_txt = true
   generate_llms_full_txt = true
@@ -376,3 +391,4 @@ enable = false
   # Implemented by the local overrides layouts/index.llms and layouts/index.llmsfull.
   [params.llms.limit_sections]
     "/kanvas/reference/releases/" = 5
+    "/cloud/reference/releases/" = 5
