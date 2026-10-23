@@ -6,8 +6,6 @@ weight: 1
 categories: [security]
 tags: [permissions]
 draft: true
-aliases:
-  - /cloud/security/roles/provider-admin-roles/
 
 ---
 
@@ -33,7 +31,7 @@ aliases:
 
 **How many instances of these roles?**
 
-- Min: 1, Max: many (based on plan)
+- Any number, on every plan. Layer5 Cloud does not guard the last Provider Admin. A Provider Admin can remove the role from every Provider Admin, themselves included. Only a Provider Admin assigns or removes provider roles (Provider Admin, Kanvas, and Curator). Kanvas is granted automatically at sign-up and holds no keychains. Curator holds no keychains in a default install.
 
 **Who can remove assignment of this role?**
 

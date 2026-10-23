@@ -10,9 +10,10 @@ Zara Osei is the Team Admin for Orbital Labs' Infrastructure Team. Her mandate: 
 
 ## Prerequisites
 
-- Access to the `orbital-production` workspace in Orbital Labs
-- The `prod-gcp` environment configured with active connections for GKE, Cloud SQL, Cloud Storage, and Cloud Pub/Sub
-- Designer or higher permission on the `orbital-production` workspace
+- A Kanvas account and access to the `orbital-production` workspace in Orbital Labs
+- No cluster and no GCP account. This tutorial only draws and shares a design.
+
+Kanvas stores no environment on a design. Zara does not attach `prod-gcp`, and the canvas does not overlay connection status or a live cluster version onto components. Environments are chosen when someone deploys: the Deploy stepper asks which environments to target and deploys to the Kubernetes connections assigned to them. This tutorial does not deploy.
 
 ## Tutorial
 
@@ -38,47 +39,41 @@ She arranges them left-to-right to mirror the data flow direction, which makes t
 
 Zara switches to **edge mode** and draws the connections that define how data moves:
 
-1. An edge from **events-ingest** (Pub/Sub) to **stream-processor** (Dataflow) — representing the subscription pull
-2. An edge from **stream-processor** to **analytics-store** (BigQuery) — the primary write path for processed records
-3. A second edge from **stream-processor** to **raw-archive** (Cloud Storage) — the archive branch for raw payloads
-4. An edge from **pipeline-cluster** (GKE) to **stream-processor** — indicating that the Dataflow worker pool runs inside the GKE cluster
+1. An edge from **events-ingest** (Pub/Sub) to **stream-processor** (Dataflow), representing the subscription pull
+2. An edge from **stream-processor** to **analytics-store** (BigQuery), the primary write path for processed records
+3. A second edge from **stream-processor** to **raw-archive** (Cloud Storage), the archive branch for raw payloads
+4. An edge from **pipeline-cluster** (GKE) to **stream-processor**, indicating that the Dataflow worker pool runs inside the GKE cluster
 
-She annotates the Pub/Sub → Dataflow edge with the label `subscription-pull` so reviewers immediately understand the consumption pattern.
+She labels the Pub/Sub to Dataflow edge `subscription-pull` so reviewers immediately understand the consumption pattern.
 
-### Step 4: Attach the prod-gcp environment
+A line is a registry relationship only when the edge menu offers one between those two components. A registry relationship is part of the model: Kanvas can write values from one component's configuration into the other's. If the menu offers nothing that connects the pair, document the flow with the Pen tool. An annotation line is saved with the design and seen by collaborators, but it changes no configuration and is never deployed.
 
-With the topology drawn, Zara needs to bind the design to live infrastructure connections so that Kanvas can resolve the GKE cluster reference and flag configuration mismatches.
+### Step 4: Leave the design unbound from an environment
 
-She opens **Design Settings → Environments**, selects `prod-gcp` from the dropdown, and saves. The `prod-gcp` environment carries active connections for GKE, Cloud SQL, Cloud Storage, and Pub/Sub — once attached, Kanvas overlays connection status indicators on each bound component, and the `pipeline-cluster` node immediately shows its live cluster version.
+With the topology drawn, Zara does not open Design Settings to attach `prod-gcp`. Kanvas has no environment stored on the design, so there is no connection-status overlay and `pipeline-cluster` does not show a live cluster version. The design can later be deployed to more than one environment without changing the drawing.
 
-### Step 5: Apply tagset labels
+### Step 5: Add labels
 
-Zara uses Kanvas tagsets to group components by architectural layer, which makes it easy for teammates to filter the diagram by concern:
+Zara adds labels so teammates can see which architectural layer each component belongs to:
 
-- She selects **events-ingest** and applies the tag `ingestion-layer`
-- She selects **stream-processor** and applies `processing-layer`
-- She selects **analytics-store** and **raw-archive** and applies `storage-layer` to both
-- She selects **pipeline-cluster** and applies `compute-layer`
+- She selects **events-ingest** and sets the label `ingestion-layer`
+- She selects **stream-processor** and sets `processing-layer`
+- She selects **analytics-store** and **raw-archive** and sets `storage-layer` on both
+- She selects **pipeline-cluster** and sets `compute-layer`
 
-Tags are visible in the component inspector panel and can be used as filter criteria when viewing the design in summary or list mode.
+A label is data on the component. It is not a TagSet, and Designer does not filter the canvas by label. A TagSet is a shaded region Kanvas draws on its own when a registry relationship defines a label match for those components. Zara cannot draw a TagSet, and many models define none. Labels stay visible in the component configurator.
 
 ### Step 6: Validate the design
 
-Before sharing, Zara runs **Validate Design** from the toolbar. Kanvas checks each component for:
+Before sharing, Zara runs **Validate** from the toolbar. Validate runs in the browser against each component's schema. It checks configuration only. It skips annotation objects such as Pen lines, and it does not check relationships, edges, namespaces, or any environment binding.
 
-- Required fields that are empty (e.g., a GKE cluster with no node pool configuration)
-- Dangling edges — connections that reference a component that no longer exists
-- Environment binding gaps — components that reference a connection type not present in the attached environment
+The report lists each component that has errors. With no errors it reads "No validation errors." A missing required field is a warning. Warnings never block saving or sharing. A clean report means every component's configuration matches its schema. It does not mean the pipeline would deploy.
 
-The validator returns one warning: the `pipeline-cluster` GKE component has no node pool defined. Zara adds a default node pool configuration inline and re-runs validation. It passes cleanly.
+### Step 7: Share with Five
 
-### Step 7: Save and share with Five
+With validation passing, Zara opens **Share**. Share is available once the design has components. She searches for Five by name or email and adds him. A share is a grant to one named user. It carries no permission level: there is no view-and-comment option, and the canvas is not read-only for him. Share only with people who should be able to edit. Five can open the design, change it, and leave comments. Comments are Comment components stored in the design, so the thread is saved with the design.
 
-With validation passing, Zara opens the **Share** panel. She searches for Five (her Orbital Labs teammate with Platform Engineer access) and grants him **view + comment** permissions. She adds a note: "First pass on the pipeline topology — please flag anything that looks off before I wire up the Dataflow job config."
-
-Five receives an in-app notification. When he opens the design, he can see all five components and their connections, inspect the `prod-gcp` environment bindings, and leave threaded comments — but the canvas is read-only for him until Zara promotes his permission to editor.
-
-The `data-pipeline-gcp` design is now live in `orbital-production`, connected to real infrastructure, and ready for collaborative review.
+The `data-pipeline-gcp` design is now in `orbital-production` and ready for collaborative review. It is not connected to live infrastructure.
 
 {{< alert type="info" >}}
 Meet Zara and the rest of the team at [Meet Five and the Cast]({{< ref "cloud/getting-started/meet-five/_index.md" >}}).

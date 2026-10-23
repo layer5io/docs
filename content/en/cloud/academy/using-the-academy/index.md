@@ -71,7 +71,9 @@ The content detail page gives you a full overview of what you'll learn. To start
 
 **Why enroll?**
 
-Enrolling is a key step because it allows the Academy to track your progress. Once enrolled, the system will remember where you left off, mark your completed content, and save your quiz results, so you can always pick up right where you were.
+Enrolling is a key step because it allows the Academy to track your progress. Once enrolled, the system records the item you are on, the items you have completed, your quiz grades, and your time spent, so you resume where you left off. Every piece of content you have enrolled in appears in **My Academy**. Browsing the catalog needs no account. Enrolling does.
+
+If the content's organization attached an invitation to it, enrolling also accepts that invitation and adds you to the team the invitation grants. Your registration then moves through `Registered`, `In Progress`, `Completed`, `Failed`, and `Withdrawn`. `Completed` means you passed the final test. `Withdrawn` means you or an instructor withdrew the registration.
 
 ### The Learning Interface
 
@@ -97,9 +99,13 @@ Assessments are an integral part of the learning process, designed to reinforce 
 
 ### How to Take a Quiz
 
-By default, assessments in a Learning Path are mandatory. This creates a structured progression where you must pass the assessment for one section (like a Course) before unlocking the next. Passing an assessment marks that section as complete.
+You can open any course from the outline at any time. A test marked final is what completes the content. Other tests are practice: passing them is not required to finish. A test can also require specific items first. If a prerequisite is missing from your completed items, the test does not start and reports `Prerequisites not completed`.
 
-Some assessments may be marked as **Optional**. You can take these for extra practice, but you are not required to pass them to advance. 
+Some assessments may be marked as **Optional**. You can take these for extra practice, but you are not required to pass them to advance.
+
+Every time you start a test, you begin a new attempt. If the test sets `maxAttempts`, you cannot start another attempt past that limit, and the Academy reports `Maximum attempts reached for this test`. A test with no maximum allows unlimited attempts. Starting an attempt counts whether or not you submit it. Tests can draw from a question bank larger than one sitting. Each attempt serves the next set of questions, wrapping back to the start, so a retake usually shows different questions.
+
+If the test sets a time limit, the attempt expires that many minutes after it starts. A submission after expiry is rejected with `Test submission has expired`. Each attempt is submitted once. A second submission of the same attempt is rejected. Unanswered questions score zero. Your percentage is your score divided by the test's total marks, and you pass when that percentage meets or exceeds the pass percentage. Scoring happens on the server when you submit. 
 
 ### Answering Questions and Scoring
 
@@ -113,7 +119,7 @@ If you're ever unsure about a concept, you can always use the Back button to rev
 
 **Scoring Rules:**
 
-- **Single-Answer**: You receive full marks for selecting the one correct option.
+- **Single-Answer**: You receive full marks only when you select exactly one option and it is the correct one.
 
 ![Single Answer Question Example](./images/q-single-answer.png)
 
@@ -121,7 +127,7 @@ If you're ever unsure about a concept, you can always use the Back button to rev
 
 ![Multiple Answer Question Example](./images/q-multi-answer.png)
 
-- **Short-Answer**: Your answer is compared case-insensitively, and extra spaces at the beginning or end are ignored.
+- **Short-Answer**: Your answer must match the expected answer exactly, ignoring letter case and leading or trailing spaces. A blank answer is wrong. There is no case-sensitive mode.
 
 ![Short Answer Question Example](./images/q-short-answer.png)
 
@@ -149,7 +155,7 @@ Your enrollment status - `Registered`, `In Progress`, `Completed`, `Failed` or `
 
 ![Example badge image](./images/badge.png)
 
-**Certificates**: You earn an official Certificate of Completion after passing a Certification exam. While the learning and exams are free, the issuance of the official certificate is an optional, paid feature.
+**Certificates**: If the certification defines a certificate, passing its final test issues one in your first and last name, with the issuing organization and the issue date, and emails it to you. Each certificate has a unique ID and a public verification page. Learning and exams are free. Issuance of the official certificate is an optional, paid feature. Certificates do not expire. A challenge does not issue this certificate. Its outcome is the badge.
 
 ## Frequently Asked Questions
 
@@ -164,7 +170,7 @@ Yes, as long as you are enrolled in a content, your progress is saved automatica
 <details>
 <summary>Can I skip courses and jump directly to the exam?</summary>
 
-You can navigate to any course at any time using the sidebar. However, for a Learning Path to be marked as complete, you typically need to pass all required quizzes and the final test in sequence.
+You can open any course at any time from the outline. A test with prerequisites does not start until those items are complete. The content is complete when you pass its final test. Practice tests do not have to be passed for that to happen.
 </details>
 
 <details>
@@ -179,29 +185,25 @@ Currently, all content is designed to be accessed online through the Academy pla
 Learning is often better together. If you have questions about the content or want to discuss topics with other learners and instructors, we encourage you to open new or participate in existing topics in the community [discussion forum](https://discuss.layer5.io). We also warmly welcome you to join the [Layer5 Community Slack](https://slack.layer5.io).
 </details>
 
-</details>
-
----
-
-<details>
-<summary><strong>Certification and Assessment</strong></summary>
-
-
 <details>
 <summary>If I fail an assessment, can I retake it?</summary>
 
-It depends on the certification. Some certifications allow multiple attempts, while others do not offer retries. Please refer to the specific certification’s guidelines to confirm whether retakes are permitted.
+Yes, until the test's attempt limit. A test with no limit allows unlimited retakes. The Academy does not block a retake because of an earlier score, including a score of 100%. Each retake usually draws different questions from the test's question bank.
 </details>
 
 <details>
 <summary>Does my certificate expire?</summary>
 
-Yes. Meshery Academy certifications may have an expiration date. Please check the specific certification details for validity duration.
+No. Academy certificates carry an issue date and no expiration date.
 </details>
 
 <details>
 <summary>How can I showcase my credential?</summary>
 
-Upon successful completion, you’ll receive a verifiable digital certificate. You can share your achievement by adding it to your professional profiles (for example, on LinkedIn) or including it on your resume. A shareable verification link is available within your certification dashboard, which you can use to confirm your credential publicly.
+Badges appear on your public Layer5 Cloud profile. Each certificate has a public verification page. Share that link on professional profiles such as LinkedIn or on your resume so anyone can confirm it.
 </details>
+
+## Withdrawing from content
+
+You can withdraw your own registration at any time. Withdrawing sets its status to `Withdrawn`. Instructors who hold the View Academy Metrics permission in the content's organization can also withdraw learners from that organization's content.
 

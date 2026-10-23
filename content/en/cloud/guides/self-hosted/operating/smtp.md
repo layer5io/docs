@@ -28,11 +28,11 @@ and says so at startup. See
 
 ## Debug Log Levels
 
-To enable email debugging, set the `LOG_LEVEL` environment variable to `5` (Debug) or `6` (Trace):
+To enable email debugging, set `env.loglevel` in your Helm values to `5` (debug) or `6` (trace) and upgrade. The chart default is `4` (info). Return it to `4` when you finish, because debug logs record more detail.
 
-```bash
-# In config.env or environment variables
-LOG_LEVEL=5
+```yaml
+env:
+  loglevel: 5
 ```
 
 ## Testing Email Configuration
@@ -154,13 +154,12 @@ Either set all four values or leave all four empty. A deployment that leaves
 them empty is a supported state - it simply sends no mail - but a deployment
 that sets some of them and not others does not start.
 
-```bash
-# Required SMTP Configuration
-SMTP_HOST=smtp.example.com     # must resolve to a publicly routable address
-SMTP_PORT=587                  # one of 25, 465, 587, 2525
-SMTP_USERNAME=no-reply@example.com   # a full address: it becomes the From: header
-SMTP_PASSWORD=your-app-password
-```
+| Variable | Chart value | Requirement |
+| --- | --- | --- |
+| `SMTP_HOST` | `smtp.smtphost` | Must resolve to a publicly routable address |
+| `SMTP_PORT` | `smtp.smtpport` | One of `25`, `465`, `587`, `2525` |
+| `SMTP_USERNAME` | `smtp.smtpusername` | A full address: it becomes the `From` header |
+| `SMTP_PASSWORD` | `smtp.smtppassword` | The mailbox password or app password |
 
 `SMTP_PORT` also decides how the session is encrypted, because the four keys
 carry no mode of their own: **`465` means implicit TLS**, and every other
@@ -178,8 +177,7 @@ so the shared mail server is screened exactly as a tenant's is.
 
 That screening is new. The previous send path applied none of it, so a
 deployment that has been sending mail happily can be refused after an upgrade.
-Layer5's own hosted environments use `smtp.gmail.com:587` and are unaffected;
-a self-hosted install that points `SMTP_HOST` somewhere else can be.
+A self-hosted install that points `SMTP_HOST` at an internal, plaintext, or non-submission relay can be refused.
 
 ### What is refused
 
@@ -236,7 +234,7 @@ this endpoint's.
 
 ## Debug Log Examples
 
-When `LOG_LEVEL=5`, you'll see detailed debug logs for email operations.
+When `env.loglevel` is `5`, you'll see detailed debug logs for email operations.
 
 {{< alert title="The transport is no longer described in the send logs" type="info" >}}
 The lines that echoed the relay host, port and SMTP username before every send
@@ -296,7 +294,9 @@ failure is recorded against that Organization as well - see
 
 ## Flow Emails (Kratos Integration)
 
-Flow emails are rendered by the same process and logged through the same
+Identity mail reaches Layer5 Cloud only when Kratos uses the HTTP courier, which posts each message to `/api/identity/flow/emails`. Layer5 Cloud then renders it with the signup organization's branding and sends it like other application mail. Under the HTTP courier there is no SMTP fallback. When Layer5 Cloud answers anything but a success, Kratos retries the message (five times by default) and then abandons it, with no visible error to the user. With the default SMTP courier, Kratos sends the mail itself through `kratos.kratos.config.courier.smtp.connection_uri`, and the shared-relay rules on this page do not apply to it.
+
+Flow emails that do arrive are rendered by the same process and logged through the same
 structured logger. They used to be written to standard output with a `[DEBUG]`
 prefix, echoing the relay host and the SMTP username past the logger at a level
 nothing could turn down; those lines no longer exist.
@@ -385,11 +385,7 @@ the response - an SMTP username is an email address.
 
 **Issue:** `Email template missing or inaccessible`
 
-**Solution:**
-
-- Verify email template files exist in `config/email-templates/`
-- Check file permissions
-- Validate template syntax and required variables
+**Solution:** the templates ship inside the Layer5 Cloud image. If you built a custom image or mounted a volume over its configuration directory, restore the bundled templates, and confirm that the image tag matches the release you run.
 
 ### 4. Recipient Validation Errors
 
@@ -509,7 +505,7 @@ Consider setting up monitoring for email-related metrics:
 
 ## Troubleshooting Checklist
 
-- [ ] Check `LOG_LEVEL` is set to 5 or 6 for debug logging
+- [ ] Set `env.loglevel` to `5` for debug logging while you diagnose
 - [ ] Verify all SMTP environment variables are configured
 - [ ] Confirm `SMTP_PORT` is one of `25`, `465`, `587`, `2525`, and that `SMTP_USERNAME` is a full address
 - [ ] Confirm `SMTP_HOST` resolves only to publicly routable addresses, and that the relay offers STARTTLS (or is on `465`)

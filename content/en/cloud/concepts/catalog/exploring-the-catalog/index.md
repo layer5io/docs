@@ -6,10 +6,11 @@ categories: [catalog]
 tags: [designer]
 aliases:
   - /cloud/catalog/exploring-the-catalog/
+  - /cloud/guides/exploring-the-catalog/
 
 ---
 
-The [Cloud Catalog](https://cloud.layer5.io/catalog) is the central hub for well-architected cloud and cloud native patterns and best practices templates. Here, you can discover and share designs with the wider community.
+The [Cloud Catalog](https://cloud.layer5.io/catalog) holds published designs. Signed-out visitors can search, filter, and read every published design. Cloning, downloading, editing, and deleting need you to sign in and hold the matching permission. Cloning also needs an organization selected: the copy lands in your selected workspace, and Cloud refuses a clone while the all-organizations view is active (`orgID is not provided`).
 
 ![Catalog main page view](images/catalog-view.gif)
 
@@ -59,7 +60,7 @@ The filter bar helps you narrow down the catalog to find exactly what you need. 
 
 ### Sort By
 
-You can order all items in the catalog based on different criteria, such as alphabetically, by most recently updated, or by popularity metrics like most cloned or downloaded.
+You can order all items in the catalog alphabetically, by most or least recently updated, or by most opened, shared, cloned, deployed, or downloaded. Results default to most recently updated. Search matches design names only, as a case-insensitive substring. It does not search descriptions or technologies. Use the Technology filter for those.
 
 ### Owner
 
@@ -84,7 +85,7 @@ These filters correspond to the metadata authors provide when they publish desig
 
 When you click on any design, you'll see its detail page. This page provides a complete overview of the design's purpose, technical details, and how you can use it.
 
-![Catalog modal](../images/design_model.png)
+![Catalog modal](images/design_model.png)
 
 ### Key Information
 
@@ -115,7 +116,9 @@ When you clone a design:
 
 - The new copy will appear in your **[My Designs](https://cloud.layer5.io/catalog/content/my-designs)** tab.
 - Its name will be appended with `(Copy)` to distinguish it from the original.
-- The visibility of the cloned design is set to **Private** by default, so only you can see it until you decide to publish it.
+- The visibility of the cloned design is set to **Private**. It keeps the original's catalog metadata and is not published. Publishing it is a separate request.
+- The source design's Clones counter rises by one.
+- You cannot clone a private design, including your own. A clone attempt on a private design fails with `unauthorized to clone design`. Save a copy from Kanvas instead.
 
 ### Download
 
@@ -149,7 +152,7 @@ Some properties of a published design are immutable and cannot be changed:
 
 ### Unpublish
 
-If you no longer want a design to be published in the catalog, you can use the **Unpublish** button. This action will remove the design from  Meshery Catalog but does **not delete** it. The design will remain as a private design in your account.
+If you no longer want a design to be published in the catalog, you can use the **Unpublish** button. This action removes the design from the catalog but does **not delete** it. The design returns to **private**, not public. You can unpublish a design if you created it or if you hold Approve Catalog Request. The action also needs the Unpublish Design permission. Without either, Cloud answers `unauthorized to unpublish to catalog`.
 
 {{< alert type="info" title="Permissions Required" >}}
 Editing/Unpublish published designs requires specific user roles and permissions. Learn more: [Default Permissions documentation]({{< ref "cloud/reference/default-permissions.md" >}}).
@@ -169,7 +172,14 @@ You must own the item to delete it, and you need the delete permission for that 
 | WASM filter | **Delete WASM Filter** |
 | View | **Delete View** |
 
-The **Delete** action is disabled when your role does not carry the permission for that item's type. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold each of them by default.
+The **Delete** action is disabled when your role does not carry the permission for that item's type. Provider administrators are the exception to the ownership check. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}) for which roles hold each of them by default.
+
+| You see | Cause | What to do |
+| --- | --- | --- |
+| `unauthorized to clone design` | The design is private. | Ask the owner to share it, or have them publish it. |
+| `orgID is not provided` | No organization is selected. | Select an organization, then clone again. |
+| Clone is disabled | Your role lacks Clone Design. | Ask an organization administrator to review your role. |
+| A design you searched for by technology does not appear | Search matches names only. | Use the Technology filter. |
 
 The table view of [My Designs](https://cloud.layer5.io/catalog/content/my-designs) also supports deleting several items at once: select rows with their checkboxes and use the bulk **Delete** action. Each selected item is deleted independently, so a failure on one does not stop the others - check the list afterwards.
 

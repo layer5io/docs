@@ -5,6 +5,8 @@ description: >
 weight: 7
 categories: [designer]
 tags: [designs, shapes, sections, textboxes, annotations]
+aliases:
+  - /kanvas/reference/canvas-objects/
 ---
 
 <!-- set of custom keyboard button classes -->
@@ -234,11 +236,9 @@ before you fill it, or move the contents out, resize, and move them back.
 
 ## Permission reference {#permission-reference}
 
-Each gesture on this page is governed by its own permission in Layer5 Cloud. Organization
-administrators grant them through keychains and roles; see
-[Keychains](https://docs.layer5.io/cloud/security/keychains/) and
-[Roles](https://docs.layer5.io/cloud/security/roles/). Where a permission is withheld, the
-corresponding control simply does not appear on the canvas.
+Kanvas gates canvas actions by mode and by object capability, not by role. The permission catalog in Layer5 Cloud lists a key for each shape, section, textbox, and component-styling action in the table below (add, copy, clone, lock, delete, configure styles, reset styles, and resize), and a Provider Admin can include them in keychains and roles. Kanvas does not check those keys on the canvas today, so withholding one does not hide a control.
+
+The permissions Kanvas does enforce on the toolbar are Validate Design, Deploy Design, Undeploy Design, and Share Design. See [Reference]({{< ref "kanvas/reference/_index.md" >}}).
 
 | Permission | What it grants | Documented in |
 | --- | --- | --- |

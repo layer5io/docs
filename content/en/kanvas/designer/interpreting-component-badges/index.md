@@ -4,6 +4,8 @@ description: Learn to interpret component badges, the small visual indicators th
 weight: 3
 categories: [designer]
 tags: [designs]
+aliases:
+  - /kanvas/reference/component-badges/
 ---
 
 Ever wondered what those little icons in the corners of your components are? Think of them as your component's real-time status display. These indicators, called **badges**, give you at-a-glance information about everything from configuration errors to live performance.

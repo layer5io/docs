@@ -7,6 +7,7 @@ categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/designs/deploying-designs
+  - /kanvas/guides/deploying/deploying-designs/
 ---
 
 1. To deploy a design, navigate to the **Actions** button at the top of the Design canvas.
@@ -283,3 +284,9 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 ```
 This is the final element on the page and there should be no margin below this.
 ``` -->
+
+## Current behavior
+
+Deploy needs Deploy Design, a non-empty design, and a Meshery you run. kanvas.new shows a prompt titled `SELF-HOSTED FEATURE`. If you select no Kubernetes context, Kanvas deploys to all connected clusters. The dialog title is `Deploy design "<name>"`. Deploying does not need Meshery Operator. The same design applied again updates objects in place.
+
+Every created resource is labeled `design.meshery.io/id` and annotated `design.meshery.io/version` and `component.meshery.io/id`. `meshery-server-1096` means no selected context resolved to a connected cluster. `meshery-server-1073` means the connection is not in the environment or cannot reach the cluster. `meshery-server-1095` means the kubeconfig is invalid. `No environments found` means the organization has no environment (Create Environment and Edit Environment). If the Finish step spins and never reports, the request failed before an event, often an expired session.

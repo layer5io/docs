@@ -5,6 +5,8 @@ description: >
   The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
 categories: [designer]
 tags: [designs]
+aliases:
+  - /kanvas/reference/canvas-actions/
 ---
 
 Right-clicking an empty part of the canvas - anywhere no component sits - opens the **Canvas Actions** menu. Where the component context menu acts on one component, this menu acts on the canvas as a whole: undoing and redoing, pasting, selecting everything, capturing the canvas as an image, and reaching help.

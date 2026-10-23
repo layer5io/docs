@@ -6,29 +6,33 @@ weight: 6
 categories: [spaces]
 aliases:
   - /cloud/spaces/workspaces/
+  - /cloud/concepts/workspaces/
 
 ---
 
-Workspaces provide a virtual space for you and your teams to collaborate, organize project-based work, manage access to environments and resources, and track team activities.
+A workspace is a named grouping inside an organization. It brings together the teams who do a piece of work, the environments they deploy to, and the designs and views they work on. A workspace does two separate jobs:
 
-You can create Workspaces to group related Designs and Environments, define domains of responsibility for your teams, and streamline resource management.
+- **It organizes resources.** Designs and views live in a workspace, and the workspace decides which organization they are listed under.
+- **It grants connection access.** Assigning a team to a workspace gives that team's members read-only access to the connections in the workspace's environments. That is the only access a team assignment grants.
+
+You can create Workspaces to group related Designs and Environments and to decide which teams can read which connections.
 
 ## Key Features
 
-- **Resource Sharing:** Workspaces allow for seamless resource sharing among team members, fostering collaboration.
-- **Logical Grouping:** Within Workspaces, you can group related components such as environments and infrastructure designs.
-- **Flexibility:** Workspaces support various resources like Kubernetes, Prometheus, Jaeger, Nginx, and more.
-- **Simplified Management:** Managing and deploying resources is made easy within Workspaces.
-- **Access Control:** Workspaces allow you to control access to resources by granting permissions to users and teams.
+- **Connection access:** Assigning a team grants read-only access to the connections, and their credentials, in the workspace's environments.
+- **Logical Grouping:** Within Workspaces, you can group related environments, designs, and views.
+- **Organization-wide visibility:** Every member of an organization can list and open every workspace in that organization. Team assignment does not narrow what you see.
+- **One design, one workspace:** A design or view belongs to at most one workspace. Assigning it moves it.
+- **The last workspace stays:** An organization always keeps at least one workspace.
 
 ### Workspace Relationships and Restrictions
 
-- Access to Workspaces may be granted to one or more teams.
-- As a point of collaboration to facilitate work, Workspaces may have zero or more Environments associated.
-- A Workspace is closely associated with Teams. Teams are groups of users with varying permissions, and they are at the center of resource access and management within a Workspace.
-- One or more teams can be assigned access to a workspace.
+- Every member of the organization can list and open every workspace. Team membership does not hide workspaces.
+- A workspace may have zero or more environments. Creating a workspace assigns no team and no environment.
+- A team assignment grants read-only access to connections in those environments. It does not grant access to designs or views.
+- One or more teams can be assigned to a workspace, and the same team can be assigned to more than one workspace. The team must belong to the workspace's organization.
 
-After creating a Workspace, one of your next steps is to assign team access, create or transfer designs into the Workspace, and allocate resources that to Workspace by associating it with one or more Environments, therein making the Environment's connections available to users of the Workspace.
+After creating a Workspace, assign teams, move designs into the Workspace, and associate one or more Environments so those Environments' connections become readable by the workspace's teams.
 
 Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Designs are your Google Docs.
 
@@ -44,14 +48,22 @@ Like a shared drive (or shared collection of files), Workspaces are your Google 
 Assign any number of Environments to one or more Workspaces. See [Environments]({{< ref "cloud/concepts/spaces/environments.md" >}}) section for more information.
 {{< /alert >}}
 
+### Profiles
+
+- A profile represents a person or persona in the organization and groups the connections it publishes through.
+- Assigning a profile to a workspace makes it visible to the members of the workspace's teams.
+- The same profile can be assigned to multiple workspaces. See [Profiles]({{< ref "cloud/concepts/spaces/profiles.md" >}}).
+
 ### Designs
 
-- Infrastructure Designs are essential for creating reusable deployment templates. Users belonging to teams with access to a workspace can utilize these designs to deploy resources in the Kubernetes clusters associated with that workspace.
-- Like a shared drive (or shared collection of files), Workspaces are your Google Drive, while Designs are your Google Docs.
-- One or more designs can be assigned to a workspace.
+- A design or view belongs to at most one workspace. Assigning it to a workspace is a move, not a copy: Layer5 Cloud removes every earlier workspace assignment, then adds the new one.
+- The workspace a design sits in decides the organization under which the design is listed, and the organization in which the Share Design permission is checked.
+- Placing a private design in a workspace does not open it to the workspace's teams. Share the design to give someone access. See [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}).
+- When you list the designs you can add to a workspace, the list shows only designs you own that are not already in it.
+- Moving a design requires the Assign Designs to Workspaces permission in the destination workspace's organization. Layer5 Cloud does not also require access to the workspace the design leaves.
 
 {{< alert type="info" title="Design Ownership in Workspaces" >}}
-Designs belong to only one Workspace at any given time. See [Designs](https://docs.meshery.io/concepts/designs) section for more information.
+Designs belong to only one Workspace at any given time. Ownership does not change when a design moves. See [Designs](https://docs.meshery.io/concepts/designs) section for more information.
 {{< /alert >}}
 
 ### Teams
@@ -61,7 +73,7 @@ Designs belong to only one Workspace at any given time. See [Designs](https://do
 - Same team can be assigned to multiple workspaces.
 
 {{< alert type="info" title="Team Access Control in Workspaces" >}}
-Teams offer control access to workspaces and to workspace resources such as environments and managed and unmanaged connections. See [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
+Team assignment grants read-only access to the connections in the workspace's environments. It does not grant access to designs, and it does not decide who can see the workspace. See [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
 {{< /alert >}}
 
 ### Connections
@@ -102,18 +114,67 @@ The following illustrates how Five and Maya set up workspaces at Orbital Labs to
 
 ### Creating orbital-staging
 
-Five creates the `orbital-staging` workspace to give the Development team a shared environment for feature-branch testing — without handing them the keys to production.
+Five creates the `orbital-staging` workspace to give the Development team a shared environment for feature-branch testing  -  without handing them the keys to production.
 
 **Steps Five follows:**
 1. Navigate to **Workspaces** and click **Create Workspace**
 2. Name the workspace `orbital-staging`
-3. Save — the workspace is created with no team access and no environments assigned
+3. Save  -  the workspace is created with no team access and no environments assigned
 
 **Maya then assigns team access:**
 1. Open the `orbital-staging` workspace settings
-2. Add the **Infrastructure** team — enabling Zara and Five to manage environment connections
-3. Add the **Development** team — enabling Rex and Jordan to deploy designs and use connections
+2. Add the **Infrastructure** team so its members can read the connections in the workspace's environments
+3. Add the **Development** team so its members can read those same connections
 
 {{< alert type="info" title="Why both teams?" >}}
-Infrastructure owns the environments (Zara assigns connections); Development owns the designs (Rex and Jordan deploy them). Assigning both teams to `orbital-staging` gives each group the access it needs without elevating Development's access to `orbital-production`.
+Assigning a team grants read-only connection access, not design access. Infrastructure and Development can both read the staging connections. Development still cannot read production connections, because it is not assigned to `orbital-production`. To let Rex or Jordan open a private design, share that design with them.
 {{< /alert >}}
+
+## Organization-wide visibility
+
+Workspace visibility is organization-wide. Every member of an organization can list and open every workspace in that organization, whether or not one of their teams is assigned to it. The Workspaces, Environments, and connection areas of the Cloud UI appear only to people who hold the matching View Workspace, View Environment, and View Connections permissions.
+
+A workspace belongs to exactly one organization for its whole life. Editing a workspace changes its name, description, or metadata, never its organization.
+
+## What a team assignment grants
+
+A member of a team reaches a connection through four live links. Breaking any one of them ends the access.
+
+| Link | Created by | Broken by |
+| --- | --- | --- |
+| 1. User is a member of a team | Adding the user to the team | Removing the user from the team |
+| 2. Team is assigned to a workspace | Assign team to workspace | Removing the team from the workspace, or deleting the workspace |
+| 3. Environment is assigned to the workspace | Assign environment to workspace | Removing the environment from the workspace, or deleting either one |
+| 4. Connection is assigned to the environment | Assign connections to environment | Removing the connection from the environment, or deleting the environment |
+
+The result is read-only. Modifying or deleting a connection still requires owning it. Two other routes reach a connection independently of this chain: owning it, and holding the View All Organizations key. See [Environments]({{< ref "cloud/concepts/spaces/environments.md" >}}).
+
+## One workspace per design
+
+Because a design sits in at most one workspace, promotion from one workspace to another is a move. There is no approval step and no copy. The same rule applies to views. Removing a design from its workspace leaves it with no workspace. The design and its owner are unaffected.
+
+## The last workspace
+
+Every organization receives a workspace when it is created, so designs always have somewhere to live. Layer5 Cloud creates **My Workspace** in any organization that has no workspace.
+
+An organization always keeps at least one workspace. Deleting the last one is refused with `cannot delete workspace: at least one workspace must exist for the organization`. Two simultaneous deletes cannot both succeed and leave the organization empty.
+
+Deleting a workspace ends every team, environment, design, and view assignment it holds, in one step. The teams, environments, designs, views, and connections themselves remain. Designs and views that were in the workspace are left in no workspace until you assign them to another one. Team members lose any connection access that flowed through the deleted workspace.
+
+## Names, edits, and activity
+
+A name and description are each limited to 255 characters. Names are not unique: two workspaces in one organization can share a name. An edit changes only the fields you send.
+
+Each workspace records an activity log: creating, editing, and deleting the workspace, and assigning or removing teams, environments, designs, and views. Every entry carries the email address of the person who acted. Reading the log requires the View Workspace permission.
+
+## Permissions
+
+Every workspace action is checked in the organization that owns the workspace. Creating a workspace is checked in the organization you create it in. The keys are View Workspace, Create Workspace, Edit Workspace, Delete Workspace, Assign team to workspace, Remove team from workspace, Assign environment to workspace, Remove environment from workspace, Assign Designs to Workspaces, Remove Designs from Workspaces, Assign Views to Workspace, and Unassign Views from Workspace. Default holders are in [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
+
+Layer5 Cloud enforces no plan check on workspace actions. Creating, editing, deleting, and assigning work the same on every plan, governed only by those permissions.
+
+## Related
+
+- [Managing Workspaces]({{< ref "cloud/guides/workspaces/managing-workspaces/index.md" >}}) covers creating, editing, and deleting workspaces and assigning their members.
+- [Environments]({{< ref "cloud/concepts/spaces/environments.md" >}}) explains the deploy targets a workspace exposes.
+- [Promote a Design]({{< ref "cloud/guides/tutorials/promoting-a-design.md" >}}) moves a design from a staging workspace to a production workspace.

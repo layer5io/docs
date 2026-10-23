@@ -43,21 +43,21 @@ Both the grid and table views provide the same set of management capabilities. Y
 Creating a new workspace allows you to manage resources, and define team access.
 
 {{< alert type="info" title="Permissions Required" >}}
-Only users with the Workspace Admin or Organization Admin role can create new workspaces.
+Creating a workspace requires the **Create Workspace** key in the organization that will own it. Organization Admin and Workspace Admin hold it by default. A custom role can hold it too. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 {{< /alert >}}
 
 To create a workspace:
 
 1. Click the **+ Create** button to open the creation Dialog.
 2. From the dropdown menu, select the **Organization** that will own the new workspace. The chosen Organization **cannot be** changed after the workspace is created. Please select carefully.
-3. Enter a descriptive **Name** and an optional **Description**, then click **Save**.
-4. Your new workspace will now appear on the page.
+3. Enter a descriptive **Name** and an optional **Description**, then click **Save**. Name and description are each limited to 255 characters. A longer value fails with `Unable to create workspace`. Names do not have to be unique.
+4. Your new workspace will now appear on the page. It has no teams and no environments. The workspace stays in the organization you chose.
 
 ![Animation showing workspace creation process](images/create-workspace.gif)
 
 ### Edit a Workspace
 
-You can modify a workspace's name and description at any time after it has been created.
+You can modify a workspace's name and description at any time after it has been created. An update changes only the fields you send. The organization never changes. A workspace that is not in one of your organizations answers `workspace not found`.
 
 - **From the Grid View:** Flip the workspace card, then click the **pencil icon**.
 - **From the Table View:** Click the **pencil icon** in the row of the workspace you wish to modify.
@@ -81,24 +81,28 @@ You can delete a single workspace or multiple workspaces at once.
 ![Animation showing workspace deletion process](images/delete-workspace.gif)
 
 {{< alert type="info" title="Deletion Restrictions" >}}
-Meshery requires at least one workspace to exist within an organization at all times, so you cannot delete the last remaining workspace.
+An organization must keep at least one workspace. Layer5 Cloud refuses to delete the last one with `cannot delete workspace: at least one workspace must exist for the organization`. The refusal arrives as HTTP 500. The check holds under concurrent requests, so two simultaneous deletes cannot empty an organization. Create the replacement workspace first, then delete the other.
 {{< /alert >}}
 
 #### Workspace Deletion Behavior
 
 {{< alert type="danger" title="What Happens When a Workspace is Deleted?" >}}
-Deleting a Workspace will permanently delete the Workspace itself and its associated Designs and Views.
+Deleting a workspace ends every team, environment, design, and view assignment it holds. It does not delete those resources. Designs and views remain, with no workspace, until you assign them to another one.
 {{< /alert >}}
 
 When a Workspace is deleted:
 
-- Deletion is **permanent and irreversible**. Proceed with caution.
-- Before deletion, users have the option to transfer associated Designs and Views to another Workspace.
-- If no transfer is made, all associated Designs and Views will be permanently deleted along with the Workspace[^1].
-- Any associated Teams or Environments will be detached from the Workspace but will remain available for reassignment.
+- The workspace record is removed. Proceed with caution: the assignment list is not restored.
+- Teams, environments, connections, designs, and views all remain.
+- Designs and views that were in the workspace have no workspace afterwards. Move them to another workspace first if you want them to keep a home.
+- Team members lose the read-only connection access that flowed through the deleted workspace.
 
 ### Assign Teams to a Workspace
-Assigning teams is the way you grant users access to a workspace. Once a team is assigned, its members can access all of the Designs, Views, and Environments linked to that workspace.
+Assigning a team grants its members **read-only access to the connections, and their credentials, in every environment linked to the workspace.** It does not grant access to private designs or views, and it does not decide who can see the workspace: every organization member can already list every workspace.
+
+The team and the workspace must belong to the same organization. A team from another organization is refused with HTTP 403. Assigning a team that is already assigned changes nothing. Removing the team ends the connection access at once.
+
+To give someone access to a private design, share the design with that person. See [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}) and [Sharing a Workspace]({{< ref "cloud/guides/tutorials/sharing-a-workspace.md" >}}).
 
 ![Animation showing team assignment process](images/assign-teams.gif)
 
@@ -122,7 +126,9 @@ You can assign multiple teams to a single workspace, and a single team can also 
 {{< /alert >}}
 
 ### Link Environments to a Workspace
-When you link an [Environment]({{< ref "cloud/concepts/spaces/environments.md" >}}) to a Workspace, you make all the connections (like those to Kubernetes clusters or databases) grouped within that Environment available. This means any team members with access to that Workspace can then deploy their applications or configurations to the resources.
+When you link an [Environment]({{< ref "cloud/concepts/spaces/environments.md" >}}) to a Workspace, its connections become readable by every member of the workspace's teams. The access is read-only. The environment and the workspace must belong to the same organization; a cross-organization attachment is refused with HTTP 403.
+
+Some environments are provisioned by Layer5 Cloud itself to hold organization configuration such as the mail server or sign-in providers. Layer5 Cloud refuses to attach one to a workspace: `this environment is provisioned by the platform and cannot be added to a workspace`. Attaching an environment that is already attached returns the existing attachment. Detaching one that was never attached answers `no such environment assignment`.
 
 The process of linking environments is almost the same as assigning teams.
 ![Animation showing environment assignment process](images/assign_environment.png)
@@ -139,9 +145,9 @@ Creating an Environment, editing it, and choosing which Connections belong to it
 
 ### Move Designs and Views Between Workspaces
 
-Unlike Environments, every Design and View **must belong to exactly one Workspace at all times.**
+Unlike Environments, a Design or View belongs to **at most one Workspace**. Placing it in a workspace moves it: Layer5 Cloud removes every earlier workspace assignment, then adds the new one. There is no copy. Removing it leaves the design or view with no workspace. The resource and its owner are unaffected.
 
-When you create a new Design, it is automatically added to your current Workspace. Therefore, you don't "link" them in the same way you link an Environment; instead, you **move** them from one Workspace to another.
+The permission is checked in the destination workspace's organization only. Layer5 Cloud does not check that you can open the workspace the design leaves. The unassigned list shows only designs you own. The workspace decides the organization the design is listed under. A private design stays private wherever it sits.
 
 #### How to Move a Design or View
 
@@ -163,13 +169,10 @@ Meshery keeps a detailed audit log for each workspace, allowing you to track all
 ![Workspace audit log showing recent activity](images/security-audit.png)
 
 The activity log captures a variety of events, including:
-- The creation or deletion of the workspace.
-- Updates to the workspace's name or description.
-- The assignment or unassignment of Teams.
-- The linking or unlinking of Environments.
-- The movement of Designs or Views between workspaces.
+- The creation, update, or deletion of the workspace.
+- The assignment or unassignment of Teams, Environments, Designs, and Views.
 
-At the bottom of the log, you will also find timestamps for when the workspace was initially created and when it was last updated.
+Every entry carries the email address of the person who acted. Failed attempts are recorded as error events. Reading the log requires the View Workspace permission. The log is paged and searchable.
 
 {{< alert type="info" title="Putting It All Together: A Hands-on Guide" >}}
 To see how managing a Workspace fits into a complete, end-to-end workflow, follow the [Using Workspaces Effectively](https://cloud.layer5.io/academy/learning-paths/mastering-meshery/introduction-to-meshery?chapter=using-workspaces-effectively) learning path.
@@ -185,7 +188,7 @@ Dedicate a shared workspace to each project. It becomes a central hub where your
 
 **2. Your Personal "My Drive"** 
 
-Think of a private workspace as your personal Google "My Drive." You can use it for anything—from important, confidential designs to just playing around with new ideas in a "sandbox." It's more than just a place for quick tests; it's also where you can build and polish your professional work before it's ready to be shared.
+Think of a workspace you keep for your own designs as a personal working area. You can use it for confidential designs or for trying ideas. Team assignment still does not open those designs to anyone else. Share a design when you are ready for someone else to open it.
 
 **3. Template Library** 
 
@@ -198,21 +201,19 @@ You can also organize long-term workspaces around specific teams, such as a "Dev
 
 **5. The Environment-Specific Space** 
 
-For teams requiring strict separation between environments, this pattern is essential. You can create dedicated workspaces like a "Production Workspace," which would exclusively contain designs approved for deployment and link only to production clusters. This approach builds a secure barrier between your development, staging, and production assets.
+For teams requiring strict separation between environments, give a production workspace only the production environment and the platform team. Members of other teams cannot read production connections through it. Moving a design into that workspace is the promotion. There is no separate approval step. See [Promoting a Design from Staging to Prod]({{< ref "cloud/guides/tutorials/promoting-a-design.md" >}}).
 
 ### FAQ
 
 #### 1. When a design is transferred from one Workspace to the next, is design ownership affected? Who has access? What if the Workspaces are in different orgs?
 
-  - **Ownership**: A Design’s ownership is permanent. It always belongs to the user account that created it.
-  - **Access**: Access to the Design is determined by the Teams assigned to its new Workspace.
-  - **Cross-Organization Transfers**: You can move a Design you own into a Workspace in a different Organization, provided you have the necessary permissions in the target Organization. 
-
-> A key restriction is that a user, even with a [Workspace Admin]({{< ref "cloud/concepts/identity-and-security/roles/workspace-roles.md" >}}) role, cannot manage a Design they **do not own**. This action requires [Organization Admin]({{< ref "cloud/concepts/identity-and-security/roles/organization-roles.md" >}}) or Organization Owner permissions.
+  - **Ownership**: A Design's ownership is permanent. The user who created it stays its owner after any move. Ownership never transfers.
+  - **Access**: Workspace membership grants no design access. Only the owner, provider administrators, and users the design was shared with can open a private design.
+  - **Cross-Organization Transfers**: Moving a design into a workspace in another organization lists the design under that organization. The permission checked is Assign Designs to Workspaces in the destination organization.
 
 #### 2. What can other users of a Workspace do with my design? Can they delete my design?
 
-Other members of a Workspace can view and edit your Design, but they **cannot delete it**. The permission to delete a Design is exclusive to its **Owner**.
+Workspace membership grants no design access. People you shared the design with can read, edit, and clone it. Only the owner or a provider administrator can delete it.
 
 #### 3. Can Workspaces contain private, public, and published designs?
 
@@ -224,13 +225,13 @@ Currently, it is **not possible** to receive direct notifications or see a colla
 
 #### 5. If I share my private design with a user in a different org, can they share my design with other users?
 
-No. A user with whom you share a private Design cannot re-share it with others.
+Sharing onward depends on that person's own Share Design permission, not on the grant. A collaborator who holds Share Design can share the design onward. A grant is for one person. A team grant is not honored, so grant each person. See [Sharing Designs]({{< ref "kanvas/designer/sharing/index.md" >}}).
 
 > [learn more about sharing designs]({{< ref "kanvas/designer/sharing/index.md" >}}).
 
 #### 6. Does a workspace have space limitations or file count limitations?
 
-Currently, there are no specific space or file count limitations for Workspaces. However, this may be subject to change in the future and could be tied to different [subscription plans](https://layer5.io/pricing).
+Layer5 Cloud enforces no space or file-count limit on workspaces, and no plan check on workspace actions.
 
 #### 7. How can I make my design publicly available, but read-only to other users?
 
@@ -238,12 +239,10 @@ To make a Design available to everyone but in a read-only state, you should **[P
 
 #### 8. How do I share a private design with a specific team for collaboration?
 
-To share a design exclusively with a select group:
+Assigning a team to the workspace does not open the design. Share it with each person:
 
-1.  First, ensure your Design's visibility is set to **Private**. This prevents anyone from accessing it by default.
-2.  Next, place the private Design into a **Workspace**.
-3.  Finally, assign a specific **Team** to that Workspace.
+1. Open the design and click **Share**.
+2. Search for the person and add them. The dialog finds individual users only. There is no view-only or comment-only level: a person who can open the design can edit it.
+3. Confirm the person appears under **People with Access**.
 
-This grants members of the assigned Team exclusive access and the permission to edit the design.
-
-[^1]: This functionality is not fully implemented yet. Users might occasionally observe that designs and views are preserved after Workspace deletion.
+A private design stays private. To remove someone, open **Share** and remove them from **People with Access**. See [Sharing a Workspace]({{< ref "cloud/guides/tutorials/sharing-a-workspace.md" >}}).

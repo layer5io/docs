@@ -5,6 +5,8 @@ description: >
   Measure the behavior of a running service from the Operator canvas, using saved performance profiles.
 categories: [operator]
 tags: [performance]
+aliases:
+  - /kanvas/guides/operating/performance-testing/
 ---
 
 Operator mode gives you continuous visibility across all of your clusters and workloads: MeshSync discovers every resource in every connected cluster and streams changes back to Kanvas, so the canvas is a live picture rather than a periodic snapshot. Performance testing closes the loop on that picture. Having found the service you are interested in, you can generate load against it in place and keep the result as a reusable performance profile.
@@ -67,3 +69,7 @@ Saved profiles, historical results and comparisons between runs live in Meshery'
 
 * **[Instance Details]({{< ref "kanvas/operator/resource-details/index.md" >}}):** Inspect the live state of the resource you are testing.
 * **[Performance Limits and Tuning]({{< ref "kanvas/advanced/performance/index.md" >}}):** Understand the limits of Kanvas itself when working with large designs.
+
+## Current behavior
+
+The action is **Initiate Performance Test**, offered on Service and Ingress only. The panel is 400 px wide and only one panel exists. Opening it generates no load. Seeded values are 10 concurrent requests, 20 queries per second, 30s duration, and load generator `fortio`. The profile name is `<Kind> - <component name>`. The form needs View performance profiles to appear, and Run Test needs Run test. The Kanvas interface does not check a permission before it opens the panel. Layer5 Cloud defines Perform performance test in Operator and Select performance profile in Operator, held by default only by Organization Admin and Provider Admin. Meshery Server generates the load, not the browser. A ClusterIP address is reachable from inside the cluster only.

@@ -7,6 +7,7 @@ categories: [designer]
 tags: [designs]
 aliases:
   - /meshmap/tasks/designs/validating-designs
+  - /kanvas/guides/deploying/validating-designs/
 ---
 
 ## How Validation Works
@@ -293,3 +294,7 @@ Stumptown PBR&B keytar plaid street art, forage XOXO pitchfork selvage affogato 
 ```
 This is the final element on the page and there should be no margin below this.
 ``` -->
+
+## Current checks
+
+Validation runs in the browser, needs no cluster, and changes nothing. It is disabled while the design is empty. On kanvas.new it opens a self-hosted-feature prompt. Validate Design gates both validate and dry run. Annotation components are skipped. A component whose definition cannot be fetched is skipped as valid. An unsupported design schema version reports 0 components, 0 annotations, and no errors. A clean result reads `No validation errors.` Errors name the field by dotted path and do not block you from continuing. When validation of the whole design completes, Kanvas records a validation event in the Layer5 Cloud event log. The dialog title is `Validate design "<name>"`.

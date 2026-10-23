@@ -15,7 +15,7 @@ aliases:
 Anyone who uses Layer5 Cloud signs into a user account. Your user account is your identity on Layer5 Cloud and has a username and profile. For example, see Five's profile.
 
 {{< cardpane >}}
-{{% card header="**Five** — Platform Engineer" %}}
+{{% card header="**Five**, Platform Engineer" %}}
 <img src='../../../images/five/1.svg' alt="Five" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
@@ -26,7 +26,7 @@ Curious, enthusiastic, and reliably the first to discover that a feature works d
 
 [See full cast →]({{< ref "cloud/getting-started/meet-five/_index.md" >}})
 {{% /card %}}
-{{% card header="**Maya Chen** — Org Admin" %}}
+{{% card header="**Maya Chen**, Org Admin" %}}
 <img src='../../../images/five/2.svg' alt="Maya Chen" style="width:70px; float:right; margin-left:1rem; background:#fff;" />
 
 **Organization:** Orbital Labs  
@@ -39,30 +39,28 @@ Voice of reason. Has a calendar block called "Preventing Five from touching prod
 {{% /card %}}
 {{< /cardpane >}}
 
-Your user account can own resources such as workspaces, designs, connections, credentials, tokens, Any time you take any action on Layer5 Cloud such as creating a design or reviewing a deployment request, the action is attributed to your user account.
+Your user account can own resources such as designs, connections, credentials, and API tokens. Any time you take an action on Layer5 Cloud, such as creating a design or changing a member's roles, the action is attributed to your user account and written as an audit event that names that account.
 
-Each user account is subscribed to a plan: Free, Team, or Enterprise. All user accounts can own an unlimited number of public and private workspaces, with an unlimited number of collaborators on those workspaces. If you use Layer5 Free, private workspaces owned by your user account have a limited feature set. You can upgrade to Layer5 Enterprise to get a full feature set for private workspaces.
+A user account carries a profile: first and last name, email address, avatar, tagline, country, region, and social links. The username shown on the profile is the account's identifier. It cannot be edited by the person or by an administrator. A person who needs a different sign-in address changes their email address instead, and the new address must be verified before it becomes active.
 
-Note: Free plan users are limited to a single organization — their initial default organization, typically named "My Organization".
+Layer5 Cloud enforces no limit on the number of users, seats, or organizations when people are created, added, or invited. Seats are a billing concept: a subscription's billable user count is derived from the organization's active members, and the count adjusts the subscription quantity without blocking anyone from joining. Members whose only role is Academy Learner are excluded from that count. A member added with no role is not counted. The count never falls below the plan's minimum.
 
 {{< alert type="info" >}}
-For more information, see [Layer5 subscription plans](https://layer5.io/pricing).
+For plan names, see [Layer5 subscription plans](https://layer5.io/pricing).
 {{< /alert >}}
 
-Teams allow you to organize users into groups and conveniently assign access to workspaces or to assign roles with associated keychains and keys to control permissions.
+Teams allow you to organize users into groups and assign access to workspaces, or to assign roles with associated keychains and keys. A person added to an organization or a team without a role is a member who holds no role. Membership and roles are separate.
 
 {{< alert type="info" >}}
-You need to have the default `Team Admin` role to assign permissions to users in your team. For more information, see [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}).
+Team Admin assigns the Team Admin role inside that team. It does not create user accounts. Organization Admin and Provider Admin hold Create User by default. See [Teams]({{< ref "cloud/concepts/identity-and-security/teams/_index.md" >}}) and [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
 {{< /alert >}}
 
-Organizations may have any number of teams and teams may have any number of users. User accounts are treated as sovereign entities that are owned by individual individuals, not by corporations.
+Organizations may have any number of teams, and teams may have any number of users. User accounts are owned by the person, not by an organization.
 
-Organization and teams may have any number of users accounts. User accounts are treated as sovereign entities that are owned by individual individuals, not by corporations.
-
-Users and their tokens may be authorized to access resources. Users can be created and managed by the Provider Admins, Organization Admins, or Team Admins. Users of one organization may be granted access to resources (e.g. Workspaces and Designs) of another organization. User entitlement, roles and permissions are org-scoped, meaning that the entitlements and permissions that a given user has in one organization does not necessarily reflect the same level of access that their membership in another oganziation does.
+Users of one organization may be granted access to resources (for example workspaces and designs) of another organization through a resource-access mapping. Roles and permissions are organization-scoped: the permissions a user has in one organization do not apply in another.
 
 {{< alert type="info" >}}
-Only Provider Admins and Organization Admin can create users. For more information, see [Roles]({{< ref "cloud/concepts/identity-and-security/roles/_index.md" >}}).
+Creating user accounts requires Create User, which Organization Admin and Provider Admin hold by default. Team Admins manage membership of their own team. They do not create user accounts. See [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}).
 {{< /alert >}}
 
 ## Account Linking
@@ -79,58 +77,78 @@ If a provider that is already linked to your account later reports a different v
 **Rules and Limitations**
 
 1. You cannot link the same social sign-in to multiple Layer5 accounts
-2. If you delete your account, any linked OAuth providers (e.g., GitHub) are automatically unlinked  
-3. Re-registering with the same email **does not** automatically re-link the OAuth provider  
-4. Automatic linking depends on the provider returning a verified email address
-5. If a linked provider later reports a different verified email address, Layer5 Cloud preserves the email already stored on your account instead of replacing it automatically
-6. You may unlink a social sign-in provider at any time
+2. The provider a person used to create the account cannot be unlinked
+3. If you delete your account, any linked OAuth providers (for example, GitHub) are removed with the sign-in identity
+4. Re-registering with the same email creates a new account and does not re-link the OAuth provider or restore the deleted account
+5. Automatic linking depends on the provider returning a verified email address. When GitHub or Google reports an address it has not verified, Layer5 Cloud does not record that address on the account
+6. If a linked provider later reports a different verified email address, Layer5 Cloud preserves the email already stored on your account, signs you in to the same account, and records an audit entry
+7. Each active email address belongs to one account. Layer5 Cloud refuses a second active account for an address that already belongs to one
+8. You may unlink a social sign-in provider other than the one used to create the account
+
+When a person signs in with GitHub or Google through an organization's custom domain, Layer5 Cloud resolves the provider's verified email address itself: it creates an account when none has that address, signs in when the provider is already attached, or attaches the provider without a prompt when an account has the same verified address but not this provider.
 
 ## Account Deletion
 
-When a user deletes their account, the following behaviors apply:
+A person deletes their own account from their profile. Only a Provider Admin deletes another person's account. Organization Admins remove members from their organization instead. Deletion is permanent, and Layer5 Cloud offers no recovery.
 
-**1. Personal Resources**
+### What deletion removes and what it keeps
 
-- Personal content (e.g., unpublished designs) is soft-deleted internally.
-- There is currently **no recovery option** available to users.
+| Item | After deletion |
+| --- | --- |
+| Organization memberships and organization roles | Ended in every organization. Each membership is kept as an ended record, so organization history shows when access ended. |
+| Team memberships and team roles | Ended in every team, kept as ended records |
+| Provider-wide roles | Removed |
+| Sign-in identity, password, and linked GitHub and Google sign-in | Removed |
+| The account record | Marked deleted and set to `inactive`. Its public profile is no longer served. |
+| Sessions and API tokens | Stop working. Every API token is revoked. The person is signed out. |
+| The account's email address | Released, so it can be used to sign up again |
+| Organizations and teams the person owns | Handed on: each passes to its longest-standing Organization Admin (Team Admin for a team), or else its longest-standing member. One with nobody else in it is deleted, unless the organization is the parent of another live organization. |
+| Credentials designated to an organization | Handed to the organization's owner, or else its longest-standing Organization Admin. For an organization the person owned, that is its new owner. |
+| Designs and other resources the person authored | Remain. Deployed designs are not taken down. |
+| Content published to the catalog | Remains public |
+| Audit events | Remain, including an entry for the deletion |
 
-**2. Published Content**
+"Longest-standing" means the membership that was created first. Members whose own accounts are deleted, and anonymous accounts, are never chosen. The new owner keeps the roles they already had. Ownership does not change anyone's roles. An organization that is the parent of another live organization is never deleted this way. If such an organization has nobody else in it, it keeps the deleted account as its owner of record and the audit trail records why. The account is still deleted.
 
-- Published content (e.g., items in the [Catalog](https://cloud.layer5.io/catalog)) remains accessible to the public
-- This ensures that published work continues to benefit the community, even after the account is deleted.
+### When deletion is refused
 
-**3. Organization Ownership**
+Because owned organizations are handed on first, a refusal is rare. Layer5 Cloud refuses to delete an account that holds a credential designated to an organization it does not own, when that organization has no live owner or Organization Admin to receive it, because the credential would be orphaned. The refusal names the organization and changes nothing. The same rule applies when a Provider Admin deletes someone else's account. To proceed, promote another member of that organization to Organization Admin, or release the credentials, then retry.
 
-- If you are the [only Org Admin or Owner](https://docs.layer5.io/cloud/concepts/identity-and-security/roles/), the organization may become **unmanageable** after you delete your account.
-- It is strongly recommended to assign multiple admins before deletion.
+### Registering again with the same email address
 
-**4. Organization Deletion**
+Deleting an account releases its email address. Registering again with it, by email and password or with GitHub or Google, on Layer5 Cloud or on an organization's custom domain, creates a new, separate account with a new account ID. The new account inherits nothing from the deleted one: no profile, preferences, organization or team memberships, roles, ownership, linked sign-in providers, or access to its resources. It gets its own personal organization, or, on a custom domain whose organization offers an open invitation, the placement that invitation gives any new account. An account is identified by its account ID, not by its email address, so the deleted account stays deleted and its audit records keep naming it. To regain access to an organization, ask one of its administrators to add the new account and assign its roles again.
 
-- Organizations cannot be deleted just by leaving or deleting accounts.
-- Only Org Owners can delete an organization, and it must be done as an explicit, manual action.
-- Org Admins do not have this permission.
+## Account status
 
-**5. Re-registering with the Same Email**
+Every account has one status. The status decides whether the account appears in member lists, counts toward billing, and can sign in.
 
-- Signing up again with the same email address creates a **new, separate account**.
-- The new account:
-  - Will not automatically regain access to resources linked to the deleted account.
-  - May, in rare cases, display inconsistent profile data (e.g., old display name in design attribution).
+| Status | Meaning |
+| --- | --- |
+| `active` | A working account. Only active accounts appear in member lists by default, in the public user directory, and in the billable user count. |
+| `pending` | An account that has been created or invited but has not yet signed in, or a password registration whose email address is not yet verified. Pending accounts are hidden from member lists until an administrator applies a filter. |
+| `inactive` | A deleted account. It cannot sign in, its public profile is no longer served, and API requests made with its tokens fail. |
+| `anonymous` | An anonymous account. It never appears in member lists, user search, or the active users list, and it sees only the public portion of other users' profiles. |
 
-{{< alert type="info" >}}
-This is a known issue. Future versions of Layer5 Cloud will address it through UUID-based identity linking.
-{{< /alert >}}
+## What others can see
 
-**6. Deployed Designs**
+Every account has a public profile. Display name, avatar, tagline, country, region, social links, join date, badges, and public activity are visible to anyone, including people who are not signed in. Email address, role names, teams, and organizations are hidden from signed-out and anonymous viewers and visible to signed-in viewers.
 
-- Deployed designs are **not automatically removed** when a user deletes their account.
-- This ensures that deployments remain stable unless explicitly taken down.
+The public user directory lists active accounts by display name and avatar only, and can be searched without signing in. It never shows email addresses. An account without a first or last name appears as "Meshery User" followed by the first eight characters of its identifier.
 
-{{< alert type="info" >}}
-While account deletion is permanent for end-users, future versions of Layer5 Cloud may introduce:
+Badges are public claims about a person. No one can grant a badge to their own account, a Provider Admin included. See [Recognizing User and Contributor Milestones]({{< ref "cloud/guides/tutorials/assigning-user-badges/index.md" >}}).
 
-- A pre-deletion flow for reviewing and exporting data  
-- The ability to transfer ownership of resources (e.g., workspaces, teams, organizations)  
-- Support for recovering accounts or restoring deleted data
+**Active users** are accounts that signed in within the last 24 hours. The list does not reflect a live connection. The **Last Active** time on the Users page is the most recent sign-in.
 
-{{< /alert >}}
+## How people join an organization
+
+| Path | Starting point | Result |
+| --- | --- | --- |
+| Create a user | The person has no account | Layer5 Cloud creates a pending account and emails a link to set a password. The new account belongs to no organization until someone adds it. See [Create a user]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md#create-user-account" >}}). |
+| Add an existing user | The person already has an account | The account becomes a member with no role. Roles and teams are separate steps. See [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md" >}}). |
+| Invite | The person has an email address, a link, or an address in an allowed domain | The person joins when they accept, with the roles and teams the invitation lists. See [User Invitations]({{< ref "cloud/concepts/identity-and-security/users/user-invitations/index.md" >}}). |
+
+## Removal from an organization
+
+Removing a person from an organization ends their access to that organization only. Their membership, their organization roles, and their membership in the organization's teams end. Their account, their memberships in other organizations, the resources they created, and the audit trail remain. An organization's owner cannot be removed. Ownership cannot be transferred. See [User Management]({{< ref "cloud/concepts/identity-and-security/users/user-management/index.md#what-removal-ends" >}}).
+
+Removal ends membership. Account deletion, above, ends the account itself in every organization at once.

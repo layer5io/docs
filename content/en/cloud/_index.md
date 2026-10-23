@@ -14,28 +14,45 @@ cascade:
 ## Understanding the Layer5 Ecosystem
 
 {{< ecosystem-box icon="cloud" title="Layer5 Cloud" >}}
-is an identity provider and global console for Kanvas and Meshery deployments with an extensible and highly flexible authorization framework, tenant entitlement services, service provider-grade organizational hierarchy, team workspace management and a content catalog for public and private hosting of cloud native architectures. Layer5 Cloud is available as a service or self-hosted.
+is the identity provider and remote provider for Kanvas and Meshery. It owns accounts, organizations, teams, workspaces, roles, and the catalog, and it stores every design and design version. It is available as a hosted service or self-hosted.
 {{< /ecosystem-box >}}
 
 {{< ecosystem-box link="kanvas/_index.md" icon="images/logos/kanvas-icon-color.svg" image="true" class="hidden-highlight-box" title="Kanvas" >}}
-delivers a collaborative experience similar to how Google Workplace transforms the digital work environment and how Figma democratizes UX design tooling. Kanvas simplifies the complexity of Kubernetes and multi-cloud infrastructure management accessible to all. Kanvas provides a visual, multi-player experience that allows you to create, configure, deploy, and manage modern infrastructure with confidence.
+is a visual designer and operator for Kubernetes and multi-cloud infrastructure. It runs as an extension inside Meshery and uses Layer5 Cloud to store, share, and publish designs.
 {{< /ecosystem-box >}}
 
 {{% /pageinfo %}}
 
 ## What is Layer5 Cloud?
 
-Layer5 Cloud is the centralized management console and identity provider for the Layer5 ecosystem — specifically for **Kanvas** and **Meshery** deployments. It provides an extensible, highly flexible authorization framework that enables organizations to govern complex, multi-cloud infrastructure with confidence. Think of it as the command center where your teams, workspaces, and cloud-native assets come together under a single, unified platform.
+Layer5 Cloud is the identity, tenancy, and collaboration service behind Kanvas and Meshery. It signs users in, organizes them into organizations, teams, and workspaces, decides what each of them may do, and stores the designs they create and share. Layer5 Cloud runs as a hosted service and as a [self-hosted]({{< ref "cloud/guides/self-hosted/_index.md" >}}) deployment.
 
-Layer5 Cloud is available both as a fully managed service and as a [self-hosted]({{< ref "cloud/guides/self-hosted/_index.md" >}}) deployment, giving organizations the flexibility to meet their own security and compliance requirements.
+Meshery Server, running in your environment, is what talks to your Kubernetes clusters and performs every dry-run, deploy, and undeploy. Kanvas is an extension that runs inside Meshery. Kanvas sends its requests to Meshery Server, which forwards design, catalog, and sharing requests to Layer5 Cloud. Real-time collaboration signaling is the only direct path from the browser to Layer5 Cloud.
 
 ## Why use Layer5 Cloud?
 
-- **Unified Identity and Access Management**: Define and enforce granular Role-Based Access Control (RBAC) across your organizations, teams, and users — all from one place.
-- **Collaborative Infrastructure Design**: Like Google Workspace for teams or Figma for designers, Layer5 Cloud enables real-time, multi-player collaboration on infrastructure patterns and deployments.
-- **Content Catalog**: Publish, discover, and reuse cloud-native architectures and patterns — either publicly or privately within your organization.
-- **Multi-Tenancy and Organizational Hierarchy**: Support service provider-grade structures with tenant entitlement services and a flexible organizational model that scales with your business.
-- **Flexible Deployment**: Run Layer5 Cloud as a SaaS product or bring it on-premises — your infrastructure, your rules.
+- **Sign-in and identity.** Users create an account with an email address and password, with GitHub, or with Google. An organization that configures its own identity providers, including a generic OIDC provider, offers those instead. A signed-in user can link a GitHub or Google account to an existing profile, so either method signs in to the same profile. Email sign-ups verify their address before password sign-in works. After an email sign-up, Layer5 Cloud signs you in immediately, and opening the verification link verifies the address.
+- **Tenancy.** Organizations own teams and workspaces. A team belongs to the organization it is created in, a workspace can hold any number of teams, and a team can belong to several workspaces. At first successful sign-in, every new user receives a default organization, team, and workspace: they hold the Organization Admin role on the organization, the Team Admin role on the team, and own the workspace.
+- **Authorization.** Roles, keys, and keychains decide what each user may do. A key is a single permission, a keychain groups keys, and a role carries keychains. Users hold roles within an organization, so the same person can have different permissions in different organizations. Built-in roles cover the provider, organization, team, and workspace levels. See [Identity and Security]({{< ref "cloud/concepts/identity-and-security/_index.md" >}}).
+- **Design storage and sharing for Kanvas.** Layer5 Cloud persists every Kanvas design and every version of it, records who each design is shared with, and keeps the event log. A design belongs to at most one workspace at a time. Real-time collaboration in Kanvas starts with a signaling service that Layer5 Cloud hosts. After participants connect, edits synchronize directly between their browsers.
+- **The catalog.** Anyone can browse the [catalog]({{< ref "cloud/concepts/catalog/_index.md" >}}). A signed-in user with the Clone Design permission can clone a published or public design into their own workspace, download it, or open it in Kanvas on the [Meshery Playground](https://playground.meshery.io). Opening a design in the Playground does not clone it.
+- **Remote provider for Meshery Server.** Users sign in to Meshery through Layer5 Cloud, Meshery Server registers itself as a connection owned by the signed-in user, and Layer5 Cloud returns a capabilities document that tells Meshery which features to enable for that user. Every new user holds the Kanvas role, which enables the Kanvas extension when their Meshery Server connects.
+- **Academy.** [Academy]({{< ref "cloud/academy/_index.md" >}}) delivers learning paths, challenges, and certifications, and gives content creators the tools to build and publish their own.
+
+## What Layer5 Cloud does not do
+
+- **Cluster deploy and cluster management stay with Meshery Server.** Meshery Server talks to your Kubernetes clusters through Meshery Operator and MeshSync, and performs every dry-run, deploy, and undeploy.
+- **Kanvas runs inside Meshery.** Kanvas sends its requests to Meshery Server, which forwards design, catalog, and sharing requests to Layer5 Cloud. Real-time collaboration signaling is the only direct path from the browser to Layer5 Cloud.
+
+[Concepts]({{< ref "cloud/concepts/_index.md" >}}) explains how the building blocks relate, including how Layer5 Cloud, Meshery Server, and Kanvas divide the work.
+
+## Plans
+
+Layer5 sells four plans: Free, Team Designer, Team Operator, and Enterprise, each with monthly and annual billing. In subscription and entitlement records the Free plan is named Personal. Entitlements follow the organization's plan. Current prices are on the [pricing page](https://layer5.io/pricing).
+
+Layer5 Cloud enforces one plan limit: components per design. The recorded limits are 100 on Free, 200 on Team Designer, 100 on Team Operator, and 300 on Enterprise. Saving or importing a design over the active plan's limit is refused with `Design exeeds maximum limit of N components supported by your current plan`. When an organization holds more than one active subscription, the highest component limit among them applies. An organization with no active subscription cannot save or import a design: the request fails with HTTP 500 and `Org is not entitled to adding components to a design`.
+
+Other recorded quantities (relationships per design, image size, designs per workspace, workspaces per organization) are listed by `GET /api/entitlement/features` and are not enforced. For workspaces per organization on the Free plan, the plan records disagree: the monthly billing record sets 1 and the annual billing record sets 10. Authorization is by permission key. An action your role does not grant is refused with HTTP 403 even when the plan includes the capability. See [Subscriptions and billing]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md#subscriptions-and-billing" >}}) for how a subscription is started, upgraded, and canceled.
 
 <!-- {{< blocks/section color="dark" type="row" >}}
 {{% blocks/feature icon="fa-lightbulb" title="Fastest OS **on the planet**!" %}}

@@ -241,6 +241,12 @@ a:not([href]):not([class]):hover {
     }
   }
 
+  @media (max-width: 768px) {
+    &__section .ul-1 ul {
+      padding-left: 1.5em;
+    }
+  }
+
   &__section-title {
     a {
       color: $gray-400;
@@ -794,11 +800,12 @@ html {
   scroll-behavior: smooth;
 }
 
-// Max-width constraint for large screens to prevent layout stretch
+// Max-width constraint for larger screen to prevent layout scaling
 @media (min-width: $site-max-width) {
   .td-navbar {
     > .container-fluid {
       max-width: $site-max-width;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
@@ -807,6 +814,7 @@ html {
   .container-fluid.td-outer {
     > .td-main {
       max-width: $site-max-width;
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
     }

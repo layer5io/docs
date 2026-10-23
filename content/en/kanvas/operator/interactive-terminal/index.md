@@ -4,6 +4,8 @@ description: >
   Learn about Interactive Terminal in Operator mode 
 categories: [operator]
 tags: [troubleshooting]
+aliases:
+  - /kanvas/guides/operating/interactive-terminal/
 ---
 
 When operating cloud native infrastructure, deep diagnostics often require direct access to the container shell. The **Interactive Terminal** in Kanvas enables you to execute commands and inspect the filesystem of your running containers directly from the visual topology. By integrating terminal sessions into the Kanvas interface, you can troubleshoot issues, verify configurations, and test network connectivity without switching context to external CLI tools like `kubectl`.
@@ -73,3 +75,7 @@ While using the interactive terminal, understand that you can only open one sess
 <!-- {{< figure src="images/interactive-terminal-sequence-diagram.svg" link="images/interactive-terminal-sequence-diagram.svg"  width="100%" alt="interactive-terminal-sequence-diagram" >}} -->
 
 ![interactive-terminal-sequence-diagram](images/interactive-terminal-sequence-diagram.svg)
+
+## Current behavior
+
+The action is **Initiate Terminal Session**, offered on Pod and Container resources only. A pod opens one session per container in its `containers` list. Init and ephemeral containers are not included. The image must contain `/bin/sh`. Scrollback is 10,000 lines. Closing the panel hides it and leaves sessions running. The trash icon ends that tab. Leaving Operator mode closes the panel. Esc closes the terminal while it has focus. The Kanvas interface does not check a permission before it opens a session. There is no keyboard shortcut for opening it.

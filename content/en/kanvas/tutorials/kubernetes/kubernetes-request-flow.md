@@ -10,6 +10,7 @@ aliases:
   - /kanvas/tutorials/kubernetes-request-flow
   - /guides/tutorials/kubernetes-request-flow
   - /guides/tutorials/kubernetes/kubernetes-request-flow
+  - /kanvas/concepts/kubernetes-request-flow/
 ---
 
 In this tutorial, we will explore the exact journey a request takes inside a Kubernetes cluster — from the moment a user hits "Enter" in their browser, to the moment a response is sent back. We will understand the fundamental data path of a request — from the user to the container, using a **diagram built in Kanvas**.

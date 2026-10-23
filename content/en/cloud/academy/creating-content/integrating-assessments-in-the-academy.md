@@ -34,9 +34,9 @@ Well-designed assessments are crucial because they:
 
 ### 1. Each Level Can Have Assessments
 Inside [Layer5 Cloud Academy](https://cloud.layer5.io/academy/), to avoid confusion and clearly distinguish between assessment types at each level, we use specific naming conventions:
-- Firsr Level (Root Level): Exam – assesses learning outcomes at root level
-    - Second Level: Test – measures understanding within a course
-      - Third Level: Quiz – short assessments tied to specific modules
+- First Level (Root Level): Exam - assesses learning outcomes at root level
+    - Second Level: Test - measures understanding within a course
+      - Third Level: Quiz - short assessments tied to specific modules
 
 ```
 Layer5 Cloud Academy
@@ -84,9 +84,8 @@ Take **Learning Path** as an example:
 - Pass all Module quizzes → Unlock Course test
 - Pass all Course tests → Unlock Learning Path exam
 
-{{< alert type="info" title="Passing the Assessment Marks that Level as Completed" >}}
-Pass `course-1/test.md` → Course 1 is marked as completed.  
-Pass `learning-path-name/exam.md` → Entire learning path is marked as completed. 
+{{< alert type="info" title="Passing the Final Assessment Marks that Level as Completed" >}}
+Passing the final assessment of a section marks that section completed. Passing a course test that is not final does not complete the course. Passing the final assessment of a learning path, challenge, or certification sets the registration to Completed, awards the badge when one is set, and issues a certificate when the content defines one.
 {{< /alert >}}
 
 **Making assessments optional:**
@@ -129,7 +128,7 @@ questions:
 ```
 
 {{< alert type="info" title="Frontmatter naming convention" >}}
-Quiz frontmatter uses **camelCase** (`passPercentage`, `isOptional`, `isCorrect`, `correctAnswer`, `timeLimit`, `maxAttempts`, `numberOfQuestions`, `caseSensitive`, `multipleAnswers`). Older snake_case keys (e.g., `pass_percentage`, `is_optional`) are still accepted by the Hugo theme for backward compatibility but are deprecated; new content should be authored in camelCase to align with the canonical academy quiz schema.
+Quiz frontmatter uses **camelCase** (`passPercentage`, `isOptional`, `isCorrect`, `correctAnswer`, `timeLimit`, `maxAttempts`, `numberOfQuestions`). Older snake_case keys (e.g., `pass_percentage`, `is_optional`) are still accepted by the Hugo theme for backward compatibility but are deprecated; new content should be authored in camelCase. There is no `caseSensitive` field. Short answers are always compared without regard to letter case.
 {{< /alert >}}
 
 ### Assessment Frontmatter Fields
@@ -139,19 +138,19 @@ Quiz frontmatter uses **camelCase** (`passPercentage`, `isOptional`, `isCorrect`
 | Applicable To | Field | Required | Description |
 | :--- | :--- | :--- | :--- |
 | **Assessment** | `title` | - | A short, descriptive name for the assessment (e.g., "Final Exam" or "Module 3 Quiz"). |
-| | `id` | - | Unique identifier for the assessment. If omitted, a UUID will be auto-generated. |
+| | `id` | - | Unique identifier for the assessment. If omitted, the build generates one from the file path. Set a readable value so grade history stays traceable. |
 | | `passPercentage` | ✅  | Minimum score required to pass the assessment (e.g., `70`). |
 | | `type` | ✅  | Metadata type for the assessment. The value must be `test`. |
 | | `layout` | - | Metadata type for the assessment. The value must be `test`. |
 | | `isOptional` | - | A boolean value. If `true`, the assessment can be skipped without affecting completion. |
 | | `timeLimit` | - | Duration of the test in minutes. Use `0` (the default) for no limit. |
-| | `maxAttempts` | - | Maximum number of attempts allowed. Defaults to the number of question sets when a question bank is configured. |
+| | `maxAttempts` | - | Attempts allowed per learner and registration. `0` means unlimited. When a question bank is configured and you do not set this, the number of retries defaults to the number of generated sets. Starting an attempt counts whether or not the learner submits it. |
 | | `numberOfQuestions` | - | Size of each question set when the test should draw from a larger question bank. Total questions must be a multiple of this value. |
 | | `final` | - | A boolean flag. Set to `true` if this assessment determines the completion for its parent course or path. |
 | | `questions` | ✅  | An array containing one or more question objects.                                                         |
 | **Question Object** | `id` | ✅  | Unique identifier for the question within the assessment (e.g., `q1`, `q2`).                              |
 | | `text` | ✅  | The text of the question prompt.                                                                          |
-| | `type` | ✅  | The type of question. Accepted values are `single-answer`, `multiple-answers`, `short-answer`, or `true-false`. |
+| | `type` | ✅  | The type of question. The scoring service evaluates `single-answer`, `multiple-answers`, and `short-answer`. Any other type, including `true-false`, is shown but never scores, so a learner cannot earn its marks. |
 | | `marks` | ✅  | The number of points awarded for a correct answer.                                                        |
 | | `instructions` | -  | Custom instruction for each question                                                                      |
 | | `options` | - | An array of answer options.                                                                               |
@@ -162,11 +161,11 @@ Remember: `type: "test"` are fixed values that cannot be modified. The system ne
 
 ## Supported Assessment Types
 
-Layer5 Academy supports four question formats:
+Layer5 Academy scores three question formats. For a true or false question, use `single-answer` with two options. A `true-false` type is shown and never scored.
 
 ***Single Choice Questions***
 - Single correct answer
-- True/False questions
+- True or false, authored as `single-answer` with two options
 
 <details style="margin-bottom: 1em;">
   <summary>Examples: <code>type: single-answer</code> </summary>
@@ -189,13 +188,13 @@ Layer5 Academy supports four question formats:
 </details>
 
 <details style="margin-bottom: 1em;">
-  <summary>Examples: <code>type: true-false</code> </summary>
+  <summary>Examples: true or false as <code>type: single-answer</code> </summary>
 
     ---
     questions:
       - id: "question2"
         text: "Kubernetes Pods can contain multiple containers."
-        type: "true-false"             # choose the type
+        type: "single-answer"          # true or false is a single-answer question
         marks: 1
         options:
           - id: "true"
@@ -308,7 +307,6 @@ Instructions are defaultly defined for each question type :
 - single-answer: Select one answer
 - multiple-answers: Select all that apply
 - short-answer: Type your answer below
-- true-false: Select True or False
 
 
 Instructions can be override in frontmatter by defining a custom intruction for each question.
@@ -356,12 +354,27 @@ The scoring process is handled automatically by the backend system. As a content
 ### Scoring Rules for Question Types
 
 - **Multiple-Choice Questions**: For questions with a single correct answer, the logic is straightforward. For **multiple-answer questions**, the scoring is strict: the learner must select **all** correct options and **none** of the incorrect options to earn the marks. There is no partial credit.
-- **Short Answer Questions**: The learner's input is compared against the `correctAnswer` field. The comparison is **case-insensitive** by default; set `caseSensitive: true` on a question to require exact case matching. Leading/trailing whitespace is always ignored to avoid penalizing minor typing variations.
+- **Short Answer Questions**: The learner's input is compared against the `correctAnswer` field. The comparison is always case-insensitive. Layer5 Cloud has no case-sensitive mode, so write `correctAnswer` as the one canonical form you accept. Leading and trailing whitespace is ignored. A blank answer is wrong. Scoring is all or nothing: an unanswered question scores zero, and a multiple-answers question gives no partial credit.
 
 ### The Result of Scoring
 
 After an assessment is submitted and scored, a detailed result record is permanently saved to the learner's grade history. If the assessment is a designated test for a Course or an exam for a Learning Path and the result is "Passed", it will trigger the completion of that Course or Learning Path in the learner's progress tracker.
 
+
+## Attempts, time limits, and rejected submissions
+
+| Behavior | Rule |
+| --- | --- |
+| Time limit | The attempt expires `timeLimit` minutes after it starts. A late submission fails with `Test submission has expired`. `0` means no limit. |
+| Attempt limit | Starting another attempt past `maxAttempts` fails with `Maximum attempts reached for this test`. |
+| Resubmission | A submitted attempt cannot be submitted again. |
+| Ownership | A learner can submit only their own attempt, and only against their own registration. |
+| Payload size | A submission larger than 1 MiB is rejected. |
+| Prerequisites | A submission whose prerequisites are incomplete is rejected with `Prerequisites not completed`. |
+| Question bank | With `numberOfQuestions` set, attempt 1 gets questions 1 to N, attempt 2 gets the next N, and after the last window the sequence restarts. Keep the bank an exact multiple of N so the last window is not short. |
+| Answers in the browser | The server never sends correct answers to the learner's browser. |
+
+Renaming or moving an assessment file after launch makes the new path a different assessment. Earlier attempts and passes recorded against the old path no longer count, so attempt limits reset and prerequisites that depended on the old path stay unmet.
 
 ## Frequently Asked Questions
 
@@ -374,14 +387,14 @@ No, the <code>id</code> field is <strong>optional</strong>. If omitted, the syst
 <details>
   <summary>2. Why is an assessment required for every Course and Learning Path?</summary>
 
-The system determines the completion of a Course or Learning Path based on whether the learner passes its designated assessment (e.g., <code>test.md</code>, <code>exam.md</code>). Without this, the system has no trigger to mark the level as completed or to award achievements such as badges. Module-level quizzes are intended for practice and do not trigger parent-level completion.
+Completion is triggered by passing the final assessment of that section. Without one, nothing marks the level complete or awards its badge. Passing a non-final quiz or test completes only that assessment. A course with no test, or a learning path with no exam, has no event that can mark it complete.
 
 </details>
 
 <details>
   <summary>3. Can I fully test the assessment (including scoring) locally?</summary>
 
-You can preview the test layout locally, but scoring and evaluation are handled by the backend server. This means submission, grading, and result processing are not available in local previews. You must publish the content to test full functionality.
+You can preview the test layout locally, but scoring and evaluation are handled by the backend server. Submission, grading, attempt counting, and completion are not available in local previews. Publish a version and use a dedicated test learner in a non-production organization so practice passes do not appear in your real metrics.
 </details>
 
 <details>
@@ -393,5 +406,5 @@ No partial credit is awarded. To receive points, the learner must select all cor
 <details>
   <summary>5. Can a learner retake an assessment even after scoring 100%?</summary>
 
-Yes. Even if a learner scores 100%, they are allowed to retake the assessment. The system does not restrict retakes based on previous scores. This design supports repeated practice, randomized question pools, and flexible testing workflows—without enforcing score-based access rules.
+Yes, until <code>maxAttempts</code> is reached. The server does not block a retake because of an earlier score, including 100%. When <code>maxAttempts</code> is <code>0</code>, retakes are unlimited. When a question bank is in use and you leave <code>maxAttempts</code> unset, retries default to the number of generated sets, and further attempts cycle through those sets.
 </details>

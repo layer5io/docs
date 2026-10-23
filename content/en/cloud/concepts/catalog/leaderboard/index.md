@@ -20,10 +20,11 @@ Metrics are quantifiable measures used to track and assess the status, progress,
 
 ### How to Access the Leaderboard
 
-You can reach the Leaderboard page in two ways:
+The leaderboard is the catalog sorted by one of the usage counters. It is not a separate score. By default it sorts by Opens, highest first, ten rows per page. The dashboard also shows the leaderboard as a widget.
 
-1. **Global Navigation Bar:** Click the Leaderboard icon in the main navigation bar for quick access.
-2. **From the Catalog Page:** While Browse the Catalog, you can click the 'Open Leaderboard' button in the **Top Performers** section
+You can reach the full Leaderboard from the Catalog page: in **Top Performers**, click **Open Leaderboard**.
+
+Viewing the leaderboard needs the View Designs permission. Without it, the page shows a permission-denied message instead of the table.
 
 ![Leaderboard Button](images/leaderboard_button.png)
 
@@ -31,9 +32,10 @@ You can reach the Leaderboard page in two ways:
 
 The Leaderboard page offers several ways to explore and interact with:
 
-- **Search for Designs:** Click the **Search** icon to quickly find specific designs by name.
-- **Sort by Different Metrics:** Click on column headers like `Opens`, `Clones`, or `Downloads` to reorder the list based on your preferred metric.
+- **Search for Designs:** Click the **Search** icon to find designs by name. Search matches names only.
+- **Sort by Different Metrics:** Click a metric column such as `Opens`, `Clones`, or `Downloads` to re-rank the list. The sort order is kept in the page address.
+- **Filter:** Narrow by Type and by Class. Each filter takes one value at a time.
 - **Customize Your View:** Click the **View Columns** icon to show or hide specific metric columns.
-- **Take Actions:** Click the **Actions** icon to download, share, or perform other actions.
+- **Take Actions:** On a row you can clone, download, copy its link, share it, or open it in the Playground.
 
 ![Leaderboard action menu](images/leaderboard-action.png)

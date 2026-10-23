@@ -26,9 +26,9 @@ The Cloud Catalog is a web-based, public catalog to facilitate easy discovery of
 
 Each item in the catalog comes with an associated level of visibility.
 
-- Published: View and clone permission for all users. View for all non-users.
-- Public: View and edit permissions for all users.
-- Private: View and edit permissions only for design owner.
+- Published: Anyone can read it, signed in or not. Any signed-in user with Clone Design can clone it. It is listed in the catalog.
+- Public: Anyone with the link can read it, signed in or not. Any signed-in user can clone it. It is not listed in the catalog. A design saved for the first time is public.
+- Private: The owner, provider administrators, and users the design is shared with can read it. Nobody can clone it, not even the owner. Designs imported through GitHub start private.
 
 ### Content Types
 - Deployment
@@ -93,4 +93,58 @@ If an import URL is mistyped, has moved, or answers with anything other than a s
 ### Content Tags
 
 - Arbitrary strings for categorization.
-- Content Support Levels: "Official", "Partner", "Community".
+- Content classes: Official, Verified, and Community. Publishers do not choose their own class.
+
+## Classes
+
+| Class | Meaning |
+| --- | --- |
+| Official | Produced and fully supported by Meshery maintainers. |
+| Verified | Produced by partners and verified by Meshery maintainers. |
+| Community | Produced and shared by Meshery users. |
+
+- A publisher without the Approve Catalog Request permission creates a publish request with the class Community. The request waits in the review queue.
+- A publisher with the Approve Catalog Request permission skips the queue. The design is approved immediately with the class Official.
+- An approver deciding a queued request chooses Official, Verified, or Community at the moment of approval.
+
+## Publication lifecycle
+
+| Stage | What happens | Who is notified |
+| --- | --- | --- |
+| 1. Request | A signed-in user publishes a design with its catalog metadata. Without Approve Catalog Request, this creates a pending request and the design's visibility does not change yet. | Catalog maintainers receive an email, and the requester receives a copy. |
+| 2. Review queue | Pending requests wait. Reviewers see the author, the author's email, the content name and type, the status, the class, and when the request was created. The queue shows the reviewer's current organization, or all organizations for holders of View All Organizations. | |
+| 3. Approve or deny | A reviewer approves, choosing the class, or denies. Approval publishes the design and records its published version. Denial leaves visibility unchanged. Only pending requests can be decided. | The owner receives an approval or denial email, unless notification preferences turn approval emails off. |
+| 4. Published | The design is in the catalog. | |
+| 5. Unpublish | The design's creator, or a holder of Approve Catalog Request, removes it. The design becomes private. | |
+
+The publish form asks for a type, at least one technology, a description, and caveats. Denying a request is checked against Approve Catalog Request, the same as approving. Holding Deny Catalog Request alone does not let you deny a request.
+
+Each design can have only one publish request, ever. A design that already has a request, whether pending, approved, or denied, cannot be submitted again. Unpublishing does not clear the earlier request.
+
+Once a design is published, its visibility cannot be changed from the publish dialog. Unpublishing returns the design to private, not public. Catalog metadata stays on the design after unpublishing.
+
+The Cloud catalog and the public Meshery catalog website are separate listings. When a holder of Approve Catalog Request publishes a design directly, Layer5 Cloud triggers a refresh of the Meshery catalog website. If that refresh cannot be triggered, the publish still succeeds. Approving a request from the review queue does not refresh the Meshery catalog website.
+
+## Cloning
+
+A clone is a private copy that you own. The original stays untouched.
+
+- The copy is placed in the workspace you have selected in your current organization. Cloning requires a selected organization and is refused when you are viewing all organizations.
+- The copy starts at a fresh version and keeps the original's catalog metadata.
+- The source design's clone count goes up by one.
+- Any signed-in user with Clone Design can clone a published or public design. Signed-out visitors cannot clone.
+- Private designs cannot be cloned by anyone, including their owner.
+
+## Metrics and the leaderboard
+
+Every design keeps five counters: Opens, Downloads, Deploys, Clones, and Shares. They are lifetime totals with no deduplication and no reset. See [Metrics]({{< ref "cloud/concepts/catalog/metrics/index.md" >}}) and [Leaderboard]({{< ref "cloud/concepts/catalog/leaderboard/index.md" >}}).
+
+The leaderboard is the catalog sorted by one of those counters, Opens by default. The catalog page shows top performers in a summary panel.
+
+## Permissions
+
+Browsing the catalog requires no permission and no account. Publishing, reviewing, unpublishing, and cloning use View Catalog Requests, Approve Catalog Request, Deny Catalog Request, Publish Design, Unpublish Design, Clone Design, and View Designs. Users and Team Admins can unpublish only designs they created. Workspace Admins, Organization Admins, and Provider Admins can unpublish any design. See [Default Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
+
+Layer5 Cloud does not check your plan when you publish, review, or clone a design.
+
+Published WebAssembly filters are available to Meshery and to API clients. The public catalog listing in this page's sense is designs. To manage filters you already have, use [My Filters](https://cloud.layer5.io/catalog/content/my-filters) as described above, and [Filter Management](https://docs.meshery.io/guides/infrastructure-management/filter-management) in the Meshery documentation.

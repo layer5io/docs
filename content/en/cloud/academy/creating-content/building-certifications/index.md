@@ -158,7 +158,7 @@ Successfully completing a certification provides learners with valuable, verifia
 
 ### Badges
 
-Upon successful completion of all mandatory exams, learners are awarded a digital badge. This badge serves as a verifiable credential that is perfect for sharing on professional profiles to showcase the achievement.
+The badge is awarded when the learner passes the certification's final test, not when they finish every practice exam. A badge setting that points at a badge that no longer exists awards nothing, and the failure is logged. The badge is a verifiable credential learners can share on professional profiles.
 
 See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c9e3-4b66-890c-8f018e729306?tab=badges)
 
@@ -166,9 +166,9 @@ See a live example on a [user's profile](https://cloud.layer5.io/user/a5eb9e0a-c
 
 ### Official Certificates
 
-The ultimate outcome of a certification is an **official Certificate of Completion**.
+When the certification defines a certificate, it is issued at the same moment the final test is passed. The registration status becomes Completed.
 
-A key feature unique to the Certification content type is that while the learning materials and exams are offered for free, the **issuance of the official certificate is a paid feature**. This model allows anyone to learn and validate their skills at no cost, with the option to purchase the formal certificate to document their accomplishment.
+While the learning materials and exams are free, issuance of the official certificate is an optional paid feature. You do not handle payment. Each certificate gets its own ID, the recipient's first and last name, the organization, and the issue date. It is served at a public certificate page, and the learner receives an email. A failed email does not undo the certificate. Certificates do not carry an expiry date.
 
 
 ## Frequently Asked Questions

@@ -151,6 +151,15 @@ function restoreImage(imgId, originalSrc) {
     var img = document.getElementById(imgId);
     img.src = originalSrc;
 }
+
+window.addEventListener('pageshow', function (event) {
+    if (!event.persisted) return;
+    document.querySelectorAll('.l5btn[data-default]').forEach(function (link) {
+        var img = link.querySelector('img');
+        if (!img) return;
+        restoreImage(img.id, link.dataset.default);
+    });
+});
 </script>
 
 <!-- Wave Visualizer Script -->

@@ -179,11 +179,7 @@ To make it easier to filter and manage our resources during visualization, let's
 
 #### Group Components
 
-The _**Group Components**_ icon on the dock below allows you to group resources based on shared labels or annotations.
-
-This functionality aids in visualizing the relationships between various resources, making it easier to manage them, troubleshoot issues, and understand the overall cluster architecture.
-
-![Group Components](images/wordpress-mysql-persistentvolume/wp21.png)
+There is no Group Components control on the dock. Matching labels do not create a group because you applied a tag. After you set labels, Kanvas evaluates the design, and a TagSet (a shaded region around the matching components) appears only when a registry relationship defines a label match. You cannot draw a TagSet yourself. Designer does not filter the canvas by label. Labels on the deployed objects are a separate matter: they are copied onto the Kubernetes objects, which is what you filter on in Operator.
 
 #### Deploy the Resources
 

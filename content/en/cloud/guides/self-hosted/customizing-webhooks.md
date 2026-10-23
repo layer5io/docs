@@ -8,50 +8,93 @@ aliases:
 
 ---
 
-Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers), Layer5 Cloud. In this guide, we will walk through configurable webhooks that Layer5 Cloud uses internally to automate tasks and how you can customize these webhooks to integrate with your existing tools.
+Layer5 Cloud calls an HTTP endpoint you choose when three things happen: a person asks for help, a Provider Admin decides a signup request, and a person gains Kanvas access. On a self-hosted deployment you set the three endpoints in Helm. None is set by default, and an unset webhook does nothing. The three names are fixed. Adding a fourth webhook requires a change to Layer5 Cloud itself.
 
 ## Customize and add your own custom webhook
 
-Layer5 Cloud's webhook configurations are managed through environment variables defined in **.env** files. Here's how you can customize them:
+Set the chart values. They are written into the server ConfigMap as environment variables. There is no `.env` file to edit in a Helm install.
 
 ### Step 1: Locate the .env File
 
-Find the **.env** file in the `config` directory of your Layer5 Cloud installation. This file contains environment variables that control various aspects of the application, including webhook URLs.
+For a Helm deployment, the webhook URLs are `env.webhookHelpAndSupport`, `env.webhookSignupRequest`, and `env.webhookKanvasEntitlement` in your values file. See [Helm Chart Values]({{< ref "cloud/guides/self-hosted/deployment/helm-chart-values.md" >}}).
 
 ### Step 2: Define Custom Webhooks in the .env file
 
-Add your custom webhook URLs to the **.env** file by modifying the existing variables. Here is an example of how the **.env** file should look:
-
-```ini
-# Other configuration variables
-
-# Webhooks
-# Below is the list of webhooks that Layer5 Cloud uses internally.
-# You can replace the values of these variables with your own webhook URLs.
-
-# Triggers when a user fills the help and support form, in Layer5 Cloud or in Kanvas.  
-WEBHOOK_HELP_AND_SUPPORT="https://your-custom-webhook-url.com/help-support"
-
-# Webhook to send an email notification to the user when they receive a Kanvas entitlement
-WEBHOOK_MESHMAP_ENTITLEMENT="https://your-custom-webhook-url.com/kanvas-entitlement"
-
-# Webhook to send an update email upon signup request approval or denial.
-WEBHOOK_SIGNUP_REQUEST="https://your-custom-webhook-url.com/signup-request"
-
+```yaml
+env:
+  webhookHelpAndSupport: "https://hooks.example.com/layer5/support"
+  webhookSignupRequest: "https://hooks.example.com/layer5/signup"
+  webhookKanvasEntitlement: "https://hooks.example.com/layer5/kanvas-access"
 ```
 
-{{< alert type="note" title="WEBHOOK_HELP_AND_SUPPORT also receives Kanvas support requests" >}}
-`WEBHOOK_HELP_AND_SUPPORT` is no longer fired only by the Layer5 Cloud Help and Support form. Support requests raised inside [Kanvas](/kanvas/reference/help-and-support) travel from the browser to Meshery Server, which forwards them to your Layer5 Cloud deployment, which in turn fires this same webhook. Both sources deliver the same `memberFormOne` payload shape, so no change to your webhook endpoint is required - expect the additional volume and the new origin.
+| Chart value | Fires when | Payload |
+| --- | --- | --- |
+| `env.webhookHelpAndSupport` | Someone submits the Help and Support form in Layer5 Cloud, or a support request raised in Kanvas reaches your deployment | `memberFormOne` |
+| `env.webhookSignupRequest` | A Provider Admin approves or denies a signup request | `signupData` and `newUser` |
+| `env.webhookKanvasEntitlement` | A new user registers, a user completes a first brokered social sign-in, or a role assignment gives a user Kanvas access | `signupData` and `newUser` |
 
-Because Kanvas's request is relayed through Meshery Server to your remote provider, Kanvas users must be connected to your Layer5 Cloud deployment (or another remote provider) for Help and Support to work at all; under Meshery's local provider the request is rejected as not implemented.
+{{< alert type="note" title="webhookHelpAndSupport also receives Kanvas support requests" >}}
+Support requests raised inside [Kanvas]({{< ref "kanvas/reference/help-and-support.md" >}}) travel from the browser to Meshery Server, which forwards them to your Layer5 Cloud deployment, which fires the same webhook. Both sources deliver the same `memberFormOne` payload. Kanvas users must be connected to your deployment for Help and Support to work. Under Meshery's local provider the request is refused as not implemented.
 {{< /alert >}}
 
-It is advisable not to change variable names to avoid potential conflicts. If you are customizing the remote provider to support additional webhooks, you can add new variables following the naming convention starting with WEBHOOK.
+Leave a webhook unset if you do not need it. Do not invent additional variable names. The server only calls these three.
 
 ### Step 3: Applying the Configuration
 
-After updating the **.env** file, apply the changes to your Layer5 Cloud installation. This typically involves restarting the services.
+Upgrade the release. The pods restart because the values land in the ConfigMap.
+
+```bash
+helm upgrade layer5-cloud layer5/layer5-cloud -n layer5-cloud --values values.yaml
+```
 
 ### Step 4: Testing the Webhooks
 
-Once the configuration is applied, test the webhooks to ensure they are functioning correctly. You can trigger each webhook by performing the associated actions (e.g., filling out the help and support form, triggering a Kanvas entitlement, or processing a signup request).
+Trigger each one through its real action: submit the Help and Support form, approve a test signup request, or register a test user. There is no signature and no shared secret header. Restrict the receiver by network policy, or put an unguessable token in the URL path.
+
+| Property | Behavior |
+| --- | --- |
+| Method and body | `POST` with a JSON body and `Content-Type: application/json; charset=UTF-8`. |
+| Authentication | None. |
+| Success | A `200` or `202` response. Any other status counts as a failure. |
+| Timeout | None. The server waits until the receiver answers. |
+| Retries | None. Each event is sent once. |
+
+The support and signup webhooks run inside the request of the person who triggered them, so a slow receiver makes that person wait.
+
+## Payloads
+
+### Help and support
+
+```json
+{
+  "memberFormOne": {
+    "firstname": "Ada",
+    "lastname": "Admin",
+    "email": "ada@example.com",
+    "message": "I cannot connect my cluster.",
+    "form": "support",
+    "scope": "Layer5 Cloud",
+    "subject": "Connection problem"
+  }
+}
+```
+
+Layer5 Cloud rejects a request that carries any field other than these seven, with a `400` error that names the problem.
+
+### Signup decisions
+
+A decision requires an email, a first name, a last name, and a valid `taskLink` URL. Otherwise Layer5 Cloud refuses it with a `400` error before any call is made. `status` is `approved` or the denial value your receiver should expect from the decision. When the webhook fails, the decision request returns a `500` error (`unable to webhook`) and an alert event is recorded.
+
+### Kanvas entitlement
+
+`newUser` is `true` for a first registration and a first brokered sign-in. For a role assignment it reflects whether the person is new to Kanvas. The `formType` value is the literal `meshmap`, the internal name of the Kanvas entitlement. A failure here never blocks the person: Layer5 Cloud records an event and continues.
+
+## Failure behavior
+
+| Webhook | When the receiver fails | What the person sees |
+| --- | --- | --- |
+| Help and support | The caller receives a `500` error. | An error on the form. |
+| Signup decision | The decision request returns `500`. | The decision fails with an error. |
+| Kanvas entitlement | The call is dropped. | Nothing. |
+
+Nothing retries. Reconcile missed events from the signup request list and the audit events.

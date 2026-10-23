@@ -21,7 +21,7 @@ The ability to create, manage, and publish content is available to organizations
 
   - **Multi-tenancy:** Your content, users, and data are securely isolated from all other organizations.
   - **White-labeling:** You can brand the Academy with your own logo and color scheme.
-  - **Customization:** You have complete control over the learning paths and challenges you create.
+  - **Customization:** You choose the learning paths, challenges, and certifications you publish. You cannot replace the theme's layouts, archetypes, or site-wide styles from a content repository. You can customize shortcodes only. Request theme changes through the theme's issue tracker.
 
 > You can learn more about our subscription plans on the [Layer5 Pricing](https://layer5.io/pricing) page.
 
@@ -62,7 +62,7 @@ The Academy platform supports **Markdown + HTML mixing** and **custom CSS stylin
 
 ##### HTML + Markdown Integration
 
-Combine Markdown syntax with HTML elements in the same file:
+Combine Markdown syntax with HTML elements in the same file. Leave a blank line between a raw HTML block and the Markdown that follows it. Without the blank line, Hugo does not parse the next Markdown element and it renders as literal text. Markdown inside an HTML element is parsed only when blank lines separate it from the tags, so write short content inside HTML elements in HTML.
 
 ```markdown
 ## Markdown Heading
@@ -71,8 +71,10 @@ This is **bold** text in markdown.
 
 <div style="background: #000000ff; padding: 20px;">
   <h3>HTML Section</h3>
-  <p>This is HTML with **markdown** inside.</p>
+  <p>This is HTML. Write the wording inside the tags as HTML.</p>
 </div>
+
+More **Markdown** follows the blank line after the div.
 ```
 
 ##### Custom CSS Support
@@ -88,7 +90,7 @@ This example demonstrates custom CSS styling within the Academy platform. The st
 {{< /styled-callout >}}
 
 When properly rendered, you will see:
-- Markdown formatting (bold, italic, links) processed within HTML elements
+- Markdown after the HTML block, once a blank line separates them. Markdown jammed against a tag, or left inside a tag with no blank lines, stays literal text.
 - Custom CSS styles applied (colors, spacing, borders)
 - Seamless integration without layout conflicts
 - Responsive behavior across different screen sizes
@@ -99,7 +101,7 @@ Custom shortcodes are reusable components that enhance Academy content. They fun
 
 ##### Basic Shortcode
 
-**Step 1:** Create the shortcode file in your organization's directory ([example](https://github.com/layer5io/academy-example/tree/master/layouts)):
+**Step 1:** Create the shortcode file in your organization's directory:
 
 ```shell
 layouts/shortcodes/<your-organization-uuid>/custom-org-shortcode.html
@@ -172,7 +174,7 @@ The Layer5 Academy platform supports all Hugo shortcode features. For more advan
 
 ### Branded Email Communications
 
-When using the Academy with [white-labeling]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}}) enabled, all system-generated emails (badge awards, certificate awards, challenge registrations) automatically reflect your organization's branding.
+When a learner earns a badge or a certificate, Layer5 Cloud sends an email on behalf of your organization. Both messages take their logo, colors, and contact links from your organization settings. See [White-label Layer5 Cloud]({{< ref "cloud/guides/self-hosted/white-labeling/_index.md" >}}). There is no separate template for challenge registration mail. Anonymous users never receive a badge email.
 
 Below is an example email template showing how badge award notifications appear when white-labeling is enabled. The parts enclosed in `{{}}` are automatically replaced with your organization's specific information:
 
@@ -201,5 +203,16 @@ When users click the badge, they will go to the details in the Academy:
 ![Example of Badge](./images/example_badge.png)
 
 {{< alert type="info" title="Email Customization" >}}
-Email templates automatically incorporate your organization's logo and primary brand color as configured in your [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations). Custom email templates can be provided for Enterprise customers with specific branding requirements.
+The messages use your organization's logo, colors, and contact links from [Layer5 Cloud Organization Settings](https://cloud.layer5.io/identity/organizations). They are not a custom template you upload. If those settings cannot be read when the email is sent, the email still goes out with default branding. A failure to send the certificate email is logged and does not undo the completion or the certificate.
 {{< /alert >}}
+
+| | Badge email | Certificate email |
+| --- | --- | --- |
+| Sent when | A badge is awarded | The learner passes the final assessment of content that defines a certificate |
+| Recipient | The learner | The learner, addressed by first and last name |
+| Learner can turn it off | Yes, through the badge assignment and updates notification preference | No |
+| Links | The learner's public profile | The certificate's public page |
+
+The certificate link points to your organization's custom domain when one is set. Otherwise it points to the deployment's base address.
+
+The Academy also renders a live Kanvas design inside a lesson with the `meshery-design-embed` shortcode. The publishing diagram on [Creating Content for the Academy]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}) is a working embed. Choose shortcode names that do not match a shortcode the theme already provides.

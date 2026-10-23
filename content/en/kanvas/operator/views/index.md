@@ -7,6 +7,7 @@ categories: [operator]
 aliases:
   - /kanvas/operator/operator-views
   - /kanvas/visualizer/visualizer-views
+  - /kanvas/reference/views/
 ---
 
 The Views tab is located on the right side of the screen just beside the Details tab in Kanvas Operator. It lists every view you can reach in the current workspace - the ones you created and the ones teammates have made public - so that you can move between saved perspectives of your clusters without rebuilding the filters each time. Think of views for Operator mode as you would designs for Designer mode.

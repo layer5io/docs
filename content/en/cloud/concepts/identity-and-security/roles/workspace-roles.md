@@ -1,7 +1,7 @@
 ---
 title: Default Workspace Roles
 description: >
-  By default, Workspaces have one role available: Workspace Administrator.
+  Workspace Administrator and Workspace Manager are organization-scoped roles.
 weight: 2
 categories: [security]
 tags: [workspaces, roles]
@@ -22,24 +22,27 @@ aliases:
 
 **What is the purpose of this role?**
 
-- Administration of a workspace along with curation of content for the organization's catalog (for each organization for which the user has this role assigned)
+- Managing workspaces, environments, teams, and lifecycle actions, and reviewing catalog requests, in each organization where the user holds the role. It is not limited to a single workspace, and there is no Workspace Owner role that assigns it.
 
 **Who can assign this role?**
 
-- Organization Administrators or Workspace Owner
+- An Organization Admin of that organization, a holder of Assign User Roles there, or a Provider Admin
 
 **When this role first assigned?**
 
-- Creation of a new workspace
+- When an authorized administrator assigns it. Creating a workspace does not assign Workspace Admin.
 
 **How many instances of these roles?**
 
-- Min: 1, Max: many
-- By default, the first Workspace Administrator is the owner (the creator) of the Workspace.
+- Any number, on every plan
 
 **Who can remove assignment of this role?**
 
-- Organization Administrators or Workspace Owner
+- The same people who can assign it
+
+**Workspace Manager**
+
+Workspace Manager is the other workspace role. It includes workspace, environment, team, and lifecycle management, plus management of designs, environments, and connections inside the workspaces where the user holds the role. It does not include catalog curation. Organization Admins assign it the same way they assign Workspace Admin. See [Roles and Permissions]({{< ref "cloud/reference/default-permissions.md" >}}).
 
 **What permissions does this role have?**
 

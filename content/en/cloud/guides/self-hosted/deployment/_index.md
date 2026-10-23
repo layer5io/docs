@@ -6,231 +6,195 @@ tags: [helm]
 weight: 2
 aliases:
   - /cloud/self-hosted/deployment/
+  - /cloud/guides/self-hosted/deployment/provider-initialization/
 
 ---
 
 ## High-level List of Deployment Tasks
 
 <ol>
-    <li>Review the prequisites for installing Layer5 Cloud on Kubernetes. (<a href="#prerequisites">docs</a>)</li>
-    <li>Prepare INIT_CONFIG parameters for initial setup</li>
-    <li>Install Layer5 Cloud on Kubernetes using Helm. Deploy it's services in Kubernetes in-cluster. (<a href="#installation">docs</a>)</li>
-    <li>Meshery deployments are separate from <a href="https://docs.meshery.io/extensibility/providers">Remote Provider</a> deployments (Layer5 Cloud). Deploy Meshery in Kubernetes in-cluster (or out-of-cluster). (<a href="https://docs.meshery.io/installation/quick-start">docs</a>)</li>
-    <li>Configure Meshery Server point to your Remote Provider. Learn more about the Meshery Server registration process with Remote Providers. (<a href="https://docs.meshery.io/extensibility/providers#meshery-server-registration">docs</a>)</li>
+    <li>Review the prerequisites for installing Layer5 Cloud on Kubernetes. (<a href="#prerequisites">docs</a>)</li>
+    <li>Prepare <code>INIT_CONFIG</code> so the first start creates the provider organization and its Provider Admin. (<a href="#provider-initialization">docs</a>)</li>
+    <li>Install the <code>layer5-cloud</code> chart. (<a href="#installation">docs</a>)</li>
+    <li>Create the OAuth2 client in Hydra. The server does not create it.</li>
+    <li>Deploy Meshery separately and point it at this deployment as its remote provider. (<a href="https://docs.meshery.io/installation/quick-start">docs</a>, <a href="https://docs.meshery.io/extensibility/providers#meshery-server-registration">registration</a>)</li>
 </ol>
 
 ### Kubernetes-based Installation with Helm
 
-Layer5 offers on-premises installation of its [Meshery Remote Provider](https://docs.meshery.io/extensibility/providers): Layer5 Cloud. Available in the [Layer5 Helm repository](https://docs.layer5.io/charts) is the layer5-cloud chart, which contains two subcharts. See the Helm repo [index](https://docs.layer5.io/charts/index.yaml) for details.
+The `layer5-cloud` chart is in the [Layer5 Helm repository](https://docs.layer5.io/charts). It deploys the Layer5 Cloud server together with Kratos and Hydra. It does not install PostgreSQL, an ingress controller, or a TLS certificate. Make the decisions in [Planning]({{< ref "cloud/guides/self-hosted/planning/_index.md" >}}) first. The commands below use the release name `layer5-cloud` in the namespace `layer5-cloud`.
 
 #### Prerequisites
 
-Before you begin ensure the following are installed:
-- Helm.
-- An ingress controller like `ingress-nginx`.
-- A certificate manager like `cert-manager`.
+- A Kubernetes cluster and Helm 3.
+- An ingress controller that supports WebSocket upgrades, and a TLS certificate for your hostname. The chart does not request a certificate.
+- A PostgreSQL server you can create databases on. Any deployment works, including an operator such as CloudNativePG, a managed service, or a server outside the cluster. The chart reaches it only through the connection strings you set.
+- An SMTP relay that satisfies the [mail constraints]({{< ref "cloud/guides/self-hosted/operating/smtp.md#constraints-on-the-shared-mail-server" >}}), or the decision to run without mail. Set all four `smtp` values or none.
+- The OAuth applications for Google and GitHub, if you offer social sign-in.
 
-##### 1. Create dedicated namespaces
-
-This deployment uses two namespaces, `cnpg-postgres` for hosting the PostgreSQL database using CloudNativePG operator and `layer5-cloud` namespace for the Layer5 Cloud. You can also choose to keep all components in the same namespace. 
-```bash
-kubectl create ns cnpg-postgres
-kubectl create ns layer5-cloud
-```
-
-##### 2. Prepare for data persistence (Persistent Volume)
-
-Layer5 uses PostgreSQL database that requires a persistent storage. It can be configured in many different ways in a Kubernetes cluster. Here we are using _local path provisioner from Rancher_ which automatically creates a PV using a set local path. Running the follwing command to deploy the local path provisioner: 
-
-```bash
-kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.31/deploy/local-path-storage.yaml
-```
-
-This creates a default storage class called `local-path` which stores data by default in `/opt/local-path-provisioner` and has the reclaim policy set to `Delete`. 
-
-> **_NOTE:_** It is recommended you create a new storage class that uses a different path with ample storage and uses `Retain` reclaim policy. 
-
-For this guide, we will use the defaults.
-
-##### 3. Install an ingress controller
-
-This example deployment uses ingress-nginx but you may choose to use an ingress controller of your choice.
-
-```bash
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.13.3/deploy/static/provider/cloud/deploy.yaml
-```
+The chart does not require a dedicated database namespace, a local-path provisioner, or cert-manager.
 
 #### INIT_CONFIG
 
-The `INIT_CONFIG` environment variable allows you to configure the initial setup of your self-hosted Layer5 Cloud provider. This variable accepts a JSON string that defines the provider initialization configuration.
+`INIT_CONFIG` is a YAML document, set in Helm as `env.initConfig`. It is not a JSON object and it is not a Docker run flag. When it is set and the provider organization does not exist yet, the server creates that organization and the first Provider Admin. See [Provider initialization](#provider-initialization).
 
 ##### Purpose
 
-`INIT_CONFIG` enables you to:
-- Pre-configure provider settings during deployment
-- Automate initial setup for consistent deployments  
-- Define custom provider configurations without manual intervention
+`INIT_CONFIG` gives a new deployment an administrator who can sign in. Without it, the server starts with no provider administrator.
 
 ##### Usage
 
-Set the `INIT_CONFIG` environment variable with a JSON configuration string:
-
-```bash
-export INIT_CONFIG='{"provider": {"name": "my-provider", "settings": {...}}}'
-```
-
-For Docker deployments:
-
-```bash
-# example
-docker run -e INIT_CONFIG='{"provider": {"name": "my-provider"}}' layer5/meshery-cloud
-```
-
-For Kubernetes deployments, add to your deployment manifest:
-
 ```yaml
 env:
-  - name: INIT_CONFIG
-    value: '{"provider": {"name": "my-provider", "settings": {...}}}'
+  initConfig: |
+    organization:
+      name: "Example Corp"
+      description: "The provider organization for Example Corp."
+      country: "United States"
+      region: "North America"
+    user:
+      first_name: "Ada"
+      last_name: "Admin"
+      email: "admin@example.com"
+      username: "admin@example.com"
+      password: "<initial password>"
+```
+
+Or load the same YAML from a file:
+
+```bash
+helm install layer5-cloud layer5/layer5-cloud \
+  --namespace layer5-cloud \
+  --set-file env.initConfig=provider-init.yaml \
+  --values values.yaml
 ```
 
 {{< alert type="info" title="Note" >}}
-The INIT_CONFIG variable is only processed during the initial startup. Subsequent restarts will not reprocess this configuration.
+The server evaluates `INIT_CONFIG` on every start. If the provider organization already exists, initialization is skipped and later edits are ignored.
 {{< /alert >}}
 
 ##### Configuration Schema
 
-The `INIT_CONFIG` JSON structure supports the following fields:
+| Field | Required | Meaning |
+| --- | --- | --- |
+| `organization.name` | Yes | Name of the provider organization. |
+| `organization.description` | No | Description. |
+| `organization.country` | No | Country. |
+| `organization.region` | No | Region. |
+| `user.first_name` | Yes | First name of the administrator. |
+| `user.last_name` | Yes | Last name of the administrator. |
+| `user.email` | Yes | Email address. It is the sign-in identifier. |
+| `user.username` | No | Defaults to the email address. |
+| `user.password` | Yes | Initial password. |
 
-- `provider.name`: The name of your provider instance
-- `provider.settings`: Custom provider settings specific to your deployment
-
+There is no `provider.name` or `provider.settings` field.
 
 #### Installation
 
-You will install the Postgres database first or configure connection details to your existing Postgres v12+ database server, followed by the rest of Layer5 Cloud's containers.
+Create the databases, write a values file that replaces the chart's localhost and placeholder secrets, install the chart, then create the Hydra client.
 
-##### 1. Deploy PostgreSQL using CloudNativePG
+##### 1. Prepare PostgreSQL
 
-In this example, we are using CloudNativePG's operator based approach to create a PostgreSQL cluster. You can choose a different approach of your choice.
+Create one role and three databases, then create the `uuid-ossp` extension in `meshery`. The server creates its own schema. CloudNativePG is one way to run PostgreSQL. It is not required, and this chart does not install it.
 
-PostgreSQL requires persistent storage which can be configured in many different ways in a Kubernetes cluster. Here we are using _local path provisioner from Rancher_ which automatically creates a PV using a set local path. Running the follwing command to deploy the local path provisioner: 
-
-```bash
-kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.31/deploy/local-path-storage.yaml
+```sql
+CREATE ROLE meshery LOGIN PASSWORD '<password>';
+CREATE DATABASE meshery OWNER meshery;
+CREATE DATABASE kratos OWNER meshery;
+CREATE DATABASE hydra OWNER meshery;
+\c meshery
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 ```
 
-This creates a default storage class called `local-path` which stores data by default in `/opt/local-path-provisioner`. You can create a new storage class that uses a different path. For this deployment, we will use the defaults.
-
-Add and install CloudNativePG operator using the following commands:
-
-```bash
-helm repo add cnpg https://cloudnative-pg.github.io/charts
-
-helm upgrade --install cnpg --namespace cnpg-system --create-namespace cnpg/cloudnative-pg
-```
-
-Deploying a PostgreSQL cluster requires the follwing pre-requisite resources:
-- A super user secret
-- A Meshery user secret
-
-Run the following commands to create them replacing username and passwords as needed:
-```bash
-kubectl -n cnpg-postgres create secret generic meshery-user --from-literal=username=meshery --from-literal=password=meshery --type=kubernetes.io/basic-auth
-```
-
-```bash
-kubectl -n cnpg-postgres create secret generic cnpg-superuser --from-literal=username=postgres --from-literal=password=postgres --type=kubernetes.io/basic-auth
-```
-
-For this documentation, we use the following manifests to deploy a PostgreSQL cluster:
-```yaml
-# cluster.yaml
-apiVersion: postgresql.cnpg.io/v1
-kind: Cluster
-metadata:
-  name: cnpg-postgres
-  namespace: cnpg-postgres
-spec:
-  instances: 2
-  # Persistent storage configuration
-  storage:
-    storageClass: local-path
-    size: 10Gi
-
-  superuserSecret:
-    name: cnpg-superuser
-  bootstrap:
-    initdb:
-      database: meshery
-      owner: meshery
-      secret:
-        name: meshery-user
-      postInitSQL:
-        - create database hydra owner meshery;
-        - create database kratos owner meshery;
-        - create extension "uuid-ossp";
-        - ALTER ROLE meshery WITH SUPERUSER;
-      postInitApplicationSQLRefs:
-        configMapRefs:
-          - name: extra-init
-            key: init.sql
----
-# extra-init.yaml
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: extra-init
-  namespace: cnpg-postgres
-data:
-  init.sql: |
-    GRANT ALL PRIVILEGES ON DATABASE meshery to meshery;
-    GRANT ALL PRIVILEGES ON DATABASE hydra to meshery;
-    GRANT ALL PRIVILEGES ON DATABASE kratos to meshery;
-```
-
-CloudNativePG provides a curated list of [samples](https://github.com/cloudnative-pg/cloudnative-pg/blob/main/docs/src/samples.md) showing configuration options that can be used as a reference.
-
-Apply the YAML file. You should notice two cnpg pods shortly thereafter.
-```bash
-NAME     READY   STATUS    RESTARTS   AGE
-cnpg-postgres-1   1/1     Running   0          3h5m
-cnpg-postgres-2   1/1     Running   0          3h5m
-```
-Retrieve the _Service_ endpoints of cnpg. This must be updated in the Layer5 `values.yaml` file later.
+Give that user the rights to create tables in the `public` schema of `meshery`. Kratos and Hydra run their own migrations when the chart's automatic migration setting is on, which is the default.
 
 ##### 2. Deploy Layer5 cloud
 
-1. Start by adding the Layer5 helm chart repo.
-    ```bash
-    helm repo add layer5 https://docs.layer5.io/charts
-    ```
+```bash
+kubectl create namespace layer5-cloud
+helm repo add layer5 https://docs.layer5.io/charts
+helm repo update
+helm show values layer5/layer5-cloud > values.yaml
+```
 
-2. Next, to modify values such as the database connection or other parameters, you will use the `values.yaml` file. 
+Edit `values.yaml` before you install. The chart defaults do not produce a working deployment: URLs point at localhost, secrets are placeholders, and the in-cluster Hydra addresses (`hydra-admin`, `hydra-public`) do not match the service names the subcharts create. Set at least `env.proto`, `env.serverbaseurl`, `env.serverHost`, the three database URLs, the Kratos and Hydra addresses, `env.oauthclientid`, `env.oauthsecret`, the two encryption keys, `env.kratosWebhookApiKey`, `env.initConfig`, ingress hosts for `/`, `/kratos`, and `/hydra`, and either all four `smtp` values or none. Point Kratos registration web hooks at `https://<host>/api/identity/users`. The chart default URL omits the `/api` prefix, which the server does not serve. The field-by-field list is [Helm Chart Values]({{< ref "cloud/guides/self-hosted/deployment/helm-chart-values.md" >}}).
 
-    You can generate it using the following command:
-    ```bash
-    helm show values layer5/layer5-cloud > values.yaml
-    ```
-    Review and update values if necessary. If you have followed this tutorial with the exact steps, there are no changes requires to get started.
+```bash
+helm install layer5-cloud layer5/layer5-cloud \
+  --namespace layer5-cloud \
+  --values values.yaml
+kubectl -n layer5-cloud rollout status deploy/meshery-cloud
+```
 
-3. Deploy Layer5 Cloud using the `helm install` command.
-
-    ```bash
-    helm install -f values.yaml layer5-cloud -n layer5-cloud
-    ```
+After the first install, run `kubectl -n layer5-cloud get svc` and correct `env.kratospublic`, `env.kratosadmin`, and `env.hydraadmin` if the service names differ, then upgrade.
 
 ##### 3. Create an OAuth 2.0 client
-1. Port forward the _Hydra Admin_ service.
 
-2. Run the following command to create the hydra client:
+Layer5 Cloud authenticates to Hydra as an OAuth2 client whose id and secret you set in `env.oauthclientid` and `env.oauthsecret`. Create that client with the matching values and the redirect address `<serverbaseurl>/callback`. Sign-in does not work until it exists.
+
 ```bash
-hydra clients create \
---endpoint <port forwarded endpoint> \
---id meshery-cloud \ <--- ensure the id specified matches with the env.oauthclientid in values.yaml
---secret some-secret \ <--- ensure the secret specified matches with the env.oauthsecret in values.yaml
---grant-types authorization_code,refresh_token,client_credentials,implicit \
---response-types token,code,id_token \
---scope openid,offline,offline_access \
---callbacks <Layer5 Cloud host>/callback 
+kubectl -n layer5-cloud exec deploy/cloud-hydra -- hydra create client \
+  --endpoint http://127.0.0.1:4445 \
+  --id layer5-cloud \
+  --secret '<the value of env.oauthsecret>' \
+  --grant-type authorization_code,refresh_token,client_credentials,implicit \
+  --response-type token,code,id_token \
+  --scope openid,offline,offline_access \
+  --redirect-uri https://cloud.example.com/callback \
+  --skip-consent
 ```
+
+The command uses the flag names of the Hydra version in the chart's subchart. If your Hydra is older, its command is `hydra clients create` with `--grant-types`, `--response-types`, and `--callbacks`.
+
+## Confirm the deployment works
+
+1. `GET https://<host>/readyz` returns `200`.
+2. The server log contains `Server is up and running!` and no `Failed to initialize Provider Admin` line.
+3. You can sign in as the administrator from `env.initConfig`.
+4. Send a test email. See [Email / SMTP Troubleshooting]({{< ref "cloud/guides/self-hosted/operating/smtp.md#send-a-test-email" >}}).
+5. If you registered Google or GitHub, sign in with each.
+
+Once sign-in works, remove `env.initConfig` from your values file and run `helm upgrade`, so the initial password does not stay in the release history and logs.
+
+## Connect a Meshery Server
+
+Meshery Server is a separate deployment. Install it from the [Meshery documentation](https://docs.meshery.io/installation/quick-start), then point it at your deployment as its remote provider. See [Meshery Server registration]({{< ref "cloud/concepts/meshery-server-registration.md" >}}). The server rejects sign-in from a Meshery Server older than `env.minmesheryversion`.
+
+## Upgrade
+
+Run `helm upgrade` with the new chart version and your values file. The server applies pending database migrations when it starts, and exits if one fails. Take a database backup first.
+
+## Provider initialization {#provider-initialization}
+
+A new deployment has no users, so nobody can sign in to administer it. Provider initialization solves that: when the server starts with `INIT_CONFIG` set, it creates the **provider organization** and its first **Provider Admin**. The provider organization always has the fixed identifier `11111111-1111-1111-1111-111111111111`.
+
+### What happens at startup
+
+The server evaluates `INIT_CONFIG` on every start, after database migrations and before it reports ready.
+
+1. **Not set.** Initialization is skipped.
+2. **Set but invalid.** A missing required field or YAML that does not parse is logged as an error. The server keeps starting, with no provider administrator.
+3. **The provider organization already exists.** Initialization is skipped, and any change to `INIT_CONFIG` is ignored.
+4. **The provider organization does not exist.** The server runs these steps in order:
+   1. Creates a Kratos identity with the password and the email marked verified.
+   2. Creates the user and marks the account active.
+   3. Grants the user the Provider Admin role and the Kanvas role.
+   4. Creates the provider organization with the fixed identifier, owned by that user.
+   5. Adds the user to the organization with the Organization Admin role.
+
+The first administrator can sign in as soon as the server is ready. They never see an email verification step, because the address is created verified.
+
+After the organization exists, the server also seeds the deployment's default Google and GitHub sign-in credentials from `env.providerOrg*`. See [Identity Services]({{< ref "cloud/guides/self-hosted/planning/identity-services/index.md#how-the-defaults-are-stored" >}}).
+
+### Failure modes
+
+| Condition | Result |
+| --- | --- |
+| A step fails after earlier steps succeeded | The server logs the error and keeps starting. The steps are not wrapped in one transaction, so rows from earlier steps remain. Fix the cause and restart. A restart repeats the whole sequence for as long as the provider organization does not exist. |
+| Kratos rejects the identity (for example, the password is too weak or the identity exists) | The server logs a warning and continues with the remaining steps. |
+| `INIT_CONFIG` removed after the first successful start | No effect. The organization exists. |
+| `INIT_CONFIG` changed after the first successful start | No effect. Change the administrator through the product. |
+
+### Handling the password
+
+The initial password is stored in the Helm release, in the pod environment, and in the server log, because the server logs the configuration it reads. Treat all three as secret. After you have signed in and changed the password, remove `env.initConfig` and run `helm upgrade`. The administrator account is unaffected.

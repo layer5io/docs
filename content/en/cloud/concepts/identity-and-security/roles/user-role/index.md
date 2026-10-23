@@ -25,19 +25,19 @@ aliases:
 
 **Who can assign this role?**
 
-- Organization Administrators, Workspace Administrators and Team Administrators
+- An Organization Admin of that organization, a holder of Assign User Roles there, or a Provider Admin. Workspace Admin and Team Admin do not assign organization roles. Team scope accepts only Team Admin.
 
 **When this role first assigned?**
 
-- Automatically assigned to members on joining an Organization.
+- When an authorized administrator assigns it, or when an invitation lists it. Joining an organization does not assign User automatically. A person added with no role is a member who holds no role.
 
 **How many instances of these roles?**
 
-- Min: 1, Max: many
+- Any number, on every plan
 
 **Who can remove assignment of this role?**
 
-- Organization Administrators, Workspace Administrators and Team Administrators
+- The same people who can assign it. Removing the role does not end the membership.
 
 **What permissions does this role have?**
 
