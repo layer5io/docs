@@ -42,15 +42,6 @@
   {{- end -}}
 {{- end -}}
 
-{{- /* Local override: keep only the newest N pages under each section in params.llms.limit_sections */ -}}
-{{- range $path, $n := $llms.limit_sections | default dict -}}
-  {{- with site.GetPage $path -}}
-    {{- range after $n .RegularPagesRecursive.ByDate.Reverse -}}
-      {{- $excludeList = $excludeList | append .RelPermalink -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-
 # {{ site.Title }}
 
 > {{ site.Params.metadata.description | default site.Params.description | default site.Title }}
@@ -68,7 +59,7 @@ url: {{ $homeUrl }}
 {{ with $home.Params.description }}description: {{ . }}
 {{ end -}}
 --------------------------------------------------------------------------------
-{{ if $home.RawContent }}{{ $home.RawContent }}{{ else }}{{ $home.Params.description }}{{ end }}
+{{ if $home.RawContent }}{{ $home.RenderShortcodes }}{{ else }}{{ $home.Params.description }}{{ end }}
 {{- end }}
 
 {{- /* Standalone section pages (top-level sections with no pages at any depth) */ -}}
@@ -86,7 +77,7 @@ url: {{ $url }}
 {{ with .Params.description }}description: {{ . }}
 {{ end -}}
 --------------------------------------------------------------------------------
-{{ if .RawContent }}{{ .RawContent }}{{ else }}{{ .Params.description }}{{ end }}
+{{ if .RawContent }}{{ .RenderShortcodes }}{{ else }}{{ .Params.description }}{{ end }}
 {{- end }}
 {{- end }}
 {{- end }}
@@ -107,7 +98,7 @@ url: {{ $url }}
 {{ with .Params.description }}description: {{ . }}
 {{ end -}}
 --------------------------------------------------------------------------------
-{{ if .RawContent }}{{ .RawContent }}{{ else }}{{ .Summary | plainify }}{{ end }}
+{{ if .RawContent }}{{ .RenderShortcodes }}{{ else }}{{ .Summary | plainify }}{{ end }}
 {{- end }}
 {{- end }}
 
@@ -127,7 +118,7 @@ url: {{ $sectionUrl }}
 {{ with .Params.description }}description: {{ . }}
 {{ end -}}
 --------------------------------------------------------------------------------
-{{ if .RawContent }}{{ .RawContent }}{{ else }}{{ .Params.description }}{{ end }}
+{{ if .RawContent }}{{ .RenderShortcodes }}{{ else }}{{ .Params.description }}{{ end }}
 {{- end }}
 
 {{- /* All nested pages recursively */ -}}
@@ -146,7 +137,7 @@ url: {{ $url }}
 {{ with .Params.description }}description: {{ . }}
 {{ end -}}
 --------------------------------------------------------------------------------
-{{ if .RawContent }}{{ .RawContent }}{{ else }}{{ .Summary | plainify }}{{ end }}
+{{ if .RawContent }}{{ .RenderShortcodes }}{{ else }}{{ .Summary | plainify }}{{ end }}
 {{- end }}
 {{- end }}
 {{- end }}
@@ -168,7 +159,7 @@ url: {{ $taxUrl }}
 {{ with $taxPage.Params.description }}description: {{ . }}
 {{ end -}}
 --------------------------------------------------------------------------------
-{{ if $taxPage.RawContent }}{{ $taxPage.RawContent }}{{ else }}{{ $taxPage.Params.description }}{{ end }}
+{{ if $taxPage.RawContent }}{{ $taxPage.RenderShortcodes }}{{ else }}{{ $taxPage.Params.description }}{{ end }}
 {{- range $termName, $weightedPages := $taxonomy }}
 {{- $termPage := site.GetPage (printf "%s/%s" $taxonomyName $termName) }}
 {{- if $termPage }}
@@ -183,7 +174,7 @@ url: {{ $termUrl }}
 {{ with $termPage.Params.description }}description: {{ . }}
 {{ end -}}
 --------------------------------------------------------------------------------
-{{ if $termPage.RawContent }}{{ $termPage.RawContent }}{{ else }}{{ $termPage.Params.description }}{{ end }}
+{{ if $termPage.RawContent }}{{ $termPage.RenderShortcodes }}{{ else }}{{ $termPage.Params.description }}{{ end }}
 {{- end }}
 {{- end }}
 {{- end }}

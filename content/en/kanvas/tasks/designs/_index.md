@@ -1,8 +1,9 @@
 ---
-title: Validate and Deploy
-layout: moved
-moved_to: /kanvas/guides/deploying
-visible: false
-sitemap:
-  disable: true
+title: Deploying Designs
+description: >
+  Each design is deployable to one or more Kubernetes clusters.
+aliases:
+  - /meshmap/tasks/designs
+  - /kanvas/guides/deploying/
 ---
+

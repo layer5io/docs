@@ -1,33 +1,39 @@
 ---
-title: Create Academy Content
-linkTitle: Create Academy Content
-weight: 20
+title: "Content Creator Guide"
+weight: 2
 description: >
-  Register a learning path, challenge, or certification in the Instructor Console, write it in your Git repository, and publish it to your organization's Academy.
+  Learn how to create, manage, and publish learning paths, challenges, and certifications on the Layer5 Academy platform.
 categories: [academy]
 tags: [academy]
-diataxis: how-to
+aliases: 
+- /cloud/academy/extending-the-academy/
 ---
 
-Academy content is written as Markdown in your organization's own Git repository and published as a numbered version. Layer5 Cloud holds the record of each piece of content (its identity, access rules, and badge) and every learner's registration, progress, and test results. This guide covers the workflow end to end. The pages beneath it cover each content type in depth.
+**Welcome, content creators and instructors!**
 
-## Prerequisites
+This guide provides all the necessary documentation for building high-quality educational content on the Layer5 Academy. We leverage a Git-native workflow, allowing you to use simple Markdown to create powerful, interactive learning experiences.
 
-- The **View Academy Metrics** permission in your organization (Academy Admin, Organization Admin, or Provider Admin). See the [Instructor Console]({{< ref "cloud/academy/instructor-console-guide/index.md" >}}).
-- An organization with the Academy configured, so the console is not in its "not configured" state.
-- Comfort with Git and Markdown.
+**This section covers the entire content creation lifecycle, including:**
 
-## The workflow
+* Structuring your first Learning Path from scratch.
+* Writing course materials and embedding interactive labs.
+* Designing effective quizzes and assessments.
+* Managing and publishing your content.
 
-1. **Register the content in the console.** The content creation flow creates the content record and generates the identifiers and front matter you paste into your repository.
-2. **Write the content** in your repository, following the layout for its type.
-3. **Preview locally** to check structure and links.
-4. **Publish** by releasing a version of your repository. The release asks Layer5 Cloud to build your organization's Academy at that version.
-5. **Monitor** registrations, completion, and pass rates in the console.
+Each content type also has a dedicated build guide:
+
+* [Creating Content for the Academy]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}) - repository setup and learning paths.
+* [Building Challenges]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}}) - hands-on, scenario-based tasks.
+* [Building Certifications]({{< ref "cloud/academy/creating-content/building-certifications/index.md" >}}) - formal assessments and certificates.
+* [Instructor Console]({{< ref "cloud/academy/creating-content/instructor-console-guide/index.md" >}}) - registrations, completion, and pass rates.
+* [Integrating Assessments]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}) - quiz, test, and exam files, question types, scoring, and attempt limits.
+* [Using the Content Template Creator]({{< ref "cloud/academy/creating-content/using-content-template-creator/index.md" >}}) - the registration flow, the front matter it generates, and the invitation behind each content item.
+* [Extending the Academy]({{< ref "cloud/academy/creating-content/extending-the-academy/index.md" >}}) - HTML, CSS, custom shortcodes, embedded designs, and award emails.
+* [Platform Development]({{< ref "cloud/academy/platform-development.md" >}}) - local preview, theme development, and end-to-end builds.
 
 ## Register content in the console
 
-The creation flow collects the following. Only the content type is required to create the record. The record starts with status **not ready**, **public** visibility, and **beginner** level. Cloud generates the slug from the content type plus three random words.
+The content creation flow creates the content record and generates the identifiers and front matter you paste into your repository. Only the content type is required to create the record. The record starts with status **not ready**, **public** visibility, and **beginner** level. Cloud generates the slug from the content type plus three random words.
 
 | Step | Field | Behavior |
 | --- | --- | --- |
@@ -37,31 +43,14 @@ The creation flow collects the following. Only the content type is required to c
 | Content Details | Categories, Tags | Used for discovery in the catalog. |
 | Content Details | Banner Image | Optional. A path to an image in the same folder as the content's index file. |
 | Content Access | Workspace | An existing workspace, or a new one. |
-| Content Access | Team | The team whose members can access the content. |
-| Content Access | Status | Enabled or Disabled. |
-| Content Access | Content Access End Date | When the invitation behind the content expires. |
+| Content Access | Team | One existing team. Learners join it when they enroll. |
+| Content Access | Status | Enabled or Disabled. Disabled blocks new enrollment. |
+| Content Access | Content Access End Date | When the invitation behind the content expires. Empty means no expiry. |
 | Recognition | Badge | The badge awarded when a learner completes the content. |
-| Generate Template | Front matter and setup guide | The YAML to place at the top of the content's index file, with your identifiers. |
+| Generate Template | Front matter | The YAML to place at the top of the content's index file, including the content ID. |
 
-Registering content also creates an invitation for it. When a learner registers, the invitation is accepted at the same time, which adds the learner to the content's team. Content owned by the provider organization has no invitation.
+Registering content also creates an invitation, except when the content is owned by the provider organization. When a learner registers, that invitation is accepted at the same time, which adds the learner to the content's team and assigns the Academy Learner role if the learner does not already hold it.
 
 You can change the team, access status, end date, workspace, and badge later from the Curricula view. Changing the content's `id` in your repository after learners register orphans their progress, because progress is recorded against that identifier.
 
-## Choose a content type
-
-| | Learning path | Challenge | Certification |
-| --- | --- | --- | --- |
-| Goal | Teach a subject from the ground up | Solve a hands-on scenario | Validate existing knowledge |
-| Structure | Path, courses, modules, pages | One scenario with lab and exam sections | A flat set of exams |
-| Assessment | Quizzes and exams, mandatory or optional | An exam closes most challenges | One or more exams |
-| Credential | Badge | Badge | Badge, and an optional paid certificate |
-
-## In this section
-
-- [Create a Learning Path]({{< ref "cloud/academy/creating-content/creating-your-learning-path/index.md" >}}): repository setup, structure, front matter, preview, and publishing, which apply to every content type.
-- [Build a Challenge]({{< ref "cloud/academy/creating-content/building-challenges/index.md" >}})
-- [Build a Certification]({{< ref "cloud/academy/creating-content/building-certifications/index.md" >}})
-- [Add Assessments]({{< ref "cloud/academy/creating-content/integrating-assessments-in-the-academy.md" >}}): quiz, test, and exam files, question types, scoring, and attempt limits.
-- [Use the Content Template Creator]({{< ref "cloud/academy/creating-content/using-content-template-creator/index.md" >}}): the registration flow, the front matter it generates, and the invitation behind each content item.
-- [Extend the Academy]({{< ref "cloud/academy/creating-content/extending-the-academy/index.md" >}}): HTML, CSS, custom shortcodes, embedded designs, and award emails.
-- [Platform Development]({{< ref "cloud/academy/platform-development.md" >}}): local preview, theme development, and end-to-end builds.
+Opening the console requires the **View Academy Metrics** permission (Academy Admin, Organization Admin, or Provider Admin). The organization must already have the Academy configured, or the console stays in its "not configured" state.
