@@ -193,12 +193,12 @@ Your current organization decides which resources you see, where new resources l
 
 Layer5 Cloud decides the organization for each request from these sources, first match wins:
 
-1. **Domain.** If the address you reached maps to an organization, you work in that organization or in one of the organizations beneath it, as described in [On a custom domain](#on-a-custom-domain). The domain does not outrank every selection you make: a selection inside that organization's tree can apply, and a selection outside it is ignored on that domain.
+1. **Domain.** If the address you reached maps to an organization, you work in that organization or in one of the organizations beneath it, as described in [On a custom domain](#on-a-custom-domain). The domain does not outrank every selection you make: a saved preference or session selection inside that organization's tree can apply, and one outside it is ignored on that domain. An explicit `X-Current-Orgid` header is decided separately, as that section describes.
 2. **`X-Current-Orgid` request header.** API clients set it per request.
 3. **Saved preference.** The organization you last selected is stored in your user preferences.
 4. **Browser session.** The organization saved in the session cookie.
 
-Layer5 Cloud ignores a header, preference, or session value that names an organization you do not belong to, and runs the request with no organization scope. Holders of View All Organizations are exempt and can name any organization. There is no query-string source.
+On the deployment's own address, Layer5 Cloud ignores a header, preference, or session value that names an organization you do not belong to, and runs the request with no organization scope. On a custom domain, a preference or session value that names an organization you do not belong to is ignored and resolution continues instead, as described in [On a custom domain](#on-a-custom-domain); an explicit header naming an organization you do not belong to still runs with no organization scope. Holders of View All Organizations are exempt and can name any organization. There is no query-string source.
 
 ### On a custom domain {#on-a-custom-domain}
 
@@ -208,7 +208,7 @@ An organization's custom domain sets two things separately. The **domain's organ
 2. Otherwise, your membership closest to the domain's organization. Members of the domain's organization itself work in it. If you belong to several organizations at the same level, the one you joined first applies, every time.
 3. Otherwise, the domain's organization.
 
-A selection that names an organization outside the domain's tree is ignored on that domain, and resolution continues to the next step. An explicit `X-Current-Orgid` header is the exception: on a custom domain it is decided by membership in the same way as on the deployment's own address, so it can name an organization outside the tree that you belong to, and one you do not belong to runs with no organization scope rather than falling back to the domain's organization. The deployment's own address keeps the order above.
+A selection that names an organization outside the domain's tree is ignored on that domain, and resolution continues to the next step. The same applies to a saved preference or session selection that names an organization you do not belong to: on a custom domain it is ignored and resolution continues, rather than leaving the request with no organization scope — that no-scope outcome applies to an explicit header, as described next, and to selections on the deployment's own address. An explicit `X-Current-Orgid` header is the exception: on a custom domain it is decided by membership in the same way as on the deployment's own address, so it can name an organization outside the tree that you belong to, and one you do not belong to runs with no organization scope rather than falling back to the domain's organization. The deployment's own address keeps the order above.
 
 | Area | Behavior |
 |---|---|
