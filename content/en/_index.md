@@ -156,6 +156,7 @@ window.addEventListener('pageshow', function (event) {
     if (!event.persisted) return;
     document.querySelectorAll('.l5btn[data-default]').forEach(function (link) {
         var img = link.querySelector('img');
+        if (!img) return;
         restoreImage(img.id, link.dataset.default);
     });
 });
