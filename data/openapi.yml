@@ -31992,8 +31992,15 @@ paths:
         it is refused with a `409` MeshKit error that names the reserved GitHub App connection identity.
 
 
-        Every connection belongs to exactly one organization. The server assigns `organizationId` from the session
-        (`X-Current-Orgid`, then the caller's selected organization) and does not accept it in the body.
+        Every connection created under this contract belongs to exactly one organization. The server assigns
+        `organizationId` and does not accept it in the body. In order, it uses the session organization
+        (`X-Current-Orgid`, then the caller's selected organization), then the only organization the caller belongs
+        to, then the only one of those the caller owns. If none of these names exactly one organization, registration
+        is refused with `400` and error `meshery_cloud-3632` (_Select an organization before registering a
+        connection_); select an organization and register again. Re-registering a connection that is still live is
+        never refused for this reason, and it keeps the organization it already has. Connections created before the
+        v1beta3 contract (October 2026) may carry no organization; they are the only exception to the one-organization
+        rule.
 
 
         Desktop registration uses this shared operation, but kind `desktop` is implemented by Cloud: a server that does
@@ -32022,8 +32029,10 @@ paths:
           required: false
           description: >
             Session organization. The server assigns `Connection.organizationId` from this header when it is present,
-            and from the caller's selected organization when it is absent. Kind `desktop` requires the header: a desktop
-            registration without it is refused with 400.
+            and from the caller's selected organization when it is absent. If neither names an organization, it falls
+            back to the caller's only organization, then to the only one of those the caller owns, and refuses with
+            `400` (`meshery_cloud-3632`) when none of these names exactly one. Kind `desktop` requires the header: a
+            desktop registration without it is refused with 400.
           schema:
             type: string
             format: uuid
