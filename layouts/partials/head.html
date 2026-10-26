@@ -34,6 +34,19 @@
 {{ template "_internal/opengraph.html" . -}}
 {{ template "_internal/schema.html" . -}}
 {{ template "_internal/twitter_cards.html" . -}}
+<script>
+  (function() {
+    try {
+      var storedTheme = localStorage.getItem('theme');
+      var theme = (storedTheme === 'light' || storedTheme === 'dark') ? storedTheme : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-bs-theme', theme);
+    } catch (e) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.documentElement.setAttribute('data-bs-theme', 'dark');
+    }
+  })();
+</script>
 {{ partialCached "head-css.html" . -}}
 <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"

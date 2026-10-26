@@ -240,3 +240,102 @@
   }
 }
 
+// Light theme styles for landing page
+[data-theme="light"],
+[data-bs-theme="light"] {
+  .product-section a {
+    color: #142126 !important;
+  }
+
+  .playground-section {
+    &.playground-logo {
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/meshery-light-icon.svg") !important;
+    }
+    &.video-play-logo {
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/video-play.svg") !important;
+    }
+  }
+
+  .catalog-section {
+    &.catalog-logo {
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/catalog.svg") !important;
+    }
+    &.academy-logo {
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/academy.svg") !important;
+    }
+    &.recognition-program-logo {
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/recognition-program.png") !important;
+    }
+  }
+
+  .landing-card {
+    background: #ffffff !important;
+    border: 1.5px solid #d2d8da !important;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04) !important;
+
+    .landing-card-title,
+    span.landing-card-title {
+      color: #000d12 !important;
+    }
+
+    p {
+      color: #28353a !important;
+    }
+
+    &:hover {
+      border: 1.5px solid $primary !important;
+      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.06) !important;
+
+      .landing-card-title,
+      span.landing-card-title {
+        color: $primary !important;
+      }
+
+      p {
+        color: #000d12 !important;
+      }
+    }
+  }
+
+  .landing-card-title {
+    color: #000d12 !important;
+  }
+
+  .forum-section {
+    background: #ffffff !important;
+    border: 1.5px solid #d2d8da !important;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04) !important;
+
+    .landing-card-title,
+    h1, h2, h3, h4, h5, h6,
+    span {
+      color: #000d12 !important;
+    }
+
+    p {
+      color: #28353a !important;
+    }
+
+    &:hover {
+      border-color: $primary !important;
+      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.06) !important;
+    }
+  }
+
+  .handbook-section {
+    background: linear-gradient(112deg, #ffffff 34.88%, #daf3eb 92.89%, #f0faf8 159.16%) !important;
+    border: 1.5px solid #93e6d1 !important;
+    border-radius: 1rem !important;
+
+    .landing-card-title,
+    h1, h2, h3, h4, h5, h6,
+    span {
+      color: #000d12 !important;
+    }
+
+    p {
+      color: #28353a !important;
+    }
+  }
+}
+
