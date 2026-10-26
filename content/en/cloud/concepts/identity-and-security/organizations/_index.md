@@ -124,9 +124,9 @@ Every connection you register belongs to one organization, which Layer5 Cloud as
 2. If none is selected, the only organization you belong to.
 3. If you belong to several, the only one of them you own.
 
-If none of these names exactly one organization, the registration is refused with `meshery_cloud-3632` (_Select an organization before registering a connection_). Select an organization and register again. A Meshery Server registers connections on your behalf without a header, so it uses your selected organization.
+If none of these names exactly one organization, creating the connection is refused with `meshery_cloud-3632` (_Select an organization before registering a connection_). Select an organization and register again. Re-registering a connection that already exists is never refused for this reason. A Meshery Server registers connections on your behalf without a header, so it uses your selected organization.
 
-A connection keeps its organization for life: editing or re-registering it never moves it. Connections created before October 2026 were assigned the organization of their environment, or their owner's only organization. Those whose owner belongs to several organizations have none and remain scoped to their owner.
+A connection keeps its organization for life: editing or re-registering it never moves it. Connections created before October 2026 were assigned the organization of their environment, or their owner's only organization. A connection whose owner belongs to several organizations got none, and stays scoped to its owner until the owner re-registers it, when it takes the organization it is registered in.
 
 ## Lifecycle
 
