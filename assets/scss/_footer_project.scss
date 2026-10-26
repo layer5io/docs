@@ -593,3 +593,143 @@
     margin-left: 5px;
   }
 }
+
+.footer {
+  .logo-light {
+    display: none !important;
+  }
+  .logo-dark {
+    display: block !important;
+  }
+}
+
+// Light theme styling for Footer (MeshKit / Sistent Design System)
+[data-theme="light"],
+[data-bs-theme="light"] {
+  .footer {
+    background-color: #f6f8f8 !important;
+    color: #28353a !important;
+    border-top: 1px solid #d2d8da !important;
+
+    .logo-dark {
+      display: none !important;
+    }
+    .logo-light {
+      display: block !important;
+    }
+
+    .footer-desc p,
+    .footer-desc {
+      color: #28353a !important;
+    }
+
+    .section-title {
+      color: #000d12 !important;
+      font-weight: 700;
+
+      a {
+        color: #000d12 !important;
+
+        &:hover {
+          color: $primary !important;
+        }
+      }
+    }
+
+    .footer-h5 {
+      a {
+        color: #3c494f !important;
+
+        &:hover {
+          color: $primary !important;
+        }
+      }
+    }
+
+    .footer-icons {
+      a {
+        filter: grayscale(1) opacity(0.7) !important;
+
+        &:hover {
+          filter: none !important;
+          opacity: 1 !important;
+        }
+
+        &.social-icon {
+          filter: grayscale(1) opacity(0.7) !important;
+
+          &:hover {
+            filter: none !important;
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+
+    .subscribe {
+      p {
+        color: #000d12 !important;
+        font-weight: 600;
+      }
+    }
+
+    input.footer-input {
+      background-color: #ffffff !important;
+      border: 1px solid #d2d8da !important;
+      color: #000d12 !important;
+
+      &::placeholder {
+        color: #647176 !important;
+      }
+
+      &:focus {
+        border-color: $primary !important;
+        background-color: #ffffff !important;
+        color: #000d12 !important;
+        outline: 2px solid $primary;
+        outline-offset: 2px;
+      }
+    }
+
+    .footer-button {
+      background-color: $primary !important;
+      color: #ffffff !important;
+
+      &:hover {
+        background-color: #007763 !important;
+      }
+    }
+
+    .footer-hr {
+      border-color: #d2d8da !important;
+      color: #d2d8da !important;
+    }
+
+    .footer-bottom {
+      span {
+        color: #647176 !important;
+      }
+
+      a {
+        color: #647176 !important;
+
+        &:hover {
+          color: $primary !important;
+        }
+      }
+    }
+
+    .footer-bottom-middle {
+      .status-link {
+        background-color: #eaedee !important;
+        border: 1px solid #d2d8da !important;
+        color: #28353a !important;
+
+        &:hover {
+          color: $primary !important;
+          border-color: $primary !important;
+        }
+      }
+    }
+  }
+}
