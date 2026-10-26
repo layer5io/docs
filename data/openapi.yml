@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.106
+  version: v1.3.107
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -41883,21 +41883,12 @@ paths:
                               description: Tracks the specific content version that has been made available in the Catalog.
                               type: string
                               maxLength: 500
-                            class:
+                            contentClass:
                               description: >-
                                 Published content is classifed by its support level. Content classes help you understand
                                 the origin and expected support level for each piece of content. It is important to note
                                 that the level of support may vary within each class, and you should exercise discretion
-                                when using community-contributed content. Content produced and fully supported by
-                                Meshery maintainers. This represents the highest level of support and is considered the
-                                most reliable. Content produced by partners and verified by Meshery maintainers. While
-                                not directly maintained by Meshery, it has undergone a verification process to ensure
-                                quality and compatibility. Content produced and supported by the respective project or
-                                organization responsible for the specific technology. This class offers a level of
-                                support from the project maintainers themselves. Content produced and shared by Meshery
-                                users. This includes a wide range of content, such as performance profiles, test
-                                results, filters, patterns, and applications. Community content may have varying levels
-                                of support and reliability.
+                                when using community-contributed content.
                               type: string
                               oneOf:
                                 - const: official
@@ -41909,11 +41900,11 @@ paths:
                                     Content produced by partners and verified by Meshery maintainers. While not directly
                                     maintained by Meshery, it has undergone a verification process to ensure quality and
                                     compatibility.
-                                - const: reference architecture
+                                - const: community
                                   description: >-
                                     Content produced and shared by Meshery users. This includes a wide range of content,
                                     such as performance profiles, test results, filters, patterns, and applications.
-                                    Reference architecture content may have varying levels of support and reliability.
+                                    Community content may have varying levels of support and reliability.
                               maxLength: 500
                             compatibility:
                               type: array
@@ -41954,7 +41945,7 @@ paths:
                                 - Workloads
                               default: Deployment
                               description: Categorization of the type of design or operational flow depicted in this design.
-                            snapshotURL:
+                            imageURL:
                               type: array
                               items:
                                 type: string
@@ -42826,20 +42817,12 @@ paths:
                           description: Tracks the specific content version that has been made available in the Catalog.
                           type: string
                           maxLength: 500
-                        class:
+                        contentClass:
                           description: >-
                             Published content is classifed by its support level. Content classes help you understand the
                             origin and expected support level for each piece of content. It is important to note that
                             the level of support may vary within each class, and you should exercise discretion when
-                            using community-contributed content. Content produced and fully supported by Meshery
-                            maintainers. This represents the highest level of support and is considered the most
-                            reliable. Content produced by partners and verified by Meshery maintainers. While not
-                            directly maintained by Meshery, it has undergone a verification process to ensure quality
-                            and compatibility. Content produced and supported by the respective project or organization
-                            responsible for the specific technology. This class offers a level of support from the
-                            project maintainers themselves. Content produced and shared by Meshery users. This includes
-                            a wide range of content, such as performance profiles, test results, filters, patterns, and
-                            applications. Community content may have varying levels of support and reliability.
+                            using community-contributed content.
                           type: string
                           oneOf:
                             - const: official
@@ -42851,11 +42834,11 @@ paths:
                                 Content produced by partners and verified by Meshery maintainers. While not directly
                                 maintained by Meshery, it has undergone a verification process to ensure quality and
                                 compatibility.
-                            - const: reference architecture
+                            - const: community
                               description: >-
                                 Content produced and shared by Meshery users. This includes a wide range of content,
                                 such as performance profiles, test results, filters, patterns, and applications.
-                                Reference architecture content may have varying levels of support and reliability.
+                                Community content may have varying levels of support and reliability.
                           maxLength: 500
                         compatibility:
                           type: array
@@ -42894,7 +42877,7 @@ paths:
                             - Workloads
                           default: Deployment
                           description: Categorization of the type of design or operational flow depicted in this design.
-                        snapshotURL:
+                        imageURL:
                           type: array
                           items:
                             type: string
@@ -42992,20 +42975,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -43017,11 +42992,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -43060,7 +43035,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -43988,20 +43963,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -44013,11 +43980,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -44056,7 +44023,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -44978,20 +44945,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -45003,11 +44962,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -45046,7 +45005,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -46051,20 +46010,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -46076,11 +46027,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -46119,7 +46070,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -47144,20 +47095,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -47169,11 +47112,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -47212,7 +47155,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -48239,20 +48182,12 @@ paths:
                           description: Tracks the specific content version that has been made available in the Catalog.
                           type: string
                           maxLength: 500
-                        class:
+                        contentClass:
                           description: >-
                             Published content is classifed by its support level. Content classes help you understand the
                             origin and expected support level for each piece of content. It is important to note that
                             the level of support may vary within each class, and you should exercise discretion when
-                            using community-contributed content. Content produced and fully supported by Meshery
-                            maintainers. This represents the highest level of support and is considered the most
-                            reliable. Content produced by partners and verified by Meshery maintainers. While not
-                            directly maintained by Meshery, it has undergone a verification process to ensure quality
-                            and compatibility. Content produced and supported by the respective project or organization
-                            responsible for the specific technology. This class offers a level of support from the
-                            project maintainers themselves. Content produced and shared by Meshery users. This includes
-                            a wide range of content, such as performance profiles, test results, filters, patterns, and
-                            applications. Community content may have varying levels of support and reliability.
+                            using community-contributed content.
                           type: string
                           oneOf:
                             - const: official
@@ -48264,11 +48199,11 @@ paths:
                                 Content produced by partners and verified by Meshery maintainers. While not directly
                                 maintained by Meshery, it has undergone a verification process to ensure quality and
                                 compatibility.
-                            - const: reference architecture
+                            - const: community
                               description: >-
                                 Content produced and shared by Meshery users. This includes a wide range of content,
                                 such as performance profiles, test results, filters, patterns, and applications.
-                                Reference architecture content may have varying levels of support and reliability.
+                                Community content may have varying levels of support and reliability.
                           maxLength: 500
                         compatibility:
                           type: array
@@ -48307,7 +48242,7 @@ paths:
                             - Workloads
                           default: Deployment
                           description: Categorization of the type of design or operational flow depicted in this design.
-                        snapshotURL:
+                        imageURL:
                           type: array
                           items:
                             type: string
@@ -49212,21 +49147,12 @@ paths:
                               description: Tracks the specific content version that has been made available in the Catalog.
                               type: string
                               maxLength: 500
-                            class:
+                            contentClass:
                               description: >-
                                 Published content is classifed by its support level. Content classes help you understand
                                 the origin and expected support level for each piece of content. It is important to note
                                 that the level of support may vary within each class, and you should exercise discretion
-                                when using community-contributed content. Content produced and fully supported by
-                                Meshery maintainers. This represents the highest level of support and is considered the
-                                most reliable. Content produced by partners and verified by Meshery maintainers. While
-                                not directly maintained by Meshery, it has undergone a verification process to ensure
-                                quality and compatibility. Content produced and supported by the respective project or
-                                organization responsible for the specific technology. This class offers a level of
-                                support from the project maintainers themselves. Content produced and shared by Meshery
-                                users. This includes a wide range of content, such as performance profiles, test
-                                results, filters, patterns, and applications. Community content may have varying levels
-                                of support and reliability.
+                                when using community-contributed content.
                               type: string
                               oneOf:
                                 - const: official
@@ -49238,11 +49164,11 @@ paths:
                                     Content produced by partners and verified by Meshery maintainers. While not directly
                                     maintained by Meshery, it has undergone a verification process to ensure quality and
                                     compatibility.
-                                - const: reference architecture
+                                - const: community
                                   description: >-
                                     Content produced and shared by Meshery users. This includes a wide range of content,
                                     such as performance profiles, test results, filters, patterns, and applications.
-                                    Reference architecture content may have varying levels of support and reliability.
+                                    Community content may have varying levels of support and reliability.
                               maxLength: 500
                             compatibility:
                               type: array
@@ -49283,7 +49209,7 @@ paths:
                                 - Workloads
                               default: Deployment
                               description: Categorization of the type of design or operational flow depicted in this design.
-                            snapshotURL:
+                            imageURL:
                               type: array
                               items:
                                 type: string
@@ -50251,21 +50177,12 @@ paths:
                               description: Tracks the specific content version that has been made available in the Catalog.
                               type: string
                               maxLength: 500
-                            class:
+                            contentClass:
                               description: >-
                                 Published content is classifed by its support level. Content classes help you understand
                                 the origin and expected support level for each piece of content. It is important to note
                                 that the level of support may vary within each class, and you should exercise discretion
-                                when using community-contributed content. Content produced and fully supported by
-                                Meshery maintainers. This represents the highest level of support and is considered the
-                                most reliable. Content produced by partners and verified by Meshery maintainers. While
-                                not directly maintained by Meshery, it has undergone a verification process to ensure
-                                quality and compatibility. Content produced and supported by the respective project or
-                                organization responsible for the specific technology. This class offers a level of
-                                support from the project maintainers themselves. Content produced and shared by Meshery
-                                users. This includes a wide range of content, such as performance profiles, test
-                                results, filters, patterns, and applications. Community content may have varying levels
-                                of support and reliability.
+                                when using community-contributed content.
                               type: string
                               oneOf:
                                 - const: official
@@ -50277,11 +50194,11 @@ paths:
                                     Content produced by partners and verified by Meshery maintainers. While not directly
                                     maintained by Meshery, it has undergone a verification process to ensure quality and
                                     compatibility.
-                                - const: reference architecture
+                                - const: community
                                   description: >-
                                     Content produced and shared by Meshery users. This includes a wide range of content,
                                     such as performance profiles, test results, filters, patterns, and applications.
-                                    Reference architecture content may have varying levels of support and reliability.
+                                    Community content may have varying levels of support and reliability.
                               maxLength: 500
                             compatibility:
                               type: array
@@ -50322,7 +50239,7 @@ paths:
                                 - Workloads
                               default: Deployment
                               description: Categorization of the type of design or operational flow depicted in this design.
-                            snapshotURL:
+                            imageURL:
                               type: array
                               items:
                                 type: string
@@ -51793,21 +51710,12 @@ paths:
                               description: Tracks the specific content version that has been made available in the Catalog.
                               type: string
                               maxLength: 500
-                            class:
+                            contentClass:
                               description: >-
                                 Published content is classifed by its support level. Content classes help you understand
                                 the origin and expected support level for each piece of content. It is important to note
                                 that the level of support may vary within each class, and you should exercise discretion
-                                when using community-contributed content. Content produced and fully supported by
-                                Meshery maintainers. This represents the highest level of support and is considered the
-                                most reliable. Content produced by partners and verified by Meshery maintainers. While
-                                not directly maintained by Meshery, it has undergone a verification process to ensure
-                                quality and compatibility. Content produced and supported by the respective project or
-                                organization responsible for the specific technology. This class offers a level of
-                                support from the project maintainers themselves. Content produced and shared by Meshery
-                                users. This includes a wide range of content, such as performance profiles, test
-                                results, filters, patterns, and applications. Community content may have varying levels
-                                of support and reliability.
+                                when using community-contributed content.
                               type: string
                               oneOf:
                                 - const: official
@@ -51819,11 +51727,11 @@ paths:
                                     Content produced by partners and verified by Meshery maintainers. While not directly
                                     maintained by Meshery, it has undergone a verification process to ensure quality and
                                     compatibility.
-                                - const: reference architecture
+                                - const: community
                                   description: >-
                                     Content produced and shared by Meshery users. This includes a wide range of content,
                                     such as performance profiles, test results, filters, patterns, and applications.
-                                    Reference architecture content may have varying levels of support and reliability.
+                                    Community content may have varying levels of support and reliability.
                               maxLength: 500
                             compatibility:
                               type: array
@@ -51864,7 +51772,7 @@ paths:
                                 - Workloads
                               default: Deployment
                               description: Categorization of the type of design or operational flow depicted in this design.
-                            snapshotURL:
+                            imageURL:
                               type: array
                               items:
                                 type: string
@@ -52761,21 +52669,12 @@ paths:
                               description: Tracks the specific content version that has been made available in the Catalog.
                               type: string
                               maxLength: 500
-                            class:
+                            contentClass:
                               description: >-
                                 Published content is classifed by its support level. Content classes help you understand
                                 the origin and expected support level for each piece of content. It is important to note
                                 that the level of support may vary within each class, and you should exercise discretion
-                                when using community-contributed content. Content produced and fully supported by
-                                Meshery maintainers. This represents the highest level of support and is considered the
-                                most reliable. Content produced by partners and verified by Meshery maintainers. While
-                                not directly maintained by Meshery, it has undergone a verification process to ensure
-                                quality and compatibility. Content produced and supported by the respective project or
-                                organization responsible for the specific technology. This class offers a level of
-                                support from the project maintainers themselves. Content produced and shared by Meshery
-                                users. This includes a wide range of content, such as performance profiles, test
-                                results, filters, patterns, and applications. Community content may have varying levels
-                                of support and reliability.
+                                when using community-contributed content.
                               type: string
                               oneOf:
                                 - const: official
@@ -52787,11 +52686,11 @@ paths:
                                     Content produced by partners and verified by Meshery maintainers. While not directly
                                     maintained by Meshery, it has undergone a verification process to ensure quality and
                                     compatibility.
-                                - const: reference architecture
+                                - const: community
                                   description: >-
                                     Content produced and shared by Meshery users. This includes a wide range of content,
                                     such as performance profiles, test results, filters, patterns, and applications.
-                                    Reference architecture content may have varying levels of support and reliability.
+                                    Community content may have varying levels of support and reliability.
                               maxLength: 500
                             compatibility:
                               type: array
@@ -52832,7 +52731,7 @@ paths:
                                 - Workloads
                               default: Deployment
                               description: Categorization of the type of design or operational flow depicted in this design.
-                            snapshotURL:
+                            imageURL:
                               type: array
                               items:
                                 type: string
@@ -59084,21 +58983,12 @@ paths:
                               description: Tracks the specific content version that has been made available in the Catalog.
                               type: string
                               maxLength: 500
-                            class:
+                            contentClass:
                               description: >-
                                 Published content is classifed by its support level. Content classes help you understand
                                 the origin and expected support level for each piece of content. It is important to note
                                 that the level of support may vary within each class, and you should exercise discretion
-                                when using community-contributed content. Content produced and fully supported by
-                                Meshery maintainers. This represents the highest level of support and is considered the
-                                most reliable. Content produced by partners and verified by Meshery maintainers. While
-                                not directly maintained by Meshery, it has undergone a verification process to ensure
-                                quality and compatibility. Content produced and supported by the respective project or
-                                organization responsible for the specific technology. This class offers a level of
-                                support from the project maintainers themselves. Content produced and shared by Meshery
-                                users. This includes a wide range of content, such as performance profiles, test
-                                results, filters, patterns, and applications. Community content may have varying levels
-                                of support and reliability.
+                                when using community-contributed content.
                               type: string
                               oneOf:
                                 - const: official
@@ -59110,11 +59000,11 @@ paths:
                                     Content produced by partners and verified by Meshery maintainers. While not directly
                                     maintained by Meshery, it has undergone a verification process to ensure quality and
                                     compatibility.
-                                - const: reference architecture
+                                - const: community
                                   description: >-
                                     Content produced and shared by Meshery users. This includes a wide range of content,
                                     such as performance profiles, test results, filters, patterns, and applications.
-                                    Reference architecture content may have varying levels of support and reliability.
+                                    Community content may have varying levels of support and reliability.
                               maxLength: 500
                             compatibility:
                               type: array
@@ -59155,7 +59045,7 @@ paths:
                                 - Workloads
                               default: Deployment
                               description: Categorization of the type of design or operational flow depicted in this design.
-                            snapshotURL:
+                            imageURL:
                               type: array
                               items:
                                 type: string
@@ -59306,20 +59196,12 @@ paths:
                           description: Tracks the specific content version that has been made available in the Catalog.
                           type: string
                           maxLength: 500
-                        class:
+                        contentClass:
                           description: >-
                             Published content is classifed by its support level. Content classes help you understand the
                             origin and expected support level for each piece of content. It is important to note that
                             the level of support may vary within each class, and you should exercise discretion when
-                            using community-contributed content. Content produced and fully supported by Meshery
-                            maintainers. This represents the highest level of support and is considered the most
-                            reliable. Content produced by partners and verified by Meshery maintainers. While not
-                            directly maintained by Meshery, it has undergone a verification process to ensure quality
-                            and compatibility. Content produced and supported by the respective project or organization
-                            responsible for the specific technology. This class offers a level of support from the
-                            project maintainers themselves. Content produced and shared by Meshery users. This includes
-                            a wide range of content, such as performance profiles, test results, filters, patterns, and
-                            applications. Community content may have varying levels of support and reliability.
+                            using community-contributed content.
                           type: string
                           oneOf:
                             - const: official
@@ -59331,11 +59213,11 @@ paths:
                                 Content produced by partners and verified by Meshery maintainers. While not directly
                                 maintained by Meshery, it has undergone a verification process to ensure quality and
                                 compatibility.
-                            - const: reference architecture
+                            - const: community
                               description: >-
                                 Content produced and shared by Meshery users. This includes a wide range of content,
                                 such as performance profiles, test results, filters, patterns, and applications.
-                                Reference architecture content may have varying levels of support and reliability.
+                                Community content may have varying levels of support and reliability.
                           maxLength: 500
                         compatibility:
                           type: array
@@ -59374,7 +59256,7 @@ paths:
                             - Workloads
                           default: Deployment
                           description: Categorization of the type of design or operational flow depicted in this design.
-                        snapshotURL:
+                        imageURL:
                           type: array
                           items:
                             type: string
@@ -59496,20 +59378,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -59521,11 +59395,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -59564,7 +59438,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -59798,20 +59672,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -59823,11 +59689,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -59866,7 +59732,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -60023,20 +59889,12 @@ paths:
                       description: Tracks the specific content version that has been made available in the Catalog.
                       type: string
                       maxLength: 500
-                    class:
+                    contentClass:
                       description: >-
                         Published content is classifed by its support level. Content classes help you understand the
                         origin and expected support level for each piece of content. It is important to note that the
                         level of support may vary within each class, and you should exercise discretion when using
-                        community-contributed content. Content produced and fully supported by Meshery maintainers. This
-                        represents the highest level of support and is considered the most reliable. Content produced by
-                        partners and verified by Meshery maintainers. While not directly maintained by Meshery, it has
-                        undergone a verification process to ensure quality and compatibility. Content produced and
-                        supported by the respective project or organization responsible for the specific technology.
-                        This class offers a level of support from the project maintainers themselves. Content produced
-                        and shared by Meshery users. This includes a wide range of content, such as performance
-                        profiles, test results, filters, patterns, and applications. Community content may have varying
-                        levels of support and reliability.
+                        community-contributed content.
                       type: string
                       oneOf:
                         - const: official
@@ -60048,11 +59906,11 @@ paths:
                             Content produced by partners and verified by Meshery maintainers. While not directly
                             maintained by Meshery, it has undergone a verification process to ensure quality and
                             compatibility.
-                        - const: reference architecture
+                        - const: community
                           description: >-
                             Content produced and shared by Meshery users. This includes a wide range of content, such as
-                            performance profiles, test results, filters, patterns, and applications. Reference
-                            architecture content may have varying levels of support and reliability.
+                            performance profiles, test results, filters, patterns, and applications. Community content
+                            may have varying levels of support and reliability.
                       maxLength: 500
                     compatibility:
                       type: array
@@ -60091,7 +59949,7 @@ paths:
                         - Workloads
                       default: Deployment
                       description: Categorization of the type of design or operational flow depicted in this design.
-                    snapshotURL:
+                    imageURL:
                       type: array
                       items:
                         type: string
@@ -60204,20 +60062,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -60229,11 +60079,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -60272,7 +60122,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -60509,20 +60359,12 @@ paths:
                         description: Tracks the specific content version that has been made available in the Catalog.
                         type: string
                         maxLength: 500
-                      class:
+                      contentClass:
                         description: >-
                           Published content is classifed by its support level. Content classes help you understand the
                           origin and expected support level for each piece of content. It is important to note that the
                           level of support may vary within each class, and you should exercise discretion when using
-                          community-contributed content. Content produced and fully supported by Meshery maintainers.
-                          This represents the highest level of support and is considered the most reliable. Content
-                          produced by partners and verified by Meshery maintainers. While not directly maintained by
-                          Meshery, it has undergone a verification process to ensure quality and compatibility. Content
-                          produced and supported by the respective project or organization responsible for the specific
-                          technology. This class offers a level of support from the project maintainers themselves.
-                          Content produced and shared by Meshery users. This includes a wide range of content, such as
-                          performance profiles, test results, filters, patterns, and applications. Community content may
-                          have varying levels of support and reliability.
+                          community-contributed content.
                         type: string
                         oneOf:
                           - const: official
@@ -60534,11 +60376,11 @@ paths:
                               Content produced by partners and verified by Meshery maintainers. While not directly
                               maintained by Meshery, it has undergone a verification process to ensure quality and
                               compatibility.
-                          - const: reference architecture
+                          - const: community
                             description: >-
                               Content produced and shared by Meshery users. This includes a wide range of content, such
-                              as performance profiles, test results, filters, patterns, and applications. Reference
-                              architecture content may have varying levels of support and reliability.
+                              as performance profiles, test results, filters, patterns, and applications. Community
+                              content may have varying levels of support and reliability.
                         maxLength: 500
                       compatibility:
                         type: array
@@ -60577,7 +60419,7 @@ paths:
                           - Workloads
                         default: Deployment
                         description: Categorization of the type of design or operational flow depicted in this design.
-                      snapshotURL:
+                      imageURL:
                         type: array
                         items:
                           type: string
@@ -69725,15 +69567,24 @@ paths:
       summary: Get all profiles
       description: >-
         Gets the live profiles the caller can see: those the caller owns (including profiles assigned to no workspace),
-        those assigned to a workspace the caller is a member of, and, for organization admins, every profile of the
-        organization. Provider admins are not granted visibility automatically. `search` matches the name or description
-        case-insensitively.
+        those that represent the caller (`userId`), those assigned to a workspace the caller is a member of, and, for
+        organization admins, every profile of the organization. Provider admins are not granted visibility
+        automatically. `search` matches the name or description case-insensitively; `name` matches the name exactly,
+        ignoring case.
       parameters:
         - name: search
           in: query
           description: Get responses that match search param value
           schema:
             type: string
+        - name: name
+          in: query
+          required: false
+          description: Return only live profiles whose name equals this value, ignoring case.
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 255
         - name: order
           in: query
           description: Get ordered responses
@@ -70053,6 +69904,226 @@ paths:
             text/plain:
               schema:
                 type: string
+  /api/profiles/connections:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Profile_profiles
+      operationId: getProfileConnectionMappings
+      summary: Get the connection links of every visible profile
+      description: >-
+        Gets, in one paged read, the live profile-to-connection links of every live profile of the organization whose
+        connections the caller may list under getProfileConnections' rules: the profiles the caller can see, with View
+        Profiles; without it, only the profiles the caller owns. A profile that only represents the caller (`userId`)
+        contributes no links, as its read-only grant does not cover its connections. A client learns which connections
+        each profile acts through without one getProfileConnections call per profile. Items are ProfileConnectionMapping
+        records; they carry ids only, and the connections themselves keep their own access rules. Ordered by profile,
+        then connection.
+      parameters:
+        - name: orgId
+          in: query
+          description: Organization ID used to scope the listing. Defaults to the organization the session resolved to.
+          required: false
+          schema:
+            type: string
+            format: uuid
+            maxLength: 36
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: integer
+            minimum: 0
+        - name: pageSize
+          in: query
+          description: >-
+            Number of responses to return per page. Canonical camelCase pagination parameter; prefer this over the
+            deprecated all-lowercase `pagesize`.
+          schema:
+            type: integer
+            minimum: 1
+      responses:
+        '200':
+          description: Profile connection links
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated list of profile-to-connection links.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - mappings
+                properties:
+                  page:
+                    type: integer
+                    description: Zero-based page index returned in this response.
+                    minimum: 0
+                  pageSize:
+                    type: integer
+                    description: Maximum number of items returned on each page.
+                    minimum: 1
+                  totalCount:
+                    type: integer
+                    description: Total number of items across all pages.
+                    minimum: 0
+                  mappings:
+                    type: array
+                    description: Profile-to-connection links in this page.
+                    x-go-type-skip-optional-pointer: true
+                    items:
+                      x-go-type: ProfileConnectionMapping
+                      type: object
+                      description: Junction record linking a profile to a connection.
+                      additionalProperties: false
+                      required:
+                        - id
+                        - profileId
+                        - connectionId
+                      properties:
+                        id:
+                          description: Mapping record ID.
+                          x-go-name: ID
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                            json: id
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        profileId:
+                          description: ID of the linked profile.
+                          x-go-name: ProfileID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: profile_id
+                            json: profileId
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        connectionId:
+                          description: ID of the linked connection.
+                          x-go-name: ConnectionID
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: connection_id
+                            json: connectionId
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        createdAt:
+                          description: Timestamp when the mapping was created.
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            json: createdAt,omitempty
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: Timestamp when the mapping was last updated.
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            json: updatedAt,omitempty
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        deletedAt:
+                          description: Timestamp when the mapping was soft-deleted. Null while the mapping remains active.
+                          x-oapi-codegen-extra-tags:
+                            db: deleted_at
+                            json: deletedAt,omitempty
+                          x-go-type: meshcore.NullTime
+                          x-go-type-import:
+                            name: meshcore
+                            path: github.com/meshery/schemas/models/core
+                          type: string
+                          format: date-time
+                          nullable: true
+                          x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '429':
+          description: >-
+            Too many requests - the caller exceeded the server's per-user request rate for this route family. Wait the
+            number of seconds in `Retry-After` before retrying.
+          headers:
+            Retry-After:
+              description: Number of seconds the caller must wait before retrying.
+              required: true
+              schema:
+                type: integer
+                minimum: 1
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
   /api/profiles/{profileId}:
     get:
       x-internal:
@@ -70062,10 +70133,11 @@ paths:
       operationId: getProfileById
       summary: Get profile by ID
       description: >-
-        Gets a profile visible to the caller: its owner (whether or not the profile is assigned to any workspace), an
-        organization admin, or a member of a workspace it is assigned to. Provider admins are not granted visibility
-        automatically. A profile the caller cannot see returns 404. Seeing the profile does not grant access to its
-        linked connections.
+        Gets a profile visible to the caller: its owner (whether or not the profile is assigned to any workspace), the
+        user it represents (`userId`, read only), an organization admin, or a member of a workspace it is assigned to.
+        Provider admins are not granted visibility automatically. A profile the caller cannot see returns 404. Seeing
+        the profile does not grant access to its linked connections. The response carries the profile's entity tag in
+        the `ETag` header.
       parameters:
         - name: profileId
           in: path
@@ -70083,6 +70155,14 @@ paths:
       responses:
         '200':
           description: Profile
+          headers:
+            ETag:
+              description: >-
+                Strong entity tag of the profile. It changes whenever the profile changes; send it back as `If-Match` to
+                make updateProfile conditional.
+              required: true
+              schema:
+                type: string
           content:
             application/json:
               schema:
@@ -70351,7 +70431,9 @@ paths:
       description: >-
         Replaces the client-settable fields of the profile. `organizationId` cannot change after creation; a different
         value is refused with 400. Changing `owner` transfers the profile; the new owner must be a member of the
-        organization.
+        organization. The optional `If-Match` header makes the write conditional on the entity tag the profile carried
+        when it was read: when it no longer matches, the request is refused with 412 and nothing is written. Without
+        `If-Match` the write is unconditional.
       parameters:
         - name: profileId
           in: path
@@ -70366,6 +70448,15 @@ paths:
             x-go-type: uuid.UUID
             x-go-type-import:
               path: github.com/gofrs/uuid
+        - name: If-Match
+          in: header
+          required: false
+          description: >-
+            Entity tag of the profile as last read, from the `ETag` header of getProfileById or updateProfile. When
+            present the write applies only if it still matches; otherwise 412.
+          schema:
+            type: string
+            maxLength: 255
       requestBody:
         description: Body for creating or updating a profile
         required: true
@@ -70439,6 +70530,14 @@ paths:
       responses:
         '200':
           description: Updated profile
+          headers:
+            ETag:
+              description: >-
+                Strong entity tag of the profile. It changes whenever the profile changes; send it back as `If-Match` to
+                make updateProfile conditional.
+              required: true
+              schema:
+                type: string
           content:
             application/json:
               schema:
@@ -70638,6 +70737,10 @@ paths:
             text/plain:
               schema:
                 type: string
+        '412':
+          description: >-
+            Precondition failed - `If-Match` does not match the profile's current entity tag, so nothing was written.
+            Read the profile again and reapply the change.
         '429':
           description: >-
             Too many requests - the caller exceeded the server's per-user request rate for this route family. Wait the
@@ -70820,7 +70923,8 @@ paths:
         assigned to any workspace), an organization admin, or a member of a workspace it is assigned to. The owner needs
         no permission key; organization admins and workspace members also need View Profiles. Provider admins are not
         granted visibility automatically. A profile the caller cannot see returns 404. Seeing the profile does not grant
-        access to its linked connections, which follow their own access rules.
+        access to its linked connections, which follow their own access rules. `kind` narrows the page to connections of
+        the given kinds.
       parameters:
         - name: profileId
           in: path
@@ -70835,6 +70939,15 @@ paths:
             x-go-type: uuid.UUID
             x-go-type-import:
               path: github.com/gofrs/uuid
+        - name: kind
+          in: query
+          required: false
+          description: Return only connections of these kinds (repeatable), as getConnections does.
+          schema:
+            type: array
+            items:
+              type: string
+              maxLength: 255
         - name: search
           in: query
           description: Get responses that match search param value
@@ -72036,46 +72149,40 @@ paths:
                   - connectionId
                 properties:
                   id:
-                    type: string
-                    format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
-                    x-go-type: uuid.UUID
-                    x-go-type-import:
-                      path: github.com/gofrs/uuid
+                    description: Mapping record ID.
                     x-go-name: ID
                     x-oapi-codegen-extra-tags:
                       db: id
                       json: id
-                  profileId:
                     type: string
                     format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
+                  profileId:
+                    description: ID of the linked profile.
                     x-go-name: ProfileID
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: profile_id
                       json: profileId
-                  connectionId:
                     type: string
                     format: uuid
-                    description: >-
-                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
-                      definition is used across different schemas.
                     x-go-type: uuid.UUID
                     x-go-type-import:
                       path: github.com/gofrs/uuid
+                  connectionId:
+                    description: ID of the linked connection.
                     x-go-name: ConnectionID
                     x-go-type-skip-optional-pointer: true
                     x-oapi-codegen-extra-tags:
                       db: connection_id
                       json: connectionId
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
                   createdAt:
                     description: Timestamp when the mapping was created.
                     x-oapi-codegen-extra-tags:
@@ -83608,21 +83715,12 @@ paths:
                             publishedVersion:
                               description: Tracks the specific content version that has been made available in the Catalog.
                               type: string
-                            class:
+                            contentClass:
                               description: >-
                                 Published content is classifed by its support level. Content classes help you understand
                                 the origin and expected support level for each piece of content. It is important to note
                                 that the level of support may vary within each class, and you should exercise discretion
-                                when using community-contributed content. Content produced and fully supported by
-                                Meshery maintainers. This represents the highest level of support and is considered the
-                                most reliable. Content produced by partners and verified by Meshery maintainers. While
-                                not directly maintained by Meshery, it has undergone a verification process to ensure
-                                quality and compatibility. Content produced and supported by the respective project or
-                                organization responsible for the specific technology. This class offers a level of
-                                support from the project maintainers themselves. Content produced and shared by Meshery
-                                users. This includes a wide range of content, such as performance profiles, test
-                                results, filters, patterns, and applications. Community content may have varying levels
-                                of support and reliability.
+                                when using community-contributed content.
                               type: string
                               oneOf:
                                 - const: official
@@ -83634,11 +83732,11 @@ paths:
                                     Content produced by partners and verified by Meshery maintainers. While not directly
                                     maintained by Meshery, it has undergone a verification process to ensure quality and
                                     compatibility.
-                                - const: reference architecture
+                                - const: community
                                   description: >-
                                     Content produced and shared by Meshery users. This includes a wide range of content,
                                     such as performance profiles, test results, filters, patterns, and applications.
-                                    Reference architecture content may have varying levels of support and reliability.
+                                    Community content may have varying levels of support and reliability.
                             compatibility:
                               type: array
                               title: Model
@@ -83651,13 +83749,13 @@ paths:
                               description: >-
                                 One or more models associated with this catalog item. For designs, a list of one or more
                                 models implicated by components within the design. For models, this is self-referential.
-                            pattern_caveats:
+                            patternCaveats:
                               type: string
                               title: Caveats and Considerations
                               description: >-
                                 Specific stipulations to consider and known behaviors to be aware of when using this
                                 design.
-                            pattern_info:
+                            patternInfo:
                               type: string
                               title: Description
                               minLength: 1
@@ -83676,7 +83774,7 @@ paths:
                                 - Workloads
                               default: Deployment
                               description: Categorization of the type of design or operational flow depicted in this design.
-                            snapshotURL:
+                            imageURL:
                               type: array
                               items:
                                 type: string
@@ -83685,8 +83783,8 @@ paths:
                               description: Contains reference to the dark and light mode snapshots of the design.
                           required:
                             - compatibility
-                            - pattern_caveats
-                            - pattern_info
+                            - patternCaveats
+                            - patternInfo
                             - type
                         created_at:
                           type: string
