@@ -17,6 +17,9 @@
 @import "_kanvas-corner-popup.scss";
 @import "_resizable.scss";
 @import "_resizable-bootstrap-overrides.scss";
+// Sidebar drawer rules live here, not in the theme files they duplicate
+// (see #1171). Imported last so the override rules inside win the cascade.
+@import "_sidebar-tree.scss";
 
 
 // Page Layout Sections
