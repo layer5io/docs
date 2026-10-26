@@ -116,6 +116,18 @@ Assigning a new domain to an organization requires a Provider Admin. Organizatio
 
 The organization switcher lists only the organizations the user is a member of. Holders of View All Organizations can also select All Organizations. See [Navigating Organizations]({{< ref "cloud/guides/organizations/org-management/navigating-organizations.md" >}}).
 
+### Which organization a new connection joins
+
+Every connection you register belongs to one organization, which Layer5 Cloud assigns; you never choose it in the request. It is, in order:
+
+1. The organization selected for the session: the organization picker in the UI, or the `X-Current-Orgid` header a client sends.
+2. If none is selected, the only organization you belong to.
+3. If you belong to several, the only one of them you own.
+
+If none of these names exactly one organization, the registration is refused with `meshery_cloud-3632` (_Select an organization before registering a connection_). Select an organization and register again. A Meshery Server registers connections on your behalf without a header, so it uses your selected organization.
+
+A connection keeps its organization for life: editing or re-registering it never moves it. Connections created before October 2026 were assigned the organization of their environment, or their owner's only organization. Those whose owner belongs to several organizations have none and remain scoped to their owner.
+
 ## Lifecycle
 
 [Organization Management]({{< ref "cloud/guides/organizations/org-management/_index.md" >}}) covers the procedures.
