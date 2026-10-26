@@ -130,7 +130,7 @@ Editing or re-registering a connection never moves it to another organization.
 
 Registering a connection you deleted brings it back, and it joins the organization it is registered in now, not the one it had before. Registering a connection ID that belongs to someone else, or to a connection of a different kind, is refused with `meshery_cloud-3633` (_The connection id is already in use_). The answer is the same whether or not that connection exists. Register without an ID, or with the ID of a connection you own.
 
-Connections created before October 2026 had no organization. Each was assigned the organization it could be traced to: the organization of its environments, else its owner's only organization, else the only one of its owner's organizations the owner owns. Connections that could not be traced to exactly one organization were deleted, along with any credential no other connection used. Register them again to recreate them.
+Connections created before October 2026 had no organization. Each was assigned the organization it could be traced to: the organization of the profiles it is linked to, else the organization of its environments, else its owner's only organization, else the only one of its owner's organizations the owner owns. Connections that could not be traced to exactly one organization were deleted, along with any credential no other connection used. Register them again to recreate them.
 
 ## Lifecycle
 
