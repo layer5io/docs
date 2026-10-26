@@ -116,6 +116,22 @@ Assigning a new domain to an organization requires a Provider Admin. Organizatio
 
 The organization switcher lists only the organizations the user is a member of. Holders of View All Organizations can also select All Organizations. See [Navigating Organizations]({{< ref "cloud/guides/organizations/org-management/navigating-organizations.md" >}}).
 
+### Which organization a new connection joins
+
+Every connection you register belongs to one organization, which Layer5 Cloud assigns; you never choose it in the request. It is, in order:
+
+1. The organization selected for the session: the organization picker in the UI, or the `X-Current-Orgid` header a client sends.
+2. If none is selected, the only organization you belong to.
+3. If you belong to several, the only one of them you own.
+
+If none of these names exactly one organization, creating the connection is refused with `meshery_cloud-3632` (_Select an organization before registering a connection_). Select an organization and register again. Re-registering a connection you already have is never refused for this reason. A Meshery Server registers connections on your behalf without a header, so it uses your selected organization.
+
+Editing or re-registering a connection never moves it to another organization.
+
+Registering a connection you deleted brings it back, and it joins the organization it is registered in now, not the one it had before. Registering a connection ID that belongs to someone else, or to a connection of a different kind, is refused with `meshery_cloud-3633` (_The connection id is already in use_). The answer is the same whether or not that connection exists. Register without an ID, or with the ID of a connection you own.
+
+Connections created before October 2026 had no organization. Each was assigned the organization it could be traced to: the organization of its environments, else its owner's only organization, else the only one of its owner's organizations the owner owns. Connections that could not be traced to exactly one organization were deleted, along with any credential no other connection used. Register them again to recreate them.
+
 ## Lifecycle
 
 [Organization Management]({{< ref "cloud/guides/organizations/org-management/_index.md" >}}) covers the procedures.
