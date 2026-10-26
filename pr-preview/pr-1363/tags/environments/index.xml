@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Environments on Layer5 Documentation</title><link>/pr-preview/pr-1363/tags/environments/</link><description>Recent content in Environments on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1363/tags/environments/index.xml" rel="self" type="application/rss+xml"/><item><title>Promoting a Design from Staging to Prod</title><link>/pr-preview/pr-1363/cloud/guides/tutorials/promoting-a-design/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1363/cloud/guides/tutorials/promoting-a-design/</guid><description>&lt;p&gt;This guide walks through how Five promotes the &lt;code&gt;prod-deployment-v2&lt;/code&gt; design from the &lt;code&gt;orbital-staging&lt;/code&gt; workspace to &lt;code&gt;orbital-production&lt;/code&gt;, then deploys it to the &lt;code&gt;prod-aws&lt;/code&gt; environment.&lt;/p&gt;
+&lt;p&gt;Promotion is a move. A design lives in at most one workspace, so assigning it to production removes it from staging. There is no approval step and no copy.&lt;/p&gt;
+&lt;p&gt;See &lt;a href="/pr-preview/pr-1363/cloud/getting-started/meet-five/"&gt;Meet Five and the Cast&lt;/a&gt; for the full Orbital Labs narrative reference.&lt;/p&gt;
+
+&lt;h2 id="overview" class="heading-link"&gt;
+ Overview
+ &lt;a href="#overview" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;At Orbital Labs, workspaces mirror the deployment pipeline. A workspace decides where a design lives and which teams can read which connections. An environment is the deploy target. A team assignment gives read-only access to connections. It does not give access to designs.&lt;/p&gt;</description></item></channel></rss>
