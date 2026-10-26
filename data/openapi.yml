@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.101
+  version: v1.3.102
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -70757,6 +70757,29 @@ paths:
                           x-oapi-codegen-extra-tags:
                             db: deleted_at
                           x-order: 27
+                        riskProfile:
+                          x-go-type: '*risk_profilev1beta3.RiskProfile'
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/v1beta3/risk_profile
+                            name: risk_profilev1beta3
+                          description: |
+                            Optional Risk Profile this schedule runs under, resolved above the
+                            profile x platform resolution and below an explicit per-run flag.
+                            Omitted when the schedule has no override: it then runs under whatever
+                            profile x platform, configuration, environment, account or default
+                            resolves to, exactly as before. Any value outside the Risk Profile
+                            enum is refused with 400.
+                          x-oapi-codegen-extra-tags:
+                            db: risk_profile
+                            json: riskProfile,omitempty
+                          x-order: 28
+                          $schema: http://json-schema.org/draft-07/schema#
+                          title: Risk Profile Schema
+                          type: string
+                          enum:
+                            - cautious
+                            - standard
+                            - brisk
                     description: Schedules included on this page of results.
         '400':
           description: Invalid request body or request param
@@ -70979,6 +71002,26 @@ paths:
                   type: string
                   description: Reason for pausing; stored only while `paused` is true and cleared on resume.
                   maxLength: 1000
+                riskProfile:
+                  x-go-type: '*risk_profilev1beta3.RiskProfile'
+                  x-go-type-import:
+                    path: github.com/meshery/schemas/models/v1beta3/risk_profile
+                    name: risk_profilev1beta3
+                  description: |
+                    Optional Risk Profile this schedule runs under, resolved above
+                    the profile x platform resolution and below an explicit per-run
+                    flag. Omit to inherit: the schedule then runs under whatever
+                    profile x platform, configuration, environment, account or
+                    default resolves to, exactly as before.
+                  x-oapi-codegen-extra-tags:
+                    json: riskProfile,omitempty
+                  $schema: http://json-schema.org/draft-07/schema#
+                  title: Risk Profile Schema
+                  type: string
+                  enum:
+                    - cautious
+                    - standard
+                    - brisk
       responses:
         '201':
           description: Schedule created
@@ -71558,6 +71601,29 @@ paths:
                     x-oapi-codegen-extra-tags:
                       db: deleted_at
                     x-order: 27
+                  riskProfile:
+                    x-go-type: '*risk_profilev1beta3.RiskProfile'
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/v1beta3/risk_profile
+                      name: risk_profilev1beta3
+                    description: |
+                      Optional Risk Profile this schedule runs under, resolved above the
+                      profile x platform resolution and below an explicit per-run flag.
+                      Omitted when the schedule has no override: it then runs under whatever
+                      profile x platform, configuration, environment, account or default
+                      resolves to, exactly as before. Any value outside the Risk Profile
+                      enum is refused with 400.
+                    x-oapi-codegen-extra-tags:
+                      db: risk_profile
+                      json: riskProfile,omitempty
+                    x-order: 28
+                    $schema: http://json-schema.org/draft-07/schema#
+                    title: Risk Profile Schema
+                    type: string
+                    enum:
+                      - cautious
+                      - standard
+                      - brisk
         '400':
           description: Invalid request body or request param
           content:
@@ -72186,6 +72252,29 @@ paths:
                     x-oapi-codegen-extra-tags:
                       db: deleted_at
                     x-order: 27
+                  riskProfile:
+                    x-go-type: '*risk_profilev1beta3.RiskProfile'
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/v1beta3/risk_profile
+                      name: risk_profilev1beta3
+                    description: |
+                      Optional Risk Profile this schedule runs under, resolved above the
+                      profile x platform resolution and below an explicit per-run flag.
+                      Omitted when the schedule has no override: it then runs under whatever
+                      profile x platform, configuration, environment, account or default
+                      resolves to, exactly as before. Any value outside the Risk Profile
+                      enum is refused with 400.
+                    x-oapi-codegen-extra-tags:
+                      db: risk_profile
+                      json: riskProfile,omitempty
+                    x-order: 28
+                    $schema: http://json-schema.org/draft-07/schema#
+                    title: Risk Profile Schema
+                    type: string
+                    enum:
+                      - cautious
+                      - standard
+                      - brisk
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -72429,6 +72518,26 @@ paths:
                   type: string
                   description: Reason for pausing; stored only while `paused` is true and cleared on resume.
                   maxLength: 1000
+                riskProfile:
+                  x-go-type: '*risk_profilev1beta3.RiskProfile'
+                  x-go-type-import:
+                    path: github.com/meshery/schemas/models/v1beta3/risk_profile
+                    name: risk_profilev1beta3
+                  description: |
+                    Optional Risk Profile this schedule runs under, resolved above
+                    the profile x platform resolution and below an explicit per-run
+                    flag. Omit to inherit: the schedule then runs under whatever
+                    profile x platform, configuration, environment, account or
+                    default resolves to, exactly as before.
+                  x-oapi-codegen-extra-tags:
+                    json: riskProfile,omitempty
+                  $schema: http://json-schema.org/draft-07/schema#
+                  title: Risk Profile Schema
+                  type: string
+                  enum:
+                    - cautious
+                    - standard
+                    - brisk
       responses:
         '200':
           description: Schedule updated
@@ -73008,6 +73117,29 @@ paths:
                     x-oapi-codegen-extra-tags:
                       db: deleted_at
                     x-order: 27
+                  riskProfile:
+                    x-go-type: '*risk_profilev1beta3.RiskProfile'
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/v1beta3/risk_profile
+                      name: risk_profilev1beta3
+                    description: |
+                      Optional Risk Profile this schedule runs under, resolved above the
+                      profile x platform resolution and below an explicit per-run flag.
+                      Omitted when the schedule has no override: it then runs under whatever
+                      profile x platform, configuration, environment, account or default
+                      resolves to, exactly as before. Any value outside the Risk Profile
+                      enum is refused with 400.
+                    x-oapi-codegen-extra-tags:
+                      db: risk_profile
+                      json: riskProfile,omitempty
+                    x-order: 28
+                    $schema: http://json-schema.org/draft-07/schema#
+                    title: Risk Profile Schema
+                    type: string
+                    enum:
+                      - cautious
+                      - standard
+                      - brisk
         '400':
           description: Invalid request body or request param
           content:
@@ -73748,6 +73880,29 @@ paths:
                           x-oapi-codegen-extra-tags:
                             db: deleted_at
                           x-order: 27
+                        riskProfile:
+                          x-go-type: '*risk_profilev1beta3.RiskProfile'
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/v1beta3/risk_profile
+                            name: risk_profilev1beta3
+                          description: |
+                            Optional Risk Profile this schedule runs under, resolved above the
+                            profile x platform resolution and below an explicit per-run flag.
+                            Omitted when the schedule has no override: it then runs under whatever
+                            profile x platform, configuration, environment, account or default
+                            resolves to, exactly as before. Any value outside the Risk Profile
+                            enum is refused with 400.
+                          x-oapi-codegen-extra-tags:
+                            db: risk_profile
+                            json: riskProfile,omitempty
+                          x-order: 28
+                          $schema: http://json-schema.org/draft-07/schema#
+                          title: Risk Profile Schema
+                          type: string
+                          enum:
+                            - cautious
+                            - standard
+                            - brisk
                     description: Schedules included on this page of results.
         '400':
           description: Invalid request body or request param
@@ -74384,6 +74539,29 @@ paths:
                     x-oapi-codegen-extra-tags:
                       db: deleted_at
                     x-order: 27
+                  riskProfile:
+                    x-go-type: '*risk_profilev1beta3.RiskProfile'
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/v1beta3/risk_profile
+                      name: risk_profilev1beta3
+                    description: |
+                      Optional Risk Profile this schedule runs under, resolved above the
+                      profile x platform resolution and below an explicit per-run flag.
+                      Omitted when the schedule has no override: it then runs under whatever
+                      profile x platform, configuration, environment, account or default
+                      resolves to, exactly as before. Any value outside the Risk Profile
+                      enum is refused with 400.
+                    x-oapi-codegen-extra-tags:
+                      db: risk_profile
+                      json: riskProfile,omitempty
+                    x-order: 28
+                    $schema: http://json-schema.org/draft-07/schema#
+                    title: Risk Profile Schema
+                    type: string
+                    enum:
+                      - cautious
+                      - standard
+                      - brisk
         '400':
           description: Invalid request body or request param
           content:
