@@ -26,7 +26,7 @@ A profile is visible to:
 - the Organization Admins of its organization, and
 - members of any team assigned to a workspace the profile is assigned to.
 
-The owner always sees their own profile, whether or not it is in a workspace and even without the **View Profiles** permission. Organization Admins and workspace members also need **View Profiles**. Provider Admins do not see profiles automatically. Seeing a profile does not give you access to its linked connections, which keep their own access rules.
+The owner always sees their own profile, whether or not it is in a workspace and even without the **View Profiles** permission. The person a profile represents can also read it, so when an admin creates a profile for you, it appears in your profile list and you can open it, even without **View Profiles**. That is read-only: changing the profile, linking connections and seeing its connections still follow the rules on this page. Organization Admins and workspace members also need **View Profiles**. Provider Admins do not see profiles automatically. Seeing a profile does not give you access to its linked connections, which keep their own access rules.
 
 A profile that is in no workspace is visible only to its owner and the organization's admins. What you can change is never wider than what you can see: a profile you cannot see answers 404, the same as one that does not exist.
 
@@ -40,7 +40,7 @@ When the owner's account is deleted, the profile passes to the earliest Organiza
 
 | Permission | Allows |
 | --- | --- |
-| View Profiles | Listing and reading the profiles you can see, and their connections. Owners read their own profiles without it. |
+| View Profiles | Listing and reading the profiles you can see, and their connections. Owners read their own profiles without it, and the person a profile represents can read that profile without it. |
 | Create Profile | Creating a profile in an organization |
 | Edit Profile | Editing any visible profile, transferring its ownership, and linking or unlinking connections |
 | Delete Profile | Deleting a profile |
