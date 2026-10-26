@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Spaces on Layer5 Documentation</title><link>/pr-preview/pr-1358/categories/spaces/</link><description>Recent content in Spaces on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1358/categories/spaces/index.xml" rel="self" type="application/rss+xml"/><item><title>Managing Workspaces</title><link>/pr-preview/pr-1358/cloud/guides/workspaces/managing-workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1358/cloud/guides/workspaces/managing-workspaces/</guid><description>&lt;p&gt;This guide walks you through the practical steps of managing your Workspaces. Here, you&amp;rsquo;ll learn how to create, edit, and delete Workspaces, as well as how to manage access by assigning teams and resources like Environments, Designs, and Views to them.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re new to the concept of Workspaces, we recommend starting with the &lt;a href="/pr-preview/pr-1358/cloud/concepts/spaces/workspaces/"&gt;Workspaces Overview&lt;/a&gt; to understand what a Workspace is and how it relates to key components like Environments, Designs, and Teams.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>/pr-preview/pr-1358/cloud/guides/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1358/cloud/guides/workspaces/</guid><description>&lt;p&gt;Workspaces and environments are how an organization decides which teams can read which connections and where its designs live. For the model, read &lt;a href="/pr-preview/pr-1358/cloud/concepts/spaces/workspaces/"&gt;Workspaces&lt;/a&gt; and &lt;a href="/pr-preview/pr-1358/cloud/concepts/spaces/environments/"&gt;Environments&lt;/a&gt;. For limits, defaults, and error messages, see &lt;a href="/pr-preview/pr-1358/cloud/concepts/spaces/"&gt;Spaces&lt;/a&gt;.&lt;/p&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;I want to&lt;/th&gt;
+ &lt;th&gt;Go to&lt;/th&gt;
+ &lt;th&gt;Permission needed&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Create, rename, or delete a workspace&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1358/cloud/guides/workspaces/managing-workspaces/"&gt;Managing Workspaces&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Create Workspace, Edit Workspace, Delete Workspace&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Give a team read-only access to a workspace&amp;rsquo;s connections&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1358/cloud/guides/workspaces/managing-workspaces/#assign-teams-to-a-workspace"&gt;Assign Teams to a Workspace&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Assign team to workspace&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Move a design or view into a workspace&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1358/cloud/guides/workspaces/managing-workspaces/#move-designs-and-views-between-workspaces"&gt;Move Designs and Views Between Workspaces&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Assign Designs to Workspaces, Assign Views to Workspace&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;See who changed a workspace&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1358/cloud/guides/workspaces/managing-workspaces/#view-recent-activity"&gt;View Recent Activity&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;View Workspace&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Create an environment and fill it with connections&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1358/cloud/guides/workspaces/managing-environments/"&gt;Managing Environments&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Create Environment, Assign connections to environment&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Make an environment&amp;rsquo;s connections readable by a team&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1358/cloud/guides/workspaces/managing-workspaces/#link-environments-to-a-workspace"&gt;Link Environments to a Workspace&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Assign environment to workspace&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Move a design from staging to production&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1358/cloud/guides/tutorials/promoting-a-design/"&gt;Promoting a Design from Staging to Prod&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Assign Designs to Workspaces in the destination organization&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Share a private design with a person&lt;/td&gt;
+ &lt;td&gt;&lt;a href="/pr-preview/pr-1358/cloud/guides/tutorials/sharing-a-workspace/"&gt;Sharing a Workspace&lt;/a&gt; and &lt;a href="/pr-preview/pr-1358/kanvas/designer/sharing/"&gt;Sharing Designs&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Share Design&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;</description></item><item><title>Managing Environments</title><link>/pr-preview/pr-1358/cloud/guides/workspaces/managing-environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1358/cloud/guides/workspaces/managing-environments/</guid><description>&lt;p&gt;This guide walks you through the practical steps of managing your Environments. Here you will learn how to see the Environments in your organization, create and edit them, review the Connections that belong to an Environment, and assign or remove those Connections.&lt;/p&gt;
+&lt;p&gt;If you are new to the concept of Environments, start with the &lt;a href="/pr-preview/pr-1358/cloud/concepts/spaces/environments/"&gt;Environments Overview&lt;/a&gt; to understand what an Environment is and how it relates to Connections, Credentials, and Workspaces.&lt;/p&gt;</description></item><item><title>Managing Profiles</title><link>/pr-preview/pr-1358/cloud/guides/workspaces/managing-profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1358/cloud/guides/workspaces/managing-profiles/</guid><description>&lt;p&gt;This guide shows how to manage &lt;a href="/pr-preview/pr-1358/cloud/concepts/spaces/profiles/"&gt;profiles&lt;/a&gt; through the Layer5 Cloud API. Profiles have no page in the Layer5 Cloud UI yet. For the base URL and authentication, see the &lt;a href="/pr-preview/pr-1358/cloud/reference/api-reference/"&gt;Cloud API&lt;/a&gt;. All paths below sit under &lt;code&gt;/api&lt;/code&gt;.&lt;/p&gt;
+
+
+
+
+
+
+&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;A Note on Permissions&lt;/h4&gt;
+ 
+ Each action needs the permission named beside it. A profile you cannot see, one that was deleted, and one that belongs to another organization all answer the same 404. See &lt;a href="/pr-preview/pr-1358/cloud/reference/default-permissions/#profile-permissions"&gt;Default Permissions&lt;/a&gt;.
+ 
+&lt;/div&gt;
+
+
+
+&lt;h2 id="list-profiles" class="heading-link"&gt;
+ List profiles
+ &lt;a href="#list-profiles" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;GET /profiles&lt;/code&gt; (View Profiles) lists the profiles you can see in your current organization. Without View Profiles, it lists only the profiles you own. Pass &lt;code&gt;orgId&lt;/code&gt; to choose another organization you belong to, &lt;code&gt;userId&lt;/code&gt; to find the profile that represents a user, and &lt;code&gt;search&lt;/code&gt;, &lt;code&gt;order&lt;/code&gt; (&lt;code&gt;name&lt;/code&gt;, &lt;code&gt;createdAt&lt;/code&gt; or &lt;code&gt;updatedAt&lt;/code&gt;), &lt;code&gt;page&lt;/code&gt; and &lt;code&gt;pagesize&lt;/code&gt; to page through the results.&lt;/p&gt;</description></item><item><title>Spaces</title><link>/pr-preview/pr-1358/cloud/concepts/spaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1358/cloud/concepts/spaces/</guid><description>&lt;p&gt;Spaces is where an organization keeps its workspaces, environments, and the connections those environments hold. A workspace groups teams, environments, designs, and views. An environment groups connections into a deploy target. For the model, read &lt;a href="/pr-preview/pr-1358/cloud/concepts/spaces/workspaces/"&gt;Workspaces&lt;/a&gt; and &lt;a href="/pr-preview/pr-1358/cloud/concepts/spaces/environments/"&gt;Environments&lt;/a&gt;. For the tasks, use the &lt;a href="/pr-preview/pr-1358/cloud/guides/workspaces/"&gt;workspace guides&lt;/a&gt;. For every endpoint&amp;rsquo;s schema, see the &lt;a href="/pr-preview/pr-1358/cloud/reference/api-reference/rest/"&gt;REST API Reference&lt;/a&gt;, and for base URL and authentication see the &lt;a href="/pr-preview/pr-1358/cloud/reference/api-reference/"&gt;Cloud API&lt;/a&gt;. All paths below sit under &lt;code&gt;/api&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id="workspace-and-environment-reference" class="heading-link"&gt;
+ Workspace and environment reference
+ &lt;a href="#workspace-and-environment-reference" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h3 id="fields-defaults-and-limits" class="heading-link"&gt;
+ Fields, defaults, and limits
+ &lt;a href="#fields-defaults-and-limits" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th&gt;Property&lt;/th&gt;
+ &lt;th&gt;Workspace&lt;/th&gt;
+ &lt;th&gt;Environment&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Name&lt;/td&gt;
+ &lt;td&gt;Up to 255 characters. Not required or unique on the API.&lt;/td&gt;
+ &lt;td&gt;Up to 255 characters. Not required or unique on the API.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Description&lt;/td&gt;
+ &lt;td&gt;Up to 255 characters. May be empty.&lt;/td&gt;
+ &lt;td&gt;Up to 255 characters. May be empty.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Organization&lt;/td&gt;
+ &lt;td&gt;Required on create. Fixed for the life of the workspace.&lt;/td&gt;
+ &lt;td&gt;Required on create (&lt;code&gt;organizationId is required&lt;/code&gt;). Fixed for the life of the environment.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Owner&lt;/td&gt;
+ &lt;td&gt;The user who created it.&lt;/td&gt;
+ &lt;td&gt;Not recorded on create.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Starting state&lt;/td&gt;
+ &lt;td&gt;No teams, environments, designs, or views.&lt;/td&gt;
+ &lt;td&gt;No connections, in no workspace.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Kind&lt;/td&gt;
+ &lt;td&gt;Single kind.&lt;/td&gt;
+ &lt;td&gt;Ordinary when created through the API. Platform-provisioned environments exist and are protected.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Update&lt;/td&gt;
+ &lt;td&gt;Only the fields sent change.&lt;/td&gt;
+ &lt;td&gt;Name and description are both replaced; an omitted field becomes empty.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Plan check&lt;/td&gt;
+ &lt;td&gt;None.&lt;/td&gt;
+ &lt;td&gt;None. The feature matrix lists environments under Enterprise.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;Count limits&lt;/td&gt;
+ &lt;td&gt;None. An organization must keep at least one workspace.&lt;/td&gt;
+ &lt;td&gt;None.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Layer5 Cloud creates &lt;strong&gt;My Workspace&lt;/strong&gt; in any organization that has no workspace.&lt;/p&gt;</description></item><item><title>Workspaces</title><link>/pr-preview/pr-1358/cloud/concepts/spaces/workspaces/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1358/cloud/concepts/spaces/workspaces/</guid><description>&lt;p&gt;A workspace is a named grouping inside an organization. It brings together the teams who do a piece of work, the environments they deploy to, and the designs and views they work on. A workspace does two separate jobs:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;It organizes resources.&lt;/strong&gt; Designs and views live in a workspace, and the workspace decides which organization they are listed under.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;It grants connection access.&lt;/strong&gt; Assigning a team to a workspace gives that team&amp;rsquo;s members read-only access to the connections in the workspace&amp;rsquo;s environments. That is the only access a team assignment grants.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can create Workspaces to group related Designs and Environments and to decide which teams can read which connections.&lt;/p&gt;</description></item><item><title>Environments</title><link>/pr-preview/pr-1358/cloud/concepts/spaces/environments/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1358/cloud/concepts/spaces/environments/</guid><description>&lt;p&gt;An environment is a named group of connections, such as Kubernetes clusters, together with the credentials those connections use. Environments matter for two reasons:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;An environment is a deploy target.&lt;/strong&gt; When you deploy a design, you choose the environment to deploy it to, and the design deploys to that environment&amp;rsquo;s connections.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;An environment is how a workspace exposes connections.&lt;/strong&gt; A workspace never holds connections directly. It holds environments, and teams assigned to the workspace reach the connections inside them.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Group connections the way you deploy: one environment per pipeline stage, region, or purpose. An environment belongs to one organization for its whole life. Editing an environment never changes its organization. Every member of the organization can list and open every environment in it. Team membership does not narrow the list.&lt;/p&gt;</description></item><item><title>Profiles</title><link>/pr-preview/pr-1358/cloud/concepts/spaces/profiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1358/cloud/concepts/spaces/profiles/</guid><description>&lt;p&gt;A profile is a named record that belongs to one organization. It represents a person or a persona, such as the platform accounts someone publishes through, and it groups existing connections under that identity. Profiles are shared with people by assigning them to workspaces.&lt;/p&gt;
+&lt;p&gt;A profile is not your user account profile, and it is not a Meshery performance profile.&lt;/p&gt;
+
+&lt;h2 id="what-a-profile-holds" class="heading-link"&gt;
+ What a profile holds
+ &lt;a href="#what-a-profile-holds" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;a &lt;strong&gt;name&lt;/strong&gt; (required, up to 255 characters, not unique) and an optional &lt;strong&gt;description&lt;/strong&gt; (up to 1000 characters)&lt;/li&gt;
+&lt;li&gt;an &lt;strong&gt;owner&lt;/strong&gt;, who must be a signed-in member of the profile&amp;rsquo;s organization&lt;/li&gt;
+&lt;li&gt;optionally, the &lt;strong&gt;user&lt;/strong&gt; the profile represents&lt;/li&gt;
+&lt;li&gt;free-form &lt;strong&gt;metadata&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;links to &lt;strong&gt;connections&lt;/strong&gt;. A profile links to connections that already exist; it never copies them. Removing a link leaves the connection untouched.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A profile can be assigned to any number of workspaces in its own organization. Its organization is fixed for the life of the profile.&lt;/p&gt;</description></item></channel></rss>
