@@ -1,0 +1,15 @@
+# v1.0.19-1
+
+date: 2026-05-07
+
+
+
+## What's New
+## 🔤 General
+- [Chore]: Update to Sistent v0.21.5 @l5io (#4235)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+

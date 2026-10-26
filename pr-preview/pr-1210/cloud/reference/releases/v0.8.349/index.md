@@ -1,0 +1,27 @@
+# v0.8.349
+
+date: 2025-08-03
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- add version release note @aabidsofi19 (#3863)
+
+## 💻 Server
+
+- Overhaul makefile and environment files @leecalcote (#3864)
+
+## 🦴 Infrastructure
+
+- Overhaul makefile and environment files @leecalcote (#3864)
+- add missing env variables to configmap @aabidsofi19 (#3862)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

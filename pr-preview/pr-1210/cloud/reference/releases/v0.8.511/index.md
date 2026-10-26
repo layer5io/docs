@@ -1,0 +1,20 @@
+# v0.8.511
+
+date: 2025-10-16
+
+
+
+## 🖥 Cloud UI
+
+- Persisted org pref @aabidsofi19 (#4333)
+
+## 💻 Server
+
+- Persisted org pref @aabidsofi19 (#4333)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

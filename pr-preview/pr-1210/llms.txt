@@ -1,0 +1,336 @@
+# Layer5 Documentation
+
+> Product Documentation
+
+## Pages
+- [Layer5](/pr-preview/pr-1210/index.md): Explore tutorials and documentation by product in the docs.layer5.io website; documentation and developer resources of Layer5 products.
+
+- [Layer5 Helm Repository](/pr-preview/pr-1210/charts/index.md): Layer5 Helm Repository contains a collection of charts, including Layer5 Cloud, which can be deployed in any Kubernetes cluster on-premises or in Cloud using Helm.
+- [Search Results](/pr-preview/pr-1210/search/index.md)
+
+## Kanvas Documentation
+- [Kanvas Documentation](/pr-preview/pr-1210/kanvas/index.md): Kanvas delivers a collaborative experience for engineers similar to how Google Workspace transforms the digital work environment and how Figma democratizes UX design tooling.
+
+- [Performance Limits and Tuning](/pr-preview/pr-1210/kanvas/advanced/performance/index.md): Learn about the performance limits of Kanvas and how to tune your environment for optimal performance.
+
+- [Understanding Design Components](/pr-preview/pr-1210/kanvas/designer/understanding-design-component/index.md): A complete reference for all components available in the Kanvas designer.
+- [Design Render Quality](/pr-preview/pr-1210/kanvas/advanced/url-parameters/index.md): Control the level of detail in Kanvas design rendering using advanced URL query parameters.
+
+- [Starting from scratch](/pr-preview/pr-1210/kanvas/getting-started/starting-scratch/index.md): Welcome to Kanvas, your comprehensive tool for creating and managing cloud native deployment designs. This documentation will guide you through the steps, emphasizing the underlying system behavior for each action you take.
+
+- [Understanding Edge Styles](/pr-preview/pr-1210/kanvas/designer/understanding-edges/index.md): Learn how to use and customize edge styles in Kanvas to create clear and meaningful designs.
+
+- [Validating Designs](/pr-preview/pr-1210/kanvas/tasks/designs/validating-designs/index.md): Prior to deploying a design, you can validate the configuration that it contains in accordance with the target platform.
+
+- [Whiteboarding](/pr-preview/pr-1210/kanvas/tasks/whiteboarding/index.md): Kanvas Designer supports freestyle design, meaning that you can customize the appearance and layout of your diagrams without any constraints.
+
+- [Auto-pan on Drag](/pr-preview/pr-1210/kanvas/advanced/autopan/index.md): Kanvas automatically pans the viewport while you drag a component past the canvas edge. Learn when it helps, how to toggle it, and the performance gates that decide when it stays active.
+
+- [Dry Running a Design](/pr-preview/pr-1210/kanvas/tasks/designs/dry-running-a-design/index.md): A dry run simulates the deployment of your design in the selected target environment without making any actual changes.
+
+- [Exploring Kubernetes Services with Meshery](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/kubernetes-services/index.md): Explore Kubernetes Services using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
+- [Importing a Design](/pr-preview/pr-1210/kanvas/getting-started/import-designs/index.md): Learn how to import designs from various sources and formats, including Kubernetes manifests, Helm charts, Docker Compose files, and more.
+
+- [Interpreting Component Badges](/pr-preview/pr-1210/kanvas/designer/interpreting-component-badges/index.md): Learn to interpret component badges, the small visual indicators that provide at-a-glance information about a component's status in both Designer and Operator modes.
+- [Undeploying Designs](/pr-preview/pr-1210/kanvas/tasks/designs/undeploying-designs/index.md): Undeploy a design in order to rollback a deployment from one or more Kubernetes clusters.
+
+- [Understanding Tool Modes](/pr-preview/pr-1210/kanvas/designer/understanding-tool-modes/index.md): Kanvas Designer offers three modes: Default, Pencil, and Connector, which behave differently based on the context in which they are used. Learn how to interact with components and the canvas in each mode.
+
+- [Whiteboarding](/pr-preview/pr-1210/kanvas/designer/whiteboarding/index.md): Whiteboarding and Freestyle Drawing inside Kanvas
+- [Creating Relationships](/pr-preview/pr-1210/kanvas/getting-started/creating-relationships/index.md): Relationships identify and facilitate genealogy between Components.
+
+- [Deploying Designs](/pr-preview/pr-1210/kanvas/tasks/designs/deploying-designs/index.md): Each Meshery design is deployable to one or more Kubernetes clusters.
+
+- [Publishing to Catalog](/pr-preview/pr-1210/kanvas/tutorials/publishing-to-catalog/index.md): Publish a Kanvas design to the Catalog from Details, understand visibility versus publish, and know what happens during review and approval.
+
+- [Render Modes](/pr-preview/pr-1210/kanvas/advanced/render-modes/index.md): Kanvas renders a design at four distinct levels of detail. Learn what each render mode shows, what it hides, the feature size gates tied to each mode, and how Adaptive Render Mode picks the right one automatically based on live performance signals.
+
+- [Reviewing Designs](/pr-preview/pr-1210/kanvas/designer/comments/index.md): Learn how to leverage comments in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
+
+- [Understanding  Relationships](/pr-preview/pr-1210/kanvas/concepts/relationships/index.md): Kanvas uses relationships to map how interconnected components interact.
+
+- [Working with Components](/pr-preview/pr-1210/kanvas/getting-started/working-with-components/index.md): Meshery Components are reusable, interactive elements that can be used to build your designs. Learn how to work with components.
+
+- [Cloning a Design](/pr-preview/pr-1210/kanvas/tasks/designs/cloning-a-design/index.md): Treat designs as templates by cloning an existing design to modify and build upon.
+
+- [Collaborative Editing](/pr-preview/pr-1210/kanvas/tutorials/collaborative-editing/index.md): Share a Kanvas design, set Private or Public visibility, invite collaborators, leave review comments, and understand what to expect from live collaboration.
+
+- [Instance Details](/pr-preview/pr-1210/kanvas/operator/resource-details/index.md): Learn about Instance Details in Operator mode
+
+- [Sharing Designs](/pr-preview/pr-1210/kanvas/designer/sharing/index.md): Share designs with other users and use access controls to manage design permissions and visibility.
+
+- [Views in Operator](/pr-preview/pr-1210/kanvas/operator/views/index.md): Learn about Views in Operator mode 
+
+- [Building a GCP Data Pipeline Design](/pr-preview/pr-1210/kanvas/tutorials/data-pipeline-gcp/index.md): Walk through creating the data-pipeline-gcp design in Kanvas, connecting GCP services in orbital-production.
+
+- [Deleting a Design](/pr-preview/pr-1210/kanvas/tasks/designs/deleting-a-design/index.md): Permanently delete a design you own, and understand how deleting differs from unpublishing a design or removing it from a workspace.
+
+- [Embedding Designs](/pr-preview/pr-1210/kanvas/designer/embedding-designs/index.md): How to embed your designs for sharing on your sites.
+
+- [Performance Testing in Operator](/pr-preview/pr-1210/kanvas/operator/performance-testing/index.md): Measure the behavior of a running service from the Operator canvas, using saved performance profiles.
+
+- [Working with Tags](/pr-preview/pr-1210/kanvas/designer/tagsets/index.md): Share design with other users and use control access to manage design access permissions and visibility.
+
+- [Cross-Org Design Access: stellar-saas-platform](/pr-preview/pr-1210/kanvas/tutorials/stellar-saas-platform/index.md): Learn how Stellar Dynamics accesses and collaborates on a shared design with Orbital Labs using cross-org permissions in Kanvas.
+
+- [Working with Canvas Objects](/pr-preview/pr-1210/kanvas/designer/canvas-objects/index.md): Add, copy, clone, lock, delete, style, reset and resize the shapes, sections, textboxes and components on your Kanvas Designer canvas.
+
+- [Exporting Designs](/pr-preview/pr-1210/kanvas/designer/export-designs/index.md): How to export your designs for backup, sharing or offline use.
+
+- [Publishing Designs](/pr-preview/pr-1210/kanvas/designer/publishing-designs/index.md): Learn to publish, manage, and work with designs in Meshery with clear state transitions, role-based permissions, and common workflow FAQs.
+- [Pinning Models to the Dock](/pr-preview/pr-1210/kanvas/designer/pin-model-to-dock/index.md): Learn how to pin and remove models from the dock in the Kanvas Designer for quick access.
+- [Policy Engine](/pr-preview/pr-1210/kanvas/designer/relationship-evaluation/index.md): Choose how Kanvas evaluates relationships in your designs, understand the relationship indicator states, and diagnose failing or unexpected relationship results.
+
+- [Canvas Actions](/pr-preview/pr-1210/kanvas/designer/canvas-actions/index.md): The canvas context menu - screenshots, the Help Center, keyboard shortcuts and canvas-wide editing actions.
+
+- [Layout and Layers](/pr-preview/pr-1210/kanvas/designer/layout-and-layers/index.md): Arrange the components in a design automatically, and choose which entities the canvas draws.
+
+- [Merging and Loading Designs](/pr-preview/pr-1210/kanvas/designer/merging-designs/index.md): Drag one design onto another to combine them, or open it in place of what is on the canvas.
+
+- [Saving Designs](/pr-preview/pr-1210/kanvas/designer/saving-designs/index.md): How Kanvas persists your work, what the save indicator is telling you, and how to save a copy.
+
+- [Configuring Components](/pr-preview/pr-1210/kanvas/designer/configuring-components/index.md): Edit a component's configuration on the canvas, using the form Kanvas builds for it and its inline help.
+
+- [Help and Support](/pr-preview/pr-1210/kanvas/reference/help-and-support/index.md): How Kanvas submits support requests, and the two preconditions - a remote provider and a signed-in identity - that Help and Support requires.
+
+- [v1.0.74-1](/pr-preview/pr-1210/kanvas/reference/releases/v1.0.74-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 No changes 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release …
+- [v1.0.73-1](/pr-preview/pr-1210/kanvas/reference/releases/v1.0.73-1/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 No changes 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release …
+- [v1.0.72-4](/pr-preview/pr-1210/kanvas/reference/releases/v1.0.72-4/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 No changes 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for making this release …
+- [v1.0.72-3](/pr-preview/pr-1210/kanvas/reference/releases/v1.0.72-3/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 fix(graphql): build the plugin inside the Meshery server&rsquo;s build image @leecalcote …
+- [v1.0.72-2](/pr-preview/pr-1210/kanvas/reference/releases/v1.0.72-2/index.md):  What&rsquo;s New 🔗 🔤 General 🔗 fix(graphql): build the plugin with the Meshery server&rsquo;s Go toolchain and tags …
+- [Deploy AWS EC2 Instances with Meshery](/pr-preview/pr-1210/kanvas/tutorials/aws/deploy-aws-ec2-instances-with-meshery/index.md): Learn how to deploy and manage AWS EC2 instances through Kubernetes with Meshery, utilizing AWS Controllers for Kubernetes (ACK) to enhance cloud resource management
+- [Deploy Azure resources with Meshery](/pr-preview/pr-1210/kanvas/tutorials/azure/deploy-azure-resources-with-meshery/index.md): Learn how to deploy and manage Azure resources through Kubernetes with Meshery, utilizing ASO operator to enhance cloud resource management
+- [Deploy Azure Storage Account with Meshery](/pr-preview/pr-1210/kanvas/tutorials/azure/deploy-azure-storage-account-with-meshery/index.md): Learn how to deploy and manage Azure Storage account through Kubernetes with Meshery, utilizing ASO operator to enhance cloud resource management
+- [Deploying Apache Cassandra with a StatefulSet in Meshery Playground](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/deploy-apache-cassandra-with-statefulset/index.md): Deploy Apache Cassandra with a StatefulSet using Meshery Playground in an interactive live cluster environment.
+- [Deploying PHP Guestbook application with Redis in Meshery](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/deploy-php-redis/index.md): In this tutorial, we will deploy guest book built with PHP and Redis in Kubernetes. We will make use of Meshery Playground in an interactive live cluster environment.
+- [Deploying WordPress and MySQL with Persistent Volumes with Meshery](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/wordpress-mysql-persistentvolume/index.md): Deploy a WordPress site and a MySQL database with Persistent Volumes using Meshery Playground in an interactive live cluster environment.
+- [Embedding a Meshery Design in a WordPress Post](/pr-preview/pr-1210/kanvas/tutorials/wordpress/embedding-meshery-design-in-wordpress/index.md): Learn how to Embed a Meshery Design in a WordPress Post
+- [Exploring Kubernetes CronJobs](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/exploring-kubernetes-cronjobs/index.md): In this tutorial, we will explore how to use Meshery Playground, an interactive live cluster environment, to perform hands-on labs for managing Kubernetes CronJobs.
+- [Exploring Kubernetes Deployments with Meshery](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/kubernetes-deployments/index.md): Explore a Kubernetes Deployment using Meshery Playground, an interactive live environment, through a series of hands-on exercises.
+- [Exploring Kubernetes Pods with Meshery](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/kubernetes-pods/index.md): Explore Kubernetes Pods using Meshery in an interactive live cluster environment, through a series of hands-on exercises.
+- [Helm Kanvas Snapshot](/pr-preview/pr-1210/kanvas/concepts/helm-kanvas-snapshot/index.md): Helm CLI plugin to visually render a snapshot of your Helm charts.
+- [Interactive Terminal](/pr-preview/pr-1210/kanvas/operator/interactive-terminal/index.md): Learn about Interactive Terminal in Operator mode 
+
+- [Kanvas GitHub Snapshot](/pr-preview/pr-1210/kanvas/concepts/kanvas-snapshot/index.md): Capture a screenshot of your infrastructure as a comment in your GitHub pull request.
+- [Keyboard Shortcuts](/pr-preview/pr-1210/kanvas/reference/keyboard-shortcuts/index.md): Learn the keyboard shortcuts for Kanvas to enhance your designing experience.
+
+- [Kubernetes Request Flow – A Visual Guide](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/kubernetes-request-flow/index.md): A visual walkthrough of how user requests flow through Kubernetes components using Kanvas.
+
+- [Log Streaming](/pr-preview/pr-1210/kanvas/operator/log-streaming/index.md): Learn about Log Streaming in Operator mode
+
+- [Publishing Meshery Designs to Artifact Hub](/pr-preview/pr-1210/kanvas/tutorials/artifacthub/publish-to-artifacthub/index.md): Step by step example for how to export Meshery Designs and publish them to an Artifact Hub repository.
+- [Troubleshooting Kanvas](/pr-preview/pr-1210/kanvas/reference/troubleshooting/index.md): Learn to Troubleshoot the Kanvas
+- [Understanding Kubernetes ConfigMaps and Secrets with Meshery](/pr-preview/pr-1210/kanvas/tutorials/kubernetes/kubernetes-configmaps-secrets/index.md): In this tutorial, we will explore how to effectively use Kubernetes ConfigMaps and Secrets for managing configuration data and sensitive information. Leveraging Meshery Playground, an interactive live cluster environment, we'll perform hands-on labs to understand the practical aspects of working with ConfigMaps and Secrets in Kubernetes.
+
+## From Whiteboard to Workload
+- [From Whiteboard to Workload](/pr-preview/pr-1210/videos/index.md): Give your brain a break from YAML. Watch Layer5 tools in-action.
+
+
+- [Birth of Kanvas Logo](/pr-preview/pr-1210/videos/advanced/advanced/birth-of-kanvas-logo/index.md): A visually transformation of the Meshery logo into the Kanvas logo.
+- [Custom styling for your self-hosted deployments](/pr-preview/pr-1210/videos/features/cloud/white-label/index.md): Layer5 Cloud deployments are highly customizable.
+- [Design Review Mechanics](/pr-preview/pr-1210/videos/getting-started/comments/design-reviews-full/index.md): Kanvas’s Designer enables you to place comments “inline” with your infrastructure as code. 
+
+- [Design Reviews in Kanvas](/pr-preview/pr-1210/videos/features/kanvas/design-review/index.md): Add comments to your designs in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
+
+- [Design Reviews: Adding Comments](/pr-preview/pr-1210/videos/getting-started/comments/adding-comments/index.md): Add comments to your designs in Kanvas's Designer Mode to enhance collaboration and streamline design reviews.
+
+- [Design Reviews: Adding Comments 1](/pr-preview/pr-1210/videos/template-category/sub-category/video-1/index.md): Add comments to your designs in Kanvas's Designer Mode to enhance collaboration and streamline design reviews. 
+
+- [Kanvas Designer Overview](/pr-preview/pr-1210/videos/getting-started/basics/designer-overview/index.md): With thousands of components available, you can collaboratively design and operate your multi-cloud and cloud native infrastructure.
+
+- [Kanvas Operator Overview](/pr-preview/pr-1210/videos/getting-started/basics/operator-overview/index.md): With thousands of components available, you can collaboratively design and operate your multi-cloud and cloud native infrastructure.
+
+- [Meshery Playground Teaser Video](/pr-preview/pr-1210/videos/features/meshery/meshery-teaser/index.md): Meshery Playground - Explore features and capabilities of Meshery.
+- [Meshery Playground Teaser Video](/pr-preview/pr-1210/videos/integrations/aws/meshery-teaser/index.md): Meshery Playground - Explore features and capabilities of Meshery.
+- [Pinning Models to Dock](/pr-preview/pr-1210/videos/getting-started/basics/pinning-models-to-dock/index.md): Pinning models to the dock allows you to quickly access your most used models. This is a great way to keep your workspace organized and efficient.
+
+- [Publishing Designs](/pr-preview/pr-1210/videos/getting-started/comments/publish-design/index.md): How to publish your designs to the Cloud Catalog.
+
+- [Whiteboarding in Kanvas](/pr-preview/pr-1210/videos/features/kanvas/whiteboarding-in-kanvas/index.md): One late-night alert, worked from page to postmortem on a single live design: sketch the blast radius, style the flow, put the evidence in context, and fix the configuration where the team can see it.
+
+
+## Cloud Documentation
+- [Cloud Documentation](/pr-preview/pr-1210/cloud/index.md): Layer5 Cloud provides a powerful platform for managing and deploying your cloud infrastructure with flexibility and ease.
+
+
+- [Customizing Webhooks](/pr-preview/pr-1210/cloud/guides/self-hosted/customizing-webhooks/index.md): Layer5 Cloud uses webhooks to automate approval flows and email notifications. This guide will help you customize and add your own custom webhooks.
+- [Managing Workspaces](/pr-preview/pr-1210/cloud/guides/workspaces/managing-workspaces/index.md): Learn how to create, edit, delete, and configure your Workspaces.
+- [Meshery Server Registration](/pr-preview/pr-1210/cloud/concepts/meshery-server-registration/index.md): How a Meshery Server registers itself with Layer5 Cloud as its Remote Provider, what data is recorded, and how re-registration is handled.
+
+- [Metrics](/pr-preview/pr-1210/cloud/concepts/catalog/metrics/index.md): Metrics are quantifiable measures used to track and assess the status, progress, and performance of various activities and user interactions with Designs.
+
+- [Five Narrative — Research Plan](/pr-preview/pr-1210/cloud/getting-started/meet-five/five-narrative-plan/index.md): Section-by-section map for infusing the Five narrative into Layer5 Cloud and Kanvas documentation.
+
+- [Provider Admin Role](/pr-preview/pr-1210/cloud/concepts/identity-and-security/roles/provider-admin-roles/index.md): Provider Administrator Role is used for administration of Layer5 Cloud.
+
+- [Setting up Layer5 Account](/pr-preview/pr-1210/cloud/getting-started/getting-started-with-layer5-account/index.md): With a personal account on Layer5 Cloud, you can import or create infrastructural designs, collaborate with others through workspaces and teams, manage your organizations and more.
+- [Sharing a Workspace](/pr-preview/pr-1210/cloud/guides/tutorials/sharing-a-workspace/index.md): Learn how to control access to workspaces and their resources.
+
+- [Support](/pr-preview/pr-1210/cloud/getting-started/support/index.md): If you have any questions, encounter any issues, or need assistance with anything related to our platform, please don't hesitate to reach out to us.
+- [Creating a Design from Meshery Catalog Templates](/pr-preview/pr-1210/cloud/getting-started/creating-a-design-from-template/index.md): With this guide, you can create amazing cloud native designs for your infrastructure from already available templates in the meshery catalog.
+- [Customizing Layer5 Cloud Deployment with Helm](/pr-preview/pr-1210/cloud/guides/self-hosted/deployment/helm-chart-values/index.md): Layer5's Helm charts support a number of configuration options. Please refer to following table of configuration options.
+- [Default Organization Roles](/pr-preview/pr-1210/cloud/concepts/identity-and-security/roles/organization-roles/index.md): Organization-scoped roles include Organization Administrator. There is no Organization Billing Manager role.
+
+- [Default Workspace Roles](/pr-preview/pr-1210/cloud/concepts/identity-and-security/roles/workspace-roles/index.md): Workspace Administrator and Workspace Manager are organization-scoped roles.
+
+- [Extending the Academy](/pr-preview/pr-1210/cloud/academy/creating-content/extending-the-academy/index.md): A high-level guide to understanding the architecture, features, and workflow for creating custom content on the Layer5 Academy platform.
+
+- [Integrating GitHub with Meshery](/pr-preview/pr-1210/cloud/getting-started/github-integration/index.md): Discover how to seamlessly connect your GitHub repository with Meshery, enabling easy import and management of your configuration files.
+- [Leaderboard](/pr-preview/pr-1210/cloud/concepts/catalog/leaderboard/index.md): The Leaderboard is a visual representation of Designs, ranked based on key Metrics such as Opens, Downloads, Deployments, Clones, and Shares.
+
+- [Learner Guide](/pr-preview/pr-1210/cloud/academy/using-the-academy/index.md): Learn how to navigate the Layer5 Academy platform, understand its features, and maximize your learning experience.
+
+- [Managing Environments](/pr-preview/pr-1210/cloud/guides/workspaces/managing-environments/index.md): Learn how to view, create, and edit Environments, and how to assign Connections to an Environment or remove them from it.
+- [Navigating Organizations](/pr-preview/pr-1210/cloud/guides/organizations/org-management/navigating-organizations/index.md): Learn how to navigate between different organizations in Layer5 Cloud and understand the order of precedence for organization settings.
+
+- [Networking](/pr-preview/pr-1210/cloud/guides/self-hosted/planning/peer-to-peer-communication/index.md): Prepare and configure network services for your Layer5 Cloud deployment.
+- [Organization Configuration Scenarios](/pr-preview/pr-1210/cloud/guides/organizations/configuration-scenarios/index.md): The named ways an organization can be configured in Layer5 Cloud: Hosted, Branded, and White-Label, and how to choose between them based on your domain, identity provider, and sign-in needs.
+
+- [Promoting a Design from Staging to Prod](/pr-preview/pr-1210/cloud/guides/tutorials/promoting-a-design/index.md): Learn how to move a design from a staging workspace to a production workspace and deploy it to a production environment.
+
+- [Bring Your Own Mail Server](/pr-preview/pr-1210/cloud/guides/organizations/org-management/bring-your-own-mail-server/index.md): Send your Organization's email through your own mail server, from your own domain, instead of through Layer5's shared mail server.
+
+- [Child Organizations](/pr-preview/pr-1210/cloud/guides/organizations/org-management/child-organizations/index.md): Create organizations inside an organization, see who can view and administer them, and understand what a parent administrator can and cannot do in a child.
+
+- [Creating Content for the Academy](/pr-preview/pr-1210/cloud/academy/creating-content/creating-your-learning-path/index.md): A hands-on tutorial that walks you through creating, structuring, and testing custom content (learning paths, certifications, and challenges) for the Layer5 Academy.
+
+- [Default Team Roles](/pr-preview/pr-1210/cloud/concepts/identity-and-security/roles/team-roles/index.md): Team Admin is the only team-scoped role. There is no Team Manager role.
+
+- [Default User Role](/pr-preview/pr-1210/cloud/concepts/identity-and-security/roles/user-role/index.md): By default, members of an Organization are provided a User role.
+
+- [Exploring the Catalog](/pr-preview/pr-1210/cloud/concepts/catalog/exploring-the-catalog/index.md): Discover how to browse, find, and interact with designs in the Catalog.
+- [Identity Services](/pr-preview/pr-1210/cloud/guides/self-hosted/planning/identity-services/index.md): Understand identity services prerequisites and how to integrate your existing identity with OIDC.
+- [Managing Profiles](/pr-preview/pr-1210/cloud/guides/workspaces/managing-profiles/index.md): Learn how to create, edit, and delete profiles, link connections to them, and share them by assigning them to workspaces.
+- [User Invitations](/pr-preview/pr-1210/cloud/concepts/identity-and-security/users/user-invitations/index.md): Learn how to create custom, secure, and flexible invitations for new members.
+
+- [Default Academy Roles](/pr-preview/pr-1210/cloud/concepts/identity-and-security/roles/academy-roles/index.md): By default, Academy has two roles available: Academy Administrator and Learner.
+
+- [Integrating Assessments in the Academy](/pr-preview/pr-1210/cloud/academy/creating-content/integrating-assessments-in-the-academy/index.md): Learn how to spice up the Academy with interactive assessments that keep learners engaged.
+
+- [Kanvas Snapshots](/pr-preview/pr-1210/cloud/guides/tutorials/gitops-snapshots/index.md): Connect Kanvas to your GitHub repo and see changes pull request-to-pull request.
+
+- [Monitoring](/pr-preview/pr-1210/cloud/guides/self-hosted/planning/monitoring/index.md): Plan monitoring for Layer5 Cloud self-hosted deployments: metrics, logs, tracing, dashboards, and alerts.
+- [Recognizing User and Contributor Milestones](/pr-preview/pr-1210/cloud/guides/tutorials/assigning-user-badges/index.md): Showcasing user and contributor achievements
+
+- [User Management](/pr-preview/pr-1210/cloud/concepts/identity-and-security/users/user-management/index.md): Learn how to create, add, invite, and manage users within Layer5 Cloud.
+
+- [Academy Instructor Console Guide](/pr-preview/pr-1210/cloud/academy/creating-content/instructor-console-guide/index.md): A comprehensive guide to using the Instructor Console. Learn how to track learner progress, analyze test performance, and manage your academy's content and metrics.
+
+- [Building Certifications](/pr-preview/pr-1210/cloud/academy/creating-content/building-certifications/index.md): A step-by-step guide to building a professional certification in the Academy.
+
+- [Building Challenges](/pr-preview/pr-1210/cloud/academy/creating-content/building-challenges/index.md): A step-by-step guide to building a hands-on challenge in the Academy, and to monitoring how learners get on with it.
+
+- [Default User Permissions](/pr-preview/pr-1210/cloud/concepts/identity-and-security/users/default-permissions/index.md): Where to find the default permissions each role holds, including the User role.
+
+- [Keychains](/pr-preview/pr-1210/cloud/concepts/identity-and-security/keychains/index.md): Keychains are a collection of keys
+- [Platform Development Guide](/pr-preview/pr-1210/cloud/academy/platform-development/index.md): An advanced guide to the Layer5 Academy architecture, multi-repository workflow, and development best practices for contributors.
+
+- [Account Consolidation](/pr-preview/pr-1210/cloud/concepts/identity-and-security/users/account-consolidation/index.md): Layer5 Cloud resolves email/password, GitHub sign-in, and Google sign-in to a single account per verified email address.
+
+- [Keys](/pr-preview/pr-1210/cloud/concepts/identity-and-security/keys/index.md): Keys are the atomic unit of access control
+- [Using Academy Content Template Creator](/pr-preview/pr-1210/cloud/academy/creating-content/using-content-template-creator/index.md): The Academy Content Template Creator is a step-by-step wizard that helps you create structured templates for your …
+- [Workspaces](/pr-preview/pr-1210/cloud/concepts/spaces/workspaces/index.md): Understand the core concepts of Workspaces.
+
+- [Sessions](/pr-preview/pr-1210/cloud/concepts/identity-and-security/sessions/index.md): User sessions are created each time a user successfully authenticates.
+
+- [Tokens](/pr-preview/pr-1210/cloud/concepts/identity-and-security/tokens/index.md): API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
+
+- [Notification Preferences](/pr-preview/pr-1210/cloud/concepts/identity-and-security/users/notification-preferences/index.md): Manage your notifications on Layer5 Cloud
+- [v1.0.304](/pr-preview/pr-1210/cloud/reference/releases/v1.0.304/index.md):  feat(server): add profile environment purpose @leecalcote (#6272) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for …
+- [v1.0.303](/pr-preview/pr-1210/cloud/reference/releases/v1.0.303/index.md):  feat(handlers): accept publishing-destination connection kinds with https url @leecalcote (#6271) 👨🏽‍💻 Contributors 🔗 …
+- [v1.0.302](/pr-preview/pr-1210/cloud/reference/releases/v1.0.302/index.md):  feat(handlers): serve org-scoped content pieces API @leecalcote (#6261) 👨🏽‍💻 Contributors 🔗 Thank you to our …
+- [v1.0.301](/pr-preview/pr-1210/cloud/reference/releases/v1.0.301/index.md):  fix(deploy): point Kanvas production sign-in at cloud.kanvas.new @leecalcote (#6270) 👨🏽‍💻 Contributors 🔗 Thank you to …
+- [v1.0.300](/pr-preview/pr-1210/cloud/reference/releases/v1.0.300/index.md):  💻 Server 🔗 fix(identity): native client sign-in works on custom domains and for child-organization users @leecalcote …
+- [API Reference](/pr-preview/pr-1210/cloud/reference/api-reference/rest/index.md): Complete reference of all Layer5 Cloud REST API endpoints
+
+- [Default Permissions](/pr-preview/pr-1210/cloud/reference/default-permissions/index.md): List of default permissions granted to the Organizations, Teams and Users roles.
+
+- [Email / SMTP Troubleshooting](/pr-preview/pr-1210/cloud/guides/self-hosted/operating/smtp/index.md): This guide explains how to diagnose email sending issues in Layer5 Cloud deployments using the enhanced debug logging and testing features.
+
+- [Environments](/pr-preview/pr-1210/cloud/concepts/spaces/environments/index.md): Environments are how you organize your deployment targets (whether on-premises servers or cloud services) into resource groups.
+- [Profiles](/pr-preview/pr-1210/cloud/concepts/spaces/profiles/index.md): A profile is a named record that represents one person or persona in an organization, groups the connections it publishes through, and is shared through workspaces.
+
+## Contributing
+- [Contributing](/pr-preview/pr-1210/contributing/index.md): Contributing guides on documentation and video gallery
+
+- [Contributing to Layer5 Docs](/pr-preview/pr-1210/contributing/contributing-to-docs/index.md): A detailed contribution guide for Layer5 Docs.
+- [Contributing to Video Gallery](/pr-preview/pr-1210/contributing/contributing-to-video-gallary/index.md): A detailed contribution guide for adding videos to Layer5 Docs video gallary
+
+## Categories
+- [Categories](/pr-preview/pr-1210/categories/index.md)
+- [About](/pr-preview/pr-1210/categories/about/index.md)
+- [Academy](/pr-preview/pr-1210/categories/academy/index.md)
+- [Catalog](/pr-preview/pr-1210/categories/catalog/index.md)
+- [Concepts](/pr-preview/pr-1210/categories/concepts/index.md)
+- [Designer](/pr-preview/pr-1210/categories/designer/index.md)
+- [Identity](/pr-preview/pr-1210/categories/identity/index.md)
+- [Kanvas](/pr-preview/pr-1210/categories/kanvas/index.md)
+- [Operator](/pr-preview/pr-1210/categories/operator/index.md)
+- [Reference](/pr-preview/pr-1210/categories/reference/index.md)
+- [Security](/pr-preview/pr-1210/categories/security/index.md)
+- [Self-Hosted](/pr-preview/pr-1210/categories/self-hosted/index.md)
+- [Spaces](/pr-preview/pr-1210/categories/spaces/index.md)
+- [Tutorials](/pr-preview/pr-1210/categories/tutorials/index.md)
+- [Workspaces](/pr-preview/pr-1210/categories/workspaces/index.md)
+
+## Tags
+- [Tags](/pr-preview/pr-1210/tags/index.md)
+- [Academy](/pr-preview/pr-1210/tags/academy/index.md)
+- [Annotations](/pr-preview/pr-1210/tags/annotations/index.md)
+- [Authentication](/pr-preview/pr-1210/tags/authentication/index.md)
+- [Badges](/pr-preview/pr-1210/tags/badges/index.md)
+- [Basics](/pr-preview/pr-1210/tags/basics/index.md)
+- [Byoc](/pr-preview/pr-1210/tags/byoc/index.md)
+- [Catalog](/pr-preview/pr-1210/tags/catalog/index.md)
+- [Cloud](/pr-preview/pr-1210/tags/cloud/index.md)
+- [Collaboration](/pr-preview/pr-1210/tags/collaboration/index.md)
+- [Comments](/pr-preview/pr-1210/tags/comments/index.md)
+- [Components](/pr-preview/pr-1210/tags/components/index.md)
+- [Connections](/pr-preview/pr-1210/tags/connections/index.md)
+- [Custom-Domain](/pr-preview/pr-1210/tags/custom-domain/index.md)
+- [Designer](/pr-preview/pr-1210/tags/designer/index.md)
+- [Designs](/pr-preview/pr-1210/tags/designs/index.md)
+- [Dock](/pr-preview/pr-1210/tags/dock/index.md)
+- [Docs](/pr-preview/pr-1210/tags/docs/index.md)
+- [Email](/pr-preview/pr-1210/tags/email/index.md)
+- [Environments](/pr-preview/pr-1210/tags/environments/index.md)
+- [Export](/pr-preview/pr-1210/tags/export/index.md)
+- [Extensibility](/pr-preview/pr-1210/tags/extensibility/index.md)
+- [Github-Actions](/pr-preview/pr-1210/tags/github-actions/index.md)
+- [Gitops](/pr-preview/pr-1210/tags/gitops/index.md)
+- [Helm](/pr-preview/pr-1210/tags/helm/index.md)
+- [Identity](/pr-preview/pr-1210/tags/identity/index.md)
+- [Integrations](/pr-preview/pr-1210/tags/integrations/index.md)
+- [Interaction](/pr-preview/pr-1210/tags/interaction/index.md)
+- [Kanvas](/pr-preview/pr-1210/tags/kanvas/index.md)
+- [Keychains](/pr-preview/pr-1210/tags/keychains/index.md)
+- [Keys](/pr-preview/pr-1210/tags/keys/index.md)
+- [Meshery](/pr-preview/pr-1210/tags/meshery/index.md)
+- [Meshery-Server](/pr-preview/pr-1210/tags/meshery-server/index.md)
+- [Models](/pr-preview/pr-1210/tags/models/index.md)
+- [Monitoring](/pr-preview/pr-1210/tags/monitoring/index.md)
+- [Operator](/pr-preview/pr-1210/tags/operator/index.md)
+- [Orgs](/pr-preview/pr-1210/tags/orgs/index.md)
+- [Performance](/pr-preview/pr-1210/tags/performance/index.md)
+- [Permissions](/pr-preview/pr-1210/tags/permissions/index.md)
+- [Pin](/pr-preview/pr-1210/tags/pin/index.md)
+- [Profile](/pr-preview/pr-1210/tags/profile/index.md)
+- [Publishing](/pr-preview/pr-1210/tags/publishing/index.md)
+- [Recognition](/pr-preview/pr-1210/tags/recognition/index.md)
+- [Relationships](/pr-preview/pr-1210/tags/relationships/index.md)
+- [Remote-Provider](/pr-preview/pr-1210/tags/remote-provider/index.md)
+- [Rendering](/pr-preview/pr-1210/tags/rendering/index.md)
+- [Review](/pr-preview/pr-1210/tags/review/index.md)
+- [Roles](/pr-preview/pr-1210/tags/roles/index.md)
+- [Sections](/pr-preview/pr-1210/tags/sections/index.md)
+- [Sessions](/pr-preview/pr-1210/tags/sessions/index.md)
+- [Shapes](/pr-preview/pr-1210/tags/shapes/index.md)
+- [Sharing](/pr-preview/pr-1210/tags/sharing/index.md)
+- [Teams](/pr-preview/pr-1210/tags/teams/index.md)
+- [Textboxes](/pr-preview/pr-1210/tags/textboxes/index.md)
+- [Troubleshooting](/pr-preview/pr-1210/tags/troubleshooting/index.md)
+- [User](/pr-preview/pr-1210/tags/user/index.md)
+- [Users](/pr-preview/pr-1210/tags/users/index.md)
+- [White-Labeling](/pr-preview/pr-1210/tags/white-labeling/index.md)
+- [Whiteboarding](/pr-preview/pr-1210/tags/whiteboarding/index.md)
+- [Workspaces](/pr-preview/pr-1210/tags/workspaces/index.md)
