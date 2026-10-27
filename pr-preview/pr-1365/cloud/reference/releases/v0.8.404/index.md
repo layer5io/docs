@@ -1,0 +1,19 @@
+# v0.8.404
+
+date: 2025-08-26
+
+
+
+## 🖥 Cloud UI
+
+- Add badge management functionality with modal and button components @leecalcote (#4010)
+- [Chore]: Update to Sistent v0.15.7 @l5io (#4013)
+- Update feature_data.json @Namanv0509 (#4012)
+- Pricing Add on fixes  @Namanv0509 (#4011)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @l5io, @leecalcote and @vr-varad
+
+

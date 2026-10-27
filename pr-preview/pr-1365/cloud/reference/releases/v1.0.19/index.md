@@ -1,0 +1,14 @@
+# v1.0.19
+
+date: 2026-04-22
+
+
+
+- [ui] Reset navbar logo error state on src change @jamieplu (#5072)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu and @leecalcote
+
+
