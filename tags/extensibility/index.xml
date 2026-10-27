@@ -1,5 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Extensibility on Layer5 Documentation</title><link>/tags/extensibility/</link><description>Recent content in Extensibility on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/extensibility/index.xml" rel="self" type="application/rss+xml"/><item><title>API Reference</title><link>/cloud/reference/api-reference/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/rest/</guid><description/></item><item><title>Cloud API</title><link>/cloud/reference/api-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/</guid><description>&lt;p&gt;To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Extensibility on Layer5 Documentation</title><link>/tags/extensibility/</link><description>Recent content in Extensibility on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/tags/extensibility/index.xml" rel="self" type="application/rss+xml"/><item><title>Rate limits</title><link>/cloud/reference/api-reference/rate-limits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/rate-limits/</guid><description>&lt;p&gt;Layer5 Cloud limits how fast a caller can call some API routes. A request over the limit is refused with HTTP 429. The limits first shipped in Layer5 Cloud v1.0.334 and are unchanged through v1.0.342.&lt;/p&gt;
+&lt;p&gt;Normal desktop use never reaches these limits. You see a 429 only when a client calls far faster than normal use, for example in a retry loop or when it replays a large backlog at once.&lt;/p&gt;</description></item><item><title>API Reference</title><link>/cloud/reference/api-reference/rest/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/rest/</guid><description/></item><item><title>Cloud API</title><link>/cloud/reference/api-reference/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/</guid><description>&lt;p&gt;To create integrations, retrieve data, and automate your cloud native infrastructure, build with the Layer5 Cloud REST API.&lt;/p&gt;
 &lt;p&gt;Every endpoint lives under &lt;code&gt;/api&lt;/code&gt; on the host of your Layer5 Cloud deployment. Hosted Layer5 Cloud uses &lt;code&gt;https://cloud.layer5.io/api&lt;/code&gt;. A self-hosted deployment uses &lt;code&gt;https://&amp;lt;your-cloud-host&amp;gt;/api&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Some route families are rate limited per caller. See &lt;a href="/cloud/reference/api-reference/rate-limits/"&gt;Rate limits&lt;/a&gt; for the limits and how to handle HTTP 429.&lt;/p&gt;
 
 &lt;h2 id="authenticating-with-the-api" class="heading-link"&gt;
  Authenticating with the API
@@ -37,6 +39,10 @@
  &lt;tr&gt;
  &lt;td&gt;&lt;a href="/cloud/reference/api-reference/"&gt;Cloud API&lt;/a&gt;&lt;/td&gt;
  &lt;td&gt;Authenticate, set the organization, page through results, and handle errors.&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td&gt;&lt;a href="/cloud/reference/api-reference/rate-limits/"&gt;Rate limits&lt;/a&gt;&lt;/td&gt;
+ &lt;td&gt;Check which API routes are rate limited, the limit for each route family, and how to handle HTTP 429.&lt;/td&gt;
  &lt;/tr&gt;
  &lt;/tbody&gt;
 &lt;/table&gt;

@@ -230,6 +230,8 @@
 
 - [Tokens](/cloud/concepts/identity-and-security/tokens/index.md): API Tokens are used to authenticate to Layer5 Cloud's REST API. Generated on your user account's security tokens page. Tokens can be revoked at any time.
 
+- [Rate limits](/cloud/reference/api-reference/rate-limits/index.md): Which Layer5 Cloud API routes are rate limited, the limit for each route family, and how to handle HTTP 429.
+
 - [Notification Preferences](/cloud/concepts/identity-and-security/users/notification-preferences/index.md): Manage your notifications on Layer5 Cloud
 - [v1.0.304](/cloud/reference/releases/v1.0.304/index.md):  feat(server): add profile environment purpose @leecalcote (#6272) 👨🏽‍💻 Contributors 🔗 Thank you to our contributors for …
 - [v1.0.303](/cloud/reference/releases/v1.0.303/index.md):  feat(handlers): accept publishing-destination connection kinds with https url @leecalcote (#6271) 👨🏽‍💻 Contributors 🔗 …

@@ -8,6 +8,8 @@ To create integrations, retrieve data, and automate your cloud native infrastruc
 
 Every endpoint lives under `/api` on the host of your Layer5 Cloud deployment. Hosted Layer5 Cloud uses `https://cloud.layer5.io/api`. A self-hosted deployment uses `https://<your-cloud-host>/api`.
 
+Some route families are rate limited per caller. See [Rate limits](/cloud/reference/api-reference/rate-limits/) for the limits and how to handle HTTP 429.
+
 ## Authenticating with the API
 
 In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token](/cloud/concepts/identity-and-security/tokens/). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.
@@ -89,81 +91,6 @@ Include the `X-Current-Orgid` header with your organization's ID to specify the 
 
 
 
-<ul class="nav nav-tabs" id="tabs-4" role="tablist">
-  <li class="nav-item">
-      <button class="nav-link active"
-          id="tabs-04-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-04-00" role="tab"
-          aria-controls="tabs-04-00" aria-selected="true">
-        cURL
-      </button>
-    </li><li class="nav-item">
-      <button class="nav-link"
-          id="tabs-04-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-04-01" role="tab"
-          aria-controls="tabs-04-01" aria-selected="false">
-        JavaScript
-      </button>
-    </li><li class="nav-item">
-      <button class="nav-link"
-          id="tabs-04-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-04-02" role="tab"
-          aria-controls="tabs-04-02" aria-selected="false">
-        Python
-      </button>
-    </li>
-</ul>
-
-<div class="tab-content" id="tabs-4-content">
-    <div class="tab-pane fade show active"
-        id="tabs-04-00" role="tabpanel" aria-labelled-by="tabs-04-00-tab" tabindex="4">
-        <pre tabindex="0"><code>curl -X GET &#34;https://cloud.layer5.io/api/environments&#34; \
- -H &#34;Authorization: Bearer &lt;Your-Token&gt;&#34; \
- -H &#34;X-Current-Orgid: &lt;Your-Organization-ID&gt;&#34;</code></pre>
-    </div>
-    <div class="tab-pane fade"
-        id="tabs-04-01" role="tabpanel" aria-labelled-by="tabs-04-01-tab" tabindex="4">
-        <pre tabindex="0"><code>const token = &#34;Your-Token&#34;;
-const orgId = &#34;Your-Organization-ID&#34;;
-
-async function listEnvironments() {
-  const res = await fetch(&#34;https://cloud.layer5.io/api/environments&#34;, {
-    method: &#34;GET&#34;,
-    headers: {
-      Authorization: `Bearer ${token}`,
-      &#34;X-Current-Orgid&#34;: orgId,
-    },
-  });
-  const data = await res.json();
-  console.log(data);
-}
-
-listEnvironments();</code></pre>
-    </div>
-    <div class="tab-pane fade"
-        id="tabs-04-02" role="tabpanel" aria-labelled-by="tabs-04-02-tab" tabindex="4">
-        <pre tabindex="0"><code>import requests
-
-url = &#34;https://cloud.layer5.io/api/environments&#34;
-headers = {
-    &#34;Authorization&#34;: &#34;Bearer &lt;Your-Token&gt;&#34;,
-    &#34;X-Current-Orgid&#34;: &#34;&lt;Your-Organization-ID&gt;&#34;
-}
-
-res = requests.get(url, headers=headers)
-print(res.json())</code></pre>
-    </div>
-</div>
-
-
-### Setting Organization and Workspace Preferences
-
-To make an organization the default for every request that omits the header, save it in your user preferences:
-
-
-
-
-
-
-
-
 <ul class="nav nav-tabs" id="tabs-5" role="tablist">
   <li class="nav-item">
       <button class="nav-link active"
@@ -189,6 +116,81 @@ To make an organization the default for every request that omits the header, sav
 <div class="tab-content" id="tabs-5-content">
     <div class="tab-pane fade show active"
         id="tabs-05-00" role="tabpanel" aria-labelled-by="tabs-05-00-tab" tabindex="5">
+        <pre tabindex="0"><code>curl -X GET &#34;https://cloud.layer5.io/api/environments&#34; \
+ -H &#34;Authorization: Bearer &lt;Your-Token&gt;&#34; \
+ -H &#34;X-Current-Orgid: &lt;Your-Organization-ID&gt;&#34;</code></pre>
+    </div>
+    <div class="tab-pane fade"
+        id="tabs-05-01" role="tabpanel" aria-labelled-by="tabs-05-01-tab" tabindex="5">
+        <pre tabindex="0"><code>const token = &#34;Your-Token&#34;;
+const orgId = &#34;Your-Organization-ID&#34;;
+
+async function listEnvironments() {
+  const res = await fetch(&#34;https://cloud.layer5.io/api/environments&#34;, {
+    method: &#34;GET&#34;,
+    headers: {
+      Authorization: `Bearer ${token}`,
+      &#34;X-Current-Orgid&#34;: orgId,
+    },
+  });
+  const data = await res.json();
+  console.log(data);
+}
+
+listEnvironments();</code></pre>
+    </div>
+    <div class="tab-pane fade"
+        id="tabs-05-02" role="tabpanel" aria-labelled-by="tabs-05-02-tab" tabindex="5">
+        <pre tabindex="0"><code>import requests
+
+url = &#34;https://cloud.layer5.io/api/environments&#34;
+headers = {
+    &#34;Authorization&#34;: &#34;Bearer &lt;Your-Token&gt;&#34;,
+    &#34;X-Current-Orgid&#34;: &#34;&lt;Your-Organization-ID&gt;&#34;
+}
+
+res = requests.get(url, headers=headers)
+print(res.json())</code></pre>
+    </div>
+</div>
+
+
+### Setting Organization and Workspace Preferences
+
+To make an organization the default for every request that omits the header, save it in your user preferences:
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs" id="tabs-6" role="tablist">
+  <li class="nav-item">
+      <button class="nav-link active"
+          id="tabs-06-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-06-00" role="tab"
+          aria-controls="tabs-06-00" aria-selected="true">
+        cURL
+      </button>
+    </li><li class="nav-item">
+      <button class="nav-link"
+          id="tabs-06-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-06-01" role="tab"
+          aria-controls="tabs-06-01" aria-selected="false">
+        JavaScript
+      </button>
+    </li><li class="nav-item">
+      <button class="nav-link"
+          id="tabs-06-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-06-02" role="tab"
+          aria-controls="tabs-06-02" aria-selected="false">
+        Python
+      </button>
+    </li>
+</ul>
+
+<div class="tab-content" id="tabs-6-content">
+    <div class="tab-pane fade show active"
+        id="tabs-06-00" role="tabpanel" aria-labelled-by="tabs-06-00-tab" tabindex="6">
         <pre tabindex="0"><code># Set organization and workspace preferences
 curl -X PUT &#34;https://cloud.layer5.io/api/identity/users/preferences&#34; \
  -H &#34;Authorization: Bearer &lt;Your-Token&gt;&#34; \
@@ -201,7 +203,7 @@ curl -X PUT &#34;https://cloud.layer5.io/api/identity/users/preferences&#34; \
  }&#39;</code></pre>
     </div>
     <div class="tab-pane fade"
-        id="tabs-05-01" role="tabpanel" aria-labelled-by="tabs-05-01-tab" tabindex="5">
+        id="tabs-06-01" role="tabpanel" aria-labelled-by="tabs-06-01-tab" tabindex="6">
         <pre tabindex="0"><code>const token = &#34;Your-Token&#34;;
 
 async function setPreferences() {
@@ -225,7 +227,7 @@ async function setPreferences() {
 setPreferences();</code></pre>
     </div>
     <div class="tab-pane fade"
-        id="tabs-05-02" role="tabpanel" aria-labelled-by="tabs-05-02-tab" tabindex="5">
+        id="tabs-06-02" role="tabpanel" aria-labelled-by="tabs-06-02-tab" tabindex="6">
         <pre tabindex="0"><code>import requests
 import json
 
@@ -270,42 +272,42 @@ Use the Layer5 Cloud API to retrieve the *total* number of registered learners. 
 
 
 
-<ul class="nav nav-tabs" id="tabs-6" role="tablist">
+<ul class="nav nav-tabs" id="tabs-7" role="tablist">
   <li class="nav-item">
       <button class="nav-link active"
-          id="tabs-06-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-06-00" role="tab"
-          aria-controls="tabs-06-00" aria-selected="true">
+          id="tabs-07-00-tab" data-bs-toggle="tab" data-bs-target="#tabs-07-00" role="tab"
+          aria-controls="tabs-07-00" aria-selected="true">
         cURL
       </button>
     </li><li class="nav-item">
       <button class="nav-link"
-          id="tabs-06-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-06-01" role="tab"
-          aria-controls="tabs-06-01" aria-selected="false">
+          id="tabs-07-01-tab" data-bs-toggle="tab" data-bs-target="#tabs-07-01" role="tab"
+          aria-controls="tabs-07-01" aria-selected="false">
         JavaScript
       </button>
     </li><li class="nav-item">
       <button class="nav-link"
-          id="tabs-06-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-06-02" role="tab"
-          aria-controls="tabs-06-02" aria-selected="false">
+          id="tabs-07-02-tab" data-bs-toggle="tab" data-bs-target="#tabs-07-02" role="tab"
+          aria-controls="tabs-07-02" aria-selected="false">
         Python
       </button>
     </li><li class="nav-item">
       <button class="nav-link"
-          id="tabs-06-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-06-03" role="tab"
-          aria-controls="tabs-06-03" aria-selected="false">
+          id="tabs-07-03-tab" data-bs-toggle="tab" data-bs-target="#tabs-07-03" role="tab"
+          aria-controls="tabs-07-03" aria-selected="false">
         Golang
       </button>
     </li>
 </ul>
 
-<div class="tab-content" id="tabs-6-content">
+<div class="tab-content" id="tabs-7-content">
     <div class="tab-pane fade show active"
-        id="tabs-06-00" role="tabpanel" aria-labelled-by="tabs-06-00-tab" tabindex="6">
+        id="tabs-07-00" role="tabpanel" aria-labelled-by="tabs-07-00-tab" tabindex="7">
         <pre tabindex="0"><code>curl -s &#34;https://cloud.layer5.io/api/academy/curricula&#34; \
   | jq &#39;[.data[].registration_count] | add&#39;</code></pre>
     </div>
     <div class="tab-pane fade"
-        id="tabs-06-01" role="tabpanel" aria-labelled-by="tabs-06-01-tab" tabindex="6">
+        id="tabs-07-01" role="tabpanel" aria-labelled-by="tabs-07-01-tab" tabindex="7">
         <pre tabindex="0"><code>async function getTotalLearners() {
   const res = await fetch(&#34;https://cloud.layer5.io/api/academy/curricula&#34;);
   const data = await res.json();
@@ -316,7 +318,7 @@ Use the Layer5 Cloud API to retrieve the *total* number of registered learners. 
 getTotalLearners();</code></pre>
     </div>
     <div class="tab-pane fade"
-        id="tabs-06-02" role="tabpanel" aria-labelled-by="tabs-06-02-tab" tabindex="6">
+        id="tabs-07-02" role="tabpanel" aria-labelled-by="tabs-07-02-tab" tabindex="7">
         <pre tabindex="0"><code>import requests
 
 url = &#34;https://cloud.layer5.io/api/academy/curricula&#34;
@@ -327,7 +329,7 @@ total = sum(item[&#34;registration_count&#34;] for item in data[&#34;data&#34;])
 print(total)</code></pre>
     </div>
     <div class="tab-pane fade"
-        id="tabs-06-03" role="tabpanel" aria-labelled-by="tabs-06-03-tab" tabindex="6">
+        id="tabs-07-03" role="tabpanel" aria-labelled-by="tabs-07-03-tab" tabindex="7">
         <pre tabindex="0"><code>package main
 
 import (
@@ -405,6 +407,7 @@ An error response is identified by its HTTP status code. The body takes one of t
 | 400 | The request is malformed or a required parameter is missing. |
 | 401 | The credential is missing, invalid, or expired. |
 | 403 | You do not hold the permission the endpoint requires in the organization of the request. |
+| 429 | You called a rate-limited route family faster than its limit. Wait the number of seconds in the `Retry-After` header, then retry. See [Rate limits](/cloud/reference/api-reference/rate-limits/). |
 | 500 | The server could not complete the request. |
 
 Branch on the status code first, then parse the body defensively. The generated [REST API Reference](/cloud/reference/api-reference/rest/) documents 401 responses as plain text, but the authentication layer answers with JSON.
