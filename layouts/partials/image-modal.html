@@ -34,12 +34,23 @@ function openModal(imageIdOrElement) {
 
   if (typeof imageIdOrElement === "string") {
     image = document.getElementById(imageIdOrElement);
+    if (image) {
+      var container = image.closest(".md__image");
+      trigger = container ? container.querySelector(".md__image-trigger") : null;
+    }
   } else if (imageIdOrElement instanceof HTMLImageElement) {
     image = imageIdOrElement;
-    trigger = image.closest(".md__image-trigger");
+    var container = image.closest(".md__image");
+    trigger = container ? container.querySelector(".md__image-trigger") : image.closest(".md__image-trigger");
   } else if (imageIdOrElement instanceof HTMLElement) {
-    trigger = imageIdOrElement.closest(".md__image-trigger") || imageIdOrElement;
-    image = imageIdOrElement.querySelector("img") || imageIdOrElement;
+    if (imageIdOrElement.classList.contains("md__image-trigger")) {
+      trigger = imageIdOrElement;
+      var parent = trigger.closest(".md__image");
+      image = parent ? parent.querySelector("img") : null;
+    } else {
+      trigger = imageIdOrElement.closest(".md__image-trigger") || imageIdOrElement;
+      image = imageIdOrElement.querySelector("img") || imageIdOrElement;
+    }
   }
 
   if (!image || !(image instanceof HTMLImageElement)) {
@@ -158,14 +169,12 @@ document.addEventListener("DOMContentLoaded", function () {
   var imageTriggers = document.querySelectorAll(".md__image-trigger");
   imageTriggers.forEach(function (trigger) {
     // If the image is inside an anchor link, avoid nesting interactive elements.
-    var link = trigger.closest("a");
+    var container = trigger.closest(".md__image");
+    var link = trigger.closest("a") || (container ? container.closest("a") || container.querySelector("a") : null);
     if (link) {
-      var linkedImg = trigger.querySelector("img");
+      var linkedImg = container ? container.querySelector("img") : null;
       if (linkedImg) {
         linkedImg.dataset.modal = "false";
-      }
-      while (trigger.firstChild) {
-        trigger.parentNode.insertBefore(trigger.firstChild, trigger);
       }
       trigger.remove();
       return;
