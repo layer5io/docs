@@ -21457,22 +21457,23 @@ img.grid-icon {
     margin: 0;
     width: 100%; }
 
-.td-sidebar .td-sidebar__search {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box; }
-  .td-sidebar .td-sidebar__search .td-search {
-    flex: 1 1 auto;
-    min-width: 0;
-    width: auto;
-    max-width: 100%; }
-  .td-sidebar .td-sidebar__search .td-search__input {
+@media (max-width: 991.98px) {
+  .td-sidebar .td-sidebar__search {
+    display: flex;
+    align-items: center;
     width: 100%;
-    min-width: 0; }
-  .td-sidebar .td-sidebar__search .td-sidebar__toggle {
-    flex: 0 0 auto; }
+    max-width: 100%;
+    box-sizing: border-box; }
+    .td-sidebar .td-sidebar__search .td-search {
+      flex: 1 1 auto;
+      min-width: 0;
+      width: auto;
+      max-width: 100%; }
+    .td-sidebar .td-sidebar__search .td-search__input {
+      width: 100%;
+      min-width: 0; }
+    .td-sidebar .td-sidebar__search .td-sidebar__toggle {
+      flex: 0 0 auto; } }
 
 .td-search--offline:focus-within .td-search__icon {
   display: flex;
