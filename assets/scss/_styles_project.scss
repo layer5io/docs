@@ -17,9 +17,26 @@
 @import "_kanvas-corner-popup.scss";
 @import "_resizable.scss";
 @import "_resizable-bootstrap-overrides.scss";
-// Sidebar drawer rules live here, not in the theme files they duplicate
-// (see #1171). Imported last so the override rules inside win the cascade.
-@import "_sidebar-tree.scss";
+// Drawer fix, scoped to the md–lg window where the sidebar is stacked
+// full-width (see _resizable-bootstrap-overrides.scss and #1359): keep only
+// these two rules here so the stale fork in _sidebar-tree.scss is not pulled
+// into the build (theme: Docsy v0.14.3 td/_sidebar-tree.scss).
+// These land after the theme rules in the cascade, so at equal specificity
+// they win inside md–lg while the theme rules still govern at lg and up.
+@include media-breakpoint-up(md) {
+  @include media-breakpoint-down(lg) {
+    .td-sidebar-nav {
+      display: none !important;
+      &.show,
+      &.collapsing {
+        display: block !important;
+      }
+    }
+    .td-sidebar__toggle {
+      display: block !important;
+    }
+  }
+}
 
 
 // Page Layout Sections

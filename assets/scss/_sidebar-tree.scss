@@ -27,20 +27,8 @@
       }
     }
   
-    // Between md (768px) and lg (991.98px) the sidebar is stacked full-width by
-    // _resizable-bootstrap-overrides.scss, i.e. it behaves like a drawer, but the
-    // theme only shows the toggle and honours the collapse state below md. That
-    // left the drawer permanently open with no way to close it (768-991px).
-    // Scope the desktop nav-forcing rule to >= lg so the collapse plugin and the
-    // hamburger toggle work everywhere the sidebar is drawn as a drawer.
     @include media-breakpoint-up(md) {
-      @include media-breakpoint-down(lg) {
-        display: none !important;
-        &.show,
-        &.collapsing {
-          display: block !important;
-        }
-      }
+      display: block !important;
     }
   
     &__section {
@@ -143,15 +131,6 @@
       line-height: 1;
       color: var(--bs-body-color);
       margin: 1rem;
-
-      // The theme hides the toggle at >= md, but between md and lg the sidebar is
-      // stacked full-width (a drawer), so a hamburger must exist to open and
-      // close it. Hide the toggle only where the sidebar is a desktop column.
-      @include media-breakpoint-up(md) {
-        @include media-breakpoint-down(lg) {
-          display: block !important;
-        }
-      }
     }
   
     &__search {
