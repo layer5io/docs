@@ -10,6 +10,8 @@ To create integrations, retrieve data, and automate your cloud native infrastruc
 
 Every endpoint lives under `/api` on the host of your Layer5 Cloud deployment. Hosted Layer5 Cloud uses `https://cloud.layer5.io/api`. A self-hosted deployment uses `https://<your-cloud-host>/api`.
 
+Some route families are rate limited per caller. See [Rate limits]({{< ref "cloud/reference/api-reference/rate-limits.md" >}}) for the limits and how to handle HTTP 429.
+
 ## Authenticating with the API
 
 In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.
@@ -302,6 +304,7 @@ An error response is identified by its HTTP status code. The body takes one of t
 | 400 | The request is malformed or a required parameter is missing. |
 | 401 | The credential is missing, invalid, or expired. |
 | 403 | You do not hold the permission the endpoint requires in the organization of the request. |
+| 429 | You called a rate-limited route family faster than its limit. Wait the number of seconds in the `Retry-After` header, then retry. See [Rate limits]({{< ref "cloud/reference/api-reference/rate-limits.md" >}}). |
 | 500 | The server could not complete the request. |
 
 Branch on the status code first, then parse the body defensively. The generated [REST API Reference]({{< ref "cloud/reference/api-reference/rest.md" >}}) documents 401 responses as plain text, but the authentication layer answers with JSON.

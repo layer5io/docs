@@ -18,6 +18,7 @@ These pages state facts about Layer5 Cloud: which plan includes a capability, wh
 | [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}) | Check session lifetimes, cookies, and how to sign out a session. |
 | [Tokens]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}) | Create, list, rotate, and revoke API tokens. |
 | [Cloud API]({{< ref "cloud/reference/api-reference/_index.md" >}}) | Authenticate, set the organization, page through results, and handle errors. |
+| [Rate limits]({{< ref "cloud/reference/api-reference/rate-limits.md" >}}) | Check which API routes are rate limited, the limit for each route family, and how to handle HTTP 429. |
 
 ## Security permission keys {#permission-keys}
 
