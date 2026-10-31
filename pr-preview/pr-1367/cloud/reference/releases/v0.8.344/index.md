@@ -1,0 +1,27 @@
+# v0.8.344
+
+date: 2025-08-02
+
+
+
+## What's New
+## 🔤 General
+## 🦴 Infrastructure
+
+- Add postgresql as sub-chart @sangramrath (#3858)
+
+## 🐛 Bug Fixes
+
+- fix(auth): Correctly parse full name from GitHub OAuth @ritzorama (#3859)
+
+## ⬆️ Dependencies
+
+- Bump github.com/meshery/meshkit from 0.8.34 to 0.8.37 @dependabot (#3855)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@dependabot, @dependabot[bot], @google-labs-jules[bot], @l5io, @leecalcote, @ritzorama and @sangramrath
+
+
+
