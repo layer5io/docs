@@ -30,7 +30,7 @@
 
 <div class="md__image">
 {{- with $img }}
-  {{- if reflect.IsImageResourceProcessable . }}
+  {{- if and (eq .ResourceType "image") (ne .MediaType.SubType "svg") }}
     {{- $webp := .Process "webp q85" }}
     <picture>
       <source srcset="{{ $webp.RelPermalink }}" type="image/webp" width="{{ .Width }}" height="{{ .Height }}">
