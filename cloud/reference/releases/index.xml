@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.351</title><link>/cloud/reference/releases/v1.0.351/</link><pubDate>Mon, 02 Nov 2026 17:02:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.351/</guid><description>&lt;h2 id="-dependencies" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.352</title><link>/cloud/reference/releases/v1.0.352/</link><pubDate>Mon, 02 Nov 2026 17:20:22 +0000</pubDate><guid>/cloud/reference/releases/v1.0.352/</guid><description>&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;details&gt;
+&lt;summary&gt;6 changes&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump golang.org/x/text from 0.42.0 to 0.43.0 @dependabot (#6375)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump golang.org/x/sync from 0.23.0 to 0.24.0 @dependabot (#6374)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @casl/react from 7.0.1 to 7.1.0 in /ui @dependabot (#6373)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @stripe/react-stripe-js from 6.12.0 to 7.0.1 in /ui @dependabot (#6371)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/oapi-codegen/runtime from 1.7.0 to 1.8.0 @dependabot (#6372)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump react-dom from 19.3.0 to 19.3.1 in /ui @dependabot (#6376)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@dependabot, @dependabot[bot] and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.351</title><link>/cloud/reference/releases/v1.0.351/</link><pubDate>Mon, 02 Nov 2026 17:02:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.351/</guid><description>&lt;h2 id="-dependencies" class="heading-link"&gt;
  ⬆️ Dependencies
  &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;

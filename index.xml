@@ -1962,7 +1962,28 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;/h2&gt;
 &lt;p&gt;A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider&amp;rsquo;s support intake:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
 &lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
-&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.351</title><link>/cloud/reference/releases/v1.0.351/</link><pubDate>Mon, 02 Nov 2026 17:02:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.351/</guid><description>&lt;h2 id="-dependencies" class="heading-link"&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.352</title><link>/cloud/reference/releases/v1.0.352/</link><pubDate>Mon, 02 Nov 2026 17:20:22 +0000</pubDate><guid>/cloud/reference/releases/v1.0.352/</guid><description>&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;details&gt;
+&lt;summary&gt;6 changes&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump golang.org/x/text from 0.42.0 to 0.43.0 @dependabot (#6375)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump golang.org/x/sync from 0.23.0 to 0.24.0 @dependabot (#6374)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @casl/react from 7.0.1 to 7.1.0 in /ui @dependabot (#6373)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump @stripe/react-stripe-js from 6.12.0 to 7.0.1 in /ui @dependabot (#6371)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump github.com/oapi-codegen/runtime from 1.7.0 to 1.8.0 @dependabot (#6372)&lt;/li&gt;
+&lt;li&gt;chore(deps): bump react-dom from 19.3.0 to 19.3.1 in /ui @dependabot (#6376)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@dependabot, @dependabot[bot] and @leecalcote&lt;/p&gt;</description></item><item><title>v1.0.351</title><link>/cloud/reference/releases/v1.0.351/</link><pubDate>Mon, 02 Nov 2026 17:02:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.351/</guid><description>&lt;h2 id="-dependencies" class="heading-link"&gt;
  ⬆️ Dependencies
  &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
