@@ -1962,7 +1962,22 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;/h2&gt;
 &lt;p&gt;A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider&amp;rsquo;s support intake:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
 &lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
-&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.74-1</title><link>/kanvas/reference/releases/v1.0.74-1/</link><pubDate>Thu, 22 Oct 2026 07:52:00 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.74-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.351</title><link>/cloud/reference/releases/v1.0.351/</link><pubDate>Mon, 02 Nov 2026 17:02:23 +0000</pubDate><guid>/cloud/reference/releases/v1.0.351/</guid><description>&lt;h2 id="-dependencies" class="heading-link"&gt;
+ ⬆️ Dependencies
+ &lt;a href="#-dependencies" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;chore(deps): bump golang.org/x/time from 0.15.0 to 0.16.0 @dependabot (#6378)&lt;/li&gt;
+&lt;li&gt;chore(deps-dev): bump typescript from 6.0.3 to 7.0.2 in /ui @dependabot (#6379)&lt;/li&gt;
+&lt;li&gt;chore(deps-dev): bump prettier from 3.9.9 to 3.9.10 in /ui @dependabot (#6370)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@dependabot, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.74-1</title><link>/kanvas/reference/releases/v1.0.74-1/</link><pubDate>Thu, 22 Oct 2026 07:52:00 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.74-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
