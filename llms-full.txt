@@ -30516,6 +30516,21 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.353"
+url: /cloud/reference/releases/v1.0.353/index.md
+date: "2026-11-02"
+--------------------------------------------------------------------------------
+
+## What's Changed
+* fix(ui): build and test on TypeScript 7 without baseUrl by @yi-nuo426 in https://github.com/layer5io/meshery-cloud/pull/6389 (fixes #6388)
+
+This fixes the TS5102 baseUrl production build failure seen on v1.0.352. It also carries the Dependabot bumps released in v1.0.352 (#6375, #6374, #6373, #6371, #6372, #6376).
+
+**Full Changelog**: https://github.com/layer5io/meshery-cloud/compare/v1.0.352...v1.0.353
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.352"
 url: /cloud/reference/releases/v1.0.352/index.md
 date: "2026-11-02"
