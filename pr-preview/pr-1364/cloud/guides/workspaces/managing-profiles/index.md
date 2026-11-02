@@ -39,7 +39,7 @@ This guide shows how to manage [profiles](/pr-preview/pr-1364/cloud/concepts/spa
 }
 ```
 
-`organizationId` and `name` are required. You become the owner unless you send `owner`. `owner` and `userId`, when sent, must each be a signed-in member of the organization, or the request answers 400. A new profile is in no workspace, so only you and the organization's admins can see it until you assign it.
+`organizationId` and `name` are required. You become the owner unless you send `owner`. `owner` and `userId`, when sent, must each be a signed-in member of the organization, or the request answers 400. A new profile is in no workspace, so you, the user it represents, and the organization's admins can see it until you assign it.
 
 ## Edit or transfer a profile
 
