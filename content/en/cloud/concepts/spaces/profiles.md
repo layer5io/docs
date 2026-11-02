@@ -26,9 +26,9 @@ A profile is visible to:
 - the Organization Admins of its organization, and
 - members of any team assigned to a workspace the profile is assigned to.
 
-The owner always sees their own profile, whether or not it is in a workspace and even without the **View Profiles** permission. The person a profile represents can also read it, so when an admin creates a profile for you, it appears in your profile list and you can open it, even without **View Profiles**. That is read-only: changing the profile, linking connections and seeing its connections still follow the rules on this page. Organization Admins and workspace members also need **View Profiles**. Provider Admins do not see profiles automatically. Seeing a profile does not give you access to its linked connections, which keep their own access rules.
+The owner always sees their own profile, whether it is in a workspace and even without the **View Profiles** permission. The person a profile represents can also read it, so when an admin creates a profile for you, it appears in your profile list and you can open it, even without **View Profiles**. That is read-only: changing the profile, linking connections and seeing its connections still follow the rules on this page. Organization Admins and workspace members also need **View Profiles**. Provider Admins do not see profiles automatically. Seeing a profile does not provide access to its linked connections, which keep their own access rules.
 
-A profile that is in no workspace is visible only to its owner and the organization's admins. What you can change is never wider than what you can see: a profile you cannot see answers 404, the same as one that does not exist.
+A profile that is in no workspace is visible only to its owner, the person it represents, and the organization's admins. What you can change is never wider than what you can see: a profile you cannot see answers 404, the same as one that does not exist.
 
 ## Owner and succession
 
