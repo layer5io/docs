@@ -30516,6 +30516,21 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.354"
+url: /cloud/reference/releases/v1.0.354/index.md
+date: "2026-11-03"
+--------------------------------------------------------------------------------
+
+- feat(server): bind OAuth tokens to their resource (RFC 8707) and set the third-party refresh-token policy @yi-nuo426 (#6398)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@meshery-ci and @yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.353"
 url: /cloud/reference/releases/v1.0.353/index.md
 date: "2026-11-02"
