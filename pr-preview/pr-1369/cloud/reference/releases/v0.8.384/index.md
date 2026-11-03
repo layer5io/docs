@@ -1,0 +1,27 @@
+# v0.8.384
+
+date: 2025-08-13
+
+
+
+## 📚 Academy
+- New Academy theme version and new Layer5 Academy content.
+
+## 🖥 Cloud UI
+
+- Fix: Reusable Modals in Cloud Doesn't use Sistent Modals @vr-varad (#3938)
+
+## 🦴 Infrastructure
+
+- Staging: Kratos mapper for GitHub - revert @leecalcote (#3948)
+
+## 🐛 Bug Fixes
+
+- Fix: Reusable Modals in Cloud Doesn't use Sistent Modals @vr-varad (#3938)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @vr-varad
+
+

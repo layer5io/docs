@@ -1,0 +1,23 @@
+# v0.8.250
+
+date: 2025-06-17
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Add domain column to organization management table and adjust sorting options @leecalcote (#3629)
+- Improve adding existing user to have more options && improve create your own design instruction modal. @FaheemOnHub (#3581)
+
+## 💻 Server
+
+- Enable Filtering/Search Across All Columns in Teams Table @zihanKuang (#3618)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @l5io, @leecalcote and @zihanKuang
+
+

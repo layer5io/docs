@@ -1,0 +1,19 @@
+# v0.7.170-1
+
+date: 2024-12-16
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix: some catalog modal bug and ui issue @amitamrutiya (#3239)
+- [Chore]: Bump Sistent v0.14.130 @l5io (#3242)
+- add user avatar profile icon in the design view list item @amitamrutiya (#3241)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+

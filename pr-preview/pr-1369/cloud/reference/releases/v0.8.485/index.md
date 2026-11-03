@@ -1,0 +1,26 @@
+# v0.8.485
+
+date: 2025-10-06
+
+
+
+## 🖥 Cloud UI
+
+- Revert \Changed the fill of icons to match the theme\ @aabidsofi19 (#4284)
+- Changed the fill of icons to match the theme @ARYANSHAH1567 (#4229)
+
+## 💻 Server
+
+- Add support for golang based cronjob for refreshing materialized views @aabidsofi19 (#4283)
+
+## 🐛 Bug Fixes
+
+- Revert \Changed the fill of icons to match the theme\ @aabidsofi19 (#4284)
+- Changed the fill of icons to match the theme @ARYANSHAH1567 (#4229)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@ARYANSHAH1567, @aabidsofi19, @l5io and @leecalcote
+
+

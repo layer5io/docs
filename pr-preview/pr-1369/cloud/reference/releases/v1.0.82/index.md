@@ -1,0 +1,16 @@
+# v1.0.82
+
+date: 2026-05-21
+
+
+
+- feat(auth): skip auth-required API calls for anonymous users @jamieplu (#5055)
+- feat(capabilities): resolve providerName per-org from request context @hortison (#5355)
+- Speed up organization switching @hortison (#5352)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @jamieplu and @leecalcote
+
+

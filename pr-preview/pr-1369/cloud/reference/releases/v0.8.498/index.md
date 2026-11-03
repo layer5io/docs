@@ -1,0 +1,14 @@
+# v0.8.498
+
+date: 2025-10-14
+
+
+
+- Update AGENTS.md @hamza-mohd (#4332)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hamza-mohd and @leecalcote
+
+

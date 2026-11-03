@@ -1,0 +1,14 @@
+# v1.0.47
+
+date: 2026-05-01
+
+
+
+- [Server][UI] Enforce reCAPTCHA on staging+localhost and align form column to OAuth-button width @pontusringblom (#5165)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @miacycle and @pontusringblom
+
+

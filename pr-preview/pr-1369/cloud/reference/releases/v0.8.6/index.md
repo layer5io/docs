@@ -1,0 +1,16 @@
+# v0.8.6
+
+date: 2024-09-02
+
+
+
+## What's New
+**General**
+- chore: Update MIN_MESHERY_VERSION to v0.7.91 in config files @leecalcote (#2758)
+
+## Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

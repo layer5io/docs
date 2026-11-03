@@ -1,0 +1,23 @@
+# v0.8.61-1
+
+date: 2025-04-23
+
+
+
+## What's New
+## 🔤 General
+- Rename Whiteboard option to Dock @leecalcote (#3563)
+
+## 🖌️ Designer
+
+- propTypes and height and width for SVG components @leecalcote (#3567)
+
+## 🐛 Bug Fixes
+
+- typescript linting @leecalcote (#3568)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+

@@ -1,0 +1,14 @@
+# v1.0.83
+
+date: 2026-05-21
+
+
+
+- fix(ui): unblock static-export build (window is not defined + unslugify split) @leecalcote (#5359)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+

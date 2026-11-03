@@ -1,0 +1,18 @@
+# v0.8.90-1
+
+date: 2025-05-27
+
+
+
+## What's New
+## 🔤 General
+- [Chore]: Bump Sistent v0.14.193 @l5io (#3700)
+- disable ripple for pen and pencil @aabidsofi19 (#3698)
+- Enhance Save and eval indicators  @aabidsofi19 (#3697)
+- [Chore]: Bump Sistent v0.14.192 @l5io (#3696)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+

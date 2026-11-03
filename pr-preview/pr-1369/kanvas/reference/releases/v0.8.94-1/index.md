@@ -1,0 +1,16 @@
+# v0.8.94-1
+
+date: 2025-06-02
+
+
+
+## What's New
+## 🔤 General
+- fix badges not rendering on load on resized screens @aabidsofi19 (#3724)
+- Fix configurator not opening on dropping new components and close component picker @aabidsofi19 (#3723)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

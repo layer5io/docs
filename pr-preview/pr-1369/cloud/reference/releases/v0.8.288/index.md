@@ -1,0 +1,18 @@
+# v0.8.288
+
+date: 2025-07-09
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- Anonymous users: Will not receive the irst design\ badge, and the system will log that the badge assignment was skipped @leecalcote (#3752)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

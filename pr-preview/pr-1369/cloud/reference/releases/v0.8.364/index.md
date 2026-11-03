@@ -1,0 +1,24 @@
+# v0.8.364
+
+date: 2025-08-08
+
+
+
+### 🔤 General
+## 🖥 Cloud UI
+
+- fix description rendering @aabidsofi19 (#3909)
+- fix routing and status @aabidsofi19 (#3908)
+- fix: duplicate email display in modal  @FaheemOnHub (#3905)
+
+## 💻 Server
+
+- add null checks @aabidsofi19 (#3910)
+- fix routing and status @aabidsofi19 (#3908)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19 and @l5io
+
+

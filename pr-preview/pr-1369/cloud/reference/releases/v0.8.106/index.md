@@ -1,0 +1,18 @@
+# v0.8.106
+
+date: 2024-12-07
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Added owner-filter for design,views,filter tabs @mdkaifansari04 (#3056)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @mdkaifansari04
+
+

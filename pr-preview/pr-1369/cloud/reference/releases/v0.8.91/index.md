@@ -1,0 +1,28 @@
+# v0.8.91
+
+date: 2024-11-20
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Add new tables into workspace data table @amitamrutiya (#3004)
+- Fixed undefined name error for server list archive notification. @Pratik-050 (#3008)
+
+## 💻 Server
+
+- fix github private key read directly from key rahter than file w/signoff @Jougan-0 (#3009)
+
+## 🐛 Bug Fixes
+
+- fix github private key read directly from key rahter than file w/signoff @Jougan-0 (#3009)
+- Fixed undefined name error for server list archive notification. @Pratik-050 (#3008)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @Pratik-050, @amitamrutiya, @jerensl, @l5io, @sudhanshutech and MUzairS15
+
+

@@ -1,0 +1,15 @@
+# v1.0.114
+
+date: 2026-06-02
+
+
+
+- feat(auth): skip reCAPTCHA on registration for fully-custom-eTLD orgs @leecalcote (#5437)
+- chore(governance): enforce schema-first for server/models (hooks + CI + docs) @leecalcote (#5436)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@claude, @leecalcote and @ritzorama
+
+

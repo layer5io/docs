@@ -1,0 +1,16 @@
+# v0.8.547
+
+date: 2025-11-03
+
+
+
+## 🖥 Cloud UI
+
+- Fix catalog infinite scroll stopping after 20 designs @copilot-swe-agent (#4477)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Copilot, @copilot-swe-agent, @l5io and @leecalcote
+
+

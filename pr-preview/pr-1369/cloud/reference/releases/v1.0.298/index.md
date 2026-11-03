@@ -1,0 +1,15 @@
+# v1.0.298
+
+date: 2026-10-19
+
+
+
+- fix(branding): a branded tenant never sees the provider's brand in email or UI @leecalcote (#6258)
+- [auth] One-screen sign-up, signed in at once, verified on click, back to the origin @leecalcote (#6254)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+

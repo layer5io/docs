@@ -1,0 +1,20 @@
+# v0.8.457
+
+date: 2025-09-21
+
+
+
+## 💻 Server
+
+- Add authenticated email send test endpoint and update documentation @leecalcote (#4170)
+
+## 🦴 Infrastructure
+
+- Add authenticated email send test endpoint and update documentation @leecalcote (#4170)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

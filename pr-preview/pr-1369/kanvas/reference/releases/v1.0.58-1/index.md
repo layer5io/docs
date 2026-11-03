@@ -1,0 +1,15 @@
+# v1.0.58-1
+
+date: 2026-07-20
+
+
+
+## What's New
+## 🔤 General
+- [Kanvas] Call the canonical Meshery /api/registry routes @marblom007 (#4299)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @marblom007, @miacycle and @yi-nuo426
+

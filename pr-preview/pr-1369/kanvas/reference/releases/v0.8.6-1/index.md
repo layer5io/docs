@@ -1,0 +1,28 @@
+# v0.8.6-1
+
+date: 2025-01-07
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Bump eslint-plugin-react from 7.37.1 to 7.37.3 in /meshmap @dependabot (#3281)
+- [Chore]: Bump Sistent v0.14.136 @l5io (#3297)
+- Bump @babel/preset-react from 7.22.15 to 7.26.3 in /meshmap @dependabot (#3296)
+- Design to view switching @aabidsofi19 (#3294)
+- fix design not loading directly after save as @aabidsofi19 (#3295)
+- Add support for aliases in Operator mode @aabidsofi19 (#3292)
+- Chore: revert import model @Vidit-Kushwaha (#3293)
+
+## 🧰 Maintenance
+
+- Bump eslint-plugin-react from 7.37.1 to 7.37.3 in /meshmap @dependabot (#3281)
+- Bump @babel/preset-react from 7.22.15 to 7.26.3 in /meshmap @dependabot (#3296)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Vidit-Kushwaha, @aabidsofi19, @dependabot, @dependabot[bot], @l5io and @leecalcote
+

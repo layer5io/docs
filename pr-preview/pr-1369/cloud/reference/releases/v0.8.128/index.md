@@ -1,0 +1,16 @@
+# v0.8.128
+
+date: 2025-01-22
+
+
+
+## What's New
+## 🔤 General
+* Revert e.preventDefault() on signup form.
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

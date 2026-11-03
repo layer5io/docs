@@ -1,0 +1,16 @@
+# v1.0.71
+
+date: 2026-05-08
+
+
+
+- chore(deps): bump @sistent/sistent to 0.21.8 and adopt fullWidth=false in toolbar SearchBars @leecalcote (#5256)
+- fix(academy): translate Hugo on-disk quiz JSON to canonical schema shape @leecalcote (#5249)
+- fix: secure public users directory @arjunmehta-git (#5254)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@arjunmehta-git, @l5io and @leecalcote
+
+

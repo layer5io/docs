@@ -1,0 +1,28 @@
+# v0.8.86
+
+date: 2024-11-15
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Workspace Table @sudhanshutech (#2991)
+- [UI]: Dynamic feature list for plans @SAHU-01 (#2992)
+- fix: double qoute @jerensl (#2990)
+
+## 🐛 Bug Fixes
+
+- fix: double qoute @jerensl (#2990)
+
+## 🧰 Maintenance
+
+- [UI]: Dynamic feature list for plans @SAHU-01 (#2992)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@SAHU-01, @amitamrutiya, @jerensl, @l5io, @leecalcote and @sudhanshutech
+
+
