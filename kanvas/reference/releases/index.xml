@@ -1,4 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.74-1</title><link>/kanvas/reference/releases/v1.0.74-1/</link><pubDate>Thu, 22 Oct 2026 07:52:00 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.74-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.75-1</title><link>/kanvas/reference/releases/v1.0.75-1/</link><pubDate>Tue, 03 Nov 2026 23:01:25 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.75-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(whiteboard): keep node toolbar and its popovers clear of the header and bottom dock @yi-nuo426 (#4421)&lt;/li&gt;
+&lt;li&gt;fix(renderer): lay out only unpositioned alias children, once, and persist their positions @yi-nuo426 (#4424)&lt;/li&gt;
+&lt;li&gt;fix(renderer): position compound leaves only and keep on-axis stored positions @yi-nuo426 (#4415)&lt;/li&gt;
+&lt;li&gt;test(capture): measure Kanvas capture defects live and record a kanvas.new baseline @yi-nuo426 (#4414)&lt;/li&gt;
+&lt;li&gt;docs: make CLAUDE.md a symlink to AGENTS.md @ritzorama (#4400)&lt;/li&gt;
+&lt;li&gt;docs: add worktree and no-mistakes workflow guidance to AGENTS.md @CodeAhmedJamil (#4399)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @l5io, @leecalcote, @ritzorama, @winkletinkle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.74-1</title><link>/kanvas/reference/releases/v1.0.74-1/</link><pubDate>Thu, 22 Oct 2026 07:52:00 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.74-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
