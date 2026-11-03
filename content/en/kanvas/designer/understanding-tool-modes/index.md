@@ -64,7 +64,7 @@ Pencil lines do not connect individual components, but offer annotating capabili
 
 {{% tab header="Pen Tool" lang="en" action="true" %}}
 
-The Pen tool operates as a creator of annotation edges. Note that the pen tool has two behaviors depending upon the context in which you initiate the connection.
+The Pen tool operates as a creator of annotation edges. Note that the pen tool behaves differently depending upon where you initiate the connection.
 
 **To Activate:** `(CMD/CTRL)+E`
 

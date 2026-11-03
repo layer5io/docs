@@ -83,7 +83,7 @@ A text box you drop on the canvas opens for typing straight away, outlined while
 
 #### Animating Components
 
-Select a component or shape and choose **Node Animation** in its tooltip to draw attention to it: blink, ripple, bounce or pulse. Animations work on containers such as a Deployment as well as on single components, they keep running when you switch between them, and they play again when the design is opened. They run at a calm pace, and Kanvas starts none when your system asks for reduced motion.
+Select a component or shape and choose **Node Animation** in its tooltip to draw attention to it: blink, ripple, bounce or pulse. Animations work on containers such as a Deployment as well as on single components, and they play again when the design is opened. Switching from one animation to another starts the new one straight away. They run at a calm pace, and Kanvas starts none when your system asks for reduced motion.
 
 #### Interactive Tooltip Interface
 
