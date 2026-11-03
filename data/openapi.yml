@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.109
+  version: v1.3.110
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -92,6 +92,12 @@ tags:
     description: Operations related to media assets.
   - name: MentionAlias_mentionAliases
     description: Operations related to mention aliases.
+  - name: OauthConsentRequest_oauthConsentRequests
+    description: Reads of the pending OAuth consent requests of the signed-in user.
+  - name: OauthConsentRequest_oauthConsentDecisions
+    description: >-
+      Allow and deny decisions on a pending OAuth consent request. A separate tag from the read, so a decision does not
+      refetch the request it just consumed: the challenge is single use, and that refetch would answer 404.
   - name: PatternResource_patternResources
     description: Operations related to Meshery pattern resources.
   - name: Performance_Profile_performance
@@ -134,8 +140,8 @@ paths:
         header (a speed bump plus a revocation handle, not a strong secret: the key ships in the app and can be
         extracted). A signed-in caller may use its bearer token instead; then the organization is attached, and only
         then. The server enforces a body cap, strict decoding (unknown fields are rejected), rate limits, server-side
-        re-redaction, and a 90-day retention on stored rows. Served by Layer5 Cloud (meshery-cloud #6330); see Blowhorn
-        issue #771.
+        re-redaction, and a 90-day retention on stored rows. Served by Layer5 Cloud (meshery-cloud #6330); see the
+        downstream desktop diagnostics issue #771.
       operationId: submitFailureDiagnostic
       security:
         - Diagnostics_clientKey: []
@@ -281,7 +287,7 @@ paths:
                         Stable machine-readable name for the cause. Deliberately a patterned string, not a closed enum:
                         new failure causes are named by the client over time, and a closed enum would make the server
                         reject reports carrying a cause it does not know yet. Consumers must treat an unknown cause as
-                        opaque, never as an error. Known causes today are the Blowhorn engine's StoreUnavailable.cause
+                        opaque, never as an error. Known causes today are the desktop engine's StoreUnavailable.cause
                         names: unavailable, not_configured, incomplete, bad_setting, config_unreadable, tunnel_refused,
                         tunnel_silent, tunnel_off, not_postgres, auth_rejected, host_not_permitted, database_missing,
                         timeout, version_unreadable, ledger_unreadable, schema_behind, schema_ahead, schema_edited,
@@ -335,7 +341,7 @@ paths:
                   maxLength: 128
                   description: >-
                     Optional per-install id, present only when the person has not opted out of failure reports. A random
-                    uuid4 minted once per install (Blowhorn's installationId, written beside cloud.yaml and reused),
+                    uuid4 minted once per install (the client's installationId, written beside cloud.yaml and reused),
                     never a hardware id. Omitted entirely when opted out.
       responses:
         '201':
@@ -792,20 +798,18 @@ paths:
                         WorkspacesInOrganization: Maximum number of workspaces in an organization; 999999999999 is unlimited.
                         ImageSizeInDesign: Maximum size, in bytes, of an image embedded in a design; 999999999999 is unlimited.
                         SizePerDesign: Maximum size of a single design; 999999999999 is unlimited.
-                        BlowhornProfiles: >-
-                          Maximum number of Blowhorn posting profiles the organization may hold; 999999999999 is
-                          unlimited.
-                        BlowhornBrowserAutomation: Blowhorn may publish through browser automation; granted when quantity is greater than 0.
-                        BlowhornScheduler: Blowhorn may run scheduled publishes; granted when quantity is greater than 0.
-                        BlowhornDevicesPerSeat: Maximum number of devices one Blowhorn seat may publish from; 999999999999 is unlimited.
-                        BlowhornPlatformLinkedIn: Blowhorn may publish to LinkedIn; granted when quantity is greater than 0.
-                        BlowhornPlatformX: Blowhorn may publish to X; granted when quantity is greater than 0.
-                        BlowhornPlatformReddit: Blowhorn may publish to Reddit; granted when quantity is greater than 0.
-                        BlowhornPlatformHackerNews: Blowhorn may publish to Hacker News; granted when quantity is greater than 0.
-                        BlowhornPlatformSlack: Blowhorn may publish to Slack; granted when quantity is greater than 0.
-                        BlowhornPlatformBluesky: Blowhorn may publish to Bluesky; granted when quantity is greater than 0.
-                        BlowhornPlatformGitHub: Blowhorn may publish to GitHub; granted when quantity is greater than 0.
-                        BlowhornPlatformBlog: Blowhorn may publish to a blog; granted when quantity is greater than 0.
+                        BlowhornProfiles: Maximum number of posting profiles the organization may hold; 999999999999 is unlimited.
+                        BlowhornBrowserAutomation: The client may publish through browser automation; granted when quantity is greater than 0.
+                        BlowhornScheduler: The client may run scheduled publishes; granted when quantity is greater than 0.
+                        BlowhornDevicesPerSeat: Maximum number of devices one seat may publish from; 999999999999 is unlimited.
+                        BlowhornPlatformLinkedIn: The client may publish to LinkedIn; granted when quantity is greater than 0.
+                        BlowhornPlatformX: The client may publish to X; granted when quantity is greater than 0.
+                        BlowhornPlatformReddit: The client may publish to Reddit; granted when quantity is greater than 0.
+                        BlowhornPlatformHackerNews: The client may publish to Hacker News; granted when quantity is greater than 0.
+                        BlowhornPlatformSlack: The client may publish to Slack; granted when quantity is greater than 0.
+                        BlowhornPlatformBluesky: The client may publish to Bluesky; granted when quantity is greater than 0.
+                        BlowhornPlatformGitHub: The client may publish to GitHub; granted when quantity is greater than 0.
+                        BlowhornPlatformBlog: The client may publish to a blog; granted when quantity is greater than 0.
                     quantity:
                       type: number
                       format: double
@@ -819,26 +823,26 @@ paths:
                         csv: quantity
                       x-order: 5
                     created_at:
+                      x-oapi-codegen-extra-tags:
+                        db: created_at
+                        yaml: created_at
                       x-order: 6
                       description: Timestamp when the resource was created.
                       x-go-type: time.Time
                       type: string
                       format: date-time
                       x-go-name: CreatedAt
-                      x-oapi-codegen-extra-tags:
-                        db: created_at
-                        yaml: created_at
                       x-go-type-skip-optional-pointer: true
                     updated_at:
+                      x-oapi-codegen-extra-tags:
+                        db: updated_at
+                        yaml: updated_at
                       x-order: 7
                       description: Timestamp when the resource was updated.
                       x-go-type: time.Time
                       type: string
                       format: date-time
                       x-go-name: UpdatedAt
-                      x-oapi-codegen-extra-tags:
-                        db: updated_at
-                        yaml: updated_at
                       x-go-type-skip-optional-pointer: true
         '400':
           description: Invalid request body or request param
@@ -1058,20 +1062,18 @@ paths:
                         WorkspacesInOrganization: Maximum number of workspaces in an organization; 999999999999 is unlimited.
                         ImageSizeInDesign: Maximum size, in bytes, of an image embedded in a design; 999999999999 is unlimited.
                         SizePerDesign: Maximum size of a single design; 999999999999 is unlimited.
-                        BlowhornProfiles: >-
-                          Maximum number of Blowhorn posting profiles the organization may hold; 999999999999 is
-                          unlimited.
-                        BlowhornBrowserAutomation: Blowhorn may publish through browser automation; granted when quantity is greater than 0.
-                        BlowhornScheduler: Blowhorn may run scheduled publishes; granted when quantity is greater than 0.
-                        BlowhornDevicesPerSeat: Maximum number of devices one Blowhorn seat may publish from; 999999999999 is unlimited.
-                        BlowhornPlatformLinkedIn: Blowhorn may publish to LinkedIn; granted when quantity is greater than 0.
-                        BlowhornPlatformX: Blowhorn may publish to X; granted when quantity is greater than 0.
-                        BlowhornPlatformReddit: Blowhorn may publish to Reddit; granted when quantity is greater than 0.
-                        BlowhornPlatformHackerNews: Blowhorn may publish to Hacker News; granted when quantity is greater than 0.
-                        BlowhornPlatformSlack: Blowhorn may publish to Slack; granted when quantity is greater than 0.
-                        BlowhornPlatformBluesky: Blowhorn may publish to Bluesky; granted when quantity is greater than 0.
-                        BlowhornPlatformGitHub: Blowhorn may publish to GitHub; granted when quantity is greater than 0.
-                        BlowhornPlatformBlog: Blowhorn may publish to a blog; granted when quantity is greater than 0.
+                        BlowhornProfiles: Maximum number of posting profiles the organization may hold; 999999999999 is unlimited.
+                        BlowhornBrowserAutomation: The client may publish through browser automation; granted when quantity is greater than 0.
+                        BlowhornScheduler: The client may run scheduled publishes; granted when quantity is greater than 0.
+                        BlowhornDevicesPerSeat: Maximum number of devices one seat may publish from; 999999999999 is unlimited.
+                        BlowhornPlatformLinkedIn: The client may publish to LinkedIn; granted when quantity is greater than 0.
+                        BlowhornPlatformX: The client may publish to X; granted when quantity is greater than 0.
+                        BlowhornPlatformReddit: The client may publish to Reddit; granted when quantity is greater than 0.
+                        BlowhornPlatformHackerNews: The client may publish to Hacker News; granted when quantity is greater than 0.
+                        BlowhornPlatformSlack: The client may publish to Slack; granted when quantity is greater than 0.
+                        BlowhornPlatformBluesky: The client may publish to Bluesky; granted when quantity is greater than 0.
+                        BlowhornPlatformGitHub: The client may publish to GitHub; granted when quantity is greater than 0.
+                        BlowhornPlatformBlog: The client may publish to a blog; granted when quantity is greater than 0.
                     quantity:
                       type: number
                       format: double
@@ -1085,26 +1087,26 @@ paths:
                         csv: quantity
                       x-order: 5
                     created_at:
+                      x-oapi-codegen-extra-tags:
+                        db: created_at
+                        yaml: created_at
                       x-order: 6
                       description: Timestamp when the resource was created.
                       x-go-type: time.Time
                       type: string
                       format: date-time
                       x-go-name: CreatedAt
-                      x-oapi-codegen-extra-tags:
-                        db: created_at
-                        yaml: created_at
                       x-go-type-skip-optional-pointer: true
                     updated_at:
+                      x-oapi-codegen-extra-tags:
+                        db: updated_at
+                        yaml: updated_at
                       x-order: 7
                       description: Timestamp when the resource was updated.
                       x-go-type: time.Time
                       type: string
                       format: date-time
                       x-go-name: UpdatedAt
-                      x-oapi-codegen-extra-tags:
-                        db: updated_at
-                        yaml: updated_at
                       x-go-type-skip-optional-pointer: true
         '400':
           description: Invalid request body or request param
@@ -4230,7 +4232,7 @@ paths:
         `X-Client-Key` as submitFailureDiagnostic; a signed-in caller may use its bearer token instead, and only then is
         the organization attached. A request carrying neither is a 401. The email address is only ever sent when the
         person types it in, and diagnosticId links this report to the automatic failure diagnostic submitted for the
-        same incident, when one exists. Served by Layer5 Cloud; see Blowhorn issue #771.
+        same incident, when one exists. Served by Layer5 Cloud; see the downstream desktop diagnostics issue #771.
       operationId: submitAnonymousSupportRequest
       security:
         - Support_clientKey: []
@@ -8308,15 +8310,15 @@ paths:
                                     x-go-type-import:
                                       path: github.com/gofrs/uuid
                                   created_at:
+                                    x-oapi-codegen-extra-tags:
+                                      db: created_at
+                                      yaml: created_at
                                     x-order: 7
                                     description: Timestamp when the resource was created.
                                     x-go-type: time.Time
                                     type: string
                                     format: date-time
                                     x-go-name: CreatedAt
-                                    x-oapi-codegen-extra-tags:
-                                      db: created_at
-                                      yaml: created_at
                                     x-go-type-skip-optional-pointer: true
                                   metadata:
                                     description: Additional metadata associated with the environment.
@@ -8328,15 +8330,15 @@ paths:
                                     x-go-type-skip-optional-pointer: true
                                     type: object
                                   updated_at:
+                                    x-oapi-codegen-extra-tags:
+                                      db: updated_at
+                                      yaml: updated_at
                                     x-order: 9
                                     description: Timestamp when the resource was updated.
                                     x-go-type: time.Time
                                     type: string
                                     format: date-time
                                     x-go-name: UpdatedAt
-                                    x-oapi-codegen-extra-tags:
-                                      db: updated_at
-                                      yaml: updated_at
                                     x-go-type-skip-optional-pointer: true
                                   deleted_at:
                                     description: >-
@@ -14759,26 +14761,26 @@ paths:
                           x-go-type-import:
                             path: github.com/gofrs/uuid
                         created_at:
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                            yaml: created_at
                           x-order: 4
                           description: Timestamp when the resource was created.
                           x-go-type: time.Time
                           type: string
                           format: date-time
                           x-go-name: CreatedAt
-                          x-oapi-codegen-extra-tags:
-                            db: created_at
-                            yaml: created_at
                           x-go-type-skip-optional-pointer: true
                         updated_at:
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                            yaml: updated_at
                           x-order: 5
                           description: Timestamp when the resource was updated.
                           x-go-type: time.Time
                           type: string
                           format: date-time
                           x-go-name: UpdatedAt
-                          x-oapi-codegen-extra-tags:
-                            db: updated_at
-                            yaml: updated_at
                           x-go-type-skip-optional-pointer: true
                         deleted_at:
                           x-oapi-codegen-extra-tags:
@@ -67734,6 +67736,7 @@ paths:
                 - bytes
                 - sha256
                 - locationStripped
+                - backend
               properties:
                 contentType:
                   type: string
@@ -67782,9 +67785,9 @@ paths:
                     Whether the client removed location metadata (EXIF and XMP GPS, maker notes, device serial numbers)
                     from the file before hashing and uploading it. Recorded as sent.
                 backend:
-                  description: Where to store the file. Omitted, the server stores it in `r2`.
-                  x-oapi-codegen-extra-tags:
-                    json: backend,omitempty
+                  description: >
+                    Where to store the file. Required, with no default: the client picks one of the backends
+                    `getMediaAssetQuota` lists in `backends`, and a create naming any other answers `400`.
                   type: string
                   enum:
                     - r2
@@ -68338,13 +68341,18 @@ paths:
                 properties:
                   backends:
                     type: array
-                    description: Backends this provider serves for the organization. A create naming another is refused with 400.
+                    description: >
+                      Backends this provider serves for the organization, and the only statement of what it serves. A
+                      create must name one of them in `backend` (there is no default); naming another is refused with
+                      400.
                     items:
                       type: string
                       description: >
                         Where the asset's bytes are stored. `r2` is the provider's own private object storage; `gdrive`
-                        is the uploading person's Google Drive, reached through their Google Drive connection. A reader
-                        never branches on it: `getMediaAssetDownload` answers the same shape for both.
+                        is the uploading person's Google Drive, reached through their Google Drive connection. Neither
+                        is a default: a provider states the ones it serves in `MediaAssetQuota.backends`, and a create
+                        names one of them. A reader never branches on it: `getMediaAssetDownload` answers the same shape
+                        for both.
                       enum:
                         - r2
                         - gdrive
@@ -71032,6 +71040,1030 @@ paths:
             text/plain:
               schema:
                 type: string
+  /api/identity/oauth/consent-requests:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - OauthConsentRequest_oauthConsentRequests
+      summary: Get a pending OAuth consent request
+      operationId: getOauthConsentRequest
+      description: |
+        Returns the pending consent request named by the required
+        `consentChallenge` query parameter, for the consent page to show.
+        The challenge is a query parameter rather than a path segment
+        because it is a long opaque string issued by the identity provider.
+        Reading a request does not decide it.
+
+        The caller must be the signed-in user the challenge was issued for;
+        a challenge issued for another user answers 403. A challenge the
+        identity provider does not know, that has expired, or that was
+        already accepted or rejected answers 404. A missing or blank
+        challenge answers 400. A 503 means the identity provider could not
+        be reached; the 503 response says that the read may be retried.
+      parameters:
+        - name: consentChallenge
+          in: query
+          description: >-
+            Opaque consent challenge the identity provider issued, as the consent page received it. Required; a missing
+            or blank value answers 400.
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 8192
+            pattern: ^[\x21-\x7E]+$
+      responses:
+        '200':
+          description: The pending OAuth consent request
+          content:
+            application/json:
+              schema:
+                title: OAuth Consent Request Schema
+                description: |
+                  A pending OAuth consent request, as the consent page shows it to the
+                  signed-in user: which client asks, where it sends the user afterwards, and
+                  which scopes it asks for. The identity provider issues the request and names it by
+                  `consentChallenge`; the server reads it from the identity provider and
+                  stores no row of its own, so the schema has no `id` or timestamps.
+
+                  The request belongs to the one signed-in user it was issued for. Only that
+                  user may read it or decide it, and a challenge is single use: once accepted
+                  or rejected it can no longer be read or decided. `client.verified` is
+                  derived only from the client's redirect targets, never from its name or ID.
+                  It marks trust and never blocks: an unverified client is shown as such, and
+                  the user may still allow it.
+                type: object
+                additionalProperties: false
+                required:
+                  - consentChallenge
+                  - client
+                  - requestedScopes
+                properties:
+                  consentChallenge:
+                    type: string
+                    description: >-
+                      Opaque challenge the identity provider issued for this consent request, echoed unchanged. Send it
+                      back in OauthConsentDecisionPayload to allow or deny the request.
+                    minLength: 1
+                    maxLength: 8192
+                    pattern: ^[\x21-\x7E]+$
+                    x-order: 1
+                  client:
+                    description: The OAuth client that asks for consent.
+                    x-order: 2
+                    type: object
+                    additionalProperties: false
+                    required:
+                      - clientId
+                      - clientName
+                      - redirectHosts
+                      - appSchemes
+                      - verified
+                    properties:
+                      clientId:
+                        type: string
+                        description: OAuth client ID. An identifier issued by the identity provider, not a UUID.
+                        minLength: 1
+                        maxLength: 255
+                        x-id-format: external
+                        x-go-name: ClientID
+                        x-order: 1
+                      clientName:
+                        type: string
+                        description: >-
+                          Display name the client registered. Empty when it registered none. Self-asserted by the
+                          client; only `verified` marks trust.
+                        maxLength: 255
+                        x-order: 2
+                      redirectHosts:
+                        type: array
+                        description: >-
+                          The network hosts the client can send the user to after the decision: the host of each https
+                          redirect URI (for example `app.example.com`) and of each loopback redirect URI (`127.0.0.1` or
+                          `[::1]`), without duplicates. Only redirect URIs whose scheme is `https`, or `http` on a
+                          loopback IP literal, are listed here; the `localhost` hostname is never registered (RFC 8252
+                          section 8.3), and a private-use app redirect is listed in `appSchemes` instead. Lowercase
+                          ASCII, with no scheme, port or path; an internationalized hostname is sent in IDNA A-label
+                          (punycode) form. Empty when the client registered only app redirects; `redirectHosts` and
+                          `appSchemes` are never both empty.
+                        maxItems: 100
+                        uniqueItems: true
+                        items:
+                          type: string
+                          description: >-
+                            One network host: a DNS hostname of at least two labels whose last label starts with a
+                            letter, in IDNA A-label (punycode) form when internationalized, a dotted-decimal IPv4
+                            literal, or a bracketed hexadecimal IPv6 literal. A colon appears only inside IPv6 brackets,
+                            so no entry carries a port, and a bare single-label name such as `localhost` or an app
+                            scheme (`vscode`) is not a host.
+                          minLength: 1
+                          maxLength: 253
+                          pattern: >-
+                            ^(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z](?:[a-z0-9-]*[a-z0-9])?|(?:(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])\.){3}(?:25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9]?[0-9])|\[[0-9a-f]{0,4}(?::[0-9a-f]{0,4}){2,7}\])$
+                        x-order: 3
+                      appSchemes:
+                        type: array
+                        description: >-
+                          The private-use URI schemes (RFC 8252 section 7.1) of the client's app redirect URIs, without
+                          duplicates, for example `vscode` or `com.example.app`: the app that claims the scheme on the
+                          user's device receives the user after the decision. Registration accepts a private-use scheme
+                          only when it is on the server-side app-scheme allowlist read from configuration (defaults
+                          `vscode` and `cursor`), so only allowlisted schemes appear here. A reverse-domain scheme such
+                          as `com.example.app` names an app, not a host, and must not be shown as one. Empty when the
+                          client registered only https and loopback redirects; `redirectHosts` and `appSchemes` are
+                          never both empty.
+                        maxItems: 100
+                        uniqueItems: true
+                        items:
+                          type: string
+                          description: >-
+                            One private-use scheme in lowercase RFC 3986 scheme form, with no `:` or `//`. Never `http`
+                            or `https`, whose redirects are listed in `redirectHosts`.
+                          minLength: 1
+                          maxLength: 255
+                          pattern: ^[a-z][a-z0-9+.-]*$
+                          not:
+                            enum:
+                              - http
+                              - https
+                        x-order: 4
+                      verified:
+                        type: boolean
+                        description: >-
+                          Derived only from the client's redirect targets, never from `clientName` or `clientId`: true
+                          only when every redirect URI of the client matches one operator-listed known-client entry
+                          (that entry's https hosts or its app schemes). Marks trust and never blocks: a false value is
+                          shown as an unverified client, and the user may still allow it.
+                        x-order: 5
+                  requestedScopes:
+                    type: array
+                    description: >-
+                      Scopes the client asks for, as the identity provider recorded them. An accept grants only what the
+                      client requested, never more: these scopes, and any audience the client asked the identity
+                      provider for. Empty when the client asks for none.
+                    items:
+                      type: string
+                      description: One OAuth scope token (RFC 6749 section 3.3).
+                      minLength: 1
+                      maxLength: 255
+                      pattern: ^[\x21\x23-\x5B\x5D-\x7E]+$
+                    maxItems: 100
+                    uniqueItems: true
+                    x-order: 3
+        '400':
+          description: Invalid request body or request param
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '404':
+          description: Result not found
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '503':
+          description: >-
+            Service unavailable - the identity provider could not be reached or did not answer. On
+            getOauthConsentRequest nothing was read and the call may be retried. On acceptOauthConsentRequest and
+            rejectOauthConsentRequest the outcome is unknown: the request may already have been decided. The caller may
+            retry; a retry that answers 404 means the challenge was already decided, and the user should restart sign-in
+            from the client.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+  /api/identity/oauth/consent-requests/accept:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - OauthConsentRequest_oauthConsentDecisions
+      summary: Allow a pending OAuth consent request
+      operationId: acceptOauthConsentRequest
+      description: |
+        Allows the pending consent request named by `consentChallenge` in
+        the body, on behalf of the signed-in user. The grant holds only what
+        the client requested, never more: the `requestedScopes` of
+        getOauthConsentRequest, and any audience the client asked the
+        identity provider for. The body cannot widen or narrow it. When
+        `remember` is true, the identity provider remembers the grant so a
+        later request from the same client for the same scopes is not shown
+        again while the grant is remembered; when false or omitted, the grant
+        covers this request only.
+
+        The answer is an OauthConsentRedirect: the browser must navigate to
+        its `redirectTo` to finish the authorization. The challenge is single
+        use: after an accept, every operation on it answers 404.
+
+        The caller must be the signed-in user the challenge was issued for;
+        a challenge issued for another user answers 403 and is not decided.
+        A challenge the identity provider does not know, that has expired, or
+        that was already accepted or rejected answers 404. A malformed body,
+        or a missing or blank `consentChallenge`, answers 400. A 503 leaves
+        the outcome unknown; the 503 response says how to retry.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: >-
+                Names the pending consent request to allow (acceptOauthConsentRequest) or deny
+                (rejectOauthConsentRequest). The grant is always what the client requested, so the body carries no
+                scopes.
+              required:
+                - consentChallenge
+              properties:
+                consentChallenge:
+                  type: string
+                  description: >-
+                    The challenge of the request being decided, as getOauthConsentRequest returned it. A blank value
+                    answers 400.
+                  minLength: 1
+                  maxLength: 8192
+                  pattern: ^[\x21-\x7E]+$
+                  x-order: 1
+                remember:
+                  type: boolean
+                  description: >-
+                    On accept, true asks the identity provider to remember the grant, so a later request from the same
+                    client for the same scopes is not shown again while the grant is remembered. False or omitted grants
+                    this request only. Ignored on reject.
+                  default: false
+                  x-order: 2
+      responses:
+        '200':
+          description: Consent request allowed; navigate to redirectTo
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: >-
+                  Where the browser goes after a consent decision. The consent page must navigate the browser to
+                  `redirectTo`; the authorization does not finish until it does.
+                required:
+                  - redirectTo
+                properties:
+                  redirectTo:
+                    type: string
+                    format: uri
+                    description: >-
+                      Absolute URL the browser must navigate to next, issued by the identity provider. It continues the
+                      authorization and returns the user to the client.
+                    maxLength: 16384
+                    x-order: 1
+        '400':
+          description: Invalid request body or request param
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '404':
+          description: Result not found
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '503':
+          description: >-
+            Service unavailable - the identity provider could not be reached or did not answer. On
+            getOauthConsentRequest nothing was read and the call may be retried. On acceptOauthConsentRequest and
+            rejectOauthConsentRequest the outcome is unknown: the request may already have been decided. The caller may
+            retry; a retry that answers 404 means the challenge was already decided, and the user should restart sign-in
+            from the client.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+  /api/identity/oauth/consent-requests/reject:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - OauthConsentRequest_oauthConsentDecisions
+      summary: Deny a pending OAuth consent request
+      operationId: rejectOauthConsentRequest
+      description: |
+        Denies the pending consent request named by `consentChallenge` in
+        the body, on behalf of the signed-in user. Nothing is granted, and
+        the client receives an OAuth `access_denied` error. Only
+        `consentChallenge` is read; `remember` is ignored.
+
+        The answer is an OauthConsentRedirect: the browser must navigate to
+        its `redirectTo`, which returns the user to the client with the
+        error. The challenge is single use: after a reject, every operation
+        on it answers 404.
+
+        The caller must be the signed-in user the challenge was issued for;
+        a challenge issued for another user answers 403 and is not decided.
+        A challenge the identity provider does not know, that has expired, or
+        that was already accepted or rejected answers 404. A malformed body,
+        or a missing or blank `consentChallenge`, answers 400. A 503 leaves
+        the outcome unknown; the 503 response says how to retry.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: >-
+                Names the pending consent request to allow (acceptOauthConsentRequest) or deny
+                (rejectOauthConsentRequest). The grant is always what the client requested, so the body carries no
+                scopes.
+              required:
+                - consentChallenge
+              properties:
+                consentChallenge:
+                  type: string
+                  description: >-
+                    The challenge of the request being decided, as getOauthConsentRequest returned it. A blank value
+                    answers 400.
+                  minLength: 1
+                  maxLength: 8192
+                  pattern: ^[\x21-\x7E]+$
+                  x-order: 1
+                remember:
+                  type: boolean
+                  description: >-
+                    On accept, true asks the identity provider to remember the grant, so a later request from the same
+                    client for the same scopes is not shown again while the grant is remembered. False or omitted grants
+                    this request only. Ignored on reject.
+                  default: false
+                  x-order: 2
+      responses:
+        '200':
+          description: Consent request denied; navigate to redirectTo
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: >-
+                  Where the browser goes after a consent decision. The consent page must navigate the browser to
+                  `redirectTo`; the authorization does not finish until it does.
+                required:
+                  - redirectTo
+                properties:
+                  redirectTo:
+                    type: string
+                    format: uri
+                    description: >-
+                      Absolute URL the browser must navigate to next, issued by the identity provider. It continues the
+                      authorization and returns the user to the client.
+                    maxLength: 16384
+                    x-order: 1
+        '400':
+          description: Invalid request body or request param
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '404':
+          description: Result not found
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '503':
+          description: >-
+            Service unavailable - the identity provider could not be reached or did not answer. On
+            getOauthConsentRequest nothing was read and the call may be retried. On acceptOauthConsentRequest and
+            rejectOauthConsentRequest the outcome is unknown: the request may already have been decided. The caller may
+            retry; a retry that answers 404 means the challenge was already decided, and the user should restart sign-in
+            from the client.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
   /api/content/patterns/resource:
     get:
       x-internal:
@@ -77801,23 +78833,21 @@ paths:
                                 ImageSizeInDesign: Maximum size, in bytes, of an image embedded in a design; 999999999999 is unlimited.
                                 SizePerDesign: Maximum size of a single design; 999999999999 is unlimited.
                                 BlowhornProfiles: >-
-                                  Maximum number of Blowhorn posting profiles the organization may hold; 999999999999 is
+                                  Maximum number of posting profiles the organization may hold; 999999999999 is
                                   unlimited.
                                 BlowhornBrowserAutomation: >-
-                                  Blowhorn may publish through browser automation; granted when quantity is greater than
-                                  0.
-                                BlowhornScheduler: Blowhorn may run scheduled publishes; granted when quantity is greater than 0.
-                                BlowhornDevicesPerSeat: >-
-                                  Maximum number of devices one Blowhorn seat may publish from; 999999999999 is
-                                  unlimited.
-                                BlowhornPlatformLinkedIn: Blowhorn may publish to LinkedIn; granted when quantity is greater than 0.
-                                BlowhornPlatformX: Blowhorn may publish to X; granted when quantity is greater than 0.
-                                BlowhornPlatformReddit: Blowhorn may publish to Reddit; granted when quantity is greater than 0.
-                                BlowhornPlatformHackerNews: Blowhorn may publish to Hacker News; granted when quantity is greater than 0.
-                                BlowhornPlatformSlack: Blowhorn may publish to Slack; granted when quantity is greater than 0.
-                                BlowhornPlatformBluesky: Blowhorn may publish to Bluesky; granted when quantity is greater than 0.
-                                BlowhornPlatformGitHub: Blowhorn may publish to GitHub; granted when quantity is greater than 0.
-                                BlowhornPlatformBlog: Blowhorn may publish to a blog; granted when quantity is greater than 0.
+                                  The client may publish through browser automation; granted when quantity is greater
+                                  than 0.
+                                BlowhornScheduler: The client may run scheduled publishes; granted when quantity is greater than 0.
+                                BlowhornDevicesPerSeat: Maximum number of devices one seat may publish from; 999999999999 is unlimited.
+                                BlowhornPlatformLinkedIn: The client may publish to LinkedIn; granted when quantity is greater than 0.
+                                BlowhornPlatformX: The client may publish to X; granted when quantity is greater than 0.
+                                BlowhornPlatformReddit: The client may publish to Reddit; granted when quantity is greater than 0.
+                                BlowhornPlatformHackerNews: The client may publish to Hacker News; granted when quantity is greater than 0.
+                                BlowhornPlatformSlack: The client may publish to Slack; granted when quantity is greater than 0.
+                                BlowhornPlatformBluesky: The client may publish to Bluesky; granted when quantity is greater than 0.
+                                BlowhornPlatformGitHub: The client may publish to GitHub; granted when quantity is greater than 0.
+                                BlowhornPlatformBlog: The client may publish to a blog; granted when quantity is greater than 0.
                             quantity:
                               type: number
                               format: double
@@ -77831,26 +78861,26 @@ paths:
                                 csv: quantity
                               x-order: 5
                             created_at:
+                              x-oapi-codegen-extra-tags:
+                                db: created_at
+                                yaml: created_at
                               x-order: 6
                               description: Timestamp when the resource was created.
                               x-go-type: time.Time
                               type: string
                               format: date-time
                               x-go-name: CreatedAt
-                              x-oapi-codegen-extra-tags:
-                                db: created_at
-                                yaml: created_at
                               x-go-type-skip-optional-pointer: true
                             updated_at:
+                              x-oapi-codegen-extra-tags:
+                                db: updated_at
+                                yaml: updated_at
                               x-order: 7
                               description: Timestamp when the resource was updated.
                               x-go-type: time.Time
                               type: string
                               format: date-time
                               x-go-name: UpdatedAt
-                              x-oapi-codegen-extra-tags:
-                                db: updated_at
-                                yaml: updated_at
                               x-go-type-skip-optional-pointer: true
                       deviceUsage:
                         type: object
@@ -86156,6 +87186,185 @@ paths:
             text/plain:
               schema:
                 type: string
+  /revoke:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - token_tokens
+      summary: Revoke token
+      operationId: revokeToken
+      description: >-
+        Revokes an OAuth access or refresh token issued by the identity provider, for example when an OAuth client signs
+        out, or a user-created API token (the token envelope that generateToken returns, or the bare JWT inside it).
+        Possessing the token is the credential, so no session or bearer token is required. The server first checks
+        whether `token` is a user-created API token whose signature verifies. If it is, the server retires it locally,
+        scoped to the owner named in the token, exactly as deleteUserToken does, and evicts cached introspection results
+        so the token stops authenticating immediately. Any other token is forwarded to the OAuth2 server's RFC 7009
+        revocation endpoint with the server's own client credentials. On either path an unknown, anonymous or
+        already-revoked token is a no-op that still answers 200, so the answer reveals nothing about validity. The
+        server trims whitespace from `token`. The server reads only the first 1 MiB (1048576 bytes) of the body and
+        ignores the rest; JSON that does not complete within it fails to decode (400). A 400 body is one of "Error
+        reading token payload", "Error decoding token" or "missing token". A 503 body is "token revocation status is
+        temporarily unavailable" when signing keys (JWKS) or the token store cannot be read; the token was not revoked
+        and the caller should retry. A 500 body is "Error revoking token at the moment", answered only on the forwarding
+        path when the OAuth2 server returns an error response or cannot be reached.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: Carries the token that revokeToken revokes or introspectToken checks.
+              required:
+                - token
+              properties:
+                token:
+                  type: string
+                  description: The token. Surrounding whitespace is trimmed; a value that is empty after trimming is rejected.
+                  pattern: "[^\\x09-\\x0D\\x20\\x85\\xA0  - \L\P  　]"
+                  x-order: 1
+      responses:
+        '200':
+          description: Token revoked, or unknown or already revoked (no-op). The body is empty and the session cookie is cleared.
+          headers:
+            Set-Cookie:
+              description: Clears the session cookie (session_cookie=; Path=/; Max-Age=0; HttpOnly).
+              schema:
+                type: string
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+        '503':
+          description: >-
+            Signing keys (JWKS) or the token store could not be read, so the token was not revoked. The body is "token
+            revocation status is temporarily unavailable"; the caller should retry.
+          content:
+            text/plain:
+              schema:
+                type: string
+  /introspect:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - token_tokens
+      summary: Introspect access token
+      operationId: introspectToken
+      description: >-
+        Reports whether an access token (a JWT) is authentic, unexpired and not revoked. Possessing the token is the
+        credential, so no session or bearer token is required. The server trims whitespace from `token`. The server
+        reads only the first 1 MiB (1048576 bytes) of the body and ignores the rest; JSON that does not complete within
+        it fails to decode (400). A 400 body is "Error reading token payload" or "Error decoding token" (also answered
+        when `token` is missing or empty); a 401 body is "invalid access token" when the signature or expiry check
+        fails, or "revoked access token used" when the token has been revoked.
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: Carries the token that revokeToken revokes or introspectToken checks.
+              required:
+                - token
+              properties:
+                token:
+                  type: string
+                  description: The token. Surrounding whitespace is trimmed; a value that is empty after trimming is rejected.
+                  pattern: "[^\\x09-\\x0D\\x20\\x85\\xA0  - \L\P  　]"
+                  x-order: 1
+      responses:
+        '200':
+          description: Token is authentic, unexpired and not revoked. The body is empty.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '503':
+          description: >-
+            Signing keys or token revocation status are temporarily unavailable. The token is refused, but the caller
+            should retry rather than sign the user out.
+          content:
+            text/plain:
+              schema:
+                type: string
+  /logout:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - token_tokens
+      summary: Sign out
+      operationId: logoutUser
+      description: >-
+        Browser navigation that signs the user out. The session is identified by the session_cookie and provider_token
+        cookies, not by a bearer token. Ends the identity provider session, revokes the OAuth access and refresh tokens
+        carried by the provider_token cookie, clears every session cookie and redirects to /login. Cookies are cleared
+        on every outcome, including failure. User-created API tokens are not affected; they are revoked with revokeToken
+        or deleteUserToken. On the canonical host a complete sign-out needs both cookies - session_cookie lets the
+        identity provider end its session and provider_token carries the OAuth tokens to revoke. With only
+        session_cookie, the identity provider session ends but no OAuth tokens are revoked, and the answer is the
+        success 303. With only provider_token, the identity provider cannot start its logout flow, so the OAuth tokens
+        are still revoked but the answer is the failure one - 303 for a browser document navigation, an empty 500
+        otherwise. Cookies are cleared either way. On an organization custom domain the user is identified from
+        provider_token, sign-out is best-effort and it always answers 302.
+      security:
+        - token_sessionCookie: []
+        - token_providerTokenCookie: []
+      responses:
+        '302':
+          description: >-
+            Redirect to /login on an organization custom domain, where sign-out is best-effort. The body is a short HTML
+            link to /login.
+          headers:
+            Location:
+              required: true
+              description: /login
+              schema:
+                type: string
+          content:
+            text/html:
+              schema:
+                type: string
+        '303':
+          description: >-
+            Redirect to /login. Answered when sign-out completes on the canonical host, and also when the identity
+            provider failed but the request is a browser document navigation. The body is a short HTML link to /login.
+          headers:
+            Location:
+              required: true
+              description: /login
+              schema:
+                type: string
+          content:
+            text/html:
+              schema:
+                type: string
+        '500':
+          description: >-
+            The identity provider failed and the request was not a browser document navigation. The body is empty;
+            cookies are still cleared.
   /api/users:
     get:
       x-internal:
@@ -89349,15 +90558,15 @@ paths:
                                                         yaml: owner
                                                       x-order: 6
                                                     created_at:
+                                                      x-oapi-codegen-extra-tags:
+                                                        db: created_at
+                                                        yaml: created_at
                                                       x-order: 7
                                                       description: Timestamp when the resource was created.
                                                       x-go-type: time.Time
                                                       type: string
                                                       format: date-time
                                                       x-go-name: CreatedAt
-                                                      x-oapi-codegen-extra-tags:
-                                                        db: created_at
-                                                        yaml: created_at
                                                       x-go-type-skip-optional-pointer: true
                                                     metadata:
                                                       description: Additional metadata associated with the environment.
@@ -89369,15 +90578,15 @@ paths:
                                                       x-go-type-skip-optional-pointer: true
                                                       type: object
                                                     updated_at:
+                                                      x-oapi-codegen-extra-tags:
+                                                        db: updated_at
+                                                        yaml: updated_at
                                                       x-order: 9
                                                       description: Timestamp when the resource was updated.
                                                       x-go-type: time.Time
                                                       type: string
                                                       format: date-time
                                                       x-go-name: UpdatedAt
-                                                      x-oapi-codegen-extra-tags:
-                                                        db: updated_at
-                                                        yaml: updated_at
                                                       x-go-type-skip-optional-pointer: true
                                                     deleted_at:
                                                       description: >-
@@ -89991,26 +91200,26 @@ paths:
                                             default: 0
                                             minimum: 0
                                           created_at:
+                                            x-oapi-codegen-extra-tags:
+                                              db: created_at
+                                              yaml: created_at
                                             x-order: 14
                                             description: Timestamp when the resource was created.
                                             x-go-type: time.Time
                                             type: string
                                             format: date-time
                                             x-go-name: CreatedAt
-                                            x-oapi-codegen-extra-tags:
-                                              db: created_at
-                                              yaml: created_at
                                             x-go-type-skip-optional-pointer: true
                                           updated_at:
+                                            x-oapi-codegen-extra-tags:
+                                              db: updated_at
+                                              yaml: updated_at
                                             x-order: 15
                                             description: Timestamp when the resource was updated.
                                             x-go-type: time.Time
                                             type: string
                                             format: date-time
                                             x-go-name: UpdatedAt
-                                            x-oapi-codegen-extra-tags:
-                                              db: updated_at
-                                              yaml: updated_at
                                             x-go-type-skip-optional-pointer: true
                                         required:
                                           - id
@@ -90910,26 +92119,26 @@ paths:
                                           - kind
                                           - schema
                                       created_at:
+                                        x-oapi-codegen-extra-tags:
+                                          db: created_at
+                                          yaml: created_at
                                         x-order: 14
                                         description: Timestamp when the resource was created.
                                         x-go-type: time.Time
                                         type: string
                                         format: date-time
                                         x-go-name: CreatedAt
-                                        x-oapi-codegen-extra-tags:
-                                          db: created_at
-                                          yaml: created_at
                                         x-go-type-skip-optional-pointer: true
                                       updated_at:
+                                        x-oapi-codegen-extra-tags:
+                                          db: updated_at
+                                          yaml: updated_at
                                         x-order: 15
                                         description: Timestamp when the resource was updated.
                                         x-go-type: time.Time
                                         type: string
                                         format: date-time
                                         x-go-name: UpdatedAt
-                                        x-oapi-codegen-extra-tags:
-                                          db: updated_at
-                                          yaml: updated_at
                                         x-go-type-skip-optional-pointer: true
                                     required:
                                       - id
@@ -94477,3 +95686,13 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+    token_sessionCookie:
+      type: apiKey
+      in: cookie
+      name: session_cookie
+      description: Identity provider session cookie set at sign-in.
+    token_providerTokenCookie:
+      type: apiKey
+      in: cookie
+      name: provider_token
+      description: Cookie carrying the OAuth access and refresh tokens issued at sign-in.
