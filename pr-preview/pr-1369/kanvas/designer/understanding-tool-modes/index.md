@@ -372,7 +372,7 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
 <li><strong>Canvas-connect Behavior</strong>: When you click an empty spot on the canvas, and drag to an existing component, you get an annotation edge relationship.</li>
 <li><strong>Start on a component</strong>: When you press on a component and drag, the connector starts from that component and follows it when it moves.</li>
 </ul>
-<p>Connectors snap to the component under the cursor, never to a Pencil stroke drawn around it, and never back onto the component they started from.</p>
+<p>Connectors snap to the component under the cursor, never to a Pencil stroke drawn around it, and never back onto the component they started from. Pressing on a Pencil stroke or a connector&rsquo;s end point starts the connector from the component underneath it; a Pencil stroke is never either end of a connector.</p>
 </details>
 <table>
   <thead>
