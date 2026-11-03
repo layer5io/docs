@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.111
+  version: v1.3.112
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -92,6 +92,8 @@ tags:
     description: Operations related to media assets.
   - name: MentionAlias_mentionAliases
     description: Operations related to mention aliases.
+  - name: OauthConsent_oauthConsents
+    description: Operations related to the OAuth consents of the signed-in user.
   - name: OauthConsentRequest_oauthConsentRequests
     description: Reads of the pending OAuth consent requests of the signed-in user.
   - name: OauthConsentRequest_oauthConsentDecisions
@@ -18378,6 +18380,7 @@ paths:
     put:
       x-internal:
         - cloud
+      x-supersedes: v1beta2
       tags:
         - User_users
       operationId: updateUserPreferences
@@ -18386,7 +18389,10 @@ paths:
         Merges the payload onto the signed-in user's stored preferences. A key the payload names replaces the stored
         value; a key it leaves out keeps the stored value. Setting selectedOrganizationId switches the organization the
         user's session has selected, as Meshery Cloud's and Meshery's organization switchers do. Badges are server-owned
-        and are never changed through this operation.
+        and are never changed through this operation. Only the signed-in session can set agentsActWithoutApproval: a
+        token-authenticated request that names it, with any value including null, or that changes a
+        remoteProviderPreferences.<provider>.agentsActWithoutApproval entry, is answered 403 and no part of the payload
+        is applied.
       requestBody:
         required: true
         content:
@@ -18394,9 +18400,12 @@ paths:
             schema:
               type: object
               description: >-
-                The client-settable fields of Preference for updateUserPreferences. Every field is optional: the server
-                merges the ones present onto the stored preferences and keeps the rest. updatedAt is server-recorded and
-                is not settable.
+                The v1beta3 request body of updateUserPreferences (PUT /api/identity/users/preferences), and the
+                client-settable fields of Preference. Every field is optional: the server merges the ones present onto
+                the stored preferences and keeps the rest. Setting selectedOrganizationId switches the organization the
+                user's session has selected. Badges are server-owned and are never changed through this body. updatedAt
+                is server-recorded and is not settable. See docs/agent-approval-preference.md for who may write
+                agentsActWithoutApproval.
               additionalProperties: false
               properties:
                 meshAdapters:
@@ -18513,12 +18522,49 @@ paths:
                 remoteProviderPreferences:
                   type: object
                   additionalProperties: true
-                  description: The remote provider preferences of the preference.
+                  description: >-
+                    The remote provider preferences of the preference. Writers set the typed agentsActWithoutApproval
+                    field, not a provider's free-form agentsActWithoutApproval entry. A token-authenticated request that
+                    would change the stored state of a provider's agentsActWithoutApproval entry (a different value,
+                    adding it where absent, or removing it where present) is answered 403, and no part of the payload is
+                    applied. Writing back the stored entry unchanged is accepted. Once the typed field has been written,
+                    the entry is never read again (see Preference.agentsActWithoutApproval).
+                agentsActWithoutApproval:
+                  type: boolean
+                  nullable: true
+                  description: >-
+                    Interim rule (temporary): until the upstream platform, workspace and profile policies exist, inherit
+                    (including absent) resolves to required, and this field is stored but not consulted by approval
+                    resolution (see Preference.agentsActWithoutApproval; the hierarchy proposal is
+                    https://github.com/layer5io/meshery-cloud/issues/6365). Target model, once the hierarchy places the
+                    profile level: one profile-level source for agent writes, consulted only for an AI-app activity
+                    whose approvalPolicy is inherit or absent, and only when no higher-level setting (hierarchy defined
+                    in https://github.com/layer5io/meshery-cloud/issues/6365) has decided (see
+                    Preference.agentsActWithoutApproval): true means not_required, false means required, and absent sets
+                    nothing. Three states on write: true or false stores that value; null clears the stored value back
+                    to absent (inherit); omitted keeps the stored value. No schema default is declared. An API token, of
+                    any kind, cannot set this field: a token-authenticated request whose payload names this field, with
+                    any value including null and whatever the stored state is, is answered 403 and no part of the
+                    payload is applied. Only a request authenticated by the signed-in session can set it. A token client
+                    doing read-modify-write must omit this field: echoing the value it read, or null, answers 403 for
+                    the whole payload. See docs/agent-approval-preference.md.
+                  x-go-type: nullable.Nullable[bool]
+                  x-go-type-import:
+                    path: github.com/oapi-codegen/nullable
+                  x-go-type-skip-optional-pointer: true
+                  x-oapi-codegen-extra-tags:
+                    json: agentsActWithoutApproval,omitempty
       responses:
         '201':
           description: Preferences updated
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -71040,6 +71086,402 @@ paths:
             text/plain:
               schema:
                 type: string
+  /api/identity/oauth/consents:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - OauthConsent_oauthConsents
+      summary: List OAuth consents
+      operationId: getOauthConsents
+      description: |
+        Returns a page of the live OAuth consents of the signed-in user, one
+        entry per client, ordered by updatedAt descending (a re-consent moves
+        a consent to the top). Revoked consents are
+        not listed. A user with no consented client receives an empty page.
+        `scopes` is the set the latest consent granted. A re-consent also
+        changes the client's existing tokens, as the OauthConsent schema
+        description states.
+
+        Only a request authenticated by the person's signed-in session may
+        list consents. A request authenticated by a token, of any kind, answers
+        403 and lists nothing. The page holds the consents of every client the
+        user has allowed, so listing it to a client would disclose other
+        clients' consents to that client, which is why a token may not list.
+      parameters:
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: integer
+            minimum: 0
+        - name: pageSize
+          in: query
+          description: >-
+            Number of consents per page, at most 1000. Bounded here because the list is the signed-in user's whole
+            consent set.
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 1000
+      responses:
+        '200':
+          description: OAuth consents of the signed-in user
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated collection of the signed-in user's live OAuth consents.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - oauthConsents
+                properties:
+                  page:
+                    type: integer
+                    description: Current page number of the result set.
+                    minimum: 0
+                  pageSize:
+                    type: integer
+                    description: Number of items per page.
+                    minimum: 1
+                  totalCount:
+                    type: integer
+                    description: Total number of items available.
+                    minimum: 0
+                  oauthConsents:
+                    type: array
+                    items:
+                      x-go-type: OauthConsent
+                      $schema: http://json-schema.org/draft-07/schema#
+                      title: OAuth Consent Schema
+                      description: >
+                        Server-returned OAuth consent: one OAuth client (a connected app) the
+
+                        signed-in user has allowed to act on their behalf, with what it was granted.
+
+                        Unique key: (user, `clientId`) among live consents (`deletedAt` null). A
+
+                        user has at most one live consent per client, so `clientId` identifies the
+
+                        consent among the user's own; `id` is the stored row's ID. The consent
+
+                        names one root organization; the client acts only in that organization and
+
+                        its descendants. Created by the authorization server's consent step and
+
+                        soft-deleted by revoking it; there is no write payload. A re-consent by the
+
+                        same user to a client with a live consent updates that consent in place:
+
+                        its scopes are replaced and `updatedAt` advances, while `id` and
+
+                        `createdAt` are kept.
+
+                        A re-consent keeps the consent's `organizationId`. The consent moves to
+
+                        another organization only when the user explicitly chooses that organization
+
+                        on the consent screen. Then every existing token issued to that client for
+
+                        that user is revoked in the same transaction, whatever its keychains, and this
+
+                        overrides the token rules below. Tokens are never re-bound to a new
+
+                        organization silently: the client gets a token for the new organization only
+
+                        under the consent that names it.
+
+                        A consent must name a keychain scope. The server refuses a first consent
+
+                        in which no scope maps to a keychain in its scope map, with `400` and nothing
+
+                        stored; a re-consent that names no keychain scope revokes (below). The schema cannot state this:
+                        `scopes` has minItems 1,
+
+                        which stops only an empty list. The rule is enforced by the server against
+
+                        the scope map, not by the schema. A scope string the scope map does not know
+
+                        is refused with `400`, never silently dropped. Standard non-keychain scopes,
+
+                        if the server accepts them at all (an open question), never count toward the
+
+                        keychain-scope minimum. A token is never issued under a consent with an empty
+
+                        keychain list, because a token limited to no keychains would hold no keys.
+
+                        Re-consent changes the client's existing tokens, in the same transaction as
+
+                        the consent update, by whether each token is scoped (`keychainScoped` true,
+
+                        or a non-empty `keychainIds`). Every token matches exactly one branch:
+
+                        - A scoped token gets `keychainIds` set to the
+                          intersection of its keychains and the keychains of the new scopes. A
+                          re-consent never adds keychains to a scoped token: a narrower re-consent
+                          narrows it, and a broader one leaves it unchanged. A token whose
+                          intersection is empty is revoked, not left with an empty list, because a
+                          scoped token with no keychains holds no keys. This also holds when the token's
+                          keychains were all deleted: its intersection is empty, so it is revoked,
+                          and it never gains keys.
+                        - An unrestricted token (`keychainScoped` false or absent and `keychainIds`
+                          empty or absent) gets `keychainIds` set to
+                          exactly the keychains of the new scopes, and `keychainScoped` set to true.
+                        - A re-consent that names no keychain scope (only scopes
+                          that map to no keychain) revokes: the consent is revoked (soft-deleted) and
+                          every token issued to that client for that user is revoked, in the same
+                          transaction. An unknown scope string is still refused with `400`.
+                        A scope added by a re-consent takes effect only for tokens issued after that
+
+                        consent, which is the user's fresh consent.
+                      type: object
+                      additionalProperties: false
+                      required:
+                        - id
+                        - clientId
+                        - clientName
+                        - scopes
+                        - organizationId
+                        - createdAt
+                        - updatedAt
+                      properties:
+                        id:
+                          description: Server-generated consent ID.
+                          x-go-name: ID
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                          x-order: 1
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        clientId:
+                          type: string
+                          description: >-
+                            OAuth client ID the consent was granted to. An identifier issued by the authorization
+                            server, not a UUID. Unique per user among live consents.
+                          minLength: 1
+                          maxLength: 255
+                          x-id-format: external
+                          x-go-name: ClientID
+                          x-oapi-codegen-extra-tags:
+                            db: client_id
+                          x-order: 2
+                        clientName:
+                          type: string
+                          description: Display name the client registered, shown to the user as the connected app's name.
+                          minLength: 1
+                          maxLength: 255
+                          x-oapi-codegen-extra-tags:
+                            db: client_name
+                          x-order: 3
+                        clientUri:
+                          type: string
+                          format: uri
+                          description: Home page of the client, when it registered one. Omitted otherwise.
+                          maxLength: 2048
+                          x-oapi-codegen-extra-tags:
+                            db: client_uri
+                            json: clientUri,omitempty
+                          x-order: 4
+                        logoUri:
+                          type: string
+                          format: uri
+                          description: Logo of the client, when it registered one. Omitted otherwise.
+                          maxLength: 2048
+                          x-oapi-codegen-extra-tags:
+                            db: logo_uri
+                            json: logoUri,omitempty
+                          x-order: 5
+                        scopes:
+                          type: array
+                          description: >-
+                            Scopes the user granted the client, as the strings the authorization server issues. A scope
+                            names one keychain, so the client's tokens are limited to the keys of those keychains (see
+                            the token scoping contract). At least one scope must map to a keychain in the server's scope
+                            map. The server refuses (`400`, nothing stored) a first consent without one (a re-consent
+                            without one revokes the consent and the client's tokens), and refuses a scope string the
+                            scope map does not know; it never drops one silently. Standard non-keychain scopes never
+                            count toward that minimum. The schema enforces only that the list is not empty; the rule is
+                            enforced by the server against the scope map. See the description of this schema.
+                          minItems: 1
+                          items:
+                            type: string
+                            minLength: 1
+                            maxLength: 255
+                            pattern: ^\S+$
+                          maxItems: 100
+                          uniqueItems: true
+                          x-go-type: pq.StringArray
+                          x-go-type-import:
+                            path: github.com/lib/pq
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: scopes
+                          x-order: 6
+                        organizationId:
+                          description: >-
+                            ID of the root organization the consent names. The client acts only in this organization and
+                            its descendants. A re-consent keeps it unless the user explicitly chooses another
+                            organization on the consent screen; see the description of this schema.
+                          x-go-name: OrganizationID
+                          x-oapi-codegen-extra-tags:
+                            db: organization_id
+                          x-order: 7
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        createdAt:
+                          description: Time the user first granted the consent. A re-consent keeps it.
+                          readOnly: true
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                          x-order: 8
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: >-
+                            Time the consent was last granted or changed. Server-set: equal to `createdAt` when the
+                            consent is created, and advanced when the same user consents to the same live client again,
+                            which replaces `scopes`.
+                          readOnly: true
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                          x-order: 9
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        lastUsedAt:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Time the client last used a token issued under this consent. Null when the client has not
+                            used it yet or the server does not record use.
+                          nullable: true
+                          x-go-type: core.NullTime
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
+                          x-oapi-codegen-extra-tags:
+                            db: last_used_at
+                            json: lastUsedAt,omitempty
+                          x-order: 10
+                        deletedAt:
+                          description: >-
+                            Time the consent was revoked (soft-deleted). Null while the consent is live.
+                            getOauthConsents returns live consents only.
+                          nullable: true
+                          x-go-type: core.NullTime
+                          x-go-type-import:
+                            name: core
+                            path: github.com/meshery/schemas/models/core
+                          x-oapi-codegen-extra-tags:
+                            db: deleted_at
+                            json: deletedAt,omitempty
+                          x-order: 11
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                    description: OAuth consents included on this page of results.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+    delete:
+      x-internal:
+        - cloud
+      tags:
+        - OauthConsent_oauthConsents
+      summary: Revoke an OAuth consent
+      operationId: deleteOauthConsent
+      description: |
+        Revokes the signed-in user's consent for the client named by the
+        required `clientId` query parameter, and revokes every access and
+        refresh token that client holds for the user. The consents and tokens
+        of other users of the same client are untouched. Answers 204 with no
+        body. The consent is soft-deleted: its `deletedAt` is set and it is no
+        longer listed. For a session, and for a token naming its own client, a
+        client the user has no live consent for, whether it never existed, was
+        never consented to or was already revoked, is a 404.
+
+        Who may revoke depends on how the request is authenticated:
+        - A request authenticated by the person's signed-in session may revoke
+          any of that user's consents.
+        - A request authenticated by a token issued to an OAuth client may
+          revoke only the consent of the client the token was issued to. Naming
+          any other `clientId` answers 403 and changes nothing. The 403 does
+          not depend on whether that client has a live consent, so the answer
+          reveals nothing about another client.
+        - A personal API token, one not issued to an OAuth client, cannot revoke
+          a consent. Every such request answers 403 and changes nothing.
+      parameters:
+        - name: clientId
+          in: query
+          description: OAuth client ID of the consent to revoke. An identifier issued by the authorization server, not a UUID.
+          required: true
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 255
+      responses:
+        '204':
+          description: OAuth consent revoked
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
   /api/identity/oauth/consent-requests:
     get:
       x-internal:
@@ -86030,7 +86472,13 @@ paths:
                       x-go-type: UserToken
                       type: object
                       additionalProperties: false
-                      description: Represents a user-owned API token or OAuth session.
+                      description: >-
+                        Represents a user-owned API token or OAuth session. A token may carry two optional limits.
+                        `keychainIds` restricts which keys it may use, and `expiresAt` ends its life. A token with
+                        neither is unrestricted and never expires, which is what every token issued before these fields
+                        existed is. A token with neither limit set is unrestricted only when keychainScoped is false or
+                        absent. `keychainScoped` is the server's stored record of whether the token is limited to its
+                        keychains' keys. See the token scoping contract in docs/token-scoping-contract.md.
                       required:
                         - id
                         - owner
@@ -86134,6 +86582,66 @@ paths:
                             db: updated_at
                             json: updatedAt
                           x-order: 10
+                        keychainIds:
+                          type: array
+                          description: >-
+                            IDs of the keychains this token is limited to. A token is unrestricted only when
+                            keychainScoped is false or absent and keychainIds is empty or absent, so every token issued
+                            before this field existed keeps working unchanged. A non-empty list always makes the token
+                            scoped, whatever keychainScoped says. A scoped token may use only keys that belong to these
+                            keychains, intersected with the owner's keys in the organization of the request: the
+                            effective keys are never more than the user's own. A scoped token with an empty list holds
+                            no keys; it is not unrestricted. A server that stores keychainIds always stores
+                            keychainScoped true. Unknown keychain IDs are refused when the token is created.
+                          items:
+                            type: string
+                            format: uuid
+                            description: >-
+                              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID
+                              core definition is used across different schemas.
+                            x-go-type: uuid.UUID
+                            x-go-type-import:
+                              path: github.com/gofrs/uuid
+                          maxItems: 100
+                          uniqueItems: true
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: '-'
+                            json: keychainIds,omitempty
+                          x-order: 11
+                        expiresAt:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Time after which the token is no longer accepted. Absent or null means the token never
+                            expires, which is the case for every token issued before this field existed. Set when the
+                            token is created and not changed afterwards.
+                          nullable: true
+                          x-go-type: core.NullTime
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
+                          x-oapi-codegen-extra-tags:
+                            db: expires_at
+                            json: expiresAt,omitempty
+                          x-order: 12
+                        keychainScoped:
+                          type: boolean
+                          description: >-
+                            Whether the token is limited to the keys of its keychains. Set by the server at creation:
+                            true when the create has a non-empty `keychainIds`. A re-consent that narrows an
+                            unrestricted token (false) changes it to true; no other operation changes it, and it is
+                            never reset to false. It is read-only to clients. It is stored on the token and never reset,
+                            so a scoped token whose keychains have all been deleted stays scoped and holds no keys; a
+                            non-empty set of keychain mappings also always means scoped. A token is unrestricted only
+                            when keychainScoped is false or absent and keychainIds is empty or absent. A true flag is
+                            never unrestricted, even with an empty list.
+                          readOnly: true
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: keychain_scoped
+                            json: keychainScoped,omitempty
+                          x-order: 13
                     x-order: 1
                     description: Tokens returned on the current page.
                   totalCount:
@@ -86177,7 +86685,14 @@ paths:
         - token_tokens
       summary: Generate token
       operationId: generateToken
-      description: Generates a token for the authenticated user.
+      description: >-
+        Generates a token for the authenticated user. `name` and `purpose` are query parameters, as before. The optional
+        body (`TokenCreatePayload`) limits the token: `keychainIds` restricts it to the keys of those keychains, and
+        `expiresAt` ends its life. Omit the body, or both fields, for an unrestricted token that never expires. An
+        unknown keychain ID, an explicit empty `keychainIds`, an `expiresAt` in the past, or a keychain the caller
+        cannot see is refused with 400. A request authenticated with a keychain-scoped token (`keychainScoped` true, or
+        a non-empty `keychainIds`) answers 403 and mints nothing, whatever the body. A session or unrestricted token is
+        unchanged. See docs/token-scoping-contract.md.
       parameters:
         - name: name
           in: query
@@ -86195,6 +86710,45 @@ paths:
           schema:
             type: string
             maxLength: 500
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: >-
+                Client-settable limits for a token created with generateToken. Every field is optional; an empty body
+                creates an unrestricted token that never expires. The token's name and purpose are query parameters of
+                the operation, and its id, owner and timestamps are server-generated.
+              properties:
+                keychainIds:
+                  type: array
+                  description: >-
+                    IDs of the keychains the token is limited to. A non-empty list limits the token to the keys of those
+                    keychains, intersected with the owner's keys in the request's organization. An absent list creates
+                    an unrestricted token. An explicit empty list is refused with 400, so a selection that ends up empty
+                    never mints a full-access token. The server records keychainScoped from this list; clients do not
+                    set it.
+                  items:
+                    type: string
+                    format: uuid
+                    description: >-
+                      A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                      definition is used across different schemas.
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  minItems: 1
+                  maxItems: 100
+                  uniqueItems: true
+                  x-order: 1
+                expiresAt:
+                  type: string
+                  format: date-time
+                  nullable: true
+                  description: Time after which the token is no longer accepted. Absent or null means it never expires.
+                  x-order: 2
       responses:
         '201':
           description: Token generated
@@ -86215,7 +86769,13 @@ paths:
                       x-go-type: UserToken
                       type: object
                       additionalProperties: false
-                      description: Represents a user-owned API token or OAuth session.
+                      description: >-
+                        Represents a user-owned API token or OAuth session. A token may carry two optional limits.
+                        `keychainIds` restricts which keys it may use, and `expiresAt` ends its life. A token with
+                        neither is unrestricted and never expires, which is what every token issued before these fields
+                        existed is. A token with neither limit set is unrestricted only when keychainScoped is false or
+                        absent. `keychainScoped` is the server's stored record of whether the token is limited to its
+                        keychains' keys. See the token scoping contract in docs/token-scoping-contract.md.
                       required:
                         - id
                         - owner
@@ -86319,6 +86879,66 @@ paths:
                             db: updated_at
                             json: updatedAt
                           x-order: 10
+                        keychainIds:
+                          type: array
+                          description: >-
+                            IDs of the keychains this token is limited to. A token is unrestricted only when
+                            keychainScoped is false or absent and keychainIds is empty or absent, so every token issued
+                            before this field existed keeps working unchanged. A non-empty list always makes the token
+                            scoped, whatever keychainScoped says. A scoped token may use only keys that belong to these
+                            keychains, intersected with the owner's keys in the organization of the request: the
+                            effective keys are never more than the user's own. A scoped token with an empty list holds
+                            no keys; it is not unrestricted. A server that stores keychainIds always stores
+                            keychainScoped true. Unknown keychain IDs are refused when the token is created.
+                          items:
+                            type: string
+                            format: uuid
+                            description: >-
+                              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID
+                              core definition is used across different schemas.
+                            x-go-type: uuid.UUID
+                            x-go-type-import:
+                              path: github.com/gofrs/uuid
+                          maxItems: 100
+                          uniqueItems: true
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: '-'
+                            json: keychainIds,omitempty
+                          x-order: 11
+                        expiresAt:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Time after which the token is no longer accepted. Absent or null means the token never
+                            expires, which is the case for every token issued before this field existed. Set when the
+                            token is created and not changed afterwards.
+                          nullable: true
+                          x-go-type: core.NullTime
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
+                          x-oapi-codegen-extra-tags:
+                            db: expires_at
+                            json: expiresAt,omitempty
+                          x-order: 12
+                        keychainScoped:
+                          type: boolean
+                          description: >-
+                            Whether the token is limited to the keys of its keychains. Set by the server at creation:
+                            true when the create has a non-empty `keychainIds`. A re-consent that narrows an
+                            unrestricted token (false) changes it to true; no other operation changes it, and it is
+                            never reset to false. It is read-only to clients. It is stored on the token and never reset,
+                            so a scoped token whose keychains have all been deleted stays scoped and holds no keys; a
+                            non-empty set of keychain mappings also always means scoped. A token is unrestricted only
+                            when keychainScoped is false or absent and keychainIds is empty or absent. A true flag is
+                            never unrestricted, even with an empty list.
+                          readOnly: true
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: keychain_scoped
+                            json: keychainScoped,omitempty
+                          x-order: 13
                     x-order: 1
                     description: Tokens returned on the current page.
                   totalCount:
@@ -86351,6 +86971,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -86403,7 +87029,13 @@ paths:
                       x-go-type: UserToken
                       type: object
                       additionalProperties: false
-                      description: Represents a user-owned API token or OAuth session.
+                      description: >-
+                        Represents a user-owned API token or OAuth session. A token may carry two optional limits.
+                        `keychainIds` restricts which keys it may use, and `expiresAt` ends its life. A token with
+                        neither is unrestricted and never expires, which is what every token issued before these fields
+                        existed is. A token with neither limit set is unrestricted only when keychainScoped is false or
+                        absent. `keychainScoped` is the server's stored record of whether the token is limited to its
+                        keychains' keys. See the token scoping contract in docs/token-scoping-contract.md.
                       required:
                         - id
                         - owner
@@ -86507,6 +87139,66 @@ paths:
                             db: updated_at
                             json: updatedAt
                           x-order: 10
+                        keychainIds:
+                          type: array
+                          description: >-
+                            IDs of the keychains this token is limited to. A token is unrestricted only when
+                            keychainScoped is false or absent and keychainIds is empty or absent, so every token issued
+                            before this field existed keeps working unchanged. A non-empty list always makes the token
+                            scoped, whatever keychainScoped says. A scoped token may use only keys that belong to these
+                            keychains, intersected with the owner's keys in the organization of the request: the
+                            effective keys are never more than the user's own. A scoped token with an empty list holds
+                            no keys; it is not unrestricted. A server that stores keychainIds always stores
+                            keychainScoped true. Unknown keychain IDs are refused when the token is created.
+                          items:
+                            type: string
+                            format: uuid
+                            description: >-
+                              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID
+                              core definition is used across different schemas.
+                            x-go-type: uuid.UUID
+                            x-go-type-import:
+                              path: github.com/gofrs/uuid
+                          maxItems: 100
+                          uniqueItems: true
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: '-'
+                            json: keychainIds,omitempty
+                          x-order: 11
+                        expiresAt:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Time after which the token is no longer accepted. Absent or null means the token never
+                            expires, which is the case for every token issued before this field existed. Set when the
+                            token is created and not changed afterwards.
+                          nullable: true
+                          x-go-type: core.NullTime
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
+                          x-oapi-codegen-extra-tags:
+                            db: expires_at
+                            json: expiresAt,omitempty
+                          x-order: 12
+                        keychainScoped:
+                          type: boolean
+                          description: >-
+                            Whether the token is limited to the keys of its keychains. Set by the server at creation:
+                            true when the create has a non-empty `keychainIds`. A re-consent that narrows an
+                            unrestricted token (false) changes it to true; no other operation changes it, and it is
+                            never reset to false. It is read-only to clients. It is stored on the token and never reset,
+                            so a scoped token whose keychains have all been deleted stays scoped and holds no keys; a
+                            non-empty set of keychain mappings also always means scoped. A token is unrestricted only
+                            when keychainScoped is false or absent and keychainIds is empty or absent. A true flag is
+                            never unrestricted, even with an empty list.
+                          readOnly: true
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: keychain_scoped
+                            json: keychainScoped,omitempty
+                          x-order: 13
                     x-order: 1
                     description: Tokens returned on the current page.
                   totalCount:
@@ -86582,7 +87274,13 @@ paths:
               schema:
                 type: object
                 additionalProperties: false
-                description: Represents a user-owned API token or OAuth session.
+                description: >-
+                  Represents a user-owned API token or OAuth session. A token may carry two optional limits.
+                  `keychainIds` restricts which keys it may use, and `expiresAt` ends its life. A token with neither is
+                  unrestricted and never expires, which is what every token issued before these fields existed is. A
+                  token with neither limit set is unrestricted only when keychainScoped is false or absent.
+                  `keychainScoped` is the server's stored record of whether the token is limited to its keychains' keys.
+                  See the token scoping contract in docs/token-scoping-contract.md.
                 required:
                   - id
                   - owner
@@ -86686,6 +87384,65 @@ paths:
                       db: updated_at
                       json: updatedAt
                     x-order: 10
+                  keychainIds:
+                    type: array
+                    description: >-
+                      IDs of the keychains this token is limited to. A token is unrestricted only when keychainScoped is
+                      false or absent and keychainIds is empty or absent, so every token issued before this field
+                      existed keeps working unchanged. A non-empty list always makes the token scoped, whatever
+                      keychainScoped says. A scoped token may use only keys that belong to these keychains, intersected
+                      with the owner's keys in the organization of the request: the effective keys are never more than
+                      the user's own. A scoped token with an empty list holds no keys; it is not unrestricted. A server
+                      that stores keychainIds always stores keychainScoped true. Unknown keychain IDs are refused when
+                      the token is created.
+                    items:
+                      type: string
+                      format: uuid
+                      description: >-
+                        A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                        definition is used across different schemas.
+                      x-go-type: uuid.UUID
+                      x-go-type-import:
+                        path: github.com/gofrs/uuid
+                    maxItems: 100
+                    uniqueItems: true
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: '-'
+                      json: keychainIds,omitempty
+                    x-order: 11
+                  expiresAt:
+                    type: string
+                    format: date-time
+                    description: >-
+                      Time after which the token is no longer accepted. Absent or null means the token never expires,
+                      which is the case for every token issued before this field existed. Set when the token is created
+                      and not changed afterwards.
+                    nullable: true
+                    x-go-type: core.NullTime
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
+                    x-oapi-codegen-extra-tags:
+                      db: expires_at
+                      json: expiresAt,omitempty
+                    x-order: 12
+                  keychainScoped:
+                    type: boolean
+                    description: >-
+                      Whether the token is limited to the keys of its keychains. Set by the server at creation: true
+                      when the create has a non-empty `keychainIds`. A re-consent that narrows an unrestricted token
+                      (false) changes it to true; no other operation changes it, and it is never reset to false. It is
+                      read-only to clients. It is stored on the token and never reset, so a scoped token whose keychains
+                      have all been deleted stays scoped and holds no keys; a non-empty set of keychain mappings also
+                      always means scoped. A token is unrestricted only when keychainScoped is false or absent and
+                      keychainIds is empty or absent. A true flag is never unrestricted, even with an empty list.
+                    readOnly: true
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: keychain_scoped
+                      json: keychainScoped,omitempty
+                    x-order: 13
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -86712,7 +87469,10 @@ paths:
         - token_tokens
       summary: Issue indefinite lifetime token
       operationId: issueIndefiniteLifetimeToken
-      description: Creates a non-expiring user token for provider admin use cases.
+      description: >-
+        Creates a non-expiring user token for provider admin use cases. A request authenticated with a keychain-scoped
+        token (`keychainScoped` true, or a non-empty `keychainIds`) answers 403 and mints nothing, whatever the query. A
+        session or unrestricted token is unchanged. See docs/token-scoping-contract.md.
       parameters:
         - name: userId
           in: query
@@ -86754,7 +87514,13 @@ paths:
                       x-go-type: UserToken
                       type: object
                       additionalProperties: false
-                      description: Represents a user-owned API token or OAuth session.
+                      description: >-
+                        Represents a user-owned API token or OAuth session. A token may carry two optional limits.
+                        `keychainIds` restricts which keys it may use, and `expiresAt` ends its life. A token with
+                        neither is unrestricted and never expires, which is what every token issued before these fields
+                        existed is. A token with neither limit set is unrestricted only when keychainScoped is false or
+                        absent. `keychainScoped` is the server's stored record of whether the token is limited to its
+                        keychains' keys. See the token scoping contract in docs/token-scoping-contract.md.
                       required:
                         - id
                         - owner
@@ -86858,6 +87624,66 @@ paths:
                             db: updated_at
                             json: updatedAt
                           x-order: 10
+                        keychainIds:
+                          type: array
+                          description: >-
+                            IDs of the keychains this token is limited to. A token is unrestricted only when
+                            keychainScoped is false or absent and keychainIds is empty or absent, so every token issued
+                            before this field existed keeps working unchanged. A non-empty list always makes the token
+                            scoped, whatever keychainScoped says. A scoped token may use only keys that belong to these
+                            keychains, intersected with the owner's keys in the organization of the request: the
+                            effective keys are never more than the user's own. A scoped token with an empty list holds
+                            no keys; it is not unrestricted. A server that stores keychainIds always stores
+                            keychainScoped true. Unknown keychain IDs are refused when the token is created.
+                          items:
+                            type: string
+                            format: uuid
+                            description: >-
+                              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID
+                              core definition is used across different schemas.
+                            x-go-type: uuid.UUID
+                            x-go-type-import:
+                              path: github.com/gofrs/uuid
+                          maxItems: 100
+                          uniqueItems: true
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: '-'
+                            json: keychainIds,omitempty
+                          x-order: 11
+                        expiresAt:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Time after which the token is no longer accepted. Absent or null means the token never
+                            expires, which is the case for every token issued before this field existed. Set when the
+                            token is created and not changed afterwards.
+                          nullable: true
+                          x-go-type: core.NullTime
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
+                          x-oapi-codegen-extra-tags:
+                            db: expires_at
+                            json: expiresAt,omitempty
+                          x-order: 12
+                        keychainScoped:
+                          type: boolean
+                          description: >-
+                            Whether the token is limited to the keys of its keychains. Set by the server at creation:
+                            true when the create has a non-empty `keychainIds`. A re-consent that narrows an
+                            unrestricted token (false) changes it to true; no other operation changes it, and it is
+                            never reset to false. It is read-only to clients. It is stored on the token and never reset,
+                            so a scoped token whose keychains have all been deleted stays scoped and holds no keys; a
+                            non-empty set of keychain mappings also always means scoped. A token is unrestricted only
+                            when keychainScoped is false or absent and keychainIds is empty or absent. A true flag is
+                            never unrestricted, even with an empty list.
+                          readOnly: true
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: keychain_scoped
+                            json: keychainScoped,omitempty
+                          x-order: 13
                     x-order: 1
                     description: Tokens returned on the current page.
                   totalCount:
@@ -86894,6 +87720,12 @@ paths:
             text/plain:
               schema:
                 type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '500':
           description: Internal server error
           content:
@@ -86916,7 +87748,9 @@ paths:
         authorization code that expires after 60 seconds, bound to the user, the client name and the PKCE code
         challenge, and redirects the browser to http://127.0.0.1:{port}/callback with code and state query parameters.
         Only the 127.0.0.1 loopback IP literal is ever used; no token or cookie is placed in the redirect; no consent
-        page is shown.
+        page is shown. A request authenticated with a keychain-scoped token (`keychainScoped` true, or a non-empty
+        `keychainIds`) answers 403 and mints nothing, including no authorization code, whatever the query. A session or
+        unrestricted token is unchanged. See docs/token-scoping-contract.md.
       parameters:
         - name: clientName
           in: query
@@ -87064,7 +87898,13 @@ paths:
               schema:
                 type: object
                 additionalProperties: false
-                description: Represents a user-owned API token or OAuth session.
+                description: >-
+                  Represents a user-owned API token or OAuth session. A token may carry two optional limits.
+                  `keychainIds` restricts which keys it may use, and `expiresAt` ends its life. A token with neither is
+                  unrestricted and never expires, which is what every token issued before these fields existed is. A
+                  token with neither limit set is unrestricted only when keychainScoped is false or absent.
+                  `keychainScoped` is the server's stored record of whether the token is limited to its keychains' keys.
+                  See the token scoping contract in docs/token-scoping-contract.md.
                 required:
                   - id
                   - owner
@@ -87168,6 +88008,65 @@ paths:
                       db: updated_at
                       json: updatedAt
                     x-order: 10
+                  keychainIds:
+                    type: array
+                    description: >-
+                      IDs of the keychains this token is limited to. A token is unrestricted only when keychainScoped is
+                      false or absent and keychainIds is empty or absent, so every token issued before this field
+                      existed keeps working unchanged. A non-empty list always makes the token scoped, whatever
+                      keychainScoped says. A scoped token may use only keys that belong to these keychains, intersected
+                      with the owner's keys in the organization of the request: the effective keys are never more than
+                      the user's own. A scoped token with an empty list holds no keys; it is not unrestricted. A server
+                      that stores keychainIds always stores keychainScoped true. Unknown keychain IDs are refused when
+                      the token is created.
+                    items:
+                      type: string
+                      format: uuid
+                      description: >-
+                        A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                        definition is used across different schemas.
+                      x-go-type: uuid.UUID
+                      x-go-type-import:
+                        path: github.com/gofrs/uuid
+                    maxItems: 100
+                    uniqueItems: true
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: '-'
+                      json: keychainIds,omitempty
+                    x-order: 11
+                  expiresAt:
+                    type: string
+                    format: date-time
+                    description: >-
+                      Time after which the token is no longer accepted. Absent or null means the token never expires,
+                      which is the case for every token issued before this field existed. Set when the token is created
+                      and not changed afterwards.
+                    nullable: true
+                    x-go-type: core.NullTime
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
+                    x-oapi-codegen-extra-tags:
+                      db: expires_at
+                      json: expiresAt,omitempty
+                    x-order: 12
+                  keychainScoped:
+                    type: boolean
+                    description: >-
+                      Whether the token is limited to the keys of its keychains. Set by the server at creation: true
+                      when the create has a non-empty `keychainIds`. A re-consent that narrows an unrestricted token
+                      (false) changes it to true; no other operation changes it, and it is never reset to false. It is
+                      read-only to clients. It is stored on the token and never reset, so a scoped token whose keychains
+                      have all been deleted stays scoped and holds no keys; a non-empty set of keychain mappings also
+                      always means scoped. A token is unrestricted only when keychainScoped is false or absent and
+                      keychainIds is empty or absent. A true flag is never unrestricted, even with an empty list.
+                    readOnly: true
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: keychain_scoped
+                      json: keychainScoped,omitempty
+                    x-order: 13
         '400':
           description: Invalid request body or request param
           content:
