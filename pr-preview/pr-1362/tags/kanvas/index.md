@@ -1,4 +1,0 @@
-# Kanvas
-
-
-<no value>
