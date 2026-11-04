@@ -1,0 +1,16 @@
+# v1.0.208
+
+date: 2026-07-27
+
+
+
+- fix(auth): close the ref open redirect in the shared post-auth redirect guard @jijillery (#5787)
+- feat(ui): migrate action buttons and icons to PermissionShield (Pattern A/B) @rishiraj38 (#5772)
+- fix: workspace table row click TypeError on name extraction @rishiraj38 (#5773)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @jijillery, @marblom007, @rishiraj38, @simihablo and @yi-nuo426
+
+

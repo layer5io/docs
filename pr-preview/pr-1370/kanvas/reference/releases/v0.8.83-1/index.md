@@ -1,0 +1,17 @@
+# v0.8.83-1
+
+date: 2025-05-20
+
+
+
+## What's New
+## 🔤 General
+- Fix: Navbar Design Name Input @vr-varad (#3677)
+- add custom textarea widget @aabidsofi19 (#3679)
+- close pamela on tapping on edge @aabidsofi19 (#3678)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io, @leecalcote and @vr-varad
+

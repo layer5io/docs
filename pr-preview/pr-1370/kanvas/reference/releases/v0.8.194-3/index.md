@@ -1,0 +1,30 @@
+# v0.8.194-3
+
+date: 2026-01-01
+
+
+
+## What's New
+## 🔤 General
+## 🕸️ Operator
+
+- chore: golangci-lint config @jamieplu (#3967)
+
+## 🐛 Bug Fixes
+
+- fix deny selector in feasibility evaluation @aabidsofi19 (#3969)
+
+## 🧰 Maintenance
+
+- docs/statemachines @jamieplu (#3968)
+
+## 📖 Documentation
+
+- Analysis of XState Actors implementation in Kanvas @[copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent) (#3959)
+- Docs: State Machines in Kanvas @jamieplu (#3963)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @hamza-mohd, @jamieplu, @l5io, @leecalcote and [copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent)
+

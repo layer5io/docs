@@ -1,0 +1,20 @@
+# v0.8.406
+
+date: 2025-08-27
+
+
+
+## 💻 Server
+
+- Academy billing @aabidsofi19 (#4006)
+
+## 🦴 Infrastructure
+
+- Academy billing @aabidsofi19 (#4006)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

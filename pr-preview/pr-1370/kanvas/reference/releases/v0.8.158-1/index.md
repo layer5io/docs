@@ -1,0 +1,17 @@
+# v0.8.158-1
+
+date: 2025-11-12
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- add support for sharing and loading viewport @aabidsofi19 (#3883)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and Aabid
+

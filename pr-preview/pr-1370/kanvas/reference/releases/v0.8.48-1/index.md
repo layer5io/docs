@@ -1,0 +1,17 @@
+# v0.8.48-1
+
+date: 2025-03-11
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- [Chore]: Bump Sistent v0.14.166 @l5io (#3499)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+

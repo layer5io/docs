@@ -1,0 +1,21 @@
+# v0.8.50-5
+
+date: 2025-03-19
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix disable styling of share button group based on permission @amitamrutiya (#3509)
+
+## 🐛 Bug Fixes
+
+- fix disable styling of share button group based on permission @amitamrutiya (#3509)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+

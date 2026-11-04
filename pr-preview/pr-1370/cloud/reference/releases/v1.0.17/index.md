@@ -1,0 +1,15 @@
+# v1.0.17
+
+date: 2026-04-21
+
+
+
+- chore(share): consume canonical @meshery/schemas v1.0.8 ContentSharePayload @jamieplu (#5056)
+- [server] Fix 500 on user profile Views tab for users with zero views @jamieplu (#5057)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@jamieplu
+
+

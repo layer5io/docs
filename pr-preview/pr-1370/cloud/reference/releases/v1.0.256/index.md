@@ -1,0 +1,17 @@
+# v1.0.256
+
+date: 2026-09-09
+
+
+
+- feat(authz): grant Organization Admins user administration, scoped to their own organization @marblom007 (#6080)
+- fix(ui): an unreadable identity-provider list no longer reads as \using the defaults\, and cannot be bulk-deleted @carlosriosilva (#6081)
+- fix(ui): stop the global auth CTA rule painting the login password eye @miacycle (#6078)
+- fix(ui): restore the per-field information affordance on every RJSF form @jijillery (#6072)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @carlosriosilva, @fitzergerald, @hortison, @jijillery, @leecalcote, @marblom007, @miacycle and @ritzorama
+
+

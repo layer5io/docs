@@ -1,0 +1,15 @@
+# v1.0.62
+
+date: 2026-05-07
+
+
+
+- test(auth): Playwright e2e specs for every auth flow (main domain + custom-domain org) @leecalcote (#5230)
+- fix: migrate /error page from Go template to React (AuthLayout + carousel) @yi-nuo426 (#5231)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @winkletinkle and @yi-nuo426
+
+

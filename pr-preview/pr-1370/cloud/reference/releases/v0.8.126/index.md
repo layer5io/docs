@@ -1,0 +1,22 @@
+# v0.8.126
+
+date: 2025-01-22
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Enhance registration flow to prevent spam accounts and improve name validation @leecalcote (#3131)
+
+## 💻 Server
+
+- Enhance registration flow to prevent spam accounts and improve name validation @leecalcote (#3131)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

@@ -1,0 +1,14 @@
+# v0.9.6
+
+date: 2026-03-23
+
+
+
+- Fix: Split schema imports @hortison (#4921)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @l5io, @leecalcote and @yi-nuo426
+
+

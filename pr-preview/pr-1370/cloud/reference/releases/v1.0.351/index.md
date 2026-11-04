@@ -1,0 +1,18 @@
+# v1.0.351
+
+date: 2026-11-02
+
+
+
+## ⬆️ Dependencies
+
+- chore(deps): bump golang.org/x/time from 0.15.0 to 0.16.0 @dependabot (#6378)
+- chore(deps-dev): bump typescript from 6.0.3 to 7.0.2 in /ui @dependabot (#6379)
+- chore(deps-dev): bump prettier from 3.9.9 to 3.9.10 in /ui @dependabot (#6370)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@dependabot, @leecalcote and @yi-nuo426
+
+

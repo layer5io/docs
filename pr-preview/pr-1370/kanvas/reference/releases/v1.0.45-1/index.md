@@ -1,0 +1,15 @@
+# v1.0.45-1
+
+date: 2026-06-21
+
+
+
+## What's New
+## 🔤 General
+- [uuid/schemas] Sync meshery-extensions to schemas v1.3.13 (graphql gofrs/uuid + UI RTK bump) @ritzorama (#4269)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @fitzergerald, @l5io and @ritzorama
+

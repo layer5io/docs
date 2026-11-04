@@ -1,0 +1,22 @@
+# v0.8.221
+
+date: 2025-05-21
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- Collab ext fix @aabidsofi19 (#3518)
+
+## 🐛 Bug Fixes
+
+- Collab ext fix @aabidsofi19 (#3518)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and MUzairS15
+
+

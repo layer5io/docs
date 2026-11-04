@@ -1,0 +1,20 @@
+# v0.8.155
+
+date: 2025-02-21
+
+
+
+## What's New
+## 🔤 General
+- chore: include domain-spam list in Docker image @leecalcote (#3211)
+
+## 💻 Server
+
+- remove nil pointer and init spam checker to zero value @aabidsofi19 (#3212)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

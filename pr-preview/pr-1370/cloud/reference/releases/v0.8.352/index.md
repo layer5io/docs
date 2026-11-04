@@ -1,0 +1,32 @@
+# v0.8.352
+
+date: 2025-08-03
+
+
+
+## What's New
+### 🔤 General
+## 🖥 Cloud UI
+
+- Bump webpack from 5.98.0 to 5.101.0 in /ui @dependabot (#3852)
+- System Version Widget: Refine link to releases page @leecalcote (#3867)
+
+## 🦴 Infrastructure
+
+- System Version Widget: Refine link to releases page @leecalcote (#3867)
+
+## 🧰 Maintenance
+
+- System Version Widget: Refine link to releases page @leecalcote (#3867)
+
+## ⬆️ Dependencies
+
+- Bump webpack from 5.98.0 to 5.101.0 in /ui @dependabot (#3852)
+- Bump github.com/fsnotify/fsnotify from 1.8.0 to 1.9.0 @dependabot (#3853)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@dependabot, @l5io, @leecalcote and @ritzorama
+
+

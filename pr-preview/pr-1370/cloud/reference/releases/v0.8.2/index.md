@@ -1,0 +1,16 @@
+# v0.8.2
+
+date: 2024-08-29
+
+
+
+## What's New
+**General**
+- [Learning Path] Interpreting Designs  @Alero-Awani (#2738)
+
+## Contributors
+
+Thank you to our contributors for making this release possible:
+@Alero-Awani, @MUzairS15, @l5io and @leecalcote
+
+

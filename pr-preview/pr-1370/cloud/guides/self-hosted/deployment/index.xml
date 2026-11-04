@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Deploying Layer5 Cloud on Layer5 Documentation</title><link>/pr-preview/pr-1370/cloud/guides/self-hosted/deployment/</link><description>Recent content in Deploying Layer5 Cloud on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/pr-preview/pr-1370/cloud/guides/self-hosted/deployment/index.xml" rel="self" type="application/rss+xml"/><item><title>Customizing Layer5 Cloud Deployment with Helm</title><link>/pr-preview/pr-1370/cloud/guides/self-hosted/deployment/helm-chart-values/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1370/cloud/guides/self-hosted/deployment/helm-chart-values/</guid><description>&lt;h2 id="requirements" class="heading-link"&gt;
+ Requirements
+ &lt;a href="#requirements" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;layer5-cloud&lt;/code&gt; chart installs the Layer5 Cloud server and, as subcharts, Kratos and Hydra. The defaults below are those of chart version 0.2.0, which ships with Layer5 Cloud v1.0.278. Run &lt;code&gt;helm show values layer5/layer5-cloud&lt;/code&gt; to print the defaults of the version you install. For the install procedure, see &lt;a href="/pr-preview/pr-1370/cloud/guides/self-hosted/deployment/"&gt;Deploying Layer5 Cloud&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id="values" class="heading-link"&gt;
+ Values
+ &lt;a href="#values" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;The chart writes &lt;code&gt;env.*&lt;/code&gt; values into one ConfigMap and one Secret, and the server pod reads both as environment variables. Sensitive values go to the Secret. Any change to either rolls the server pods.&lt;/p&gt;</description></item><item><title>Client IP Address Resolution</title><link>/pr-preview/pr-1370/cloud/guides/self-hosted/deployment/client-ip-resolution/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/pr-preview/pr-1370/cloud/guides/self-hosted/deployment/client-ip-resolution/</guid><description>&lt;div class="alert alert-custom" style="border-color: #3772ff;" role="alert"&gt;
+ &lt;h4 class="alert-heading" style="color: #3772ff;"&gt;Release availability&lt;/h4&gt;
+ 
+ These settings apply to Layer5 Cloud releases that include system-wide client IP resolution. Earlier releases do not read the &lt;code&gt;CLIENT_IP_*&lt;/code&gt; settings.
+ 
+&lt;/div&gt;
+
+
+&lt;p&gt;Layer5 Cloud determines a single client address for every request it serves. That one address is used everywhere a caller is identified by address:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rate limits that key on the caller&amp;rsquo;s network (for example anonymous Meshery Server handshakes and OAuth dynamic client registration),&lt;/li&gt;
+&lt;li&gt;the access log,&lt;/li&gt;
+&lt;li&gt;the IP block list,&lt;/li&gt;
+&lt;li&gt;the per-address budgets for diagnostics and support submissions,&lt;/li&gt;
+&lt;li&gt;the client address Cloud forwards to its identity services (Ory Hydra and Kratos).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The setting is system-wide. It applies to every route, not to one feature, and it is independent of whether you use a CDN at all.&lt;/p&gt;</description></item></channel></rss>

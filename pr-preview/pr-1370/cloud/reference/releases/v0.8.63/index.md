@@ -1,0 +1,27 @@
+# v0.8.63
+
+date: 2024-11-08
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Add box shadow to brand-info for enhanced visual effect @leecalcote (#2943)
+
+## 🦴 Infrastructure
+
+- Implement functions to clean up anonymous user records in the database @leecalcote (#2945)
+- Add \Import Design\ key to Anonymous User Edit\ keychain @leecalcote (#2944)
+
+## 📖 Documentation
+
+- Implement functions to clean up anonymous user records in the database @leecalcote (#2945)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

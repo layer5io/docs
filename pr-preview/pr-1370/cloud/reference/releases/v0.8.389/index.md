@@ -1,0 +1,16 @@
+# v0.8.389
+
+date: 2025-08-16
+
+
+
+## 🖥 Cloud UI
+
+- fix certificate theming @aabidsofi19 (#3967)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

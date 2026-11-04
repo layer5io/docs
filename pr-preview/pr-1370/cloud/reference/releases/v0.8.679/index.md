@@ -1,0 +1,14 @@
+# v0.8.679
+
+date: 2026-03-13
+
+
+
+- chore: update UI to Next.js 15 @Rajesh-Nagarajan-11 (#4883)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@CodexRaunak, @Rajesh-Nagarajan-11, @l5io, @meshery-ci and @yi-nuo426
+
+

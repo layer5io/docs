@@ -1,0 +1,16 @@
+# v0.8.416
+
+date: 2025-08-29
+
+
+
+## 🦴 Infrastructure
+
+- Remove Kratos sub-charts @leecalcote (#4042)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

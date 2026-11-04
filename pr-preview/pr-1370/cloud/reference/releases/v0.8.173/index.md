@@ -1,0 +1,30 @@
+# v0.8.173
+
+date: 2025-03-06
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- remove amit logs @aabidsofi19 (#3287)
+- [Sign-in / Sign-up] New \program\ page; add ws-heroes\ route  @FaheemOnHub (#3276)
+- Fix Role assignment issues @aabidsofi19 (#3285)
+- fix: search is not working in users table @amitamrutiya (#3284)
+
+## 💻 Server
+
+- [Sign-in / Sign-up] New \program\ page; add ws-heroes\ route  @FaheemOnHub (#3276)
+- chore: improve logging for user roles, user creation @leecalcote (#3286)
+
+## 🐛 Bug Fixes
+
+- fix: search is not working in users table @amitamrutiya (#3284)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+
+

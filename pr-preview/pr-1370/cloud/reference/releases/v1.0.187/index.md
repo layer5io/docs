@@ -1,0 +1,17 @@
+# v1.0.187
+
+date: 2026-07-14
+
+
+
+## 📚 Academy
+
+- Tata Consulting v2.1.11 content update @l5io (#5716)
+- Tata Consulting v2.1.10 content update @l5io (#5715)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io
+
+

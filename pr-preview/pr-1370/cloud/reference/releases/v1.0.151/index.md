@@ -1,0 +1,16 @@
+# v1.0.151
+
+date: 2026-06-23
+
+
+
+- [Chore]: Update to Sistent v0.21.23 @l5io (#5568)
+- refactor: adopt meshery/schemas#947 — schema-owned membership types + free-form roleNames @leecalcote (#5563)
+- docs(runbook): add \Cutting a Layer5 Cloud Release\ runbook @leecalcote (#5567)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

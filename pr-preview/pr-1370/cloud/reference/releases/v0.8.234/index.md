@@ -1,0 +1,19 @@
+# v0.8.234
+
+date: 2025-06-10
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- feat: enhance CloudHead component to utilize organization from Redux store @leecalcote (#3590)
+- fix: include isReadOnly in dependency array of useEffect for InfoModal @leecalcote (#3589)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and MUzairS15
+
+

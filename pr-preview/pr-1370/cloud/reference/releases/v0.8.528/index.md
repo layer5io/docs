@@ -1,0 +1,22 @@
+# v0.8.528
+
+date: 2025-10-21
+
+
+
+## 🖥 Cloud UI
+
+- fix test prerequisite permalinks @aabidsofi19 (#4416)
+- fix verify at link @aabidsofi19 (#4415)
+
+## 🐛 Bug Fixes
+
+- fix test prerequisite permalinks @aabidsofi19 (#4416)
+- fix verify at link @aabidsofi19 (#4415)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

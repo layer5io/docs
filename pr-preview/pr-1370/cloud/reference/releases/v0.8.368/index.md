@@ -1,0 +1,21 @@
+# v0.8.368
+
+date: 2025-08-09
+
+
+
+### 🔤 General
+## 💻 Server
+
+- Identity: Skip kanvas.new authentication in \development\ environment @leecalcote (#3914)
+
+## 🦴 Infrastructure
+
+- Identity: Skip kanvas.new authentication in \development\ environment @leecalcote (#3914)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

@@ -1,0 +1,21 @@
+# v0.8.37-3
+
+date: 2025-02-25
+
+
+
+## What's New
+## 🔤 General
+## 🤼 Collaboration
+
+- Fix collaborator more Icon big issue @amitamrutiya (#3463)
+
+## 🐛 Bug Fixes
+
+- Fix collaborator more Icon big issue @amitamrutiya (#3463)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+

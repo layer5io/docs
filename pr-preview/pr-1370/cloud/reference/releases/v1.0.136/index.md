@@ -1,0 +1,14 @@
+# v1.0.136
+
+date: 2026-06-17
+
+
+
+- fix(auth): keep CreateUser OIDC-safe so the re-activated webhook doesn't break Google/GitHub sign-in @leecalcote (#5492)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @pontusringblom
+
+

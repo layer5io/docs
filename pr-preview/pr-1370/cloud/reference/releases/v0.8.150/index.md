@@ -1,0 +1,26 @@
+# v0.8.150
+
+date: 2025-02-19
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [kratos] add validation hook before User Creation @vishalvivekm (#3180)
+
+## 💻 Server
+
+- [kratos] add validation hook before User Creation @vishalvivekm (#3180)
+
+## 🐛 Bug Fixes
+
+- [kratos] add validation hook before User Creation @vishalvivekm (#3180)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@vishalvivekm
+
+

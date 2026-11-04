@@ -1,0 +1,15 @@
+# v1.0.55-1
+
+date: 2026-07-07
+
+
+
+## What's New
+## 🔤 General
+- [graphql] Fix build break from removed User.UserId field @leecalcote (#4286)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@fitzergerald, @l5io and @leecalcote
+

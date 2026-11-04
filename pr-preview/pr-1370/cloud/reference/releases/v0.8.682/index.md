@@ -1,0 +1,14 @@
+# v0.8.682
+
+date: 2026-03-19
+
+
+
+- meshkit v0.8.70 @fitzergerald (#4895)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@fitzergerald, @l5io and @yi-nuo426
+
+

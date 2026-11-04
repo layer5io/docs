@@ -1,0 +1,19 @@
+# v0.8.458
+
+date: 2025-09-22
+
+
+
+- Update authenticated email send test endpoint URL in debugging guide @leecalcote (#4171)
+
+## 💻 Server
+
+- Migrated keys, keychains, credentials, kratos_identity DAOs to MeshKit @leecalcote (#4173)
+- feat: Update error codes and messages for team management and account plans @leecalcote (#4172)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+
