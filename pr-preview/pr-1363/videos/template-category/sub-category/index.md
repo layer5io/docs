@@ -1,4 +1,0 @@
-# Sub Category
-
-
-<no value>

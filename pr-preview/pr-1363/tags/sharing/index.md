@@ -1,4 +1,0 @@
-# Sharing
-
-
-<no value>
