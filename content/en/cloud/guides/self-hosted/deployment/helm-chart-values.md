@@ -91,6 +91,7 @@ The container has a liveness probe on `/healthz` and readiness and startup probe
 | `webhookHelpAndSupport` | not set | URL that receives support requests. |
 | `webhookKanvasEntitlement` | not set | URL that receives Kanvas entitlement events. |
 | `webhookSignupRequest` | not set | URL that receives signup decisions. |
+| `clientIpTrustedProxyCidrs`, `clientIpCdnProvider`, `clientIpCdnRangesUrl`, `clientIpCdnRangesRefresh`, `clientIpCdnCidrs` | `""` (trust only the TCP peer, no CDN) | How the server determines each caller's address behind reverse proxies and a CDN such as Cloudflare. See [Client IP Address Resolution]({{< ref "cloud/guides/self-hosted/deployment/client-ip-resolution.md" >}}). |
 
 ### Mail (`smtp`)
 
