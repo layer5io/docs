@@ -1962,7 +1962,14 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;/h2&gt;
 &lt;p&gt;A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider&amp;rsquo;s support intake:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
 &lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
-&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.357</title><link>/cloud/reference/releases/v1.0.357/</link><pubDate>Thu, 05 Nov 2026 07:56:37 +0000</pubDate><guid>/cloud/reference/releases/v1.0.357/</guid><description>&lt;ul&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.359</title><link>/cloud/reference/releases/v1.0.359/</link><pubDate>Thu, 05 Nov 2026 14:24:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.359/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+ What&amp;rsquo;s Changed
+ &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;feat(handlers): auto-assign Blowhorn Free to tenant organizations by @CodeAhmedJamil in &lt;a href="https://github.com/layer5io/meshery-cloud/pull/6417"&gt;https://github.com/layer5io/meshery-cloud/pull/6417&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Full Changelog&lt;/strong&gt;: &lt;a href="https://github.com/layer5io/meshery-cloud/compare/v1.0.358...v1.0.359"&gt;https://github.com/layer5io/meshery-cloud/compare/v1.0.358...v1.0.359&lt;/a&gt;&lt;/p&gt;</description></item><item><title>v1.0.357</title><link>/cloud/reference/releases/v1.0.357/</link><pubDate>Thu, 05 Nov 2026 07:56:37 +0000</pubDate><guid>/cloud/reference/releases/v1.0.357/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(orgs): fall back empty child logo slots to parent (#6410) @leecalcote (#6414)&lt;/li&gt;
 &lt;li&gt;feat(internal-site): let trusted networks reach internal.layer5.io without signing in @jamieplu (#6415)&lt;/li&gt;
 &lt;li&gt;feat(internal-site): add internal.layer5.io behind Cloudflare Access @yi-nuo426 (#6413)&lt;/li&gt;
