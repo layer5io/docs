@@ -1,4 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.75-1</title><link>/kanvas/reference/releases/v1.0.75-1/</link><pubDate>Tue, 03 Nov 2026 23:01:25 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.75-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/kanvas/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/kanvas/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.75-2</title><link>/kanvas/reference/releases/v1.0.75-2/</link><pubDate>Thu, 05 Nov 2026 00:52:22 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.75-2/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;feat(editor): send design-validation metadata and operation-failure events @leecalcote (#4432)
+&lt;ul&gt;
+&lt;li&gt;Design validation now records &lt;code&gt;pattern/validate&lt;/code&gt; events in the v1beta3 design-event shape: design identity, an absolute link to the design, status &lt;code&gt;success&lt;/code&gt; or &lt;code&gt;failed&lt;/code&gt;, and up to 20 errors as &lt;code&gt;{code, componentId}&lt;/code&gt; with &lt;code&gt;errorCount&lt;/code&gt; and &lt;code&gt;truncated&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;When the validator itself can&amp;rsquo;t run, Kanvas records a severity-error &lt;code&gt;pattern/validate&lt;/code&gt; event with status &lt;code&gt;error&lt;/code&gt; and an error code of &lt;code&gt;validator-no-result&lt;/code&gt; or &lt;code&gt;validator-exception&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Requires Meshery Server v1.0.58 or later.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.75-1</title><link>/kanvas/reference/releases/v1.0.75-1/</link><pubDate>Tue, 03 Nov 2026 23:01:25 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.75-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
