@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.114
+  version: v1.3.115
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -6081,6 +6081,190 @@ paths:
                       db: deleted_at
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/integrations/credentials/{credentialId}/transfer:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - credential_credentials
+      summary: Transfer credential ownership
+      operationId: transferCredentialOwnership
+      description: >
+        Transfers ownership of a credential to another user. The authenticated user must be the current owner or have
+        the appropriate RBAC permission. This intentionally bypasses the userId-pinning guard applied to normal
+        credential updates.
+      parameters:
+        - name: credentialId
+          in: path
+          description: Credential ID
+          required: true
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: >
+                Request body for transferring ownership of a resource to another user. Used uniformly across all ownable
+                resource constructs.
+              required:
+                - newOwnerId
+              properties:
+                newOwnerId:
+                  description: UUID of the user to whom ownership will be transferred.
+                  type: string
+                  format: uuid
+                  x-go-type: uuid.UUID
+                  x-go-type-import:
+                    path: github.com/gofrs/uuid
+      responses:
+        '200':
+          description: Credential ownership transferred successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: >
+                  Meshery Credentials store sensitive information such as API keys, tokens, and passwords used by
+                  connections to external systems.
+                required:
+                  - id
+                  - name
+                  - type
+                  - userId
+                  - createdAt
+                  - updatedAt
+                properties:
+                  id:
+                    description: Unique identifier for the credential.
+                    x-order: 1
+                    x-oapi-codegen-extra-tags:
+                      db: id
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  name:
+                    type: string
+                    description: Human-readable name for the credential.
+                    x-order: 2
+                    x-oapi-codegen-extra-tags:
+                      db: name
+                    minLength: 1
+                    maxLength: 255
+                  userId:
+                    description: UUID of the user who owns this credential.
+                    x-order: 3
+                    x-oapi-codegen-extra-tags:
+                      db: owner
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  orgOwner:
+                    description: >-
+                      UUID of the organization designated as the owner of this credential, for credentials that belong
+                      to a brand profile rather than to a person. Optional and independent of userId: userId continues
+                      to identify the user who created and owns the record, while orgOwner designates the organization
+                      the credential is for.
+                    x-order: 4
+                    x-go-name: OrgOwner
+                    x-oapi-codegen-extra-tags:
+                      db: org_owner
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  type:
+                    type: string
+                    description: Credential type (e.g. token, basic, AWS).
+                    x-order: 5
+                    x-oapi-codegen-extra-tags:
+                      db: type
+                    maxLength: 255
+                  secret:
+                    type: object
+                    description: Key-value pairs containing the sensitive credential data.
+                    x-order: 6
+                    x-go-type: core.Map
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: secret
+                  createdAt:
+                    type: string
+                    format: date-time
+                    description: Timestamp when the credential was created.
+                    x-go-type: time.Time
+                    x-go-type-skip-optional-pointer: true
+                    x-order: 7
+                    x-oapi-codegen-extra-tags:
+                      db: created_at
+                  updatedAt:
+                    type: string
+                    format: date-time
+                    description: Timestamp when the credential was last updated.
+                    x-go-type: time.Time
+                    x-go-type-skip-optional-pointer: true
+                    x-order: 8
+                    x-oapi-codegen-extra-tags:
+                      db: updated_at
+                  deletedAt:
+                    type: string
+                    format: date-time
+                    description: Timestamp when the credential was soft-deleted.
+                    x-go-type: core.NullTime
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                    x-go-type-skip-optional-pointer: true
+                    x-order: 9
+                    x-oapi-codegen-extra-tags:
+                      db: deleted_at
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -18498,6 +18682,12 @@ paths:
                 anonymousUsageStats:
                   type: boolean
                   description: The anonymous usage stats of the preference.
+                shareActivityPublicly:
+                  type: boolean
+                  description: >-
+                    Account-wide switch for whether events the user marked public appear on GET /api/events/feed. If
+                    absent, the preference is on. Cloud reads it at feed time; turning it off hides all of the user's
+                    past public events from the next response, and events are never rewritten.
                 anonymousPerfResults:
                   type: boolean
                   description: The anonymous perf results of the preference.
@@ -52123,6 +52313,7 @@ paths:
                         - organizationId
                         - createdAt
                         - updatedAt
+                        - visibility
                       properties:
                         id:
                           description: Event ID.
@@ -52175,6 +52366,7 @@ paths:
                             RelationshipEvaluationEventMetadata (category `relationship`, action `evaluation`),
                             DesignValidationEventMetadata (category `pattern`, actions `validate`, `deploy`, `undeploy`,
                             `dry-run`) and DesignSavedEventMetadata (category `pattern`, actions `create`, `update`);
+                            ScheduleCompletedEventMetadata (category `schedule`, action `completed`);
                             DesignEventIdentity names the design. Never put design contents into event metadata - no
                             `designFile`, `patternFile`, `components`, `relationships`, `trace`, `evaluationResponse`,
                             the raw `summary` or `validationResult`. Meshery Server applies a 16 KB guard that drops
@@ -52287,6 +52479,18 @@ paths:
                           type: string
                           format: date-time
                           x-go-type-skip-optional-pointer: true
+                        visibility:
+                          description: Who can see the event. Defaults to `private`.
+                          x-oapi-codegen-extra-tags:
+                            db: visibility
+                            json: visibility
+                          x-order: 16
+                          type: string
+                          enum:
+                            - private
+                            - public
+                          default: private
+                          x-go-name: EventVisibility
                         deletedAt:
                           description: Timestamp when the event was soft-deleted; omitted when it was not.
                           x-oapi-codegen-extra-tags:
@@ -58565,6 +58769,20 @@ paths:
                       additionalProperties: false
                       description: EventResult entity schema.
                       properties:
+                        visibility:
+                          type: string
+                          description: >-
+                            Who can see the event. `private` (the default, set by Layer5 Cloud) means visible only
+                            inside the event's organization. `public` means the event may appear on the unauthenticated
+                            event feed, subject to the owner's `shareActivityPublicly` preference at read time.
+                          enum:
+                            - private
+                            - public
+                          default: private
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: visibility
+                            json: visibility
                         owner:
                           type: string
                           format: uuid
@@ -58623,6 +58841,11 @@ paths:
                           type: string
                           description: The last name of the user associated with the event.
                           maxLength: 500
+                        avatarUrl:
+                          type: string
+                          format: uri
+                          maxLength: 500
+                          description: URL to the avatar image of the user associated with the event.
                         email:
                           description: Email address of the user associated with the event.
                           type: string
@@ -58867,7 +59090,7 @@ paths:
           application/json:
             schema:
               type: object
-              description: Payload for creating a new event.
+              description: Payload for creating a new event. If visibility is absent, the event is private.
               additionalProperties: true
               properties:
                 owner:
@@ -58885,6 +59108,18 @@ paths:
                   type: string
                   description: The category of the event.
                   maxLength: 500
+                visibility:
+                  description: >-
+                    Who can see the event. `private` is the default; clients may set `public` for events eligible for
+                    the unauthenticated feed.
+                  x-oapi-codegen-extra-tags:
+                    json: visibility,omitempty
+                  type: string
+                  enum:
+                    - private
+                    - public
+                  default: private
+                  x-go-name: EventVisibility
                 action:
                   type: string
                   description: The action of the event.
@@ -58939,6 +59174,7 @@ paths:
                   - organizationId
                   - createdAt
                   - updatedAt
+                  - visibility
                 properties:
                   id:
                     description: Event ID.
@@ -58991,15 +59227,15 @@ paths:
                       RelationshipEvaluationEventMetadata (category `relationship`, action `evaluation`),
                       DesignValidationEventMetadata (category `pattern`, actions `validate`, `deploy`, `undeploy`,
                       `dry-run`) and DesignSavedEventMetadata (category `pattern`, actions `create`, `update`);
-                      DesignEventIdentity names the design. Never put design contents into event metadata - no
-                      `designFile`, `patternFile`, `components`, `relationships`, `trace`, `evaluationResponse`, the raw
-                      `summary` or `validationResult`. Meshery Server applies a 16 KB guard that drops oversized
-                      metadata down to the identity fields (`designId`, `designName`, `designVersion`, `designLink`,
-                      `viewLink`). On an error event, `metadata.error` holds only the MeshKit error, never the design or
-                      the request that failed; a design validation event whose operation did not complete (`status`
-                      `error`) carries it as a DesignEventOperationError. Older Meshery Cloud rows may carry the legacy
-                      `design_name` and `view_link` keys; readers should fall back to them when `designName` and
-                      `viewLink` are absent.
+                      ScheduleCompletedEventMetadata (category `schedule`, action `completed`); DesignEventIdentity
+                      names the design. Never put design contents into event metadata - no `designFile`, `patternFile`,
+                      `components`, `relationships`, `trace`, `evaluationResponse`, the raw `summary` or
+                      `validationResult`. Meshery Server applies a 16 KB guard that drops oversized metadata down to the
+                      identity fields (`designId`, `designName`, `designVersion`, `designLink`, `viewLink`). On an error
+                      event, `metadata.error` holds only the MeshKit error, never the design or the request that failed;
+                      a design validation event whose operation did not complete (`status` `error`) carries it as a
+                      DesignEventOperationError. Older Meshery Cloud rows may carry the legacy `design_name` and
+                      `view_link` keys; readers should fall back to them when `designName` and `viewLink` are absent.
                     additionalProperties: true
                     nullable: true
                     x-go-type: core.Map
@@ -59103,6 +59339,18 @@ paths:
                     type: string
                     format: date-time
                     x-go-type-skip-optional-pointer: true
+                  visibility:
+                    description: Who can see the event. Defaults to `private`.
+                    x-oapi-codegen-extra-tags:
+                      db: visibility
+                      json: visibility
+                    x-order: 16
+                    type: string
+                    enum:
+                      - private
+                      - public
+                    default: private
+                    x-go-name: EventVisibility
                   deletedAt:
                     description: Timestamp when the event was soft-deleted; omitted when it was not.
                     x-oapi-codegen-extra-tags:
@@ -59141,6 +59389,7 @@ paths:
                   - organizationId
                   - createdAt
                   - updatedAt
+                  - visibility
                 properties:
                   id:
                     description: Event ID.
@@ -59193,15 +59442,15 @@ paths:
                       RelationshipEvaluationEventMetadata (category `relationship`, action `evaluation`),
                       DesignValidationEventMetadata (category `pattern`, actions `validate`, `deploy`, `undeploy`,
                       `dry-run`) and DesignSavedEventMetadata (category `pattern`, actions `create`, `update`);
-                      DesignEventIdentity names the design. Never put design contents into event metadata - no
-                      `designFile`, `patternFile`, `components`, `relationships`, `trace`, `evaluationResponse`, the raw
-                      `summary` or `validationResult`. Meshery Server applies a 16 KB guard that drops oversized
-                      metadata down to the identity fields (`designId`, `designName`, `designVersion`, `designLink`,
-                      `viewLink`). On an error event, `metadata.error` holds only the MeshKit error, never the design or
-                      the request that failed; a design validation event whose operation did not complete (`status`
-                      `error`) carries it as a DesignEventOperationError. Older Meshery Cloud rows may carry the legacy
-                      `design_name` and `view_link` keys; readers should fall back to them when `designName` and
-                      `viewLink` are absent.
+                      ScheduleCompletedEventMetadata (category `schedule`, action `completed`); DesignEventIdentity
+                      names the design. Never put design contents into event metadata - no `designFile`, `patternFile`,
+                      `components`, `relationships`, `trace`, `evaluationResponse`, the raw `summary` or
+                      `validationResult`. Meshery Server applies a 16 KB guard that drops oversized metadata down to the
+                      identity fields (`designId`, `designName`, `designVersion`, `designLink`, `viewLink`). On an error
+                      event, `metadata.error` holds only the MeshKit error, never the design or the request that failed;
+                      a design validation event whose operation did not complete (`status` `error`) carries it as a
+                      DesignEventOperationError. Older Meshery Cloud rows may carry the legacy `design_name` and
+                      `view_link` keys; readers should fall back to them when `designName` and `viewLink` are absent.
                     additionalProperties: true
                     nullable: true
                     x-go-type: core.Map
@@ -59305,6 +59554,18 @@ paths:
                     type: string
                     format: date-time
                     x-go-type-skip-optional-pointer: true
+                  visibility:
+                    description: Who can see the event. Defaults to `private`.
+                    x-oapi-codegen-extra-tags:
+                      db: visibility
+                      json: visibility
+                    x-order: 16
+                    type: string
+                    enum:
+                      - private
+                      - public
+                    default: private
+                    x-go-name: EventVisibility
                   deletedAt:
                     description: Timestamp when the event was soft-deleted; omitted when it was not.
                     x-oapi-codegen-extra-tags:
@@ -59471,6 +59732,20 @@ paths:
                       additionalProperties: false
                       description: EventResult entity schema.
                       properties:
+                        visibility:
+                          type: string
+                          description: >-
+                            Who can see the event. `private` (the default, set by Layer5 Cloud) means visible only
+                            inside the event's organization. `public` means the event may appear on the unauthenticated
+                            event feed, subject to the owner's `shareActivityPublicly` preference at read time.
+                          enum:
+                            - private
+                            - public
+                          default: private
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: visibility
+                            json: visibility
                         owner:
                           type: string
                           format: uuid
@@ -59529,6 +59804,11 @@ paths:
                           type: string
                           description: The last name of the user associated with the event.
                           maxLength: 500
+                        avatarUrl:
+                          type: string
+                          format: uri
+                          maxLength: 500
+                          description: URL to the avatar image of the user associated with the event.
                         email:
                           description: Email address of the user associated with the event.
                           type: string
@@ -59655,6 +59935,292 @@ paths:
                       type: string
         '500':
           description: Server error
+  /api/events/feed:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Events_events
+      operationId: getEventFeed
+      summary: Get event feed
+      description: |
+        Generic, unauthenticated feed of events whose visibility is `public`
+        and whose owner's `shareActivityPublicly` preference is on at read
+        time. Results are ordered newest first by `createdAt` and can be
+        filtered by category and action. Rate limited per client IP; an
+        over-limit client receives 429 with `Retry-After`. Responses carry
+        `Cache-Control: public, max-age=N` where N is at most 30 seconds.
+        See docs/event-feed-contract.md.
+      security: []
+      parameters:
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: integer
+            minimum: 0
+        - name: pagesize
+          in: query
+          required: false
+          description: Number of feed items per page.
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 50
+            default: 20
+        - name: category
+          in: query
+          required: false
+          description: Optional event category filter.
+          schema:
+            type: string
+            maxLength: 500
+        - name: action
+          in: query
+          required: false
+          description: Optional event action filter.
+          schema:
+            type: string
+            maxLength: 500
+      responses:
+        '200':
+          description: Event feed page
+          headers:
+            Cache-Control:
+              description: '`public, max-age=N` with N from 0 to 30; max-age never exceeds 30 seconds.'
+              required: true
+              schema:
+                type: string
+                pattern: ^public, max-age=([0-9]|[12][0-9]|30)$
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: One page of event feed items, newest first.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - data
+                properties:
+                  page:
+                    type: integer
+                    description: Current page number of the result set.
+                    minimum: 0
+                  pageSize:
+                    type: integer
+                    description: Number of items per page.
+                    minimum: 1
+                    maximum: 50
+                  totalCount:
+                    type: integer
+                    description: Total number of matching feed events.
+                    minimum: 0
+                  data:
+                    type: array
+                    maxItems: 50
+                    items:
+                      type: object
+                      additionalProperties: false
+                      description: |
+                        An event projected into the public feed. It never includes email,
+                        firstName, lastName, description, provider or raw metadata.
+                        `platform`, `role`, `line` and `networks` are projected from
+                        ScheduleCompletedEventMetadata; events without valid required
+                        metadata are skipped. Public profile fields are resolved by Cloud at
+                        read time and are included only when the user's profile is public.
+                      required:
+                        - id
+                        - userId
+                        - category
+                        - action
+                        - createdAt
+                        - visibility
+                        - platform
+                        - role
+                        - line
+                      properties:
+                        id:
+                          description: Event ID.
+                          x-go-name: ID
+                          x-order: 1
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-type-skip-optional-pointer: true
+                        userId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-order: 2
+                        category:
+                          type: string
+                          description: Event category.
+                          maxLength: 500
+                          x-order: 3
+                        action:
+                          type: string
+                          description: Event action.
+                          maxLength: 500
+                          x-order: 4
+                        createdAt:
+                          description: Event creation time; the feed is ordered newest first.
+                          x-order: 5
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        visibility:
+                          description: Always `public` in the feed.
+                          x-order: 6
+                          type: string
+                          enum:
+                            - private
+                            - public
+                          default: private
+                          x-go-name: EventVisibility
+                        platform:
+                          type: string
+                          description: Platform from ScheduleCompletedEventMetadata.
+                          enum:
+                            - linkedin
+                            - x
+                            - reddit
+                            - hacker-news
+                            - slack
+                            - bluesky
+                            - github
+                          x-order: 7
+                        role:
+                          type: string
+                          description: Role from ScheduleCompletedEventMetadata.
+                          minLength: 3
+                          maxLength: 40
+                          x-order: 8
+                        line:
+                          type: string
+                          description: One-line result from ScheduleCompletedEventMetadata.
+                          minLength: 10
+                          maxLength: 120
+                          x-order: 9
+                        networks:
+                          type: array
+                          description: Networks from ScheduleCompletedEventMetadata, when present.
+                          minItems: 1
+                          maxItems: 20
+                          items:
+                            type: string
+                            minLength: 1
+                            maxLength: 255
+                          x-oapi-codegen-extra-tags:
+                            json: networks,omitempty
+                          x-order: 10
+                        displayName:
+                          type: string
+                          description: Public username, never a real name; present only for a public profile.
+                          maxLength: 80
+                          x-oapi-codegen-extra-tags:
+                            json: displayName,omitempty
+                          x-order: 11
+                        avatarUrl:
+                          type: string
+                          format: uri
+                          maxLength: 500
+                          description: Public avatar URL; present only for a public profile.
+                          x-go-name: AvatarURL
+                          x-oapi-codegen-extra-tags:
+                            json: avatarUrl,omitempty
+                          x-order: 12
+                        organizationName:
+                          type: string
+                          description: Public organization name; present only for a public profile.
+                          maxLength: 255
+                          x-oapi-codegen-extra-tags:
+                            json: organizationName,omitempty
+                          x-order: 13
+                        publicProfileUrl:
+                          type: string
+                          format: uri
+                          description: HTTPS URL of the user's public profile.
+                          pattern: ^https://
+                          maxLength: 2048
+                          x-go-name: PublicProfileURL
+                          x-oapi-codegen-extra-tags:
+                            json: publicProfileUrl,omitempty
+                          x-order: 14
+                    description: Events for the requested page, newest first.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '429':
+          description: >-
+            Too many requests - the caller exceeded the server's per-user request rate for this route family. Wait the
+            number of seconds in `Retry-After` before retrying.
+          headers:
+            Retry-After:
+              description: Number of seconds the caller must wait before retrying.
+              required: true
+              schema:
+                type: integer
+                minimum: 1
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
   /api/events/summary:
     get:
       x-internal:
