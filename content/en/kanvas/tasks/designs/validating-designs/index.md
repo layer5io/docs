@@ -318,6 +318,8 @@ Kanvas records one event each time it validates a design:
 
 A validation that ran records these metadata fields:
 
+Only `designId` is required. If the metadata is larger than 16 KB, Meshery Server reduces the event to the identity fields (`designId`, `designName`, `designVersion`, `designLink`), so treat `status`, `errorCount`, `errors`, `truncated` and `error` as optional.
+
 | Field | Description |
 | --- | --- |
 | `designId` | The ID of the validated design. |
