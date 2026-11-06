@@ -297,11 +297,11 @@ This is the final element on the page and there should be no margin below this.
 
 ## Current checks
 
-Validation runs in the browser, needs no cluster, and changes nothing. It is disabled while the design is empty. On kanvas.new it opens a self-hosted-feature prompt. Validate Design gates both validate and dry run. Annotation components are skipped. A component whose definition cannot be fetched is skipped as valid. An unsupported design schema version reports 0 components, 0 annotations, and no errors. A clean result reads `No validation errors.` Errors name the field by dotted path and do not block you from continuing. When validation of the whole design completes, Kanvas records a [validation event](#validation-events) in Meshery's events list. The dialog title is `Validate design "<name>"`.
+Validation runs in the browser, needs no cluster, and changes nothing. It is disabled while the design is empty. On kanvas.new it opens a self-hosted-feature prompt. Validate Design gates both validate and dry run. Annotation components are skipped. A component whose definition cannot be fetched is skipped as valid. An unsupported design schema version reports 0 components, 0 annotations, and no errors. A clean result reads `No validation errors.` Errors name the field by dotted path and do not block you from continuing. Each time you validate the whole design, Kanvas records a [validation event](#validation-events) in Meshery's events list, including when validation could not run. The dialog title is `Validate design "<name>"`.
 
 ## Validation Events
 
-Kanvas records each design validation as a `pattern/validate` event in Meshery's events list. The event identifies the design, links to it, and summarizes the result. For how Meshery shows and manages events, see [Using the Notification Center for Troubleshooting]({{< ref "kanvas/tasks/designs/deploying-designs/index.md#using-the-notification-center-for-troubleshooting" >}}).
+Kanvas records each design validation as a `pattern/validate` event in Meshery's events list. The event identifies the design, links to it, and reports either the result or why validation could not run. For how Meshery shows and manages events, see [Using the Notification Center for Troubleshooting]({{< ref "kanvas/tasks/designs/deploying-designs/index.md#using-the-notification-center-for-troubleshooting" >}}).
 
 {{< alert type="info" title="Note" >}}
 Validation events require Meshery Server v1.0.58 or later.
@@ -324,7 +324,7 @@ A validation that ran records these metadata fields:
 | `designName` | The name of the design. |
 | `designVersion` | The design's version. Present only when the design has one. |
 | `designLink` | An absolute URL that opens the design. |
-| `status` | The result. The schema allows `success`, `partial`, `failed` and `error`. For a validation that ran, Kanvas currently sends `success` or `failed`. |
+| `status` | The result. The [design event metadata contract](https://github.com/meshery/schemas/blob/master/docs/design-event-metadata-contract.md) defines `success`, `partial`, `failed` and `error`, and other values may appear. For a validation that ran, Kanvas currently sends `success` or `failed`. |
 | `errorCount` | The total number of validation errors. |
 | `errors` | Up to 20 errors. Each has a `code`, the validation keyword (for example, `required`), and a `componentId`, the ID of the component with the error. `componentId` is left out when the error applies to the whole design. |
 | `truncated` | `true` when there were more than 20 errors, so `errors` lists only the first 20. |
