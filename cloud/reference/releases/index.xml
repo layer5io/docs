@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.359</title><link>/cloud/reference/releases/v1.0.359/</link><pubDate>Thu, 05 Nov 2026 14:24:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.359/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.360</title><link>/cloud/reference/releases/v1.0.360/</link><pubDate>Sat, 07 Nov 2026 02:17:50 +0000</pubDate><guid>/cloud/reference/releases/v1.0.360/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(events): correlate createEvent occurrences by correlationKey and show structured error details @leecalcote (#6427)&lt;/li&gt;
+&lt;li&gt;fix(desktop): scope deregistration to the session organization @leecalcote (#6426)&lt;/li&gt;
+&lt;li&gt;docs: consolidate internal-site content into docs/ publication @leecalcote (#6419)&lt;/li&gt;
+&lt;li&gt;chore: remove one-time user consolidation CLIs @leecalcote (#6420)&lt;/li&gt;
+&lt;li&gt;fix(internal-site): widen trusted IPv6 bypass to the home /64 @alexquincy (#6418)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @Copilot, @alexquincy, @fitzergerald, @hortison, @leecalcote, @marblom007 and @meshery-ci&lt;/p&gt;</description></item><item><title>v1.0.359</title><link>/cloud/reference/releases/v1.0.359/</link><pubDate>Thu, 05 Nov 2026 14:24:47 +0000</pubDate><guid>/cloud/reference/releases/v1.0.359/</guid><description>&lt;h2 id="whats-changed" class="heading-link"&gt;
  What&amp;rsquo;s Changed
  &lt;a href="#whats-changed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
