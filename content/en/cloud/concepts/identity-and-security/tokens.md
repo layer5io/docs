@@ -128,6 +128,8 @@ The answer lists each token's ID, name, purpose, and creation date, never its va
 
 Desktop clients that sign in through Layer5 Cloud create their token with the client's name as its purpose, so the same filter lists the tokens a client created for itself.
 
+A desktop client uses one token for every organization you use it with. Switching the client to another organization, or removing its device from one organization, leaves the token working for the organizations the device still uses. The token is revoked once the device is removed from the last of them, or when you sign the client out.
+
 ## Rotate a token
 
 To rotate a token without downtime, create the replacement first, switch each consumer to it, then delete the old token.
