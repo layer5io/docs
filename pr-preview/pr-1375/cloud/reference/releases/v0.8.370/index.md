@@ -1,0 +1,12 @@
+# v0.8.370
+
+date: 2025-08-09
+
+
+
+## What's Changed
+* chore: expose get kubernetes context by connection id api method by @n2h9 in https://github.com/layer5io/meshery-cloud/pull/3920
+
+
+**Full Changelog**: https://github.com/layer5io/meshery-cloud/compare/v0.8.369...v0.8.370
+

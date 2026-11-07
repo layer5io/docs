@@ -1,0 +1,18 @@
+# v1.0.77
+
+date: 2026-05-18
+
+
+
+## 📚 Academy
+
+- Layer5 v0.8.18 content update @l5io (#5293)
+- Exoscale v0.6.35 content update @l5io (#5292)
+- Meshery v0.4.25 content update @l5io (#5291)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io
+
+

@@ -1,0 +1,17 @@
+# v0.8.201-1
+
+date: 2026-01-29
+
+
+
+## What's New
+## 🔤 General
+## 🧰 Maintenance
+
+- Bump rimraf from 5.0.10 to 6.1.2 in /meshmap @[dependabot[bot]](https://github.com/apps/dependabot) (#4004)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @dependabot[bot], @l5io, @marblom007 and [dependabot[bot]](https://github.com/apps/dependabot)
+

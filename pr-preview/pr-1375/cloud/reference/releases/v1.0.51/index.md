@@ -1,0 +1,18 @@
+# v1.0.51
+
+date: 2026-05-04
+
+
+
+- [Chore]: Update to Sistent v0.21.2 @l5io (#5190)
+- feat(ui): scope /academy to active org when org publishes content @arjunmehta-git (#5189)
+- fix(dashboard): add consistent top-margin to CatalogMetrics widget @ritzorama (#5188)
+- [Chore]: Update to Sistent v0.21.1 @l5io (#5183)
+- chore(ui): bump @sistent/sistent to 0.21.1 @miacycle (#5184)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@arjunmehta-git, @carlosriosilva, @l5io, @leecalcote, @miacycle and @ritzorama
+
+

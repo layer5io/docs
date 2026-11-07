@@ -1,0 +1,14 @@
+# v1.0.142
+
+date: 2026-06-21
+
+
+
+- fix(db): drop OWNER TO postgres from ownership consolidation migration (prod 42501) @ritzorama (#5520)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @ritzorama
+
+

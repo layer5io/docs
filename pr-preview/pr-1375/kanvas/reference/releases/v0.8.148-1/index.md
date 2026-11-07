@@ -1,0 +1,17 @@
+# v0.8.148-1
+
+date: 2025-11-03
+
+
+
+## What's New
+## 🔤 General
+## 🐛 Bug Fixes
+
+- use model references in component and relationships @aabidsofi19 (#3872)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

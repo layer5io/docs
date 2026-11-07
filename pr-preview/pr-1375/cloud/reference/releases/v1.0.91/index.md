@@ -1,0 +1,14 @@
+# v1.0.91
+
+date: 2026-05-22
+
+
+
+- fix(auth): operator-invoked Provider Org IdP seed (subcommand + resolver) @hortison (#5372)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @yi-nuo426
+
+

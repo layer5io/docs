@@ -1,0 +1,31 @@
+# v0.8.169
+
+date: 2025-03-05
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Revert \Revert ix: logo responsive issue for header\ @amitamrutiya (#3270)
+
+## 💻 Server
+
+- Fix  users identity webhook @aabidsofi19 (#3273)
+
+## 🦴 Infrastructure
+
+- Fix  users identity webhook @aabidsofi19 (#3273)
+
+## 🐛 Bug Fixes
+
+- Fix  users identity webhook @aabidsofi19 (#3273)
+- Revert \Revert ix: logo responsive issue for header\ @amitamrutiya (#3270)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+
+

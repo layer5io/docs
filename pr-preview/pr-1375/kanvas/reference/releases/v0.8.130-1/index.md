@@ -1,0 +1,19 @@
+# v0.8.130-1
+
+date: 2025-08-28
+
+
+
+## What's New
+## 🔤 General
+- [Chore]: Update to Sistent v0.15.7 @l5io (#3842)
+
+## 🐛 Bug Fixes
+
+- Correct Double Bubble Map and Mastering Meshery links in getting started panel @zihanKuang (#3843)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @n2h9 and @zihanKuang
+

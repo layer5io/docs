@@ -1,0 +1,23 @@
+# v0.7.134-1
+
+date: 2024-11-04
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix: kubernetes icon missing issue in bottom dock @amitamrutiya (#3098)
+- fix: search field close issue in configuartor component @amitamrutiya (#3096)
+
+## 🐛 Bug Fixes
+
+- fix: kubernetes icon missing issue in bottom dock @amitamrutiya (#3098)
+- fix: search field close issue in configuartor component @amitamrutiya (#3096)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya, @l5io and @leecalcote
+

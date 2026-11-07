@@ -1,0 +1,17 @@
+# v0.8.58-1
+
+date: 2025-04-18
+
+
+
+## What's New
+## 🔤 General
+- [Chore]: Bump Sistent v0.14.174 @l5io (#3547)
+- [Chore]: Bump Sistent v0.14.173 @l5io (#3545)
+- Update index.tsx @aabidsofi19 (#3544)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @fitzergerald, @l5io and @leecalcote
+

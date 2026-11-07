@@ -1,0 +1,16 @@
+# v0.7.119-4
+
+date: 2024-10-07
+
+
+
+## What's New
+## 🔤 General
+* Manually built and packaged graphql plugin.
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote 
+
+

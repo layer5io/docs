@@ -1,0 +1,18 @@
+# v0.8.205
+
+date: 2025-04-21
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- fix subscription not available for  org admins @aabidsofi19 (#3414)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

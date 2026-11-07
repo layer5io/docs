@@ -1,0 +1,22 @@
+# v0.8.280
+
+date: 2025-07-01
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix: switch turns off even if some checkboxes are still checked @FaheemOnHub (#3708)
+
+## 🐛 Bug Fixes
+
+- fix: switch turns off even if some checkboxes are still checked @FaheemOnHub (#3708)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @l5io, @leecalcote and @meshery-ci
+
+

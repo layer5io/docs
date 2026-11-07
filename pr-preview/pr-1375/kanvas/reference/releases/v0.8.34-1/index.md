@@ -1,0 +1,18 @@
+# v0.8.34-1
+
+date: 2025-02-19
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Migrate components from muiv5 to sistent @amitamrutiya (#3433)
+- [Chore]: Bump Sistent v0.14.157 @l5io (#3439)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+

@@ -1,0 +1,36 @@
+# v0.8.546
+
+date: 2025-11-03
+
+
+
+## 🖥 Cloud UI
+
+- Fix duplicate catalog items in infinite scroll @copilot-swe-agent (#4473)
+- Bump @babel/preset-react from 7.27.1 to 7.28.5 in /ui @dependabot (#4462)
+- Bump @babel/plugin-transform-runtime from 7.26.9 to 7.28.5 in /ui @dependabot (#4460)
+
+## 💻 Server
+
+- assign owner to default workspace @aabidsofi19 (#4471)
+
+## 🦴 Infrastructure
+
+- Add database function for delete_user_and_resources @leecalcote (#4470)
+
+## 🐛 Bug Fixes
+
+- Fix duplicate catalog items in infinite scroll @copilot-swe-agent (#4473)
+
+## ⬆️ Dependencies
+
+- Bump @babel/preset-react from 7.27.1 to 7.28.5 in /ui @dependabot (#4462)
+- Bump @babel/plugin-transform-runtime from 7.26.9 to 7.28.5 in /ui @dependabot (#4460)
+- Bump golang.org/x/net from 0.43.0 to 0.46.0 @dependabot (#4459)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Copilot, @aabidsofi19, @copilot-swe-agent, @dependabot, @l5io and @leecalcote
+
+

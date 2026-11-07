@@ -1,0 +1,22 @@
+# v0.7.123-3
+
+date: 2024-10-18
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix: tutorial not open issue from shortcut menu @amitamrutiya (#3013)
+- Create modal from choose from template in empty kanvas @amitamrutiya (#2995)
+
+## 🐛 Bug Fixes
+
+- fix: tutorial not open issue from shortcut menu @amitamrutiya (#3013)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+

@@ -1,0 +1,15 @@
+# v1.0.50-1
+
+date: 2026-06-29
+
+
+
+## What's New
+## 🔤 General
+- Track model dir move to repo-root models/ and bump meshkit v1.0.19 @miacycle (#4276)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @miacycle
+

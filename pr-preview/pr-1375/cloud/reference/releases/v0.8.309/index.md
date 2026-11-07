@@ -1,0 +1,18 @@
+# v0.8.309
+
+date: 2025-07-22
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Migrate:What's New Feed Source from gatsby page-data to RSS Feed @FaheemOnHub (#3743)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @hortison, @l5io and @leecalcote
+
+

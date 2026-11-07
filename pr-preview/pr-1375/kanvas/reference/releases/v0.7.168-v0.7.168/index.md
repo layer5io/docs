@@ -1,0 +1,32 @@
+# v0.7.168-v0.7.168
+
+date: 2024-12-09
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- update shape editing panel styling @amitamrutiya (#3229)
+- fix: resize issue in layers and tutorial panel @amitamrutiya (#3227)
+- add direction in reusable drawer component @amitamrutiya (#3226)
+- create reusalbe drawer component @amitamrutiya (#3222)
+- [Chore]: Bump Sistent v0.14.128 @l5io (#3225)
+- [Chore]: Bump Sistent v0.14.127 @l5io (#3224)
+
+## 🐛 Bug Fixes
+
+- test: fix csv seed data race by seperating the setup run @jerensl (#3228)
+- test: add timeout for smoke and fix other test @jerensl (#3223)
+
+## 🧰 Maintenance
+
+- test: fix csv seed data race by seperating the setup run @jerensl (#3228)
+- test: add timeout for smoke and fix other test @jerensl (#3223)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @jerensl, @l5io and @sudhanshutech
+
