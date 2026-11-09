@@ -49,9 +49,9 @@ Traffic flows Cloudflare -> your ingress controller (for example ingress-nginx) 
 
 ```yaml
 env:
-  # The ingress controller pods' addresses. Be as narrow as you can:
-  # list the controller pods, not the whole node or pod subnet.
-  clientIpTrustedProxyCidrs: "<ingress controller pod address>/32"
+  # The dedicated address range that only the ingress controller pods use
+  # (see "Give the ingress controller its own address range" below).
+  clientIpTrustedProxyCidrs: "<ingress controller pod range, for example 10.0.30.0/27>"
   clientIpCdnProvider: "cloudflare"
   # Leave these empty to use Cloudflare's IP API and a 24h refresh.
   clientIpCdnRangesUrl: ""
@@ -62,6 +62,42 @@ env:
 Cloud downloads Cloudflare's ranges at startup and refreshes them every 24 hours, so ranges Cloudflare adds or retires are picked up without any change on your side. Each Cloud pod needs outbound HTTPS access to `api.cloudflare.com`.
 
 Your ingress controller must overwrite `X-Real-IP` with the address of the connection it received. ingress-nginx does this by default. If a TCP load balancer sits between Cloudflare and the ingress controller, it must pass the original connection address through (for example with PROXY protocol enabled on both the load balancer and the ingress controller); otherwise the ingress controller reports the load balancer's address, every request is keyed on that one address, and Cloudflare's header is not believed because the load balancer is not a Cloudflare edge.
+
+## Give the ingress controller its own address range
+
+Do not trust a single ingress controller pod address. A pod's address changes whenever the pod is rescheduled, and the old address can be handed to another pod, which would then be trusted to name any client address. Do not trust the cluster's shared pod or node subnet either: on clusters with VPC-native pod networking, every pod in that subnet could connect to Cloud directly and claim any address.
+
+Instead, give the ingress controller pods an address range that nothing else uses, and trust that range:
+
+1. **Create a small, dedicated pod subnet** (for example a /27) inside your cluster network, with the same routing and security rules as your existing pod subnet.
+2. **Add a node pool that draws pod addresses only from that subnet.** Keep its nodes in your existing worker subnet so load balancer paths do not change. Label and taint the nodes, for example `layer5.io/role=ingress` with effect `NoSchedule`.
+3. **Schedule only the ingress controller there.** Give the controller a matching `nodeSelector` and toleration. Check every DaemonSet that tolerates all taints: one that does not use host networking would also receive an address from the range, so exclude it from those nodes with a node affinity.
+4. **Set `clientIpTrustedProxyCidrs` to that subnet's CIDR.** Rescheduled controller pods stay inside the range, so the setting never needs updating.
+5. **Restrict who can reach Cloud with a NetworkPolicy.** Allow Cloud's ports only from the ingress controller pods and from Cloud's own namespace (its identity services call it), and deny everything else. This requires a network policy engine in your cluster (for example Calico in policy-only mode); without one, NetworkPolicy objects are accepted but not enforced.
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: cloud-ingress-only
+  namespace: <cloud namespace>
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/name: <cloud pod label>
+  policyTypes: [Ingress]
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              kubernetes.io/metadata.name: ingress-nginx
+          podSelector:
+            matchLabels:
+              app.kubernetes.io/component: controller
+        - podSelector: {}
+```
+
+The dedicated range alone is what makes the forwarded address trustworthy; the NetworkPolicy is defense in depth that stops any other workload from reaching Cloud's ports at all.
 
 ## Example: behind a plain load balancer or another reverse proxy
 
@@ -93,7 +129,7 @@ With an override, nothing is downloaded and the list never changes on its own, s
 ## Security notes
 
 - **Only trusted proxies' headers are believed.** Any caller that can reach Cloud, or your ingress, can send any header it likes. A header is meaningful only when the hop that wrote it is one you operate (your reverse proxy) or one you can verify by address (a CDN edge inside the CDN's published ranges). Everything else is ignored, so a caller cannot choose its own rate-limit bucket, dodge the IP block list, or forge the address in your logs.
-- **Keep the trusted proxy list narrow.** List the proxies themselves, not a whole subnet. If other workloads share the subnet (for example every pod in a Kubernetes cluster with VPC-native networking), trusting the subnet lets any of them connect to Cloud directly and claim any address.
+- **Trust only a range your proxies own.** Never trust a subnet that other workloads share (for example every pod in a Kubernetes cluster with VPC-native networking): any of them could connect to Cloud directly and claim any address. Never trust a single pod address either, because it is reused after the pod is rescheduled. Use a dedicated range that only your proxies receive addresses from, as described above.
 - **`X-Forwarded-For` is never believed.** Proxies commonly append to it rather than overwrite it, so its left-most entries are whatever the original caller sent. There is no reliable way to tell which entry a trusted hop added, so Cloud does not read it. `True-Client-IP` and `Forwarded` are never read either.
 - **Invalid settings fail safe.** A CIDR list with any entry that does not parse, that covers every address (`/0`), or that is an IPv4-mapped IPv6 prefix is refused as a whole and logged, never applied in part: a typo can only make addresses coarser, never widen trust. An unknown CDN provider is logged and treated as `none`. An invalid ranges URL or refresh interval is logged and the default is used.
 - **The CDN's ranges are validated before they are used.** A downloaded document is used only if it reports success, lists at least one range, and every entry is a valid prefix of the right address family. Any bad entry rejects the whole document. Downloads time out, are size-limited, and do not follow redirects.
