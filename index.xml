@@ -1962,7 +1962,25 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;/h2&gt;
 &lt;p&gt;A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider&amp;rsquo;s support intake:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
 &lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
-&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.360</title><link>/cloud/reference/releases/v1.0.360/</link><pubDate>Sat, 07 Nov 2026 02:17:50 +0000</pubDate><guid>/cloud/reference/releases/v1.0.360/</guid><description>&lt;ul&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.362</title><link>/cloud/reference/releases/v1.0.362/</link><pubDate>Mon, 09 Nov 2026 06:49:00 +0000</pubDate><guid>/cloud/reference/releases/v1.0.362/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(oauth): serve hosted MCP over OAuth with RFC 8414 discovery and Streamable HTTP /mcp @leecalcote (#6424)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.361</title><link>/cloud/reference/releases/v1.0.361/</link><pubDate>Mon, 09 Nov 2026 05:31:29 +0000</pubDate><guid>/cloud/reference/releases/v1.0.361/</guid><description>&lt;ul&gt;
+&lt;li&gt;docs: correct the archived user-consolidation CLI record @leecalcote (#6421)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote&lt;/p&gt;</description></item><item><title>v1.0.360</title><link>/cloud/reference/releases/v1.0.360/</link><pubDate>Sat, 07 Nov 2026 02:17:50 +0000</pubDate><guid>/cloud/reference/releases/v1.0.360/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(events): correlate createEvent occurrences by correlationKey and show structured error details @leecalcote (#6427)&lt;/li&gt;
 &lt;li&gt;fix(desktop): scope deregistration to the session organization @leecalcote (#6426)&lt;/li&gt;
 &lt;li&gt;docs: consolidate internal-site content into docs/ publication @leecalcote (#6419)&lt;/li&gt;

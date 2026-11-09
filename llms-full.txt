@@ -30654,6 +30654,36 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.362"
+url: /cloud/reference/releases/v1.0.362/index.md
+date: "2026-11-09"
+--------------------------------------------------------------------------------
+
+- feat(oauth): serve hosted MCP over OAuth with RFC 8414 discovery and Streamable HTTP /mcp @leecalcote (#6424)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
+title: "v1.0.361"
+url: /cloud/reference/releases/v1.0.361/index.md
+date: "2026-11-09"
+--------------------------------------------------------------------------------
+
+- docs: correct the archived user-consolidation CLI record @leecalcote (#6421)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.360"
 url: /cloud/reference/releases/v1.0.360/index.md
 date: "2026-11-07"
