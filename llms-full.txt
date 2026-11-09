@@ -30654,6 +30654,38 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.364"
+url: /cloud/reference/releases/v1.0.364/index.md
+date: "2026-11-09"
+--------------------------------------------------------------------------------
+
+## 🚀 Features
+
+- feat(oauth): custom-domain MCP metadata, per-domain trusted MCP audiences, and DCR enabled (release B) @leecalcote (#6432)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
+title: "v1.0.363"
+url: /cloud/reference/releases/v1.0.363/index.md
+date: "2026-11-09"
+--------------------------------------------------------------------------------
+
+- feat(server): serve the public event feed and record event visibility @leecalcote (#6428)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@fitzergerald, @leecalcote and @yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.362"
 url: /cloud/reference/releases/v1.0.362/index.md
 date: "2026-11-09"
