@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.116
+  version: v1.3.117
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -32285,8 +32285,11 @@ paths:
         exists, is set to `maintenance`. Servers must link the API token that authenticated the registration to the
         connection (`metadata.tokenId`, server-written) and revoke that token when the connection is deregistered or
         deleted. When a later registration of the same connection authenticates with a different token, the server
-        revokes the token previously linked to it. Registrations beyond the organization's device limit are accepted;
-        the organization is flagged through the capabilities document's `session.deviceUsage` instead.
+        revokes the token previously linked to it. One sign-in can back one install's connections in several
+        organizations, so a token is revoked only once no live connection of the same owner still links it: removing or
+        superseding one organization's connection must not sign the install out of another. Registrations beyond the
+        organization's device limit are accepted; the organization is flagged through the capabilities document's
+        `session.deviceUsage` instead.
       parameters:
         - name: X-Current-Orgid
           in: header
@@ -37440,7 +37443,9 @@ paths:
         - Connection_API_Connections
       operationId: deleteConnection
       summary: Delete a connection
-      description: Delete a specific connection. Deleting a connection that has a `metadata.tokenId` revokes that token.
+      description: >-
+        Delete a specific connection. Deleting a connection that has a `metadata.tokenId` revokes that token, unless
+        another live connection of the same owner still links it.
       parameters:
         - name: connectionId
           in: path
@@ -37702,8 +37707,14 @@ paths:
       description: >
         Delete the caller's `desktop` connection whose `metadata.installationId` matches, as a desktop app install does
         on sign-out or uninstall. Servers implementing this contract must scope the deletion to the caller: a connection
-        registered by another user is not found. Servers must revoke the API token linked to each deleted connection
-        (`metadata.tokenId`).
+        registered by another user is not found. An install registers one connection per organization, so with
+        `X-Current-Orgid` naming an organization the server must delete only the install's connection in that
+        organization and leave its connections in other organizations live; this is how an install releases the
+        organization it is leaving when it switches to another. Without the header (or with the all-organizations value
+        `all`) the server deletes the install's connections in every organization. When nothing matches, the server
+        answers 404 and revokes nothing. Servers must revoke the API token linked to each deleted connection
+        (`metadata.tokenId`) unless a live connection of the same owner still links it: the token still authenticates
+        that connection.
       parameters:
         - name: installationId
           in: path
@@ -37716,9 +37727,28 @@ paths:
               deduplication key and the `installationId` path parameter.
             minLength: 1
             maxLength: 255
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >
+            Organization whose connection for this install is deleted. Absent, or `all`, deletes the install's
+            connections in every organization. A value that is neither an organization id nor `all` is refused with 400.
+            An organization id where the caller has no connection for this install deletes nothing and is 404.
+            Membership is not checked: a non-member with no connection there gets the same 404, so the response does not
+            disclose membership, and a connection the caller still owns in an organization it has left is deleted (204).
+            The schema is a plain string, not `format: uuid` as on `registerConnection`, because `all` is a legal value
+            here.
+          schema:
+            type: string
       responses:
         '204':
           description: Desktop connection deleted
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -61999,7 +62029,8 @@ paths:
                         `platform`, `role`, `line` and `networks` are projected from
                         ScheduleCompletedEventMetadata; events without valid required
                         metadata are skipped. Public profile fields are resolved by Cloud at
-                        read time and are included only when the user's profile is public.
+                        read time for every served owner (live, active, and
+                        shareActivityPublicly on).
                       required:
                         - id
                         - userId
@@ -62094,8 +62125,10 @@ paths:
                           x-order: 10
                         displayName:
                           type: string
-                          description: Public username, never a real name; present only for a public profile.
-                          maxLength: 80
+                          description: >
+                            The same value PublicUser.username carries for the owner. Never email. Resolved for every
+                            served owner; omitted when empty.
+                          maxLength: 200
                           x-oapi-codegen-extra-tags:
                             json: displayName,omitempty
                           x-order: 11
@@ -62103,14 +62136,16 @@ paths:
                           type: string
                           format: uri
                           maxLength: 500
-                          description: Public avatar URL; present only for a public profile.
+                          description: Public avatar URL; resolved for every served owner, omitted when empty.
                           x-go-name: AvatarURL
                           x-oapi-codegen-extra-tags:
                             json: avatarUrl,omitempty
                           x-order: 12
                         organizationName:
                           type: string
-                          description: Public organization name; present only for a public profile.
+                          description: >-
+                            Public organization name; omitted when organization memberships are not public to an
+                            anonymous caller.
                           maxLength: 255
                           x-oapi-codegen-extra-tags:
                             json: organizationName,omitempty
@@ -82158,6 +82193,7 @@ paths:
                         - status
                         - retryCount
                         - maxRetries
+                        - visibility
                         - createdAt
                         - updatedAt
                       properties:
@@ -82717,6 +82753,21 @@ paths:
                             - cautious
                             - standard
                             - brisk
+                        visibility:
+                          description: |
+                            Visibility of the schedule: `public` (the default) allows completed runs
+                            to appear on the unauthenticated public activity feed (subject to user
+                            preferences), `org` restricts visibility to members of the schedule's
+                            organization, and `private` restricts it to the schedule owner.
+                          default: public
+                          x-oapi-codegen-extra-tags:
+                            db: visibility
+                          x-order: 29
+                          type: string
+                          enum:
+                            - public
+                            - org
+                            - private
                     description: Schedules included on this page of results.
         '400':
           description: Invalid request body or request param
@@ -82809,7 +82860,8 @@ paths:
         `scheduled` when the schedule has a due time and `pending` otherwise.
         `nextRunAt` defaults to `runAt`. A `targetId` must name a live
         resource of `targetType` in the organization, else 400. Send
-        `paused: true` to create the schedule already paused.
+        `paused: true` to create the schedule already paused. `visibility`
+        defaults to `public`.
       requestBody:
         required: true
         content:
@@ -83012,6 +83064,18 @@ paths:
                     - cautious
                     - standard
                     - brisk
+                visibility:
+                  description: |
+                    Visibility of the schedule: `public`, `org`, or `private`.
+                    Defaults to `public` on creation. Omitted on update, the existing
+                    visibility is preserved.
+                  x-oapi-codegen-extra-tags:
+                    json: visibility,omitempty
+                  type: string
+                  enum:
+                    - public
+                    - org
+                    - private
       responses:
         '201':
           description: Schedule created
@@ -83055,6 +83119,7 @@ paths:
                   - status
                   - retryCount
                   - maxRetries
+                  - visibility
                   - createdAt
                   - updatedAt
                 properties:
@@ -83614,6 +83679,21 @@ paths:
                       - cautious
                       - standard
                       - brisk
+                  visibility:
+                    description: |
+                      Visibility of the schedule: `public` (the default) allows completed runs
+                      to appear on the unauthenticated public activity feed (subject to user
+                      preferences), `org` restricts visibility to members of the schedule's
+                      organization, and `private` restricts it to the schedule owner.
+                    default: public
+                    x-oapi-codegen-extra-tags:
+                      db: visibility
+                    x-order: 29
+                    type: string
+                    enum:
+                      - public
+                      - org
+                      - private
         '400':
           description: Invalid request body or request param
           content:
@@ -83759,6 +83839,7 @@ paths:
                   - status
                   - retryCount
                   - maxRetries
+                  - visibility
                   - createdAt
                   - updatedAt
                 properties:
@@ -84318,6 +84399,21 @@ paths:
                       - cautious
                       - standard
                       - brisk
+                  visibility:
+                    description: |
+                      Visibility of the schedule: `public` (the default) allows completed runs
+                      to appear on the unauthenticated public activity feed (subject to user
+                      preferences), `org` restricts visibility to members of the schedule's
+                      organization, and `private` restricts it to the schedule owner.
+                    default: public
+                    x-oapi-codegen-extra-tags:
+                      db: visibility
+                    x-order: 29
+                    type: string
+                    enum:
+                      - public
+                      - org
+                      - private
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -84634,6 +84730,18 @@ paths:
                     - cautious
                     - standard
                     - brisk
+                visibility:
+                  description: |
+                    Visibility of the schedule: `public`, `org`, or `private`.
+                    Defaults to `public` on creation. Omitted on update, the existing
+                    visibility is preserved.
+                  x-oapi-codegen-extra-tags:
+                    json: visibility,omitempty
+                  type: string
+                  enum:
+                    - public
+                    - org
+                    - private
       responses:
         '200':
           description: Schedule updated
@@ -84677,6 +84785,7 @@ paths:
                   - status
                   - retryCount
                   - maxRetries
+                  - visibility
                   - createdAt
                   - updatedAt
                 properties:
@@ -85236,6 +85345,21 @@ paths:
                       - cautious
                       - standard
                       - brisk
+                  visibility:
+                    description: |
+                      Visibility of the schedule: `public` (the default) allows completed runs
+                      to appear on the unauthenticated public activity feed (subject to user
+                      preferences), `org` restricts visibility to members of the schedule's
+                      organization, and `private` restricts it to the schedule owner.
+                    default: public
+                    x-oapi-codegen-extra-tags:
+                      db: visibility
+                    x-order: 29
+                    type: string
+                    enum:
+                      - public
+                      - org
+                      - private
         '400':
           description: Invalid request body or request param
           content:
@@ -85546,6 +85670,7 @@ paths:
                         - status
                         - retryCount
                         - maxRetries
+                        - visibility
                         - createdAt
                         - updatedAt
                       properties:
@@ -86105,6 +86230,21 @@ paths:
                             - cautious
                             - standard
                             - brisk
+                        visibility:
+                          description: |
+                            Visibility of the schedule: `public` (the default) allows completed runs
+                            to appear on the unauthenticated public activity feed (subject to user
+                            preferences), `org` restricts visibility to members of the schedule's
+                            organization, and `private` restricts it to the schedule owner.
+                          default: public
+                          x-oapi-codegen-extra-tags:
+                            db: visibility
+                          x-order: 29
+                          type: string
+                          enum:
+                            - public
+                            - org
+                            - private
                     description: Schedules included on this page of results.
         '400':
           description: Invalid request body or request param
@@ -86258,6 +86398,7 @@ paths:
                   - status
                   - retryCount
                   - maxRetries
+                  - visibility
                   - createdAt
                   - updatedAt
                 properties:
@@ -86817,6 +86958,21 @@ paths:
                       - cautious
                       - standard
                       - brisk
+                  visibility:
+                    description: |
+                      Visibility of the schedule: `public` (the default) allows completed runs
+                      to appear on the unauthenticated public activity feed (subject to user
+                      preferences), `org` restricts visibility to members of the schedule's
+                      organization, and `private` restricts it to the schedule owner.
+                    default: public
+                    x-oapi-codegen-extra-tags:
+                      db: visibility
+                    x-order: 29
+                    type: string
+                    enum:
+                      - public
+                      - org
+                      - private
         '400':
           description: Invalid request body or request param
           content:
@@ -86942,6 +87098,237 @@ paths:
                 type: string
         '404':
           description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '429':
+          description: >-
+            Too many requests - the caller exceeded the server's per-user request rate for this route family. Wait the
+            number of seconds in `Retry-After` before retrying.
+          headers:
+            Retry-After:
+              description: Number of seconds the caller must wait before retrying.
+              required: true
+              schema:
+                type: integer
+                minimum: 1
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/public/activity-feed:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Schedule_schedules
+      summary: Get public activity feed
+      operationId: getPublicActivityFeed
+      description: |
+        Returns a paginated, unauthenticated feed of completed schedule runs
+        whose visibility is `public` and whose owner's `shareActivityPublicly`
+        preference is on at read time. Results are ordered newest first by
+        `completedAt`. Rate limited per client IP; an over-limit client
+        receives 429 with `Retry-After`. Responses carry
+        `Cache-Control: public, max-age=N` where N is at most 30 seconds.
+        Browsers may call this route cross-origin (CORS-enabled GET/OPTIONS
+        only, without credentials).
+      security: []
+      parameters:
+        - name: page
+          in: query
+          description: Page number.
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: pageSize
+          in: query
+          description: Number of items per page.
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 50
+            default: 20
+      responses:
+        '200':
+          description: Public activity feed page
+          headers:
+            Cache-Control:
+              description: '`public, max-age=N` with N from 0 to 30; max-age never exceeds 30 seconds.'
+              required: true
+              schema:
+                type: string
+                pattern: ^public, max-age=([0-9]|[12][0-9]|30)$
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: One page of public activity feed items, newest first.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - data
+                properties:
+                  page:
+                    type: integer
+                    description: Current page number.
+                    minimum: 1
+                  pageSize:
+                    type: integer
+                    description: Number of items per page; maximum 50.
+                    minimum: 1
+                    maximum: 50
+                  totalCount:
+                    type: integer
+                    description: Total number of items available.
+                    minimum: 0
+                  data:
+                    type: array
+                    description: Feed items included on this page, newest first.
+                    items:
+                      type: object
+                      additionalProperties: false
+                      description: |
+                        A completed schedule run projected into the public feed. Never includes
+                        email addresses, real names, or raw metadata. Public profile fields are
+                        resolved at read time for every served owner (live, active, and
+                        shareActivityPublicly on).
+                      required:
+                        - userId
+                        - platform
+                        - roleResult
+                        - completedAt
+                        - visibility
+                      properties:
+                        userId:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                          x-go-name: UserID
+                          x-order: 1
+                        platform:
+                          type: string
+                          description: Social platform the schedule ran on.
+                          enum:
+                            - linkedin
+                            - x
+                            - reddit
+                            - hacker-news
+                            - slack
+                            - bluesky
+                            - github
+                          x-order: 2
+                        roleResult:
+                          type: string
+                          description: One-line role and result summary from the completed run.
+                          minLength: 3
+                          maxLength: 120
+                          x-order: 3
+                        completedAt:
+                          description: Time the schedule run completed; feed is ordered newest first.
+                          x-order: 4
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        visibility:
+                          type: string
+                          description: Always `public` in this feed.
+                          enum:
+                            - public
+                          default: public
+                          x-order: 5
+                        displayName:
+                          type: string
+                          description: >
+                            The same value PublicUser.username carries for the owner. Never email. Resolved for every
+                            served owner; omitted when empty.
+                          maxLength: 200
+                          x-oapi-codegen-extra-tags:
+                            json: displayName,omitempty
+                          x-order: 6
+                        avatarUrl:
+                          type: string
+                          format: uri
+                          description: Public avatar URL; resolved for every served owner, omitted when empty.
+                          maxLength: 500
+                          x-go-name: AvatarURL
+                          x-oapi-codegen-extra-tags:
+                            json: avatarUrl,omitempty
+                          x-order: 7
+                        organizationName:
+                          type: string
+                          description: >-
+                            Public organization name; omitted when organization memberships are not public to an
+                            anonymous caller.
+                          maxLength: 255
+                          x-oapi-codegen-extra-tags:
+                            json: organizationName,omitempty
+                          x-order: 8
+                        publicProfileUrl:
+                          type: string
+                          format: uri
+                          description: HTTPS URL of the user's public profile.
+                          pattern: ^https://
+                          maxLength: 2048
+                          x-go-name: PublicProfileURL
+                          x-oapi-codegen-extra-tags:
+                            json: publicProfileUrl,omitempty
+                          x-order: 9
+        '400':
+          description: Invalid request body or request param
           content:
             text/plain:
               schema:
