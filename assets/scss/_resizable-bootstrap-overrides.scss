@@ -72,7 +72,16 @@
 
   /* Inner + aside follow the auto height instead of the desktop 100vh. */
   [data-resizable-key="sidebar"] .resizable__inner { height: auto; overflow: visible; }
-  [data-resizable-key="sidebar"] .td-sidebar { height: auto; }
+  [data-resizable-key="sidebar"] .td-sidebar {
+    height: auto;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .td-sidebar-nav {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   .row > main {
     flex: 1 1 100%;
