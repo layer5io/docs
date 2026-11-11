@@ -1,0 +1,16 @@
+# v1.0.367
+
+date: 2026-11-11
+
+
+
+- feat(server): add OAuth dynamic client registration with redirect policy and consent page @yi-nuo426 (#6402)
+- Add listSchedules and getScheduleById to the hosted MCP catalog @marblom007 (#6446)
+- fix(internal-site): sparse-checkout docs/ so the Hugo deploy has content @yi-nuo426 (#6445)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @marblom007 and @yi-nuo426
+
+
