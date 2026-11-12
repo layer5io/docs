@@ -238,7 +238,7 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
     </div>
     <div class="tab-body tab-pane fade"
         id="tabs-00-01" role="tabpanel" aria-labelled-by="tabs-00-01-tab" tabindex="0">
-        <p>Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs.</p>
+        <p>Pencil lines do not connect individual components, but offer annotating capability, allowing you to take notes and draw annotations to enhance your designs. A stroke can start, run and end over a component, so you can circle or underline anything on the canvas; while the Pencil is active, pressing on a component draws instead of moving it.</p>
 <table>
   <thead>
       <tr>
@@ -363,14 +363,16 @@ You can switch between mouse modes using hotkeys or tool selection. Here are hot
     </div>
     <div class="tab-body tab-pane fade"
         id="tabs-00-02" role="tabpanel" aria-labelled-by="tabs-00-02-tab" tabindex="0">
-        <p>The Pen tool operates as a creator of annotation edges. Note that the pen tool has two behaviors depending upon the context in which you initiate the connection.</p>
+        <p>The Pen tool operates as a creator of annotation edges. Note that the pen tool behaves differently depending upon where you initiate the connection.</p>
 <p><strong>To Activate:</strong> <code>(CMD/CTRL)+E</code></p>
 <details>
 <summary><strong>Connector Behaviors</strong></summary>
 <ul>
 <li><strong>Component-connect Behavior</strong>: When you click an empty spot on the canvas, and drag to another empty spot on the canvas, you get a joint (aka a terminal node) from which you can create new connections as well as new edge relationships.</li>
 <li><strong>Canvas-connect Behavior</strong>: When you click an empty spot on the canvas, and drag to an existing component, you get an annotation edge relationship.</li>
+<li><strong>Start on a component</strong>: When you press on a component and drag, the connector starts from that component and follows it when it moves.</li>
 </ul>
+<p>Connectors snap to the component under the cursor, never to a Pencil stroke drawn around it, and never back onto the component they started from. Pressing on a Pencil stroke or a connector&rsquo;s end point starts the connector from the component underneath it; a Pencil stroke is never either end of a connector.</p>
 </details>
 <table>
   <thead>
