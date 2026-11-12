@@ -8950,6 +8950,22 @@ The Help Center footer shows the installed Kanvas version and links to that vers
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.78-1"
+url: /kanvas/reference/releases/v1.0.78-1/index.md
+date: "2026-11-12"
+--------------------------------------------------------------------------------
+
+## What's New
+## 🔤 General
+- fix(ui): return the validation tap listener's unsubscribe @yi-nuo426 (#4437)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @yi-nuo426
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.77-2"
 url: /kanvas/reference/releases/v1.0.77-2/index.md
 date: "2026-11-12"
