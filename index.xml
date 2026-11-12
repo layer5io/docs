@@ -1962,7 +1962,31 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;/h2&gt;
 &lt;p&gt;A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider&amp;rsquo;s support intake:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
 &lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
-&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.367</title><link>/cloud/reference/releases/v1.0.367/</link><pubDate>Wed, 11 Nov 2026 16:05:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.367/</guid><description>&lt;ul&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.76-1</title><link>/kanvas/reference/releases/v1.0.76-1/</link><pubDate>Thu, 12 Nov 2026 02:13:41 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.76-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+ What&amp;rsquo;s New
+ &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+
+&lt;h2 id="-general" class="heading-link"&gt;
+ 🔤 General
+ &lt;a href="#-general" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(renderer): make node animations work on compound nodes, start on load, and respect reduced motion @yi-nuo426 (#4419)&lt;/li&gt;
+&lt;li&gt;fix(editor): make component position updates durable, reported, and safe around undo and read-only mode @yi-nuo426 (#4420)&lt;/li&gt;
+&lt;li&gt;test(videos): wait for d11 merge to finish and commit the fixed-build defect baseline @yi-nuo426 (#4428)&lt;/li&gt;
+&lt;li&gt;fix(editor): make Pencil, connector snapping and shape drops reliable on the whiteboard @yi-nuo426 (#4426)&lt;/li&gt;
+&lt;li&gt;fix(editor): match existing components when merging a design instead of duplicating them @yi-nuo426 (#4425)&lt;/li&gt;
+&lt;li&gt;fix(ui): keep Deployment containers out of the Annotations layer and release pen-connector bindings @yi-nuo426 (#4418)&lt;/li&gt;
+&lt;li&gt;internal: Kanvas content for internal.layer5.io and redeploy dispatch @yi-nuo426 (#4435)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @jamieplu, @l5io, @leecalcote, @ritzorama, @winkletinkle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.367</title><link>/cloud/reference/releases/v1.0.367/</link><pubDate>Wed, 11 Nov 2026 16:05:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.367/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(server): add OAuth dynamic client registration with redirect policy and consent page @yi-nuo426 (#6402)&lt;/li&gt;
 &lt;li&gt;Add listSchedules and getScheduleById to the hosted MCP catalog @marblom007 (#6446)&lt;/li&gt;
 &lt;li&gt;fix(internal-site): sparse-checkout docs/ so the Hugo deploy has content @yi-nuo426 (#6445)&lt;/li&gt;
