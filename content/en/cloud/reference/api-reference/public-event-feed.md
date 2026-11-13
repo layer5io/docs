@@ -39,6 +39,9 @@ does not rewrite those events.
 
 The `category` and `action` filters are optional and can be used together.
 
+The `pagesize` parameter must be between `1` and `50`. Values outside
+this range are rejected with HTTP `400 Bad Request`.
+
 ## Response
 
 A successful request returns a JSON object containing pagination metadata
@@ -71,10 +74,9 @@ The following fields are optional:
 |---|---|---|
 | `networks` | Array | Network information, when available. |
 | `displayName` | String | Public display name, when available. |
-| `avatarUrl` | String | Public avatar URL, when available. |
+| `avatarUrl` | String | Avatar URL, if the user has a public profile. |
 | `organizationName` | String | Organization name, when available. |
-| `publicProfileUrl` | String | Public profile URL, when available. |
-
+| `publicProfileUrl` | String | Profile URL, if the user has a public profile. |
 ### Example response
 
 ```json
@@ -121,12 +123,15 @@ The feed exposes only a limited projection of public event data.
 
 ### Caching
 
-Responses may be cached publicly using the `Cache-Control` response header.
+Responses include the following `Cache-Control` header:
 
-The maximum cache lifetime is 30 seconds (`max-age` is no greater than
-`30`). Because the owner's sharing preference is evaluated when the feed
-is requested, a preference change may take up to the cache lifetime to
-be reflected in cached responses.
+```http
+Cache-Control: public, max-age=30
+```
+
+This allows public caching for up to 30 seconds. Because the owner's
+sharing preference is evaluated when the feed is requested, a preference
+change may take up to the cache lifetime to be reflected in cached responses.
 
 ### Rate limiting
 
@@ -141,9 +146,21 @@ can retry.
 The `shareActivityPublicly` preference controls whether a user's public
 events appear in the public event feed.
 
-It is an account-wide boolean preference that can be updated through:
+It is an account-wide boolean preference that can be updated through
+the following endpoint using an authenticated session:
 
 `PUT /api/identity/users/preferences`
+
+The request body is a JSON object containing the preferences to update.
+Each field is optional, and omitted fields retain their existing values.
+
+Example request:
+
+```json
+{
+  "shareActivityPublicly": false
+}
+```
 
 | Value | Behavior |
 |---|---|
@@ -165,6 +182,10 @@ Events are created through:
 `POST /api/events`
 
 The `visibility` field controls whether an event is private or public.
+
+The event owner is determined by the authenticated calling session or
+user token. The owner's `shareActivityPublicly` preference controls
+whether the event can appear in the public feed.
 
 | Value | Behavior |
 |---|---|
