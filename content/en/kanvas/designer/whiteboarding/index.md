@@ -71,11 +71,19 @@ To hide or restore the whiteboard dock, right-click an empty area of the canvas,
 
 Shapes within the canvas offer flexibility. Select any shape to access a tooltip with options to resize, reshape, and change colors. This allows for precise adjustments similar to popular design software.
 
+Dropping a shape on the canvas leaves your next click and keystrokes with the canvas and the tools. Dropping a component adds it without opening its configurator; double-click it to configure it. To label a shape, double-click it; press <kbd>Escape</kbd> or click elsewhere to finish.
+
 #### Text Annotation Customization
 
 ![Text Box](images/text-customization.png)
 
 Text annotations come with various options. Customize fonts, sizes, alignments, and styles easily. Text boxes resize for seamless integration with the canvas.
+
+A text box you drop on the canvas opens for typing straight away, outlined while it has the keyboard. Press <kbd>Escape</kbd> or click elsewhere to finish.
+
+#### Animating Components
+
+Select a component or shape and choose **Node Animation** in its tooltip to draw attention to it: blink, ripple, bounce or pulse. Animations work on containers such as a Deployment as well as on single components, and they play again when the design is opened. Switching from one animation to another starts the new one straight away. They run at a calm pace, and Kanvas starts none when your system asks for reduced motion.
 
 #### Interactive Tooltip Interface
 
