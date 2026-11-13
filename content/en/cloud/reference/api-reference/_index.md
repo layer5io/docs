@@ -12,6 +12,8 @@ Every endpoint lives under `/api` on the host of your Layer5 Cloud deployment. H
 
 Some route families are rate limited per caller. See [Rate limits]({{< ref "cloud/reference/api-reference/rate-limits.md" >}}) for the limits and how to handle HTTP 429.
 
+For an unauthenticated endpoint that returns publicly shared events, see the [Public Event Feed]({{< ref "cloud/reference/api-reference/public-event-feed.md" >}}) reference.
+
 ## Authenticating with the API
 
 In order to authenticate to Layer5 Cloud's REST API, you need to generate and use a [security token]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}). Visit your [user account's security tokens](https://cloud.layer5.io/security/tokens) and generate a long-lived token. Security tokens remain valid until you revoke them, and you can issue as many as you need.
