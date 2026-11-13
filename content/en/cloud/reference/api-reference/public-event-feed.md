@@ -33,7 +33,7 @@ does not rewrite those events.
 | Parameter | Type | Constraints | Default | Description |
 |---|---|---|---|---|
 | `page` | Integer | Minimum: `0` | — | Zero-based page number. |
-| `pagesize` | Integer | 1–50 | `20` | Number of events per page. |
+| `pagesize` | Integer | 1-50 | `20` | Number of events per page. A value outside 1-50 returns HTTP `400 Bad Request`. |
 | `category` | String | Maximum length: `500` | — | Filters by category. |
 | `action` | String | Maximum length: `500` | — | Filters by action. |
 
