@@ -30750,6 +30750,27 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.368"
+url: /cloud/reference/releases/v1.0.368/index.md
+date: "2026-11-13"
+--------------------------------------------------------------------------------
+
+## 🖥 Cloud UI
+
+- fix(ui): stop GitHub reconfigure wizard update loop @yi-nuo426 (#6448)
+
+## 🐛 Bug Fixes
+
+- fix(ui): stop GitHub reconfigure wizard update loop @yi-nuo426 (#6448)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.367"
 url: /cloud/reference/releases/v1.0.367/index.md
 date: "2026-11-11"

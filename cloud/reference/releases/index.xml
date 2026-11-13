@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.367</title><link>/cloud/reference/releases/v1.0.367/</link><pubDate>Wed, 11 Nov 2026 16:05:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.367/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.368</title><link>/cloud/reference/releases/v1.0.368/</link><pubDate>Fri, 13 Nov 2026 07:45:00 +0000</pubDate><guid>/cloud/reference/releases/v1.0.368/</guid><description>&lt;h2 id="-cloud-ui" class="heading-link"&gt;
+ 🖥 Cloud UI
+ &lt;a href="#-cloud-ui" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(ui): stop GitHub reconfigure wizard update loop @yi-nuo426 (#6448)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-bug-fixes" class="heading-link"&gt;
+ 🐛 Bug Fixes
+ &lt;a href="#-bug-fixes" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;fix(ui): stop GitHub reconfigure wizard update loop @yi-nuo426 (#6448)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.367</title><link>/cloud/reference/releases/v1.0.367/</link><pubDate>Wed, 11 Nov 2026 16:05:57 +0000</pubDate><guid>/cloud/reference/releases/v1.0.367/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat(server): add OAuth dynamic client registration with redirect policy and consent page @yi-nuo426 (#6402)&lt;/li&gt;
 &lt;li&gt;Add listSchedules and getScheduleById to the hosted MCP catalog @marblom007 (#6446)&lt;/li&gt;
 &lt;li&gt;fix(internal-site): sparse-checkout docs/ so the Hugo deploy has content @yi-nuo426 (#6445)&lt;/li&gt;
