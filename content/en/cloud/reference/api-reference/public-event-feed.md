@@ -33,7 +33,7 @@ does not rewrite those events.
 | Parameter | Type | Constraints | Default | Description |
 |---|---|---|---|---|
 | `page` | Integer | Minimum: `0` | — | Zero-based page number. |
-| `pagesize` | Integer | 1–50 | `20` | Number of events per page. |
+| `pagesize` | Integer | 1-50 | `20` | Number of events per page. A value outside 1-50 returns HTTP `400 Bad Request`. |
 | `category` | String | Maximum length: `500` | — | Filters by category. |
 | `action` | String | Maximum length: `500` | — | Filters by action. |
 
@@ -77,6 +77,7 @@ The following fields are optional:
 | `avatarUrl` | String | Avatar URL, if the user has a public profile. |
 | `organizationName` | String | Organization name, when available. |
 | `publicProfileUrl` | String | Profile URL, if the user has a public profile. |
+
 ### Example response
 
 ```json
@@ -98,7 +99,6 @@ The following fields are optional:
       "networks": [],
       "displayName": "Alex",
       "avatarUrl": "https://example.com/avatar.png",
-      "organizationName": "Example Organization",
       "publicProfileUrl": "https://example.com/profile/alex"
     }
   ]
@@ -123,15 +123,16 @@ The feed exposes only a limited projection of public event data.
 
 ### Caching
 
-Responses include the following `Cache-Control` header:
+Successful responses carry a `Cache-Control` header with a `max-age`
+value of up to 30 seconds:
 
-```http
-Cache-Control: public, max-age=30
-```
+`Cache-Control: public, max-age=N`
 
-This allows public caching for up to 30 seconds. Because the owner's
-sharing preference is evaluated when the feed is requested, a preference
-change may take up to the cache lifetime to be reflected in cached responses.
+The value of `N` can range from `0` to `30`. Shared caches may serve a
+response for the specified duration. Because the owner's sharing
+preference is evaluated when the feed is requested, a preference
+change may take up to the cache lifetime to be reflected in cached
+responses.
 
 ### Rate limiting
 
@@ -181,7 +182,7 @@ Events are created through:
 
 `POST /api/events`
 
-The `visibility` field controls whether an event is private or public.
+The event's owner is always the authenticated caller; a client cannot set the owner. The `visibility` field controls whether an event is private or public.
 
 The event owner is determined by the authenticated calling session or
 user token. The owner's `shareActivityPublicly` preference controls
