@@ -1934,7 +1934,22 @@ Choose the option that matches your workflow (see table below).&lt;/li&gt;
  class="md-image-responsive" /&gt;
  &lt;/picture&gt;
 &lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Rate limits</title><link>/cloud/reference/api-reference/rate-limits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/rate-limits/</guid><description>&lt;p&gt;Layer5 Cloud limits how fast a caller can call some API routes. A request over the limit is refused with HTTP 429. The limits first shipped in Layer5 Cloud v1.0.334 and are unchanged through v1.0.342.&lt;/p&gt;
+&lt;/p&gt;</description></item><item><title>Public Event Feed</title><link>/cloud/reference/api-reference/public-event-feed/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/public-event-feed/</guid><description>&lt;!-- markdownlint-configure-file {
+ "MD041": false,
+ "MD003": false,
+ "MD022": false
+} --&gt;
+&lt;p&gt;The public event feed provides an unauthenticated, read-only view of
+events that users have chosen to share publicly.&lt;/p&gt;
+
+&lt;h2 id="get-the-public-event-feed" class="heading-link"&gt;
+ Get the public event feed
+ &lt;a href="#get-the-public-event-feed" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;GET /api/events/feed&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This endpoint does not require authentication. It returns eligible public
+events in reverse chronological order, with the newest events first.&lt;/p&gt;
+&lt;p&gt;An event appears in the feed only when:&lt;/p&gt;</description></item><item><title>Rate limits</title><link>/cloud/reference/api-reference/rate-limits/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/reference/api-reference/rate-limits/</guid><description>&lt;p&gt;Layer5 Cloud limits how fast a caller can call some API routes. A request over the limit is refused with HTTP 429. The limits first shipped in Layer5 Cloud v1.0.334 and are unchanged through v1.0.342.&lt;/p&gt;
 &lt;p&gt;Normal desktop use never reaches these limits. You see a 429 only when a client calls far faster than normal use, for example in a retry loop or when it replays a large backlog at once.&lt;/p&gt;</description></item><item><title>Policy Engine</title><link>/kanvas/designer/relationship-evaluation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/kanvas/designer/relationship-evaluation/</guid><description>&lt;p&gt;As you build a design, Kanvas continuously evaluates the
 &lt;a href="/kanvas/concepts/relationships/"&gt;relationships&lt;/a&gt; between your components — to
 identify connections, validate them, and keep related configuration in sync.
