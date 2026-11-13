@@ -181,7 +181,7 @@ Events are created through:
 
 `POST /api/events`
 
-The `visibility` field controls whether an event is private or public.
+The event's owner is always the authenticated caller; a client cannot set the owner. The `visibility` field controls whether an event is private or public.
 
 The event owner is determined by the authenticated calling session or
 user token. The owner's `shareActivityPublicly` preference controls
