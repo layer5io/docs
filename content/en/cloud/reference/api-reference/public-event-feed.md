@@ -1,0 +1,186 @@
+---
+title: Public Event Feed
+weight: 10
+---
+<!-- markdownlint-configure-file {
+  "MD041": false,
+  "MD003": false,
+  "MD022": false
+} -->
+
+The public event feed provides an unauthenticated, read-only view of
+events that users have chosen to share publicly.
+
+## Get the public event feed
+
+`GET /api/events/feed`
+
+This endpoint does not require authentication. It returns eligible public
+events in reverse chronological order, with the newest events first.
+
+An event appears in the feed only when:
+
+- Its visibility is set to `public`.
+- Its owner's `shareActivityPublicly` preference is enabled.
+- It meets the feed's required metadata checks.
+
+The preference is checked when the feed is requested. Disabling it hides
+that user's previously public events from subsequent feed responses; it
+does not rewrite those events.
+
+## Query parameters
+
+| Parameter | Type | Constraints | Default | Description |
+|---|---|---|---|---|
+| `page` | Integer | Minimum: `0` | — | Zero-based page number. |
+| `pagesize` | Integer | 1–50 | `20` | Number of events per page. |
+| `category` | String | Maximum length: `500` | — | Filters by category. |
+| `action` | String | Maximum length: `500` | — | Filters by action. |
+
+The `category` and `action` filters are optional and can be used together.
+
+## Response
+
+A successful request returns a JSON object containing pagination metadata
+and the event records.
+
+| Field | Type | Description |
+|---|---|---|
+| `page` | Integer | Current zero-based page number. |
+| `pageSize` | Integer | Number of events requested per page. |
+| `totalCount` | Integer | Total number of matching public events. |
+| `data` | Array | Eligible event records for the current page. |
+
+Each event in `data` contains the following required fields:
+
+| Field | Type | Description |
+|---|---|---|
+| `id` | String | Event identifier. |
+| `userId` | String | Identifier of the event owner. |
+| `category` | String | Event category. |
+| `action` | String | Event action. |
+| `createdAt` | String | Event creation timestamp. |
+| `visibility` | String | Visibility; feed records are `public`. |
+| `platform` | String | Platform associated with the event. |
+| `role` | String | Role associated with the event. |
+| `line` | String | Line associated with the event. |
+
+The following fields are optional:
+
+| Field | Type | Description |
+|---|---|---|
+| `networks` | Array | Network information, when available. |
+| `displayName` | String | Public display name, when available. |
+| `avatarUrl` | String | Public avatar URL, when available. |
+| `organizationName` | String | Organization name, when available. |
+| `publicProfileUrl` | String | Public profile URL, when available. |
+
+### Example response
+
+```json
+{
+  "page": 0,
+  "pageSize": 20,
+  "totalCount": 1,
+  "data": [
+    {
+      "id": "event-123",
+      "userId": "user-456",
+      "category": "deployment",
+      "action": "completed",
+      "createdAt": "2026-11-13T06:00:00Z",
+      "visibility": "public",
+      "platform": "Kubernetes",
+      "role": "Developer",
+      "line": "Production deployment completed",
+      "networks": [],
+      "displayName": "Alex",
+      "avatarUrl": "https://example.com/avatar.png",
+      "organizationName": "Example Organization",
+      "publicProfileUrl": "https://example.com/profile/alex"
+    }
+  ]
+}
+```
+
+## Privacy and data visibility
+
+The feed exposes only a limited projection of public event data.
+
+- Only events with `visibility: "public"` are eligible.
+- The owner's `shareActivityPublicly` preference is checked when the
+  feed is requested.
+- The feed does not expose email addresses, first names, last names,
+  descriptions, providers, or raw event metadata.
+- The `platform`, `role`, `line`, and `networks` fields are projected
+  from the event's schedule-completion metadata.
+- Events without valid required metadata are omitted from the feed.
+- Public profile information, when available, is resolved at request time.
+
+## Caching and rate limiting
+
+### Caching
+
+Responses may be cached publicly using the `Cache-Control` response header.
+
+The maximum cache lifetime is 30 seconds (`max-age` is no greater than
+`30`). Because the owner's sharing preference is evaluated when the feed
+is requested, a preference change may take up to the cache lifetime to
+be reflected in cached responses.
+
+### Rate limiting
+
+Requests to the public event feed are rate-limited by client IP address.
+
+When the rate limit is exceeded, the API returns HTTP `429 Too Many
+Requests` and includes a `Retry-After` header indicating when the client
+can retry.
+
+## Sharing preference
+
+The `shareActivityPublicly` preference controls whether a user's public
+events appear in the public event feed.
+
+It is an account-wide boolean preference that can be updated through:
+
+`PUT /api/identity/users/preferences`
+
+| Value | Behavior |
+|---|---|
+| `true` | The user's public events are eligible for the feed. |
+| `false` | The user's events are hidden from the feed. |
+
+If the preference is absent, it defaults to `true`.
+
+The preference update accepts boolean values. Non-boolean values are
+rejected with HTTP `400 Bad Request`.
+
+Changing the preference affects feed visibility at read time. Existing
+events are not rewritten when the preference is changed.
+
+## Publishing public events
+
+Events are created through:
+
+`POST /api/events`
+
+The `visibility` field controls whether an event is private or public.
+
+| Value | Behavior |
+|---|---|
+| `private` | The event remains private. This is the default. |
+| `public` | Eligible for the feed if the owner's preference allows it. |
+
+Example request:
+
+```json
+{
+  "category": "deployment",
+  "action": "completed",
+  "visibility": "public"
+}
+```
+
+If `visibility` is omitted, the event defaults to `private`. Setting it
+to `public` does not override the owner's `shareActivityPublicly`
+preference.
