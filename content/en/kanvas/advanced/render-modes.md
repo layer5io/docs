@@ -124,9 +124,9 @@ If you're past the threshold for the mode, the feature is gated off. Switch rend
 
 ### How to turn it on
 
-In the render-mode switcher (Options panel), there is an **Adaptive** toggle at the top. Flip it on and Kanvas enters adaptive mode. Instead of selecting a render mode directly, the mode you pick in the switcher becomes the **ceiling** — the maximum fidelity adaptive mode is allowed to use. An `AUTO` chip appears next to the current mode so you know adaptive is driving.
+In the render-mode switcher (Options panel), there is an **Adaptive** toggle at the top. Flip it on and Kanvas enters adaptive mode. Instead of selecting a render mode directly, the mode you pick in the switcher becomes the **ceiling** — the maximum fidelity adaptive mode is allowed to use. An `AUTO` chip appears next to the current mode so you know adaptive is driving. Turning Adaptive on sets the canvas to the ceiling at once (Full, unless you chose another).
 
-If you pick Full as your ceiling, adaptive mode will use Full when performance allows and downshift to Medium or Wireframe when it needs to. If you pick Medium as the ceiling, it will never go above Medium but will still downshift to Wireframe under load.
+If you pick Full as your ceiling, adaptive mode will use Full when performance allows and downshift to Medium or Wireframe when it needs to. If you pick Medium as the ceiling, it will never go above Medium but will still downshift to Wireframe under load. Changing the ceiling while Adaptive is already on does not change the running behavior until you turn Adaptive off and on.
 
 You can also enable Adaptive mode via URL parameter: `?adaptive=true`
 
@@ -143,8 +143,8 @@ Both are tracked as **p95** across a rolling window of the last 20 samples, so a
 
 Two thresholds on each metric govern the decision:
 
-- **Downshift.** When p95 render latency exceeds 150 ms or p95 interaction latency exceeds 80 ms, Kanvas drops one step and ignores samples for 3 seconds. Either metric alone is enough, so a slow edit or a slow collaborator update can trigger a downshift just as a laggy pan or zoom can.
-- **Upshift.** When p95 render latency stays under 60 ms and p95 interaction latency stays under 30 ms for 10 consecutive samples, more than 5 seconds after the last change, and the next mode is not above the ceiling. Both metrics must be good. Recovery is at most one step until the next slowdown.
+- **Downshift.** When p95 render latency exceeds 150 ms or p95 interaction latency exceeds 80 ms, Kanvas drops one step, ignores samples for 3 seconds, and notifies you: "Switched to *mode* mode for better performance". Either metric alone is enough, so a slow edit or a slow collaborator update can trigger a downshift just as a laggy pan or zoom can.
+- **Upshift.** When p95 render latency stays under 60 ms and p95 interaction latency stays under 30 ms for 10 consecutive samples, more than 5 seconds after the last change, and the next mode is not above the ceiling. Both metrics must be good. Kanvas steps up one mode and notifies you: "Performance improved - switched to *mode* mode". Recovery is at most one step until the next slowdown.
 
 The downshift is fast because a laggy canvas is an immediate problem; the upshift is deliberately slow because you don't want to bounce back into Full the moment things calm down, only to downshift again three seconds later.
 
@@ -160,7 +160,7 @@ Adaptive mode climbs and descends this ladder:
 Full  ↕  Medium  ↕  Wireframe
 ```
 
-View-Only is **not** part of the ladder. It is a deliberate operator choice (for embedding, sharing, or presenting) rather than a performance tier, so adaptive mode never drops you into View-Only automatically.
+View-Only is **not** part of the ladder. It is a deliberate operator choice (for embedding, sharing, or presenting) rather than a performance tier, so adaptive mode never drops you into View-Only automatically, and never moves you out of it.
 
 ### Cooldowns and debouncing
 
@@ -181,7 +181,7 @@ Adaptive is the right default for most users. Turn it on once and forget about i
 
 ### When to turn it off
 
-Adaptive mode is dynamic by design. That means the canvas you're looking at may change fidelity between one minute and the next. Turn it off when:
+Adaptive mode is dynamic by design. That means the canvas you're looking at may change fidelity between one minute and the next. Turning it off keeps the mode Adaptive last chose. Turn it off when:
 
 - You are **recording a video or capturing screenshots** where mid-capture mode changes would be distracting.
 - You are **teaching or demoing** Kanvas and you want viewers to see a specific render mode.
