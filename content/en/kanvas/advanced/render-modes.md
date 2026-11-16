@@ -169,7 +169,7 @@ Mode changes are throttled:
 - After a downshift, adaptive waits before considering the next change. This prevents a runaway descent from Full → Medium → Wireframe in a single bad second.
 - Upshifts require a **sustained** run of good samples. A momentary improvement doesn't pull you back up to Full.
 
-The combination keeps adaptive mode stable — it reacts to real performance trends, not individual frame jitter.
+The combination keeps adaptive mode stable — it reacts to real performance trends, not one-off slow samples.
 
 ### When to use adaptive mode
 
