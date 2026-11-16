@@ -63,7 +63,7 @@ You can enable Adaptive mode via URL parameter:
 
 `https://kanvas.new/extension/meshmap?adaptive=true&mode=design&design=xxxx`
 
-When `adaptive=true` is set, Kanvas monitors render latency (how long it takes to apply each update to the canvas) and interaction latency (how long the canvas takes to respond to your input), and switches modes as needed. A link cannot set the ceiling: `adaptive=true` always starts with a Full ceiling, and `render` only sets the starting mode. Choose a different ceiling in the render mode switcher after the canvas loads. Adaptive is off unless the link or the switcher turns it on. See [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) for details.
+When `adaptive=true` is set, Kanvas monitors render latency (how long it takes to apply each update to the canvas) and interaction latency (how long the canvas takes to show the next frame after you pan or zoom), and switches modes as needed. A link cannot set the ceiling: `adaptive=true` always starts with a Full ceiling, and `render` only sets the starting mode. Choose a different ceiling in the render mode switcher after the canvas loads. Adaptive is off unless the link or the switcher turns it on. See [Render Modes]({{< ref "kanvas/advanced/render-modes.md" >}}) for details.
 
 `render=view-only` locks components for that session. It does not change who may edit the design. Anyone with edit access can switch the mode back.
 

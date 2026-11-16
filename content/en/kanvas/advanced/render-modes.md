@@ -137,7 +137,7 @@ For example: `https://kanvas.new/extension/meshmap?adaptive=true&mode=design&des
 Kanvas's performance monitor emits a rolling window of samples covering two latency metrics:
 
 - **Render latency** - the time Kanvas takes to apply one update to the canvas, such as an edit, a layout change, or a collaborator's change arriving (measured at the p95 percentile).
-- **Interaction latency** — the time between a user input (pan, zoom, click, drag, hotkey) and the visible response (measured at the p95 percentile).
+- **Interaction latency** - how long the canvas takes to show the next frame after you pan or zoom (measured at the p95 percentile).
 
 Both are tracked as **p95** across a rolling window of the last 20 samples, so a one-off hiccup doesn't trigger a mode change — the metric has to stay bad across many samples before adaptive reacts.
 
@@ -149,7 +149,7 @@ Two thresholds on each metric govern the decision:
 The downshift is fast because a laggy canvas is an immediate problem; the upshift is deliberately slow because you don't want to bounce back into Full the moment things calm down, only to downshift again three seconds later.
 
 {{< alert type="note" >}}
-Adaptive mode is event-driven - it only samples performance when the canvas does work: when you interact with it (pan, zoom, edit) or when an update is rendered. There is zero overhead when the canvas is idle.
+Adaptive mode is event-driven - it only samples performance when the canvas does work: when you pan or zoom, or when an update such as an edit is rendered. There is zero overhead when the canvas is idle.
 {{< /alert >}}
 
 ### The mode ladder
