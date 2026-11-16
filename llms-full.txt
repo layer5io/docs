@@ -8950,6 +8950,23 @@ The Help Center footer shows the installed Kanvas version and links to that vers
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.79-2"
+url: /kanvas/reference/releases/v1.0.79-2/index.md
+date: "2026-11-16"
+--------------------------------------------------------------------------------
+
+## What's New
+## 🔤 General
+- build(live-check): add a scripted live check against a pinned Meshery Server @yi-nuo426 (#4439)
+- [Kanvas] Cut Designer click latency, wire adaptive render signal, ship embed stylesheet @leecalcote (#4438)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@carlosriosilva, @l5io, @leecalcote, @miacycle and @yi-nuo426
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.79-1"
 url: /kanvas/reference/releases/v1.0.79-1/index.md
 date: "2026-11-13"
