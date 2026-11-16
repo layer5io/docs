@@ -156,14 +156,14 @@ For example: `https://kanvas.new/extension/meshmap?adaptive=true&mode=design&des
 Kanvas's performance monitor emits a rolling window of samples covering two latency metrics:
 
 - **Render latency** - the time Kanvas takes to apply one update to the canvas, such as an edit, a layout change, or a collaborator's change arriving (measured at the p95 percentile).
-- **Interaction latency** — the time between a user input (pan, zoom, click, drag, hotkey) and the visible response (measured at the p95 percentile).
+- **Interaction latency** - how long the canvas takes to show the next frame after you pan or zoom (measured at the p95 percentile).
 
-Both are tracked as **p95** across a rolling window of the last 20 samples, so a one-off hiccup doesn't trigger a mode change — the metric has to stay bad across many samples before adaptive reacts.
+Each metric keeps its own rolling window of the last 20 samples and is tracked as **p95** across that window. A metric can trigger a downshift only once its window holds 20 samples, so a single slow sample, such as the render pass that loads a large design, cannot downshift on its own. Because p95 of 20 samples is the second-slowest one, a full window needs at least two slow samples among the last 20 before adaptive reacts. Both windows are cleared on every mode change - each downshift and upshift - and when you turn Adaptive on, so each mode is judged only on its own samples.
 
 Two thresholds on each metric govern the decision:
 
-- **Downshift.** When p95 render latency exceeds 150 ms or p95 interaction latency exceeds 80 ms, Kanvas drops one step, ignores samples for 3 seconds, and notifies you: "Switched to *mode* mode for better performance". Either metric alone is enough, so a slow edit or a slow collaborator update can trigger a downshift just as a laggy pan or zoom can.
-- **Upshift.** When p95 render latency stays under 60 ms and p95 interaction latency stays under 30 ms for 10 consecutive samples, more than 5 seconds after the last change, and the next mode is not above the ceiling. Both metrics must be good. Kanvas steps up one mode and notifies you: "Performance improved - switched to *mode* mode". Recovery is at most one step until the next slowdown.
+- **Downshift.** When the render window is full and its p95 exceeds 150 ms, or the interaction window is full and its p95 exceeds 80 ms, Kanvas drops one step, ignores samples for 3 seconds, and notifies you: "Switched to *mode* mode for better performance". Either metric alone is enough, so a run of slow edits or collaborator updates can trigger a downshift just as laggy panning or zooming can.
+- **Upshift.** When at least one window is full, p95 render latency stays under 60 ms and p95 interaction latency stays under 30 ms for 10 consecutive samples, more than 5 seconds after the last change, and the next mode is not above the ceiling. Both metrics must be good: in a window that is not yet full, every sample must be under its budget, and an empty window counts as under. Kanvas steps up one mode and notifies you: "Performance improved - switched to *mode* mode". Recovery is at most one step until the next slowdown.
 
 The downshift is fast because a laggy canvas is an immediate problem; the upshift is deliberately slow because you don't want to bounce back into Full the moment things calm down, only to downshift again three seconds later.
 
@@ -176,7 +176,7 @@ The downshift is fast because a laggy canvas is an immediate problem; the upshif
 <div class="alert alert-custom" style="border-color: #7A848E;" role="alert">
   <h4 class="alert-heading" style="color: #7A848E;">Note</h4>
   
-      Adaptive mode is event-driven - it only samples performance when the canvas does work: when you interact with it (pan, zoom, edit) or when an update is rendered. There is zero overhead when the canvas is idle.
+      Adaptive mode is event-driven - it only samples performance when the canvas does work: when you pan or zoom, or when an update such as an edit is rendered. There is zero overhead when the canvas is idle.
   
 </div>
 
@@ -197,7 +197,7 @@ View-Only is **not** part of the ladder. It is a deliberate operator choice (for
 
 Mode changes are throttled:
 
-- After a downshift, adaptive waits before considering the next change. This prevents a runaway descent from Full → Medium → Wireframe in a single bad second.
+- After a downshift, adaptive ignores samples for 3 seconds, and the cleared windows must fill again with samples from the new mode before it can downshift again. This prevents a runaway descent from Full → Medium → Wireframe in a single bad second.
 - Upshifts require a **sustained** run of good samples. A momentary improvement doesn't pull you back up to Full.
 
 The combination keeps adaptive mode stable — it reacts to real performance trends, not one-off slow samples.
