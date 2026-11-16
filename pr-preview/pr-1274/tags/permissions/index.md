@@ -1,4 +1,0 @@
-# Permissions
-
-
-<no value>
