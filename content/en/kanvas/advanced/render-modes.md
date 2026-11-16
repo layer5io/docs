@@ -139,12 +139,12 @@ Kanvas's performance monitor emits a rolling window of samples covering two late
 - **Render latency** - the time Kanvas takes to apply one update to the canvas, such as an edit, a layout change, or a collaborator's change arriving (measured at the p95 percentile).
 - **Interaction latency** — the time between a user input (pan, zoom, click, drag, hotkey) and the visible response (measured at the p95 percentile).
 
-Both are tracked as **p95** across a rolling window of the last 20 samples, so a one-off hiccup doesn't trigger a mode change — the metric has to stay bad across many frames before adaptive reacts.
+Both are tracked as **p95** across a rolling window of the last 20 samples, so a one-off hiccup doesn't trigger a mode change — the metric has to stay bad across many samples before adaptive reacts.
 
 Two thresholds on each metric govern the decision:
 
-- **Downshift.** When the 95th percentile of the last 20 frame times exceeds 80 ms, Kanvas drops one step and ignores samples for 3 seconds. The signal is how long the canvas takes to produce the next frame after a pan or zoom. Kanvas does not use a separate 150 ms render threshold.
-- **Upshift.** When that percentile stays under 30 ms for 10 consecutive samples, more than 5 seconds after the last change, and the next mode is not above the ceiling. Recovery is at most one step until the next slowdown.
+- **Downshift.** When p95 render latency exceeds 150 ms or p95 interaction latency exceeds 80 ms, Kanvas drops one step and ignores samples for 3 seconds. Either metric alone is enough, so a slow edit or a slow collaborator update can trigger a downshift just as a laggy pan or zoom can.
+- **Upshift.** When p95 render latency stays under 60 ms and p95 interaction latency stays under 30 ms for 10 consecutive samples, more than 5 seconds after the last change, and the next mode is not above the ceiling. Both metrics must be good. Recovery is at most one step until the next slowdown.
 
 The downshift is fast because a laggy canvas is an immediate problem; the upshift is deliberately slow because you don't want to bounce back into Full the moment things calm down, only to downshift again three seconds later.
 
