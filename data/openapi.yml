@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.117
+  version: v1.3.118
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -9053,6 +9053,7 @@ paths:
                                 ^[a-z0-9]+.[0-9]+.[0-9]+(-[0-9A-Za-z-]+(.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$
                         relationships:
                           type: array
+                          items: {}
                           x-go-type: interface{}
                           x-oapi-codegen-extra-tags:
                             gorm: '-'
@@ -9060,6 +9061,7 @@ paths:
                           description: The relationships of the model.
                         components:
                           type: array
+                          items: {}
                           x-go-type: interface{}
                           x-oapi-codegen-extra-tags:
                             gorm: '-'
@@ -17891,6 +17893,14 @@ paths:
                           db: total_count
                           json: totalCount
                 additionalProperties: false
+        '301':
+          description: Merged-away user ID; redirects to the surviving canonical account's equivalent profile path
+          headers:
+            Location:
+              description: URL of the surviving canonical account's equivalent profile path
+              schema:
+                type: string
+                format: uri
         '400':
           description: Invalid request body or request param
           content:
@@ -18828,7 +18838,9 @@ paths:
       description: >-
         Returns the recent-activity feed shown on a user's public profile. Accessible without authentication; sensitive
         event categories are filtered out and email addresses are redacted unless the caller is a provider admin or is
-        viewing their own profile. Pagination beyond the first page requires provider-admin privileges.
+        viewing their own profile. Pagination beyond the first page requires provider-admin privileges. A retired
+        account is not served: an id with no recorded successor answers 404, and a merged-away id redirects (301) to the
+        surviving canonical account's equivalent path.
       security: []
       parameters:
         - name: userId
@@ -18972,8 +18984,22 @@ paths:
                           format: date-time
                           x-go-type-skip-optional-pointer: true
                     description: The activity entries on the current page.
+        '301':
+          description: Merged-away user ID; redirects to the surviving canonical account's equivalent activity path
+          headers:
+            Location:
+              description: URL of the surviving canonical account's equivalent activity path
+              schema:
+                type: string
+                format: uri
         '400':
           description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
           content:
             text/plain:
               schema:
@@ -20115,15 +20141,46 @@ paths:
                   x-oapi-codegen-extra-tags:
                     json: name,omitempty
                 filters:
-                  type: object
                   description: Filter configuration for this view.
+                  x-go-type-skip-optional-pointer: true
+                  x-oapi-codegen-extra-tags:
+                    json: filters,omitempty
+                  type: object
+                  additionalProperties: true
+                  properties:
+                    k8sclusterIds:
+                      type: array
+                      description: Kubernetes cluster UUIDs included in the view. Uses the canonical Ids spelling.
+                      items:
+                        type: string
+                        format: uuid
+                    kinds:
+                      type: array
+                      description: Resource kinds included in the view.
+                      items:
+                        type: string
+                    models:
+                      type: array
+                      description: Meshery models included in the view.
+                      items:
+                        type: string
+                    namespaces:
+                      type: array
+                      description: Kubernetes namespaces included in the view.
+                      items:
+                        type: string
+                    labels:
+                      type: array
+                      description: Label selectors in key=value form.
+                      items:
+                        type: string
+                    search:
+                      type: string
+                      description: Optional text used to filter resources in the view.
                   x-go-type: core.Map
                   x-go-type-import:
                     path: github.com/meshery/schemas/models/core
                     name: core
-                  x-go-type-skip-optional-pointer: true
-                  x-oapi-codegen-extra-tags:
-                    json: filters,omitempty
                 visibility:
                   type: string
                   description: Visibility level of the view.
@@ -20132,6 +20189,7 @@ paths:
                     json: visibility,omitempty
                 metadata:
                   type: object
+                  additionalProperties: true
                   description: Metadata associated with the view.
                   x-go-type: core.Map
                   x-go-type-import:
@@ -20203,19 +20261,51 @@ paths:
                       db: visibility
                       json: visibility
                   filters:
-                    type: object
                     description: Filter configuration that defines which resources this view displays.
-                    x-go-type: core.Map
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
                     x-go-type-skip-optional-pointer: true
                     x-order: 4
                     x-oapi-codegen-extra-tags:
                       db: filters
                       json: filters
+                    type: object
+                    additionalProperties: true
+                    properties:
+                      k8sclusterIds:
+                        type: array
+                        description: Kubernetes cluster UUIDs included in the view. Uses the canonical Ids spelling.
+                        items:
+                          type: string
+                          format: uuid
+                      kinds:
+                        type: array
+                        description: Resource kinds included in the view.
+                        items:
+                          type: string
+                      models:
+                        type: array
+                        description: Meshery models included in the view.
+                        items:
+                          type: string
+                      namespaces:
+                        type: array
+                        description: Kubernetes namespaces included in the view.
+                        items:
+                          type: string
+                      labels:
+                        type: array
+                        description: Label selectors in key=value form.
+                        items:
+                          type: string
+                      search:
+                        type: string
+                        description: Optional text used to filter resources in the view.
+                    x-go-type: core.Map
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
                   metadata:
                     type: object
+                    additionalProperties: true
                     description: Additional metadata associated with the view.
                     x-go-type: core.Map
                     x-go-type-import:
@@ -20426,18 +20516,50 @@ paths:
                             db: visibility
                             json: visibility,omitempty
                         filters:
-                          type: object
                           description: Filter configuration for this view.
-                          x-go-type: core.Map
-                          x-go-type-import:
-                            path: github.com/meshery/schemas/models/core
-                            name: core
                           x-go-type-skip-optional-pointer: true
                           x-oapi-codegen-extra-tags:
                             db: filters
                             json: filters,omitempty
+                          type: object
+                          additionalProperties: true
+                          properties:
+                            k8sclusterIds:
+                              type: array
+                              description: Kubernetes cluster UUIDs included in the view. Uses the canonical Ids spelling.
+                              items:
+                                type: string
+                                format: uuid
+                            kinds:
+                              type: array
+                              description: Resource kinds included in the view.
+                              items:
+                                type: string
+                            models:
+                              type: array
+                              description: Meshery models included in the view.
+                              items:
+                                type: string
+                            namespaces:
+                              type: array
+                              description: Kubernetes namespaces included in the view.
+                              items:
+                                type: string
+                            labels:
+                              type: array
+                              description: Label selectors in key=value form.
+                              items:
+                                type: string
+                            search:
+                              type: string
+                              description: Optional text used to filter resources in the view.
+                          x-go-type: core.Map
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
                         metadata:
                           type: object
+                          additionalProperties: true
                           description: Metadata associated with the view.
                           x-go-type: core.Map
                           x-go-type-import:
@@ -20720,19 +20842,51 @@ paths:
                       db: visibility
                       json: visibility
                   filters:
-                    type: object
                     description: Filter configuration that defines which resources this view displays.
-                    x-go-type: core.Map
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
                     x-go-type-skip-optional-pointer: true
                     x-order: 4
                     x-oapi-codegen-extra-tags:
                       db: filters
                       json: filters
+                    type: object
+                    additionalProperties: true
+                    properties:
+                      k8sclusterIds:
+                        type: array
+                        description: Kubernetes cluster UUIDs included in the view. Uses the canonical Ids spelling.
+                        items:
+                          type: string
+                          format: uuid
+                      kinds:
+                        type: array
+                        description: Resource kinds included in the view.
+                        items:
+                          type: string
+                      models:
+                        type: array
+                        description: Meshery models included in the view.
+                        items:
+                          type: string
+                      namespaces:
+                        type: array
+                        description: Kubernetes namespaces included in the view.
+                        items:
+                          type: string
+                      labels:
+                        type: array
+                        description: Label selectors in key=value form.
+                        items:
+                          type: string
+                      search:
+                        type: string
+                        description: Optional text used to filter resources in the view.
+                    x-go-type: core.Map
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
                   metadata:
                     type: object
+                    additionalProperties: true
                     description: Additional metadata associated with the view.
                     x-go-type: core.Map
                     x-go-type-import:
@@ -20856,15 +21010,46 @@ paths:
                   x-oapi-codegen-extra-tags:
                     json: name,omitempty
                 filters:
-                  type: object
                   description: Filter configuration for this view.
+                  x-go-type-skip-optional-pointer: true
+                  x-oapi-codegen-extra-tags:
+                    json: filters,omitempty
+                  type: object
+                  additionalProperties: true
+                  properties:
+                    k8sclusterIds:
+                      type: array
+                      description: Kubernetes cluster UUIDs included in the view. Uses the canonical Ids spelling.
+                      items:
+                        type: string
+                        format: uuid
+                    kinds:
+                      type: array
+                      description: Resource kinds included in the view.
+                      items:
+                        type: string
+                    models:
+                      type: array
+                      description: Meshery models included in the view.
+                      items:
+                        type: string
+                    namespaces:
+                      type: array
+                      description: Kubernetes namespaces included in the view.
+                      items:
+                        type: string
+                    labels:
+                      type: array
+                      description: Label selectors in key=value form.
+                      items:
+                        type: string
+                    search:
+                      type: string
+                      description: Optional text used to filter resources in the view.
                   x-go-type: core.Map
                   x-go-type-import:
                     path: github.com/meshery/schemas/models/core
                     name: core
-                  x-go-type-skip-optional-pointer: true
-                  x-oapi-codegen-extra-tags:
-                    json: filters,omitempty
                 visibility:
                   type: string
                   description: Visibility level of the view.
@@ -20873,6 +21058,7 @@ paths:
                     json: visibility,omitempty
                 metadata:
                   type: object
+                  additionalProperties: true
                   description: Metadata associated with the view.
                   x-go-type: core.Map
                   x-go-type-import:
@@ -20944,19 +21130,51 @@ paths:
                       db: visibility
                       json: visibility
                   filters:
-                    type: object
                     description: Filter configuration that defines which resources this view displays.
-                    x-go-type: core.Map
-                    x-go-type-import:
-                      path: github.com/meshery/schemas/models/core
-                      name: core
                     x-go-type-skip-optional-pointer: true
                     x-order: 4
                     x-oapi-codegen-extra-tags:
                       db: filters
                       json: filters
+                    type: object
+                    additionalProperties: true
+                    properties:
+                      k8sclusterIds:
+                        type: array
+                        description: Kubernetes cluster UUIDs included in the view. Uses the canonical Ids spelling.
+                        items:
+                          type: string
+                          format: uuid
+                      kinds:
+                        type: array
+                        description: Resource kinds included in the view.
+                        items:
+                          type: string
+                      models:
+                        type: array
+                        description: Meshery models included in the view.
+                        items:
+                          type: string
+                      namespaces:
+                        type: array
+                        description: Kubernetes namespaces included in the view.
+                        items:
+                          type: string
+                      labels:
+                        type: array
+                        description: Label selectors in key=value form.
+                        items:
+                          type: string
+                      search:
+                        type: string
+                        description: Optional text used to filter resources in the view.
+                    x-go-type: core.Map
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
                   metadata:
                     type: object
+                    additionalProperties: true
                     description: Additional metadata associated with the view.
                     x-go-type: core.Map
                     x-go-type-import:
@@ -40979,7 +41197,7 @@ paths:
                         rowNumber:
                           type: integer
                           description: Row number of the content item, unique across the live content items of the organization.
-                          minimum: 0
+                          minimum: 1
                           x-oapi-codegen-extra-tags:
                             db: row_number
                           x-order: 4
@@ -41295,8 +41513,8 @@ paths:
         items so a deleted item's number is not handed out again by
         assignment), atomically with the insert, so
         concurrent inserts never receive the same number. An organization
-        that has never had a content item is assigned row number 1 first
-        (an explicit `rowNumber` of 0 is still accepted). A supplied
+        that has never had a content item is assigned row number 1 first.
+        A supplied
         `rowNumber` that another live content item of the organization
         already holds refuses the insert with a 409.
         A `rulesOfEngagement` outside its schema (an unknown preset or
@@ -41358,7 +41576,7 @@ paths:
                     items of the organization. Optional: omitted on insert, the
                     server assigns the next row number of the organization; omitted
                     on update, the stored row number is kept.
-                  minimum: 0
+                  minimum: 1
                 data:
                   type: object
                   description: Content values, stored as a JSON blob.
@@ -41584,7 +41802,7 @@ paths:
                   rowNumber:
                     type: integer
                     description: Row number of the content item, unique across the live content items of the organization.
-                    minimum: 0
+                    minimum: 1
                     x-oapi-codegen-extra-tags:
                       db: row_number
                     x-order: 4
@@ -41978,7 +42196,7 @@ paths:
                   rowNumber:
                     type: integer
                     description: Row number of the content item, unique across the live content items of the organization.
-                    minimum: 0
+                    minimum: 1
                     x-oapi-codegen-extra-tags:
                       db: row_number
                     x-order: 4
@@ -42348,7 +42566,7 @@ paths:
                     items of the organization. Optional: omitted on insert, the
                     server assigns the next row number of the organization; omitted
                     on update, the stored row number is kept.
-                  minimum: 0
+                  minimum: 1
                 data:
                   type: object
                   description: Content values, stored as a JSON blob.
@@ -42574,7 +42792,7 @@ paths:
                   rowNumber:
                     type: integer
                     description: Row number of the content item, unique across the live content items of the organization.
-                    minimum: 0
+                    minimum: 1
                     x-oapi-codegen-extra-tags:
                       db: row_number
                     x-order: 4
@@ -59494,6 +59712,107 @@ paths:
                       type: string
                       format: uuid
                     description: UUIDs of events that were deleted.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '429':
+          description: >-
+            Too many requests - the caller exceeded the server's per-user request rate for this route family. Wait the
+            number of seconds in `Retry-After` before retrying.
+          headers:
+            Retry-After:
+              description: Number of seconds the caller must wait before retrying.
+              required: true
+              schema:
+                type: integer
+                minimum: 1
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A MeshKit error answered as a JSON body. `error` is the sentence the caller is shown; MeshKit's long
+                  description is never serialized. Use the `MeshkitError400`, `MeshkitError403`, `MeshkitError404`,
+                  `MeshkitError409`, `MeshkitError429`, `MeshkitError500` and `MeshkitError502` responses for an
+                  operation whose server answers its refusals this way.
+                required:
+                  - error
+                additionalProperties: false
+                properties:
+                  error:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+                  code:
+                    type: string
+                    minLength: 1
+                    description: >-
+                      MeshKit error code, a component-scoped identifier allocated by the emitting service (e.g.
+                      `<component>-<number>`); it is not a stable part of this contract. Omitted for an error that is
+                      not a MeshKit error.
+                  severity:
+                    type: string
+                    description: MeshKit severity name. Omitted when MeshKit reports none.
+                    enum:
+                      - emergency
+                      - alert
+                      - critical
+                      - fatal
+                  probableCause:
+                    type: array
+                    description: MeshKit's probable causes of the error.
+                    items:
+                      type: string
+                  suggestedRemediation:
+                    type: array
+                    description: MeshKit's suggested remediations for the error.
+                    items:
+                      type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/events/mark-all-read:
+    post:
+      x-internal:
+        - cloud
+        - meshery
+      tags:
+        - Events_events
+      operationId: markAllEventsRead
+      summary: Mark all events as read
+      description: >
+        Marks every unread event owned by the authenticated caller as read. System-owned events are not changed. The
+        caller is determined from the authenticated session; clients do not send a user ID.
+      security:
+        - Events_jwt: []
+      responses:
+        '200':
+          description: All of the caller's unread events were marked as read
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: Response returned after marking the caller's unread events as read.
+                required:
+                  - message
+                properties:
+                  message:
+                    type: string
+                    description: Human-readable status message.
+                    maxLength: 500
         '400':
           description: Invalid request body or request param
           content:
@@ -95108,6 +95427,7 @@ paths:
                                                   ^[a-z0-9]+.[0-9]+.[0-9]+(-[0-9A-Za-z-]+(.[0-9A-Za-z-]+)*)?(\+[0-9A-Za-z-]+(\.[0-9A-Za-z-]+)*)?$
                                           relationships:
                                             type: array
+                                            items: {}
                                             x-go-type: interface{}
                                             x-oapi-codegen-extra-tags:
                                               gorm: '-'
@@ -95116,6 +95436,7 @@ paths:
                                             description: The relationships of the model.
                                           components:
                                             type: array
+                                            items: {}
                                             x-go-type: interface{}
                                             x-oapi-codegen-extra-tags:
                                               gorm: '-'
