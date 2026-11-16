@@ -1,0 +1,16 @@
+# v1.0.107
+
+date: 2026-05-28
+
+
+
+- docs(auth): consolidate identity docs; retire \W2\ workstream codenames @hortison (#5413)
+- perf(authz): cache custom-domain org resolution; skip resolver for probes @leecalcote (#5412)
+- Fix Broken Academy tests and module prerequisite completion @CodexRaunak (#5380)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@CodexRaunak, @hortison, @leecalcote and @ritzorama
+
+

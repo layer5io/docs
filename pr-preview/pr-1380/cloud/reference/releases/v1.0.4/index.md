@@ -1,0 +1,15 @@
+# v1.0.4
+
+date: 2026-04-07
+
+
+
+- [Chore]: Update to Sistent v0.18.3 @l5io (#4994)
+- chore: upgrade meshery/schemas to v1.0.5 @yi-nuo426 (#4993)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @yi-nuo426
+
+

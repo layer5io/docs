@@ -1,0 +1,18 @@
+# v0.8.449
+
+date: 2025-09-15
+
+
+
+## 🖥 Cloud UI
+
+- Meshery Org Theme @Namanv0509 (#4152)
+- fix datetime bugs @aabidsofi19 (#4153)
+- fix org logo getting streched @aabidsofi19 (#4151)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Namanv0509, @aabidsofi19, @l5io and @meshery-ci
+
+

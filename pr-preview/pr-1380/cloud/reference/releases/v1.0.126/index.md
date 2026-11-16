@@ -1,0 +1,15 @@
+# v1.0.126
+
+date: 2026-06-10
+
+
+
+- fix(identity-providers): report true BYOC state to org admins/owners @leecalcote (#5464)
+- docs: canonical Organizations reference + identity/auth doc consolidation @leecalcote (#5461)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @winkletinkle
+
+

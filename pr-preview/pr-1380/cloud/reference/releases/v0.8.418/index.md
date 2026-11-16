@@ -1,0 +1,17 @@
+# v0.8.418
+
+date: 2025-08-30
+
+
+
+## 🦴 Infrastructure
+
+NOTE: This is just development environment only.
+- postgres 16.6.0 upgrade @leecalcote (#4038)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

@@ -1,0 +1,14 @@
+# v1.0.33
+
+date: 2026-04-28
+
+
+
+- [Kratos] Make reCAPTCHA site key configurable; fix \Invalid site key\ on non-prod origins @leecalcote (#5121)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @pontusringblom
+
+

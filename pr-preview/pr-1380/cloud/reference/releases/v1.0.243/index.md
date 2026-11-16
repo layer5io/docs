@@ -1,0 +1,14 @@
+# v1.0.243
+
+date: 2026-09-03
+
+
+
+- fix(permissions): grant anonymous sessions the roles and key Kanvas Designer needs @ritzorama (#6026)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@alexquincy, @hortison, @leecalcote and @ritzorama
+
+

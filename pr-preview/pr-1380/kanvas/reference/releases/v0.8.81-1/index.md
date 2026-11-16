@@ -1,0 +1,21 @@
+# v0.8.81-1
+
+date: 2025-05-15
+
+
+
+## What's New
+## 🔤 General
+- [Chore]: Bump Sistent v0.14.187 @l5io (#3652)
+- Enlargen white dashed stroke of z-index arrange/order icons @leecalcote (#3650)
+- disable click events for badges in pan mode @aabidsofi19 (#3648)
+
+## 🤼 Collaboration
+
+- use collaborator utilities from sistent  @amitamrutiya (#3647)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+

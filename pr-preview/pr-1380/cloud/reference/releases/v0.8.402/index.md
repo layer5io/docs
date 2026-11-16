@@ -1,0 +1,16 @@
+# v0.8.402
+
+date: 2025-08-25
+
+
+
+## 🖥 Cloud UI
+
+- fix: unauthorised user visit issue @FaheemOnHub (#4004)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub and @l5io
+
+

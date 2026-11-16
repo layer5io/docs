@@ -1,0 +1,24 @@
+# v0.8.195-1
+
+date: 2026-01-05
+
+
+
+## What's New
+## 🔤 General
+- XState enhancements: timeouts, input validation, state-based guards @[copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent) (#3966)
+- Add support for standard aggreate  test reporting using allure  @aabidsofi19 (#3974)
+
+## 🖌️ Designer
+
+- Add new playwright e2e tests @aabidsofi19 (#3972)
+
+## 🧰 Maintenance
+
+- Add new playwright e2e tests @aabidsofi19 (#3972)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Copilot, @aabidsofi19, @l5io and [copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent)
+

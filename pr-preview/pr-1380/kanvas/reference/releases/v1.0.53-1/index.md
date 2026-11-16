@@ -1,0 +1,16 @@
+# v1.0.53-1
+
+date: 2026-07-05
+
+
+
+## What's New
+## 🔤 General
+- docs: rendering-engine diligence — React Flow vs Cytoscape (+ POC) @ritzorama (#4283)
+- docs: progressive-disclosure agent instructions + ecosystem-shared directives @leecalcote (#4282)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @miacycle and @ritzorama
+

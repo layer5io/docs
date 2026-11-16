@@ -1,0 +1,19 @@
+# v0.8.100-3
+
+date: 2025-06-10
+
+
+
+## What's New
+## 🔤 General
+- Fix: Layers Btn Styling @vr-varad (#3738)
+- Fix: Kanvas Header Bugs @vr-varad (#3689)
+- Fix: Themed Typography For Save and Relationship Tooltip @vr-varad (#3740)
+- fix: operator btn disfunctional in kanvas.new @aabidsofi19 (#3742)
+- Fix: Update New K8 Design in Getting Started @vr-varad (#3741)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @vr-varad
+
