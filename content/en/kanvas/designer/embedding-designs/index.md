@@ -22,6 +22,12 @@ To embed your Kanvas design, follow these steps:
 
 2. **Download the Embedding Script**: Click on the download icon presented in the same modal to download the embedding script.
 
+The embedding script carries your design together with the Kanvas stylesheet, so the embedded design looks the way it does in Kanvas, including group styling and how a component looks when it is selected.
+
+{{< alert type="note" >}}
+Embedding scripts exported before Kanvas began including its stylesheet show each component's own colors and shape, but fall back to generic styling for groups and selection. To update an older embed, download a fresh embedding script for that design and replace the old file.
+{{< /alert >}}
+
 ## Embedding in Static Sites
 
    The embed code for static site:
