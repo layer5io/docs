@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.118
+  version: v1.3.119
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -110,6 +110,8 @@ tags:
     description: APIs for profiles.
   - name: ProviderCapability_capabilities
     description: Operations related to the provider's capabilities document.
+  - name: Request_requests
+    description: Operations related to requests for a decision.
   - name: Schedule_schedules
     description: Operations related to organization schedules.
   - name: Subscription_Subscriptions
@@ -871,7 +873,16 @@ paths:
       tags:
         - Feature_Features
       summary: Get the active features entitled to an organization through its subscriptions
+      description: >
+        Returns the features the organization's active subscriptions entitle it to. When `X-Current-Orgid` is also sent,
+        it must name the same organization as `orgId`; a mismatch is refused with a 400 (the organization selector in
+        docs/mcp-operation-contract.md). When `X-Current-Orgid` is omitted, `orgId` must name the organization the call
+        acts in (the session's selected organization); a mismatch is refused with a 403.
       operationId: getFeaturesByOrganization
+      x-mcp:
+        expose: true
+        title: Get the features of an organization
+        scope: account:read
       parameters:
         - name: orgId
           in: path
@@ -886,6 +897,19 @@ paths:
             x-go-type: uuid.UUID
             x-go-type-import:
               path: github.com/gofrs/uuid
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
       responses:
         '200':
           description: Features response
@@ -1118,6 +1142,12 @@ paths:
                 type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
           content:
             text/plain:
               schema:
@@ -9481,10 +9511,11 @@ paths:
                                 schedulePause:
                                   x-go-type: SchedulePause
                                   description: >-
-                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
-                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
-                                    from a preferences write keeps the current pause unchanged; it does not lift the
-                                    pause.
+                                    Organization-wide schedule pause. Changing it through updateOrg or
+                                    patchOrgPreferences requires organization admin; a write from anyone else that
+                                    changes it is refused with 403. updateOrgSchedulePause sets it under the Pause
+                                    schedules key instead. Omitting schedulePause from a preferences write keeps the
+                                    current pause unchanged; it does not lift the pause.
                                   type: object
                                   additionalProperties: false
                                   properties:
@@ -9814,9 +9845,10 @@ paths:
                     schedulePause:
                       x-go-type: SchedulePausePayload
                       description: >-
-                        Organization-wide schedule pause. Only organization admins may set or lift it; a write from
-                        anyone else that changes it is refused with 403. Omitting schedulePause from a preferences write
-                        keeps the current pause unchanged; it does not lift the pause.
+                        Organization-wide schedule pause. Changing it through updateOrg or patchOrgPreferences requires
+                        organization admin; a write from anyone else that changes it is refused with 403.
+                        updateOrgSchedulePause sets it under the Pause schedules key instead. Omitting schedulePause
+                        from a preferences write keeps the current pause unchanged; it does not lift the pause.
                       type: object
                       additionalProperties: false
                       required:
@@ -10135,10 +10167,11 @@ paths:
                                 schedulePause:
                                   x-go-type: SchedulePause
                                   description: >-
-                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
-                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
-                                    from a preferences write keeps the current pause unchanged; it does not lift the
-                                    pause.
+                                    Organization-wide schedule pause. Changing it through updateOrg or
+                                    patchOrgPreferences requires organization admin; a write from anyone else that
+                                    changes it is refused with 403. updateOrgSchedulePause sets it under the Pause
+                                    schedules key instead. Omitting schedulePause from a preferences write keeps the
+                                    current pause unchanged; it does not lift the pause.
                                   type: object
                                   additionalProperties: false
                                   properties:
@@ -10692,10 +10725,11 @@ paths:
                                 schedulePause:
                                   x-go-type: SchedulePause
                                   description: >-
-                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
-                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
-                                    from a preferences write keeps the current pause unchanged; it does not lift the
-                                    pause.
+                                    Organization-wide schedule pause. Changing it through updateOrg or
+                                    patchOrgPreferences requires organization admin; a write from anyone else that
+                                    changes it is refused with 403. updateOrgSchedulePause sets it under the Pause
+                                    schedules key instead. Omitting schedulePause from a preferences write keeps the
+                                    current pause unchanged; it does not lift the pause.
                                   type: object
                                   additionalProperties: false
                                   properties:
@@ -11118,9 +11152,10 @@ paths:
                     schedulePause:
                       x-go-type: SchedulePausePayload
                       description: >-
-                        Organization-wide schedule pause. Only organization admins may set or lift it; a write from
-                        anyone else that changes it is refused with 403. Omitting schedulePause from a preferences write
-                        keeps the current pause unchanged; it does not lift the pause.
+                        Organization-wide schedule pause. Changing it through updateOrg or patchOrgPreferences requires
+                        organization admin; a write from anyone else that changes it is refused with 403.
+                        updateOrgSchedulePause sets it under the Pause schedules key instead. Omitting schedulePause
+                        from a preferences write keeps the current pause unchanged; it does not lift the pause.
                       type: object
                       additionalProperties: false
                       required:
@@ -11439,10 +11474,11 @@ paths:
                                 schedulePause:
                                   x-go-type: SchedulePause
                                   description: >-
-                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
-                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
-                                    from a preferences write keeps the current pause unchanged; it does not lift the
-                                    pause.
+                                    Organization-wide schedule pause. Changing it through updateOrg or
+                                    patchOrgPreferences requires organization admin; a write from anyone else that
+                                    changes it is refused with 403. updateOrgSchedulePause sets it under the Pause
+                                    schedules key instead. Omitting schedulePause from a preferences write keeps the
+                                    current pause unchanged; it does not lift the pause.
                                   type: object
                                   additionalProperties: false
                                   properties:
@@ -11976,9 +12012,10 @@ paths:
                     schedulePause:
                       x-go-type: SchedulePausePayload
                       description: >-
-                        Organization-wide schedule pause. Only organization admins may set or lift it; a write from
-                        anyone else that changes it is refused with 403. Omitting schedulePause from a preferences write
-                        keeps the current pause unchanged; it does not lift the pause.
+                        Organization-wide schedule pause. Changing it through updateOrg or patchOrgPreferences requires
+                        organization admin; a write from anyone else that changes it is refused with 403.
+                        updateOrgSchedulePause sets it under the Pause schedules key instead. Omitting schedulePause
+                        from a preferences write keeps the current pause unchanged; it does not lift the pause.
                       type: object
                       additionalProperties: false
                       required:
@@ -12297,10 +12334,11 @@ paths:
                                 schedulePause:
                                   x-go-type: SchedulePause
                                   description: >-
-                                    Organization-wide schedule pause. Only organization admins may set or lift it; a
-                                    write from anyone else that changes it is refused with 403. Omitting schedulePause
-                                    from a preferences write keeps the current pause unchanged; it does not lift the
-                                    pause.
+                                    Organization-wide schedule pause. Changing it through updateOrg or
+                                    patchOrgPreferences requires organization admin; a write from anyone else that
+                                    changes it is refused with 403. updateOrgSchedulePause sets it under the Pause
+                                    schedules key instead. Omitting schedulePause from a preferences write keeps the
+                                    current pause unchanged; it does not lift the pause.
                                   type: object
                                   additionalProperties: false
                                   properties:
@@ -12654,9 +12692,10 @@ paths:
                       schedulePause:
                         x-go-type: SchedulePause
                         description: >-
-                          Organization-wide schedule pause. Only organization admins may set or lift it; a write from
-                          anyone else that changes it is refused with 403. Omitting schedulePause from a preferences
-                          write keeps the current pause unchanged; it does not lift the pause.
+                          Organization-wide schedule pause. Changing it through updateOrg or patchOrgPreferences
+                          requires organization admin; a write from anyone else that changes it is refused with 403.
+                          updateOrgSchedulePause sets it under the Pause schedules key instead. Omitting schedulePause
+                          from a preferences write keeps the current pause unchanged; it does not lift the pause.
                         type: object
                         additionalProperties: false
                         properties:
@@ -12981,9 +13020,10 @@ paths:
                 schedulePause:
                   x-go-type: SchedulePausePayload
                   description: >-
-                    Organization-wide schedule pause. Only organization admins may set or lift it; a write from anyone
-                    else that changes it is refused with 403. Omitted keeps the current pause unchanged; it does not
-                    lift the pause.
+                    Organization-wide schedule pause. Changing it through updateOrg or patchOrgPreferences requires
+                    organization admin; a write from anyone else that changes it is refused with 403.
+                    updateOrgSchedulePause sets it under the Pause schedules key instead. Omitted keeps the current
+                    pause unchanged; it does not lift the pause.
                   type: object
                   additionalProperties: false
                   required:
@@ -13245,9 +13285,10 @@ paths:
                       schedulePause:
                         x-go-type: SchedulePause
                         description: >-
-                          Organization-wide schedule pause. Only organization admins may set or lift it; a write from
-                          anyone else that changes it is refused with 403. Omitting schedulePause from a preferences
-                          write keeps the current pause unchanged; it does not lift the pause.
+                          Organization-wide schedule pause. Changing it through updateOrg or patchOrgPreferences
+                          requires organization admin; a write from anyone else that changes it is refused with 403.
+                          updateOrgSchedulePause sets it under the Pause schedules key instead. Omitting schedulePause
+                          from a preferences write keeps the current pause unchanged; it does not lift the pause.
                         type: object
                         additionalProperties: false
                         properties:
@@ -13298,6 +13339,131 @@ paths:
           description: >-
             Precondition failed - `If-Match` does not match the current entity tag of the organization's preferences, so
             nothing was written. Read the preferences again and reapply the change.
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/identity/orgs/{orgId}/schedule-pause:
+    put:
+      x-internal:
+        - cloud
+      tags:
+        - Organization_Organizations
+      security:
+        - Organization_jwt: []
+      summary: Set or lift the organization schedule pause
+      description: >-
+        Sets or lifts the organization-wide schedule pause and changes nothing else about the organization: no other
+        preference, no branding, no links. The body is the closed SchedulePausePayload (`paused` required, `reason`
+        optional); an echoed `pausedAt` or `pausedBy` is refused with 400. `paused` true pauses every schedule in the
+        organization, and the server records `pausedAt` and `pausedBy`. `paused` false lifts the pause and clears
+        `reason`, `pausedAt` and `pausedBy`. The call is idempotent: sending the state the organization is already in
+        succeeds and returns it. It answers the resulting SchedulePause. Authorization is one permission key in the
+        organization named by `orgId` ("Workflow Management / Schedules: Pause schedules", in the Schedule Edit
+        keychain, whose OAuth scope is `schedule:write`), seeded to the organization admin role; a caller without it
+        receives 403 and nothing is written. The broad updateOrg and patchOrgPreferences operations can still change
+        `schedulePause`; there the change requires organization admin, as before. The caller must be a live member of
+        the organization named by `orgId`; a caller who is not receives 404, and this operation does not take
+        `X-Current-Orgid` (see the organization selector in docs/mcp-operation-contract.md). See
+        docs/schedule-pause-contract.md.
+      operationId: updateOrgSchedulePause
+      parameters:
+        - name: orgId
+          in: path
+          required: true
+          description: Organization ID.
+          schema:
+            type: string
+            format: uuid
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+            x-oapi-codegen-extra-tags:
+              db: org_id
+              json: org_id
+            x-go-type-name: OrganizationId
+            x-go-type-skip-optional-pointer: true
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: >-
+                Client-settable organization pause. Carries only `paused` and `reason`; `pausedAt` and `pausedBy` are
+                recorded by the server and refused here. `paused` is required whenever `schedulePause` is sent, so a
+                write can never lift the pause by omission.
+              required:
+                - paused
+              properties:
+                paused:
+                  type: boolean
+                  description: Whether every schedule in the organization is paused.
+                reason:
+                  type: string
+                  maxLength: 1000
+                  description: Reason given for the pause. Cleared when the pause is lifted.
+      responses:
+        '200':
+          description: The organization schedule pause after the change
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                description: >-
+                  Organization-wide pause of scheduled work, stored in organization.metadata.preferences. While `paused`
+                  is true no schedule in the organization is claimed. Set or lift it by updating the organization's
+                  preferences, or alone through updateOrgSchedulePause. Unset is treated as not paused. Lifting the
+                  pause (`paused` false) clears `reason`, `pausedAt` and `pausedBy` on the server, so a stored `paused`
+                  false never carries a stale pause time or identity.
+                properties:
+                  paused:
+                    type: boolean
+                    description: Whether every schedule in the organization is paused.
+                  reason:
+                    type: string
+                    maxLength: 1000
+                    description: Reason given for the pause. Cleared when the pause is lifted.
+                  pausedAt:
+                    type: string
+                    format: date-time
+                    description: >-
+                      Time the pause was set. Server-managed; recorded when `paused` turns true and cleared when it is
+                      lifted.
+                  pausedBy:
+                    type: string
+                    maxLength: 255
+                    description: >-
+                      Identity that set the pause. Server-managed; recorded when `paused` turns true and cleared when it
+                      is lifted.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
         '500':
           description: Internal server error
           content:
@@ -17939,7 +18105,27 @@ paths:
       tags:
         - User_users
       operationId: getUser
+      x-mcp:
+        expose: true
+        title: Get the current user profile
+        scope: account:read
       summary: Get current user profile
+      description: |
+        Returns the profile of the signed-in user. An `X-Current-Orgid` that is not a UUID answers 400.
+      parameters:
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
       responses:
         '200':
           description: Current user profile and role context
@@ -18552,6 +18738,12 @@ paths:
                           db: total_count
                           json: totalCount
                 additionalProperties: false
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -18560,6 +18752,12 @@ paths:
                 type: string
         '403':
           description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
           content:
             text/plain:
               schema:
@@ -31324,10 +31522,17 @@ paths:
       tags:
         - Connection_API_Connections
       operationId: getConnections
+      x-mcp:
+        expose: true
+        title: Get connections
+        scope: connections:read
       summary: Get all connections
-      description: >-
+      description: >
         Returns a paginated list of connections for the authenticated user with filtering, sorting and pagination
-        support
+        support. When `X-Current-Orgid` is also sent, it must name the same organization as the `orgId` query; a
+        mismatch is refused with a 400 (the organization selector in docs/mcp-operation-contract.md). When
+        `X-Current-Orgid` is omitted, the `orgId` query must name the organization the call acts in (the session's
+        selected organization); a mismatch is refused with a 403.
       parameters:
         - name: page
           in: query
@@ -31366,6 +31571,19 @@ paths:
           schema:
             type: string
             format: uuid
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
         - name: filter
           in: query
           description: Filter connections (general filter string)
@@ -32452,8 +32670,26 @@ paths:
                     x-oapi-codegen-extra-tags:
                       json: statusSummary,omitempty
                     x-order: 5
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
         '401':
           description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
           content:
             text/plain:
               schema:
@@ -41053,6 +41289,10 @@ paths:
         - ContentItem_contentItems
       summary: List content items
       operationId: listContentItems
+      x-mcp:
+        expose: true
+        title: List content items
+        scope: content:read
       description: |
         Returns a paginated list of the live content items in the
         organization of the authenticated session, ordered by `rowNumber`
@@ -41061,7 +41301,8 @@ paths:
         case-insensitively. `threadId` returns one whole thread: the root
         item it names and every live item whose `threadId` names it,
         ordered by `threadIndex` (the root first) unless `order` names
-        another column.
+        another column. A `threadId` or `X-Current-Orgid` that is not a
+        UUID answers 400.
       parameters:
         - name: page
           in: query
@@ -41115,6 +41356,19 @@ paths:
             x-go-type: uuid.UUID
             x-go-type-import:
               path: github.com/gofrs/uuid
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
       responses:
         '200':
           description: Content item page
@@ -41416,7 +41670,124 @@ paths:
                             db: media_asset_ids
                             json: mediaAssetIds,omitempty
                           x-order: 15
+                        approved:
+                          type: boolean
+                          description: >
+                            Whether the item is approved to run. Server-set and read-only: it is not in
+                            ContentItemPayload. At insert the server sets it from the effective approval, which is
+                            resolved at insert, again at each content edit, and again when `approvalPolicy` changes:
+                            `false` with a pending `content_item_approval` request when `approvalRequired` is true, and
+                            `true` with no request when it is false. Afterwards `approveRequest` in the request
+                            construct sets it to true, and so does the one-time backfill of a row written before this
+                            field shipped (see below); that operation needs the Decide Content Item Approvals key and is
+                            never an AI app tool. A content edit that resolves to required sets it back to false. Any
+                            content edit that leaves it unapproved supersedes an open request with a fresh pending one,
+                            so after the edit an unapproved item has an open request (see updateContentItem). A change
+                            to `approvalPolicy` whose resolved result is required does the same to an approved item. The
+                            client that runs the queue reads this field. For one release after this field ships, servers
+                            mirror it into the free-form `Approved?` column in `data` for older readers, and backfill
+                            `approved` once from that column for rows written before the field shipped, so every row
+                            carries a value. A client-sent `Approved?` never approves an item. New readers read this
+                            field only. See docs/content-item-contract.md.
+                          default: false
+                          x-go-type-skip-optional-pointer: true
+                          x-oapi-codegen-extra-tags:
+                            db: approved
+                            json: approved
+                          x-order: 16
+                        createdByClient:
+                          type: string
+                          description: >
+                            OAuth client ID of the AI app that created the item. Server-set from the access token, never
+                            client-settable, and never changed by an update. Empty or omitted on an item a person
+                            created.
+                          maxLength: 255
+                          x-oapi-codegen-extra-tags:
+                            db: created_by_client
+                            json: createdByClient,omitempty
+                          x-order: 17
+                        approvalPolicy:
+                          description: >
+                            The item's own approval policy. Absent means inherit. An explicit `required` or
+                            `not_required` wins over every higher-level setting; `inherit` or absent inherits from
+                            higher-level settings (platform, workspace, profile), hierarchy defined in
+                            https://github.com/layer5io/meshery-cloud/issues/6365. Interim: until the upstream policies
+                            exist, `inherit` or absent resolves to `required`. Only a person with Decide Content Item
+                            Approvals may write a value that changes the stored one; an AI app never can. Changing it
+                            alone re-resolves the approval. A change whose result is required (`required`, or `inherit`
+                            or absent in the interim, which resolves to required) resets an approved item and opens its
+                            request. A change whose result is not required never changes `approved`, and any change
+                            leaves an unapproved item with an open request, whatever the result (see updateContentItem).
+                            Stored in the nullable `approval_policy` column; null means inherit, and a written `inherit`
+                            is stored as null, so reads return it absent.
+                          x-oapi-codegen-extra-tags:
+                            db: approval_policy
+                            json: approvalPolicy,omitempty
+                          x-order: 18
+                          type: string
+                          enum:
+                            - required
+                            - not_required
+                            - inherit
+                          x-enum-varnames:
+                            - ApprovalPolicyRequired
+                            - ApprovalPolicyNotRequired
+                            - ApprovalPolicyInherit
+                        approvalRequired:
+                          type: boolean
+                          readOnly: true
+                          description: >
+                            Server-computed and read-only: whether the item needs a person's approval, resolved at
+                            insert, again at each content edit, and again when `approvalPolicy` changes (see
+                            updateContentItem) from its `approvalPolicy` and the higher-level settings (hierarchy
+                            defined in https://github.com/layer5io/meshery-cloud/issues/6365). Stored in the
+                            `approval_required` column. Never in a payload. A change to `approvalPolicy` alone
+                            re-resolves it; a higher-level setting alone does not, and the next content edit resolves it
+                            again. Interim: until the upstream policies exist, an absent or `inherit` policy resolves to
+                            `true` (approval source `fallback`). Absent on items inserted before this field shipped.
+                          x-oapi-codegen-extra-tags:
+                            db: approval_required
+                            json: approvalRequired,omitempty
+                          x-order: 19
+                        approvalPolicySource:
+                          type: string
+                          readOnly: true
+                          description: >
+                            Server-computed and read-only: the level that decided `approvalRequired`, resolved at
+                            insert, again at each content edit, and again when `approvalPolicy` changes (see
+                            updateContentItem), stored in the `approval_policy_source` column. `item` when the item's
+                            own `approvalPolicy` was explicit; `fallback` when no level set a value and approval is
+                            required. The other levels name the higher level that set the value: `workspace`, `profile`,
+                            `organization` and `platform`, listed in their planned order (the hierarchy is defined in
+                            https://github.com/layer5io/meshery-cloud/issues/6365). Interim: until the upstream policies
+                            exist, only `item` and `fallback` are active (an absent or `inherit` policy resolves to
+                            `fallback`). The other four levels become active as that hierarchy lands. Never in a
+                            payload. Absent on items inserted before this field shipped.
+                          enum:
+                            - item
+                            - workspace
+                            - profile
+                            - organization
+                            - platform
+                            - fallback
+                          x-enum-varnames:
+                            - ApprovalPolicySourceItem
+                            - ApprovalPolicySourceWorkspace
+                            - ApprovalPolicySourceProfile
+                            - ApprovalPolicySourceOrganization
+                            - ApprovalPolicySourcePlatform
+                            - ApprovalPolicySourceFallback
+                          x-oapi-codegen-extra-tags:
+                            db: approval_policy_source
+                            json: approvalPolicySource,omitempty
+                          x-order: 20
                     description: Content items included on this page of results.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -41501,6 +41872,30 @@ paths:
         - ContentItem_contentItems
       summary: Insert a content item
       operationId: insertContentItem
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: false
+          description: >-
+            Client-chosen key that makes a create safe to retry. The server keeps the organization, the user, the key, a
+            hash of the request and the final response for 24 hours. Only a final response that is not a 5xx is stored.
+            The server answers a 5xx only after it has rolled back the write; a 5xx it answers is not stored and
+            releases the key's claim, so a retry with the same key is processed as new. A response the server has
+            committed is final and is stored, even if a gateway in front of the server later fails the client's
+            connection. A retry with the same key and the same request hash returns the stored response without creating
+            anything again. A retry with the same key and a different request hash answers 422 and creates nothing. A
+            retry with the same key that arrives while the earlier request with that key is still being processed
+            answers 409 with the body `code` `idempotency_key_in_flight` and creates nothing. Once the first request has
+            finished without a 5xx, a retry receives the stored response; after a 5xx, a retry is processed as new.
+            Precedence: while the first request with a key is in flight, every retry with that key answers 409 whatever
+            its body; only once the first request has finished does a retry with a different body answer 422. The
+            in-flight claim of a request that never finished expires 24 hours after it was taken, the same TTL as the
+            stored response; no shorter in-flight lease applies. A retry after that expiry is processed as new. Omitted,
+            the create is not deduplicated. Use a fresh random value (a UUID) per intended create.
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 255
       description: |
         Inserts a new content item. Insert-only: any supplied
         `id` and `expectedFingerprint` are ignored; existing rows change
@@ -41516,7 +41911,8 @@ paths:
         that has never had a content item is assigned row number 1 first.
         A supplied
         `rowNumber` that another live content item of the organization
-        already holds refuses the insert with a 409.
+        already holds refuses the insert with a 409 (`code`
+        `row_number_taken`).
         A `rulesOfEngagement` outside its schema (an unknown preset or
         dial, or a value out of range) is refused with a 400, on insert
         and on update alike.
@@ -41537,7 +41933,35 @@ paths:
         (the root counts as 0). An item of another organization, a deleted
         item and a missing one receive the same 400. A `threadIndex` that
         another live item of the same thread already holds refuses the
-        insert with a 409.
+        insert with a 409 (`code` `thread_index_taken`).
+        The optional `Idempotency-Key` header makes the insert safe to
+        retry: within 24 hours the same key with the same request hash
+        returns the first response without inserting again, and the same
+        key with a different request hash answers 422 and inserts nothing.
+        A retry with the same key that arrives while the first request with
+        that key is still being processed answers 409 with the body `code`
+        `idempotency_key_in_flight` and inserts nothing. Once the first request
+        has finished without a 5xx, a retry receives the stored response; after
+        a 5xx, a retry is processed as new. Precedence: while the
+        first request with a key is in flight, every retry with that key
+        answers 409 whatever its body; only once the first request has finished
+        does a retry with a different body answer 422. An in-flight claim on a
+        request that never finished expires 24 hours after it was taken, the
+        same TTL as the stored response (no shorter in-flight lease applies),
+        and a retry after that is processed as new. The permanent 409s of
+        this operation carry `row_number_taken` and `thread_index_taken`, so
+        a client tells the in-flight case by its `code`.
+        A caller whose effective keys lack Decide Content Item Approvals in
+        the session organization who sends `approvalPolicy` `required` or
+        `not_required` gets a 403 and nothing is inserted; a caller holding
+        that key may send any value. Omitted or `inherit`, the item inherits
+        (the server stores both as null, so they are the same value). The server resolves the effective approval once,
+        here: when it is required the item lands `approved` false with a
+        pending `content_item_approval` request; when it is not required the
+        server sets `approved` true and opens no request. Interim: until the
+        upstream policies exist, inherit resolves to required.
+        `approved` is never in the payload (docs/content-item-contract.md,
+        Approval policy).
       requestBody:
         required: true
         content:
@@ -41548,8 +41972,14 @@ paths:
                 Payload for inserting or updating a content item.
                 Contains only client-settable fields; the owning
                 `organizationId` (derived from the authenticated session), the
-                server-computed `fingerprint` and the server-generated
-                `createdAt` / `updatedAt` timestamps are intentionally excluded.
+                server-computed `fingerprint`, the server-set `createdByClient`,
+                `approved` (set only by `approveRequest` in the request construct),
+                the server-computed `approvalRequired` and `approvalPolicySource`
+                and the server-generated `createdAt` / `updatedAt` timestamps are
+                intentionally excluded. `approvalPolicy` is the one approval field a
+                write carries; a caller without Decide Content Item Approvals may send
+                only the stored value, or omit it (docs/content-item-contract.md,
+                Approval policy).
               required:
                 - profile
               properties:
@@ -41739,6 +42169,34 @@ paths:
                     clients send the whole item without it); an empty array clears it.
                   x-oapi-codegen-extra-tags:
                     json: mediaAssetIds,omitempty
+                approvalPolicy:
+                  description: |
+                    The item's own approval policy. Optional: omitted on insert, the
+                    item inherits; omitted on update, the stored value is kept;
+                    `inherit` on update clears an explicit value back to inherit; the
+                    field does not accept null.
+                    A caller without Decide Content Item Approvals in the session
+                    organization is refused with a 403 and nothing changes when it
+                    sends a value that would change the stored one: on insert,
+                    `required` or `not_required`; on update, a value different from
+                    the stored one (absent and `inherit` are one value, since the
+                    server stores `inherit` as null). Sending back the unchanged stored value
+                    is accepted, and an omitted value on update keeps the stored one and is
+                    never refused. An AI app token never carries that key. Interim: until
+                    the upstream policies exist, `inherit` or absent resolves to
+                    `required`, and the item's approval source is `item` for an
+                    explicit value or `fallback` for `inherit` or absent.
+                  x-oapi-codegen-extra-tags:
+                    json: approvalPolicy,omitempty
+                  type: string
+                  enum:
+                    - required
+                    - not_required
+                    - inherit
+                  x-enum-varnames:
+                    - ApprovalPolicyRequired
+                    - ApprovalPolicyNotRequired
+                    - ApprovalPolicyInherit
       responses:
         '201':
           description: Content item created
@@ -42019,6 +42477,114 @@ paths:
                       db: media_asset_ids
                       json: mediaAssetIds,omitempty
                     x-order: 15
+                  approved:
+                    type: boolean
+                    description: >
+                      Whether the item is approved to run. Server-set and read-only: it is not in ContentItemPayload. At
+                      insert the server sets it from the effective approval, which is resolved at insert, again at each
+                      content edit, and again when `approvalPolicy` changes: `false` with a pending
+                      `content_item_approval` request when `approvalRequired` is true, and `true` with no request when
+                      it is false. Afterwards `approveRequest` in the request construct sets it to true, and so does the
+                      one-time backfill of a row written before this field shipped (see below); that operation needs the
+                      Decide Content Item Approvals key and is never an AI app tool. A content edit that resolves to
+                      required sets it back to false. Any content edit that leaves it unapproved supersedes an open
+                      request with a fresh pending one, so after the edit an unapproved item has an open request (see
+                      updateContentItem). A change to `approvalPolicy` whose resolved result is required does the same
+                      to an approved item. The client that runs the queue reads this field. For one release after this
+                      field ships, servers mirror it into the free-form `Approved?` column in `data` for older readers,
+                      and backfill `approved` once from that column for rows written before the field shipped, so every
+                      row carries a value. A client-sent `Approved?` never approves an item. New readers read this field
+                      only. See docs/content-item-contract.md.
+                    default: false
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: approved
+                      json: approved
+                    x-order: 16
+                  createdByClient:
+                    type: string
+                    description: >
+                      OAuth client ID of the AI app that created the item. Server-set from the access token, never
+                      client-settable, and never changed by an update. Empty or omitted on an item a person created.
+                    maxLength: 255
+                    x-oapi-codegen-extra-tags:
+                      db: created_by_client
+                      json: createdByClient,omitempty
+                    x-order: 17
+                  approvalPolicy:
+                    description: >
+                      The item's own approval policy. Absent means inherit. An explicit `required` or `not_required`
+                      wins over every higher-level setting; `inherit` or absent inherits from higher-level settings
+                      (platform, workspace, profile), hierarchy defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365. Interim: until the upstream policies exist,
+                      `inherit` or absent resolves to `required`. Only a person with Decide Content Item Approvals may
+                      write a value that changes the stored one; an AI app never can. Changing it alone re-resolves the
+                      approval. A change whose result is required (`required`, or `inherit` or absent in the interim,
+                      which resolves to required) resets an approved item and opens its request. A change whose result
+                      is not required never changes `approved`, and any change leaves an unapproved item with an open
+                      request, whatever the result (see updateContentItem). Stored in the nullable `approval_policy`
+                      column; null means inherit, and a written `inherit` is stored as null, so reads return it absent.
+                    x-oapi-codegen-extra-tags:
+                      db: approval_policy
+                      json: approvalPolicy,omitempty
+                    x-order: 18
+                    type: string
+                    enum:
+                      - required
+                      - not_required
+                      - inherit
+                    x-enum-varnames:
+                      - ApprovalPolicyRequired
+                      - ApprovalPolicyNotRequired
+                      - ApprovalPolicyInherit
+                  approvalRequired:
+                    type: boolean
+                    readOnly: true
+                    description: >
+                      Server-computed and read-only: whether the item needs a person's approval, resolved at insert,
+                      again at each content edit, and again when `approvalPolicy` changes (see updateContentItem) from
+                      its `approvalPolicy` and the higher-level settings (hierarchy defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365). Stored in the `approval_required` column.
+                      Never in a payload. A change to `approvalPolicy` alone re-resolves it; a higher-level setting
+                      alone does not, and the next content edit resolves it again. Interim: until the upstream policies
+                      exist, an absent or `inherit` policy resolves to `true` (approval source `fallback`). Absent on
+                      items inserted before this field shipped.
+                    x-oapi-codegen-extra-tags:
+                      db: approval_required
+                      json: approvalRequired,omitempty
+                    x-order: 19
+                  approvalPolicySource:
+                    type: string
+                    readOnly: true
+                    description: >
+                      Server-computed and read-only: the level that decided `approvalRequired`, resolved at insert,
+                      again at each content edit, and again when `approvalPolicy` changes (see updateContentItem),
+                      stored in the `approval_policy_source` column. `item` when the item's own `approvalPolicy` was
+                      explicit; `fallback` when no level set a value and approval is required. The other levels name the
+                      higher level that set the value: `workspace`, `profile`, `organization` and `platform`, listed in
+                      their planned order (the hierarchy is defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365). Interim: until the upstream policies
+                      exist, only `item` and `fallback` are active (an absent or `inherit` policy resolves to
+                      `fallback`). The other four levels become active as that hierarchy lands. Never in a payload.
+                      Absent on items inserted before this field shipped.
+                    enum:
+                      - item
+                      - workspace
+                      - profile
+                      - organization
+                      - platform
+                      - fallback
+                    x-enum-varnames:
+                      - ApprovalPolicySourceItem
+                      - ApprovalPolicySourceWorkspace
+                      - ApprovalPolicySourceProfile
+                      - ApprovalPolicySourceOrganization
+                      - ApprovalPolicySourcePlatform
+                      - ApprovalPolicySourceFallback
+                    x-oapi-codegen-extra-tags:
+                      db: approval_policy_source
+                      json: approvalPolicySource,omitempty
+                    x-order: 20
         '400':
           description: Invalid request body or request param
           content:
@@ -42044,10 +42610,58 @@ paths:
               schema:
                 type: string
         '409':
-          description: >-
-            Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint,
-            another live content item of the organization already holds the same rowNumber, or another live item of the
-            same thread already holds the same threadIndex
+          description: >
+            Conflict on insert. The body's `code` says which: `row_number_taken` or `thread_index_taken` is permanent
+            for this payload, and `idempotency_key_in_flight` is a retry whose first request with the same
+            Idempotency-Key is still being processed. Once the first request has finished without a 5xx, a retry
+            receives the stored response; after a 5xx, a retry is processed as new. Nothing is inserted in any case.
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - type: object
+                    description: >-
+                      Body of an insert refused for a permanent conflict with the content. `code` is the
+                      machine-readable reason and `message` the sentence the caller is shown. The in-flight retry body
+                      is `IdempotencyKeyInFlightError` in v1beta2 core.
+                    additionalProperties: false
+                    required:
+                      - code
+                      - message
+                    properties:
+                      code:
+                        type: string
+                        description: >
+                          `row_number_taken`: a live item of the organization holds the `rowNumber`.
+                          `thread_index_taken`: a live item of the same thread holds the `threadIndex`.
+                        enum:
+                          - row_number_taken
+                          - thread_index_taken
+                      message:
+                        type: string
+                        minLength: 1
+                        description: The sentence the caller is shown.
+                  - type: object
+                    description: >-
+                      A retry whose Idempotency-Key is still in flight. Nothing was created by this request. Once the
+                      first request has finished without a 5xx, a retry receives the stored response; after a 5xx, a
+                      retry is processed as new.
+                    required:
+                      - code
+                      - message
+                    additionalProperties: false
+                    properties:
+                      code:
+                        type: string
+                        description: Machine-readable reason. Always `idempotency_key_in_flight` for this body.
+                        enum:
+                          - idempotency_key_in_flight
+                      message:
+                        type: string
+                        minLength: 1
+                        description: The sentence the caller is shown.
+        '422':
+          description: Unprocessable - the Idempotency-Key was already used with a different request body
           content:
             text/plain:
               schema:
@@ -42119,6 +42733,10 @@ paths:
         - ContentItem_contentItems
       summary: Get a content item by ID
       operationId: getContentItem
+      x-mcp:
+        expose: true
+        title: Get a content item
+        scope: content:read
       parameters:
         - name: contentItemId
           in: path
@@ -42133,6 +42751,19 @@ paths:
             x-go-type: uuid.UUID
             x-go-type-import:
               path: github.com/gofrs/uuid
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
       responses:
         '200':
           description: Content item response
@@ -42413,6 +43044,114 @@ paths:
                       db: media_asset_ids
                       json: mediaAssetIds,omitempty
                     x-order: 15
+                  approved:
+                    type: boolean
+                    description: >
+                      Whether the item is approved to run. Server-set and read-only: it is not in ContentItemPayload. At
+                      insert the server sets it from the effective approval, which is resolved at insert, again at each
+                      content edit, and again when `approvalPolicy` changes: `false` with a pending
+                      `content_item_approval` request when `approvalRequired` is true, and `true` with no request when
+                      it is false. Afterwards `approveRequest` in the request construct sets it to true, and so does the
+                      one-time backfill of a row written before this field shipped (see below); that operation needs the
+                      Decide Content Item Approvals key and is never an AI app tool. A content edit that resolves to
+                      required sets it back to false. Any content edit that leaves it unapproved supersedes an open
+                      request with a fresh pending one, so after the edit an unapproved item has an open request (see
+                      updateContentItem). A change to `approvalPolicy` whose resolved result is required does the same
+                      to an approved item. The client that runs the queue reads this field. For one release after this
+                      field ships, servers mirror it into the free-form `Approved?` column in `data` for older readers,
+                      and backfill `approved` once from that column for rows written before the field shipped, so every
+                      row carries a value. A client-sent `Approved?` never approves an item. New readers read this field
+                      only. See docs/content-item-contract.md.
+                    default: false
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: approved
+                      json: approved
+                    x-order: 16
+                  createdByClient:
+                    type: string
+                    description: >
+                      OAuth client ID of the AI app that created the item. Server-set from the access token, never
+                      client-settable, and never changed by an update. Empty or omitted on an item a person created.
+                    maxLength: 255
+                    x-oapi-codegen-extra-tags:
+                      db: created_by_client
+                      json: createdByClient,omitempty
+                    x-order: 17
+                  approvalPolicy:
+                    description: >
+                      The item's own approval policy. Absent means inherit. An explicit `required` or `not_required`
+                      wins over every higher-level setting; `inherit` or absent inherits from higher-level settings
+                      (platform, workspace, profile), hierarchy defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365. Interim: until the upstream policies exist,
+                      `inherit` or absent resolves to `required`. Only a person with Decide Content Item Approvals may
+                      write a value that changes the stored one; an AI app never can. Changing it alone re-resolves the
+                      approval. A change whose result is required (`required`, or `inherit` or absent in the interim,
+                      which resolves to required) resets an approved item and opens its request. A change whose result
+                      is not required never changes `approved`, and any change leaves an unapproved item with an open
+                      request, whatever the result (see updateContentItem). Stored in the nullable `approval_policy`
+                      column; null means inherit, and a written `inherit` is stored as null, so reads return it absent.
+                    x-oapi-codegen-extra-tags:
+                      db: approval_policy
+                      json: approvalPolicy,omitempty
+                    x-order: 18
+                    type: string
+                    enum:
+                      - required
+                      - not_required
+                      - inherit
+                    x-enum-varnames:
+                      - ApprovalPolicyRequired
+                      - ApprovalPolicyNotRequired
+                      - ApprovalPolicyInherit
+                  approvalRequired:
+                    type: boolean
+                    readOnly: true
+                    description: >
+                      Server-computed and read-only: whether the item needs a person's approval, resolved at insert,
+                      again at each content edit, and again when `approvalPolicy` changes (see updateContentItem) from
+                      its `approvalPolicy` and the higher-level settings (hierarchy defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365). Stored in the `approval_required` column.
+                      Never in a payload. A change to `approvalPolicy` alone re-resolves it; a higher-level setting
+                      alone does not, and the next content edit resolves it again. Interim: until the upstream policies
+                      exist, an absent or `inherit` policy resolves to `true` (approval source `fallback`). Absent on
+                      items inserted before this field shipped.
+                    x-oapi-codegen-extra-tags:
+                      db: approval_required
+                      json: approvalRequired,omitempty
+                    x-order: 19
+                  approvalPolicySource:
+                    type: string
+                    readOnly: true
+                    description: >
+                      Server-computed and read-only: the level that decided `approvalRequired`, resolved at insert,
+                      again at each content edit, and again when `approvalPolicy` changes (see updateContentItem),
+                      stored in the `approval_policy_source` column. `item` when the item's own `approvalPolicy` was
+                      explicit; `fallback` when no level set a value and approval is required. The other levels name the
+                      higher level that set the value: `workspace`, `profile`, `organization` and `platform`, listed in
+                      their planned order (the hierarchy is defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365). Interim: until the upstream policies
+                      exist, only `item` and `fallback` are active (an absent or `inherit` policy resolves to
+                      `fallback`). The other four levels become active as that hierarchy lands. Never in a payload.
+                      Absent on items inserted before this field shipped.
+                    enum:
+                      - item
+                      - workspace
+                      - profile
+                      - organization
+                      - platform
+                      - fallback
+                    x-enum-varnames:
+                      - ApprovalPolicySourceItem
+                      - ApprovalPolicySourceWorkspace
+                      - ApprovalPolicySourceProfile
+                      - ApprovalPolicySourceOrganization
+                      - ApprovalPolicySourcePlatform
+                      - ApprovalPolicySourceFallback
+                    x-oapi-codegen-extra-tags:
+                      db: approval_policy_source
+                      json: approvalPolicySource,omitempty
+                    x-order: 20
         '400':
           description: Invalid request body or request param
           content:
@@ -42514,6 +43253,58 @@ paths:
         it. An omitted `mediaAssetIds` keeps the stored list and `[]`
         clears it. The thread fields are fixed at insert: omitted, or equal to the
         stored values, they are kept; any other value is refused with a 400.
+        `approved` is not in the payload, and no update sets it to true;
+        only `approveRequest` does. A content edit, or an `approvalPolicy`
+        change whose resolved result is required, can reset it, as described
+        below. A caller without Decide Content Item
+        Approvals gets a 403 if it sends an `approvalPolicy` different from
+        the stored one (absent and `inherit` count as one value, since
+        the server stores `inherit` as null);
+        sending back the unchanged stored value is accepted and changes
+        nothing. An omitted `approvalPolicy` keeps the stored value and is not
+        a change, so it is never refused.
+        Approval on a content edit. An update that changes the item's
+        content re-resolves its effective approval in the same transaction,
+        with the same rule as insert: the `approvalPolicy` the update stores,
+        then the higher-level settings (interim: `inherit` or absent resolves
+        to `required`). It records `approvalRequired` and
+        `approvalPolicySource` again. Content is `profile`, `rowNumber`,
+        `data` (without the server-owned `Approved?` mirror),
+        `rulesOfEngagement` and `mediaAssetIds`, the fields the fingerprint
+        covers, compared with the stored values, so a write-back that sends
+        them unchanged is not an edit. These never trigger it: the
+        `approvalPolicy` (a change to it alone is handled below),
+        `expectedFingerprint`, `id` and the thread fields (`threadId`,
+        `replyToId`, `threadIndex`, fixed at insert).
+        Whatever the resolved approval, the item's open
+        `content_item_approval` request, if it has one, is superseded: it is
+        closed with `status` `superseded`, `decidedAt` set to the edit time,
+        and no `decidedBy` and no `note`. When approval resolves to required,
+        an item that was `approved` is set to `approved` false. When approval
+        resolves to not required, `approved` is unchanged: an approved item
+        stays approved and opens no request. An item the edit leaves
+        unapproved gets a fresh pending request for the content as it now is,
+        in the same transaction, so after the edit an unapproved item has an
+        open request
+        (the open-request invariant in docs/content-item-contract.md). An
+        update never approves: the item stays unapproved until a decider
+        approves that request. A failed write keeps none of these changes, the item and
+        its requests alike.
+        Approval on an `approvalPolicy` change. A write that changes the stored
+        policy and no content re-resolves the approval the same way, in the
+        same transaction. When the result is required and the item was
+        `approved`, `approved` is set to false and a pending request opens,
+        unless one is already pending. Any other result changes no `approved`
+        and closes no request: a result that is not required leaves an unapproved
+        item unapproved, and its open request stays pending for a decider. An
+        unapproved item with no open request, after a denial for example, gets
+        a fresh pending request in the same write, whatever the result. The
+        stored `approvalRequired` and `approvalPolicySource` are rewritten to
+        the new result. Sending back the unchanged stored policy re-resolves
+        nothing. A write that changes nothing (a whole-item write-back of the
+        stored content and policy) opens no request and closes none, so a
+        denied item stays denied until a content edit or an `approvalPolicy`
+        change. This applies to every writer, a person included.
       parameters:
         - name: contentItemId
           in: path
@@ -42538,8 +43329,14 @@ paths:
                 Payload for inserting or updating a content item.
                 Contains only client-settable fields; the owning
                 `organizationId` (derived from the authenticated session), the
-                server-computed `fingerprint` and the server-generated
-                `createdAt` / `updatedAt` timestamps are intentionally excluded.
+                server-computed `fingerprint`, the server-set `createdByClient`,
+                `approved` (set only by `approveRequest` in the request construct),
+                the server-computed `approvalRequired` and `approvalPolicySource`
+                and the server-generated `createdAt` / `updatedAt` timestamps are
+                intentionally excluded. `approvalPolicy` is the one approval field a
+                write carries; a caller without Decide Content Item Approvals may send
+                only the stored value, or omit it (docs/content-item-contract.md,
+                Approval policy).
               required:
                 - profile
               properties:
@@ -42729,6 +43526,34 @@ paths:
                     clients send the whole item without it); an empty array clears it.
                   x-oapi-codegen-extra-tags:
                     json: mediaAssetIds,omitempty
+                approvalPolicy:
+                  description: |
+                    The item's own approval policy. Optional: omitted on insert, the
+                    item inherits; omitted on update, the stored value is kept;
+                    `inherit` on update clears an explicit value back to inherit; the
+                    field does not accept null.
+                    A caller without Decide Content Item Approvals in the session
+                    organization is refused with a 403 and nothing changes when it
+                    sends a value that would change the stored one: on insert,
+                    `required` or `not_required`; on update, a value different from
+                    the stored one (absent and `inherit` are one value, since the
+                    server stores `inherit` as null). Sending back the unchanged stored value
+                    is accepted, and an omitted value on update keeps the stored one and is
+                    never refused. An AI app token never carries that key. Interim: until
+                    the upstream policies exist, `inherit` or absent resolves to
+                    `required`, and the item's approval source is `item` for an
+                    explicit value or `fallback` for `inherit` or absent.
+                  x-oapi-codegen-extra-tags:
+                    json: approvalPolicy,omitempty
+                  type: string
+                  enum:
+                    - required
+                    - not_required
+                    - inherit
+                  x-enum-varnames:
+                    - ApprovalPolicyRequired
+                    - ApprovalPolicyNotRequired
+                    - ApprovalPolicyInherit
       responses:
         '200':
           description: Content item updated
@@ -43009,6 +43834,114 @@ paths:
                       db: media_asset_ids
                       json: mediaAssetIds,omitempty
                     x-order: 15
+                  approved:
+                    type: boolean
+                    description: >
+                      Whether the item is approved to run. Server-set and read-only: it is not in ContentItemPayload. At
+                      insert the server sets it from the effective approval, which is resolved at insert, again at each
+                      content edit, and again when `approvalPolicy` changes: `false` with a pending
+                      `content_item_approval` request when `approvalRequired` is true, and `true` with no request when
+                      it is false. Afterwards `approveRequest` in the request construct sets it to true, and so does the
+                      one-time backfill of a row written before this field shipped (see below); that operation needs the
+                      Decide Content Item Approvals key and is never an AI app tool. A content edit that resolves to
+                      required sets it back to false. Any content edit that leaves it unapproved supersedes an open
+                      request with a fresh pending one, so after the edit an unapproved item has an open request (see
+                      updateContentItem). A change to `approvalPolicy` whose resolved result is required does the same
+                      to an approved item. The client that runs the queue reads this field. For one release after this
+                      field ships, servers mirror it into the free-form `Approved?` column in `data` for older readers,
+                      and backfill `approved` once from that column for rows written before the field shipped, so every
+                      row carries a value. A client-sent `Approved?` never approves an item. New readers read this field
+                      only. See docs/content-item-contract.md.
+                    default: false
+                    x-go-type-skip-optional-pointer: true
+                    x-oapi-codegen-extra-tags:
+                      db: approved
+                      json: approved
+                    x-order: 16
+                  createdByClient:
+                    type: string
+                    description: >
+                      OAuth client ID of the AI app that created the item. Server-set from the access token, never
+                      client-settable, and never changed by an update. Empty or omitted on an item a person created.
+                    maxLength: 255
+                    x-oapi-codegen-extra-tags:
+                      db: created_by_client
+                      json: createdByClient,omitempty
+                    x-order: 17
+                  approvalPolicy:
+                    description: >
+                      The item's own approval policy. Absent means inherit. An explicit `required` or `not_required`
+                      wins over every higher-level setting; `inherit` or absent inherits from higher-level settings
+                      (platform, workspace, profile), hierarchy defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365. Interim: until the upstream policies exist,
+                      `inherit` or absent resolves to `required`. Only a person with Decide Content Item Approvals may
+                      write a value that changes the stored one; an AI app never can. Changing it alone re-resolves the
+                      approval. A change whose result is required (`required`, or `inherit` or absent in the interim,
+                      which resolves to required) resets an approved item and opens its request. A change whose result
+                      is not required never changes `approved`, and any change leaves an unapproved item with an open
+                      request, whatever the result (see updateContentItem). Stored in the nullable `approval_policy`
+                      column; null means inherit, and a written `inherit` is stored as null, so reads return it absent.
+                    x-oapi-codegen-extra-tags:
+                      db: approval_policy
+                      json: approvalPolicy,omitempty
+                    x-order: 18
+                    type: string
+                    enum:
+                      - required
+                      - not_required
+                      - inherit
+                    x-enum-varnames:
+                      - ApprovalPolicyRequired
+                      - ApprovalPolicyNotRequired
+                      - ApprovalPolicyInherit
+                  approvalRequired:
+                    type: boolean
+                    readOnly: true
+                    description: >
+                      Server-computed and read-only: whether the item needs a person's approval, resolved at insert,
+                      again at each content edit, and again when `approvalPolicy` changes (see updateContentItem) from
+                      its `approvalPolicy` and the higher-level settings (hierarchy defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365). Stored in the `approval_required` column.
+                      Never in a payload. A change to `approvalPolicy` alone re-resolves it; a higher-level setting
+                      alone does not, and the next content edit resolves it again. Interim: until the upstream policies
+                      exist, an absent or `inherit` policy resolves to `true` (approval source `fallback`). Absent on
+                      items inserted before this field shipped.
+                    x-oapi-codegen-extra-tags:
+                      db: approval_required
+                      json: approvalRequired,omitempty
+                    x-order: 19
+                  approvalPolicySource:
+                    type: string
+                    readOnly: true
+                    description: >
+                      Server-computed and read-only: the level that decided `approvalRequired`, resolved at insert,
+                      again at each content edit, and again when `approvalPolicy` changes (see updateContentItem),
+                      stored in the `approval_policy_source` column. `item` when the item's own `approvalPolicy` was
+                      explicit; `fallback` when no level set a value and approval is required. The other levels name the
+                      higher level that set the value: `workspace`, `profile`, `organization` and `platform`, listed in
+                      their planned order (the hierarchy is defined in
+                      https://github.com/layer5io/meshery-cloud/issues/6365). Interim: until the upstream policies
+                      exist, only `item` and `fallback` are active (an absent or `inherit` policy resolves to
+                      `fallback`). The other four levels become active as that hierarchy lands. Never in a payload.
+                      Absent on items inserted before this field shipped.
+                    enum:
+                      - item
+                      - workspace
+                      - profile
+                      - organization
+                      - platform
+                      - fallback
+                    x-enum-varnames:
+                      - ApprovalPolicySourceItem
+                      - ApprovalPolicySourceWorkspace
+                      - ApprovalPolicySourceProfile
+                      - ApprovalPolicySourceOrganization
+                      - ApprovalPolicySourcePlatform
+                      - ApprovalPolicySourceFallback
+                    x-oapi-codegen-extra-tags:
+                      db: approval_policy_source
+                      json: approvalPolicySource,omitempty
+                    x-order: 20
         '400':
           description: Invalid request body or request param
           content:
@@ -43035,9 +43968,8 @@ paths:
                 type: string
         '409':
           description: >-
-            Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint,
-            another live content item of the organization already holds the same rowNumber, or another live item of the
-            same thread already holds the same threadIndex
+            Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint, or
+            another live content item of the organization already holds the same rowNumber. Nothing changes.
           content:
             text/plain:
               schema:
@@ -43114,6 +44046,11 @@ paths:
         still matches and is refused with a 409 otherwise; without it the
         delete is unconditional. Deleting an item that other items name in
         `threadId` or `replyToId` leaves their references as they are.
+        Deleting an item that has an open `content_item_approval` request
+        closes that request as `superseded` in the same transaction:
+        `decidedAt` is set to the delete time, and no `decidedBy` and no
+        `note` are set. `approveRequest` and `denyRequest` on it then answer
+        `409`, as for any request that is not pending, and change nothing.
       parameters:
         - name: contentItemId
           in: path
@@ -43166,9 +44103,8 @@ paths:
                 type: string
         '409':
           description: >-
-            Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint,
-            another live content item of the organization already holds the same rowNumber, or another live item of the
-            same thread already holds the same threadIndex
+            Conflict - the stale expectedFingerprint precondition no longer matches the stored content fingerprint, or
+            another live content item of the organization already holds the same rowNumber. Nothing changes.
           content:
             text/plain:
               schema:
@@ -61786,7 +62722,13 @@ paths:
       tags:
         - Events_events
       operationId: getEvents
+      x-mcp:
+        expose: true
+        title: Get events
+        scope: events:read
       summary: Get events list
+      description: |
+        Returns a page of events. An `X-Current-Orgid` that is not a UUID answers 400.
       parameters:
         - name: page
           in: query
@@ -61827,6 +62769,19 @@ paths:
               - user
               - organization
             default: user
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
       responses:
         '200':
           description: Events page
@@ -62151,6 +63106,12 @@ paths:
                         - category
                         - action
                     description: The events returned on the current page.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
         '401':
           description: Unauthorized
         '403':
@@ -82379,6 +83340,1199 @@ paths:
             text/plain:
               schema:
                 type: string
+  /api/requests:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Request_requests
+      summary: List requests
+      operationId: listRequests
+      description: >
+        Returns a paginated list of the requests in the organization of the authenticated session, pending and decided,
+        optionally filtered by kind and status. Ordered by `createdAt`, newest first, unless `order` is `createdAt asc`.
+        Every member holding View Requests sees every request in the organization.
+      parameters:
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        - name: page
+          in: query
+          description: Get responses by page
+          schema:
+            type: integer
+            minimum: 0
+        - name: pageSize
+          in: query
+          description: Number of items per page.
+          schema:
+            type: integer
+            minimum: 1
+        - name: order
+          in: query
+          description: Get ordered responses
+          schema:
+            type: string
+        - name: kind
+          in: query
+          required: false
+          description: Filter by request kind.
+          schema:
+            type: string
+            description: >
+              What a request asks a person to decide. Each kind fixes the subject type and names the permission key that
+              may decide it, in `x-decision-key` (the generated constant name in models/permissions). A kind is added
+              together with its deciding key and its handling in docs/request-contract.md.
+            enum:
+              - content_item_approval
+            x-enum-varnames:
+              - RequestKindContentItemApproval
+            x-enumDescriptions:
+              content_item_approval: >
+                A content item, written by a person or an AI app, waits for a person to approve it before it may run.
+                The subject is a `content_item`.
+            x-decision-key:
+              content_item_approval: CatalogManagementDecideContentItemApprovals
+            x-subject-type:
+              content_item_approval: content_item
+        - name: status
+          in: query
+          required: false
+          description: >-
+            Filter by request status, for example `superseded` for the requests a content edit or a delete closed before
+            a decision.
+          schema:
+            type: string
+            description: >
+              Lifecycle of a request. `pending` until it is decided. `approved` or `denied` once, by a person with the
+              kind's deciding key. `superseded` when a content edit or a delete changes the subject before a decision:
+              the request is closed with `decidedAt` set, no `decidedBy` and no note, and a fresh pending request opens
+              if the edit leaves the item unapproved, whatever the result. Each of `approved`, `denied` and `superseded`
+              is final.
+            enum:
+              - pending
+              - approved
+              - denied
+              - superseded
+            x-enum-varnames:
+              - RequestStatusPending
+              - RequestStatusApproved
+              - RequestStatusDenied
+              - RequestStatusSuperseded
+      responses:
+        '200':
+          description: Requests page
+          content:
+            application/json:
+              schema:
+                type: object
+                description: Paginated collection of requests.
+                required:
+                  - page
+                  - pageSize
+                  - totalCount
+                  - requests
+                properties:
+                  page:
+                    type: integer
+                    description: Current page number of the result set.
+                    minimum: 0
+                  pageSize:
+                    type: integer
+                    description: Number of items per page.
+                    minimum: 1
+                  totalCount:
+                    type: integer
+                    description: Total number of items available.
+                    minimum: 0
+                  requests:
+                    type: array
+                    items:
+                      x-go-type: Request
+                      $schema: http://json-schema.org/draft-07/schema#
+                      title: Request Schema
+                      description: |
+                        Server-returned request: one decision that a person with the right to make
+                        it has been asked to make about a subject, for example whether a content
+                        item may run. A request is generic. Its `kind` says
+                        what is being decided and which permission key may decide it, and it names
+                        its subject by type and ID, so any construct can be the subject of a kind.
+                        A request is created `pending` by the server when the thing that needs a
+                        decision happens (it is not created by a client call), and is decided once:
+                        `approved` or `denied`, by a user holding the kind's deciding permission
+                        key. A content edit or a delete that changes the subject before it is decided closes
+                        the request as `superseded`, so an approval always applies to the content
+                        as of the open request. Closed requests are kept as history. See
+                        docs/request-contract.md.
+                      type: object
+                      additionalProperties: false
+                      required:
+                        - id
+                        - organizationId
+                        - kind
+                        - subjectType
+                        - subjectId
+                        - requesterId
+                        - status
+                        - createdAt
+                        - updatedAt
+                      properties:
+                        id:
+                          description: Server-generated request ID.
+                          x-oapi-codegen-extra-tags:
+                            db: id
+                          x-order: 1
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        organizationId:
+                          description: Owning organization ID. Derived from the subject, never client-settable.
+                          x-go-name: OrganizationID
+                          x-oapi-codegen-extra-tags:
+                            db: organization_id
+                          x-order: 2
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        kind:
+                          type: string
+                          description: >
+                            What a request asks a person to decide. Each kind fixes the subject type and names the
+                            permission key that may decide it, in `x-decision-key` (the generated constant name in
+                            models/permissions). A kind is added together with its deciding key and its handling in
+                            docs/request-contract.md.
+                          enum:
+                            - content_item_approval
+                          x-enum-varnames:
+                            - RequestKindContentItemApproval
+                          x-enumDescriptions:
+                            content_item_approval: >
+                              A content item, written by a person or an AI app, waits for a person to approve it before
+                              it may run. The subject is a `content_item`.
+                          x-decision-key:
+                            content_item_approval: CatalogManagementDecideContentItemApprovals
+                          x-subject-type:
+                            content_item_approval: content_item
+                          x-oapi-codegen-extra-tags:
+                            db: kind
+                          x-order: 3
+                        subjectType:
+                          type: string
+                          description: >-
+                            Type of the subject, the construct name in snake_case, for example `content_item`. Fixed by
+                            the kind.
+                          minLength: 1
+                          maxLength: 64
+                          x-oapi-codegen-extra-tags:
+                            db: subject_type
+                          x-order: 4
+                        subjectId:
+                          description: ID of the subject the request is about.
+                          x-go-name: SubjectID
+                          x-oapi-codegen-extra-tags:
+                            db: subject_id
+                          x-order: 5
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        requesterId:
+                          description: >
+                            ID of the user on whose behalf the request was made: the user whose session or AI app made
+                            the write that needs a decision. Server-set.
+                          x-go-name: RequesterID
+                          x-oapi-codegen-extra-tags:
+                            db: requester_id
+                          x-order: 6
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        createdByClient:
+                          type: string
+                          description: >
+                            OAuth client ID of the AI app that made the write behind the request. Server-set from the
+                            access token. Empty or omitted when a person made it.
+                          maxLength: 255
+                          x-oapi-codegen-extra-tags:
+                            db: created_by_client
+                            json: createdByClient,omitempty
+                          x-order: 7
+                        status:
+                          type: string
+                          description: >
+                            Lifecycle of a request. `pending` until it is decided. `approved` or `denied` once, by a
+                            person with the kind's deciding key. `superseded` when a content edit or a delete changes
+                            the subject before a decision: the request is closed with `decidedAt` set, no `decidedBy`
+                            and no note, and a fresh pending request opens if the edit leaves the item unapproved,
+                            whatever the result. Each of `approved`, `denied` and `superseded` is final.
+                          enum:
+                            - pending
+                            - approved
+                            - denied
+                            - superseded
+                          x-enum-varnames:
+                            - RequestStatusPending
+                            - RequestStatusApproved
+                            - RequestStatusDenied
+                            - RequestStatusSuperseded
+                          x-oapi-codegen-extra-tags:
+                            db: status
+                          x-order: 8
+                        decidedBy:
+                          description: >-
+                            ID of the user who approved or denied the request. Derived from the session; omitted while
+                            the request is pending and when it is superseded, since no user decided it.
+                          x-go-name: DecidedBy
+                          x-oapi-codegen-extra-tags:
+                            db: decided_by
+                            json: decidedBy,omitempty
+                          x-order: 9
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        decidedAt:
+                          type: string
+                          format: date-time
+                          description: >-
+                            Time the request was decided, or superseded by a content edit or a delete (decidedBy and
+                            note are then omitted). Null while the request is pending.
+                          nullable: true
+                          x-go-type: core.NullTime
+                          x-go-type-import:
+                            path: github.com/meshery/schemas/models/core
+                            name: core
+                          x-oapi-codegen-extra-tags:
+                            db: decided_at
+                          x-order: 10
+                        note:
+                          type: string
+                          description: >-
+                            The note the decider left with the decision. Omitted while the request is pending, when it
+                            is superseded, and when the decider left none.
+                          maxLength: 2000
+                          x-oapi-codegen-extra-tags:
+                            db: note
+                            json: note,omitempty
+                          x-order: 11
+                        createdAt:
+                          description: Timestamp of request creation.
+                          x-oapi-codegen-extra-tags:
+                            db: created_at
+                          x-order: 12
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                        updatedAt:
+                          description: Timestamp of last request modification.
+                          x-oapi-codegen-extra-tags:
+                            db: updated_at
+                          x-order: 13
+                          type: string
+                          format: date-time
+                          x-go-type-skip-optional-pointer: true
+                    description: Requests included on this page of results.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/requests/{requestId}:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Request_requests
+      summary: Get a request by ID
+      operationId: getRequest
+      description: |
+        Returns the request with the given id. A `requestId` or `X-Current-Orgid` that is not a UUID answers 400.
+      parameters:
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        - name: requestId
+          in: path
+          description: Request ID
+          required: true
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+      responses:
+        '200':
+          description: Request response
+          content:
+            application/json:
+              schema:
+                $schema: http://json-schema.org/draft-07/schema#
+                title: Request Schema
+                description: |
+                  Server-returned request: one decision that a person with the right to make
+                  it has been asked to make about a subject, for example whether a content
+                  item may run. A request is generic. Its `kind` says
+                  what is being decided and which permission key may decide it, and it names
+                  its subject by type and ID, so any construct can be the subject of a kind.
+                  A request is created `pending` by the server when the thing that needs a
+                  decision happens (it is not created by a client call), and is decided once:
+                  `approved` or `denied`, by a user holding the kind's deciding permission
+                  key. A content edit or a delete that changes the subject before it is decided closes
+                  the request as `superseded`, so an approval always applies to the content
+                  as of the open request. Closed requests are kept as history. See
+                  docs/request-contract.md.
+                type: object
+                additionalProperties: false
+                required:
+                  - id
+                  - organizationId
+                  - kind
+                  - subjectType
+                  - subjectId
+                  - requesterId
+                  - status
+                  - createdAt
+                  - updatedAt
+                properties:
+                  id:
+                    description: Server-generated request ID.
+                    x-oapi-codegen-extra-tags:
+                      db: id
+                    x-order: 1
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  organizationId:
+                    description: Owning organization ID. Derived from the subject, never client-settable.
+                    x-go-name: OrganizationID
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                    x-order: 2
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  kind:
+                    type: string
+                    description: >
+                      What a request asks a person to decide. Each kind fixes the subject type and names the permission
+                      key that may decide it, in `x-decision-key` (the generated constant name in models/permissions). A
+                      kind is added together with its deciding key and its handling in docs/request-contract.md.
+                    enum:
+                      - content_item_approval
+                    x-enum-varnames:
+                      - RequestKindContentItemApproval
+                    x-enumDescriptions:
+                      content_item_approval: >
+                        A content item, written by a person or an AI app, waits for a person to approve it before it may
+                        run. The subject is a `content_item`.
+                    x-decision-key:
+                      content_item_approval: CatalogManagementDecideContentItemApprovals
+                    x-subject-type:
+                      content_item_approval: content_item
+                    x-oapi-codegen-extra-tags:
+                      db: kind
+                    x-order: 3
+                  subjectType:
+                    type: string
+                    description: >-
+                      Type of the subject, the construct name in snake_case, for example `content_item`. Fixed by the
+                      kind.
+                    minLength: 1
+                    maxLength: 64
+                    x-oapi-codegen-extra-tags:
+                      db: subject_type
+                    x-order: 4
+                  subjectId:
+                    description: ID of the subject the request is about.
+                    x-go-name: SubjectID
+                    x-oapi-codegen-extra-tags:
+                      db: subject_id
+                    x-order: 5
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  requesterId:
+                    description: >
+                      ID of the user on whose behalf the request was made: the user whose session or AI app made the
+                      write that needs a decision. Server-set.
+                    x-go-name: RequesterID
+                    x-oapi-codegen-extra-tags:
+                      db: requester_id
+                    x-order: 6
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  createdByClient:
+                    type: string
+                    description: >
+                      OAuth client ID of the AI app that made the write behind the request. Server-set from the access
+                      token. Empty or omitted when a person made it.
+                    maxLength: 255
+                    x-oapi-codegen-extra-tags:
+                      db: created_by_client
+                      json: createdByClient,omitempty
+                    x-order: 7
+                  status:
+                    type: string
+                    description: >
+                      Lifecycle of a request. `pending` until it is decided. `approved` or `denied` once, by a person
+                      with the kind's deciding key. `superseded` when a content edit or a delete changes the subject
+                      before a decision: the request is closed with `decidedAt` set, no `decidedBy` and no note, and a
+                      fresh pending request opens if the edit leaves the item unapproved, whatever the result. Each of
+                      `approved`, `denied` and `superseded` is final.
+                    enum:
+                      - pending
+                      - approved
+                      - denied
+                      - superseded
+                    x-enum-varnames:
+                      - RequestStatusPending
+                      - RequestStatusApproved
+                      - RequestStatusDenied
+                      - RequestStatusSuperseded
+                    x-oapi-codegen-extra-tags:
+                      db: status
+                    x-order: 8
+                  decidedBy:
+                    description: >-
+                      ID of the user who approved or denied the request. Derived from the session; omitted while the
+                      request is pending and when it is superseded, since no user decided it.
+                    x-go-name: DecidedBy
+                    x-oapi-codegen-extra-tags:
+                      db: decided_by
+                      json: decidedBy,omitempty
+                    x-order: 9
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  decidedAt:
+                    type: string
+                    format: date-time
+                    description: >-
+                      Time the request was decided, or superseded by a content edit or a delete (decidedBy and note are
+                      then omitted). Null while the request is pending.
+                    nullable: true
+                    x-go-type: core.NullTime
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
+                    x-oapi-codegen-extra-tags:
+                      db: decided_at
+                    x-order: 10
+                  note:
+                    type: string
+                    description: >-
+                      The note the decider left with the decision. Omitted while the request is pending, when it is
+                      superseded, and when the decider left none.
+                    maxLength: 2000
+                    x-oapi-codegen-extra-tags:
+                      db: note
+                      json: note,omitempty
+                    x-order: 11
+                  createdAt:
+                    description: Timestamp of request creation.
+                    x-oapi-codegen-extra-tags:
+                      db: created_at
+                    x-order: 12
+                    type: string
+                    format: date-time
+                    x-go-type-skip-optional-pointer: true
+                  updatedAt:
+                    description: Timestamp of last request modification.
+                    x-oapi-codegen-extra-tags:
+                      db: updated_at
+                    x-order: 13
+                    type: string
+                    format: date-time
+                    x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/requests/{requestId}/approve:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - Request_requests
+      summary: Approve a request
+      operationId: approveRequest
+      description: >
+        Approves a pending request: sets `status` to `approved`, `decidedBy` to the session user, `decidedAt` to now and
+        `note` to the optional note. The caller must hold the deciding permission key of the request's `kind`, else 403
+        and nothing changes. For `content_item_approval` the server also sets the subject content item's `approved` to
+        true in the same transaction; this is the only operation that does, since no content item request body carries
+        `approved`. The refusals are checked in this order, and each changes nothing and leaves the request as it was: a
+        request that is not `pending` answers 409 whatever its subject (decided, or `superseded`, including by a soft
+        delete of its subject); a pending request whose subject is hard-deleted answers 404, as does an unknown request.
+        The body may be omitted.
+      parameters:
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        - name: requestId
+          in: path
+          description: Request ID
+          required: true
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: >
+                Payload for approving or denying a request. Contains only the decider's note; `status`, `decidedBy` and
+                `decidedAt` are set by the server from the operation and the session.
+              properties:
+                note:
+                  type: string
+                  description: Optional note left with the decision, shown to the requester.
+                  minLength: 1
+                  maxLength: 2000
+      responses:
+        '200':
+          description: Request approved
+          content:
+            application/json:
+              schema:
+                $schema: http://json-schema.org/draft-07/schema#
+                title: Request Schema
+                description: |
+                  Server-returned request: one decision that a person with the right to make
+                  it has been asked to make about a subject, for example whether a content
+                  item may run. A request is generic. Its `kind` says
+                  what is being decided and which permission key may decide it, and it names
+                  its subject by type and ID, so any construct can be the subject of a kind.
+                  A request is created `pending` by the server when the thing that needs a
+                  decision happens (it is not created by a client call), and is decided once:
+                  `approved` or `denied`, by a user holding the kind's deciding permission
+                  key. A content edit or a delete that changes the subject before it is decided closes
+                  the request as `superseded`, so an approval always applies to the content
+                  as of the open request. Closed requests are kept as history. See
+                  docs/request-contract.md.
+                type: object
+                additionalProperties: false
+                required:
+                  - id
+                  - organizationId
+                  - kind
+                  - subjectType
+                  - subjectId
+                  - requesterId
+                  - status
+                  - createdAt
+                  - updatedAt
+                properties:
+                  id:
+                    description: Server-generated request ID.
+                    x-oapi-codegen-extra-tags:
+                      db: id
+                    x-order: 1
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  organizationId:
+                    description: Owning organization ID. Derived from the subject, never client-settable.
+                    x-go-name: OrganizationID
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                    x-order: 2
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  kind:
+                    type: string
+                    description: >
+                      What a request asks a person to decide. Each kind fixes the subject type and names the permission
+                      key that may decide it, in `x-decision-key` (the generated constant name in models/permissions). A
+                      kind is added together with its deciding key and its handling in docs/request-contract.md.
+                    enum:
+                      - content_item_approval
+                    x-enum-varnames:
+                      - RequestKindContentItemApproval
+                    x-enumDescriptions:
+                      content_item_approval: >
+                        A content item, written by a person or an AI app, waits for a person to approve it before it may
+                        run. The subject is a `content_item`.
+                    x-decision-key:
+                      content_item_approval: CatalogManagementDecideContentItemApprovals
+                    x-subject-type:
+                      content_item_approval: content_item
+                    x-oapi-codegen-extra-tags:
+                      db: kind
+                    x-order: 3
+                  subjectType:
+                    type: string
+                    description: >-
+                      Type of the subject, the construct name in snake_case, for example `content_item`. Fixed by the
+                      kind.
+                    minLength: 1
+                    maxLength: 64
+                    x-oapi-codegen-extra-tags:
+                      db: subject_type
+                    x-order: 4
+                  subjectId:
+                    description: ID of the subject the request is about.
+                    x-go-name: SubjectID
+                    x-oapi-codegen-extra-tags:
+                      db: subject_id
+                    x-order: 5
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  requesterId:
+                    description: >
+                      ID of the user on whose behalf the request was made: the user whose session or AI app made the
+                      write that needs a decision. Server-set.
+                    x-go-name: RequesterID
+                    x-oapi-codegen-extra-tags:
+                      db: requester_id
+                    x-order: 6
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  createdByClient:
+                    type: string
+                    description: >
+                      OAuth client ID of the AI app that made the write behind the request. Server-set from the access
+                      token. Empty or omitted when a person made it.
+                    maxLength: 255
+                    x-oapi-codegen-extra-tags:
+                      db: created_by_client
+                      json: createdByClient,omitempty
+                    x-order: 7
+                  status:
+                    type: string
+                    description: >
+                      Lifecycle of a request. `pending` until it is decided. `approved` or `denied` once, by a person
+                      with the kind's deciding key. `superseded` when a content edit or a delete changes the subject
+                      before a decision: the request is closed with `decidedAt` set, no `decidedBy` and no note, and a
+                      fresh pending request opens if the edit leaves the item unapproved, whatever the result. Each of
+                      `approved`, `denied` and `superseded` is final.
+                    enum:
+                      - pending
+                      - approved
+                      - denied
+                      - superseded
+                    x-enum-varnames:
+                      - RequestStatusPending
+                      - RequestStatusApproved
+                      - RequestStatusDenied
+                      - RequestStatusSuperseded
+                    x-oapi-codegen-extra-tags:
+                      db: status
+                    x-order: 8
+                  decidedBy:
+                    description: >-
+                      ID of the user who approved or denied the request. Derived from the session; omitted while the
+                      request is pending and when it is superseded, since no user decided it.
+                    x-go-name: DecidedBy
+                    x-oapi-codegen-extra-tags:
+                      db: decided_by
+                      json: decidedBy,omitempty
+                    x-order: 9
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  decidedAt:
+                    type: string
+                    format: date-time
+                    description: >-
+                      Time the request was decided, or superseded by a content edit or a delete (decidedBy and note are
+                      then omitted). Null while the request is pending.
+                    nullable: true
+                    x-go-type: core.NullTime
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
+                    x-oapi-codegen-extra-tags:
+                      db: decided_at
+                    x-order: 10
+                  note:
+                    type: string
+                    description: >-
+                      The note the decider left with the decision. Omitted while the request is pending, when it is
+                      superseded, and when the decider left none.
+                    maxLength: 2000
+                    x-oapi-codegen-extra-tags:
+                      db: note
+                      json: note,omitempty
+                    x-order: 11
+                  createdAt:
+                    description: Timestamp of request creation.
+                    x-oapi-codegen-extra-tags:
+                      db: created_at
+                    x-order: 12
+                    type: string
+                    format: date-time
+                    x-go-type-skip-optional-pointer: true
+                  updatedAt:
+                    description: Timestamp of last request modification.
+                    x-oapi-codegen-extra-tags:
+                      db: updated_at
+                    x-order: 13
+                    type: string
+                    format: date-time
+                    x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: >-
+            Not found - the request does not exist in the organization, or its subject content item no longer exists
+            (hard-deleted). Nothing changes; the request stays as it was.
+          content:
+            text/plain:
+              schema:
+                type: string
+        '409':
+          description: >-
+            Conflict - the request is not pending, so it was already decided or superseded by a content edit or a delete
+            and is never changed, or its subject content item is soft-deleted (deletedAt set), which superseded the
+            request. Nothing changes; the request stays as it was.
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/requests/{requestId}/deny:
+    post:
+      x-internal:
+        - cloud
+      tags:
+        - Request_requests
+      summary: Deny a request
+      operationId: denyRequest
+      description: >
+        Denies a pending request: sets `status` to `denied`, `decidedBy` to the session user, `decidedAt` to now and
+        `note` to the optional note. The caller must hold the deciding permission key of the request's `kind`, else 403
+        and nothing changes. For `content_item_approval` the subject content item stays unapproved. The refusals are
+        checked in this order, and each changes nothing and leaves the request as it was: a request that is not
+        `pending` answers 409 whatever its subject (decided, or `superseded`, including by a soft delete of its
+        subject); a pending request whose subject is hard-deleted answers 404, as does an unknown request. The body may
+        be omitted.
+      parameters:
+        - name: X-Current-Orgid
+          in: header
+          required: false
+          description: >-
+            Organization the call acts in, by ID (a UUID). When present, the server resolves the session organization
+            from it instead of the caller's selected organization, and runs its membership and permission checks there.
+            A caller who is not a live member of the named organization receives the same 404 as an unknown resource.
+            Omitted, the caller's selected organization applies.
+          schema:
+            type: string
+            minLength: 36
+            maxLength: 36
+            pattern: ^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$
+        - name: requestId
+          in: path
+          description: Request ID
+          required: true
+          schema:
+            type: string
+            format: uuid
+            description: >-
+              A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core definition is
+              used across different schemas.
+            x-go-type: uuid.UUID
+            x-go-type-import:
+              path: github.com/gofrs/uuid
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties: false
+              description: >
+                Payload for approving or denying a request. Contains only the decider's note; `status`, `decidedBy` and
+                `decidedAt` are set by the server from the operation and the session.
+              properties:
+                note:
+                  type: string
+                  description: Optional note left with the decision, shown to the requester.
+                  minLength: 1
+                  maxLength: 2000
+      responses:
+        '200':
+          description: Request denied
+          content:
+            application/json:
+              schema:
+                $schema: http://json-schema.org/draft-07/schema#
+                title: Request Schema
+                description: |
+                  Server-returned request: one decision that a person with the right to make
+                  it has been asked to make about a subject, for example whether a content
+                  item may run. A request is generic. Its `kind` says
+                  what is being decided and which permission key may decide it, and it names
+                  its subject by type and ID, so any construct can be the subject of a kind.
+                  A request is created `pending` by the server when the thing that needs a
+                  decision happens (it is not created by a client call), and is decided once:
+                  `approved` or `denied`, by a user holding the kind's deciding permission
+                  key. A content edit or a delete that changes the subject before it is decided closes
+                  the request as `superseded`, so an approval always applies to the content
+                  as of the open request. Closed requests are kept as history. See
+                  docs/request-contract.md.
+                type: object
+                additionalProperties: false
+                required:
+                  - id
+                  - organizationId
+                  - kind
+                  - subjectType
+                  - subjectId
+                  - requesterId
+                  - status
+                  - createdAt
+                  - updatedAt
+                properties:
+                  id:
+                    description: Server-generated request ID.
+                    x-oapi-codegen-extra-tags:
+                      db: id
+                    x-order: 1
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  organizationId:
+                    description: Owning organization ID. Derived from the subject, never client-settable.
+                    x-go-name: OrganizationID
+                    x-oapi-codegen-extra-tags:
+                      db: organization_id
+                    x-order: 2
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  kind:
+                    type: string
+                    description: >
+                      What a request asks a person to decide. Each kind fixes the subject type and names the permission
+                      key that may decide it, in `x-decision-key` (the generated constant name in models/permissions). A
+                      kind is added together with its deciding key and its handling in docs/request-contract.md.
+                    enum:
+                      - content_item_approval
+                    x-enum-varnames:
+                      - RequestKindContentItemApproval
+                    x-enumDescriptions:
+                      content_item_approval: >
+                        A content item, written by a person or an AI app, waits for a person to approve it before it may
+                        run. The subject is a `content_item`.
+                    x-decision-key:
+                      content_item_approval: CatalogManagementDecideContentItemApprovals
+                    x-subject-type:
+                      content_item_approval: content_item
+                    x-oapi-codegen-extra-tags:
+                      db: kind
+                    x-order: 3
+                  subjectType:
+                    type: string
+                    description: >-
+                      Type of the subject, the construct name in snake_case, for example `content_item`. Fixed by the
+                      kind.
+                    minLength: 1
+                    maxLength: 64
+                    x-oapi-codegen-extra-tags:
+                      db: subject_type
+                    x-order: 4
+                  subjectId:
+                    description: ID of the subject the request is about.
+                    x-go-name: SubjectID
+                    x-oapi-codegen-extra-tags:
+                      db: subject_id
+                    x-order: 5
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  requesterId:
+                    description: >
+                      ID of the user on whose behalf the request was made: the user whose session or AI app made the
+                      write that needs a decision. Server-set.
+                    x-go-name: RequesterID
+                    x-oapi-codegen-extra-tags:
+                      db: requester_id
+                    x-order: 6
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  createdByClient:
+                    type: string
+                    description: >
+                      OAuth client ID of the AI app that made the write behind the request. Server-set from the access
+                      token. Empty or omitted when a person made it.
+                    maxLength: 255
+                    x-oapi-codegen-extra-tags:
+                      db: created_by_client
+                      json: createdByClient,omitempty
+                    x-order: 7
+                  status:
+                    type: string
+                    description: >
+                      Lifecycle of a request. `pending` until it is decided. `approved` or `denied` once, by a person
+                      with the kind's deciding key. `superseded` when a content edit or a delete changes the subject
+                      before a decision: the request is closed with `decidedAt` set, no `decidedBy` and no note, and a
+                      fresh pending request opens if the edit leaves the item unapproved, whatever the result. Each of
+                      `approved`, `denied` and `superseded` is final.
+                    enum:
+                      - pending
+                      - approved
+                      - denied
+                      - superseded
+                    x-enum-varnames:
+                      - RequestStatusPending
+                      - RequestStatusApproved
+                      - RequestStatusDenied
+                      - RequestStatusSuperseded
+                    x-oapi-codegen-extra-tags:
+                      db: status
+                    x-order: 8
+                  decidedBy:
+                    description: >-
+                      ID of the user who approved or denied the request. Derived from the session; omitted while the
+                      request is pending and when it is superseded, since no user decided it.
+                    x-go-name: DecidedBy
+                    x-oapi-codegen-extra-tags:
+                      db: decided_by
+                      json: decidedBy,omitempty
+                    x-order: 9
+                    type: string
+                    format: uuid
+                    x-go-type: uuid.UUID
+                    x-go-type-import:
+                      path: github.com/gofrs/uuid
+                  decidedAt:
+                    type: string
+                    format: date-time
+                    description: >-
+                      Time the request was decided, or superseded by a content edit or a delete (decidedBy and note are
+                      then omitted). Null while the request is pending.
+                    nullable: true
+                    x-go-type: core.NullTime
+                    x-go-type-import:
+                      path: github.com/meshery/schemas/models/core
+                      name: core
+                    x-oapi-codegen-extra-tags:
+                      db: decided_at
+                    x-order: 10
+                  note:
+                    type: string
+                    description: >-
+                      The note the decider left with the decision. Omitted while the request is pending, when it is
+                      superseded, and when the decider left none.
+                    maxLength: 2000
+                    x-oapi-codegen-extra-tags:
+                      db: note
+                      json: note,omitempty
+                    x-order: 11
+                  createdAt:
+                    description: Timestamp of request creation.
+                    x-oapi-codegen-extra-tags:
+                      db: created_at
+                    x-order: 12
+                    type: string
+                    format: date-time
+                    x-go-type-skip-optional-pointer: true
+                  updatedAt:
+                    description: Timestamp of last request modification.
+                    x-oapi-codegen-extra-tags:
+                      db: updated_at
+                    x-order: 13
+                    type: string
+                    format: date-time
+                    x-go-type-skip-optional-pointer: true
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: >-
+            Not found - the request does not exist in the organization, or its subject content item no longer exists
+            (hard-deleted). Nothing changes; the request stays as it was.
+          content:
+            text/plain:
+              schema:
+                type: string
+        '409':
+          description: >-
+            Conflict - the request is not pending, so it was already decided or superseded by a content edit or a delete
+            and is never changed, or its subject content item is soft-deleted (deletedAt set), which superseded the
+            request. Nothing changes; the request stays as it was.
+          content:
+            text/plain:
+              schema:
+                type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
   /api/schedules:
     get:
       x-internal:
@@ -83172,6 +85326,30 @@ paths:
         - Schedule_schedules
       summary: Create a schedule
       operationId: createSchedule
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: false
+          description: >-
+            Client-chosen key that makes a create safe to retry. The server keeps the organization, the user, the key, a
+            hash of the request and the final response for 24 hours. Only a final response that is not a 5xx is stored.
+            The server answers a 5xx only after it has rolled back the write; a 5xx it answers is not stored and
+            releases the key's claim, so a retry with the same key is processed as new. A response the server has
+            committed is final and is stored, even if a gateway in front of the server later fails the client's
+            connection. A retry with the same key and the same request hash returns the stored response without creating
+            anything again. A retry with the same key and a different request hash answers 422 and creates nothing. A
+            retry with the same key that arrives while the earlier request with that key is still being processed
+            answers 409 with the body `code` `idempotency_key_in_flight` and creates nothing. Once the first request has
+            finished without a 5xx, a retry receives the stored response; after a 5xx, a retry is processed as new.
+            Precedence: while the first request with a key is in flight, every retry with that key answers 409 whatever
+            its body; only once the first request has finished does a retry with a different body answer 422. The
+            in-flight claim of a request that never finished expires 24 hours after it was taken, the same TTL as the
+            stored response; no shorter in-flight lease applies. A retry after that expiry is processed as new. Omitted,
+            the create is not deduplicated. Use a fresh random value (a UUID) per intended create.
+          schema:
+            type: string
+            minLength: 1
+            maxLength: 255
       description: |
         Creates a schedule in the organization of the authenticated session,
         owned by the session user (`createdBy`). `status` accepts only
@@ -83181,6 +85359,14 @@ paths:
         resource of `targetType` in the organization, else 400. Send
         `paused: true` to create the schedule already paused. `visibility`
         defaults to `public`.
+        The optional `Idempotency-Key` header makes the create safe to
+        retry: within 24 hours the same key with the same request hash
+        returns the first response without creating another schedule, and
+        the same key with a different request hash answers 422 and creates
+        nothing. A retry with the same key that arrives while the first request
+        with that key is still being processed answers 409 and creates nothing.
+        Once the first request has finished without a 5xx, a retry receives the
+        stored response; after a 5xx, a retry is processed as new.
       requestBody:
         required: true
         content:
@@ -84027,6 +86213,39 @@ paths:
                 type: string
         '404':
           description: Result not found
+          content:
+            text/plain:
+              schema:
+                type: string
+        '409':
+          description: >-
+            Conflict - an earlier request with the same Idempotency-Key is still being processed. Nothing is created by
+            this request. Once the first request has finished without a 5xx, a retry receives the stored response; after
+            a 5xx, a retry is processed as new. The body's `code` is `idempotency_key_in_flight`.
+          content:
+            application/json:
+              schema:
+                type: object
+                description: >-
+                  A retry whose Idempotency-Key is still in flight. Nothing was created by this request. Once the first
+                  request has finished without a 5xx, a retry receives the stored response; after a 5xx, a retry is
+                  processed as new.
+                required:
+                  - code
+                  - message
+                additionalProperties: false
+                properties:
+                  code:
+                    type: string
+                    description: Machine-readable reason. Always `idempotency_key_in_flight` for this body.
+                    enum:
+                      - idempotency_key_in_flight
+                  message:
+                    type: string
+                    minLength: 1
+                    description: The sentence the caller is shown.
+        '422':
+          description: Unprocessable - the Idempotency-Key was already used with a different request body
           content:
             text/plain:
               schema:
