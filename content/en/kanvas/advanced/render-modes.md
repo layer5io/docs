@@ -139,7 +139,7 @@ Kanvas's performance monitor emits a rolling window of samples covering two late
 - **Render latency** - the time Kanvas takes to apply one update to the canvas, such as an edit, a layout change, or a collaborator's change arriving (measured at the p95 percentile).
 - **Interaction latency** - how long the canvas takes to show the next frame after you pan or zoom (measured at the p95 percentile).
 
-Each metric keeps its own rolling window of the last 20 samples and is tracked as **p95** across that window. A metric can trigger a downshift only once its window holds 20 samples, so a single slow sample, such as the render pass that loads a large design, cannot downshift on its own - the metric has to stay bad across many samples before adaptive reacts. Both windows are cleared whenever the mode changes - on every downshift and upshift, when you turn Adaptive on, and when a new ceiling is applied - so each mode is judged only on its own samples.
+Each metric keeps its own rolling window of the last 20 samples and is tracked as **p95** across that window. A metric can trigger a downshift only once its window holds 20 samples, so a single slow sample, such as the render pass that loads a large design, cannot downshift on its own. Because p95 of 20 samples is the second-slowest one, a full window needs at least two slow samples among the last 20 before adaptive reacts. Both windows are cleared on every mode change - each downshift and upshift - and when you turn Adaptive on, so each mode is judged only on its own samples.
 
 Two thresholds on each metric govern the decision:
 
