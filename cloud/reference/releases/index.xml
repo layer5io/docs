@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.369</title><link>/cloud/reference/releases/v1.0.369/</link><pubDate>Mon, 16 Nov 2026 21:49:29 +0000</pubDate><guid>/cloud/reference/releases/v1.0.369/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.370</title><link>/cloud/reference/releases/v1.0.370/</link><pubDate>Wed, 18 Nov 2026 23:05:14 +0000</pubDate><guid>/cloud/reference/releases/v1.0.370/</guid><description>&lt;ul&gt;
+&lt;li&gt;chore: seed hosted MCP permission keys @leecalcote (#6458)&lt;/li&gt;
+&lt;li&gt;feat: first-party marketing list behind the Make.com webhooks @leecalcote (#6472)&lt;/li&gt;
+&lt;li&gt;docs: archive scrubbed Mailchimp research with the design @leecalcote (#6471)&lt;/li&gt;
+&lt;li&gt;docs: design leaving Mailchimp without waiting on SES @leecalcote (#6470)&lt;/li&gt;
+&lt;li&gt;feat(kudos): add GitHub identity resolver and unique-giver counting @Maanvi212006 (#6469)&lt;/li&gt;
+&lt;li&gt;feat: add kudos events table and ingestion endpoint (Track 5) @Maanvi212006 (#6468)&lt;/li&gt;
+&lt;li&gt;feat: remap a design&amp;rsquo;s GitHub source and pin source reads to a commit @jijillery (#6240)&lt;/li&gt;
+&lt;li&gt;ci: give meshery-cloud runners a third of the ci-runners quota @yi-nuo426 (#6467)&lt;/li&gt;
+&lt;li&gt;ci: run CI jobs on self-hosted staging runners @yi-nuo426 (#6463)&lt;/li&gt;
+&lt;li&gt;feat(events): serve markAllEventsRead behind a Change Event Read Status key @leecalcote (#6460)&lt;/li&gt;
+&lt;li&gt;chore(db): refresh cloud-schema.sql from production @leecalcote (#6456)&lt;/li&gt;
+&lt;li&gt;fix(events): scope event deletes and status writes to the caller @leecalcote (#6459)&lt;/li&gt;
+&lt;li&gt;test(schemas): scan the pinned schemas module for external $refs @leecalcote (#6455)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Maanvi212006, @cursor[bot], @cursoragent, @fitzergerald, @jijillery, @leecalcote, @michaelvance092 and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.369</title><link>/cloud/reference/releases/v1.0.369/</link><pubDate>Mon, 16 Nov 2026 21:49:29 +0000</pubDate><guid>/cloud/reference/releases/v1.0.369/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(mcp): honor the external gateway relay marker on /mcp @yi-nuo426 (#6454)&lt;/li&gt;
 &lt;li&gt;chore: bump @meshery/schemas to v1.3.118 @leecalcote (#6451)&lt;/li&gt;
 &lt;li&gt;fix(ui): never send X-Current-Orgid: undefined from cloudApi @leecalcote (#6449)&lt;/li&gt;

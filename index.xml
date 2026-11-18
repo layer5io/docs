@@ -1977,7 +1977,28 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;/h2&gt;
 &lt;p&gt;A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider&amp;rsquo;s support intake:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
 &lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
-&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.82-1</title><link>/kanvas/reference/releases/v1.0.82-1/</link><pubDate>Wed, 18 Nov 2026 08:24:55 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.82-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.370</title><link>/cloud/reference/releases/v1.0.370/</link><pubDate>Wed, 18 Nov 2026 23:05:14 +0000</pubDate><guid>/cloud/reference/releases/v1.0.370/</guid><description>&lt;ul&gt;
+&lt;li&gt;chore: seed hosted MCP permission keys @leecalcote (#6458)&lt;/li&gt;
+&lt;li&gt;feat: first-party marketing list behind the Make.com webhooks @leecalcote (#6472)&lt;/li&gt;
+&lt;li&gt;docs: archive scrubbed Mailchimp research with the design @leecalcote (#6471)&lt;/li&gt;
+&lt;li&gt;docs: design leaving Mailchimp without waiting on SES @leecalcote (#6470)&lt;/li&gt;
+&lt;li&gt;feat(kudos): add GitHub identity resolver and unique-giver counting @Maanvi212006 (#6469)&lt;/li&gt;
+&lt;li&gt;feat: add kudos events table and ingestion endpoint (Track 5) @Maanvi212006 (#6468)&lt;/li&gt;
+&lt;li&gt;feat: remap a design&amp;rsquo;s GitHub source and pin source reads to a commit @jijillery (#6240)&lt;/li&gt;
+&lt;li&gt;ci: give meshery-cloud runners a third of the ci-runners quota @yi-nuo426 (#6467)&lt;/li&gt;
+&lt;li&gt;ci: run CI jobs on self-hosted staging runners @yi-nuo426 (#6463)&lt;/li&gt;
+&lt;li&gt;feat(events): serve markAllEventsRead behind a Change Event Read Status key @leecalcote (#6460)&lt;/li&gt;
+&lt;li&gt;chore(db): refresh cloud-schema.sql from production @leecalcote (#6456)&lt;/li&gt;
+&lt;li&gt;fix(events): scope event deletes and status writes to the caller @leecalcote (#6459)&lt;/li&gt;
+&lt;li&gt;test(schemas): scan the pinned schemas module for external $refs @leecalcote (#6455)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@Maanvi212006, @cursor[bot], @cursoragent, @fitzergerald, @jijillery, @leecalcote, @michaelvance092 and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.82-1</title><link>/kanvas/reference/releases/v1.0.82-1/</link><pubDate>Wed, 18 Nov 2026 08:24:55 +0000</pubDate><guid>/kanvas/reference/releases/v1.0.82-1/</guid><description>&lt;h2 id="whats-new" class="heading-link"&gt;
  What&amp;rsquo;s New
  &lt;a href="#whats-new" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
 &lt;/h2&gt;
