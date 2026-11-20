@@ -31036,6 +31036,22 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.373"
+url: /cloud/reference/releases/v1.0.373/index.md
+date: "2026-11-20"
+--------------------------------------------------------------------------------
+
+- feat: public marketing form intake and preference pages @leecalcote (#6475)
+- fix(auth): passkey form test regressions unblocking #6475 @leecalcote (#6506)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.372"
 url: /cloud/reference/releases/v1.0.372/index.md
 date: "2026-11-20"
