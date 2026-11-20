@@ -1,0 +1,17 @@
+# v0.8.25-3
+
+date: 2025-01-29
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- add error handling for terminal session when plugin is not loaded @aabidsofi19 (#3368)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+

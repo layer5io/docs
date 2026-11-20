@@ -1,0 +1,16 @@
+# v0.8.550
+
+date: 2025-11-04
+
+
+
+## 💻 Server
+
+- Remove redundant logger initialization in GetSubscriptionByID method @leecalcote (#4481)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

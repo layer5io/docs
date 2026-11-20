@@ -1,0 +1,18 @@
+# v0.8.207
+
+date: 2025-04-24
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Default dasbhoard layout: swap Meshery Instances with CATALOG_LEADERBOARD @leecalcote (#3427)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

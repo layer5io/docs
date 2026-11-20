@@ -1,0 +1,14 @@
+# v0.8.641
+
+date: 2026-01-09
+
+
+
+- Fix incorrect badge  URL by adding missing trailing slash @Rajesh-Nagarajan-11 (#4759)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Rajesh-Nagarajan-11, @l5io and @leecalcote
+
+

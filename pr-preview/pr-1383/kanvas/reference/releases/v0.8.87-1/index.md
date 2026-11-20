@@ -1,0 +1,16 @@
+# v0.8.87-1
+
+date: 2025-05-23
+
+
+
+## What's New
+## 🔤 General
+- use sistent icon for file menu @amitamrutiya (#3692)
+- [Chore]: Bump Sistent v0.14.191 @l5io (#3693)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+

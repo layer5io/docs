@@ -1,0 +1,17 @@
+# v1.0.235
+
+date: 2026-08-26
+
+
+
+- fix(ui): read data table columns from wire keys and sort by column index @yi-nuo426 (#5985)
+- [Chore]: Update to Sistent v0.22.3 @l5io (#5972)
+- ci: derive the PR merge verdict from executed jobs, not check badges @yi-nuo426 (#5973)
+- feat(403): pass cloudApi trigger to useAccessibleOrgs hook @rishiraj38 (#5971)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@alexquincy, @banana-three-join, @hortison, @l5io, @leecalcote, @meshery-ci, @rishiraj38, @willcalcote and @yi-nuo426
+
+

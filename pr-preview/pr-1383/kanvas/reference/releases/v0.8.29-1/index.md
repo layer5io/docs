@@ -1,0 +1,18 @@
+# v0.8.29-1
+
+date: 2025-02-11
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix schema rendering for Crd components @aabidsofi19 (#3393)
+- [Chore]: Bump Sistent v0.14.152 @l5io (#3403)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya and @l5io
+

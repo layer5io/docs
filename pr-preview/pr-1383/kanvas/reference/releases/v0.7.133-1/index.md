@@ -1,0 +1,27 @@
+# v0.7.133-1
+
+date: 2024-11-03
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- only search for non-annotations in component picker @aabidsofi19 (#3092)
+- [Designer | Operator] Switcher Responsive Positioning @leecalcote (#3090)
+- add navbar logo extension point @aabidsofi19 (#3094)
+- fix: search not working for shape picker @amitamrutiya (#3093)
+- Fix: tutorial panel not scrollable @aabidsofi19 (#3088)
+- fix: zoom panel buttons not working @amitamrutiya (#3091)
+- Revert \Leecalcote/expand-dock\ @leecalcote (#3089)
+
+## 🐛 Bug Fixes
+
+- fix: zoom panel buttons not working @amitamrutiya (#3091)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+

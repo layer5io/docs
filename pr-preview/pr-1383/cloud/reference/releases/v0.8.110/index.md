@@ -1,0 +1,28 @@
+# v0.8.110
+
+date: 2024-12-16
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.130 @l5io (#3072)
+- change the catalog sort by menu fontfamiily @amitamrutiya (#3070)
+- fix: table sorting issue @amitamrutiya (#3069)
+
+## 💻 Server
+
+- update operator routes @aabidsofi19 (#3071)
+
+## 🐛 Bug Fixes
+
+- fix: table sorting issue @amitamrutiya (#3069)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and MUzairS15
+
+

@@ -1,0 +1,15 @@
+# v0.8.77-4
+
+date: 2025-05-12
+
+
+
+## What's New
+## 🔤 General
+- Fix invalid default edge line color @ritzorama (#3634)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @ritzorama
+

@@ -1,0 +1,15 @@
+# v1.0.81-1
+
+date: 2026-11-17
+
+
+
+## What's New
+## 🔤 General
+- chore: bump @meshery/schemas to v1.3.120 @leecalcote (#4446)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @simihablo
+

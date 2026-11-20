@@ -1,0 +1,17 @@
+# v0.8.110-1
+
+date: 2025-06-25
+
+
+
+## What's New
+## 🔤 General
+- fix image icon @aabidsofi19 (#3774)
+- Enhance and fix Pinned models @aabidsofi19 (#3773)
+- add reference relationship @aabidsofi19 (#3772)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+

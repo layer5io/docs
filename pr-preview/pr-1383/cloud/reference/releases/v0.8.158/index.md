@@ -1,0 +1,26 @@
+# v0.8.158
+
+date: 2025-02-26
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Fix Incorrect Font in Card Title on Cloud @Vidit-Kushwaha (#3223)
+
+## 💻 Server
+
+- string matching fixes in isSpam() @vishalvivekm (#3227)
+
+## 🐛 Bug Fixes
+
+- Fix Incorrect Font in Card Title on Cloud @Vidit-Kushwaha (#3223)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Vidit-Kushwaha, @l5io, @leecalcote and @vishalvivekm
+
+

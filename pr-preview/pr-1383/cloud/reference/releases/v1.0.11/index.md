@@ -1,0 +1,15 @@
+# v1.0.11
+
+date: 2026-04-16
+
+
+
+- fix(active-users): use API user names @alexquincy (#5040)
+- tests(TP-016): add Design CRUD, Org switching, and related E2E specs @leecalcote (#5033)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@alexquincy, @l5io and @leecalcote
+
+
