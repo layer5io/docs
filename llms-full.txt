@@ -31036,6 +31036,21 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.372"
+url: /cloud/reference/releases/v1.0.372/index.md
+date: "2026-11-20"
+--------------------------------------------------------------------------------
+
+- fix(auth): resolve a first OAuth sign-up's token subject to its users.id @yi-nuo426 (#6507)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @miacycle and @yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.371"
 url: /cloud/reference/releases/v1.0.371/index.md
 date: "2026-11-20"
