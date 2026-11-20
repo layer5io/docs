@@ -1977,7 +1977,30 @@ to read the relationship indicator, and how to diagnose results that look wrong.
 &lt;/h2&gt;
 &lt;p&gt;A support request never leaves your browser for a third party. Kanvas submits the form to Meshery Server, which forwards it to your provider&amp;rsquo;s support intake:&lt;/p&gt;</description></item><item><title>Notification Preferences</title><link>/cloud/concepts/identity-and-security/users/notification-preferences/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>/cloud/concepts/identity-and-security/users/notification-preferences/</guid><description>&lt;p&gt;Layer5 Cloud sends email when something happens that involves you: you earn a badge, your role changes, someone comments on your design. Notification preferences decide which of those emails reach you. Preferences belong to your account, so they apply in every organization you belong to.&lt;/p&gt;
 &lt;p&gt;Email is the only channel. Layer5 Cloud has no per-event choice between email and another channel.&lt;/p&gt;
-&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.370</title><link>/cloud/reference/releases/v1.0.370/</link><pubDate>Wed, 18 Nov 2026 23:05:14 +0000</pubDate><guid>/cloud/reference/releases/v1.0.370/</guid><description>&lt;ul&gt;
+&lt;p&gt;You need the &lt;strong&gt;View Profile&lt;/strong&gt; permission, which the default user role holds. The preferences are on your own account, and you cannot set them for anyone else.&lt;/p&gt;</description></item><item><title>v1.0.371</title><link>/cloud/reference/releases/v1.0.371/</link><pubDate>Fri, 20 Nov 2026 17:13:36 +0000</pubDate><guid>/cloud/reference/releases/v1.0.371/</guid><description>&lt;ul&gt;
+&lt;li&gt;feat(oauth): support RFC 7592 client configuration endpoint for dynamically registered clients @leecalcote (#6504)&lt;/li&gt;
+&lt;li&gt;feat(server): serve tenant-host OAuth discovery with a host-root issuer and neutral endpoint paths @hortison (#6502)&lt;/li&gt;
+&lt;li&gt;feat(skills): add cluster-diagnostics skill for staging, production and local @hortison (#6493)&lt;/li&gt;
+&lt;li&gt;feat: tag-triggered marketing journey runner @leecalcote (#6473)&lt;/li&gt;
+&lt;li&gt;ci: run every workflow job on self-hosted staging runners @yi-nuo426 (#6485)&lt;/li&gt;
+&lt;li&gt;fix(deploy): quote githubappid so Helm renders GITHUB_APP_ID as an integer string @yi-nuo426 (#6482)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="-features" class="heading-link"&gt;
+ 🚀 Features
+ &lt;a href="#-features" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Support passkeys for secure user sign-in using Ory Kratos @suttonskate (#6483)&lt;/li&gt;
+&lt;li&gt;Upgrade Kratos and Hydra Helm charts to 0.64.0 (app v26.2.0) @suttonskate (#6480)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@cursoragent, @hortison, @jijillery, @leecalcote, @meshery-ci, @pontusringblom, @suttonskate and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.370</title><link>/cloud/reference/releases/v1.0.370/</link><pubDate>Wed, 18 Nov 2026 23:05:14 +0000</pubDate><guid>/cloud/reference/releases/v1.0.370/</guid><description>&lt;ul&gt;
 &lt;li&gt;chore: seed hosted MCP permission keys @leecalcote (#6458)&lt;/li&gt;
 &lt;li&gt;feat: first-party marketing list behind the Make.com webhooks @leecalcote (#6472)&lt;/li&gt;
 &lt;li&gt;docs: archive scrubbed Mailchimp research with the design @leecalcote (#6471)&lt;/li&gt;
