@@ -8,7 +8,7 @@ aliases:
   - /cloud/guides/account/managing-your-account/
 ---
 
-This guide will walk you through setting up your Layer5 account, and through the profile, password, linked sign-in, account deletion, and subscription settings that belong to that account.
+This guide will walk you through setting up your Layer5 account, and through the profile, password, passkey, linked sign-in, account deletion, and subscription settings that belong to that account.
 
 ## Configuring your Layer5 account
 
@@ -23,6 +23,7 @@ Sign up at <https://cloud.layer5.io/signup>. The registration page offers these 
 | Method | What happens next |
 |---|---|
 | Email and password | You fill in one form. Layer5 Cloud signs you in right away and sends a verification email. Opening its link verifies your address and takes you back to where you started. |
+| Email and password, plus a passkey | On the same form you can also register a [passkey](#add-or-remove-a-passkey). Your browser asks your device to create it, and you confirm with your fingerprint, face, or device PIN. You still set a password, and sign-up then continues exactly as with email and password. |
 | GitHub | You authorize with GitHub and are signed in straight after registration. Layer5 Cloud treats the email address GitHub reports as verified, so no verification email is sent. |
 | Google | You authorize with Google and are signed in straight after registration. Layer5 Cloud treats the email address Google reports as verified, so no verification email is sent. |
 | Your organization's identity provider | An organization that brings its own identity provider credentials, including a generic OIDC provider, shows that provider on its own sign-up page. |
@@ -62,16 +63,12 @@ If your organization uses a custom domain, the verification link, the page it op
 
 If your link has expired, request a new verification email and use the latest link.
 
-<!-- considering we would want to use 2FA in future
-4. Configuring two-factor authentication
-
-Two-factor authentication, or 2FA, is an extra layer of security used when logging into websites or apps. We strongly urge you to configure 2FA for the safety of your account. For more information, see "About two-factor authentication."
-
-Optionally, after you have configured 2FA, add a passkey to your account to enable a secure, passwordless login. For more information, see "About passkeys" and "Managing your passkeys." -->
 
 ### 3. Signing in to Layer5 Cloud
 
 Sign in at <https://cloud.layer5.io/login> with the method you signed up with. If you signed up with GitHub or Google, Layer5 Cloud sends you to that provider to authenticate. The sign-in form stays valid for 12 hours. An expired form restarts.
+
+If you have added a [passkey](#add-or-remove-a-passkey), you can sign in with it instead of typing your password: choose the passkey button on the sign-in page, or click into the email field, where browsers that support passkey autofill list your passkeys. Pick one and confirm with your fingerprint, face, or device PIN. A passkey on your phone also works on a desktop: choose the option for another device when the browser offers it, and scan the QR code it shows. A cancelled or failed passkey attempt never locks you out; your password and linked providers keep working.
 
 You are not asked to name an organization or a workspace. Layer5 Cloud creates both, and your default team, on your first successful sign-in, as described in the next steps.
 
@@ -146,7 +143,7 @@ The account area has four tabs: Profile, Preferences, Subscription, and Plans. E
 The default user role holds View Profile, Reset Password, and Delete Account, so every member can manage their own account. The subscription permission is spelled **View Subcription** in the permission list. Use that spelling when you search for it.
 
 - Layer5 Cloud signs you in through an identity service. Password changes and account deletion need a live browser sign-in. A script that holds only an API token cannot do either.
-- Changing a password or linking a provider is a privileged action. If your sign-in is older than the privileged-session window, Layer5 Cloud asks you to sign in again first. The window is 24 hours on hosted Layer5 Cloud and 15 minutes by default in the self-hosted chart.
+- Changing a password, adding or removing a passkey, or linking a provider is a privileged action. If your sign-in is older than the privileged-session window, Layer5 Cloud asks you to sign in again first. The window is 24 hours on hosted Layer5 Cloud and 15 minutes by default in the self-hosted chart.
 - A user's profile can also be edited by an administrator who holds **Update User Profile** in an organization you share with them. Only a Provider Admin can change another user's email address.
 
 ## Edit your profile
@@ -185,6 +182,19 @@ A strength bar (Very weak to Strong) shows how guessable the password is. It is 
 Changing your password does not end your other sessions or revoke your API tokens. To cut off a device or script, end the session or revoke the token yourself. See [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}) and [Tokens]({{< ref "cloud/concepts/identity-and-security/tokens.md" >}}).
 
 If you forgot your password, use the recovery flow from the sign-in page instead. It emails a one-time code and link that stay valid for 30 days. See [Support]({{< ref "cloud/getting-started/support.md" >}}).
+
+## Add or remove a passkey
+
+A passkey is a sign-in credential stored on a device you own, such as your computer, phone, or a security key, and unlocked with your fingerprint, face, or device PIN. It works only on the site it was created for, so a look-alike page cannot use it. Passkeys are optional and are an additional way in: your password stays on the account, and nothing asks you to give it up.
+
+Manage passkeys at **Security > Passkeys** (<https://cloud.layer5.io/security/passkeys>). Select **Add a passkey** and confirm on your device; the new passkey appears in the list at once, under your email address with the date you added it. Select **Remove** next to a passkey to delete it. Removal takes effect immediately and leaves your other passkeys and your password working. You can add several, for example one per device.
+
+- **No expiry.** A passkey does not expire and is never re-requested on a schedule. It is asked for only when you choose to sign in with it. Once you are signed in, the session that sign-in creates behaves like any other and lapses on its normal lifetime; see [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}).
+- **Recent sign-in required.** Adding or removing a passkey is a privileged action, with the same 24 hour hosted window and 15 minute self-hosted default as other account changes. Past it, Layer5 Cloud sends you to sign in again first.
+- **Lost devices.** Losing a device, or every passkey, does not lock you out. Sign in with your password (or reset it with **Forgot Password?**), then remove the passkeys for devices you no longer have and add a new one. The password and its email reset are the recovery path; there is no separate passkey recovery.
+- **Canonical host only.** Passkeys work on `cloud.layer5.io`. An organization's custom domain does not offer them at sign-up, sign-in, or on this page; sign in there with your password or a linked provider as usual. A passkey belongs to the host it was created on, so one created elsewhere does not carry over.
+
+Passkey sign-in is available from Layer5 Cloud **v1.0.371**.
 
 ## Link or unlink a sign-in provider
 

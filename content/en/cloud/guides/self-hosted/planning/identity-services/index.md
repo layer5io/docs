@@ -74,8 +74,23 @@ For the custom-domain setup walkthrough and the on-eTLD vs. off-eTLD distinction
 | Account recovery | On, delivered as a code. |
 | Social sign-in | Google and GitHub are enabled but have no credentials until you add them. |
 | Session lifespan | Not set by the chart. Kratos applies its own default. See [Sessions]({{< ref "cloud/concepts/identity-and-security/sessions.md" >}}). |
+| Passkey sign-in | On, bound to `localhost` until you set your own host. See [Passkeys](#passkeys). |
 
 Change these through `kratos.kratos.config` and `hydra.hydra.config`. Both are passed to the Ory services unchanged.
+
+### Passkeys
+
+Passkey (WebAuthn) sign-in is configured under `kratos.kratos.config.selfservice.methods.passkey.config.rp`:
+
+| Key | Set it to |
+| --- | --- |
+| `id` | The bare host users sign in on, for example `cloud.example.com`. The chart default is `localhost`. |
+| `origins` | The full origin of that host, for example `https://cloud.example.com`. Each origin must be the `id` host or a subdomain of it. |
+| `display_name` | The name browsers show in the passkey prompt. |
+
+Decide `id` and `origins` before anyone registers a passkey. Every passkey is bound to them when it is created, so changing either later strands every existing passkey: browsers stop offering it, and its owners must sign in another way and register again. Changing `display_name` is safe.
+
+Passkeys work on that one host only. Organizations reached through other hosts, such as custom domains, do not see a passkey option and keep password and social sign-in. Adding their hosts to `origins` does not help, because a WebAuthn origin must fall under the single `id`. Password sign-in stays enabled alongside passkeys, and it is the recovery path for a user who loses every passkey.
 
 ## Default Google and GitHub sign-in
 

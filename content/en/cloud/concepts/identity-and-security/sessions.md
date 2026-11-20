@@ -23,14 +23,14 @@ These are the Layer5 Cloud deployment defaults. Operators of a self-hosted deplo
 | Access token | 24 hours | The browser session ends when it lapses. Activity in the interface does not extend it, so a browser user signs in again after 24 hours. |
 | Refresh token | 1000 hours (about 41 days) | Clients such as Meshery Server use it to obtain a new access token. Each refresh token works once. Every refresh issues a new one. A failed refresh returns an error. |
 | Sign-in flow | 12 hours | Time allowed to complete a sign-in. |
-| Privileged-action window | Set by the deployment; 15 minutes in the packaged default | Sensitive actions, such as profile changes, ask you to authenticate again once this window has passed since sign-in. |
+| Privileged-action window | 24 hours on Layer5 Cloud; 15 minutes in the self-hosted chart default | Sensitive actions, such as changing your password, adding or removing a passkey, or linking a provider, ask you to authenticate again once this window has passed since sign-in. |
 | Anonymous Kanvas session | 24 hours | For use without signing in. It does not appear on the Sessions tab. |
 
 The browser keeps the session in the `provider_token` cookie. Page scripts cannot read it (HttpOnly), it is sent only over HTTPS, and it uses SameSite Lax, so other sites cannot send it along with their own requests except on ordinary top-level navigation. A second cookie, `has_session`, tells the interface that a session exists. It carries no secret, page scripts can read it, and it lapses with the session.
 
 ## Creating and using sessions
 
-Every sign-in creates its own session. Each browser, device, and Meshery Server that signs in through Layer5 Cloud holds a separate session with its own expiry, and any number of them can be active at once. Ending one session leaves the others untouched.
+Every sign-in creates its own session, whichever method you use: a password, a linked provider, or a [passkey]({{< ref "cloud/getting-started/getting-started-with-layer5-account.md#add-or-remove-a-passkey" >}}). A passkey does not change a session's lifetime and does not expire itself; it is asked for only when you sign in with it. Each browser, device, and Meshery Server that signs in through Layer5 Cloud holds a separate session with its own expiry, and any number of them can be active at once. Ending one session leaves the others untouched.
 
 A session acts as the user who signed in. What it can do in an organization is whatever the roles that user holds there allow, checked on every request. See [Keys]({{< ref "cloud/concepts/identity-and-security/keys.md" >}}) for how roles grant permissions.
 
