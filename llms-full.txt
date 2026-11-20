@@ -31060,6 +31060,26 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.374"
+url: /cloud/reference/releases/v1.0.374/index.md
+date: "2026-11-20"
+--------------------------------------------------------------------------------
+
+- docs(deploy): validate the saved CNI binding inside the fail-fast block @yi-nuo426 (#6515)
+- [mcp] Make hosted tool descriptions accurate and clearly read-only @leecalcote (#6514)
+- docs: retire the in-repo passkeys user guide in favour of the published docs @yi-nuo426 (#6513)
+- fix(deploy): scrape only MinIO's S3 Service and commit Loki's live config @hortison (#6499)
+- fix(install): keep Kratos secrets out of config and logs, and separate them per environment @hortison (#6500)
+- feat(connections): accept youtube, tiktok, instagram and facebook destination connections @miacycle (#6510)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @leecalcote, @miacycle, @simihablo, @winkletinkle and @yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.373"
 url: /cloud/reference/releases/v1.0.373/index.md
 date: "2026-11-20"

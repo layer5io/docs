@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.373</title><link>/cloud/reference/releases/v1.0.373/</link><pubDate>Fri, 20 Nov 2026 21:07:21 +0000</pubDate><guid>/cloud/reference/releases/v1.0.373/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.374</title><link>/cloud/reference/releases/v1.0.374/</link><pubDate>Fri, 20 Nov 2026 23:04:48 +0000</pubDate><guid>/cloud/reference/releases/v1.0.374/</guid><description>&lt;ul&gt;
+&lt;li&gt;docs(deploy): validate the saved CNI binding inside the fail-fast block @yi-nuo426 (#6515)&lt;/li&gt;
+&lt;li&gt;[mcp] Make hosted tool descriptions accurate and clearly read-only @leecalcote (#6514)&lt;/li&gt;
+&lt;li&gt;docs: retire the in-repo passkeys user guide in favour of the published docs @yi-nuo426 (#6513)&lt;/li&gt;
+&lt;li&gt;fix(deploy): scrape only MinIO&amp;rsquo;s S3 Service and commit Loki&amp;rsquo;s live config @hortison (#6499)&lt;/li&gt;
+&lt;li&gt;fix(install): keep Kratos secrets out of config and logs, and separate them per environment @hortison (#6500)&lt;/li&gt;
+&lt;li&gt;feat(connections): accept youtube, tiktok, instagram and facebook destination connections @miacycle (#6510)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@hortison, @leecalcote, @miacycle, @simihablo, @winkletinkle and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.373</title><link>/cloud/reference/releases/v1.0.373/</link><pubDate>Fri, 20 Nov 2026 21:07:21 +0000</pubDate><guid>/cloud/reference/releases/v1.0.373/</guid><description>&lt;ul&gt;
 &lt;li&gt;feat: public marketing form intake and preference pages @leecalcote (#6475)&lt;/li&gt;
 &lt;li&gt;fix(auth): passkey form test regressions unblocking #6475 @leecalcote (#6506)&lt;/li&gt;
 &lt;/ul&gt;
