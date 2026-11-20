@@ -63,7 +63,6 @@ If your organization uses a custom domain, the verification link, the page it op
 
 If your link has expired, request a new verification email and use the latest link.
 
-
 ### 3. Signing in to Layer5 Cloud
 
 Sign in at <https://cloud.layer5.io/login> with the method you signed up with. If you signed up with GitHub or Google, Layer5 Cloud sends you to that provider to authenticate. The sign-in form stays valid for 12 hours. An expired form restarts.
