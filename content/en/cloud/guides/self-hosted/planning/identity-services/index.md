@@ -88,7 +88,7 @@ Passkey (WebAuthn) sign-in is configured under `kratos.kratos.config.selfservice
 | `origins` | The full origin of that host, for example `https://cloud.example.com`. Each origin must be the `id` host or a subdomain of it. |
 | `display_name` | The name browsers show in the passkey prompt. |
 
-Decide `id` and `origins` before anyone registers a passkey. Every passkey is bound to them when it is created, so changing either later strands every existing passkey: browsers stop offering it, and its owners must sign in another way and register again. Changing `display_name` is safe.
+Decide `id` and `origins` before anyone registers a passkey. Every passkey is bound to `id` when it is created, and the server accepts a sign-in with it only from an origin listed in `origins`. Changing `id`, or removing the origin users sign in on, strands every existing passkey: it no longer signs anyone in, and its owners must sign in another way and register again. Adding a subdomain origin under the same `id` and changing `display_name` are safe.
 
 Passkeys work on that one host only. Organizations reached through other hosts, such as custom domains, do not see a passkey option and keep password and social sign-in. Adding their hosts to `origins` does not help, because a WebAuthn origin must fall under the single `id`. Password sign-in stays enabled alongside passkeys, and it is the recovery path for a user who loses every passkey.
 
