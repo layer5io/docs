@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: Meshery Cloud
   description: Documentation for Meshery Cloud REST APIs.
-  version: v1.3.126
+  version: v1.3.127
   contact:
     name: Meshery Maintainers
     email: maintainers@meshery.io
@@ -110,6 +110,8 @@ tags:
     description: APIs for profiles.
   - name: ProviderCapability_capabilities
     description: Operations related to the provider's capabilities document.
+  - name: Recognition_recognition
+    description: Operations related to peer recognition.
   - name: Request_requests
     description: Operations related to requests for a decision.
   - name: Schedule_schedules
@@ -59423,7 +59425,9 @@ paths:
         - Environment_environments
       operationId: getEnvironments
       summary: Get all environments
-      description: Gets all environments
+      description: >-
+        Gets the environments of the organization named by orgId. orgId is required: a request that omits it, or names a
+        value that is not a UUID, is answered 400 and lists nothing.
       parameters:
         - name: search
           in: query
@@ -59748,6 +59752,12 @@ paths:
                             json: purpose,omitempty
                           x-order: 11
                     description: Environments associated with this resource.
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
         '401':
           description: Expired JWT token used or insufficient privilege
           content:
@@ -83867,9 +83877,10 @@ paths:
                   native client gate on the provider's contract and on its organization
                   membership after authenticating; `compatibility` tells a client that
                   named itself whether its version is still accepted, and `session`
-                  describes the authenticated caller's roles, plan and entitlements. New
-                  fields arrive only with a new `contractVersion` (1.1 added
-                  `compatibility` and `session`).
+                  describes the authenticated caller's roles, plan, entitlements and
+                  permission keys. New fields arrive only with a new `contractVersion`
+                  (1.1 added `compatibility` and `session`; 1.2 added `permissionKeys` to
+                  `session`).
                 type: object
                 additionalProperties: false
                 required:
@@ -83983,8 +83994,8 @@ paths:
                     description: >
                       The authenticated caller's session as the provider sees it: who the caller is, the caller's roles,
                       and, for the organization named by `X-Current-Orgid` when the caller is a live member of it, that
-                      organization's roles, plan, entitlements and device usage. Present only on an authenticated
-                      request.
+                      organization's roles, plan, entitlements, permission keys and device usage. Present only on an
+                      authenticated request.
                     additionalProperties: false
                     required:
                       - userId
@@ -84334,6 +84345,26 @@ paths:
                               format: date-time
                               x-go-name: UpdatedAt
                               x-go-type-skip-optional-pointer: true
+                      permissionKeys:
+                        type: array
+                        description: >
+                          The IDs of the permission keys the caller holds in the organization named by
+                          `X-Current-Orgid`. Present only when the caller is a live member of that organization. For a
+                          keychain-scoped token, this is the effective intersection of keys, so actions the token cannot
+                          perform are not displayed. An empty array indicates the caller holds no keys; an absent
+                          property indicates not reported (e.g., an older provider or when no organization is named).
+                          Clients must not read absent as empty.
+                        items:
+                          type: string
+                          format: uuid
+                          description: >-
+                            A Universally Unique Identifier used to uniquely identify entities in Meshery. The UUID core
+                            definition is used across different schemas.
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        maxItems: 1000
+                        uniqueItems: true
                       deviceUsage:
                         type: object
                         description: >
@@ -84457,6 +84488,174 @@ paths:
                     description: MeshKit's suggested remediations for the error.
                     items:
                       type: string
+        '500':
+          description: Internal server error
+          content:
+            text/plain:
+              schema:
+                type: string
+  /api/identity/recognition/community-guide/candidates:
+    get:
+      x-internal:
+        - cloud
+      tags:
+        - Recognition_recognition
+      summary: Get Community Guide candidates
+      operationId: getCommunityGuideCandidates
+      description: >
+        Returns the kudos recipients with at least the configured number of distinct givers in a UTC calendar month,
+        split into candidates resolved to a Layer5 user and recipients that need more information. Defaults to the
+        previous UTC month.
+      parameters:
+        - name: month
+          in: query
+          required: false
+          description: UTC calendar month to count, formatted `YYYY-MM`. Defaults to the previous month.
+          schema:
+            type: string
+            pattern: ^[0-9]{4}-(0[1-9]|1[0-2])$
+      responses:
+        '200':
+          description: Community Guide candidates for the month
+          content:
+            application/json:
+              schema:
+                type: object
+                description: |
+                  Server-computed list of Community Guide candidates for one UTC calendar
+                  month. Recipients with at least `minGivers` distinct givers are split
+                  into `candidates` (resolved to a Layer5 user) and `needsInfo` (not
+                  resolved). Read-only: a maintainer confirms by awarding the badge
+                  through the existing badge assignment route.
+                additionalProperties: false
+                required:
+                  - month
+                  - minGivers
+                  - badge
+                  - candidates
+                  - needsInfo
+                properties:
+                  month:
+                    type: string
+                    pattern: ^[0-9]{4}-(0[1-9]|1[0-2])$
+                    description: The UTC calendar month counted, formatted `YYYY-MM`.
+                  minGivers:
+                    type: integer
+                    minimum: 1
+                    description: Minimum number of distinct givers a recipient needed to be listed.
+                  badge:
+                    type: string
+                    minLength: 1
+                    maxLength: 255
+                    description: Slug of the badge the candidates are being considered for.
+                  candidates:
+                    type: array
+                    description: Recipients resolved to a Layer5 user, most givers first.
+                    items:
+                      x-go-type: CommunityGuideCandidate
+                      $schema: http://json-schema.org/draft-07/schema#
+                      title: Community Guide Candidate Schema
+                      description: |
+                        A kudos recipient who reached the unique-giver threshold for a UTC month
+                        and resolved to a Layer5 user. A maintainer confirms the award.
+                      type: object
+                      additionalProperties: false
+                      required:
+                        - userId
+                        - email
+                        - provider
+                        - externalId
+                        - givers
+                      properties:
+                        userId:
+                          description: Layer5 user ID the recipient resolved to.
+                          x-go-name: UserID
+                          x-order: 1
+                          type: string
+                          format: uuid
+                          x-go-type: uuid.UUID
+                          x-go-type-import:
+                            path: github.com/gofrs/uuid
+                        email:
+                          type: string
+                          format: email
+                          maxLength: 320
+                          description: Email address of the resolved Layer5 user.
+                          x-order: 2
+                        provider:
+                          type: string
+                          minLength: 1
+                          maxLength: 32
+                          description: Identity provider the kudos recipient was recorded under, for example `github`.
+                          x-order: 3
+                        externalId:
+                          type: string
+                          minLength: 1
+                          maxLength: 255
+                          description: The recipient's identifier at the provider, for example a numeric GitHub ID.
+                          x-id-format: external
+                          x-go-name: ExternalID
+                          x-order: 4
+                        givers:
+                          type: integer
+                          minimum: 1
+                          description: Number of distinct givers who gave the recipient valid kudos in the month.
+                          x-order: 5
+                  needsInfo:
+                    type: array
+                    description: Recipients who could not be resolved to a Layer5 user.
+                    items:
+                      x-go-type: CommunityGuideNeedsInfo
+                      $schema: http://json-schema.org/draft-07/schema#
+                      title: Community Guide Needs Info Schema
+                      description: |
+                        A kudos recipient who reached the unique-giver threshold but did not
+                        resolve to a Layer5 user. Ask the person for the missing link when the
+                        recognition is presented.
+                      type: object
+                      additionalProperties: false
+                      required:
+                        - provider
+                        - externalId
+                        - givers
+                      properties:
+                        provider:
+                          type: string
+                          minLength: 1
+                          maxLength: 32
+                          description: Identity provider the kudos recipient was recorded under, for example `github` or `slack`.
+                          x-order: 1
+                        externalId:
+                          type: string
+                          minLength: 1
+                          maxLength: 255
+                          description: The recipient's identifier at the provider.
+                          x-id-format: external
+                          x-go-name: ExternalID
+                          x-order: 2
+                        givers:
+                          type: integer
+                          minimum: 1
+                          description: Number of distinct givers who gave the recipient valid kudos in the month.
+                          x-order: 3
+        '400':
+          description: Invalid request body or request param
+          content:
+            text/plain:
+              schema:
+                type: string
+        '401':
+          description: Expired JWT token used or insufficient privilege
+          content:
+            text/plain:
+              schema:
+                type: string
+        '403':
+          description: Forbidden
+          content:
+            text/plain:
+              schema:
+                type: string
         '500':
           description: Internal server error
           content:
@@ -95685,7 +95884,10 @@ paths:
         - Workspace_workspaces
       operationId: getWorkspaces
       summary: Get all workspaces
-      description: Gets all workspaces accessible to the current user, optionally scoped to a specific organization.
+      description: >-
+        Gets all workspaces accessible to the current user, optionally scoped to a specific organization. Without orgId
+        the listing spans every organization the caller is a member of, so a caller with one organization (an anonymous
+        user, for example) gets that organization's workspaces. An orgId that is not a UUID is answered 400.
       parameters:
         - name: orgId
           in: query
