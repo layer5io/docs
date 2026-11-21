@@ -31060,6 +31060,21 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.377"
+url: /cloud/reference/releases/v1.0.377/index.md
+date: "2026-11-21"
+--------------------------------------------------------------------------------
+
+- fix(oauth): honour trusted MCP audiences on the canonical host @yi-nuo426 (#6518)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.376"
 url: /cloud/reference/releases/v1.0.376/index.md
 date: "2026-11-21"
