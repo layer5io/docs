@@ -297,4 +297,87 @@ This is the final element on the page and there should be no margin below this.
 
 ## Current checks
 
-Validation runs in the browser, needs no cluster, and changes nothing. It is disabled while the design is empty. On kanvas.new it opens a self-hosted-feature prompt. Validate Design gates both validate and dry run. Annotation components are skipped. A component whose definition cannot be fetched is skipped as valid. An unsupported design schema version reports 0 components, 0 annotations, and no errors. A clean result reads `No validation errors.` Errors name the field by dotted path and do not block you from continuing. When validation of the whole design completes, Kanvas records a validation event in the Layer5 Cloud event log. The dialog title is `Validate design "<name>"`.
+Validation runs in the browser, needs no cluster, and changes nothing. It is disabled while the design is empty. On kanvas.new it opens a self-hosted-feature prompt. Validate Design gates both validate and dry run. Annotation components are skipped. A component whose definition cannot be fetched is skipped as valid. An unsupported design schema version reports 0 components, 0 annotations, and no errors. A clean result reads `No validation errors.` Errors name the field by dotted path and do not block you from continuing. Each time you validate the whole design, Kanvas records a [validation event](#validation-events) in Meshery's events list, including when validation could not run. The dialog title is `Validate design "<name>"`.
+
+## Validation Events
+
+Kanvas records each design validation as a `pattern/validate` event in Meshery's events list. The event identifies the design, links to it, and reports either the result or why validation could not run. For how Meshery shows and manages events, see [Using the Notification Center for Troubleshooting]({{< ref "kanvas/tasks/designs/deploying-designs/index.md#using-the-notification-center-for-troubleshooting" >}}).
+
+{{< alert type="info" title="Note" >}}
+Validation events require Meshery Server v1.0.58 or later.
+{{< /alert >}}
+
+### When the Event Is Emitted
+
+Kanvas records one event each time it validates a design:
+
+- **Validation ran.** Whether the design passed or failed, the event has category `pattern`, action `validate` and severity `informational`. Its `status` is `success` or `failed`.
+- **Validation could not run.** If the validator returns no result or throws an error, the event has severity `error` and its `status` is `error`. See [When Validation Could Not Run](#when-validation-could-not-run).
+
+### Event Metadata
+
+A validation that ran records these metadata fields:
+
+Only `designId` is required. If the metadata is larger than 16 KB, Meshery Server reduces the event to the identity fields (`designId`, `designName`, `designVersion`, `designLink`), so treat `status`, `errorCount`, `errors`, `truncated` and `error` as optional.
+
+| Field | Description |
+| --- | --- |
+| `designId` | The ID of the validated design. |
+| `designName` | The name of the design. |
+| `designVersion` | The design's version. Present only when the design has one. |
+| `designLink` | An absolute URL that opens the design. |
+| `status` | The result. The [design event metadata contract](https://github.com/meshery/schemas/blob/master/docs/design-event-metadata-contract.md) defines `success`, `partial`, `failed` and `error`, and other values may appear. For a validation that ran, Kanvas currently sends `success` or `failed`. |
+| `errorCount` | The total number of validation errors. |
+| `errors` | Up to 20 errors. Each has a `code`, the validation keyword (for example, `required`), and a `componentId`, the ID of the component with the error. `componentId` is left out when the error applies to the whole design. |
+| `truncated` | `true` when there were more than 20 errors, so `errors` lists only the first 20. |
+
+Example metadata for a design that failed validation:
+
+```json
+{
+  "designId": "6c4b8a52-1f3e-4d2b-9a7c-0e5f3b2d1a90",
+  "designName": "Online Boutique",
+  "designVersion": "v0.0.3",
+  "designLink": "https://cloud.layer5.io/extension/meshmap?mode=design&design=6c4b8a52-1f3e-4d2b-9a7c-0e5f3b2d1a90",
+  "status": "failed",
+  "errorCount": 2,
+  "errors": [
+    { "code": "required", "componentId": "b1f0c6d2-7a3e-4c59-8e21-5d9a0f4b3c17" },
+    { "code": "type", "componentId": "e8a24f90-3c1b-4d6e-a7f5-2b0c9d1e6a43" }
+  ],
+  "truncated": false
+}
+```
+
+### When Validation Could Not Run
+
+If the validator returns no result or throws an error, Kanvas records the event with severity `error` and `status` `error`.
+
+**A `status` of `error` means validation did not run.** It does not mean the design failed validation. A design that fails validation is recorded with `status` `failed`, as described in [Event Metadata](#event-metadata).
+
+The metadata keeps `designId`, `designName`, `designVersion` (when the design has one) and `designLink`, and adds an `error` object. It does not include `errors`, `errorCount` or `truncated`.
+
+| Field | Description |
+| --- | --- |
+| `error.code` | Why validation could not run. One of the codes below. |
+| `error.message` | Optional. A short, readable description of the problem. |
+
+The `error.code` values are:
+
+| Code | Meaning |
+| --- | --- |
+| `validator-no-result` | The validator returned no result. |
+| `validator-exception` | The validator threw an error while validating the design. |
+
+Example metadata for a validation that could not run:
+
+```json
+{
+  "designId": "6c4b8a52-1f3e-4d2b-9a7c-0e5f3b2d1a90",
+  "designName": "Online Boutique",
+  "designVersion": "v0.0.3",
+  "designLink": "https://cloud.layer5.io/extension/meshmap?mode=design&design=6c4b8a52-1f3e-4d2b-9a7c-0e5f3b2d1a90",
+  "status": "error",
+  "error": { "code": "validator-no-result" }
+}
+```

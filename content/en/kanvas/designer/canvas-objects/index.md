@@ -76,8 +76,8 @@ they move with it.
 ### Adding textboxes {#adding-textboxes}
 
 Drag the textbox tool from the dock onto the canvas, or press
-<button class="kbc-button kbc-button-xs">T</button>. The keyboard route places the textbox near the
-center of the canvas and puts the cursor straight into it, so you can start typing immediately.
+<button class="kbc-button kbc-button-xs">T</button>, which places it near the center of the
+canvas. Either way, the cursor goes straight into the new textbox, so you can start typing immediately.
 
 A new textbox arrives 60 pixels tall with a dashed gray border and a transparent fill, and its text
 sits at the top left of the box. To edit the text of an existing textbox - or of any shape, since
