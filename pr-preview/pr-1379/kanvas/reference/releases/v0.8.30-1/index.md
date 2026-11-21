@@ -1,0 +1,19 @@
+# v0.8.30-1
+
+date: 2025-02-13
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- Cytoscape upgrade @aabidsofi19 (#3408)
+- comment out the import github wizard card @amitamrutiya (#3409)
+- remove unused dependencies from package.json @amitamrutiya (#3397)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+

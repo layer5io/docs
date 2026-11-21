@@ -1,0 +1,18 @@
+# v1.0.75-2
+
+date: 2026-11-05
+
+
+
+## What's New
+## 🔤 General
+- feat(editor): send design-validation metadata and operation-failure events @leecalcote (#4432)
+  - Design validation now records `pattern/validate` events in the v1beta3 design-event shape: design identity, an absolute link to the design, status `success` or `failed`, and up to 20 errors as `{code, componentId}` with `errorCount` and `truncated`.
+  - When the validator itself can't run, Kanvas records a severity-error `pattern/validate` event with status `error` and an error code of `validator-no-result` or `validator-exception`.
+  - **Requires Meshery Server v1.0.58 or later.**
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote and @yi-nuo426
+

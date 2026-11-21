@@ -1,0 +1,16 @@
+# v0.8.595
+
+date: 2025-12-14
+
+
+
+## 🦴 Infrastructure
+
+- fix: update Hydra deployment probes for improved health checks @leecalcote (#4634)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

@@ -1,0 +1,28 @@
+# v0.8.395
+
+date: 2025-08-22
+
+
+
+- fix broken emails @aabidsofi19 (#3993)
+
+## 🖥 Cloud UI
+
+- [Chore]: Update to Sistent v0.15.6 @l5io (#3981)
+- fix:  Disallow anonymous users to \Create New Content\ && removal of repo instructions @FaheemOnHub (#3982)
+
+## 💻 Server
+
+- Revert \Fix: Email validation to support wildcards\ @aabidsofi19 (#3991)
+- Fix: Email validation to support wildcards @Vincamine (#3988)
+
+## 🐛 Bug Fixes
+
+- fix:  Disallow anonymous users to \Create New Content\ && removal of repo instructions @FaheemOnHub (#3982)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @Vincamine, @aabidsofi19, @l5io and @vr-varad
+
+

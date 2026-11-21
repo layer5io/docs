@@ -1,0 +1,21 @@
+# v1.0.76-1
+
+date: 2026-11-12
+
+
+
+## What's New
+## 🔤 General
+- fix(renderer): make node animations work on compound nodes, start on load, and respect reduced motion @yi-nuo426 (#4419)
+- fix(editor): make component position updates durable, reported, and safe around undo and read-only mode @yi-nuo426 (#4420)
+- test(videos): wait for d11 merge to finish and commit the fixed-build defect baseline @yi-nuo426 (#4428)
+- fix(editor): make Pencil, connector snapping and shape drops reliable on the whiteboard @yi-nuo426 (#4426)
+- fix(editor): match existing components when merging a design instead of duplicating them @yi-nuo426 (#4425)
+- fix(ui): keep Deployment containers out of the Annotations layer and release pen-connector bindings @yi-nuo426 (#4418)
+- internal: Kanvas content for internal.layer5.io and redeploy dispatch @yi-nuo426 (#4435)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@CodeAhmedJamil, @jamieplu, @l5io, @leecalcote, @ritzorama, @winkletinkle and @yi-nuo426
+

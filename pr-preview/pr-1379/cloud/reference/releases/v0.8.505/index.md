@@ -1,0 +1,20 @@
+# v0.8.505
+
+date: 2025-10-15
+
+
+
+## 📚 Academy
+
+- Layer5 v0.8.2 content update @l5io (#4343)
+
+## 🖥 Cloud UI
+
+- remove hardcoded prereqs @aabidsofi19 (#4344)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

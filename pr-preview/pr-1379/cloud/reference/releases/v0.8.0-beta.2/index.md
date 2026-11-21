@@ -1,0 +1,16 @@
+# v0.8.0-beta.2
+
+date: 2024-08-27
+
+
+
+## What's New
+**General**
+- bump schemas @aabidsofi19 (#2739)
+
+## Contributors
+
+Thank you to our contributors for making this release possible:
+@Jougan-0, @aabidsofi19 and @l5io
+
+

@@ -1,0 +1,20 @@
+# v0.8.599
+
+date: 2025-12-14
+
+
+
+## 💻 Server
+
+- fix: Direct auth'ed users to /dashboard (update Go version to 1.25, enhance CSRF token handling, and add full Helm deployment command) @leecalcote (#4639)
+
+## 🦴 Infrastructure
+
+- fix: add livenessprobes to staging values.yaml for hydra @leecalcote (#4640)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

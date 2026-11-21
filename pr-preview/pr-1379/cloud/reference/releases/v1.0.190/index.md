@@ -1,0 +1,15 @@
+# v1.0.190
+
+date: 2026-07-15
+
+
+
+- fix(startup): non-blocking cron first-run + legible end of data seeding @hortison (#5726)
+- Stamp the RTK consumer-swap execution log complete @hortison (#5725)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison
+
+

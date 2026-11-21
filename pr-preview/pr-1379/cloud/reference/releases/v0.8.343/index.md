@@ -1,0 +1,22 @@
+# v0.8.343
+
+date: 2025-08-01
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- add support for prerequisites @aabidsofi19 (#3856)
+
+## 💻 Server
+
+- add support for prerequisites @aabidsofi19 (#3856)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @leecalcote
+
+

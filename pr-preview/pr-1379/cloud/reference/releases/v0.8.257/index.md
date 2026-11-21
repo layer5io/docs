@@ -1,0 +1,27 @@
+# v0.8.257
+
+date: 2025-06-19
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- Fix: Color Mismatch in Secondary Navbar @vr-varad (#3646)
+- enhance domain routing from ui and add fallback logic @aabidsofi19 (#3644)
+
+## 💻 Server
+
+- enhance domain routing from ui and add fallback logic @aabidsofi19 (#3644)
+
+## 🐛 Bug Fixes
+
+- Fix: Color Mismatch in Secondary Navbar @vr-varad (#3646)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @vr-varad
+
+

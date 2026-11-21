@@ -1,0 +1,16 @@
+# v0.8.415
+
+date: 2025-08-29
+
+
+
+## 🦴 Infrastructure
+
+- leecalcote/kratos 1.1.0 @leecalcote (#4041)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

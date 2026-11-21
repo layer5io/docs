@@ -1,0 +1,22 @@
+# v0.8.108
+
+date: 2024-12-11
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- fix wrong image links @aabidsofi19 (#3064)
+
+## 🐛 Bug Fixes
+
+- fix wrong image links @aabidsofi19 (#3064)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

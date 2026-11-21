@@ -1,0 +1,15 @@
+# v1.0.53
+
+date: 2026-05-04
+
+
+
+- fix(ui/academy): resolve publisher org names for all users @ritzorama (#5194)
+- fix(plans): make /account/plans responsive on mobile @leecalcote (#5192)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@carlosriosilva, @hortison, @leecalcote and @ritzorama
+
+

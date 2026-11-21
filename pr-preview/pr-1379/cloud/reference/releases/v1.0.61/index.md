@@ -1,0 +1,16 @@
+# v1.0.61
+
+date: 2026-05-06
+
+
+
+- fix(auth): cookie Path normalisation (401 after OIDC) + legacy behavior parity + comprehensive test plan @leecalcote (#5228)
+- fix(ui/auth): vertically center carousel in brand-info pane @leecalcote (#5229)
+- test(ui/auth): pin OAuth-clickable contract for /login and /registration @leecalcote (#5227)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote and @yi-nuo426
+
+

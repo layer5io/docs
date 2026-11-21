@@ -1,0 +1,17 @@
+# v0.8.262
+
+date: 2025-06-21
+
+
+
+## What's New
+## 🔤 General
+This release updates the Dockerfile, so that it build meshery-cloud from the new `server` folder.
+
+- add new targets; account for new server folder @leecalcote (#3664)
+
+## 👨🏽‍💻 The most amazing contributors 🦸‍♂️ 
+
+@leecalcote
+
+

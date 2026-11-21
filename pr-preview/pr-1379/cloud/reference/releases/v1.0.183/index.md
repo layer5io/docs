@@ -1,0 +1,16 @@
+# v1.0.183
+
+date: 2026-07-10
+
+
+
+- [Events] Hide Organization filter for single-org members @ritzorama (#5704)
+- [ui][server] Fix My Designs edit crash, repetitive related designs, and image rendering @ritzorama (#5696)
+- [Chore]: Update to Sistent v0.21.32 @l5io (#5706)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io, @leecalcote, @marblom007, @meshery-ci, @rishiraj38 and @ritzorama
+
+

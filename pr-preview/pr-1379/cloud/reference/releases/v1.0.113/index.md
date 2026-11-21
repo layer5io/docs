@@ -1,0 +1,14 @@
+# v1.0.113
+
+date: 2026-06-02
+
+
+
+- fix(auth): keep recovery/verification flows on the org's custom domain + friendly error redirect @leecalcote (#5432)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @ritzorama and @theBeginner86
+
+

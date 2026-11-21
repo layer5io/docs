@@ -1,0 +1,17 @@
+# v0.8.154-1
+
+date: 2025-11-08
+
+
+
+## What's New
+## 🔤 General
+## 🧰 Maintenance
+
+- [Designer] Open Import Design modal on click of drop-file-to-canvas div @[copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent) (#3881)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Copilot, @aabidsofi19, @l5io and [copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent)
+

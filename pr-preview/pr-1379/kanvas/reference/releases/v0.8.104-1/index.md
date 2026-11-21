@@ -1,0 +1,17 @@
+# v0.8.104-1
+
+date: 2025-06-17
+
+
+
+## What's New
+## 🔤 General
+- Update Keyboard Shortcuts @vr-varad (#3757)
+- Update verbiage surrounding cloud provider and user accounts @leecalcote (#3752)
+- [Chore]: Bump Sistent v0.14.201 @l5io (#3753)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and @vr-varad
+

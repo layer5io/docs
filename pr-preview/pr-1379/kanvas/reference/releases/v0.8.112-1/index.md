@@ -1,0 +1,18 @@
+# v0.8.112-1
+
+date: 2025-06-29
+
+
+
+## What's New
+## 🔤 General
+- add persistent storage design to getting started @aabidsofi19 (#3781)
+- Enhance Relationships tab @aabidsofi19 (#3780)
+- [Chore]: Bump Sistent v0.14.203 @l5io (#3779)
+- force sync for badge rendering on resize  @aabidsofi19 (#3778)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@FaheemOnHub, @aabidsofi19, @l5io and @leecalcote
+
