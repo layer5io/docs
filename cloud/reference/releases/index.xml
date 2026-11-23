@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.381</title><link>/cloud/reference/releases/v1.0.381/</link><pubDate>Sat, 21 Nov 2026 19:46:12 +0000</pubDate><guid>/cloud/reference/releases/v1.0.381/</guid><description>&lt;ul&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Releases on Layer5 Documentation</title><link>/cloud/reference/releases/</link><description>Recent content in Releases on Layer5 Documentation</description><generator>Hugo</generator><language>en</language><atom:link href="/cloud/reference/releases/index.xml" rel="self" type="application/rss+xml"/><item><title>v1.0.382</title><link>/cloud/reference/releases/v1.0.382/</link><pubDate>Mon, 23 Nov 2026 21:14:04 +0000</pubDate><guid>/cloud/reference/releases/v1.0.382/</guid><description>&lt;ul&gt;
+&lt;li&gt;fix(ui): exempt reportDesktopPlatformSessions in the schemas bridge ratchet @yi-nuo426 (#6532)&lt;/li&gt;
+&lt;li&gt;fix(ui): credentials edit no longer crashes on types without a form; fallback shows version @leecalcote (#6534)&lt;/li&gt;
+&lt;li&gt;docs(runbooks): document the discuss.meshery.io forum VM and its 2026-11-18 outage @leecalcote (#6530)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="-contributors" class="heading-link"&gt;
+ 👨🏽‍💻 Contributors
+ &lt;a href="#-contributors" class="heading-anchor" aria-label="Permalink to this heading"&gt;🔗&lt;/a&gt;
+&lt;/h3&gt;
+&lt;p&gt;Thank you to our contributors for making this release possible:
+@leecalcote, @meshery-ci, @pontusringblom, @simihablo and @yi-nuo426&lt;/p&gt;</description></item><item><title>v1.0.381</title><link>/cloud/reference/releases/v1.0.381/</link><pubDate>Sat, 21 Nov 2026 19:46:12 +0000</pubDate><guid>/cloud/reference/releases/v1.0.381/</guid><description>&lt;ul&gt;
 &lt;li&gt;fix(server): answer environment/workspace orgId scope and preferences GET per contract @leecalcote (#6529)&lt;/li&gt;
 &lt;/ul&gt;
 
