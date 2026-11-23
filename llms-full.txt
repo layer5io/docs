@@ -31077,6 +31077,27 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.384"
+url: /cloud/reference/releases/v1.0.384/index.md
+date: "2026-11-23"
+--------------------------------------------------------------------------------
+
+## 💻 Server
+
+- fix(credentials): scope the credential list to the acting organization @alexquincy (#6536)
+
+## 🐛 Bug Fixes
+
+- fix(credentials): scope the credential list to the acting organization @alexquincy (#6536)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@alexquincy and @leecalcote
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.383"
 url: /cloud/reference/releases/v1.0.383/index.md
 date: "2026-11-23"

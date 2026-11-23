@@ -1,0 +1,20 @@
+# v1.0.384
+
+date: 2026-11-23
+
+
+
+## 💻 Server
+
+- fix(credentials): scope the credential list to the acting organization @alexquincy (#6536)
+
+## 🐛 Bug Fixes
+
+- fix(credentials): scope the credential list to the acting organization @alexquincy (#6536)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@alexquincy and @leecalcote
+
+
