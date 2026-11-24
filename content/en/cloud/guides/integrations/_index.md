@@ -6,7 +6,7 @@ categories: [workspaces]
 tags: [integrations]
 ---
 
-Integrations connect Layer5 Cloud to systems outside it. Today that means GitHub, for importing infrastructure files and posting pull-request snapshots, and the infrastructure connections that Meshery Servers register.
+Integrations connect Layer5 Cloud to systems outside it. Today that means GitHub, for importing infrastructure files and posting pull-request snapshots, Google Drive, for fetching media files you pick, and the infrastructure connections that Meshery Servers register.
 
 ## Integration matrix
 
@@ -14,6 +14,7 @@ Integrations connect Layer5 Cloud to systems outside it. Today that means GitHub
 | --- | --- | --- |
 | GitHub (Layer5 GitHub App) | Reads the repositories you grant, imports Kubernetes manifests, Helm charts, Docker Compose files, and Meshery designs as private designs, and can commit a snapshot workflow to a repository. | [Integrating GitHub with Meshery]({{< ref "cloud/getting-started/github-integration/index.md" >}}) |
 | GitHub Actions (Kanvas Snapshot) | Posts a picture of your infrastructure on every pull request. | [GitHub Actions]({{< ref "cloud/guides/integrations/github-actions/_index.md" >}}) |
+| Google Drive | Lets Layer5 Cloud fetch media files you pick from your Google Drive. Files stay in your Drive. | [Google Drive]({{< ref "cloud/guides/integrations/google-drive/_index.md" >}}) |
 | Meshery Server | Registers each Meshery Server as a connection. | Listed under Meshery on the Integrations tab. |
 | Kubernetes | Lists the clusters your Meshery Servers manage, so you can assign them to environments. | [Managing Environments]({{< ref "cloud/guides/workspaces/managing-environments/index.md" >}}) |
 | Prometheus | Lists Prometheus connections that Meshery Servers report. | Listed under Prometheus on the Integrations tab. |
