@@ -1,0 +1,16 @@
+# v0.8.430
+
+date: 2025-09-04
+
+
+
+## 🖥 Cloud UI
+
+- Fix #4091: Academy Accomplishments bugs @leecalcote (#4092)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

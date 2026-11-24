@@ -1,0 +1,16 @@
+# v1.0.382
+
+date: 2026-11-23
+
+
+
+- fix(ui): exempt reportDesktopPlatformSessions in the schemas bridge ratchet @yi-nuo426 (#6532)
+- fix(ui): credentials edit no longer crashes on types without a form; fallback shows version @leecalcote (#6534)
+- docs(runbooks): document the discuss.meshery.io forum VM and its 2026-11-18 outage @leecalcote (#6530)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @meshery-ci, @pontusringblom, @simihablo and @yi-nuo426
+
+

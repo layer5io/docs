@@ -1,0 +1,16 @@
+# v0.8.427
+
+date: 2025-09-03
+
+
+
+## 💻 Server
+
+- Meshery Patthern Resource handler: return json, not binary @leecalcote (#4079)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

@@ -1,0 +1,26 @@
+# v1.0.370
+
+date: 2026-11-18
+
+
+
+- chore: seed hosted MCP permission keys @leecalcote (#6458)
+- feat: first-party marketing list behind the Make.com webhooks @leecalcote (#6472)
+- docs: archive scrubbed Mailchimp research with the design @leecalcote (#6471)
+- docs: design leaving Mailchimp without waiting on SES @leecalcote (#6470)
+- feat(kudos): add GitHub identity resolver and unique-giver counting @Maanvi212006 (#6469)
+- feat: add kudos events table and ingestion endpoint (Track 5) @Maanvi212006 (#6468)
+- feat: remap a design's GitHub source and pin source reads to a commit @jijillery (#6240)
+- ci: give meshery-cloud runners a third of the ci-runners quota @yi-nuo426 (#6467)
+- ci: run CI jobs on self-hosted staging runners @yi-nuo426 (#6463)
+- feat(events): serve markAllEventsRead behind a Change Event Read Status key @leecalcote (#6460)
+- chore(db): refresh cloud-schema.sql from production @leecalcote (#6456)
+- fix(events): scope event deletes and status writes to the caller @leecalcote (#6459)
+- test(schemas): scan the pinned schemas module for external $refs @leecalcote (#6455)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Maanvi212006, @cursor[bot], @cursoragent, @fitzergerald, @jijillery, @leecalcote, @michaelvance092 and @yi-nuo426
+
+

@@ -1,0 +1,15 @@
+# v0.8.173-1
+
+date: 2025-11-24
+
+
+
+## What's New
+## 🔤 General
+- Fix TypeScript type errors in meshmap: Add missing interfaces and type annotations @[copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent) (#3897)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and [copilot-swe-agent[bot]](https://github.com/apps/copilot-swe-agent)
+

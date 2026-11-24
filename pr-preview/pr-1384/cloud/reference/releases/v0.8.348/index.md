@@ -1,0 +1,18 @@
+# v0.8.348
+
+date: 2025-08-03
+
+
+
+## What's New
+## 🔤 General
+## 💻 Server
+
+- dont fail on reading config @aabidsofi19 (#3861)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

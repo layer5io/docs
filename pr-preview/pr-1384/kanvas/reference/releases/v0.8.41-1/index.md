@@ -1,0 +1,21 @@
+# v0.8.41-1
+
+date: 2025-02-28
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix: missing theme issue for comment @amitamrutiya (#3472)
+
+## 🐛 Bug Fixes
+
+- fix: missing theme issue for comment @amitamrutiya (#3472)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+

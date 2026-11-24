@@ -1,0 +1,16 @@
+# v1.0.193
+
+date: 2026-07-15
+
+
+
+- [Fix] Exclude soft-deleted events from event queries and severity counts @NSTKrishna (#5719)
+- [Cloud] Invitation fixes: retain linked invitation cross-org, unlimited-quota accounting, per-acceptance audit events @hortison (#5732)
+- [dao] Exclude severity filter from breakdown, close remaining soft-delete gaps @hortison (#5734)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@NSTKrishna, @hortison and @leecalcote
+
+

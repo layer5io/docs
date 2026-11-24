@@ -1,0 +1,17 @@
+# v0.8.538
+
+date: 2025-10-29
+
+
+
+## 🦴 Infrastructure
+
+- Remove migration scripts for deleting anonymous users and associated resources @leecalcote (#4450)
+- new delete anonymous users script @leecalcote (#4449)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

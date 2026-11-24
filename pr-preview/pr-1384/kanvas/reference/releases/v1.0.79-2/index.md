@@ -1,0 +1,16 @@
+# v1.0.79-2
+
+date: 2026-11-16
+
+
+
+## What's New
+## 🔤 General
+- build(live-check): add a scripted live check against a pinned Meshery Server @yi-nuo426 (#4439)
+- [Kanvas] Cut Designer click latency, wire adaptive render signal, ship embed stylesheet @leecalcote (#4438)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@carlosriosilva, @l5io, @leecalcote, @miacycle and @yi-nuo426
+

@@ -1,0 +1,27 @@
+# v0.8.37-1
+
+date: 2025-02-24
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- fix: trigger rerender on undo-redo @aabidsofi19 (#3457)
+- Refactor: Remove Redundant Theme Providers in Favor of Global Sistent theme @Vidit-Kushwaha (#3452)
+- add some new edge styles @amitamrutiya (#3455)
+- feat: Change font family in Children component to ensure differentiation from Root @Vidit-Kushwaha (#3456)
+- Fix evaluation indicator @aabidsofi19 (#3453)
+- [Chore]: Bump Sistent v0.14.159 @l5io (#3454)
+
+## 🐛 Bug Fixes
+
+- fix: trigger rerender on undo-redo @aabidsofi19 (#3457)
+- Fix evaluation indicator @aabidsofi19 (#3453)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Vidit-Kushwaha, @aabidsofi19, @amitamrutiya, @l5io and @leecalcote
+

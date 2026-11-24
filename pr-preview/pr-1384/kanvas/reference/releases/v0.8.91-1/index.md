@@ -1,0 +1,16 @@
+# v0.8.91-1
+
+date: 2025-05-28
+
+
+
+## What's New
+## 🔤 General
+- make ui dependencies compatible with meshery ui @amitamrutiya (#3704)
+- [Chore]: Bump Sistent v0.14.194 @l5io (#3701)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@amitamrutiya and @l5io
+

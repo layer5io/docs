@@ -1,0 +1,15 @@
+# v1.0.286
+
+date: 2026-10-17
+
+
+
+- fix(identity): return the stored row id from minted API tokens @leecalcote (#6227)
+- docs(skills): add a read-only production-diagnostics skill @leecalcote (#6226)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+

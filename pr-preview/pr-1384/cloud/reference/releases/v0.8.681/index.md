@@ -1,0 +1,14 @@
+# v0.8.681
+
+date: 2026-03-19
+
+
+
+- Chore: upgrade schemas v0.8.129 and academy local def @fitzergerald (#4894)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@fitzergerald, @l5io, @meshery-ci and @yi-nuo426
+
+

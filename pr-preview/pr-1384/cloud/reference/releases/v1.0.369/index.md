@@ -1,0 +1,16 @@
+# v1.0.369
+
+date: 2026-11-16
+
+
+
+- fix(mcp): honor the external gateway relay marker on /mcp @yi-nuo426 (#6454)
+- chore: bump @meshery/schemas to v1.3.118 @leecalcote (#6451)
+- fix(ui): never send X-Current-Orgid: undefined from cloudApi @leecalcote (#6449)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @pontusringblom, @ritzorama and @yi-nuo426
+
+

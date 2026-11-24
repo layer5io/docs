@@ -1,0 +1,20 @@
+# v0.8.137
+
+date: 2025-01-28
+
+
+
+## What's New
+## 🔤 General
+- Revert \Webhooks: switch to user-access-alt\ @vishalvivekm (#3146)
+
+## 🖥 Cloud UI
+
+- social auths @aabidsofi19 (#3152)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @vishalvivekm
+
+

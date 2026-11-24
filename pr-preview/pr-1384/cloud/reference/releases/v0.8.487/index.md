@@ -1,0 +1,35 @@
+# v0.8.487
+
+date: 2025-10-07
+
+
+
+## 📚 Academy
+
+- Layer5 v0.7.2 content update @l5io (#4291)
+
+## 🖥 Cloud UI
+
+- Certification enhancements and fixes @aabidsofi19 (#4289)
+- Fixed Background color of design image in edit modal @ARYANSHAH1567 (#4230)
+- Fill icons according to theme @ARYANSHAH1567 (#4287)
+
+## 💻 Server
+
+- Certification enhancements and fixes @aabidsofi19 (#4289)
+
+## 🦴 Infrastructure
+
+- Certification enhancements and fixes @aabidsofi19 (#4289)
+- swap hooks for kanvas entitlement and user signup  @ritesh-karankal (#4290)
+
+## 🐛 Bug Fixes
+
+- Fixed Background color of design image in edit modal @ARYANSHAH1567 (#4230)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@ARYANSHAH1567, @aabidsofi19, @l5io, @leecalcote and @ritesh-karankal
+
+
