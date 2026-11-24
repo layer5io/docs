@@ -31077,6 +31077,21 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.391"
+url: /cloud/reference/releases/v1.0.391/index.md
+date: "2026-11-24"
+--------------------------------------------------------------------------------
+
+- feat(helm): deliver support-case secrets to the cloud deployment @leecalcote (#6545)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@hortison, @leecalcote and @marblom007
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.390"
 url: /cloud/reference/releases/v1.0.390/index.md
 date: "2026-11-24"
