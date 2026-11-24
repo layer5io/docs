@@ -31077,6 +31077,21 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.385"
+url: /cloud/reference/releases/v1.0.385/index.md
+date: "2026-11-23"
+--------------------------------------------------------------------------------
+
+- feat(credentials): render every credential type's edit form from @meshery/schemas @leecalcote (#6537)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@alexquincy and @leecalcote
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.384"
 url: /cloud/reference/releases/v1.0.384/index.md
 date: "2026-11-23"
