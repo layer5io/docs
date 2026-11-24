@@ -31077,6 +31077,21 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.387"
+url: /cloud/reference/releases/v1.0.387/index.md
+date: "2026-11-24"
+--------------------------------------------------------------------------------
+
+- fix(ui): remove old intro text above passkeys empty-state cards @miacycle (#6540)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote, @miacycle and @yi-nuo426
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.386"
 url: /cloud/reference/releases/v1.0.386/index.md
 date: "2026-11-24"
