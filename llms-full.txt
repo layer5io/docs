@@ -31077,6 +31077,21 @@ Who receives comment email is described in [Managing comment notifications](/kan
 
 
 --------------------------------------------------------------------------------
+title: "v1.0.390"
+url: /cloud/reference/releases/v1.0.390/index.md
+date: "2026-11-24"
+--------------------------------------------------------------------------------
+
+- Support cases: durable records, GitHub issue outbox, diagnostics packages (#6533) @leecalcote (#6542)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@leecalcote
+
+
+
+--------------------------------------------------------------------------------
 title: "v1.0.389"
 url: /cloud/reference/releases/v1.0.389/index.md
 date: "2026-11-24"
