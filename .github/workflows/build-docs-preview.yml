@@ -72,7 +72,7 @@ jobs:
         uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
           path: resources/_gen
-          key: hugo-gen-${{ env.HUGO_VERSION }}-${{ hashFiles('hugo.toml', 'layouts/_default/_markup/render-image.html',
+          key: hugo-gen-${{ env.HUGO_VERSION }}-${{ hashFiles('hugo.toml', 'layouts/_default/_markup/render-image.html', 'content/**/*.md',
             'content/**/*.png', 'content/**/*.PNG', 'content/**/*.jpg', 'content/**/*.JPG', 'content/**/*.jpeg', 'content/**/*.JPEG',
             'assets/**/*.png', 'assets/**/*.PNG', 'assets/**/*.jpg', 'assets/**/*.JPG', 'assets/**/*.jpeg', 'assets/**/*.JPEG') }}
           restore-keys: hugo-gen-${{ env.HUGO_VERSION }}-
