@@ -6,7 +6,8 @@
 
     - declares a `videoId` in its front matter (video gallery pages), or
     - renders a video through the `youtube` shortcode, or
-    - embeds a YouTube iframe directly.
+    - embeds a YouTube iframe directly (`youtube.com/embed/` or
+      `youtube-nocookie.com/embed/`).
 
   IDs are de-duplicated, so a page that both declares a `videoId` and renders
   the shortcode is listed once. Pages with `videoType: local` are skipped, as
@@ -25,7 +26,7 @@
 
   {{- $raw := $page.RawContent -}}
   {{- if in $raw "youtu" -}}
-    {{- $pattern := `(?i)(?:\{\{<\s*youtube\s[^}]*?\bid\s*=\s*|youtube\.com/embed/)(?:"|')?([A-Za-z0-9_-]{11})` -}}
+    {{- $pattern := `(?i)(?:\{\{<\s*youtube\s[^}]*?\bid\s*=\s*|youtube(?:-nocookie)?\.com/embed/)(?:"|')?([A-Za-z0-9_-]{11})` -}}
     {{- range findRESubmatch $pattern $raw -}}
       {{- $ids = $ids | append (index . 1) -}}
     {{- end -}}
@@ -49,10 +50,12 @@
 
   {{- $duration := 0 -}}
   {{- with $page.Params.duration -}}
-    {{- range split (string .) ":" -}}
-      {{- $part := strings.TrimLeft "0" . -}}
-      {{- $part = cond (eq $part "") "0" $part -}}
-      {{- $duration = add (mul $duration 60) (int $part) -}}
+    {{- if findRE `^[0-9]+(:[0-9]+){0,2}$` (string .) -}}
+      {{- range split (string .) ":" -}}
+        {{- $part := strings.TrimLeft "0" . -}}
+        {{- $part = cond (eq $part "") "0" $part -}}
+        {{- $duration = add (mul $duration 60) (int $part) -}}
+      {{- end -}}
     {{- end -}}
   {{- end -}}
 
