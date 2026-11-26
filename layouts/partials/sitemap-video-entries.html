@@ -1,0 +1,74 @@
+{{- /*
+  Collects the videos a page contributes to the sitemap, for the Google video
+  sitemap extension (https://developers.google.com/search/docs/crawling-indexing/sitemaps/video-sitemaps).
+
+  A page is treated as a video page when it:
+
+    - declares a `videoId` in its front matter (video gallery pages), or
+    - renders a video through the `youtube` shortcode, or
+    - embeds a YouTube iframe directly.
+
+  IDs are de-duplicated, so a page that both declares a `videoId` and renders
+  the shortcode is listed once. Pages with `videoType: local` are skipped, as
+  their source is not hosted on YouTube.
+
+  Returns a slice of dicts with the keys: thumbnail, title, description,
+  player, and optionally duration and publication_date.
+*/ -}}
+{{- $page := . -}}
+{{- $ids := slice -}}
+
+{{- if ne ($page.Params.videoType | default "") "local" -}}
+  {{- with $page.Params.videoId -}}
+    {{- $ids = $ids | append (string .) -}}
+  {{- end -}}
+
+  {{- $raw := $page.RawContent -}}
+  {{- if in $raw "youtu" -}}
+    {{- $pattern := `(?i)(?:\{\{<\s*youtube\s[^}]*?\bid\s*=\s*|youtube\.com/embed/|youtu\.be/)(?:"|')?([A-Za-z0-9_-]{11})` -}}
+    {{- range findRESubmatch $pattern $raw -}}
+      {{- $ids = $ids | append (index . 1) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $ids = $ids | uniq -}}
+{{- $videos := slice -}}
+
+{{- if gt (len $ids) 0 -}}
+  {{- $description := $page.Description | default ($page.Summary | plainify) | default site.Params.description | default site.Title -}}
+  {{- $description = trim (plainify $description) " \n\t" -}}
+  {{- if gt (len $description) 2048 -}}
+    {{- $description = substr $description 0 2048 -}}
+  {{- end -}}
+
+  {{- $title := $page.Title -}}
+  {{- if gt (len $title) 100 -}}
+    {{- $title = substr $title 0 100 -}}
+  {{- end -}}
+
+  {{- $duration := 0 -}}
+  {{- with $page.Params.duration -}}
+    {{- range split (string .) ":" -}}
+      {{- $duration = add (mul $duration 60) (int .) -}}
+    {{- end -}}
+  {{- end -}}
+
+  {{- range $ids -}}
+    {{- $video := dict
+      "thumbnail" (printf "https://i.ytimg.com/vi/%s/maxresdefault.jpg" .)
+      "title" $title
+      "description" $description
+      "player" (printf "https://www.youtube.com/embed/%s" .)
+    -}}
+    {{- if gt $duration 0 -}}
+      {{- $video = merge $video (dict "duration" $duration) -}}
+    {{- end -}}
+    {{- if not $page.Date.IsZero -}}
+      {{- $video = merge $video (dict "publication_date" ($page.Date.Format "2006-01-02T15:04:05-07:00")) -}}
+    {{- end -}}
+    {{- $videos = $videos | append $video -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $videos -}}
