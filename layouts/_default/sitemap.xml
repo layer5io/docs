@@ -18,10 +18,10 @@
     {{- end }}
     {{- range $videos }}
     <video:video>
-      <video:thumbnail_loc>{{ .thumbnail | htmlEscape }}</video:thumbnail_loc>
-      <video:title>{{ .title | htmlEscape }}</video:title>
-      <video:description>{{ .description | htmlEscape }}</video:description>
-      <video:player_loc>{{ .player | htmlEscape }}</video:player_loc>
+      <video:thumbnail_loc>{{ .thumbnail | transform.XMLEscape | safeHTML }}</video:thumbnail_loc>
+      <video:title>{{ .title | transform.XMLEscape | safeHTML }}</video:title>
+      <video:description>{{ .description | transform.XMLEscape | safeHTML }}</video:description>
+      <video:player_loc>{{ .player | transform.XMLEscape | safeHTML }}</video:player_loc>
       {{- with .duration }}
       <video:duration>{{ . }}</video:duration>
       {{- end }}

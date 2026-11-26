@@ -25,7 +25,7 @@
 
   {{- $raw := $page.RawContent -}}
   {{- if in $raw "youtu" -}}
-    {{- $pattern := `(?i)(?:\{\{<\s*youtube\s[^}]*?\bid\s*=\s*|youtube\.com/embed/|youtu\.be/)(?:"|')?([A-Za-z0-9_-]{11})` -}}
+    {{- $pattern := `(?i)(?:\{\{<\s*youtube\s[^}]*?\bid\s*=\s*|youtube\.com/embed/)(?:"|')?([A-Za-z0-9_-]{11})` -}}
     {{- range findRESubmatch $pattern $raw -}}
       {{- $ids = $ids | append (index . 1) -}}
     {{- end -}}
@@ -50,13 +50,15 @@
   {{- $duration := 0 -}}
   {{- with $page.Params.duration -}}
     {{- range split (string .) ":" -}}
-      {{- $duration = add (mul $duration 60) (int .) -}}
+      {{- $part := strings.TrimLeft "0" . -}}
+      {{- $part = cond (eq $part "") "0" $part -}}
+      {{- $duration = add (mul $duration 60) (int $part) -}}
     {{- end -}}
   {{- end -}}
 
   {{- range $ids -}}
     {{- $video := dict
-      "thumbnail" (printf "https://i.ytimg.com/vi/%s/maxresdefault.jpg" .)
+      "thumbnail" (printf "https://i.ytimg.com/vi/%s/hqdefault.jpg" .)
       "title" $title
       "description" $description
       "player" (printf "https://www.youtube.com/embed/%s" .)
