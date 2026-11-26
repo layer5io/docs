@@ -38,7 +38,7 @@
 
 {{- if gt (len $ids) 0 -}}
   {{- $description := $page.Description | default ($page.Summary | plainify) | default site.Params.description | default site.Title -}}
-  {{- $description = trim (plainify $description) " \n\t" -}}
+  {{- $description = trim ($description | plainify | htmlUnescape) " \n\t" -}}
   {{- if gt (len $description) 2048 -}}
     {{- $description = substr $description 0 2048 -}}
   {{- end -}}
@@ -66,7 +66,7 @@
       "description" $description
       "player" (printf "https://www.youtube.com/embed/%s" .)
     -}}
-    {{- if gt $duration 0 -}}
+    {{- if and (ge $duration 1) (le $duration 28800) -}}
       {{- $video = merge $video (dict "duration" $duration) -}}
     {{- end -}}
     {{- if not $page.Date.IsZero -}}
