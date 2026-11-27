@@ -130,6 +130,14 @@ To prepare your Hugo site to support design embedding, perform the one-time task
   width: 100%;
   height: 100%;
 }
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 <div
