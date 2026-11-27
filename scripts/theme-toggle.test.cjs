@@ -4,7 +4,8 @@ const { readFileSync } = require('node:fs');
 const { join } = require('node:path');
 const { runInNewContext } = require('node:vm');
 
-const partial = (name) => readFileSync(join(__dirname, '../layouts/partials', name), 'utf8');
+const partial = (name) =>
+  readFileSync(join(__dirname, '../layouts/partials', name), 'utf8');
 const script = (html) => html.match(/<script>([\s\S]*?)<\/script>/)[1];
 const earlyScript = script(partial('head.html'));
 const controller = script(partial('theme-toggle-script.html'));
@@ -30,7 +31,9 @@ function page({ saved, blocked = false } = {}) {
   const toggle = {
     hidden: true,
     setAttribute: (key, value) => labels.set(key, value),
-    addEventListener: (type, callback) => { click = callback; },
+    addEventListener: (type, callback) => {
+      click = callback;
+    },
   };
   const context = {
     localStorage,
@@ -41,17 +44,25 @@ function page({ saved, blocked = false } = {}) {
       },
       getElementById: () => toggle,
     },
-    window: { addEventListener: (type, callback) => { events[type] = callback; } },
+    window: {
+      addEventListener: (type, callback) => {
+        events[type] = callback;
+      },
+    },
   };
   runInNewContext(earlyScript, context);
   const initialTheme = root.get('data-theme');
   runInNewContext(controller, context);
   return {
-    root, labels, toggle, initialTheme,
+    root,
+    labels,
+    toggle,
+    initialTheme,
     click: () => click(),
     writes: () => writes,
     stored: () => stored,
-    storage: (key, newValue, storageArea = localStorage) => events.storage({ key, newValue, storageArea }),
+    storage: (key, newValue, storageArea = localStorage) =>
+      events.storage({ key, newValue, storageArea }),
   };
 }
 

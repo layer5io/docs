@@ -489,7 +489,7 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
         color: #000d12 !important;
 
         &::placeholder {
-          color: #647176 !important;
+          color: #3c494f !important;
         }
 
         &:focus {
@@ -558,9 +558,9 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   }
 
   img.grid-icon {
-    filter: invert(0.2);
+    filter: invert(0.8);
     &:hover {
-      filter: invert(0.4);
+      filter: invert(0.6);
     }
   }
 }
