@@ -295,6 +295,12 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   justify-content: center;
 }
 
+// Keep all navigation controls visible alongside the 44px toggle on phones.
+@include media-breakpoint-down(sm) {
+  .td-navbar .nav-item {
+    margin-right: 0;
+  }
+}
 
 .theme-toggle {
   --size: 1.35rem;
