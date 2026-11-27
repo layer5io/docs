@@ -222,7 +222,7 @@ button#searchKey,
     }
 
     &:focus-within {
-      border-color: $primary !important;
+      border-color: $light-theme-accent !important;
       box-shadow: none !important;
     }
   }
@@ -234,6 +234,11 @@ button#searchKey,
     border: 1px solid #d2d8da !important;
     color: #647176 !important;
     box-shadow: none !important;
+
+    &:focus-visible {
+      outline: 2px solid $light-theme-accent !important;
+      outline-offset: 2px !important;
+    }
   }
 
   .popover-body {

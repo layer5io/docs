@@ -525,4 +525,73 @@ a#videoPageLink:focus {
         }
 
         &:hover {
+            color: $light-theme-accent;
+
+            .tab-icon {
+                background-color: #daf3eb;
+
+                i {
                     color: $light-theme-accent;
+                }
+            }
+        }
+
+        &.active {
+            color: $light-theme-accent;
+            border-bottom: 2px solid $primary;
+
+            .tab-icon {
+                background-color: $light-theme-accent;
+
+                i {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    .subcategory-btn {
+        background-color: #eaedee;
+        color: #3c494f;
+        box-shadow: none;
+        border: 1px solid #d2d8da;
+
+        &:hover {
+            background-color: #daf3eb;
+            color: #007763;
+            border-color: $light-theme-accent;
+        }
+
+        &.active {
+            background-color: $light-theme-accent;
+            color: #ffffff;
+            border-color: $light-theme-accent;
+        }
+    }
+
+    .video-card {
+        background-color: #ffffff;
+        border: 1px solid #eaedee;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        .video-info {
+            h3 {
+                color: #000d12;
+            }
+
+            p.video-description {
+                color: #3c494f;
+            }
+
+            &:hover {
+                h3 {
+                    color: $light-theme-accent;
+                }
+
+                p.video-description {
+                    color: #000d12;
+                }
+            }
+        }
+    }
+}

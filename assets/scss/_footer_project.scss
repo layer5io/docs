@@ -632,5 +632,104 @@
 
         &:hover {
           color: $light-theme-accent !important;
+        }
+      }
+    }
+
+    .footer-h5 {
+      a {
+        color: #3c494f !important;
+
+        &:hover {
+          color: $light-theme-accent !important;
+        }
+      }
+    }
+
+    .footer-icons {
+      a {
+        filter: grayscale(1) opacity(0.7) !important;
+
+        &:hover {
+          filter: none !important;
+          opacity: 1 !important;
+        }
+
+        &.social-icon {
+          filter: grayscale(1) opacity(0.7) !important;
+
+          &:hover {
+            filter: none !important;
+            opacity: 1 !important;
+          }
+        }
+      }
+    }
+
+    .subscribe {
+      p {
+        color: #000d12 !important;
+        font-weight: 600;
+      }
+    }
+
+    input.footer-input {
+      background-color: #ffffff !important;
+      border: 1px solid #d2d8da !important;
+      color: #000d12 !important;
+
+      &::placeholder {
+        color: #647176 !important;
+      }
+
+      &:focus {
+        border-color: $light-theme-accent !important;
+        background-color: #ffffff !important;
+        color: #000d12 !important;
+        outline: 2px solid $light-theme-accent;
+        outline-offset: 2px;
+      }
+    }
+
+    .footer-button {
+      background-color: $light-theme-accent !important;
+      color: #ffffff !important;
+
+      &:hover {
+        background-color: #007763 !important;
+      }
+    }
+
+    .footer-hr {
+      border-color: #d2d8da !important;
+      color: #d2d8da !important;
+    }
+
+    .footer-bottom {
+      span {
+        color: #647176 !important;
+      }
+
+      a {
+        color: #647176 !important;
+
+        &:hover {
+          color: $light-theme-accent !important;
+        }
+      }
+    }
+
+    .footer-bottom-middle {
+      .status-link {
+        background-color: #eaedee !important;
+        border: 1px solid #d2d8da !important;
+        color: #28353a !important;
+
+        &:hover {
+          color: $light-theme-accent !important;
           border-color: $light-theme-accent !important;
+        }
+      }
+    }
+  }
 }

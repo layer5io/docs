@@ -288,4 +288,54 @@
 
       .landing-card-title,
       span.landing-card-title {
+        color: $light-theme-accent !important;
+      }
+
+      p {
+        color: #000d12 !important;
+      }
+    }
+  }
+
+  .landing-card-title {
+    color: #000d12 !important;
+  }
+
+  .forum-section {
+    background: #ffffff !important;
+    border: 1.5px solid #d2d8da !important;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04) !important;
+
+    .landing-card-title,
+    h1, h2, h3, h4, h5, h6,
+    span {
+      color: #000d12 !important;
+    }
+
+    p {
+      color: #28353a !important;
+    }
+
+    &:hover {
       border-color: $light-theme-accent !important;
+      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.06) !important;
+    }
+  }
+
+  .handbook-section {
+    background: linear-gradient(112deg, #ffffff 34.88%, #daf3eb 92.89%, #f0faf8 159.16%) !important;
+    border: 1.5px solid #93e6d1 !important;
+    border-radius: 1rem !important;
+
+    .landing-card-title,
+    h1, h2, h3, h4, h5, h6,
+    span {
+      color: #000d12 !important;
+    }
+
+    p {
+      color: #28353a !important;
+    }
+  }
+}
+

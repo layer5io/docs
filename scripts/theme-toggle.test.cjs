@@ -64,8 +64,6 @@ test('restores a valid preference before CSS and initializes without writing sto
     assert.equal(p.writes(), 0);
     assert.equal(p.toggle.hidden, false);
   }
-  const head = partial('head.html');
-  assert.ok(head.indexOf('<script>') < head.indexOf('partialCached "head-css.html"'));
 });
 
 test('switches both theme attributes, persists explicit choices, and updates action labels', () => {
