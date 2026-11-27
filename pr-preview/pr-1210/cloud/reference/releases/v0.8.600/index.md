@@ -1,0 +1,16 @@
+# v0.8.600
+
+date: 2025-12-14
+
+
+
+## 💻 Server
+
+- Identity: improve Kratos auth'ed user flow @leecalcote (#4642)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

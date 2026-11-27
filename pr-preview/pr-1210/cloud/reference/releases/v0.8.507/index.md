@@ -1,0 +1,18 @@
+# v0.8.507
+
+date: 2025-10-16
+
+
+
+## 💻 Server
+
+- Reduce log verbosity by commenting out debug statements in various handlers and models @leecalcote (#4353)
+- Reduce debug log noise @leecalcote (#4352)
+- Reduce log noise: use Skipper from Echo to match endpoints to skip logging @leecalcote (#4351)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+
+

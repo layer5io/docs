@@ -1,0 +1,16 @@
+# v0.8.609
+
+date: 2025-12-17
+
+
+
+## 💻 Server
+
+- fix error creating connection because of wrong error matching @aabidsofi19 (#4660)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @hortison, @l5io and @leecalcote
+
+

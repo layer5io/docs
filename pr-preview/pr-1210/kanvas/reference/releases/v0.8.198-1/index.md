@@ -1,0 +1,19 @@
+# v0.8.198-1
+
+date: 2026-01-16
+
+
+
+## What's New
+## 🔤 General
+- [Chore]: Update to Sistent v0.15.23 @l5io (#3987)
+
+## 🧰 Maintenance
+
+- Bump globals from 16.5.0 to 17.0.0 in /meshmap @[dependabot[bot]](https://github.com/apps/dependabot) (#3986)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io, @leecalcote and [dependabot[bot]](https://github.com/apps/dependabot)
+

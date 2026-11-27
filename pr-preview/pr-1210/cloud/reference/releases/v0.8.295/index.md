@@ -1,0 +1,17 @@
+# v0.8.295
+
+date: 2025-07-15
+
+
+
+## What's New
+## 🔤 General
+- update hugo version @aabidsofi19 (#3773)
+- disale git info @aabidsofi19 (#3772)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

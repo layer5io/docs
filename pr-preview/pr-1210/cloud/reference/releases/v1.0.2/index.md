@@ -1,0 +1,15 @@
+# v1.0.2
+
+date: 2026-04-06
+
+
+
+-  fix: use dynamic label in OutlinedInput for correct border cutout @Rajesh-Nagarajan-11 (#4978)
+- fix(db): make seed migration idempotent against existing data @yi-nuo426 (#4976)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Rajesh-Nagarajan-11, @alexquincy, @l5io, @meshery-ci and @yi-nuo426
+
+

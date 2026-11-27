@@ -1,0 +1,20 @@
+# v0.8.598
+
+date: 2025-12-14
+
+
+
+## 🦴 Infrastructure
+
+- add env.mk with server base url for ui-build @aabidsofi19 (#4638)
+
+## 🐛 Bug Fixes
+
+- add env.mk with server base url for ui-build @aabidsofi19 (#4638)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19 and @l5io
+
+

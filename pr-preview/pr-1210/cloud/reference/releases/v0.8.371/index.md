@@ -1,0 +1,17 @@
+# v0.8.371
+
+date: 2025-08-10
+
+
+
+### 🔤 General
+## 🖥 Cloud UI
+
+- Academy add empty state and fix stale data on org switch @aabidsofi19 (#3921)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @l5io and @zihanKuang
+
+

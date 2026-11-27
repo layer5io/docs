@@ -1,0 +1,17 @@
+# v1.0.168
+
+date: 2026-07-01
+
+
+
+- Add full and full-release modes for iterate-pr @miacycle (#5623)
+- [Server] Consume schemas team.TeamPayload; retire local model_team_payload.go @leecalcote (#5622)
+- chore(db): refresh cloud-schema.sql from prod (owner-consolidation) + uniformity remediation plan @leecalcote (#5620)
+- fix(ui): read totalCount for team/credential/view/keychain counts @leecalcote (#5619)
+
+### 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@arjunmehta-git, @leecalcote and @miacycle
+
+

@@ -1,0 +1,17 @@
+# v0.7.131-2
+
+date: 2024-11-01
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- [Tutorials] Two more categories and sample content @leecalcote (#3082)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @leecalcote
+

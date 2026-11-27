@@ -1,0 +1,18 @@
+# v0.8.73
+
+date: 2024-11-13
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- add correct path param to redirect to playground @sudhanshutech (#2966)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@l5io and @sudhanshutech
+
+

@@ -1,0 +1,18 @@
+# v0.8.32
+
+date: 2024-10-16
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [bugfix] Support Menu: Cloud Docs and API Docs links @leecalcote (#2845)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@MUzairS15, @l5io and @leecalcote
+
+

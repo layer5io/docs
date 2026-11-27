@@ -1,0 +1,22 @@
+# v0.8.102
+
+date: 2024-12-03
+
+
+
+## What's New
+## 🔤 General
+## 🖥 Cloud UI
+
+- [Chore]: Bump Sistent v0.14.126 @l5io (#3050)
+- Add StickyContainer Style for Sticky Positioning @mdkaifansari04 (#3049)
+- Bump npm from 10.5.2 to 10.9.1 in /ui @dependabot (#3039)
+- fix broken verification page images @aabidsofi19 (#3048)
+- Bump prettier from 3.3.3 to 3.4.1 in /ui @dependabot (#3040)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@aabidsofi19, @dependabot, @dependabot[bot], @l5io, @leecalcote, @mdkaifansari04 and @sudhanshutech
+
+

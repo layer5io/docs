@@ -1,0 +1,17 @@
+# v0.8.3
+
+date: 2024-08-30
+
+
+
+## What's New
+**General**
+- fix: learning-path toc @captain-Akshay (#2747)
+- [chore] fix missing comma @dragon-slayer875 (#2745)
+
+## Contributors
+
+Thank you to our contributors for making this release possible:
+@captain-Akshay, @dragon-slayer875, @l5io and captain-Akshay
+
+

@@ -1,0 +1,19 @@
+# v0.8.22-1
+
+date: 2025-01-24
+
+
+
+## What's New
+## 🔤 General
+## 🖌️ Designer
+
+- [Chore]: Bump Sistent v0.14.145 @l5io (#3346)
+- [Chore]: Bump Sistent v0.14.144 @l5io (#3345)
+- Refactor: Shift Debug Panel Components to Sistent Library @Vidit-Kushwaha (#3267)
+
+## 👨🏽‍💻 Contributors
+
+Thank you to our contributors for making this release possible:
+@Vidit-Kushwaha, @amitamrutiya, @l5io and @sudhanshutech
+
