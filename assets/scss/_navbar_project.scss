@@ -272,7 +272,6 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
 .pageinfo:has(.hidden-highlight-box:focus-visible) .highlight-box {
   box-shadow: none;
 }
-
 // Navbar Brand Logo Light/Dark Support
 .navbar-brand {
   .logo-light {
@@ -284,6 +283,10 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
 }
 
 // Theme Toggle Button
+.theme-toggle[hidden] {
+  display: none;
+}
+
 .theme-toggle-nav-item {
   margin-right: 0.75rem;
   margin-left: 0.5rem;
@@ -292,21 +295,23 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   justify-content: center;
 }
 
+
 .theme-toggle {
   --size: 1.35rem;
   appearance: none;
   border: 1px solid rgba(255, 255, 255, 0.15);
   background: rgba(255, 255, 255, 0.08);
   cursor: pointer;
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 0;
   position: relative;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
   vertical-align: middle;
   outline: none;
 
@@ -323,7 +328,6 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   &:hover {
     background: rgba(0, 211, 169, 0.15);
     border-color: $secondary;
-    transform: scale(1.05);
 
     .theme-toggle-icon {
       color: $secondary;
@@ -357,7 +361,7 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
       --offset-orthogonal: calc(var(--size) * 0.65);
       --offset-diagonal: calc(var(--size) * 0.45);
       transform: scale(0.75);
-      color: $saffron;
+      color: $light-theme-accent;
       box-shadow: inset 0 0 0 var(--size),
         calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
         var(--offset-orthogonal) 0 0 var(--ray-size),
@@ -371,15 +375,15 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
 
     &:hover {
       background: rgba(235, 192, 23, 0.12);
-      border-color: #ebc017;
+      border-color: $light-theme-accent;
 
       .theme-toggle-icon {
-        color: #d49b00;
+        color: $light-theme-accent;
       }
     }
 
     &:focus-visible {
-      outline: 2px solid $primary;
+      outline: 2px solid $light-theme-accent;
       outline-offset: 2px;
     }
   }
@@ -396,13 +400,13 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
       text-shadow: none !important;
 
       &:hover {
-        color: $primary !important;
+        color: $light-theme-accent !important;
         text-shadow: none !important;
       }
 
       &.current,
       &.active {
-        color: $primary !important;
+        color: $light-theme-accent !important;
         text-shadow: none !important;
       }
     }
@@ -417,7 +421,7 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
 
       &:hover,
       &.current {
-        color: $primary !important;
+        color: $light-theme-accent !important;
       }
     }
 
@@ -427,7 +431,7 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
       text-shadow: none !important;
 
       &:hover {
-        color: $primary !important;
+        color: $light-theme-accent !important;
       }
     }
 
@@ -454,7 +458,7 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
       }
 
       &:focus-within {
-        border-color: $primary !important;
+        border-color: $light-theme-accent !important;
         box-shadow: none !important;
       }
     }
@@ -469,7 +473,7 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
 
         &:hover {
           background-color: rgba(0, 179, 159, 0.08);
-          color: $primary;
+          color: $light-theme-accent;
 
           img {
             filter: none;
@@ -499,11 +503,11 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
 
       &:hover {
         background-color: #ffffff;
-        border-color: $primary;
-        color: $primary;
+        border-color: $light-theme-accent;
+        color: $light-theme-accent;
 
         span {
-          color: $primary;
+          color: $light-theme-accent;
         }
       }
     }
@@ -514,5 +518,12 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
     &:hover {
       filter: invert(0.4);
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .theme-toggle .theme-toggle-icon {
+    transition: none;
   }
 }
