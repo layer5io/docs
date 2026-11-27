@@ -307,6 +307,39 @@ $ecosystem-box-glow: inset 0 0em 4em #ebc01766, 0 0 0 2px #ebc01766, 0.3em 0.3em
   }
 }
 
+// Keep labels and target sizes intact when the compact row cannot fit.
+@media (max-width: 359.98px) {
+  .td-navbar .td-navbar-nav-scroll {
+    height: auto;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .td-navbar .navbar-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0.25rem;
+    overflow: visible;
+    padding-bottom: 0.5rem;
+
+    > .d-flex {
+      flex-basis: 100%;
+      justify-content: center;
+      margin-inline: 0 !important;
+    }
+  }
+
+  .td-navbar .theme-toggle-nav-item {
+    margin-inline: 0.25rem;
+  }
+
+  .td-navbar .dropdown-menu--col {
+    left: 50%;
+    max-width: calc(100vw - 2rem);
+    transform: translate(-50%, 2.5rem);
+  }
+}
+
 .theme-toggle {
   --size: 1.35rem;
   appearance: none;

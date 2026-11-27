@@ -55,7 +55,7 @@ function page({ saved, blocked = false } = {}) {
   };
 }
 
-test('restores a valid preference before CSS and initializes without writing storage', () => {
+test('restores a valid preference and initializes without writing storage', () => {
   for (const saved of [undefined, 'dark', 'light', 'invalid']) {
     const p = page({ saved });
     const expected = saved === 'light' ? 'light' : 'dark';

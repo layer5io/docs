@@ -252,6 +252,16 @@ make docker
 
 Layer5 uses ES-Lint to maintain code quality & consistency in our UI Code.
 
+For changes to the theme toggle, run the controller regression tests:
+
+```sh
+npm run test:theme
+```
+
+These tests cover saved preferences, switching, unavailable browser storage, and
+cross-tab synchronization. Also build the site and check both themes in a browser,
+including narrow mobile viewports with Sign In or the profile control visible.
+
 ## <a name="markdown-export">LLM-friendly page output</a>
 
 Every documentation page is also published as Markdown at `<page-url>/index.md`,
