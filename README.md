@@ -39,6 +39,14 @@
 </div>
 Explore tutorials and documentation by product in the https://docs.layer5.io website; documentation and developer resources of Layer5 products. If you find a typo or you feel like you can improve the HTML, CSS, or JavaScript, we welcome contributions. Feel free to open issues or pull requests like any normal GitHub project, and we'll merge it in 🚀
 
+## Choosing a Theme
+
+Use the theme button in the site's top navigation to switch between light and
+dark themes, including in the API reference. The site starts in dark theme and
+remembers your choice in your browser when local storage is available. Changes
+also apply to other open tabs of the site. If browser storage is unavailable,
+switching still works for the current page.
+
 ## Building the Documentation
 
 <details>

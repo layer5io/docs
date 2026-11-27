@@ -248,9 +248,10 @@ To build a Docker image of the project, please ensure you have `Docker` installe
 make docker
 ```
 
-### UI Lint Rules
+### Lint and UI Checks
 
-Layer5 uses ES-Lint to maintain code quality & consistency in our UI Code.
+Run `npm run lint` to check Markdown under `content/`, or `npm run lint:fix`
+to apply automatic fixes. These scripts do not lint UI JavaScript or SCSS.
 
 For changes to the theme toggle, run the controller regression tests:
 
