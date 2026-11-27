@@ -85,6 +85,14 @@ The sign-up form stays valid for 24 hours. If you leave it open longer, it resta
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 

@@ -1734,6 +1734,14 @@ To help you quickly understand your designs, Kanvas uses specific default styles
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 
@@ -1799,6 +1807,14 @@ To help you quickly understand your designs, Kanvas uses specific default styles
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 
@@ -7249,6 +7265,14 @@ To prepare your Hugo site to support design embedding, perform the one-time task
   width: 100%;
   height: 100%;
 }
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 <div
@@ -7370,6 +7394,14 @@ id="embedded-design-7d183e77-09e1-4b69-a5ee-3e3870e9c5f4" >}}
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 
@@ -21667,6 +21699,14 @@ The sign-up form stays valid for 24 hours. If you leave it open longer, it resta
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 
@@ -22234,6 +22274,14 @@ If you've forgotten your Layer5 Cloud account password, you can recover your acc
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 
@@ -25282,6 +25330,14 @@ To help you visualize how your content goes from a local file to live Academy co
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 
@@ -27889,6 +27945,14 @@ This section explains how to add existing Layer5 Cloud users to one of your orga
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 

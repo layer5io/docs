@@ -478,6 +478,14 @@ To help you visualize how your content goes from a local file to live Academy co
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 

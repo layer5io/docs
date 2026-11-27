@@ -114,6 +114,14 @@ This section explains how to add existing Layer5 Cloud users to one of your orga
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 

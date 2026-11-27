@@ -87,6 +87,14 @@ To help you quickly understand your designs, Kanvas uses specific default styles
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 
@@ -152,6 +160,14 @@ To help you quickly understand your designs, Kanvas uses specific default styles
   height: 100%;
 }
 
+@media (max-width: 850px) {
+  .meshery-embed-container.full,
+  .meshery-embed-container.half {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
 </style>
 
 
