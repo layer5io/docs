@@ -5,8 +5,8 @@
 <!-- PNG and JPEG sources are encoded to WebP at build time and offered through
   <picture>. The original stays as the <img> fallback, so nothing in content has
   to change and browsers without WebP support still get a working image.
-  Content is mounted at assets/contentimg (see hugo.toml) because Hugo can only
-  process files that are resources. -->
+  Content and static files are mounted under assets (see hugo.toml) because
+  Hugo can only process files that are resources. -->
 <!-- Onclick opens the modal, and displays/overlays the clicked image. -->
 <!-- attribution appreciated. github: zjeaton web: https://froglegs.co -->
 
@@ -26,6 +26,9 @@
   {{- end -}}
   {{- $img = resources.Get (path.Join "contentimg" $rel) -}}
   {{- if not $img -}}{{- $img = resources.Get $rel -}}{{- end -}}
+  {{- if and (not $img) (hasPrefix $dest "/") -}}
+    {{- $img = resources.Get (path.Join "staticimg" $rel) -}}
+  {{- end -}}
 {{- end -}}
 
 <div class="md__image">

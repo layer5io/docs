@@ -376,6 +376,10 @@ enable = false
   [[module.mounts]]
     source = "content/en"
     target = "assets/contentimg"
+  # Make root-relative static images available to the Markdown render hook.
+  [[module.mounts]]
+    source = "static"
+    target = "assets/staticimg"
   [[module.mounts]]
     source = "static"
     target = "static"
