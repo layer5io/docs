@@ -49,6 +49,8 @@ jobs:
           node-version: "20"
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      - name: Test theme controller
+        run: npm run test:theme
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production

@@ -9,6 +9,9 @@ on:
       - 'assets/**'
       - 'layouts/**'
       - 'data/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
       - '**.md'
       - '**.go'
       - 'hugo.toml'
@@ -65,6 +68,9 @@ jobs:
           else
             npm install
           fi
+
+      - name: Test theme controller
+        run: npm run test:theme
 
       - name: Build PR preview
         env:
