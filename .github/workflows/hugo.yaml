@@ -49,6 +49,19 @@ jobs:
           node-version: "20"
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
+      # WebP versions of content images (render-image.html), so a build only
+      # encodes images it hasn't seen. Hugo names each file after its source and
+      # its processing options, so a fallback restore never serves a stale image,
+      # and --gc removes the ones no longer used. Keep the key the same as in
+      # build-docs-preview.yml so PR builds can restore this cache.
+      - name: Cache Hugo image processing
+        uses: actions/cache@v6
+        with:
+          path: resources/_gen
+          key: hugo-gen-${{ env.HUGO_VERSION }}-${{ hashFiles('hugo.toml', 'layouts/_default/_markup/render-image.html', 'content/**/*.md',
+            'content/**/*.png', 'content/**/*.PNG', 'content/**/*.jpg', 'content/**/*.JPG', 'content/**/*.jpeg', 'content/**/*.JPEG',
+            'assets/**/*.png', 'assets/**/*.PNG', 'assets/**/*.jpg', 'assets/**/*.JPG', 'assets/**/*.jpeg', 'assets/**/*.JPEG') }}
+          restore-keys: hugo-gen-${{ env.HUGO_VERSION }}-
       - name: Build with Hugo
         env:
           HUGO_ENVIRONMENT: production
