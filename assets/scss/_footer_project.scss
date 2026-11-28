@@ -596,10 +596,10 @@
 
 .footer {
   .logo-light {
-    display: none !important;
+    display: none;
   }
   .logo-dark {
-    display: block !important;
+    display: block;
   }
 }
 
@@ -607,60 +607,60 @@
 [data-theme="light"],
 [data-bs-theme="light"] {
   .footer {
-    background-color: #f6f8f8 !important;
-    color: #28353a !important;
-    border-top: 1px solid #d2d8da !important;
+    background-color: var(--docs-canvas);
+    color: var(--docs-text);
+    border-top: 1px solid var(--docs-border);
 
     .logo-dark {
-      display: none !important;
+      display: none;
     }
     .logo-light {
-      display: block !important;
+      display: block;
     }
 
     .footer-desc p,
     .footer-desc {
-      color: #28353a !important;
+      color: var(--docs-text);
     }
 
     .section-title {
-      color: #000d12 !important;
+      color: var(--docs-text-strong);
       font-weight: 700;
 
       a {
-        color: #000d12 !important;
+        color: var(--docs-text-strong);
 
         &:hover {
-          color: $light-theme-accent !important;
+          color: var(--docs-accent);
         }
       }
     }
 
     .footer-h5 {
       a {
-        color: #3c494f !important;
+        color: var(--docs-text-secondary);
 
         &:hover {
-          color: $light-theme-accent !important;
+          color: var(--docs-accent);
         }
       }
     }
 
     .footer-icons {
       a {
-        filter: grayscale(1) opacity(0.7) !important;
+        filter: grayscale(1) opacity(0.7);
 
         &:hover {
-          filter: none !important;
-          opacity: 1 !important;
+          filter: none;
+          opacity: 1;
         }
 
         &.social-icon {
-          filter: grayscale(1) opacity(0.7) !important;
+          filter: grayscale(1) opacity(0.7);
 
           &:hover {
-            filter: none !important;
-            opacity: 1 !important;
+            filter: none;
+            opacity: 1;
           }
         }
       }
@@ -668,66 +668,66 @@
 
     .subscribe {
       p {
-        color: #000d12 !important;
+        color: var(--docs-text-strong);
         font-weight: 600;
       }
     }
 
     input.footer-input {
-      background-color: #ffffff !important;
-      border: 1px solid #d2d8da !important;
-      color: #000d12 !important;
+      background-color: var(--docs-surface);
+      border: 1px solid var(--docs-border);
+      color: var(--docs-text-strong);
 
       &::placeholder {
-        color: #647176 !important;
+        color: var(--docs-text-muted);
       }
 
       &:focus {
-        border-color: $light-theme-accent !important;
-        background-color: #ffffff !important;
-        color: #000d12 !important;
-        outline: 2px solid $light-theme-accent;
+        border-color: var(--docs-accent);
+        background-color: var(--docs-surface);
+        color: var(--docs-text-strong);
+        outline: 2px solid var(--docs-accent);
         outline-offset: 2px;
       }
     }
 
     .footer-button {
-      background-color: $light-theme-accent !important;
-      color: #ffffff !important;
+      background-color: var(--docs-accent);
+      color: #ffffff;
 
       &:hover {
-        background-color: #007763 !important;
+        background-color: var(--docs-accent);
       }
     }
 
     .footer-hr {
-      border-color: #d2d8da !important;
-      color: #d2d8da !important;
+      border-color: var(--docs-border);
+      color: var(--docs-border);
     }
 
     .footer-bottom {
       span {
-        color: #647176 !important;
+        color: var(--docs-text-muted);
       }
 
       a {
-        color: #647176 !important;
+        color: var(--docs-text-muted);
 
         &:hover {
-          color: $light-theme-accent !important;
+          color: var(--docs-accent);
         }
       }
     }
 
     .footer-bottom-middle {
       .status-link {
-        background-color: #eaedee !important;
-        border: 1px solid #d2d8da !important;
-        color: #28353a !important;
+        background-color: var(--docs-surface-muted);
+        border: 1px solid var(--docs-border);
+        color: var(--docs-text);
 
         &:hover {
-          color: $light-theme-accent !important;
-          border-color: $light-theme-accent !important;
+          color: var(--docs-accent);
+          border-color: var(--docs-accent);
         }
       }
     }

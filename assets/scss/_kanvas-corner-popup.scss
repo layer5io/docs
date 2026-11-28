@@ -283,13 +283,13 @@
 [data-theme="light"],
 [data-bs-theme="light"] {
   .kanvas-corner-popup .popup-inner {
-    background: #ffffff;
+    background: var(--docs-surface);
     border-color: #00b39f;
     box-shadow: 0 4px 24px rgba(0, 179, 159, 0.18), 0 1px 6px rgba(0, 0, 0, 0.08);
   }
 
   .kanvas-corner-popup .close-btn {
-    color: #28353a;
+    color: var(--docs-text);
 
     &:hover {
       color: #00b39f;
@@ -299,21 +299,21 @@
 
   .kanvas-corner-popup .popup-text {
     h1 {
-      color: #000d12;
+      color: var(--docs-text-strong);
     }
 
     h4 {
-      color: #647176;
+      color: var(--docs-text-muted);
     }
   }
 
   .kanvas-corner-popup .try-it-text {
     span {
-      color: #647176;
+      color: var(--docs-text-muted);
     }
 
     strong {
-      color: #000d12;
+      color: var(--docs-text-strong);
     }
   }
 

@@ -494,54 +494,54 @@ a#videoPageLink:focus {
         background: linear-gradient(270deg, rgba(71, 126, 150, 0.15) 0%, rgba(0, 179, 159, 0.25) 100%);
 
         nav.scrolled {
-            background-color: #ffffff;
-            border-bottom: 1px solid #eaedee;
+            background-color: var(--docs-surface);
+            border-bottom: 1px solid var(--docs-border-subtle);
         }
     }
 
     .hero-section-wrapper {
-        color: #000d12;
+        color: var(--docs-text-strong);
 
         .hero-subtitle {
-            color: #3c494f;
+            color: var(--docs-text-secondary);
         }
     }
 
     .video-tabs-container {
-        background: #ffffff;
-        border: 1px solid #eaedee;
+        background: var(--docs-surface);
+        border: 1px solid var(--docs-border-subtle);
         box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
     }
 
     .category-tab {
-        color: #647176;
+        color: var(--docs-text-muted);
 
         .tab-icon {
-            background-color: #eaedee;
+            background-color: var(--docs-surface-muted);
 
             i {
-                color: #3c494f;
+                color: var(--docs-text-secondary);
             }
         }
 
         &:hover {
-            color: $light-theme-accent;
+            color: var(--docs-accent);
 
             .tab-icon {
-                background-color: #daf3eb;
+                background-color: var(--docs-accent-tint);
 
                 i {
-                    color: $light-theme-accent;
+                    color: var(--docs-accent);
                 }
             }
         }
 
         &.active {
-            color: $light-theme-accent;
+            color: var(--docs-accent);
             border-bottom: 2px solid $primary;
 
             .tab-icon {
-                background-color: $light-theme-accent;
+                background-color: var(--docs-accent);
 
                 i {
                     color: #ffffff;
@@ -551,45 +551,45 @@ a#videoPageLink:focus {
     }
 
     .subcategory-btn {
-        background-color: #eaedee;
-        color: #3c494f;
+        background-color: var(--docs-surface-muted);
+        color: var(--docs-text-secondary);
         box-shadow: none;
-        border: 1px solid #d2d8da;
+        border: 1px solid var(--docs-border);
 
         &:hover {
-            background-color: #daf3eb;
-            color: #007763;
-            border-color: $light-theme-accent;
+            background-color: var(--docs-accent-tint);
+            color: var(--docs-accent);
+            border-color: var(--docs-accent);
         }
 
         &.active {
-            background-color: $light-theme-accent;
+            background-color: var(--docs-accent);
             color: #ffffff;
-            border-color: $light-theme-accent;
+            border-color: var(--docs-accent);
         }
     }
 
     .video-card {
-        background-color: #ffffff;
-        border: 1px solid #eaedee;
+        background-color: var(--docs-surface);
+        border: 1px solid var(--docs-border-subtle);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 
         .video-info {
             h3 {
-                color: #000d12;
+                color: var(--docs-text-strong);
             }
 
             p.video-description {
-                color: #3c494f;
+                color: var(--docs-text-secondary);
             }
 
             &:hover {
                 h3 {
-                    color: $light-theme-accent;
+                    color: var(--docs-accent);
                 }
 
                 p.video-description {
-                    color: #000d12;
+                    color: var(--docs-text-strong);
                 }
             }
         }

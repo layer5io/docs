@@ -244,97 +244,101 @@
 [data-theme="light"],
 [data-bs-theme="light"] {
   .product-section a {
-    color: #142126 !important;
+    color: var(--docs-heading);
+
+    &:hover {
+      color: var(--docs-heading);
+    }
   }
 
   .playground-section {
     &.playground-logo {
-      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/meshery-light-icon.svg") !important;
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/meshery-light-icon.svg");
     }
     &.video-play-logo {
-      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/video-play.svg") !important;
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/video-play.svg");
     }
   }
 
   .catalog-section {
     &.catalog-logo {
-      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/catalog.svg") !important;
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/catalog.svg");
     }
     &.academy-logo {
-      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/academy.svg") !important;
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/academy.svg");
     }
     &.recognition-program-logo {
-      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/recognition-program.png") !important;
+      background-image: url("../images/logos/white-semi-opaque.svg"), url("../images/logos/recognition-program.png");
     }
   }
 
   .landing-card {
-    background: #ffffff !important;
-    border: 1.5px solid #d2d8da !important;
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04) !important;
+    background: var(--docs-surface);
+    border: 1.5px solid var(--docs-border);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
 
     .landing-card-title,
     span.landing-card-title {
-      color: #000d12 !important;
+      color: var(--docs-text-strong);
     }
 
     p {
-      color: #28353a !important;
+      color: var(--docs-text);
     }
 
     &:hover {
-      border: 1.5px solid $primary !important;
-      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.06) !important;
+      border: 1.5px solid $primary;
+      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.06);
 
       .landing-card-title,
       span.landing-card-title {
-        color: $light-theme-accent !important;
+        color: var(--docs-accent);
       }
 
       p {
-        color: #000d12 !important;
+        color: var(--docs-text-strong);
       }
     }
   }
 
   .landing-card-title {
-    color: #000d12 !important;
+    color: var(--docs-text-strong);
   }
 
   .forum-section {
-    background: #ffffff !important;
-    border: 1.5px solid #d2d8da !important;
-    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04) !important;
+    background: var(--docs-surface);
+    border: 1.5px solid var(--docs-border);
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.04);
 
     .landing-card-title,
     h1, h2, h3, h4, h5, h6,
     span {
-      color: #000d12 !important;
+      color: var(--docs-text-strong);
     }
 
     p {
-      color: #28353a !important;
+      color: var(--docs-text);
     }
 
     &:hover {
-      border-color: $light-theme-accent !important;
-      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.06) !important;
+      border-color: var(--docs-accent);
+      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.06);
     }
   }
 
   .handbook-section {
-    background: linear-gradient(112deg, #ffffff 34.88%, #daf3eb 92.89%, #f0faf8 159.16%) !important;
-    border: 1.5px solid #93e6d1 !important;
-    border-radius: 1rem !important;
+    background: linear-gradient(112deg, var(--docs-surface) 34.88%, var(--docs-accent-tint) 92.89%, #f0faf8 159.16%);
+    border: 1.5px solid var(--docs-accent-border);
+    border-radius: 1rem;
 
     .landing-card-title,
     h1, h2, h3, h4, h5, h6,
     span {
-      color: #000d12 !important;
+      color: var(--docs-text-strong);
     }
 
     p {
-      color: #28353a !important;
+      color: var(--docs-text);
     }
   }
 }
