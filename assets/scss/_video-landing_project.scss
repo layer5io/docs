@@ -481,7 +481,117 @@ a#videoPageLink:focus {
         padding: 0.4rem 1rem;
         font-size: 0.875rem;
     }
+
     .category-tab {
         width: 50%;
+    }
+}
+
+// Light theme styling for Video Landing page
+[data-theme="light"],
+[data-bs-theme="light"] {
+    .video-page-container {
+        background: linear-gradient(270deg, rgba(71, 126, 150, 0.15) 0%, rgba(0, 179, 159, 0.25) 100%);
+
+        nav.scrolled {
+            background-color: var(--docs-surface);
+            border-bottom: 1px solid var(--docs-border-subtle);
+        }
+    }
+
+    .hero-section-wrapper {
+        color: var(--docs-text-strong);
+
+        .hero-subtitle {
+            color: var(--docs-text-secondary);
+        }
+    }
+
+    .video-tabs-container {
+        background: var(--docs-surface);
+        border: 1px solid var(--docs-border-subtle);
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .category-tab {
+        color: var(--docs-text-muted);
+
+        .tab-icon {
+            background-color: var(--docs-surface-muted);
+
+            i {
+                color: var(--docs-text-secondary);
+            }
+        }
+
+        &:hover {
+            color: var(--docs-accent);
+
+            .tab-icon {
+                background-color: var(--docs-accent-tint);
+
+                i {
+                    color: var(--docs-accent);
+                }
+            }
+        }
+
+        &.active {
+            color: var(--docs-accent);
+            border-bottom: 2px solid $primary;
+
+            .tab-icon {
+                background-color: var(--docs-accent);
+
+                i {
+                    color: #ffffff;
+                }
+            }
+        }
+    }
+
+    .subcategory-btn {
+        background-color: var(--docs-surface-muted);
+        color: var(--docs-text-secondary);
+        box-shadow: none;
+        border: 1px solid var(--docs-border);
+
+        &:hover {
+            background-color: var(--docs-accent-tint);
+            color: var(--docs-accent);
+            border-color: var(--docs-accent);
+        }
+
+        &.active {
+            background-color: var(--docs-accent);
+            color: #ffffff;
+            border-color: var(--docs-accent);
+        }
+    }
+
+    .video-card {
+        background-color: var(--docs-surface);
+        border: 1px solid var(--docs-border-subtle);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        .video-info {
+            h3 {
+                color: var(--docs-text-strong);
+            }
+
+            p.video-description {
+                color: var(--docs-text-secondary);
+            }
+
+            &:hover {
+                h3 {
+                    color: var(--docs-accent);
+                }
+
+                p.video-description {
+                    color: var(--docs-text-strong);
+                }
+            }
+        }
     }
 }

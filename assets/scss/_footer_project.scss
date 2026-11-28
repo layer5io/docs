@@ -593,3 +593,143 @@
     margin-left: 5px;
   }
 }
+
+.footer {
+  .logo-light {
+    display: none;
+  }
+  .logo-dark {
+    display: block;
+  }
+}
+
+// Light theme styling for Footer (MeshKit / Sistent Design System)
+[data-theme="light"],
+[data-bs-theme="light"] {
+  .footer {
+    background-color: var(--docs-canvas);
+    color: var(--docs-text);
+    border-top: 1px solid var(--docs-border);
+
+    .logo-dark {
+      display: none;
+    }
+    .logo-light {
+      display: block;
+    }
+
+    .footer-desc p,
+    .footer-desc {
+      color: var(--docs-text);
+    }
+
+    .section-title {
+      color: var(--docs-text-strong);
+      font-weight: 700;
+
+      a {
+        color: var(--docs-text-strong);
+
+        &:hover {
+          color: var(--docs-accent);
+        }
+      }
+    }
+
+    .footer-h5 {
+      a {
+        color: var(--docs-text-secondary);
+
+        &:hover {
+          color: var(--docs-accent);
+        }
+      }
+    }
+
+    .footer-icons {
+      a {
+        filter: grayscale(1) opacity(0.7);
+
+        &:hover {
+          filter: none;
+          opacity: 1;
+        }
+
+        &.social-icon {
+          filter: grayscale(1) opacity(0.7);
+
+          &:hover {
+            filter: none;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    .subscribe {
+      p {
+        color: var(--docs-text-strong);
+        font-weight: 600;
+      }
+    }
+
+    input.footer-input {
+      background-color: var(--docs-surface);
+      border: 1px solid var(--docs-border);
+      color: var(--docs-text-strong);
+
+      &::placeholder {
+        color: var(--docs-text-muted);
+      }
+
+      &:focus {
+        border-color: var(--docs-accent);
+        background-color: var(--docs-surface);
+        color: var(--docs-text-strong);
+        outline: 2px solid var(--docs-accent);
+        outline-offset: 2px;
+      }
+    }
+
+    .footer-button {
+      background-color: var(--docs-accent);
+      color: #ffffff;
+
+      &:hover {
+        background-color: var(--docs-accent);
+      }
+    }
+
+    .footer-hr {
+      border-color: var(--docs-border);
+      color: var(--docs-border);
+    }
+
+    .footer-bottom {
+      span {
+        color: var(--docs-text-muted);
+      }
+
+      a {
+        color: var(--docs-text-muted);
+
+        &:hover {
+          color: var(--docs-accent);
+        }
+      }
+    }
+
+    .footer-bottom-middle {
+      .status-link {
+        background-color: var(--docs-surface-muted);
+        border: 1px solid var(--docs-border);
+        color: var(--docs-text);
+
+        &:hover {
+          color: var(--docs-accent);
+          border-color: var(--docs-accent);
+        }
+      }
+    }
+  }
+}

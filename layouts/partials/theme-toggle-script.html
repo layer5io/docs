@@ -1,0 +1,40 @@
+<script>
+  (function () {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    function applyTheme(value) {
+      const theme = value === 'light' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-bs-theme', theme);
+      const label = theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+      toggle.setAttribute('aria-label', label);
+      toggle.setAttribute('title', label);
+    }
+
+    // Initialization and remote storage events must never write preferences.
+    applyTheme(document.documentElement.getAttribute('data-theme'));
+    toggle.hidden = false;
+    toggle.addEventListener('click', function () {
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(theme);
+      try {
+        localStorage.setItem('theme', theme);
+      } catch (e) {
+        // Switching still works when browser storage is unavailable.
+      }
+    });
+
+    window.addEventListener('storage', function (event) {
+      try {
+        if (event.storageArea !== localStorage) return;
+      } catch (e) {
+        return;
+      }
+      // Removing the preference (or clearing storage) restores the dark default.
+      if (event.key === 'theme' || event.key === null) {
+        applyTheme(event.newValue);
+      }
+    });
+  })();
+</script>

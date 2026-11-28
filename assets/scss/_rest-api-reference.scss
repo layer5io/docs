@@ -7,8 +7,8 @@ $method-options: #607680;
 $method-head: #7d8790;
 
 @mixin rest-api-surface($background: rgba($dark, 0.82), $border: rgba($white, 0.08)) {
-  background: $background;
-  border: 1px solid $border;
+  background: var(--rest-api-surface, #{$background});
+  border: 1px solid var(--rest-api-border, #{$border});
   border-radius: 1.1rem;
   box-shadow: 0 20px 42px rgba($black, 0.16);
 }
@@ -19,6 +19,13 @@ $method-head: #7d8790;
 }
 
 .rest-api-reference-page {
+  --rest-api-ink: #{$white};
+  --rest-api-ink-rgb: 255, 255, 255;
+  --rest-api-canvas-rgb: 0, 0, 0;
+  --rest-api-muted: #{$casper};
+  --rest-api-muted-rgb: 177, 182, 184;
+  --rest-api-accent: #{$primary};
+
   .td-content {
     max-width: none;
   }
@@ -73,7 +80,7 @@ $method-head: #7d8790;
     font-weight: 700;
     letter-spacing: 0.09em;
     text-transform: uppercase;
-    color: $primary;
+    color: var(--rest-api-accent);
   }
 
   .rest-api-overview__summary,
@@ -83,7 +90,7 @@ $method-head: #7d8790;
   .rest-api-operation__summary,
   .rest-api-prose,
   .rest-api-response__summary {
-    color: $casper;
+    color: var(--rest-api-muted);
   }
 
   .rest-api-overview__summary {
@@ -110,8 +117,8 @@ $method-head: #7d8790;
   .rest-api-overview__stats li {
     padding: 0.95rem 1rem;
     border-radius: 0.95rem;
-    background: rgba($white, 0.03);
-    border: 1px solid rgba($white, 0.08);
+    background: rgba(var(--rest-api-ink-rgb), 0.03);
+    border: 1px solid rgba(var(--rest-api-ink-rgb), 0.08);
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
@@ -120,7 +127,7 @@ $method-head: #7d8790;
   .rest-api-overview__stats strong {
     font-size: 1.8rem;
     line-height: 1;
-    color: $white;
+    color: var(--rest-api-ink);
   }
 
   .rest-api-overview__stats span {
@@ -128,7 +135,7 @@ $method-head: #7d8790;
   }
 
   .rest-api-overview__stats a {
-    color: $primary;
+    color: var(--rest-api-accent);
     text-decoration: underline;
     text-underline-offset: 0.15em;
   }
@@ -143,29 +150,29 @@ $method-head: #7d8790;
     margin-bottom: 0.45rem;
     font-size: 0.9rem;
     font-weight: 600;
-    color: $white;
+    color: var(--rest-api-ink);
   }
 
   .rest-api-search {
     width: 100%;
-    border: 1px solid rgba($white, 0.12);
+    border: 1px solid rgba(var(--rest-api-ink-rgb), 0.12);
     border-radius: 0.85rem;
-    background: rgba($black, 0.24);
-    color: $white;
+    background: rgba(var(--rest-api-canvas-rgb), 0.24);
+    color: var(--rest-api-ink);
     font: inherit;
     padding: 0.9rem 1rem;
     transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
   }
 
   .rest-api-search::placeholder {
-    color: rgba($casper, 0.85);
+    color: rgba(var(--rest-api-muted-rgb), 0.85);
   }
 
   .rest-api-search:focus {
     outline: none;
-    border-color: rgba($white, 0.2);
-    box-shadow: 0 0 0 3px rgba($white, 0.08);
-    background: rgba($black, 0.34);
+    border-color: rgba(var(--rest-api-ink-rgb), 0.2);
+    box-shadow: 0 0 0 3px rgba(var(--rest-api-ink-rgb), 0.08);
+    background: rgba(var(--rest-api-canvas-rgb), 0.34);
   }
 
   .rest-api-category-bar {
@@ -181,8 +188,8 @@ $method-head: #7d8790;
     padding: 0.55rem 0.85rem;
     border-radius: 999px;
     border: 1px solid rgba($primary, 0.24);
-    background: rgba($white, 0.02);
-    color: $casper;
+    background: rgba(var(--rest-api-ink-rgb), 0.02);
+    color: var(--rest-api-muted);
     font: inherit;
     font-size: 0.92rem;
     cursor: pointer;
@@ -194,14 +201,14 @@ $method-head: #7d8790;
     outline: none;
     border-color: rgba($secondary, 0.9);
     background: rgba($primary, 0.12);
-    color: $white;
+    color: var(--rest-api-ink);
   }
 
   .rest-api-category-button.is-active {
     background: rgba($primary, 0.2);
     border-color: rgba($secondary, 0.95);
-    color: $white;
-    box-shadow: 0 0 0 2px rgba($primary, 0.16), 0 12px 24px rgba($black, 0.14);
+    color: var(--rest-api-ink);
+    box-shadow: 0 0 0 2px rgba($primary, 0.16), 0 12px 24px rgba(var(--rest-api-canvas-rgb), 0.14);
   }
 
   .rest-api-category-button__count,
@@ -212,15 +219,15 @@ $method-head: #7d8790;
     min-width: 1.9rem;
     padding: 0.18rem 0.5rem;
     border-radius: 999px;
-    background: rgba($black, 0.28);
+    background: rgba(var(--rest-api-canvas-rgb), 0.28);
     border: 1px solid rgba($primary, 0.25);
     font-size: 0.8rem;
-    color: $white;
+    color: var(--rest-api-ink);
   }
 
   .rest-api-category-button.is-active .rest-api-category-button__count {
     border-color: rgba($secondary, 0.75);
-    background: rgba($black, 0.36);
+    background: rgba(var(--rest-api-canvas-rgb), 0.36);
   }
 
   .rest-api-results__text {
@@ -262,9 +269,9 @@ $method-head: #7d8790;
     gap: 0.55rem;
     padding: 0.65rem 1rem;
     border-radius: 999px;
-    border: 1px solid rgba($white, 0.12);
-    background: rgba($white, 0.04);
-    color: $white;
+    border: 1px solid rgba(var(--rest-api-ink-rgb), 0.12);
+    background: rgba(var(--rest-api-ink-rgb), 0.04);
+    color: var(--rest-api-ink);
     cursor: pointer;
     transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   }
@@ -272,9 +279,9 @@ $method-head: #7d8790;
   .rest-api-nav-control:hover,
   .rest-api-nav-control:focus-visible {
     outline: none;
-    border-color: rgba($white, 0.22);
-    background: rgba($white, 0.07);
-    box-shadow: 0 0 0 3px rgba($white, 0.08);
+    border-color: rgba(var(--rest-api-ink-rgb), 0.22);
+    background: rgba(var(--rest-api-ink-rgb), 0.07);
+    box-shadow: 0 0 0 3px rgba(var(--rest-api-ink-rgb), 0.08);
   }
 
   .rest-api-nav-control:disabled {
@@ -328,7 +335,7 @@ $method-head: #7d8790;
     font-weight: 500;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba($white, 0.68);
+    color: rgba(var(--rest-api-ink-rgb), 0.68);
   }
 
   .rest-api-nav-group__items {
@@ -361,7 +368,7 @@ $method-head: #7d8790;
     border-radius: 0.95rem;
     border: 0;
     background: transparent;
-    color: $white;
+    color: var(--rest-api-ink);
     text-align: left;
     cursor: pointer;
     transition: color 0.2s ease;
@@ -370,7 +377,7 @@ $method-head: #7d8790;
   .rest-api-nav-subgroup__toggle:hover,
   .rest-api-nav-subgroup__toggle:focus-visible {
     outline: none;
-    color: $white;
+    color: var(--rest-api-ink);
   }
 
   .rest-api-nav-subgroup.is-open .rest-api-nav-subgroup__toggle {
@@ -399,11 +406,11 @@ $method-head: #7d8790;
     min-width: 2.35rem;
     padding: 0.3rem 0.7rem;
     border-radius: 999px;
-    background: rgba($white, 0.08);
-    border: 1px solid rgba($white, 0.12);
+    background: rgba(var(--rest-api-ink-rgb), 0.08);
+    border: 1px solid rgba(var(--rest-api-ink-rgb), 0.12);
     font-size: 0.95rem;
     font-weight: 600;
-    color: rgba($white, 0.92);
+    color: rgba(var(--rest-api-ink-rgb), 0.92);
   }
 
   .rest-api-nav-subgroup__chevron {
@@ -418,7 +425,7 @@ $method-head: #7d8790;
 
   .rest-api-nav-subgroup.is-open .rest-api-nav-subgroup__chevron {
     transform: rotate(45deg);
-    border-color: $white;
+    border-color: var(--rest-api-ink);
   }
 
   .rest-api-nav-subgroup__panel {
@@ -446,23 +453,23 @@ $method-head: #7d8790;
   .rest-api-nav-link {
     display: block;
     border-radius: 1rem;
-    border: 1px solid rgba($white, 0.08);
-    background: rgba($white, 0.02);
+    border: 1px solid rgba(var(--rest-api-ink-rgb), 0.08);
+    background: rgba(var(--rest-api-ink-rgb), 0.02);
     padding: 0.85rem;
     transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
   }
 
   .rest-api-nav-link:hover {
     text-decoration: none;
-    border-color: rgba($white, 0.14);
-    background: rgba($white, 0.04);
-    box-shadow: 0 10px 24px rgba($black, 0.12);
+    border-color: rgba(var(--rest-api-ink-rgb), 0.14);
+    background: rgba(var(--rest-api-ink-rgb), 0.04);
+    box-shadow: 0 10px 24px rgba(var(--rest-api-canvas-rgb), 0.12);
   }
 
   .rest-api-nav-link.is-active {
-    border-color: rgba($white, 0.16);
-    background: rgba($white, 0.06);
-    box-shadow: 0 12px 24px rgba($black, 0.14);
+    border-color: rgba(var(--rest-api-ink-rgb), 0.16);
+    background: rgba(var(--rest-api-ink-rgb), 0.06);
+    box-shadow: 0 12px 24px rgba(var(--rest-api-canvas-rgb), 0.14);
   }
 
   .rest-api-nav-link__top {
@@ -482,7 +489,7 @@ $method-head: #7d8790;
 
   .rest-api-nav-link__path {
     min-width: 0;
-    color: $white;
+    color: var(--rest-api-ink);
     line-height: 1.5;
   }
 
@@ -491,7 +498,7 @@ $method-head: #7d8790;
     margin-top: 0.55rem;
     font-size: 0.88rem;
     line-height: 1.5;
-    color: $casper;
+    color: var(--rest-api-muted);
   }
 
   .rest-api-nav__empty {
@@ -499,7 +506,7 @@ $method-head: #7d8790;
     padding-top: 1rem;
     border-top: 1px solid rgba($primary, 0.18);
     font-size: 0.92rem;
-    color: $casper;
+    color: var(--rest-api-muted);
   }
 
   .rest-api-content {
@@ -528,7 +535,7 @@ $method-head: #7d8790;
 
   .rest-api-operation__path {
     margin: 0;
-    color: $white;
+    color: var(--rest-api-ink);
     font-size: 1.75rem;
     line-height: 1.25;
   }
@@ -556,7 +563,7 @@ $method-head: #7d8790;
 
   .rest-api-prose a,
   .rest-api-response__summary a {
-    color: $primary;
+    color: var(--rest-api-accent);
     text-decoration: underline;
     text-underline-offset: 0.15em;
   }
@@ -574,8 +581,8 @@ $method-head: #7d8790;
   .rest-api-response,
   .rest-api-variant,
   .rest-api-try-item {
-    background: rgba($white, 0.03);
-    border: 1px solid rgba($white, 0.08);
+    background: rgba(var(--rest-api-ink-rgb), 0.03);
+    border: 1px solid rgba(var(--rest-api-ink-rgb), 0.08);
     border-radius: 1rem;
   }
 
@@ -589,20 +596,20 @@ $method-head: #7d8790;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: $primary;
+    color: var(--rest-api-accent);
   }
 
   .rest-api-meta__item dd {
     margin: 0.4rem 0 0;
     font-size: 0.96rem;
     line-height: 1.6;
-    color: $white;
+    color: var(--rest-api-ink);
   }
 
   .rest-api-section {
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba($white, 0.08);
+    border-top: 1px solid rgba(var(--rest-api-ink-rgb), 0.08);
   }
 
   .rest-api-section--parameters {
@@ -614,7 +621,7 @@ $method-head: #7d8790;
   .rest-api-section-heading--responses h3,
   .rest-api-section-heading--try h3 {
     margin: 0;
-    color: $white;
+    color: var(--rest-api-ink);
     font-size: 1.2rem;
   }
 
@@ -638,7 +645,7 @@ $method-head: #7d8790;
     font-size: 0.92rem;
     font-weight: 500;
     letter-spacing: 0.01em;
-    color: rgba($white, 0.78);
+    color: rgba(var(--rest-api-ink-rgb), 0.78);
   }
 
   .rest-api-section-heading__summary {
@@ -734,7 +741,7 @@ $method-head: #7d8790;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: $primary;
+    color: var(--rest-api-accent);
   }
 
   .rest-api-auth__value {
@@ -744,14 +751,14 @@ $method-head: #7d8790;
     background: transparent;
     font-size: 0.98rem;
     font-weight: 600;
-    color: $white;
+    color: var(--rest-api-ink);
   }
 
   .rest-api-response {
     position: relative;
     padding-left: 3rem;
-    background: rgba($white, 0.025);
-    box-shadow: inset 0 1px 0 rgba($white, 0.025);
+    background: rgba(var(--rest-api-ink-rgb), 0.025);
+    box-shadow: inset 0 1px 0 rgba(var(--rest-api-ink-rgb), 0.025);
     overflow: hidden;
   }
 
@@ -788,7 +795,7 @@ $method-head: #7d8790;
     font-weight: 400;
     letter-spacing: 0;
     text-transform: none;
-    color: $casper;
+    color: var(--rest-api-muted);
     line-height: 1.65;
   }
 
@@ -798,7 +805,7 @@ $method-head: #7d8790;
     font-weight: 600;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: rgba($white, 0.68);
+    color: rgba(var(--rest-api-ink-rgb), 0.68);
   }
 
   .rest-api-try-item__url {
@@ -806,8 +813,8 @@ $method-head: #7d8790;
     width: 100%;
     padding: 0.8rem 0.95rem;
     border-radius: 0.9rem;
-    border: 1px solid rgba($white, 0.08);
-    background: rgba($white, 0.03);
+    border: 1px solid rgba(var(--rest-api-ink-rgb), 0.08);
+    background: rgba(var(--rest-api-ink-rgb), 0.03);
   }
 
   .rest-api-variant-grid {
@@ -846,13 +853,13 @@ $method-head: #7d8790;
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.01em;
-    color: rgba($white, 0.78);
+    color: rgba(var(--rest-api-ink-rgb), 0.78);
   }
 
   .rest-api-media-block__summary {
     margin: 0.18rem 0 0;
     font-size: 0.95rem;
-    color: $casper;
+    color: var(--rest-api-muted);
   }
 
   .rest-api-example {
@@ -864,8 +871,8 @@ $method-head: #7d8790;
     margin: 0;
     padding: 1rem;
     border-radius: 0.95rem;
-    border: 1px solid rgba($white, 0.08);
-    background: rgba($black, 0.28);
+    border: 1px solid rgba(var(--rest-api-ink-rgb), 0.08);
+    background: rgba(var(--rest-api-canvas-rgb), 0.28);
     overflow: auto;
   }
 
@@ -874,7 +881,7 @@ $method-head: #7d8790;
     display: block;
     width: 100%;
     background: transparent;
-    color: $white;
+    color: var(--rest-api-ink);
     padding: 0;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
@@ -901,7 +908,7 @@ $method-head: #7d8790;
     padding: 0;
     border-radius: 0;
     background: transparent;
-    color: $white;
+    color: var(--rest-api-ink);
     font-size: 0.78rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -916,15 +923,15 @@ $method-head: #7d8790;
   .rest-api-chip {
     padding: 0.35rem 0.75rem;
     border-radius: 0.45rem;
-    border: 1px dashed rgba($white, 0.3);
+    border: 1px dashed rgba(var(--rest-api-ink-rgb), 0.3);
     background: transparent;
     font-size: 0.82rem;
     letter-spacing: 0.09em;
-    color: $white;
+    color: var(--rest-api-ink);
   }
 
   .rest-api-chip--subtle {
-    color: $casper;
+    color: var(--rest-api-muted);
   }
 
   .rest-api-method-badge {
@@ -948,7 +955,7 @@ $method-head: #7d8790;
   .rest-api-response--danger .rest-api-status { color: rgba($method-delete, 0.95); }
 
   .rest-api-muted {
-    color: $casper;
+    color: var(--rest-api-muted);
     font-size: 0.92rem;
   }
 
@@ -1090,4 +1097,17 @@ $method-head: #7d8790;
       flex-wrap: wrap;
     }
   }
+}
+
+// Match the site theme without changing endpoint layout or interactions.
+[data-theme="light"] .rest-api-reference-page,
+[data-bs-theme="light"] .rest-api-reference-page {
+  --rest-api-ink: #142126;
+  --rest-api-ink-rgb: 20, 33, 38;
+  --rest-api-canvas-rgb: 255, 255, 255;
+  --rest-api-muted: #3c494f;
+  --rest-api-muted-rgb: 60, 73, 79;
+  --rest-api-accent: #{$light-theme-accent};
+  --rest-api-surface: #f6f8f8;
+  --rest-api-border: #d2d8da;
 }

@@ -248,9 +248,26 @@ To build a Docker image of the project, please ensure you have `Docker` installe
 make docker
 ```
 
-### UI Lint Rules
+### Lint and UI Checks
 
-Layer5 uses ES-Lint to maintain code quality & consistency in our UI Code.
+Run `npm run lint` to check Markdown under `content/`, or `npm run lint:fix`
+to apply automatic fixes. These scripts do not lint UI JavaScript or SCSS.
+
+For changes to the theme toggle, run the controller regression tests:
+
+```sh
+npm run test:theme
+```
+
+These tests cover saved preferences, switching, unavailable browser storage, and
+cross-tab synchronization. Also build the site and check both themes in a browser,
+including narrow mobile viewports with Sign In or the profile control visible.
+
+Shared theme roles are defined in `assets/scss/_theme_project.scss`, with dark
+defaults and light overrides from the existing Sistent palette. Use these CSS
+custom properties in component styles rather than repeating color literals or
+adding `!important`. Keep any required utility or inline-style override narrowly
+scoped and explain it beside the declaration.
 
 ## <a name="markdown-export">LLM-friendly page output</a>
 

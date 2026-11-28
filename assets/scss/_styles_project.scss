@@ -1,3 +1,4 @@
+@import "theme_project.scss";
 @import "fonts_project.scss";
 @import "content_project.scss";
 @import "image-modal_project.scss";
@@ -834,5 +835,481 @@ h1, h2, h3, h4, h5, h6 {
 
   body {
     padding-top: 0;
+  }
+}
+
+// ==========================================
+// LIGHT THEME STYLING (Sistent Design System)
+// ==========================================
+[data-theme="light"],
+[data-bs-theme="light"] {
+  --bs-body-color: var(--docs-text);
+  --bs-body-bg: var(--docs-surface);
+  --bs-heading-color: var(--docs-heading);
+  --bs-secondary-color: var(--docs-text-muted);
+  --bs-link-color: var(--docs-accent);
+  --bs-link-color-rgb: 0, 119, 99;
+  --bs-link-hover-color: #00403f;
+  --bs-link-hover-color-rgb: 0, 64, 63;
+
+  &,
+  body {
+    background-color: var(--docs-canvas);
+    color: var(--docs-text);
+  }
+
+  // docs page outer wrappers
+  .td-outer,
+  .td-default,
+  .container-fluid.td-outer,
+  .container-fluid.td-default.td-outer {
+    background-color: var(--docs-canvas);
+  }
+
+  .td-home {
+    background-color: var(--docs-canvas);
+  }
+
+  .td-main {
+    background-color: var(--docs-canvas);
+  }
+
+  .td-main main {
+    background-color: var(--docs-surface);
+  }
+
+  .td-content {
+    color: var(--docs-text);
+
+    > h1,
+    > h2,
+    > h3,
+    > h4,
+    > h5,
+    > h6 {
+      color: var(--docs-text-strong);
+    }
+
+    h2 {
+      color: var(--docs-text-strong);
+    }
+
+    p,
+    li,
+    td {
+      color: var(--docs-text);
+    }
+
+    .lead {
+      color: var(--docs-text-secondary);
+    }
+
+    p code,
+    li > code,
+    table code {
+      background-color: var(--docs-surface-muted);
+      color: var(--docs-accent);
+      border: 1px solid var(--docs-border);
+      border-radius: 4px;
+      font-weight: 500;
+      padding: 0.15rem 0.35rem;
+    }
+
+    pre {
+      background-color: var(--docs-code-bg);
+      color: #e8eff3;
+      border: 1px solid #293b43;
+      border-radius: 8px;
+
+      > code {
+        color: #e8eff3;
+      }
+    }
+
+    blockquote {
+      color: var(--docs-text);
+      border-left: 1px solid $primary;
+      background-color: var(--docs-accent-tint);
+      padding: 0.75rem 1rem;
+      border-radius: 0 0.375rem 0.375rem 0;
+    }
+  }
+
+  a {
+    color: var(--docs-accent);
+
+    &:hover {
+      color: var(--docs-accent);
+    }
+  }
+
+  // Left sidebar in light mode
+  .td-sidebar {
+    background-image: none;
+    background-color: var(--docs-surface-muted);
+    border-right: 1px solid var(--docs-border);
+
+    .td-sidebar__toggle {
+      color: var(--docs-text-secondary);
+    }
+
+    .td-sidebar-nav {
+      &__section-title a {
+        color: var(--docs-heading);
+        font-weight: 700;
+      }
+
+      .td-sidebar-link__page {
+        color: var(--docs-text-secondary);
+
+        &:hover {
+          color: var(--docs-accent);
+        }
+      }
+
+      a:hover {
+        color: var(--docs-accent);
+      }
+
+      a.active:not(.tree-root) {
+        background-image: none;
+        background-color: var(--docs-accent-tint);
+        border: none;
+        border-left: 1px solid $primary;
+        border-radius: 0 4px 4px 0;
+        color: var(--docs-accent);
+        font-weight: 600;
+      }
+
+      a.active.tree-root {
+        background-image: none;
+        background-color: var(--docs-accent-tint);
+        border: 1px solid var(--docs-accent-border);
+        color: var(--docs-accent);
+      }
+
+      .td-sidebar-link.tree-root {
+        border-bottom: 1px solid var(--docs-border);
+        color: var(--docs-heading);
+      }
+    }
+  }
+
+  // Right TOC sidebar in light mode
+  .td-sidebar-toc {
+    background-image: none;
+    background-color: var(--docs-canvas);
+    border-left: 1px solid var(--docs-border-subtle);
+
+    .td-toc-title {
+      color: var(--docs-text-secondary);
+    }
+
+    .taxonomy-title {
+      color: var(--docs-accent);
+    }
+
+    .td-toc #TableOfContents a {
+      color: var(--docs-text-muted);
+
+      &:hover,
+      &:focus-visible {
+        color: var(--docs-accent);
+        background-color: var(--docs-accent-tint);
+      }
+
+      &.active {
+        color: var(--docs-accent);
+        font-weight: 600;
+        border-left: 1px solid $primary;
+      }
+    }
+
+    .td-page-meta a {
+      color: var(--docs-text-muted);
+
+      &:hover {
+        color: var(--docs-accent);
+      }
+    }
+  }
+
+  // Cards
+  .card {
+    background-color: var(--docs-surface);
+    border: 1px solid var(--docs-border-subtle);
+    color: var(--docs-text);
+  }
+
+  // Alerts
+  .alert {
+    background-color: #f0fbff;
+    border: 1px solid #9eddff;
+    border-left: 1px solid #2196f3;
+    color: #0754a6;
+
+    &.alert-warning {
+      background-color: #fffee6;
+      border-color: #fffbbd;
+      border-left: 1px solid #ebc017;
+      color: #785400;
+    }
+
+    &.alert-danger {
+      background-color: #fff0f0;
+      border-color: #ffb3b9;
+      border-left: 1px solid #ff385c;
+      color: #8c0a2f;
+    }
+
+    &.alert-info {
+      background-color: #f0fbff;
+      border-color: #9eddff;
+      border-left: 1px solid #2196f3;
+      color: #0754a6;
+    }
+  }
+
+  // Nav tabs
+  .nav-tabs .nav-link {
+    color: var(--docs-text-secondary);
+    border-bottom: 1px solid var(--docs-border-subtle);
+
+    &:not(.active):hover {
+      background-color: var(--docs-surface-muted);
+      color: var(--docs-accent);
+    }
+
+    &.active {
+      background-color: var(--docs-surface);
+      color: var(--docs-accent);
+      border-color: var(--docs-border) var(--docs-border) transparent var(--docs-border);
+      font-weight: 600;
+    }
+  }
+
+  .tab-content .tab-pane {
+    background-color: var(--docs-surface);
+    border: 1px solid var(--docs-border);
+    color: var(--docs-text);
+  }
+
+  // Tables
+  .td-initial table,
+  table {
+    color: var(--docs-text);
+    border: 1px solid var(--docs-border);
+
+    th {
+      background-color: #e8eff3;
+      color: var(--docs-heading);
+      font-weight: 600;
+      border-bottom: 2px solid #c9dbe3;
+      box-shadow: none;
+    }
+
+    td {
+      background-color: transparent;
+      border-bottom: 1px solid var(--docs-border-subtle);
+      color: var(--docs-text);
+      box-shadow: none;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: #f8f9fa;
+    }
+  }
+
+  // Front matter info / Page info
+  .matterinfo,
+  .pageinfo {
+    background: var(--docs-surface);
+    border: 1.5px solid var(--docs-border);
+    color: var(--docs-text);
+
+    .matterheader {
+      color: var(--docs-text-strong);
+    }
+
+    .plan-support {
+      border: 1px solid var(--docs-border);
+      background: var(--docs-canvas);
+      color: var(--docs-text-secondary);
+
+      &:hover {
+        border-color: var(--docs-accent);
+        background-color: var(--docs-accent-tint);
+        color: var(--docs-accent);
+      }
+    }
+
+    .tier {
+      color: var(--docs-heading);
+    }
+  }
+
+  // Cover block and overlay for landing page in light mode (Sistent / MeshKit #FAFAFA canvas)
+  .td-cover-block,
+  .td-cover-block--height-full,
+  .td-overlay,
+  .td-overlay--dark,
+  .-bg-dark {
+    background: var(--docs-surface-soft);
+    background-color: var(--docs-surface-soft);
+    background-image: none;
+    color: var(--docs-text);
+
+    &::before,
+    &::after {
+      background: none;
+      background-color: transparent;
+      opacity: 0;
+      display: none;
+      content: none;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--docs-text-strong);
+    }
+
+    .lead {
+      color: var(--docs-text-secondary);
+    }
+  }
+
+  .dash-tangle {
+    background-image: linear-gradient(180deg, rgba(0, 179, 115, 0) 0%, rgba(0, 179, 159, 0.08) 100%);
+  }
+
+  .dash-ircle-container > .dash-ircle {
+    background: radial-gradient(50% 50% at 50% 50%, rgba(0, 179, 159, 0.08) 0%, rgba(0, 179, 159, 0) 100%);
+  }
+
+  // Buttons & Dash signs
+  .l5btn {
+    background: var(--docs-surface);
+    border: 1.5px solid var(--docs-border);
+    color: var(--docs-heading);
+
+    > img {
+      filter: invert(0.2);
+    }
+
+    &:hover {
+      background: var(--docs-accent-tint);
+      border-color: var(--docs-accent);
+      color: var(--docs-accent);
+
+      > img {
+        filter: none;
+      }
+    }
+  }
+
+  .dashboard {
+    background-image: none;
+    color: var(--docs-heading);
+  }
+
+  .dash-sign-container {
+    a.dash-sign {
+      color: var(--docs-heading);
+      text-shadow: none;
+
+      &:after {
+        box-shadow: 0 4px 15px rgba(0, 179, 159, 0.15);
+      }
+
+      &:visited {
+        color: var(--docs-heading);
+      }
+
+      &:hover {
+        color: var(--docs-accent);
+      }
+    }
+  }
+
+  // Ecosystem callout boxes
+  .highlight-box {
+    background-color: #fffee6;
+    border: 1.5px solid #ebc017;
+    border-radius: 8px;
+    color: var(--docs-text);
+  }
+
+  .hidden-highlight-box {
+    border-radius: 8px;
+
+    &:hover {
+      background-color: var(--docs-accent-tint);
+      border: 1px solid var(--docs-accent-border);
+    }
+  }
+
+
+  .td-offline-search-results {
+    .card {
+      background-color: var(--docs-surface);
+      border: 1px solid var(--docs-border);
+      color: var(--docs-text);
+    }
+  }
+
+  // Video and Taxonomies
+  .video > .card-title {
+    color: var(--docs-text-strong);
+  }
+
+  .video > .card-text {
+    color: var(--docs-text-secondary);
+  }
+
+  .article-teaser.card {
+    background-color: var(--docs-surface);
+    border: 1px solid var(--docs-border);
+    color: var(--docs-text);
+  }
+
+  .article-meta-bg {
+    background-color: #e8eff3;
+    color: var(--docs-text-secondary);
+  }
+
+  .taxonomy-count {
+    background-color: var(--docs-accent-tint);
+    color: var(--docs-accent);
+  }
+
+  .taxonomy-term {
+    background: var(--docs-accent-tint);
+    color: var(--docs-accent);
+    border: 1px solid var(--docs-accent-border);
+
+    &:hover {
+      background-color: var(--docs-accent);
+      color: $white;
+      border-color: var(--docs-accent);
+    }
+  }
+
+  // Pagination navigation
+  .pagination-nav__link {
+    border-color: var(--docs-border);
+    background-color: var(--docs-surface);
+    color: var(--docs-text);
+
+    &:hover {
+      border-color: var(--docs-accent);
+      color: var(--docs-accent);
+    }
+  }
+
+  .pagination-nav__sublabel {
+    color: var(--docs-text-muted);
+  }
+
+  .pagination-nav__label {
+    color: var(--docs-text-strong);
   }
 }

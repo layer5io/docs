@@ -1,0 +1,40 @@
+// Shared semantic roles. Keep the existing dark palette as the default; light
+// overrides use the Sistent palette already used by the docs components.
+:root {
+  color-scheme: dark;
+  --docs-canvas: #{$body-bg};
+  --docs-surface: #{$dark};
+  --docs-surface-soft: #{$dark};
+  --docs-surface-muted: #2e2e31;
+  --docs-text: #{$body-color};
+  --docs-heading: #{$white};
+  --docs-text-strong: #{$white};
+  --docs-text-secondary: #{$casper};
+  --docs-text-muted: #{$lightslategray};
+  --docs-border: #333;
+  --docs-border-subtle: #333;
+  --docs-accent: #{$primary};
+  --docs-accent-tint: #{rgba($primary, 0.12)};
+  --docs-accent-border: #{rgba($primary, 0.33)};
+  --docs-code-bg: #{$gray-900};
+}
+
+[data-theme='light'],
+[data-bs-theme='light'] {
+  color-scheme: light;
+  --docs-canvas: #f6f8f8;
+  --docs-surface: #ffffff;
+  --docs-surface-soft: #fafafa;
+  --docs-surface-muted: #eaedee;
+  --docs-text: #28353a;
+  --docs-heading: #142126;
+  --docs-text-strong: #000d12;
+  --docs-text-secondary: #3c494f;
+  --docs-text-muted: #647176;
+  --docs-border: #d2d8da;
+  --docs-border-subtle: #eaedee;
+  --docs-accent: #{$light-theme-accent};
+  --docs-accent-tint: #daf3eb;
+  --docs-accent-border: #93e6d1;
+  --docs-code-bg: #142126;
+}
