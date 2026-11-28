@@ -18,7 +18,7 @@ The chart writes `env.*` values into one ConfigMap and one Secret, and the serve
 
 | Where it lands | Values |
 | --- | --- |
-| Secret | `env.githubappkeypath` (the key file content), `env.githubAppClientSecret`, `env.stripeWebhookSecret`, `env.githubWebhookSecret`, `env.kratosWebhookApiKey`, `env.cloudCredentialEncryptionKey`, `env.cloudOidcStateHmacKey`, `env.providerOrgGithubSecret`, `env.providerOrgGoogleSecret`, and all four `smtp.*` values |
+| Secret | `env.githubappkeypath` (the key file content), `env.githubAppClientSecret`, `env.stripeWebhookSecret`, `env.githubWebhookSecret`, `env.kratosWebhookApiKey`, `env.cloudCredentialEncryptionKey`, `env.cloudOidcStateHmacKey`, `env.providerOrgGithubSecret`, `env.providerOrgGoogleSecret`, `env.gdriveOAuthClientSecret`, and all four `smtp.*` values |
 | ConfigMap | Every other `env.*` value |
 
 Both the Secret and the Helm release still hold your values in plaintext.
@@ -88,6 +88,8 @@ The container has a liveness probe on `/healthz` and readiness and startup probe
 | `providerOrgGoogleKey`, `providerOrgGoogleSecret` | `""` | Client id and secret of the default Google OAuth application. |
 | `cloudCredentialEncryptionKey` | not set | Base64 of 32 bytes. Encrypts stored credentials. When empty, encrypting or decrypting a credential fails. |
 | `cloudOidcStateHmacKey` | not set | Base64 of 32 bytes. Signs brokered social sign-in. When empty, brokered sign-in fails. |
+| `gdriveOAuthClientId`, `gdriveOAuthClientSecret` | not set | Client id and secret of a Google OAuth client dedicated to the Google Drive connection (`GDRIVE_OAUTH_CLIENT_ID`, `GDRIVE_OAUTH_CLIENT_SECRET`). Do not reuse the sign-in client. When either is empty, no Google Drive account can be connected. See [Google Drive]({{< ref "cloud/guides/integrations/google-drive/_index.md" >}}). |
+| `gdriveOAuthRedirectUrl` | not set | `https://<your Cloud host>/api/integrations/gdrive/callback` (`GDRIVE_OAUTH_REDIRECT_URL`). Register the same value at Google. |
 | `webhookHelpAndSupport` | not set | URL that receives support requests. |
 | `webhookKanvasEntitlement` | not set | URL that receives Kanvas entitlement events. |
 | `webhookSignupRequest` | not set | URL that receives signup decisions. |
